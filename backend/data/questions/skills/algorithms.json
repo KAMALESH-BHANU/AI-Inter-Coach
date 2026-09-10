@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ALGORITHMS_001",
+    "skill": "Algorithms",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of Algorithms in modern software engineering?",
+    "expected_concepts": [
+      "Algorithms fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "Algorithms is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of Algorithms."
+  },
+  {
+    "id": "ALGORITHMS_002",
+    "skill": "Algorithms",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using Algorithms in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with Algorithms include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of Algorithms."
+  },
+  {
+    "id": "ALGORITHMS_003",
+    "skill": "Algorithms",
+    "difficulty": "hard",
+    "question": "How does Algorithms handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "Algorithms handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of Algorithms."
+  }
+]

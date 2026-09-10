@@ -1,0 +1,17 @@
+[
+  {
+    "id": "SYS_001",
+    "skill": "System Design",
+    "difficulty": "hard",
+    "question": "How would you design a distributed caching layer using Redis? Address cache invalidation and cache stampede.",
+    "expected_concepts": [
+      "Cache-Aside pattern",
+      "TTL",
+      "Cache stampede / thundering herd",
+      "Mutex locking / probabilistic early expiration",
+      "Consistent hashing"
+    ],
+    "ideal_answer": "Use Cache-Aside pattern where app reads cache first and populates from DB on miss. Mitigate cache stampede using distributed locks or probabilistic early expiration. Distribute cache keys across nodes using Consistent Hashing.",
+    "explanation": "High-level distributed systems scalability design."
+  }
+]

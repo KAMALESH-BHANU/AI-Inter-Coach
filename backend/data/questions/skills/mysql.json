@@ -1,0 +1,33 @@
+[
+  {
+    "id": "MYSQL_001",
+    "skill": "MySQL",
+    "difficulty": "medium",
+    "question": "Explain ACID properties in database transactions and how InnoDB implements them.",
+    "expected_concepts": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability",
+      "Undo log",
+      "Redo log",
+      "MVCC"
+    ],
+    "ideal_answer": "ACID stands for Atomicity, Consistency, Isolation, and Durability. InnoDB achieves Atomicity via Undo logs, Durability via Redo logs/WAL, Isolation via Multi-Version Concurrency Control (MVCC) and locks, and Consistency by enforcing table constraints.",
+    "explanation": "Essential database engine principles."
+  },
+  {
+    "id": "MYSQL_002",
+    "skill": "MySQL",
+    "difficulty": "medium",
+    "question": "What is the difference between Clustered Index and Non-Clustered Index in InnoDB?",
+    "expected_concepts": [
+      "B+ Tree",
+      "Primary key index",
+      "Secondary index",
+      "Table row data storage"
+    ],
+    "ideal_answer": "A Clustered Index stores actual table rows in the leaf nodes of the B+ Tree (InnoDB primary key). A Non-Clustered (secondary) Index leaf node stores the primary key value, requiring a secondary lookup to retrieve row data unless covered.",
+    "explanation": "Evaluates database indexing internals."
+  }
+]

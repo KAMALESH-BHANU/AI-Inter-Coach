@@ -1,0 +1,74 @@
+[
+  {
+    "id": "REACT_001",
+    "skill": "React",
+    "difficulty": "medium",
+    "question": "Explain how the Virtual DOM works and the Reconciliation process in React.",
+    "expected_concepts": [
+      "Virtual DOM",
+      "Reconciliation",
+      "Diffing algorithm",
+      "Fiber architecture",
+      "Keys"
+    ],
+    "ideal_answer": "React creates an in-memory lightweight representation of the real DOM called Virtual DOM. When state changes, React creates a new Virtual DOM tree, diffs it against the previous tree using the heuristic Reconciliation algorithm (O(n)), and patches only necessary changes to the real DOM.",
+    "explanation": "Core rendering architecture of React."
+  },
+  {
+    "id": "REACT_002",
+    "skill": "React",
+    "difficulty": "medium",
+    "question": "What are the rules of React Hooks, and why must useEffect dependencies be specified accurately?",
+    "expected_concepts": [
+      "Call order top-level",
+      "Stale closures",
+      "Dependency array",
+      "Cleanup function"
+    ],
+    "ideal_answer": "Hooks must only be called at the top level of React functions (not inside loops or conditions) to ensure call order preservation across renders. Missing dependencies in useEffect lead to stale closures where outdated state/props are captured.",
+    "explanation": "Assesses hooks state management and lifecycle comprehension."
+  },
+  {
+    "id": "REACT_003",
+    "skill": "React",
+    "difficulty": "hard",
+    "question": "How do useMemo, useCallback, and React.memo optimize component rendering?",
+    "expected_concepts": [
+      "Re-rendering prevention",
+      "Memoization",
+      "Referential equality",
+      "Expensive computations"
+    ],
+    "ideal_answer": "React.memo skips re-rendering a component if props have not changed. useMemo memoizes the result of expensive calculations. useCallback memoizes callback function instances to preserve referential equality across renders.",
+    "explanation": "Evaluates React performance optimization techniques."
+  },
+  {
+    "id": "REACT_004",
+    "skill": "React",
+    "difficulty": "easy",
+    "question": "What is State vs Props in React, and what does unidirectional data flow mean?",
+    "expected_concepts": [
+      "Component internal state",
+      "Read-only props",
+      "Top-down data flow",
+      "Lifting state up"
+    ],
+    "ideal_answer": "Props are read-only inputs passed down from parent to child components. State is local component data managed internally that triggers re-renders when updated. Unidirectional data flow means data flows down via props and events bubble up via callbacks.",
+    "explanation": "Basic React component architecture."
+  },
+  {
+    "id": "REACT_005",
+    "skill": "React",
+    "difficulty": "medium",
+    "question": "Compare React Context API vs Redux Toolkit for state management.",
+    "expected_concepts": [
+      "Prop drilling",
+      "Global state",
+      "Middleware",
+      "Re-render scope",
+      "DevTools"
+    ],
+    "ideal_answer": "Context API is built-in and ideal for low-frequency global state (theme, user auth). Redux Toolkit is designed for complex, high-frequency state updates with predictable action dispatching, middleware support, and fine-grained selector re-rendering controls.",
+    "explanation": "Architectural state management comparison."
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "MICROSERVICES_001",
+    "skill": "Microservices",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of Microservices in modern software engineering?",
+    "expected_concepts": [
+      "Microservices fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "Microservices is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of Microservices."
+  },
+  {
+    "id": "MICROSERVICES_002",
+    "skill": "Microservices",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using Microservices in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with Microservices include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of Microservices."
+  },
+  {
+    "id": "MICROSERVICES_003",
+    "skill": "Microservices",
+    "difficulty": "hard",
+    "question": "How does Microservices handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "Microservices handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of Microservices."
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "PY_001",
+    "skill": "Python",
+    "difficulty": "medium",
+    "question": "What is the Global Interpreter Lock (GIL) in Python, and how does it affect multi-threading?",
+    "expected_concepts": [
+      "GIL",
+      "CPython",
+      "Thread safety",
+      "CPU-bound vs I/O-bound",
+      "Multiprocessing"
+    ],
+    "ideal_answer": "The GIL is a mutex in CPython that allows only one thread to execute Python bytecode at a time. It prevents multi-threaded CPU-bound execution across multiple CPU cores. For CPU-intensive tasks, multiprocessing or C extensions are used instead of threading.",
+    "explanation": "Critical Python runtime architecture question."
+  },
+  {
+    "id": "PY_002",
+    "skill": "Python",
+    "difficulty": "medium",
+    "question": "Explain Python Generators and the yield keyword. How do they save memory?",
+    "expected_concepts": [
+      "Generators",
+      "yield statement",
+      "Iterator protocol",
+      "Lazy evaluation",
+      "Memory efficiency"
+    ],
+    "ideal_answer": "Generators yield values one at a time on demand rather than loading an entire dataset into memory at once. They implement the iterator protocol lazily, keeping track of execution state between calls.",
+    "explanation": "Evaluates Python memory management and iterator concepts."
+  },
+  {
+    "id": "PY_003",
+    "skill": "Python",
+    "difficulty": "easy",
+    "question": "What is the difference between mutable and immutable types in Python? Give examples.",
+    "expected_concepts": [
+      "Mutability",
+      "Memory references",
+      "list/dict/set vs tuple/str/int"
+    ],
+    "ideal_answer": "Mutable objects (lists, dicts, sets) can be modified in place without changing their memory address (id). Immutable objects (strings, tuples, ints, floats) create a new object when modified.",
+    "explanation": "Core Python data type semantics."
+  },
+  {
+    "id": "PY_004",
+    "skill": "Python",
+    "difficulty": "hard",
+    "question": "How do decorators work in Python? Write the structure of a decorator accepting arguments.",
+    "expected_concepts": [
+      "First-class functions",
+      "Closures",
+      "functools.wraps",
+      "Decorator arguments"
+    ],
+    "ideal_answer": "Decorators take a function as an argument, extend or modify its behavior inside a wrapper function, and return the wrapper. For decorators accepting arguments, an extra outer function layer receives arguments and returns the decorator function.",
+    "explanation": "Assesses functional programming and closure understanding in Python."
+  },
+  {
+    "id": "PY_005",
+    "skill": "Python",
+    "difficulty": "medium",
+    "question": "Explain Python's Memory Management, Reference Counting, and Garbage Collection.",
+    "expected_concepts": [
+      "Reference counting",
+      "Cyclic garbage collection",
+      "Generational GC",
+      "gc module"
+    ],
+    "ideal_answer": "Python uses reference counting as its primary memory management mechanism; when reference count reaches 0, memory is freed immediately. A cyclic garbage collector detects and cleans up circular references using generational collection.",
+    "explanation": "Advanced Python runtime internals."
+  }
+]

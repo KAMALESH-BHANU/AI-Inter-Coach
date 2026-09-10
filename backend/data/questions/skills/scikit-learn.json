@@ -1,0 +1,44 @@
+[
+  {
+    "id": "SCIKIT-LEARN_001",
+    "skill": "Scikit-learn",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of Scikit-learn in modern software engineering?",
+    "expected_concepts": [
+      "Scikit-learn fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "Scikit-learn is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of Scikit-learn."
+  },
+  {
+    "id": "SCIKIT-LEARN_002",
+    "skill": "Scikit-learn",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using Scikit-learn in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with Scikit-learn include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of Scikit-learn."
+  },
+  {
+    "id": "SCIKIT-LEARN_003",
+    "skill": "Scikit-learn",
+    "difficulty": "hard",
+    "question": "How does Scikit-learn handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "Scikit-learn handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of Scikit-learn."
+  }
+]

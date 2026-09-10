@@ -1,0 +1,44 @@
+[
+  {
+    "id": "GCP_001",
+    "skill": "GCP",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of GCP in modern software engineering?",
+    "expected_concepts": [
+      "GCP fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "GCP is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of GCP."
+  },
+  {
+    "id": "GCP_002",
+    "skill": "GCP",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using GCP in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with GCP include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of GCP."
+  },
+  {
+    "id": "GCP_003",
+    "skill": "GCP",
+    "difficulty": "hard",
+    "question": "How does GCP handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "GCP handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of GCP."
+  }
+]

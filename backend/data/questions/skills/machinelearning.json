@@ -1,0 +1,44 @@
+[
+  {
+    "id": "MACHINE_LEARNING_001",
+    "skill": "Machine Learning",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of Machine Learning in modern software engineering?",
+    "expected_concepts": [
+      "Machine Learning fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "Machine Learning is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of Machine Learning."
+  },
+  {
+    "id": "MACHINE_LEARNING_002",
+    "skill": "Machine Learning",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using Machine Learning in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with Machine Learning include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of Machine Learning."
+  },
+  {
+    "id": "MACHINE_LEARNING_003",
+    "skill": "Machine Learning",
+    "difficulty": "hard",
+    "question": "How does Machine Learning handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "Machine Learning handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of Machine Learning."
+  }
+]

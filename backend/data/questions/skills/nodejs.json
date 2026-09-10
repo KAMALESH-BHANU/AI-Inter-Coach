@@ -1,0 +1,16 @@
+[
+  {
+    "id": "NODE_001",
+    "skill": "Node.js",
+    "difficulty": "medium",
+    "question": "Explain the Node.js Event Loop architecture and phases.",
+    "expected_concepts": [
+      "Single-threaded event loop",
+      "Libuv",
+      "Phases (Timers, I/O, Poll, Check)",
+      "Microtasks queue (process.nextTick, Promise)"
+    ],
+    "ideal_answer": "Node.js uses a single-threaded Event Loop backed by libuv thread pool for non-blocking I/O. The loop moves through phases: Timers, Pending I/O, Poll, Check (setImmediate), and Close callbacks, processing microtask queues between phase transitions.",
+    "explanation": "Core Node.js asynchronous architecture."
+  }
+]

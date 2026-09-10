@@ -1,0 +1,44 @@
+[
+  {
+    "id": "COMPUTER_VISION_001",
+    "skill": "Computer Vision",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of Computer Vision in modern software engineering?",
+    "expected_concepts": [
+      "Computer Vision fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "Computer Vision is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of Computer Vision."
+  },
+  {
+    "id": "COMPUTER_VISION_002",
+    "skill": "Computer Vision",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using Computer Vision in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with Computer Vision include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of Computer Vision."
+  },
+  {
+    "id": "COMPUTER_VISION_003",
+    "skill": "Computer Vision",
+    "difficulty": "hard",
+    "question": "How does Computer Vision handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "Computer Vision handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of Computer Vision."
+  }
+]

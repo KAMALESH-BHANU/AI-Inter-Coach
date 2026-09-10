@@ -1,0 +1,44 @@
+[
+  {
+    "id": "C_001",
+    "skill": "C",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of C in modern software engineering?",
+    "expected_concepts": [
+      "C fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "C is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of C."
+  },
+  {
+    "id": "C_002",
+    "skill": "C",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using C in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with C include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of C."
+  },
+  {
+    "id": "C_003",
+    "skill": "C",
+    "difficulty": "hard",
+    "question": "How does C handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "C handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of C."
+  }
+]

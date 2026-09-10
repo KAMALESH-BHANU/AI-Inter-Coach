@@ -1,0 +1,44 @@
+[
+  {
+    "id": "MONGODB_001",
+    "skill": "MongoDB",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of MongoDB in modern software engineering?",
+    "expected_concepts": [
+      "MongoDB fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "MongoDB is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of MongoDB."
+  },
+  {
+    "id": "MONGODB_002",
+    "skill": "MongoDB",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using MongoDB in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with MongoDB include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of MongoDB."
+  },
+  {
+    "id": "MONGODB_003",
+    "skill": "MongoDB",
+    "difficulty": "hard",
+    "question": "How does MongoDB handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "MongoDB handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of MongoDB."
+  }
+]

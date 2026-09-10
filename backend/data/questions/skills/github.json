@@ -1,0 +1,44 @@
+[
+  {
+    "id": "GITHUB_001",
+    "skill": "GitHub",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of GitHub in modern software engineering?",
+    "expected_concepts": [
+      "GitHub fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "GitHub is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of GitHub."
+  },
+  {
+    "id": "GITHUB_002",
+    "skill": "GitHub",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using GitHub in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with GitHub include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of GitHub."
+  },
+  {
+    "id": "GITHUB_003",
+    "skill": "GitHub",
+    "difficulty": "hard",
+    "question": "How does GitHub handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "GitHub handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of GitHub."
+  }
+]

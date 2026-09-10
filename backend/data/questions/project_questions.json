@@ -1,0 +1,98 @@
+[
+  {
+    "id": "PROJ_001",
+    "skill": "Project Architecture",
+    "difficulty": "medium",
+    "question": "Can you explain the overall architecture of your project and the rationale behind your major technology choices?",
+    "expected_concepts": ["System Architecture", "Technology Selection", "Component Isolation", "Design Trade-offs"],
+    "ideal_answer": "Candidate should describe system components, data flow, key frameworks used, and trade-offs made during technology selection."
+  },
+  {
+    "id": "PROJ_002",
+    "skill": "Problem Solving",
+    "difficulty": "medium",
+    "question": "What specific real-world problem does your project solve, and who are its primary target users?",
+    "expected_concepts": ["Problem Statement", "Target Audience", "Value Proposition", "User Workflow"],
+    "ideal_answer": "Candidate should articulate the core problem, user pain points addressed, and how the solution delivers measurable value."
+  },
+  {
+    "id": "PROJ_003",
+    "skill": "Individual Contribution",
+    "difficulty": "medium",
+    "question": "What was your specific role and individual technical contribution in the development of this project?",
+    "expected_concepts": ["Role Definition", "Feature Ownership", "Code Contribution", "Team Collaboration"],
+    "ideal_answer": "Candidate should detail the specific modules or features they personally designed, coded, and delivered."
+  },
+  {
+    "id": "PROJ_004",
+    "skill": "Technical Challenges",
+    "difficulty": "medium",
+    "question": "What was the most difficult technical bug or challenge you encountered, and how did you diagnose and resolve it?",
+    "expected_concepts": ["Problem Diagnosis", "Debugging Technique", "Root Cause Analysis", "Resolution & Prevention"],
+    "ideal_answer": "Candidate should clearly present bug symptoms, diagnostic step-by-step investigation, root cause, and long-term fix."
+  },
+  {
+    "id": "PROJ_005",
+    "skill": "Database & Data Modeling",
+    "difficulty": "medium",
+    "question": "Which database did you choose for this project, and how did you design the schema to handle queries efficiently?",
+    "expected_concepts": ["Database Choice (SQL vs NoSQL)", "Schema Design", "Normalization/Denormalization", "Indexing"],
+    "ideal_answer": "Candidate should explain why SQL or NoSQL was chosen, schema modeling, foreign keys/documents, and indexing strategies."
+  },
+  {
+    "id": "PROJ_006",
+    "skill": "Security & Authentication",
+    "difficulty": "medium",
+    "question": "How did you implement authentication, authorization, and secure sensitive data in your project?",
+    "expected_concepts": ["JWT / OAuth2", "Password Hashing (bcrypt)", "Role-based Access Control", "Data Encryption & Protection"],
+    "ideal_answer": "Candidate should discuss token lifecycle, password hashing, route guards/middleware, and protection against OWASP vulnerabilities."
+  },
+  {
+    "id": "PROJ_007",
+    "skill": "Testing & Quality Assurance",
+    "difficulty": "medium",
+    "question": "What testing strategies (unit, integration, or end-to-end) did you implement to ensure software reliability?",
+    "expected_concepts": ["Unit Testing", "Integration Testing", "Mocking & Fixtures", "Test Coverage / CI Pipeline"],
+    "ideal_answer": "Candidate should describe testing frameworks, test cases written, mocking external dependencies, and continuous integration."
+  },
+  {
+    "id": "PROJ_008",
+    "skill": "Scalability & Performance",
+    "difficulty": "hard",
+    "question": "If your project experienced a 100x increase in concurrent traffic, what bottlenecks would arise and how would you scale the system?",
+    "expected_concepts": ["Horizontal Scaling", "Caching (Redis)", "Database Connection Pooling", "Load Balancing", "Asynchronous Queues"],
+    "ideal_answer": "Candidate should identify potential database or CPU bottlenecks, caching layers, load balancers, and asynchronous task workers."
+  },
+  {
+    "id": "PROJ_009",
+    "skill": "Future Improvements",
+    "difficulty": "medium",
+    "question": "Looking back at the finished project, what design decisions would you re-architect or improve if starting over?",
+    "expected_concepts": ["Critical Reflection", "Technical Debt", "Refactoring Opportunities", "Modern Tooling"],
+    "ideal_answer": "Candidate demonstrates self-awareness of technical trade-offs, modularity improvements, or framework upgrades."
+  },
+  {
+    "id": "PROJ_010",
+    "skill": "API Design & Integration",
+    "difficulty": "medium",
+    "question": "How did you design your REST or GraphQL APIs to ensure clean contracts, consistent error handling, and ease of client integration?",
+    "expected_concepts": ["RESTful Principles", "HTTP Status Codes", "Payload Formatting", "API Documentation (OpenAPI/Swagger)"],
+    "ideal_answer": "Candidate should explain resource-oriented endpoints, proper status code usage, standardized error payloads, and API docs."
+  },
+  {
+    "id": "PROJ_011",
+    "skill": "State Management & Caching",
+    "difficulty": "medium",
+    "question": "How did you manage application state and data caching across the frontend and backend layers?",
+    "expected_concepts": ["State Management", "In-Memory Caching", "Cache Invalidation", "Client-side Synchronization"],
+    "ideal_answer": "Candidate explains global state management on client and caching strategies with TTL or cache invalidation on server."
+  },
+  {
+    "id": "PROJ_012",
+    "skill": "Deployment & DevOps",
+    "difficulty": "medium",
+    "question": "How did you containerize or deploy your project to production or cloud environments?",
+    "expected_concepts": ["Docker / Containerization", "Cloud Hosting (AWS/GCP/Vercel)", "Environment Variables", "CI/CD Automation"],
+    "ideal_answer": "Candidate describes container configuration, multi-stage builds, cloud hosting, environment management, and deployment pipelines."
+  }
+]

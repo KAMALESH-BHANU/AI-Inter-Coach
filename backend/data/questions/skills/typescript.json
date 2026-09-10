@@ -1,0 +1,44 @@
+[
+  {
+    "id": "TYPESCRIPT_001",
+    "skill": "TypeScript",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of TypeScript in modern software engineering?",
+    "expected_concepts": [
+      "TypeScript fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "TypeScript is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of TypeScript."
+  },
+  {
+    "id": "TYPESCRIPT_002",
+    "skill": "TypeScript",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using TypeScript in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with TypeScript include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of TypeScript."
+  },
+  {
+    "id": "TYPESCRIPT_003",
+    "skill": "TypeScript",
+    "difficulty": "hard",
+    "question": "How does TypeScript handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "TypeScript handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of TypeScript."
+  }
+]

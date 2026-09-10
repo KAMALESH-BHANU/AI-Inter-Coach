@@ -1,0 +1,44 @@
+[
+  {
+    "id": "SB_001",
+    "skill": "Spring Boot",
+    "difficulty": "medium",
+    "question": "Explain Dependency Injection and Inversion of Control (IoC) in Spring Framework.",
+    "expected_concepts": [
+      "IoC Container",
+      "Dependency Injection",
+      "@Autowired",
+      "Bean lifecycle",
+      "Loose coupling"
+    ],
+    "ideal_answer": "Inversion of Control transfers object creation and dependency management responsibility to the Spring IoC container. Dependency Injection (DI) is the pattern where dependencies are injected into a class (via constructor, setter, or field) rather than instantiated directly, achieving loose coupling.",
+    "explanation": "Core Spring philosophy and architecture."
+  },
+  {
+    "id": "SB_002",
+    "skill": "Spring Boot",
+    "difficulty": "medium",
+    "question": "What is the difference between @Component, @Service, @Repository, and @Controller annotations?",
+    "expected_concepts": [
+      "Stereotype annotations",
+      "Spring Bean registration",
+      "Persistence exception translation"
+    ],
+    "ideal_answer": "@Component is the generic stereotype annotation. @Service annotates business logic layer classes. @Repository annotates data access layer classes and provides automatic exception translation. @Controller annotates web controller layers.",
+    "explanation": "Spring bean stereotype classification."
+  },
+  {
+    "id": "SB_003",
+    "skill": "Spring Boot",
+    "difficulty": "hard",
+    "question": "How does Spring Boot Auto-Configuration work under the hood?",
+    "expected_concepts": [
+      "@EnableAutoConfiguration",
+      "@ConditionalOnClass",
+      "spring.factories / AutoConfiguration.imports",
+      "Spring Boot starter"
+    ],
+    "ideal_answer": "Spring Boot inspects classpath dependencies using @EnableAutoConfiguration and imports auto-configuration classes specified in spring.factories/AutoConfiguration.imports. Conditional annotations (@ConditionalOnClass, @ConditionalOnMissingBean) trigger bean creation only if requirements are satisfied.",
+    "explanation": "Advanced Spring Boot framework mechanics."
+  }
+]

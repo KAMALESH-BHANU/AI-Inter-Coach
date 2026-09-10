@@ -1,0 +1,44 @@
+[
+  {
+    "id": "GIT_001",
+    "skill": "Git",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of Git in modern software engineering?",
+    "expected_concepts": [
+      "Git fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "Git is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of Git."
+  },
+  {
+    "id": "GIT_002",
+    "skill": "Git",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using Git in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with Git include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of Git."
+  },
+  {
+    "id": "GIT_003",
+    "skill": "Git",
+    "difficulty": "hard",
+    "question": "How does Git handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "Git handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of Git."
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "JAVA_001",
+    "skill": "Java",
+    "difficulty": "medium",
+    "question": "What is the difference between final, finally, and finalize in Java?",
+    "expected_concepts": [
+      "final keyword",
+      "finally block",
+      "finalize method",
+      "garbage collection"
+    ],
+    "ideal_answer": "final is a keyword to declare constants, prevent method overriding or class inheritance. finally is a block used in exception handling that executes regardless of whether an exception occurs. finalize is a method on Object called by the Garbage Collector before an object is reclaimed.",
+    "explanation": "Tests understanding of Java core keywords, exception handling flow, and GC lifecycle."
+  },
+  {
+    "id": "JAVA_002",
+    "skill": "Java",
+    "difficulty": "medium",
+    "question": "Explain how HashMap works internally in Java.",
+    "expected_concepts": [
+      "hashcode",
+      "equals",
+      "buckets",
+      "collision handling",
+      "red-black tree"
+    ],
+    "ideal_answer": "HashMap uses key's hashCode() to compute the bucket index. Key-value pairs are stored as Node objects in linked lists. Since Java 8, if a bucket linked list exceeds 8 nodes, it transforms into a balanced Red-Black tree (O(log n) lookup).",
+    "explanation": "Evaluates knowledge of data structures in Java collections framework."
+  },
+  {
+    "id": "JAVA_003",
+    "skill": "Java",
+    "difficulty": "hard",
+    "question": "What is the Java Memory Model, and how do volatile and synchronized keywords differ?",
+    "expected_concepts": [
+      "Java Memory Model",
+      "Heap vs Thread Stack",
+      "volatile visibility",
+      "synchronized atomicity & locking"
+    ],
+    "ideal_answer": "The JMM defines how threads interact with main memory and CPU caches. volatile ensures visibility of variable updates across threads by forcing reads/writes from main memory, but doesn't guarantee atomicity. synchronized guarantees both visibility and mutual exclusion (atomicity) by locking an object monitor.",
+    "explanation": "Assesses multi-threading and concurrency fundamentals in Java."
+  },
+  {
+    "id": "JAVA_004",
+    "skill": "Java",
+    "difficulty": "easy",
+    "question": "Explain String immutability in Java and why String is immutable.",
+    "expected_concepts": [
+      "String pool",
+      "Immutability",
+      "Security",
+      "Thread-safety",
+      "Caching hashcode"
+    ],
+    "ideal_answer": "String objects cannot be changed once created. Immutability improves security (network connections, file paths), allows string pooling to save memory, makes strings thread-safe without locks, and allows hashcodes to be cached.",
+    "explanation": "Fundamental core Java memory management question."
+  },
+  {
+    "id": "JAVA_005",
+    "skill": "Java",
+    "difficulty": "medium",
+    "question": "What is the difference between Abstract Class and Interface in Java 8+?",
+    "expected_concepts": [
+      "Multiple inheritance",
+      "default methods",
+      "static methods",
+      "state/instance variables"
+    ],
+    "ideal_answer": "Abstract classes can hold state (instance variables) and constructors. Interfaces cannot hold state (only static final constants). Interfaces allow multiple inheritance of behavior, and since Java 8 support default and static methods, and Java 9 private methods.",
+    "explanation": "Tests Object-Oriented design understanding in Java."
+  }
+]

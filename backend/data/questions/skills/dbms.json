@@ -1,0 +1,44 @@
+[
+  {
+    "id": "DBMS_001",
+    "skill": "DBMS",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of DBMS in modern software engineering?",
+    "expected_concepts": [
+      "DBMS fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "DBMS is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of DBMS."
+  },
+  {
+    "id": "DBMS_002",
+    "skill": "DBMS",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using DBMS in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with DBMS include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of DBMS."
+  },
+  {
+    "id": "DBMS_003",
+    "skill": "DBMS",
+    "difficulty": "hard",
+    "question": "How does DBMS handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "DBMS handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of DBMS."
+  }
+]

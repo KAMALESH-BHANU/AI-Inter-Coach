@@ -1,0 +1,44 @@
+[
+  {
+    "id": "OPERATING_SYSTEMS_001",
+    "skill": "Operating Systems",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of Operating Systems in modern software engineering?",
+    "expected_concepts": [
+      "Operating Systems fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "Operating Systems is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of Operating Systems."
+  },
+  {
+    "id": "OPERATING_SYSTEMS_002",
+    "skill": "Operating Systems",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using Operating Systems in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with Operating Systems include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of Operating Systems."
+  },
+  {
+    "id": "OPERATING_SYSTEMS_003",
+    "skill": "Operating Systems",
+    "difficulty": "hard",
+    "question": "How does Operating Systems handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "Operating Systems handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of Operating Systems."
+  }
+]

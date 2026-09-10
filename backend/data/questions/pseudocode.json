@@ -1,0 +1,170 @@
+[
+  {
+    "id": "PSEUDO_001",
+    "difficulty": "medium",
+    "language": "Java",
+    "question": "What is the output of the following Java snippet?\n\nint count = 0;\nfor (int i = 0; i < 5; i++) {\n    if (i % 2 == 0) continue;\n    count += i;\n}\nSystem.out.println(count);",
+    "options": [
+      "6",
+      "10",
+      "4",
+      "0"
+    ],
+    "correct_answer": "4",
+    "explanation": "Loops through i = 0, 1, 2, 3, 4. Even numbers (0, 2, 4) hit 'continue'. Odd numbers (1, 3) add to count: 1 + 3 = 4."
+  },
+  {
+    "id": "PSEUDO_002",
+    "difficulty": "medium",
+    "language": "Python",
+    "question": "What is the output of the following Python code?\n\ndef func(val, lst=[]):\n    lst.append(val)\n    return lst\n\nprint(func(1))\nprint(func(2))",
+    "options": [
+      "[1] then [2]",
+      "[1] then [1, 2]",
+      "[1, 2] then [1, 2]",
+      "[1] then []"
+    ],
+    "correct_answer": "[1] then [1, 2]",
+    "explanation": "Default argument `lst=[]` is evaluated ONCE when function is defined in Python. Subsequent calls reuse the same mutable list object in memory."
+  },
+  {
+    "id": "PSEUDO_003",
+    "difficulty": "easy",
+    "language": "JavaScript",
+    "question": "What is the result of `console.log(1 + '2' + 3)` in JavaScript?",
+    "options": [
+      "6",
+      "'123'",
+      "'15'",
+      "NaN"
+    ],
+    "correct_answer": "'123'",
+    "explanation": "`1 + '2'` performs string coercion returning `'12'`, then `'12' + 3` yields `'123'`."
+  },
+  {
+    "id": "PSEUDO_004",
+    "difficulty": "hard",
+    "language": "Java",
+    "question": "What does this recursive function return for foo(4)?\n\nint foo(int n) {\n    if (n <= 1) return 1;\n    return n * foo(n - 1);\n}",
+    "options": [
+      "24",
+      "12",
+      "4",
+      "16"
+    ],
+    "correct_answer": "24",
+    "explanation": "Calculates factorial of 4: 4 * 3 * 2 * 1 = 24."
+  },
+  {
+    "id": "PSEUDO_005",
+    "difficulty": "medium",
+    "language": "C++",
+    "question": "What is the output of the following C++ code?\n\nint a = 5, b = 10;\nint *p = &a;\n*p = 20;\np = &b;\n*p = 30;\ncout << a << \" \" << b;",
+    "options": [
+      "20 30",
+      "5 10",
+      "20 10",
+      "5 30"
+    ],
+    "correct_answer": "20 30",
+    "explanation": "Pointer p points to a, changing *p modifies a to 20. Then p points to b, modifying *p changes b to 30. Output is '20 30'."
+  },
+  {
+    "id": "PSEUDO_006",
+    "difficulty": "medium",
+    "language": "Algorithms",
+    "question": "What is the worst-case time complexity of QuickSort when a naive pivot (e.g. first element) is chosen on an already sorted array?",
+    "options": [
+      "O(n log n)",
+      "O(n^2)",
+      "O(n)",
+      "O(log n)"
+    ],
+    "correct_answer": "O(n^2)",
+    "explanation": "When partitioning on an already sorted array with first element as pivot, subarray partitions are unbalanced (size 0 and n-1), resulting in O(n^2) time."
+  },
+  {
+    "id": "PSEUDO_007",
+    "difficulty": "easy",
+    "language": "Python",
+    "question": "What is the output of the following Python list slice?\n\narr = [10, 20, 30, 40, 50]\nprint(arr[::-2])",
+    "options": [
+      "[50, 30, 10]",
+      "[10, 30, 50]",
+      "[50, 40, 30]",
+      "[40, 20]"
+    ],
+    "correct_answer": "[50, 30, 10]",
+    "explanation": "The slice `[::-2]` traverses the list in reverse order starting from the last element (50) with step size of 2: 50 -> 30 -> 10."
+  },
+  {
+    "id": "PSEUDO_008",
+    "difficulty": "medium",
+    "language": "JavaScript",
+    "question": "What is printed to console in the following closure example?\n\nfor (var i = 0; i < 3; i++) {\n    setTimeout(() => console.log(i), 0);\n}",
+    "options": [
+      "0 1 2",
+      "3 3 3",
+      "undefined",
+      "0 0 0"
+    ],
+    "correct_answer": "3 3 3",
+    "explanation": "Because `var` is function-scoped (not block-scoped), all setTimeout callbacks share the same `i` variable which equals 3 when the loop finishes."
+  },
+  {
+    "id": "PSEUDO_009",
+    "difficulty": "medium",
+    "language": "Data Structures",
+    "question": "In a max-heap with n elements, what is the time complexity of deleting the maximum element (extract-max)?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correct_answer": "O(log n)",
+    "explanation": "Replacing root with the last leaf takes O(1), and heapifying down the tree takes O(log n) time proportional to tree height."
+  },
+  {
+    "id": "PSEUDO_010",
+    "difficulty": "easy",
+    "language": "Java",
+    "question": "What is the output of the following Java code snippet?\n\nString s1 = \"Hello\";\nString s2 = new String(\"Hello\");\nSystem.out.println((s1 == s2) + \" \" + s1.equals(s2));",
+    "options": [
+      "true true",
+      "false true",
+      "true false",
+      "false false"
+    ],
+    "correct_answer": "false true",
+    "explanation": "`s1 == s2` checks memory reference (false because s2 is new heap object). `s1.equals(s2)` checks string content (true)."
+  },
+  {
+    "id": "PSEUDO_011",
+    "difficulty": "medium",
+    "language": "Python",
+    "question": "What is the output of this Python dictionary comprehension?\n\nd = {x: x**2 for x in (2, 3, 4) if x % 2 == 0}\nprint(d)",
+    "options": [
+      "{2: 4, 3: 9, 4: 16}",
+      "{2: 4, 4: 16}",
+      "{4: 16}",
+      "[4, 16]"
+    ],
+    "correct_answer": "{2: 4, 4: 16}",
+    "explanation": "Filters only even numbers (2, 4) and maps them to their squares: {2: 4, 4: 16}."
+  },
+  {
+    "id": "PSEUDO_012",
+    "difficulty": "hard",
+    "language": "Algorithms",
+    "question": "What is the space complexity of standard Depth First Search (DFS) on a binary tree of height h using recursion?",
+    "options": [
+      "O(1)",
+      "O(h)",
+      "O(n^2)",
+      "O(2^h)"
+    ],
+    "correct_answer": "O(h)",
+    "explanation": "Recursive DFS consumes call stack frames proportional to the maximum height h of the tree (O(h) auxiliary memory)."
+  }
+]

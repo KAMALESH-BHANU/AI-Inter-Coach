@@ -1,0 +1,44 @@
+[
+  {
+    "id": "OOP_001",
+    "skill": "OOP",
+    "difficulty": "easy",
+    "question": "What are the core features and primary use cases of OOP in modern software engineering?",
+    "expected_concepts": [
+      "OOP fundamentals",
+      "Primary features",
+      "Use cases",
+      "Key advantages"
+    ],
+    "ideal_answer": "OOP is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
+    "explanation": "Basic conceptual understanding of OOP."
+  },
+  {
+    "id": "OOP_002",
+    "skill": "OOP",
+    "difficulty": "medium",
+    "question": "Explain a major technical challenge or common pitfall when using OOP in production and how to avoid it.",
+    "expected_concepts": [
+      "Best practices",
+      "Performance optimization",
+      "Error handling",
+      "Resource management"
+    ],
+    "ideal_answer": "Common challenges with OOP include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
+    "explanation": "Practical production understanding of OOP."
+  },
+  {
+    "id": "OOP_003",
+    "skill": "OOP",
+    "difficulty": "hard",
+    "question": "How does OOP handle scalability, concurrency, or internal performance optimization?",
+    "expected_concepts": [
+      "Internal architecture",
+      "Scalability",
+      "Concurrency",
+      "Optimization"
+    ],
+    "ideal_answer": "OOP handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
+    "explanation": "Deep architectural analysis of OOP."
+  }
+]

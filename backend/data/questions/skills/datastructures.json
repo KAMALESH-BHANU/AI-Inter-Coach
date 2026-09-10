@@ -1,0 +1,17 @@
+[
+  {
+    "id": "DS_001",
+    "skill": "Data Structures",
+    "difficulty": "medium",
+    "question": "Compare Hash Table vs Binary Search Tree in terms of time and space complexity.",
+    "expected_concepts": [
+      "Hash table O(1) average",
+      "BST O(log n)",
+      "Worst case O(n)",
+      "In-order traversal",
+      "Range queries"
+    ],
+    "ideal_answer": "Hash tables offer O(1) average lookup/insert/delete but O(n) worst case on collisions and do not maintain order. Balanced BSTs offer O(log n) guaranteed search/insert/delete and support ordered range queries.",
+    "explanation": "Fundamental algorithm complexity evaluation."
+  }
+]
