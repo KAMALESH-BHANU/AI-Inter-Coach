@@ -1,0 +1,40 @@
+﻿# Node & Frontend
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+.vite/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python & Backend
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets
+.env
+backend/.env
+*.env.local
+
+# Temporary files & logs
+temp/
+backend/temp/
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+Thumbs.db
