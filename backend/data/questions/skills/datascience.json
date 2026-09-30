@@ -1,0 +1,414 @@
+[
+  {
+    "id": "ds_sci_001",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the End-to-End Data Science Lifecycle: Problem Definition, Data Ingestion, Cleaning, EDA, Feature Engineering, Modeling, Evaluation, Deployment, and Monitoring.",
+    "difficulty": "easy",
+    "topic": "Data Science Lifecycle",
+    "concept": "End-to-End Data Science Lifecycle",
+    "questionFamily": "architecture",
+    "tags": [
+      "Data Science",
+      "lifecycle",
+      "CRISP-DM",
+      "EDA",
+      "feature engineering",
+      "model deployment"
+    ],
+    "idealAnswer": "The lifecycle follows CRISP-DM: 1) Business Understanding; 2) Data Acquisition & Cleaning; 3) Exploratory Data Analysis (EDA); 4) Feature Engineering; 5) Model Training & Validation; 6) Production Deployment (APIs/batch); 7) Continuous Monitoring for performance and drift.",
+    "ideal_answer": "The lifecycle follows CRISP-DM: 1) Business Understanding; 2) Data Acquisition & Cleaning; 3) Exploratory Data Analysis (EDA); 4) Feature Engineering; 5) Model Training & Validation; 6) Production Deployment (APIs/batch); 7) Continuous Monitoring for performance and drift.",
+    "expected_concepts": [
+      "Data Science",
+      "lifecycle",
+      "CRISP-DM",
+      "EDA"
+    ],
+    "explanation": "Evaluates Data Science Data Science Lifecycle and End-to-End Data Science Lifecycle comprehension."
+  },
+  {
+    "id": "ds_sci_002",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Central Limit Theorem (CLT) and why it forms the foundation for hypothesis testing and confidence intervals.",
+    "difficulty": "easy",
+    "topic": "Statistics",
+    "concept": "Central Limit Theorem (CLT)",
+    "questionFamily": "definition",
+    "tags": [
+      "Central Limit Theorem",
+      "CLT",
+      "normal distribution",
+      "sampling distribution",
+      "confidence interval"
+    ],
+    "idealAnswer": "The Central Limit Theorem states that the distribution of sample means approaches a normal Gaussian distribution as sample size N increases (typically N >= 30), regardless of the shape of the underlying population distribution.",
+    "ideal_answer": "The Central Limit Theorem states that the distribution of sample means approaches a normal Gaussian distribution as sample size N increases (typically N >= 30), regardless of the shape of the underlying population distribution.",
+    "expected_concepts": [
+      "Central Limit Theorem",
+      "CLT",
+      "normal distribution",
+      "sampling distribution"
+    ],
+    "explanation": "Evaluates Data Science Statistics and Central Limit Theorem (CLT) comprehension."
+  },
+  {
+    "id": "ds_sci_003",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Parametric vs Non-Parametric statistical tests (t-test, ANOVA vs Mann-Whitney U, Kruskal-Wallis).",
+    "difficulty": "medium",
+    "topic": "Statistical Testing",
+    "concept": "Parametric vs Non-Parametric Tests",
+    "questionFamily": "comparison",
+    "tags": [
+      "parametric test",
+      "non-parametric",
+      "t-test",
+      "ANOVA",
+      "Mann-Whitney U",
+      "normality assumption"
+    ],
+    "idealAnswer": "Parametric tests (t-test, ANOVA) assume data follows a specific distribution (normal) and test parameters like mean and variance. Non-parametric tests (Mann-Whitney U, Kruskal-Wallis, Wilcoxon) make no distribution assumptions and evaluate ranks/medians for skewed data.",
+    "ideal_answer": "Parametric tests (t-test, ANOVA) assume data follows a specific distribution (normal) and test parameters like mean and variance. Non-parametric tests (Mann-Whitney U, Kruskal-Wallis, Wilcoxon) make no distribution assumptions and evaluate ranks/medians for skewed data.",
+    "expected_concepts": [
+      "parametric test",
+      "non-parametric",
+      "t-test",
+      "ANOVA"
+    ],
+    "explanation": "Evaluates Data Science Statistical Testing and Parametric vs Non-Parametric Tests comprehension."
+  },
+  {
+    "id": "ds_sci_004",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Curse of Dimensionality in data science, and how does it degrade distance metrics and model convergence?",
+    "difficulty": "medium",
+    "topic": "High-Dimensional Data",
+    "concept": "Curse of Dimensionality",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "curse of dimensionality",
+      "Euclidean distance",
+      "sparsity",
+      "feature selection",
+      "dimensionality reduction"
+    ],
+    "idealAnswer": "As feature dimensions increase, volume of space grows exponentially, making data points extremely sparse. In high-dimensional space, Euclidean distances between all pairs of points become nearly identical, degrading distance-based algorithms (KNN, K-Means) and increasing overfitting risks.",
+    "ideal_answer": "As feature dimensions increase, volume of space grows exponentially, making data points extremely sparse. In high-dimensional space, Euclidean distances between all pairs of points become nearly identical, degrading distance-based algorithms (KNN, K-Means) and increasing overfitting risks.",
+    "expected_concepts": [
+      "curse of dimensionality",
+      "Euclidean distance",
+      "sparsity",
+      "feature selection"
+    ],
+    "explanation": "Evaluates Data Science High-Dimensional Data and Curse of Dimensionality comprehension."
+  },
+  {
+    "id": "ds_sci_005",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Feature Importance vs SHAP Values vs Permutation Importance for machine learning model interpretability.",
+    "difficulty": "medium",
+    "topic": "Model Interpretability",
+    "concept": "Feature Importance vs Permutation vs SHAP",
+    "questionFamily": "comparison",
+    "tags": [
+      "feature importance",
+      "SHAP",
+      "permutation importance",
+      "MDI",
+      "interpretability"
+    ],
+    "idealAnswer": "MDI (tree impurity reduction) is biased toward high-cardinality features. Permutation Importance measures score drop when a feature column is randomly shuffled (model-agnostic). SHAP values calculate game-theoretic marginal contributions per feature with direction and magnitude.",
+    "ideal_answer": "MDI (tree impurity reduction) is biased toward high-cardinality features. Permutation Importance measures score drop when a feature column is randomly shuffled (model-agnostic). SHAP values calculate game-theoretic marginal contributions per feature with direction and magnitude.",
+    "expected_concepts": [
+      "feature importance",
+      "SHAP",
+      "permutation importance",
+      "MDI"
+    ],
+    "explanation": "Evaluates Data Science Model Interpretability and Feature Importance vs Permutation vs SHAP comprehension."
+  },
+  {
+    "id": "ds_sci_006",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you handle Multicollinearity in regression models: Variance Inflation Factor (VIF), Correlation Matrix, and PCA?",
+    "difficulty": "medium",
+    "topic": "Regression Diagnostics",
+    "concept": "Multicollinearity & VIF",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "multicollinearity",
+      "VIF",
+      "Variance Inflation Factor",
+      "correlation",
+      "unstable coefficients"
+    ],
+    "idealAnswer": "Multicollinearity occurs when independent features are highly correlated, inflating standard errors and making regression coefficients unstable. Detected using Variance Inflation Factor: VIF > 5-10 indicates severe multicollinearity; resolved by dropping redundant features or applying PCA/Ridge regression.",
+    "ideal_answer": "Multicollinearity occurs when independent features are highly correlated, inflating standard errors and making regression coefficients unstable. Detected using Variance Inflation Factor: VIF > 5-10 indicates severe multicollinearity; resolved by dropping redundant features or applying PCA/Ridge regression.",
+    "expected_concepts": [
+      "multicollinearity",
+      "VIF",
+      "Variance Inflation Factor",
+      "correlation"
+    ],
+    "explanation": "Evaluates Data Science Regression Diagnostics and Multicollinearity & VIF comprehension."
+  },
+  {
+    "id": "ds_sci_007",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Survival Analysis: Kaplan-Meier Estimator, Censored Data (Right Censoring), and Cox Proportional Hazards Model.",
+    "difficulty": "hard",
+    "topic": "Survival Analysis",
+    "concept": "Survival Analysis & Cox Proportional Hazards",
+    "questionFamily": "architecture",
+    "tags": [
+      "survival analysis",
+      "Kaplan-Meier",
+      "censoring",
+      "hazard ratio",
+      "Cox model",
+      "time-to-event"
+    ],
+    "idealAnswer": "Survival analysis models time until an event occurs (churn, equipment failure). It handles Censored Data (when the event is unobserved during study duration). Kaplan-Meier estimates survival curves over time. Cox Proportional Hazards evaluates how covariates influence hazard rates.",
+    "ideal_answer": "Survival analysis models time until an event occurs (churn, equipment failure). It handles Censored Data (when the event is unobserved during study duration). Kaplan-Meier estimates survival curves over time. Cox Proportional Hazards evaluates how covariates influence hazard rates.",
+    "expected_concepts": [
+      "survival analysis",
+      "Kaplan-Meier",
+      "censoring",
+      "hazard ratio"
+    ],
+    "explanation": "Evaluates Data Science Survival Analysis and Survival Analysis & Cox Proportional Hazards comprehension."
+  },
+  {
+    "id": "ds_sci_008",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Causal Inference: Confounders, Propensity Score Matching (PSM), Difference-in-Differences (DiD), and Instrumental Variables?",
+    "difficulty": "hard",
+    "topic": "Causal Inference",
+    "concept": "Causal Inference & Propensity Score Matching",
+    "questionFamily": "architecture",
+    "tags": [
+      "causal inference",
+      "confounders",
+      "Propensity Score Matching",
+      "Difference-in-Differences",
+      "observational data"
+    ],
+    "idealAnswer": "Correlation does not imply causation. Causal inference estimates true treatment effects from observational data: Propensity Score Matching (PSM) balances treated and control groups on confounding covariates. Difference-in-Differences (DiD) compares pre/post changes between groups.",
+    "ideal_answer": "Correlation does not imply causation. Causal inference estimates true treatment effects from observational data: Propensity Score Matching (PSM) balances treated and control groups on confounding covariates. Difference-in-Differences (DiD) compares pre/post changes between groups.",
+    "expected_concepts": [
+      "causal inference",
+      "confounders",
+      "Propensity Score Matching",
+      "Difference-in-Differences"
+    ],
+    "explanation": "Evaluates Data Science Causal Inference and Causal Inference & Propensity Score Matching comprehension."
+  },
+  {
+    "id": "ds_sci_009",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Time Series Forecasting models: ARIMA (Autoregressive Integrated Moving Average), SARIMA (Seasonal), and Prophet.",
+    "difficulty": "medium",
+    "topic": "Time Series Forecasting",
+    "concept": "ARIMA, SARIMA, & Facebook Prophet",
+    "questionFamily": "implementation",
+    "tags": [
+      "ARIMA",
+      "SARIMA",
+      "stationarity",
+      "differencing",
+      "Prophet",
+      "autocorrelation"
+    ],
+    "idealAnswer": "ARIMA models non-seasonal stationary time series with (p, d, q) parameters: Autoregression (p), Differencing (d) for stationarity, and Moving Average (q). SARIMA adds seasonal parameters (P, D, Q, s). Prophet handles non-linear trends, multiple seasonalities, and holiday effects using decomposable additive curves.",
+    "ideal_answer": "ARIMA models non-seasonal stationary time series with (p, d, q) parameters: Autoregression (p), Differencing (d) for stationarity, and Moving Average (q). SARIMA adds seasonal parameters (P, D, Q, s). Prophet handles non-linear trends, multiple seasonalities, and holiday effects using decomposable additive curves.",
+    "expected_concepts": [
+      "ARIMA",
+      "SARIMA",
+      "stationarity",
+      "differencing"
+    ],
+    "explanation": "Evaluates Data Science Time Series Forecasting and ARIMA, SARIMA, & Facebook Prophet comprehension."
+  },
+  {
+    "id": "ds_sci_010",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you test for Stationarity in Time Series data: Augmented Dickey-Fuller (ADF) Test, KPSS Test, and Differencing?",
+    "difficulty": "medium",
+    "topic": "Time Series Diagnostics",
+    "concept": "Stationarity Testing (ADF & KPSS)",
+    "questionFamily": "implementation",
+    "tags": [
+      "stationarity",
+      "ADF test",
+      "KPSS test",
+      "differencing",
+      "unit root"
+    ],
+    "idealAnswer": "Stationary series have constant mean and variance over time. Augmented Dickey-Fuller (ADF) tests for a unit root (p-value < 0.05 rejects null hypothesis, confirming stationarity). KPSS tests the null hypothesis of stationarity. Non-stationary data is made stationary via log transforms and differencing.",
+    "ideal_answer": "Stationary series have constant mean and variance over time. Augmented Dickey-Fuller (ADF) tests for a unit root (p-value < 0.05 rejects null hypothesis, confirming stationarity). KPSS tests the null hypothesis of stationarity. Non-stationary data is made stationary via log transforms and differencing.",
+    "expected_concepts": [
+      "stationarity",
+      "ADF test",
+      "KPSS test",
+      "differencing"
+    ],
+    "explanation": "Evaluates Data Science Time Series Diagnostics and Stationarity Testing (ADF & KPSS) comprehension."
+  },
+  {
+    "id": "ds_sci_011",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Recommendation Systems: Collaborative Filtering (User-User, Item-Item), Matrix Factorization (SVD / ALS), and Content-Based Filtering.",
+    "difficulty": "medium",
+    "topic": "Recommendation Systems",
+    "concept": "Collaborative Filtering & Matrix Factorization",
+    "questionFamily": "comparison",
+    "tags": [
+      "recommender systems",
+      "collaborative filtering",
+      "matrix factorization",
+      "SVD",
+      "ALS",
+      "cold start"
+    ],
+    "idealAnswer": "Content-based filtering recommends items similar to previously liked items. Collaborative filtering recommends items based on user similarity matrices. Matrix Factorization (SVD/ALS) decomposes user-item interaction matrices into low-rank latent user and item factor vectors.",
+    "ideal_answer": "Content-based filtering recommends items similar to previously liked items. Collaborative filtering recommends items based on user similarity matrices. Matrix Factorization (SVD/ALS) decomposes user-item interaction matrices into low-rank latent user and item factor vectors.",
+    "expected_concepts": [
+      "recommender systems",
+      "collaborative filtering",
+      "matrix factorization",
+      "SVD"
+    ],
+    "explanation": "Evaluates Data Science Recommendation Systems and Collaborative Filtering & Matrix Factorization comprehension."
+  },
+  {
+    "id": "ds_sci_012",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Cold-Start Problem in Recommendation Systems, and how do hybrid recommender models solve it for new users/items?",
+    "difficulty": "easy",
+    "topic": "Recommendation Systems",
+    "concept": "Cold-Start Problem & Hybrid Solutions",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "cold-start problem",
+      "hybrid recommender",
+      "demographic filtering",
+      "popularity fallback",
+      "content features"
+    ],
+    "idealAnswer": "The cold-start problem occurs when new users or items have zero historical interaction data, breaking collaborative filtering. Solved by falling back to content-based metadata features, popularity-ranked items, demographic profiling, or active onboarding preference questionnaires.",
+    "ideal_answer": "The cold-start problem occurs when new users or items have zero historical interaction data, breaking collaborative filtering. Solved by falling back to content-based metadata features, popularity-ranked items, demographic profiling, or active onboarding preference questionnaires.",
+    "expected_concepts": [
+      "cold-start problem",
+      "hybrid recommender",
+      "demographic filtering",
+      "popularity fallback"
+    ],
+    "explanation": "Evaluates Data Science Recommendation Systems and Cold-Start Problem & Hybrid Solutions comprehension."
+  },
+  {
+    "id": "ds_sci_013",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Anomaly Detection techniques: Isolation Forest, One-Class SVM, Local Outlier Factor (LOF), and Autoencoders.",
+    "difficulty": "medium",
+    "topic": "Anomaly Detection",
+    "concept": "Anomaly Detection Algorithms (Isolation Forest & LOF)",
+    "questionFamily": "comparison",
+    "tags": [
+      "anomaly detection",
+      "Isolation Forest",
+      "One-Class SVM",
+      "Local Outlier Factor",
+      "Autoencoders",
+      "fraud detection"
+    ],
+    "idealAnswer": "Isolation Forest isolates anomalies in decision trees with few random feature splits (anomalies have short path lengths). One-Class SVM learns a hypersphere boundary enclosing normal data. Autoencoders flag anomalies with high reconstruction error.",
+    "ideal_answer": "Isolation Forest isolates anomalies in decision trees with few random feature splits (anomalies have short path lengths). One-Class SVM learns a hypersphere boundary enclosing normal data. Autoencoders flag anomalies with high reconstruction error.",
+    "expected_concepts": [
+      "anomaly detection",
+      "Isolation Forest",
+      "One-Class SVM",
+      "Local Outlier Factor"
+    ],
+    "explanation": "Evaluates Data Science Anomaly Detection and Anomaly Detection Algorithms (Isolation Forest & LOF) comprehension."
+  },
+  {
+    "id": "ds_sci_014",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Resampling and Bootstrap: Monte Carlo Simulations, Bootstrapping Confidence Intervals, and Permutation Tests.",
+    "difficulty": "medium",
+    "topic": "Statistical Computation",
+    "concept": "Bootstrap Sampling & Monte Carlo Simulation",
+    "questionFamily": "algorithm",
+    "tags": [
+      "bootstrapping",
+      "Monte Carlo",
+      "permutation test",
+      "resampling with replacement",
+      "confidence intervals"
+    ],
+    "idealAnswer": "Bootstrapping samples data with replacement to generate empirical sampling distributions and calculate robust non-parametric confidence intervals without distribution assumptions. Monte Carlo simulations model stochastic uncertainty across thousands of simulated runs.",
+    "ideal_answer": "Bootstrapping samples data with replacement to generate empirical sampling distributions and calculate robust non-parametric confidence intervals without distribution assumptions. Monte Carlo simulations model stochastic uncertainty across thousands of simulated runs.",
+    "expected_concepts": [
+      "bootstrapping",
+      "Monte Carlo",
+      "permutation test",
+      "resampling with replacement"
+    ],
+    "explanation": "Evaluates Data Science Statistical Computation and Bootstrap Sampling & Monte Carlo Simulation comprehension."
+  },
+  {
+    "id": "ds_sci_015",
+    "skill": "Data Science",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is MLOps and Experiment Tracking (MLflow, Weights & Biases) for model versioning, artifacts, and reproducible experiments?",
+    "difficulty": "easy",
+    "topic": "MLOps",
+    "concept": "MLflow Experiment Tracking & Model Registry",
+    "questionFamily": "best_practice",
+    "tags": [
+      "MLflow",
+      "Weights & Biases",
+      "experiment tracking",
+      "model registry",
+      "reproducibility",
+      "artifacts"
+    ],
+    "idealAnswer": "MLflow tracks hyperparameters, code Git commits, evaluation metrics, and model artifacts across training runs. The MLflow Model Registry provides a centralized hub managing model stages (Staging, Production, Archived) for automated CI/CD deployment.",
+    "ideal_answer": "MLflow tracks hyperparameters, code Git commits, evaluation metrics, and model artifacts across training runs. The MLflow Model Registry provides a centralized hub managing model stages (Staging, Production, Archived) for automated CI/CD deployment.",
+    "expected_concepts": [
+      "MLflow",
+      "Weights & Biases",
+      "experiment tracking",
+      "model registry"
+    ],
+    "explanation": "Evaluates Data Science MLOps and MLflow Experiment Tracking & Model Registry comprehension."
+  }
+]

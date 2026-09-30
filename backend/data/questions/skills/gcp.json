@@ -1,44 +1,418 @@
 [
   {
-    "id": "GCP_001",
+    "id": "gcp_001",
     "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Google Cloud Resource Hierarchy: Organizations, Folders, Projects, and Resources, and IAM policy inheritance.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of GCP in modern software engineering?",
-    "expected_concepts": [
-      "GCP fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Core Architecture",
+    "concept": "GCP Resource Hierarchy & IAM",
+    "questionFamily": "architecture",
+    "tags": [
+      "GCP",
+      "Organization",
+      "Folders",
+      "Projects",
+      "IAM inheritance",
+      "Cloud Identity"
     ],
-    "ideal_answer": "GCP is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of GCP."
+    "idealAnswer": "GCP structures resources: Organization node at root -> Folders for department structuring -> Projects (the fundamental billing and API enablement boundary) -> Resources (GCE, GCS, GKE). IAM roles granted at higher levels inherit down to child resources.",
+    "ideal_answer": "GCP structures resources: Organization node at root -> Folders for department structuring -> Projects (the fundamental billing and API enablement boundary) -> Resources (GCE, GCS, GKE). IAM roles granted at higher levels inherit down to child resources.",
+    "expected_concepts": [
+      "GCP",
+      "Organization",
+      "Folders",
+      "Projects"
+    ],
+    "explanation": "Evaluates GCP Core Architecture and GCP Resource Hierarchy & IAM comprehension."
   },
   {
-    "id": "GCP_002",
+    "id": "gcp_002",
     "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Google Cloud IAM: Primitive Roles, Predefined Roles, Custom Roles, Service Accounts, and Workload Identity.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using GCP in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "IAM & Security",
+    "concept": "GCP IAM & Workload Identity",
+    "questionFamily": "security",
+    "tags": [
+      "IAM",
+      "Service Accounts",
+      "Workload Identity",
+      "least privilege",
+      "Predefined Roles"
     ],
-    "ideal_answer": "Common challenges with GCP include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of GCP."
+    "idealAnswer": "Primitive roles (Owner, Editor, Viewer) are coarse-grained. Predefined roles grant granular permissions for specific services. Service Accounts represent non-human identities. Workload Identity links Kubernetes service accounts directly to GCP IAM service accounts securely.",
+    "ideal_answer": "Primitive roles (Owner, Editor, Viewer) are coarse-grained. Predefined roles grant granular permissions for specific services. Service Accounts represent non-human identities. Workload Identity links Kubernetes service accounts directly to GCP IAM service accounts securely.",
+    "expected_concepts": [
+      "IAM",
+      "Service Accounts",
+      "Workload Identity",
+      "least privilege"
+    ],
+    "explanation": "Evaluates GCP IAM & Security and GCP IAM & Workload Identity comprehension."
   },
   {
-    "id": "GCP_003",
+    "id": "gcp_003",
     "skill": "GCP",
-    "difficulty": "hard",
-    "question": "How does GCP handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Google Cloud VPC: Global VPC Network, Subnets (Regional), Shared VPC, and VPC Network Peering.",
+    "difficulty": "medium",
+    "topic": "Networking",
+    "concept": "GCP Global VPC Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "VPC",
+      "Global VPC",
+      "Regional Subnets",
+      "Shared VPC",
+      "VPC Peering",
+      "Andromeda"
     ],
-    "ideal_answer": "GCP handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of GCP."
+    "idealAnswer": "Unlike AWS/Azure where VPCs are regional, GCP VPCs are Global networks spanning all global regions. Subnets are Regional. Shared VPC allows centralized network administration where multiple service projects share subnets. VPC Peering connects separate VPCs.",
+    "ideal_answer": "Unlike AWS/Azure where VPCs are regional, GCP VPCs are Global networks spanning all global regions. Subnets are Regional. Shared VPC allows centralized network administration where multiple service projects share subnets. VPC Peering connects separate VPCs.",
+    "expected_concepts": [
+      "VPC",
+      "Global VPC",
+      "Regional Subnets",
+      "Shared VPC"
+    ],
+    "explanation": "Evaluates GCP Networking and GCP Global VPC Architecture comprehension."
+  },
+  {
+    "id": "gcp_004",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Google Compute Engine (GCE), and what are Preemptible VMs vs Spot VMs (cost savings and termination behavior)?",
+    "difficulty": "easy",
+    "topic": "Compute & GCE",
+    "concept": "Compute Engine & Spot VMs",
+    "questionFamily": "comparison",
+    "tags": [
+      "Compute Engine",
+      "GCE",
+      "Spot VMs",
+      "Preemptible VMs",
+      "live migration",
+      "cost optimization"
+    ],
+    "idealAnswer": "Compute Engine delivers scalable Linux and Windows VMs with automatic Live Migration during host maintenance. Spot VMs offer up to 91% discount on spare capacity, subject to preemption with a 30-second warning signal.",
+    "ideal_answer": "Compute Engine delivers scalable Linux and Windows VMs with automatic Live Migration during host maintenance. Spot VMs offer up to 91% discount on spare capacity, subject to preemption with a 30-second warning signal.",
+    "expected_concepts": [
+      "Compute Engine",
+      "GCE",
+      "Spot VMs",
+      "Preemptible VMs"
+    ],
+    "explanation": "Evaluates GCP Compute & GCE and Compute Engine & Spot VMs comprehension."
+  },
+  {
+    "id": "gcp_005",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Google Kubernetes Engine (GKE): GKE Standard vs GKE Autopilot (fully managed nodes and pod-level billing).",
+    "difficulty": "medium",
+    "topic": "Containers & GKE",
+    "concept": "GKE Standard vs GKE Autopilot",
+    "questionFamily": "comparison",
+    "tags": [
+      "GKE",
+      "GKE Autopilot",
+      "Kubernetes",
+      "managed control plane",
+      "pod-level billing"
+    ],
+    "idealAnswer": "GKE is Google's managed Kubernetes service. GKE Standard provides full control over worker node configuration and node pools. GKE Autopilot completely provisions and manages underlying node infrastructure, hardening security and billing strictly per running pod resource usage.",
+    "ideal_answer": "GKE is Google's managed Kubernetes service. GKE Standard provides full control over worker node configuration and node pools. GKE Autopilot completely provisions and manages underlying node infrastructure, hardening security and billing strictly per running pod resource usage.",
+    "expected_concepts": [
+      "GKE",
+      "GKE Autopilot",
+      "Kubernetes",
+      "managed control plane"
+    ],
+    "explanation": "Evaluates GCP Containers & GKE and GKE Standard vs GKE Autopilot comprehension."
+  },
+  {
+    "id": "gcp_006",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Google Cloud Run, and how does it execute containerized workloads serverless with scale-to-zero and concurrency?",
+    "difficulty": "easy",
+    "topic": "Serverless Containers",
+    "concept": "Google Cloud Run Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Cloud Run",
+      "Serverless",
+      "Knative",
+      "scale-to-zero",
+      "concurrency",
+      "containers"
+    ],
+    "idealAnswer": "Cloud Run is a fully managed serverless platform built on Knative. It deploys any container responding to web requests, scales automatically from zero to thousands of instances based on traffic, and supports concurrent requests per container instance.",
+    "ideal_answer": "Cloud Run is a fully managed serverless platform built on Knative. It deploys any container responding to web requests, scales automatically from zero to thousands of instances based on traffic, and supports concurrent requests per container instance.",
+    "expected_concepts": [
+      "Cloud Run",
+      "Serverless",
+      "Knative",
+      "scale-to-zero"
+    ],
+    "explanation": "Evaluates GCP Serverless Containers and Google Cloud Run Architecture comprehension."
+  },
+  {
+    "id": "gcp_007",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Google Cloud Storage (GCS): Storage Classes (Standard, Nearline, Coldline, Archive), Dual-Regions, and Object Lifecycle Management.",
+    "difficulty": "easy",
+    "topic": "Storage",
+    "concept": "GCS Storage Classes & Dual-Regions",
+    "questionFamily": "optimization",
+    "tags": [
+      "Cloud Storage",
+      "GCS",
+      "Standard",
+      "Nearline",
+      "Coldline",
+      "Archive",
+      "Dual-Region"
+    ],
+    "idealAnswer": "GCS provides unified object storage: Standard (hot data), Nearline (30 days), Coldline (90 days), and Archive (365 days). Dual-Region and Multi-Region bucket configurations provide automated geo-redundancy and high availability across multiple regions.",
+    "ideal_answer": "GCS provides unified object storage: Standard (hot data), Nearline (30 days), Coldline (90 days), and Archive (365 days). Dual-Region and Multi-Region bucket configurations provide automated geo-redundancy and high availability across multiple regions.",
+    "expected_concepts": [
+      "Cloud Storage",
+      "GCS",
+      "Standard",
+      "Nearline"
+    ],
+    "explanation": "Evaluates GCP Storage and GCS Storage Classes & Dual-Regions comprehension."
+  },
+  {
+    "id": "gcp_008",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Google Cloud BigQuery, and how does its serverless Dremel execution engine and Capacitor columnar format run petabyte SQL analytics?",
+    "difficulty": "hard",
+    "topic": "Big Data & Analytics",
+    "concept": "BigQuery Architecture (Dremel & Capacitor)",
+    "questionFamily": "architecture",
+    "tags": [
+      "BigQuery",
+      "Dremel",
+      "Capacitor",
+      "columnar storage",
+      "petabyte analytics",
+      "slots"
+    ],
+    "idealAnswer": "BigQuery is a serverless, highly scalable enterprise data warehouse. It separates compute (Dremel execution engine allocating dynamic slots) from storage (Capacitor columnar format on Colossus file system), executing ANSI SQL queries across petabytes in seconds.",
+    "ideal_answer": "BigQuery is a serverless, highly scalable enterprise data warehouse. It separates compute (Dremel execution engine allocating dynamic slots) from storage (Capacitor columnar format on Colossus file system), executing ANSI SQL queries across petabytes in seconds.",
+    "expected_concepts": [
+      "BigQuery",
+      "Dremel",
+      "Capacitor",
+      "columnar storage"
+    ],
+    "explanation": "Evaluates GCP Big Data & Analytics and BigQuery Architecture (Dremel & Capacitor) comprehension."
+  },
+  {
+    "id": "gcp_009",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain BigQuery Partitioning (by Ingestion Time or Date/Integer column) and Clustering to reduce query costs and data scanned.",
+    "difficulty": "medium",
+    "topic": "Big Data Optimization",
+    "concept": "BigQuery Partitioning and Clustering",
+    "questionFamily": "optimization",
+    "tags": [
+      "BigQuery",
+      "partitioning",
+      "clustering",
+      "query cost",
+      "bytes scanned",
+      "pruning"
+    ],
+    "idealAnswer": "BigQuery bills based on bytes scanned. Partitioning divides tables by date or integer ranges (enabling partition pruning). Clustering sorts data inside partitions based on frequently filtered columns, allowing queries to skip irrelevant blocks and drastically reducing cost.",
+    "ideal_answer": "BigQuery bills based on bytes scanned. Partitioning divides tables by date or integer ranges (enabling partition pruning). Clustering sorts data inside partitions based on frequently filtered columns, allowing queries to skip irrelevant blocks and drastically reducing cost.",
+    "expected_concepts": [
+      "BigQuery",
+      "partitioning",
+      "clustering",
+      "query cost"
+    ],
+    "explanation": "Evaluates GCP Big Data Optimization and BigQuery Partitioning and Clustering comprehension."
+  },
+  {
+    "id": "gcp_010",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Google Cloud Pub/Sub, and how does its global distributed message bus handle publish/subscribe with Pull vs Push subscriptions?",
+    "difficulty": "medium",
+    "topic": "Messaging",
+    "concept": "Cloud Pub/Sub Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Pub/Sub",
+      "Topics",
+      "Subscriptions",
+      "Pull subscription",
+      "Push subscription",
+      "at-least-once"
+    ],
+    "idealAnswer": "Cloud Pub/Sub is a globally available asynchronous messaging service. Topics receive messages and broadcast to multiple Subscriptions. Pull subscriptions allow workers to fetch batches; Push subscriptions deliver messages directly to HTTPS webhook endpoints.",
+    "ideal_answer": "Cloud Pub/Sub is a globally available asynchronous messaging service. Topics receive messages and broadcast to multiple Subscriptions. Pull subscriptions allow workers to fetch batches; Push subscriptions deliver messages directly to HTTPS webhook endpoints.",
+    "expected_concepts": [
+      "Pub/Sub",
+      "Topics",
+      "Subscriptions",
+      "Pull subscription"
+    ],
+    "explanation": "Evaluates GCP Messaging and Cloud Pub/Sub Architecture comprehension."
+  },
+  {
+    "id": "gcp_011",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Google Cloud Spanner: Globally Distributed Relational Database, TrueTime API, and External Consistency (Serializability).",
+    "difficulty": "hard",
+    "topic": "Database Architecture",
+    "concept": "Cloud Spanner & TrueTime API",
+    "questionFamily": "architecture",
+    "tags": [
+      "Cloud Spanner",
+      "TrueTime API",
+      "atomic clocks",
+      "external consistency",
+      "global ACID",
+      "synchronous"
+    ],
+    "idealAnswer": "Cloud Spanner is a globally distributed, synchronously replicated SQL database that provides external consistency and full ACID transactions. It utilizes Google's TrueTime API (GPS and atomic clocks in data centers) to establish deterministic ordering of global transactions.",
+    "ideal_answer": "Cloud Spanner is a globally distributed, synchronously replicated SQL database that provides external consistency and full ACID transactions. It utilizes Google's TrueTime API (GPS and atomic clocks in data centers) to establish deterministic ordering of global transactions.",
+    "expected_concepts": [
+      "Cloud Spanner",
+      "TrueTime API",
+      "atomic clocks",
+      "external consistency"
+    ],
+    "explanation": "Evaluates GCP Database Architecture and Cloud Spanner & TrueTime API comprehension."
+  },
+  {
+    "id": "gcp_012",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Google Cloud Dataflow, and how does it execute unified batch and streaming data processing pipelines using Apache Beam?",
+    "difficulty": "hard",
+    "topic": "Data Processing",
+    "concept": "Cloud Dataflow & Apache Beam",
+    "questionFamily": "architecture",
+    "tags": [
+      "Dataflow",
+      "Apache Beam",
+      "streaming",
+      "batch",
+      "windowing",
+      "watermarks"
+    ],
+    "idealAnswer": "Cloud Dataflow is a fully managed service executing pipelines authored with the Apache Beam SDK. It unifies batch and real-time streaming data processing, managing dynamic auto-scaling, windowing, and watermarks for out-of-order data.",
+    "ideal_answer": "Cloud Dataflow is a fully managed service executing pipelines authored with the Apache Beam SDK. It unifies batch and real-time streaming data processing, managing dynamic auto-scaling, windowing, and watermarks for out-of-order data.",
+    "expected_concepts": [
+      "Dataflow",
+      "Apache Beam",
+      "streaming",
+      "batch"
+    ],
+    "explanation": "Evaluates GCP Data Processing and Cloud Dataflow & Apache Beam comprehension."
+  },
+  {
+    "id": "gcp_013",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Google Cloud Load Balancing: Global External Application Load Balancer (Anycast IP, SSL Offload, Cloud Armor WAF).",
+    "difficulty": "medium",
+    "topic": "Load Balancing",
+    "concept": "GCP Global Anycast Load Balancer",
+    "questionFamily": "architecture",
+    "tags": [
+      "Global Load Balancer",
+      "Anycast IP",
+      "Cloud Armor",
+      "WAF",
+      "Maglev"
+    ],
+    "idealAnswer": "GCP Global External Load Balancer uses a single global Anycast IP: traffic enters Google's high-speed private fiber network at the closest global Point of Presence (PoP). It terminates SSL at the edge, routes to closest healthy backends, and integrates with Cloud Armor WAF.",
+    "ideal_answer": "GCP Global External Load Balancer uses a single global Anycast IP: traffic enters Google's high-speed private fiber network at the closest global Point of Presence (PoP). It terminates SSL at the edge, routes to closest healthy backends, and integrates with Cloud Armor WAF.",
+    "expected_concepts": [
+      "Global Load Balancer",
+      "Anycast IP",
+      "Cloud Armor",
+      "WAF"
+    ],
+    "explanation": "Evaluates GCP Load Balancing and GCP Global Anycast Load Balancer comprehension."
+  },
+  {
+    "id": "gcp_014",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Google Cloud Armor, and how does it provide DDoS defense and WAF rules (OWASP Top 10) for Cloud Load Balancers?",
+    "difficulty": "easy",
+    "topic": "Security",
+    "concept": "Cloud Armor WAF & DDoS Defense",
+    "questionFamily": "security",
+    "tags": [
+      "Cloud Armor",
+      "WAF",
+      "DDoS mitigation",
+      "OWASP Top 10",
+      "IP rate limiting"
+    ],
+    "idealAnswer": "Cloud Armor works with Global Load Balancers to defend applications against DDoS attacks and web application vulnerabilities, providing preconfigured WAF rules against SQL injection, XSS, and IP rate limiting.",
+    "ideal_answer": "Cloud Armor works with Global Load Balancers to defend applications against DDoS attacks and web application vulnerabilities, providing preconfigured WAF rules against SQL injection, XSS, and IP rate limiting.",
+    "expected_concepts": [
+      "Cloud Armor",
+      "WAF",
+      "DDoS mitigation",
+      "OWASP Top 10"
+    ],
+    "explanation": "Evaluates GCP Security and Cloud Armor WAF & DDoS Defense comprehension."
+  },
+  {
+    "id": "gcp_015",
+    "skill": "GCP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Google Cloud Operations Suite (formerly Stackdriver): Cloud Logging, Cloud Monitoring, Cloud Trace, and Error Reporting.",
+    "difficulty": "easy",
+    "topic": "Observability",
+    "concept": "Cloud Operations Suite",
+    "questionFamily": "implementation",
+    "tags": [
+      "Cloud Logging",
+      "Cloud Monitoring",
+      "Cloud Trace",
+      "Error Reporting",
+      "log router"
+    ],
+    "idealAnswer": "Cloud Operations Suite provides full-stack observability: Cloud Logging aggregates structured logs; Log Router exports logs to BigQuery/Pub/Sub; Cloud Monitoring tracks metrics and SLI/SLO dashboards; Cloud Trace visualizes distributed latency spans.",
+    "ideal_answer": "Cloud Operations Suite provides full-stack observability: Cloud Logging aggregates structured logs; Log Router exports logs to BigQuery/Pub/Sub; Cloud Monitoring tracks metrics and SLI/SLO dashboards; Cloud Trace visualizes distributed latency spans.",
+    "expected_concepts": [
+      "Cloud Logging",
+      "Cloud Monitoring",
+      "Cloud Trace",
+      "Error Reporting"
+    ],
+    "explanation": "Evaluates GCP Observability and Cloud Operations Suite comprehension."
   }
 ]

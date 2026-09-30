@@ -3,6 +3,8 @@ from typing import List, Dict, Any, Optional
 from app.db.models import QuestionModel, CandidateAnswerModel, ScoreBreakdown, QuestionType
 from app.utils.logger import logger
 
+from app.services.sql_service import SqlService
+
 class ScoringService:
     @classmethod
     def evaluate_single_answer(
@@ -31,32 +33,75 @@ class ScoringService:
         clean_text = (transcript or "").strip()
         has_spoken = len(clean_text) >= 5 and clean_text.lower() != "candidate answered."
 
-        # 1. Evaluate Pseudocode questions directly
-        if question.type == QuestionType.PSEUDOCODE:
-            if not selected_option and not has_spoken:
+        # 1. Evaluate SQL questions directly
+        if question.type == QuestionType.SQL:
+            candidate_query = (metrics.get("candidate_query") or clean_text or "").strip()
+            is_correct = metrics.get("is_correct")
+
+            if is_correct is None and candidate_query and question.tables and question.expected_query:
+                eval_res = SqlService.evaluate_sql_answer(
+                    question.tables,
+                    candidate_query,
+                    question.expected_query
+                )
+                is_correct = eval_res.get("is_correct", False)
+
+            if is_correct:
+                return {
+                    "technical_score": 100.0,
+                    "quality_score": 100.0,
+                    "communication_score": 100.0
+                }
+            elif candidate_query and len(candidate_query) >= 5:
+                # Query was attempted
+                return {
+                    "technical_score": 40.0,
+                    "quality_score": 40.0,
+                    "communication_score": 50.0
+                }
+            else:
                 return {
                     "technical_score": 0.0,
                     "quality_score": 0.0,
                     "communication_score": 0.0
                 }
 
-            is_correct = False
-            if selected_option and question.correct_answer:
-                is_correct = (selected_option.strip().lower() == question.correct_answer.strip().lower())
-            elif question.correct_answer and question.correct_answer.lower() in clean_text.lower():
-                is_correct = True
+        # 2. Evaluate Pseudocode MCQ questions (Objective option selection)
+        if question.type in [QuestionType.PSEUDOCODE, QuestionType.PSEUDOCODE_MCQ]:
+            selected = selected_option or metrics.get("selected_option_id") or metrics.get("selected_option")
+            correct_opt = question.correctOptionId or question.correct_option_id or question.correct_answer
 
-            tech_score = 100.0 if is_correct else (30.0 if selected_option else 0.0)
-            quality_score = 100.0 if is_correct else (30.0 if selected_option else 0.0)
-            comm_score = 80.0 if (has_spoken or selected_option) else 0.0
+            if selected:
+                selected_clean = str(selected).strip().lower()
+                correct_clean = str(correct_opt).strip().lower() if correct_opt else ""
+                is_correct = (selected_clean == correct_clean)
+                
+                # Also check matching against option texts if option object was sent
+                if not is_correct and question.options:
+                    for opt in question.options:
+                        if isinstance(opt, dict):
+                            if str(opt.get("id", "")).strip().lower() == selected_clean and str(opt.get("id", "")).strip().lower() == correct_clean:
+                                is_correct = True
+                            elif str(opt.get("text", "")).strip().lower() == selected_clean:
+                                if str(opt.get("id", "")).strip().lower() == correct_clean or str(opt.get("text", "")).strip().lower() == correct_clean:
+                                    is_correct = True
+                
+                tech_score = 100.0 if is_correct else 0.0
+                return {
+                    "technical_score": tech_score,
+                    "quality_score": tech_score,
+                    "communication_score": tech_score,
+                    "is_correct": is_correct
+                }
+            else:
+                return {
+                    "technical_score": 0.0,
+                    "quality_score": 0.0,
+                    "communication_score": 0.0,
+                    "is_correct": False
+                }
 
-            return {
-                "technical_score": tech_score,
-                "quality_score": quality_score,
-                "communication_score": comm_score
-            }
-
-        # 2. Evaluate Technical & Project questions via Concept Matching
+        # 3. Evaluate Introduction, Technical & Project questions via Concept Matching
         if not has_spoken:
             return {
                 "technical_score": 0.0,
@@ -134,6 +179,8 @@ class ScoringService:
         comm_scores = []
         project_scores = []
         pseudo_scores = []
+        sql_correct_count = 0
+        sql_total_count = 0
 
         total_eye_contact = 0.0
         total_wpm = 0.0
@@ -141,26 +188,42 @@ class ScoringService:
         answered_count = 0
 
         for i, q in enumerate(questions):
-            ans = answers[i] if i < len(answers) else None
+            ans = next((a for a in answers if a.question_id == q.id or a.question_index == i), None)
+            if not ans and i < len(answers):
+                ans = answers[i]
+
             if not ans:
                 continue
 
-            clean_text = (ans.transcript or "").strip()
-            is_valid_ans = (len(clean_text) >= 5 and clean_text.lower() != "candidate answered.") or (ans.selected_option is not None)
+            if q.type == QuestionType.SQL:
+                clean_text = (ans.candidate_query or (ans.transcript if ans.transcript != 'SQL Query Submitted' else '') or "").strip()
+                is_valid_ans = len(clean_text) >= 3 or ans.is_correct is True or ans.technical_score > 0
+            elif q.type in [QuestionType.PSEUDOCODE, QuestionType.PSEUDOCODE_MCQ]:
+                is_valid_ans = (ans.selected_option is not None and str(ans.selected_option).strip() != "") or ans.technical_score > 0
+            else:
+                clean_text = (ans.transcript or "").strip()
+                if clean_text.startswith("-- Write your MySQL query"):
+                    clean_text = ""
+                is_valid_ans = (len(clean_text) >= 3 and clean_text.lower() != "candidate answered.") or ans.technical_score > 0 or ans.communication_score > 0
 
             if is_valid_ans:
                 answered_count += 1
 
-            tech_scores.append(ans.technical_score)
-            quality_scores.append(ans.quality_score)
-            comm_scores.append(ans.communication_score)
+            tech_scores.append(ans.technical_score or 0.0)
+            quality_scores.append(ans.quality_score or 0.0)
+            comm_scores.append(ans.communication_score or 0.0)
 
             if q.type == QuestionType.PROJECT:
-                project_scores.append(ans.technical_score)
-            elif q.type == QuestionType.PSEUDOCODE:
-                pseudo_scores.append(ans.technical_score)
+                project_scores.append(ans.technical_score or 0.0)
+            elif q.type in [QuestionType.PSEUDOCODE, QuestionType.PSEUDOCODE_MCQ]:
+                pseudo_scores.append(ans.technical_score or 0.0)
+            elif q.type == QuestionType.SQL:
+                sql_total_count += 1
+                if ans.is_correct:
+                    sql_correct_count += 1
 
-            total_eye_contact += ans.eye_contact_pct
+            if ans.eye_contact_pct > 0:
+                total_eye_contact += ans.eye_contact_pct
             total_wpm += ans.wpm
             total_fillers += ans.filler_count
 
@@ -172,11 +235,15 @@ class ScoringService:
         avg_project = round(sum(project_scores) / max(len(project_scores), 1), 1) if project_scores else 0.0
         avg_pseudo = round(sum(pseudo_scores) / max(len(pseudo_scores), 1), 1) if pseudo_scores else 0.0
 
-        avg_eye_contact = round(total_eye_contact / max(len(answers), 1), 1) if answers else 0.0
+        # Exact formula: (Correct SQL Answers / 2) * 100
+        sql_score = round((sql_correct_count / max(sql_total_count, 2.0)) * 100.0, 1)
+
+        valid_eye_count = sum(1 for a in answers if a.eye_contact_pct > 0)
+        avg_eye_contact = round(total_eye_contact / max(valid_eye_count, 1), 1) if valid_eye_count > 0 else 85.0
         avg_wpm = round(total_wpm / max(len(answers), 1), 1) if answers else 0.0
 
         # If candidate answered nothing across all questions, overall score is strictly 0.0
-        if answered_count == 0 or (avg_tech == 0.0 and avg_comm == 0.0):
+        if answered_count == 0 and avg_tech == 0.0 and avg_comm == 0.0 and sql_score == 0.0:
             return ScoreBreakdown(
                 technical_knowledge=0.0,
                 answer_quality=0.0,
@@ -186,6 +253,7 @@ class ScoringService:
                 eye_contact=avg_eye_contact,
                 speech_fluency=0.0,
                 pseudocode_score=0.0,
+                sql_score=sql_score,
                 overall_score=0.0
             )
 
@@ -193,13 +261,14 @@ class ScoringService:
         filler_penalty_total = min(40.0, total_fillers * 3.0)
         speech_fluency = round(max(0.0, 100.0 - filler_penalty_total), 1)
 
-        # Weighted Overall Score
+        # Weighted Overall Score (Technical, Quality, Communication, Project, Presentation, SQL)
         overall = (
-            0.40 * avg_tech +
-            0.25 * avg_quality +
-            0.20 * avg_comm +
+            0.35 * avg_tech +
+            0.20 * avg_quality +
+            0.15 * avg_comm +
             0.10 * avg_project +
-            0.05 * presentation_score
+            0.05 * presentation_score +
+            0.15 * sql_score
         )
 
         return ScoreBreakdown(
@@ -211,6 +280,7 @@ class ScoringService:
             eye_contact=avg_eye_contact,
             speech_fluency=speech_fluency,
             pseudocode_score=avg_pseudo,
+            sql_score=sql_score,
             overall_score=round(overall, 1)
         )
 

@@ -1,44 +1,416 @@
 [
   {
-    "id": "COMPUTER_VISION_001",
+    "id": "cv_001",
     "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Image Representation in computers: Grayscale vs RGB vs HSV color spaces, channels, and pixel matrices.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Computer Vision in modern software engineering?",
-    "expected_concepts": [
-      "Computer Vision fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Fundamentals",
+    "concept": "Color Spaces & Image Representations",
+    "questionFamily": "definition",
+    "tags": [
+      "RGB",
+      "HSV",
+      "grayscale",
+      "color channels",
+      "pixel matrix",
+      "color segmentation"
     ],
-    "ideal_answer": "Computer Vision is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Computer Vision."
+    "idealAnswer": "Digital images are multidimensional arrays of pixel intensity values. RGB stores Red, Green, and Blue additive channels. HSV (Hue, Saturation, Value) separates color tone (Hue) from lighting intensity (Value), making it far more robust for color-based object segmentation under variable illumination.",
+    "ideal_answer": "Digital images are multidimensional arrays of pixel intensity values. RGB stores Red, Green, and Blue additive channels. HSV (Hue, Saturation, Value) separates color tone (Hue) from lighting intensity (Value), making it far more robust for color-based object segmentation under variable illumination.",
+    "expected_concepts": [
+      "RGB",
+      "HSV",
+      "grayscale",
+      "color channels"
+    ],
+    "explanation": "Evaluates Computer Vision Fundamentals and Color Spaces & Image Representations comprehension."
   },
   {
-    "id": "COMPUTER_VISION_002",
+    "id": "cv_002",
     "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Classical Image Processing Filters: Gaussian Blur (smoothing), Sobel Operator (edge detection), and Canny Edge Detector.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Computer Vision in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Classical CV",
+    "concept": "Image Filters & Canny Edge Detection",
+    "questionFamily": "implementation",
+    "tags": [
+      "Gaussian blur",
+      "Sobel operator",
+      "Canny edge detection",
+      "hysteresis thresholding",
+      "gradient magnitude"
     ],
-    "ideal_answer": "Common challenges with Computer Vision include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Computer Vision."
+    "idealAnswer": "Gaussian Blur convolves with a 2D Gaussian kernel to reduce high-frequency noise. Sobel computes horizontal and vertical image gradient derivatives. Canny edge detector combines Gaussian filtering, Sobel gradients, Non-Maximum Suppression (thinning edges), and Hysteresis Thresholding.",
+    "ideal_answer": "Gaussian Blur convolves with a 2D Gaussian kernel to reduce high-frequency noise. Sobel computes horizontal and vertical image gradient derivatives. Canny edge detector combines Gaussian filtering, Sobel gradients, Non-Maximum Suppression (thinning edges), and Hysteresis Thresholding.",
+    "expected_concepts": [
+      "Gaussian blur",
+      "Sobel operator",
+      "Canny edge detection",
+      "hysteresis thresholding"
+    ],
+    "explanation": "Evaluates Computer Vision Classical CV and Image Filters & Canny Edge Detection comprehension."
   },
   {
-    "id": "COMPUTER_VISION_003",
+    "id": "cv_003",
     "skill": "Computer Vision",
-    "difficulty": "hard",
-    "question": "How does Computer Vision handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Classical Feature Extractors: SIFT (Scale-Invariant Feature Transform), SURF, and ORB (Oriented FAST and Rotated BRIEF)?",
+    "difficulty": "medium",
+    "topic": "Feature Extraction",
+    "concept": "SIFT vs ORB Feature Matching",
+    "questionFamily": "comparison",
+    "tags": [
+      "SIFT",
+      "ORB",
+      "SURF",
+      "keypoint detection",
+      "scale invariance",
+      "rotation invariance"
     ],
-    "ideal_answer": "Computer Vision handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Computer Vision."
+    "idealAnswer": "SIFT detects scale-space extrema using Difference of Gaussians (DoG), providing robust scale- and rotation-invariant feature descriptors (patented/computationally heavy). ORB is a fast, open-source binary alternative combining FAST corner detection and BRIEF descriptors.",
+    "ideal_answer": "SIFT detects scale-space extrema using Difference of Gaussians (DoG), providing robust scale- and rotation-invariant feature descriptors (patented/computationally heavy). ORB is a fast, open-source binary alternative combining FAST corner detection and BRIEF descriptors.",
+    "expected_concepts": [
+      "SIFT",
+      "ORB",
+      "SURF",
+      "keypoint detection"
+    ],
+    "explanation": "Evaluates Computer Vision Feature Extraction and SIFT vs ORB Feature Matching comprehension."
+  },
+  {
+    "id": "cv_004",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Object Detection Paradigms: Two-Stage Detectors (R-CNN, Fast R-CNN, Faster R-CNN with RPN) vs One-Stage Detectors (YOLO, SSD).",
+    "difficulty": "hard",
+    "topic": "Object Detection",
+    "concept": "Two-Stage vs One-Stage Detectors",
+    "questionFamily": "comparison",
+    "tags": [
+      "Object Detection",
+      "Faster R-CNN",
+      "RPN",
+      "YOLO",
+      "SSD",
+      "real-time inference"
+    ],
+    "idealAnswer": "Two-Stage detectors (Faster R-CNN) first generate candidate region proposals via a Region Proposal Network (RPN) and then classify/refine bounding boxes in a second stage (high accuracy, slower). One-Stage detectors (YOLO, SSD) treat detection as a single regression problem, predicting bounding boxes and class probabilities in a single pass (real-time FPS).",
+    "ideal_answer": "Two-Stage detectors (Faster R-CNN) first generate candidate region proposals via a Region Proposal Network (RPN) and then classify/refine bounding boxes in a second stage (high accuracy, slower). One-Stage detectors (YOLO, SSD) treat detection as a single regression problem, predicting bounding boxes and class probabilities in a single pass (real-time FPS).",
+    "expected_concepts": [
+      "Object Detection",
+      "Faster R-CNN",
+      "RPN",
+      "YOLO"
+    ],
+    "explanation": "Evaluates Computer Vision Object Detection and Two-Stage vs One-Stage Detectors comprehension."
+  },
+  {
+    "id": "cv_005",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Intersection over Union (IoU), Non-Maximum Suppression (NMS), and Mean Average Precision (mAP@0.5, mAP@0.5:0.95) in Object Detection.",
+    "difficulty": "medium",
+    "topic": "Object Detection Metrics",
+    "concept": "IoU, NMS, and mAP Evaluation",
+    "questionFamily": "best_practice",
+    "tags": [
+      "IoU",
+      "NMS",
+      "Non-Maximum Suppression",
+      "mAP",
+      "Average Precision",
+      "bounding boxes"
+    ],
+    "idealAnswer": "IoU measures overlap: Area of Overlap / Area of Union between predicted and ground-truth boxes. Non-Maximum Suppression (NMS) removes redundant overlapping bounding boxes by iteratively discarding boxes with high IoU relative to the highest-confidence prediction. mAP calculates the mean area under the precision-recall curve across all classes.",
+    "ideal_answer": "IoU measures overlap: Area of Overlap / Area of Union between predicted and ground-truth boxes. Non-Maximum Suppression (NMS) removes redundant overlapping bounding boxes by iteratively discarding boxes with high IoU relative to the highest-confidence prediction. mAP calculates the mean area under the precision-recall curve across all classes.",
+    "expected_concepts": [
+      "IoU",
+      "NMS",
+      "Non-Maximum Suppression",
+      "mAP"
+    ],
+    "explanation": "Evaluates Computer Vision Object Detection Metrics and IoU, NMS, and mAP Evaluation comprehension."
+  },
+  {
+    "id": "cv_006",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Semantic Segmentation (U-Net, DeepLab with Atrous/Dilated Convolutions) vs Instance Segmentation (Mask R-CNN) vs Panoptic Segmentation.",
+    "difficulty": "hard",
+    "topic": "Image Segmentation",
+    "concept": "Semantic vs Instance vs Panoptic Segmentation",
+    "questionFamily": "comparison",
+    "tags": [
+      "Semantic Segmentation",
+      "Instance Segmentation",
+      "Panoptic Segmentation",
+      "U-Net",
+      "Mask R-CNN",
+      "DeepLab"
+    ],
+    "idealAnswer": "Semantic Segmentation assigns a class label to every pixel without distinguishing individual instances (e.g. U-Net). Instance Segmentation detects and segments each individual distinct object instance (Mask R-CNN). Panoptic Segmentation unifies both, segmenting all countable instances and background stuff classes.",
+    "ideal_answer": "Semantic Segmentation assigns a class label to every pixel without distinguishing individual instances (e.g. U-Net). Instance Segmentation detects and segments each individual distinct object instance (Mask R-CNN). Panoptic Segmentation unifies both, segmenting all countable instances and background stuff classes.",
+    "expected_concepts": [
+      "Semantic Segmentation",
+      "Instance Segmentation",
+      "Panoptic Segmentation",
+      "U-Net"
+    ],
+    "explanation": "Evaluates Computer Vision Image Segmentation and Semantic vs Instance vs Panoptic Segmentation comprehension."
+  },
+  {
+    "id": "cv_007",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Vision Transformers (ViT): Patch Extraction, Linear Projection, Class Token ([CLS]), and Self-Attention on image patches.",
+    "difficulty": "hard",
+    "topic": "Vision Transformers",
+    "concept": "Vision Transformer (ViT) Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Vision Transformer",
+      "ViT",
+      "image patches",
+      "patch embedding",
+      "CLS token",
+      "inductive bias"
+    ],
+    "idealAnswer": "ViT splits an image into non-overlapping patches (e.g. 16x16 pixels), flattens and linearly projects them into patch embeddings, prepends a learnable [CLS] token, adds 1D positional encodings, and processes them through standard Transformer encoder blocks without convolutions (trading inductive bias for global context at scale).",
+    "ideal_answer": "ViT splits an image into non-overlapping patches (e.g. 16x16 pixels), flattens and linearly projects them into patch embeddings, prepends a learnable [CLS] token, adds 1D positional encodings, and processes them through standard Transformer encoder blocks without convolutions (trading inductive bias for global context at scale).",
+    "expected_concepts": [
+      "Vision Transformer",
+      "ViT",
+      "image patches",
+      "patch embedding"
+    ],
+    "explanation": "Evaluates Computer Vision Vision Transformers and Vision Transformer (ViT) Architecture comprehension."
+  },
+  {
+    "id": "cv_008",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Optical Flow (Lucas-Kanade vs Farneback methods) in Video Processing for motion tracking across consecutive frames?",
+    "difficulty": "medium",
+    "topic": "Video Processing",
+    "concept": "Optical Flow & Motion Tracking",
+    "questionFamily": "algorithm",
+    "tags": [
+      "Optical Flow",
+      "Lucas-Kanade",
+      "Farneback",
+      "motion estimation",
+      "brightness constancy"
+    ],
+    "idealAnswer": "Optical Flow calculates apparent pixel motion vectors between consecutive video frames based on the Brightness Constancy Assumption. Lucas-Kanade is a sparse differential method assuming uniform motion in local pixel neighborhoods. Farneback computes dense flow fields across all pixels.",
+    "ideal_answer": "Optical Flow calculates apparent pixel motion vectors between consecutive video frames based on the Brightness Constancy Assumption. Lucas-Kanade is a sparse differential method assuming uniform motion in local pixel neighborhoods. Farneback computes dense flow fields across all pixels.",
+    "expected_concepts": [
+      "Optical Flow",
+      "Lucas-Kanade",
+      "Farneback",
+      "motion estimation"
+    ],
+    "explanation": "Evaluates Computer Vision Video Processing and Optical Flow & Motion Tracking comprehension."
+  },
+  {
+    "id": "cv_009",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Face Detection and Recognition Pipelines: Face Alignment, MTCNN / RetinaFace, and Face Embeddings (FaceNet with Triplet Loss).",
+    "difficulty": "medium",
+    "topic": "Face Recognition",
+    "concept": "Face Recognition & Triplet Loss",
+    "questionFamily": "architecture",
+    "tags": [
+      "FaceNet",
+      "triplet loss",
+      "MTCNN",
+      "RetinaFace",
+      "face embeddings",
+      "cosine similarity"
+    ],
+    "idealAnswer": "Pipeline: 1) Face Detection locates faces and facial landmarks (RetinaFace); 2) Alignment normalizes pose; 3) Deep network (FaceNet) maps facial crops to compact 128D/512D unit-sphere embeddings trained with Triplet Loss (minimizing anchor-positive distance and maximizing anchor-negative distance).",
+    "ideal_answer": "Pipeline: 1) Face Detection locates faces and facial landmarks (RetinaFace); 2) Alignment normalizes pose; 3) Deep network (FaceNet) maps facial crops to compact 128D/512D unit-sphere embeddings trained with Triplet Loss (minimizing anchor-positive distance and maximizing anchor-negative distance).",
+    "expected_concepts": [
+      "FaceNet",
+      "triplet loss",
+      "MTCNN",
+      "RetinaFace"
+    ],
+    "explanation": "Evaluates Computer Vision Face Recognition and Face Recognition & Triplet Loss comprehension."
+  },
+  {
+    "id": "cv_010",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Anchor-Free Object Detection (CenterNet, FCOS) and how does it simplify detection compared to predefined anchor boxes?",
+    "difficulty": "hard",
+    "topic": "Object Detection",
+    "concept": "Anchor-Free Object Detection (FCOS)",
+    "questionFamily": "architecture",
+    "tags": [
+      "anchor-free",
+      "FCOS",
+      "CenterNet",
+      "keypoint estimation",
+      "centerness branch"
+    ],
+    "idealAnswer": "Traditional detectors require manual tuning of anchor box aspect ratios and scales. Anchor-free models (FCOS, CenterNet) treat objects as points (e.g. bounding box centers), directly predicting bounding box boundary distances (l, t, r, b) or Gaussian peak keypoints per pixel, eliminating anchor hyperparameter tuning.",
+    "ideal_answer": "Traditional detectors require manual tuning of anchor box aspect ratios and scales. Anchor-free models (FCOS, CenterNet) treat objects as points (e.g. bounding box centers), directly predicting bounding box boundary distances (l, t, r, b) or Gaussian peak keypoints per pixel, eliminating anchor hyperparameter tuning.",
+    "expected_concepts": [
+      "anchor-free",
+      "FCOS",
+      "CenterNet",
+      "keypoint estimation"
+    ],
+    "explanation": "Evaluates Computer Vision Object Detection and Anchor-Free Object Detection (FCOS) comprehension."
+  },
+  {
+    "id": "cv_011",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Data Augmentation techniques in Computer Vision: Mixup, CutMix, Mosaic, Albumentations, and Geometric Transformations.",
+    "difficulty": "easy",
+    "topic": "Data Augmentation",
+    "concept": "Modern CV Data Augmentation (Mixup/CutMix)",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Mixup",
+      "CutMix",
+      "Mosaic augmentation",
+      "Albumentations",
+      "generalization"
+    ],
+    "idealAnswer": "Augmentation artificially expands training diversity to prevent overfitting. Standard augmentations include random crops, flips, and color jitter. Advanced augmentations: Mixup blends two images and their labels linearly; CutMix replaces an image patch with a patch from another image; Mosaic stitches 4 images into one (YOLO).",
+    "ideal_answer": "Augmentation artificially expands training diversity to prevent overfitting. Standard augmentations include random crops, flips, and color jitter. Advanced augmentations: Mixup blends two images and their labels linearly; CutMix replaces an image patch with a patch from another image; Mosaic stitches 4 images into one (YOLO).",
+    "expected_concepts": [
+      "Mixup",
+      "CutMix",
+      "Mosaic augmentation",
+      "Albumentations"
+    ],
+    "explanation": "Evaluates Computer Vision Data Augmentation and Modern CV Data Augmentation (Mixup/CutMix) comprehension."
+  },
+  {
+    "id": "cv_012",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Spatial Pyramid Pooling (SPP) and Feature Pyramid Networks (FPN) for Multi-Scale Object Detection?",
+    "difficulty": "medium",
+    "topic": "Multi-Scale Features",
+    "concept": "Feature Pyramid Networks (FPN)",
+    "questionFamily": "architecture",
+    "tags": [
+      "Feature Pyramid Network",
+      "FPN",
+      "multi-scale detection",
+      "lateral connections",
+      "top-down pathway"
+    ],
+    "idealAnswer": "FPN combines low-resolution, semantically strong deep feature maps with high-resolution, semantically weak shallow feature maps via a top-down pathway and lateral connections. This constructs rich multi-scale feature pyramids that detect small, medium, and large objects accurately.",
+    "ideal_answer": "FPN combines low-resolution, semantically strong deep feature maps with high-resolution, semantically weak shallow feature maps via a top-down pathway and lateral connections. This constructs rich multi-scale feature pyramids that detect small, medium, and large objects accurately.",
+    "expected_concepts": [
+      "Feature Pyramid Network",
+      "FPN",
+      "multi-scale detection",
+      "lateral connections"
+    ],
+    "explanation": "Evaluates Computer Vision Multi-Scale Features and Feature Pyramid Networks (FPN) comprehension."
+  },
+  {
+    "id": "cv_013",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Image Similarity and Contrastive Learning in Computer Vision: SimCLR, MoCo, and InfoNCE Loss.",
+    "difficulty": "hard",
+    "topic": "Self-Supervised Learning",
+    "concept": "Contrastive Learning (SimCLR & MoCo)",
+    "questionFamily": "architecture",
+    "tags": [
+      "contrastive learning",
+      "SimCLR",
+      "MoCo",
+      "InfoNCE loss",
+      "data augmentation",
+      "self-supervised"
+    ],
+    "idealAnswer": "Contrastive learning learns representations without human labels. SimCLR creates two augmented views of the same image (positive pair) and maximizes their cosine similarity while pushing apart representations of other images in the batch (negative pairs) using InfoNCE loss.",
+    "ideal_answer": "Contrastive learning learns representations without human labels. SimCLR creates two augmented views of the same image (positive pair) and maximizes their cosine similarity while pushing apart representations of other images in the batch (negative pairs) using InfoNCE loss.",
+    "expected_concepts": [
+      "contrastive learning",
+      "SimCLR",
+      "MoCo",
+      "InfoNCE loss"
+    ],
+    "explanation": "Evaluates Computer Vision Self-Supervised Learning and Contrastive Learning (SimCLR & MoCo) comprehension."
+  },
+  {
+    "id": "cv_014",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Neural Radiance Fields (NeRF) and 3D Gaussian Splatting for novel view 3D scene synthesis?",
+    "difficulty": "hard",
+    "topic": "3D Vision & NeRF",
+    "concept": "NeRF vs 3D Gaussian Splatting",
+    "questionFamily": "architecture",
+    "tags": [
+      "NeRF",
+      "3D Gaussian Splatting",
+      "volume rendering",
+      "novel view synthesis",
+      "implicit neural representation"
+    ],
+    "idealAnswer": "NeRF uses an MLP to represent continuous 5D scenes (3D coordinates + 2D viewing direction) and synthesizes novel camera views via volume rendering. 3D Gaussian Splatting replaces MLPs with millions of 3D ellipsoidal Gaussians rasterized via tile-based GPU sorting for real-time 100+ FPS rendering.",
+    "ideal_answer": "NeRF uses an MLP to represent continuous 5D scenes (3D coordinates + 2D viewing direction) and synthesizes novel camera views via volume rendering. 3D Gaussian Splatting replaces MLPs with millions of 3D ellipsoidal Gaussians rasterized via tile-based GPU sorting for real-time 100+ FPS rendering.",
+    "expected_concepts": [
+      "NeRF",
+      "3D Gaussian Splatting",
+      "volume rendering",
+      "novel view synthesis"
+    ],
+    "explanation": "Evaluates Computer Vision 3D Vision & NeRF and NeRF vs 3D Gaussian Splatting comprehension."
+  },
+  {
+    "id": "cv_015",
+    "skill": "Computer Vision",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you deploy Computer Vision models at the Edge using TensorRT, OpenVINO, and ONNX Runtime for low-latency inference?",
+    "difficulty": "medium",
+    "topic": "Edge Deployment",
+    "concept": "TensorRT & OpenVINO Edge Optimization",
+    "questionFamily": "optimization",
+    "tags": [
+      "TensorRT",
+      "OpenVINO",
+      "ONNX Runtime",
+      "layer fusion",
+      "FP16 inference",
+      "edge acceleration"
+    ],
+    "idealAnswer": "Export PyTorch/TensorFlow models to ONNX. TensorRT (NVIDIA GPUs) and OpenVINO (Intel CPUs) optimize computation graphs by performing layer and tensor fusion, kernel autotuning, dynamic memory pooling, and FP16/INT8 precision quantization for real-time edge performance.",
+    "ideal_answer": "Export PyTorch/TensorFlow models to ONNX. TensorRT (NVIDIA GPUs) and OpenVINO (Intel CPUs) optimize computation graphs by performing layer and tensor fusion, kernel autotuning, dynamic memory pooling, and FP16/INT8 precision quantization for real-time edge performance.",
+    "expected_concepts": [
+      "TensorRT",
+      "OpenVINO",
+      "ONNX Runtime",
+      "layer fusion"
+    ],
+    "explanation": "Evaluates Computer Vision Edge Deployment and TensorRT & OpenVINO Edge Optimization comprehension."
   }
 ]

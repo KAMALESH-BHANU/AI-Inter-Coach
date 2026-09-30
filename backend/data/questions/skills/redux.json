@@ -1,0 +1,404 @@
+[
+  {
+    "id": "redux_001",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the three core principles of Redux (Single source of truth, State is read-only, Changes are made with pure functions).",
+    "difficulty": "easy",
+    "topic": "Core Principles",
+    "concept": "Three Principles of Redux",
+    "questionFamily": "architecture",
+    "tags": [
+      "Redux",
+      "single source of truth",
+      "immutability",
+      "pure functions",
+      "reducers"
+    ],
+    "idealAnswer": "1) Single Source of Truth: The entire application state is stored in a single store object tree. 2) State is Read-Only: The only way to change state is to dispatch an action. 3) Changes Made with Pure Functions: Reducers are pure functions taking (state, action) and returning next state.",
+    "ideal_answer": "1) Single Source of Truth: The entire application state is stored in a single store object tree. 2) State is Read-Only: The only way to change state is to dispatch an action. 3) Changes Made with Pure Functions: Reducers are pure functions taking (state, action) and returning next state.",
+    "expected_concepts": [
+      "Redux",
+      "single source of truth",
+      "immutability",
+      "pure functions"
+    ],
+    "explanation": "Evaluates Redux Core Principles and Three Principles of Redux comprehension."
+  },
+  {
+    "id": "redux_002",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Redux Toolkit (RTK), and why is standard Redux boilerplate replaced with createSlice and configureStore?",
+    "difficulty": "easy",
+    "topic": "Redux Toolkit",
+    "concept": "RTK & createSlice",
+    "questionFamily": "architecture",
+    "tags": [
+      "Redux Toolkit",
+      "RTK",
+      "createSlice",
+      "configureStore",
+      "boilerplate"
+    ],
+    "idealAnswer": "Redux Toolkit is the official, opinionated Redux standard. configureStore simplifies store setup with preconfigured Redux Thunk and DevTools. createSlice auto-generates action creators and action types from reducer methods, drastically reducing boilerplate.",
+    "ideal_answer": "Redux Toolkit is the official, opinionated Redux standard. configureStore simplifies store setup with preconfigured Redux Thunk and DevTools. createSlice auto-generates action creators and action types from reducer methods, drastically reducing boilerplate.",
+    "expected_concepts": [
+      "Redux Toolkit",
+      "RTK",
+      "createSlice",
+      "configureStore"
+    ],
+    "explanation": "Evaluates Redux Redux Toolkit and RTK & createSlice comprehension."
+  },
+  {
+    "id": "redux_003",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Immer library enable 'mutable' code syntax inside Redux Toolkit reducers while maintaining immutability?",
+    "difficulty": "medium",
+    "topic": "Immer & Immutability",
+    "concept": "Immer Draft State",
+    "questionFamily": "implementation",
+    "tags": [
+      "Immer",
+      "draft state",
+      "immutability",
+      "createSlice",
+      "Proxy"
+    ],
+    "idealAnswer": "RTK integrates Immer. In createSlice reducers, Immer wraps the state in a Proxy 'draft'. You can write direct mutating logic (state.value += 1), and Immer detects the mutations to produce a new immutable state object under the hood.",
+    "ideal_answer": "RTK integrates Immer. In createSlice reducers, Immer wraps the state in a Proxy 'draft'. You can write direct mutating logic (state.value += 1), and Immer detects the mutations to produce a new immutable state object under the hood.",
+    "expected_concepts": [
+      "Immer",
+      "draft state",
+      "immutability",
+      "createSlice"
+    ],
+    "explanation": "Evaluates Redux Immer & Immutability and Immer Draft State comprehension."
+  },
+  {
+    "id": "redux_004",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Redux Data Flow: UI dispatching Actions -> Middleware -> Reducers updating Store -> UI re-rendering with useSelector.",
+    "difficulty": "medium",
+    "topic": "Data Flow",
+    "concept": "Redux Unidirectional Data Flow",
+    "questionFamily": "architecture",
+    "tags": [
+      "unidirectional data flow",
+      "dispatch",
+      "actions",
+      "reducers",
+      "useSelector"
+    ],
+    "idealAnswer": "Redux follows unidirectional data flow: UI dispatches an Action (type, payload). Middleware intercepts for async side effects. Pure Reducers compute the new state. The Store updates and notifies subscribed UI components via useSelector hook.",
+    "ideal_answer": "Redux follows unidirectional data flow: UI dispatches an Action (type, payload). Middleware intercepts for async side effects. Pure Reducers compute the new state. The Store updates and notifies subscribed UI components via useSelector hook.",
+    "expected_concepts": [
+      "unidirectional data flow",
+      "dispatch",
+      "actions",
+      "reducers"
+    ],
+    "explanation": "Evaluates Redux Data Flow and Redux Unidirectional Data Flow comprehension."
+  },
+  {
+    "id": "redux_005",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Redux Middleware, and how does the middleware signature (store => next => action) intercept and process actions?",
+    "difficulty": "hard",
+    "topic": "Middleware",
+    "concept": "Middleware Pipeline & Signature",
+    "questionFamily": "architecture",
+    "tags": [
+      "middleware",
+      "currying",
+      "next(action)",
+      "logging",
+      "async"
+    ],
+    "idealAnswer": "Redux middleware wraps the store's dispatch method. Using a curried function (store => next => action), middleware can log actions, modify actions, delay dispatching, or execute asynchronous calls before passing the action to 'next(action)'.",
+    "ideal_answer": "Redux middleware wraps the store's dispatch method. Using a curried function (store => next => action), middleware can log actions, modify actions, delay dispatching, or execute asynchronous calls before passing the action to 'next(action)'.",
+    "expected_concepts": [
+      "middleware",
+      "currying",
+      "next(action)",
+      "logging"
+    ],
+    "explanation": "Evaluates Redux Middleware and Middleware Pipeline & Signature comprehension."
+  },
+  {
+    "id": "redux_006",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain createAsyncThunk in Redux Toolkit for handling asynchronous API requests and its pending/fulfilled/rejected action types.",
+    "difficulty": "medium",
+    "topic": "Async Redux",
+    "concept": "createAsyncThunk & ExtraReducers",
+    "questionFamily": "implementation",
+    "tags": [
+      "createAsyncThunk",
+      "extraReducers",
+      "pending",
+      "fulfilled",
+      "rejected",
+      "async"
+    ],
+    "idealAnswer": "createAsyncThunk accepts an action type string and an async payload creator function. It automatically dispatches 'pending', 'fulfilled', or 'rejected' action types handled in the slice's 'extraReducers' builder callback.",
+    "ideal_answer": "createAsyncThunk accepts an action type string and an async payload creator function. It automatically dispatches 'pending', 'fulfilled', or 'rejected' action types handled in the slice's 'extraReducers' builder callback.",
+    "expected_concepts": [
+      "createAsyncThunk",
+      "extraReducers",
+      "pending",
+      "fulfilled"
+    ],
+    "explanation": "Evaluates Redux Async Redux and createAsyncThunk & ExtraReducers comprehension."
+  },
+  {
+    "id": "redux_007",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is RTK Query (Redux Toolkit Query), and how does it automate data fetching, caching, and cache invalidation with tags?",
+    "difficulty": "hard",
+    "topic": "RTK Query",
+    "concept": "RTK Query Caching & Mutations",
+    "questionFamily": "architecture",
+    "tags": [
+      "RTK Query",
+      "caching",
+      "polling",
+      "tags",
+      "invalidatesTags",
+      "providesTags"
+    ],
+    "idealAnswer": "RTK Query is an advanced data fetching and caching tool built into RTK. It automatically generates React hooks for queries and mutations, manages cache lifetimes, deduplicates requests, and auto-refetches data via tag invalidation (providesTags/invalidatesTags).",
+    "ideal_answer": "RTK Query is an advanced data fetching and caching tool built into RTK. It automatically generates React hooks for queries and mutations, manages cache lifetimes, deduplicates requests, and auto-refetches data via tag invalidation (providesTags/invalidatesTags).",
+    "expected_concepts": [
+      "RTK Query",
+      "caching",
+      "polling",
+      "tags"
+    ],
+    "explanation": "Evaluates Redux RTK Query and RTK Query Caching & Mutations comprehension."
+  },
+  {
+    "id": "redux_008",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does useSelector hook work, and why must selector return values maintain referential equality to avoid unnecessary re-renders?",
+    "difficulty": "medium",
+    "topic": "React-Redux",
+    "concept": "useSelector & Equality Checks",
+    "questionFamily": "optimization",
+    "tags": [
+      "useSelector",
+      "re-render",
+      "referential equality",
+      "shallowEqual"
+    ],
+    "idealAnswer": "useSelector subscribes to the Redux store and runs on every dispatch. If the selector returns a new object reference (e.g. via .filter() or .map()), React-Redux triggers a re-render even if data didn't change; memoized selectors (createSelector) or custom equality checks prevent this.",
+    "ideal_answer": "useSelector subscribes to the Redux store and runs on every dispatch. If the selector returns a new object reference (e.g. via .filter() or .map()), React-Redux triggers a re-render even if data didn't change; memoized selectors (createSelector) or custom equality checks prevent this.",
+    "expected_concepts": [
+      "useSelector",
+      "re-render",
+      "referential equality",
+      "shallowEqual"
+    ],
+    "explanation": "Evaluates Redux React-Redux and useSelector & Equality Checks comprehension."
+  },
+  {
+    "id": "redux_009",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Reselect and createSelector in Redux, and how do memoized selectors optimize computationally expensive state derivations?",
+    "difficulty": "medium",
+    "topic": "Selectors",
+    "concept": "Reselect & Memoized Selectors",
+    "questionFamily": "optimization",
+    "tags": [
+      "Reselect",
+      "createSelector",
+      "memoization",
+      "derived state"
+    ],
+    "idealAnswer": "createSelector from Reselect creates memoized selectors with input selectors and a transform function. It recomputes the result only when the values returned by the input selectors change, caching previous results for high performance.",
+    "ideal_answer": "createSelector from Reselect creates memoized selectors with input selectors and a transform function. It recomputes the result only when the values returned by the input selectors change, caching previous results for high performance.",
+    "expected_concepts": [
+      "Reselect",
+      "createSelector",
+      "memoization",
+      "derived state"
+    ],
+    "explanation": "Evaluates Redux Selectors and Reselect & Memoized Selectors comprehension."
+  },
+  {
+    "id": "redux_010",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Redux Thunk and Redux Saga for managing complex asynchronous side effects.",
+    "difficulty": "hard",
+    "topic": "Side Effects",
+    "concept": "Redux Thunk vs Redux Saga",
+    "questionFamily": "comparison",
+    "tags": [
+      "Redux Thunk",
+      "Redux Saga",
+      "generators",
+      "effects",
+      "takeEvery",
+      "async flow"
+    ],
+    "idealAnswer": "Redux Thunk is simple function-based middleware for basic async promises. Redux Saga uses ES6 generator functions and declarative effect helpers (call, put, takeLatest) to handle complex async flows, cancellation, and debouncing.",
+    "ideal_answer": "Redux Thunk is simple function-based middleware for basic async promises. Redux Saga uses ES6 generator functions and declarative effect helpers (call, put, takeLatest) to handle complex async flows, cancellation, and debouncing.",
+    "expected_concepts": [
+      "Redux Thunk",
+      "Redux Saga",
+      "generators",
+      "effects"
+    ],
+    "explanation": "Evaluates Redux Side Effects and Redux Thunk vs Redux Saga comprehension."
+  },
+  {
+    "id": "redux_011",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Redux DevTools enable Time-Travel Debugging, Action Replay, and State Diffing?",
+    "difficulty": "easy",
+    "topic": "Debugging",
+    "concept": "Redux DevTools & Time Travel",
+    "questionFamily": "definition",
+    "tags": [
+      "Redux DevTools",
+      "time travel debugging",
+      "state snapshot",
+      "action log"
+    ],
+    "idealAnswer": "Because all state transitions in Redux occur via discrete, serialized actions, Redux DevTools records every action and state snapshot, enabling developers to jump backwards/forwards in time, cancel individual actions, and inspect exact state diffs.",
+    "ideal_answer": "Because all state transitions in Redux occur via discrete, serialized actions, Redux DevTools records every action and state snapshot, enabling developers to jump backwards/forwards in time, cancel individual actions, and inspect exact state diffs.",
+    "expected_concepts": [
+      "Redux DevTools",
+      "time travel debugging",
+      "state snapshot",
+      "action log"
+    ],
+    "explanation": "Evaluates Redux Debugging and Redux DevTools & Time Travel comprehension."
+  },
+  {
+    "id": "redux_012",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Store Normalization in Redux, and how does normalizr or createEntityAdapter structure relational data?",
+    "difficulty": "hard",
+    "topic": "State Normalization",
+    "concept": "createEntityAdapter & Normalization",
+    "questionFamily": "design",
+    "tags": [
+      "normalization",
+      "createEntityAdapter",
+      "ids array",
+      "entities dictionary"
+    ],
+    "idealAnswer": "Normalization structures state like a relational database: flat tables using 'ids' arrays and 'entities' dictionary keyed by ID ({ byId: { 1: ... }, allIds: [1] }). createEntityAdapter provides CRUD reducers (addOne, updateOne, removeOne) for normalized collections.",
+    "ideal_answer": "Normalization structures state like a relational database: flat tables using 'ids' arrays and 'entities' dictionary keyed by ID ({ byId: { 1: ... }, allIds: [1] }). createEntityAdapter provides CRUD reducers (addOne, updateOne, removeOne) for normalized collections.",
+    "expected_concepts": [
+      "normalization",
+      "createEntityAdapter",
+      "ids array",
+      "entities dictionary"
+    ],
+    "explanation": "Evaluates Redux State Normalization and createEntityAdapter & Normalization comprehension."
+  },
+  {
+    "id": "redux_013",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you handle global error handling and centralized notifications using Redux middleware?",
+    "difficulty": "medium",
+    "topic": "Architecture",
+    "concept": "Centralized Error Handling Middleware",
+    "questionFamily": "best_practice",
+    "tags": [
+      "error handling",
+      "middleware",
+      "isRejectedWithValue",
+      "toast notification"
+    ],
+    "idealAnswer": "Custom middleware can inspect action payloads for error states or RTK rejected actions (using 'isRejectedWithValue' or matching action.error), automatically dispatching toast alerts and logging errors without duplicating try/catch blocks across components.",
+    "ideal_answer": "Custom middleware can inspect action payloads for error states or RTK rejected actions (using 'isRejectedWithValue' or matching action.error), automatically dispatching toast alerts and logging errors without duplicating try/catch blocks across components.",
+    "expected_concepts": [
+      "error handling",
+      "middleware",
+      "isRejectedWithValue",
+      "toast notification"
+    ],
+    "explanation": "Evaluates Redux Architecture and Centralized Error Handling Middleware comprehension."
+  },
+  {
+    "id": "redux_014",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "When should state be kept in Redux versus React Local State (useState) or React Context?",
+    "difficulty": "medium",
+    "topic": "Architecture",
+    "concept": "State Placement Decisions",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "global vs local state",
+      "useState",
+      "Context API",
+      "state placement"
+    ],
+    "idealAnswer": "Local UI state (form inputs, modal open/close, dropdown toggles) belongs in useState. Static global context (theme, localization) fits Context API. Complex, shared, frequently updated business data with caching and multi-component dependency fits Redux.",
+    "ideal_answer": "Local UI state (form inputs, modal open/close, dropdown toggles) belongs in useState. Static global context (theme, localization) fits Context API. Complex, shared, frequently updated business data with caching and multi-component dependency fits Redux.",
+    "expected_concepts": [
+      "global vs local state",
+      "useState",
+      "Context API",
+      "state placement"
+    ],
+    "explanation": "Evaluates Redux Architecture and State Placement Decisions comprehension."
+  },
+  {
+    "id": "redux_015",
+    "skill": "Redux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Redux Persist, and how does it synchronize Redux state to localStorage with rehydration transforms?",
+    "difficulty": "medium",
+    "topic": "Persistence",
+    "concept": "Redux Persist & State Rehydration",
+    "questionFamily": "implementation",
+    "tags": [
+      "redux-persist",
+      "localStorage",
+      "rehydration",
+      "whitelist",
+      "blacklist"
+    ],
+    "idealAnswer": "Redux Persist intercepts actions to serialize and save designated slices of Redux state (via whitelist/blacklist) to browser storage (localStorage/sessionStorage), automatically rehydrating the state store when the app reloads.",
+    "ideal_answer": "Redux Persist intercepts actions to serialize and save designated slices of Redux state (via whitelist/blacklist) to browser storage (localStorage/sessionStorage), automatically rehydrating the state store when the app reloads.",
+    "expected_concepts": [
+      "redux-persist",
+      "localStorage",
+      "rehydration",
+      "whitelist"
+    ],
+    "explanation": "Evaluates Redux Persistence and Redux Persist & State Rehydration comprehension."
+  }
+]

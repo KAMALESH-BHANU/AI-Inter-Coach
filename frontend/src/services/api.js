@@ -39,7 +39,14 @@ export const interviewAPI = {
   getSession: (id) => api.get(`/interview/${id}`),
   saveAnswer: (id, data) => api.post(`/interview/${id}/answer`, data),
   complete: (id) => api.post(`/interview/${id}/complete`),
+  runSql: (sessionId, questionId, query) => api.post('/interview/sql/run', {
+    session_id: sessionId,
+    question_id: questionId,
+    query: query
+  }),
   getResults: (id) => api.get(`/interview/${id}/results`),
+  getSuggestions: (id) => api.get(`/interview/${id}/suggestions`),
+  generateSuggestions: (id, force = false) => api.post(`/interview/${id}/suggestions`, { force_regenerate: force }),
   uploadVideo: (id, formData) => api.post(`/interview/${id}/upload-video`, formData, {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),

@@ -1,44 +1,419 @@
 [
   {
-    "id": "AWS_001",
+    "id": "aws_001",
     "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain AWS Global Infrastructure: Regions, Availability Zones (AZs), Local Zones, and Edge Locations (PoPs).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of AWS in modern software engineering?",
-    "expected_concepts": [
-      "AWS fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Global Infrastructure",
+    "concept": "AWS Global Infrastructure",
+    "questionFamily": "architecture",
+    "tags": [
+      "AWS",
+      "Regions",
+      "Availability Zones",
+      "Edge Locations",
+      "low latency",
+      "fault tolerance"
     ],
-    "ideal_answer": "AWS is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of AWS."
+    "idealAnswer": "AWS divides global infrastructure into Regions (separate geographic areas). Each Region contains multiple isolated, physically separated Availability Zones (AZs) connected by low-latency fiber. Edge Locations host CloudFront and Route 53 caching endpoints globally.",
+    "ideal_answer": "AWS divides global infrastructure into Regions (separate geographic areas). Each Region contains multiple isolated, physically separated Availability Zones (AZs) connected by low-latency fiber. Edge Locations host CloudFront and Route 53 caching endpoints globally.",
+    "expected_concepts": [
+      "AWS",
+      "Regions",
+      "Availability Zones",
+      "Edge Locations"
+    ],
+    "explanation": "Evaluates AWS Global Infrastructure and AWS Global Infrastructure comprehension."
   },
   {
-    "id": "AWS_002",
+    "id": "aws_002",
     "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain AWS Identity and Access Management (IAM): Users, Groups, Roles, Policies (JSON format), and Principle of Least Privilege.",
+    "difficulty": "easy",
+    "topic": "IAM & Security",
+    "concept": "AWS IAM Architecture",
+    "questionFamily": "security",
+    "tags": [
+      "IAM",
+      "IAM Role",
+      "IAM Policy",
+      "least privilege",
+      "assume role",
+      "STS"
+    ],
+    "idealAnswer": "IAM controls authentication and authorization. IAM Users/Groups represent human identities. IAM Roles grant temporary security credentials (via AWS STS) to EC2 instances, Lambda, or cross-account services. JSON Policies define explicit Allow/Deny actions on resource ARNs.",
+    "ideal_answer": "IAM controls authentication and authorization. IAM Users/Groups represent human identities. IAM Roles grant temporary security credentials (via AWS STS) to EC2 instances, Lambda, or cross-account services. JSON Policies define explicit Allow/Deny actions on resource ARNs.",
+    "expected_concepts": [
+      "IAM",
+      "IAM Role",
+      "IAM Policy",
+      "least privilege"
+    ],
+    "explanation": "Evaluates AWS IAM & Security and AWS IAM Architecture comprehension."
+  },
+  {
+    "id": "aws_003",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Amazon Virtual Private Cloud (VPC): Public Subnets, Private Subnets, Internet Gateways (IGW), NAT Gateways, and Route Tables.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using AWS in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Networking & VPC",
+    "concept": "Amazon VPC Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "VPC",
+      "public subnet",
+      "private subnet",
+      "Internet Gateway",
+      "NAT Gateway",
+      "route table"
     ],
-    "ideal_answer": "Common challenges with AWS include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of AWS."
+    "idealAnswer": "A VPC is an isolated virtual network in AWS. Public subnets have route tables pointing to an Internet Gateway (IGW) for direct Internet traffic. Private subnets route outbound Internet traffic securely through a NAT Gateway located in a public subnet without accepting inbound connections.",
+    "ideal_answer": "A VPC is an isolated virtual network in AWS. Public subnets have route tables pointing to an Internet Gateway (IGW) for direct Internet traffic. Private subnets route outbound Internet traffic securely through a NAT Gateway located in a public subnet without accepting inbound connections.",
+    "expected_concepts": [
+      "VPC",
+      "public subnet",
+      "private subnet",
+      "Internet Gateway"
+    ],
+    "explanation": "Evaluates AWS Networking & VPC and Amazon VPC Architecture comprehension."
   },
   {
-    "id": "AWS_003",
+    "id": "aws_004",
     "skill": "AWS",
-    "difficulty": "hard",
-    "question": "How does AWS handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Security Groups (stateful) and Network Access Control Lists (NACLs - stateless) in AWS VPC?",
+    "difficulty": "medium",
+    "topic": "Networking & Security",
+    "concept": "Security Groups vs NACLs",
+    "questionFamily": "comparison",
+    "tags": [
+      "Security Groups",
+      "NACL",
+      "stateful",
+      "stateless",
+      "firewall",
+      "inbound outbound"
     ],
-    "ideal_answer": "AWS handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of AWS."
+    "idealAnswer": "Security Groups operate at the instance/ENI level and are stateful (allowing inbound automatically permits outbound reply). NACLs operate at the subnet level and are stateless (explicit inbound and outbound allow/deny rules required with evaluated rule numbers).",
+    "ideal_answer": "Security Groups operate at the instance/ENI level and are stateful (allowing inbound automatically permits outbound reply). NACLs operate at the subnet level and are stateless (explicit inbound and outbound allow/deny rules required with evaluated rule numbers).",
+    "expected_concepts": [
+      "Security Groups",
+      "NACL",
+      "stateful",
+      "stateless"
+    ],
+    "explanation": "Evaluates AWS Networking & Security and Security Groups vs NACLs comprehension."
+  },
+  {
+    "id": "aws_005",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Amazon EC2 Purchasing Options: On-Demand, Spot Instances, Reserved Instances (RI), and Savings Plans.",
+    "difficulty": "easy",
+    "topic": "Compute & EC2",
+    "concept": "EC2 Pricing & Instance Options",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "EC2",
+      "Spot Instances",
+      "Reserved Instances",
+      "Savings Plans",
+      "cost optimization"
+    ],
+    "idealAnswer": "On-Demand: pay by the second without commitment (highest price). Spot Instances: bid on spare AWS capacity at up to 90% discount (subject to 2-minute termination notice). Reserved Instances and Savings Plans commit to 1-3 years of compute for significant discounts.",
+    "ideal_answer": "On-Demand: pay by the second without commitment (highest price). Spot Instances: bid on spare AWS capacity at up to 90% discount (subject to 2-minute termination notice). Reserved Instances and Savings Plans commit to 1-3 years of compute for significant discounts.",
+    "expected_concepts": [
+      "EC2",
+      "Spot Instances",
+      "Reserved Instances",
+      "Savings Plans"
+    ],
+    "explanation": "Evaluates AWS Compute & EC2 and EC2 Pricing & Instance Options comprehension."
+  },
+  {
+    "id": "aws_006",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is AWS Auto Scaling and Elastic Load Balancing (ALB, NLB, GLB) for high-availability compute architectures?",
+    "difficulty": "medium",
+    "topic": "Scaling & Load Balancing",
+    "concept": "Auto Scaling Groups & Elastic Load Balancing",
+    "questionFamily": "architecture",
+    "tags": [
+      "Auto Scaling Group",
+      "ALB",
+      "NLB",
+      "target group",
+      "health checks",
+      "scaling policies"
+    ],
+    "idealAnswer": "Auto Scaling Groups dynamically add/remove EC2 instances based on CloudWatch metrics (CPU, request count). Application Load Balancers (ALB) route Layer 7 HTTP/HTTPS traffic. Network Load Balancers (NLB) handle Layer 4 extreme-throughput TCP/UDP traffic with static IPs.",
+    "ideal_answer": "Auto Scaling Groups dynamically add/remove EC2 instances based on CloudWatch metrics (CPU, request count). Application Load Balancers (ALB) route Layer 7 HTTP/HTTPS traffic. Network Load Balancers (NLB) handle Layer 4 extreme-throughput TCP/UDP traffic with static IPs.",
+    "expected_concepts": [
+      "Auto Scaling Group",
+      "ALB",
+      "NLB",
+      "target group"
+    ],
+    "explanation": "Evaluates AWS Scaling & Load Balancing and Auto Scaling Groups & Elastic Load Balancing comprehension."
+  },
+  {
+    "id": "aws_007",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Amazon S3 (Simple Storage Service): Storage Classes (Standard, Infrequent Access, Glacier, Deep Archive), Lifecycle Policies, and S3 Versioning.",
+    "difficulty": "easy",
+    "topic": "Storage & S3",
+    "concept": "Amazon S3 Storage Classes & Lifecycle",
+    "questionFamily": "optimization",
+    "tags": [
+      "Amazon S3",
+      "S3 Standard",
+      "S3 Glacier",
+      "Lifecycle policies",
+      "Versioning",
+      "11 9s durability"
+    ],
+    "idealAnswer": "S3 provides 99.999999999% (11 9s) durability. S3 Standard is for frequent access; S3 Standard-IA is for infrequent access; Glacier/Glacier Deep Archive is for low-cost compliance archiving. S3 Lifecycle rules automatically transition objects between classes over time.",
+    "ideal_answer": "S3 provides 99.999999999% (11 9s) durability. S3 Standard is for frequent access; S3 Standard-IA is for infrequent access; Glacier/Glacier Deep Archive is for low-cost compliance archiving. S3 Lifecycle rules automatically transition objects between classes over time.",
+    "expected_concepts": [
+      "Amazon S3",
+      "S3 Standard",
+      "S3 Glacier",
+      "Lifecycle policies"
+    ],
+    "explanation": "Evaluates AWS Storage & S3 and Amazon S3 Storage Classes & Lifecycle comprehension."
+  },
+  {
+    "id": "aws_008",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain AWS Lambda and Serverless Computing: execution model, Cold Starts, Concurrency limits, and provisioned concurrency.",
+    "difficulty": "medium",
+    "topic": "Serverless",
+    "concept": "AWS Lambda & Cold Start Optimization",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "AWS Lambda",
+      "Serverless",
+      "cold start",
+      "provisioned concurrency",
+      "event-driven",
+      "stateless"
+    ],
+    "idealAnswer": "AWS Lambda executes code in response to events (S3 upload, API Gateway request) with automated scaling. Cold starts occur when provisioning a new execution environment; Provisioned Concurrency pre-warms container execution environments to guarantee sub-millisecond latencies.",
+    "ideal_answer": "AWS Lambda executes code in response to events (S3 upload, API Gateway request) with automated scaling. Cold starts occur when provisioning a new execution environment; Provisioned Concurrency pre-warms container execution environments to guarantee sub-millisecond latencies.",
+    "expected_concepts": [
+      "AWS Lambda",
+      "Serverless",
+      "cold start",
+      "provisioned concurrency"
+    ],
+    "explanation": "Evaluates AWS Serverless and AWS Lambda & Cold Start Optimization comprehension."
+  },
+  {
+    "id": "aws_009",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Amazon DynamoDB, and how do Partition Keys, Sort Keys, Global Secondary Indexes (GSI), and Local Secondary Indexes (LSI) work?",
+    "difficulty": "hard",
+    "topic": "Database & NoSQL",
+    "concept": "Amazon DynamoDB Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "DynamoDB",
+      "partition key",
+      "sort key",
+      "GSI",
+      "LSI",
+      "single-digit millisecond"
+    ],
+    "idealAnswer": "DynamoDB is a fully managed serverless NoSQL key-value database. Primary keys consist of a Partition Key (hashed for shard location) and optional Sort Key. GSIs create alternative query partitions with their own provisioned/on-demand throughput; LSIs share the partition key with an alternate sort key.",
+    "ideal_answer": "DynamoDB is a fully managed serverless NoSQL key-value database. Primary keys consist of a Partition Key (hashed for shard location) and optional Sort Key. GSIs create alternative query partitions with their own provisioned/on-demand throughput; LSIs share the partition key with an alternate sort key.",
+    "expected_concepts": [
+      "DynamoDB",
+      "partition key",
+      "sort key",
+      "GSI"
+    ],
+    "explanation": "Evaluates AWS Database & NoSQL and Amazon DynamoDB Architecture comprehension."
+  },
+  {
+    "id": "aws_010",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Amazon RDS (Relational Database Service): Multi-AZ Deployments for High Availability vs Read Replicas for Read Scalability.",
+    "difficulty": "medium",
+    "topic": "Databases",
+    "concept": "Amazon RDS Multi-AZ vs Read Replicas",
+    "questionFamily": "comparison",
+    "tags": [
+      "Amazon RDS",
+      "Multi-AZ",
+      "Read Replicas",
+      "synchronous replication",
+      "failover"
+    ],
+    "idealAnswer": "Multi-AZ performs synchronous replication to a standby instance in a different AZ for automated disaster recovery failover (standby cannot be queried). Read Replicas use asynchronous replication to offload read traffic across multiple active database read endpoints.",
+    "ideal_answer": "Multi-AZ performs synchronous replication to a standby instance in a different AZ for automated disaster recovery failover (standby cannot be queried). Read Replicas use asynchronous replication to offload read traffic across multiple active database read endpoints.",
+    "expected_concepts": [
+      "Amazon RDS",
+      "Multi-AZ",
+      "Read Replicas",
+      "synchronous replication"
+    ],
+    "explanation": "Evaluates AWS Databases and Amazon RDS Multi-AZ vs Read Replicas comprehension."
+  },
+  {
+    "id": "aws_011",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Amazon CloudFront CDN, and how does Edge Caching, Origin Access Control (OAC), and Lambda@Edge / CloudFront Functions work?",
+    "difficulty": "medium",
+    "topic": "Edge & CDN",
+    "concept": "Amazon CloudFront & Edge Compute",
+    "questionFamily": "architecture",
+    "tags": [
+      "CloudFront",
+      "CDN",
+      "OAC",
+      "Origin Access Control",
+      "Lambda@Edge",
+      "edge functions"
+    ],
+    "idealAnswer": "CloudFront is AWS's global CDN caching content at edge locations. Origin Access Control (OAC) restricts S3 buckets so content can only be accessed through CloudFront. CloudFront Functions and Lambda@Edge execute lightweight code at edge locations for URL rewrites and auth headers.",
+    "ideal_answer": "CloudFront is AWS's global CDN caching content at edge locations. Origin Access Control (OAC) restricts S3 buckets so content can only be accessed through CloudFront. CloudFront Functions and Lambda@Edge execute lightweight code at edge locations for URL rewrites and auth headers.",
+    "expected_concepts": [
+      "CloudFront",
+      "CDN",
+      "OAC",
+      "Origin Access Control"
+    ],
+    "explanation": "Evaluates AWS Edge & CDN and Amazon CloudFront & Edge Compute comprehension."
+  },
+  {
+    "id": "aws_012",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Amazon SQS (Standard vs FIFO Queues), Dead-Letter Queues (DLQ), and Visibility Timeout.",
+    "difficulty": "easy",
+    "topic": "Messaging & Integration",
+    "concept": "Amazon SQS Architecture",
+    "questionFamily": "implementation",
+    "tags": [
+      "SQS",
+      "Standard Queue",
+      "FIFO Queue",
+      "Dead-Letter Queue",
+      "visibility timeout",
+      "at-least-once"
+    ],
+    "idealAnswer": "Standard SQS offers unlimited throughput and at-least-once delivery with best-effort ordering. FIFO SQS guarantees exact once processing and strict ordering (up to 3,000 msg/s). Visibility Timeout hides consumed messages from other workers while processing; failing messages route to a DLQ.",
+    "ideal_answer": "Standard SQS offers unlimited throughput and at-least-once delivery with best-effort ordering. FIFO SQS guarantees exact once processing and strict ordering (up to 3,000 msg/s). Visibility Timeout hides consumed messages from other workers while processing; failing messages route to a DLQ.",
+    "expected_concepts": [
+      "SQS",
+      "Standard Queue",
+      "FIFO Queue",
+      "Dead-Letter Queue"
+    ],
+    "explanation": "Evaluates AWS Messaging & Integration and Amazon SQS Architecture comprehension."
+  },
+  {
+    "id": "aws_013",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Amazon SNS (Simple Notification Service) vs Amazon EventBridge for event-driven pub/sub architectures?",
+    "difficulty": "medium",
+    "topic": "Messaging & Events",
+    "concept": "Amazon SNS vs Amazon EventBridge",
+    "questionFamily": "comparison",
+    "tags": [
+      "SNS",
+      "EventBridge",
+      "pub/sub",
+      "event-driven",
+      "fan-out pattern",
+      "content filtering"
+    ],
+    "idealAnswer": "SNS is high-throughput pub/sub topic broadcasting (fanout to SQS, Lambda, SMS, Email). EventBridge is a serverless event bus with advanced schema discovery, content-based rule filtering, and native integration with SaaS partners (Datadog, PagerDuty).",
+    "ideal_answer": "SNS is high-throughput pub/sub topic broadcasting (fanout to SQS, Lambda, SMS, Email). EventBridge is a serverless event bus with advanced schema discovery, content-based rule filtering, and native integration with SaaS partners (Datadog, PagerDuty).",
+    "expected_concepts": [
+      "SNS",
+      "EventBridge",
+      "pub/sub",
+      "event-driven"
+    ],
+    "explanation": "Evaluates AWS Messaging & Events and Amazon SNS vs Amazon EventBridge comprehension."
+  },
+  {
+    "id": "aws_014",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain AWS CloudFormation and AWS Cloud Development Kit (CDK) for Infrastructure as Code (IaC).",
+    "difficulty": "medium",
+    "topic": "Infrastructure as Code",
+    "concept": "CloudFormation & AWS CDK",
+    "questionFamily": "architecture",
+    "tags": [
+      "CloudFormation",
+      "AWS CDK",
+      "Infrastructure as Code",
+      "declarative",
+      "TypeScript CDK"
+    ],
+    "idealAnswer": "CloudFormation provisions AWS resources declaratively from JSON/YAML templates. AWS CDK allows developers to define cloud infrastructure using familiar object-oriented programming languages (TypeScript, Python, Java) that synthesize into CloudFormation templates.",
+    "ideal_answer": "CloudFormation provisions AWS resources declaratively from JSON/YAML templates. AWS CDK allows developers to define cloud infrastructure using familiar object-oriented programming languages (TypeScript, Python, Java) that synthesize into CloudFormation templates.",
+    "expected_concepts": [
+      "CloudFormation",
+      "AWS CDK",
+      "Infrastructure as Code",
+      "declarative"
+    ],
+    "explanation": "Evaluates AWS Infrastructure as Code and CloudFormation & AWS CDK comprehension."
+  },
+  {
+    "id": "aws_015",
+    "skill": "AWS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Amazon CloudWatch (Metrics, Logs, Alarms) and AWS CloudTrail differ in monitoring and security auditing?",
+    "difficulty": "easy",
+    "topic": "Monitoring & Auditing",
+    "concept": "CloudWatch vs CloudTrail",
+    "questionFamily": "comparison",
+    "tags": [
+      "CloudWatch",
+      "CloudTrail",
+      "metrics",
+      "alarms",
+      "API auditing",
+      "governance"
+    ],
+    "idealAnswer": "CloudWatch monitors application performance, infrastructure metrics (CPU, disk), log aggregation, and triggers automated alarms. CloudTrail records governance, compliance, and auditing history of all AWS API actions called by users, roles, or services.",
+    "ideal_answer": "CloudWatch monitors application performance, infrastructure metrics (CPU, disk), log aggregation, and triggers automated alarms. CloudTrail records governance, compliance, and auditing history of all AWS API actions called by users, roles, or services.",
+    "expected_concepts": [
+      "CloudWatch",
+      "CloudTrail",
+      "metrics",
+      "alarms"
+    ],
+    "explanation": "Evaluates AWS Monitoring & Auditing and CloudWatch vs CloudTrail comprehension."
   }
 ]

@@ -1,44 +1,401 @@
 [
   {
-    "id": "EXPRESS_JS_001",
+    "id": "express_001",
     "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the core architecture of Express.js and how the Middleware pattern (req, res, next) works.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Express.js in modern software engineering?",
-    "expected_concepts": [
-      "Express.js fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Architecture",
+    "concept": "Middleware Pipeline Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Express.js",
+      "middleware",
+      "req",
+      "res",
+      "next()",
+      "pipeline"
     ],
-    "ideal_answer": "Express.js is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Express.js."
+    "idealAnswer": "Express is a minimalist web framework designed around a pipeline of middleware functions. Each middleware receives (req, res, next) and can inspect/modify request/response, terminate the cycle with res.send(), or invoke next() to pass control down the chain.",
+    "ideal_answer": "Express is a minimalist web framework designed around a pipeline of middleware functions. Each middleware receives (req, res, next) and can inspect/modify request/response, terminate the cycle with res.send(), or invoke next() to pass control down the chain.",
+    "expected_concepts": [
+      "Express.js",
+      "middleware",
+      "req",
+      "res"
+    ],
+    "explanation": "Evaluates Express.js Architecture and Middleware Pipeline Architecture comprehension."
   },
   {
-    "id": "EXPRESS_JS_002",
+    "id": "express_002",
     "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Application-level, Router-level, and Built-in middleware in Express?",
+    "difficulty": "easy",
+    "topic": "Middleware",
+    "concept": "Middleware Categorization",
+    "questionFamily": "comparison",
+    "tags": [
+      "app.use",
+      "express.Router",
+      "express.json",
+      "router-level middleware"
+    ],
+    "idealAnswer": "Application-level middleware binds to app instance via app.use()/app.METHOD(). Router-level middleware binds to express.Router() instances. Built-in middleware (express.json, express.urlencoded, express.static) handles parsing and static files.",
+    "ideal_answer": "Application-level middleware binds to app instance via app.use()/app.METHOD(). Router-level middleware binds to express.Router() instances. Built-in middleware (express.json, express.urlencoded, express.static) handles parsing and static files.",
+    "expected_concepts": [
+      "app.use",
+      "express.Router",
+      "express.json",
+      "router-level middleware"
+    ],
+    "explanation": "Evaluates Express.js Middleware and Middleware Categorization comprehension."
+  },
+  {
+    "id": "express_003",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Error-Handling Middleware in Express: why does it require exactly four arguments (err, req, res, next)?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Express.js in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Error Handling",
+    "concept": "4-Argument Error Handling Middleware",
+    "questionFamily": "implementation",
+    "tags": [
+      "error handling",
+      "err req res next",
+      "arity",
+      "global error handler"
     ],
-    "ideal_answer": "Common challenges with Express.js include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Express.js."
+    "idealAnswer": "Express inspects function parameter length (arity). A function with exactly 4 parameters (err, req, res, next) is treated specifically as an error-handling middleware and triggered whenever next(err) is called.",
+    "ideal_answer": "Express inspects function parameter length (arity). A function with exactly 4 parameters (err, req, res, next) is treated specifically as an error-handling middleware and triggered whenever next(err) is called.",
+    "expected_concepts": [
+      "error handling",
+      "err req res next",
+      "arity",
+      "global error handler"
+    ],
+    "explanation": "Evaluates Express.js Error Handling and 4-Argument Error Handling Middleware comprehension."
   },
   {
-    "id": "EXPRESS_JS_003",
+    "id": "express_004",
     "skill": "Express.js",
-    "difficulty": "hard",
-    "question": "How does Express.js handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Express.Router modularize routing in large web applications?",
+    "difficulty": "easy",
+    "topic": "Routing",
+    "concept": "Express Router Modularization",
+    "questionFamily": "design",
+    "tags": [
+      "express.Router",
+      "modular routes",
+      "sub-routes",
+      "controllers"
     ],
-    "ideal_answer": "Express.js handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Express.js."
+    "idealAnswer": "express.Router creates isolated mini-applications with their own middleware and routes that can be mounted at specific URL prefix paths (e.g. app.use('/api/v1/users', userRoutes)), decoupling route definitions.",
+    "ideal_answer": "express.Router creates isolated mini-applications with their own middleware and routes that can be mounted at specific URL prefix paths (e.g. app.use('/api/v1/users', userRoutes)), decoupling route definitions.",
+    "expected_concepts": [
+      "express.Router",
+      "modular routes",
+      "sub-routes",
+      "controllers"
+    ],
+    "explanation": "Evaluates Express.js Routing and Express Router Modularization comprehension."
+  },
+  {
+    "id": "express_005",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Route Parameters (req.params) and Query Strings (req.query) differ in Express?",
+    "difficulty": "easy",
+    "topic": "Routing",
+    "concept": "Route Params vs Query Strings",
+    "questionFamily": "comparison",
+    "tags": [
+      "req.params",
+      "req.query",
+      "named parameters",
+      "URL parsing"
+    ],
+    "idealAnswer": "Route parameters (e.g. /users/:id) match named URL path segments captured in req.params. Query strings (e.g. /users?role=admin&page=2) match optional key-value pairs after '?' parsed into req.query.",
+    "ideal_answer": "Route parameters (e.g. /users/:id) match named URL path segments captured in req.params. Query strings (e.g. /users?role=admin&page=2) match optional key-value pairs after '?' parsed into req.query.",
+    "expected_concepts": [
+      "req.params",
+      "req.query",
+      "named parameters",
+      "URL parsing"
+    ],
+    "explanation": "Evaluates Express.js Routing and Route Params vs Query Strings comprehension."
+  },
+  {
+    "id": "express_006",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you handle asynchronous route handlers in Express 4 vs Express 5 (automatic promise rejection handling)?",
+    "difficulty": "medium",
+    "topic": "Async Flow",
+    "concept": "Async Handlers & Express 5",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "async await",
+      "try catch",
+      "express-async-errors",
+      "Express 5",
+      "unhandledRejection"
+    ],
+    "idealAnswer": "In Express 4, rejected promises in async handlers cause unhandled rejections unless caught in try/catch and passed to next(err) (or wrapped in express-async-handler). Express 5 automatically catches rejected promises and routes them to error middleware.",
+    "ideal_answer": "In Express 4, rejected promises in async handlers cause unhandled rejections unless caught in try/catch and passed to next(err) (or wrapped in express-async-handler). Express 5 automatically catches rejected promises and routes them to error middleware.",
+    "expected_concepts": [
+      "async await",
+      "try catch",
+      "express-async-errors",
+      "Express 5"
+    ],
+    "explanation": "Evaluates Express.js Async Flow and Async Handlers & Express 5 comprehension."
+  },
+  {
+    "id": "express_007",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Request Body Parsing in Express: express.json(), express.urlencoded(), and multer for file uploads.",
+    "difficulty": "medium",
+    "topic": "Body Parsing",
+    "concept": "Body Parsers & Multer",
+    "questionFamily": "implementation",
+    "tags": [
+      "express.json",
+      "express.urlencoded",
+      "multer",
+      "multipart/form-data"
+    ],
+    "idealAnswer": "express.json() parses JSON payloads; express.urlencoded() parses URL-encoded form data. For multipart/form-data file uploads, third-party middleware like 'multer' streams and parses binary files to disk or memory.",
+    "ideal_answer": "express.json() parses JSON payloads; express.urlencoded() parses URL-encoded form data. For multipart/form-data file uploads, third-party middleware like 'multer' streams and parses binary files to disk or memory.",
+    "expected_concepts": [
+      "express.json",
+      "express.urlencoded",
+      "multer",
+      "multipart/form-data"
+    ],
+    "explanation": "Evaluates Express.js Body Parsing and Body Parsers & Multer comprehension."
+  },
+  {
+    "id": "express_008",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement JWT Authentication and Protected Routes using custom Express middleware?",
+    "difficulty": "medium",
+    "topic": "Authentication & Security",
+    "concept": "JWT Authentication Middleware",
+    "questionFamily": "security",
+    "tags": [
+      "JWT",
+      "Authorization header",
+      "Bearer token",
+      "jwt.verify",
+      "req.user"
+    ],
+    "idealAnswer": "An auth middleware extracts the Bearer token from the 'Authorization' header, verifies signature via jwt.verify(), attaches decoded user payload to 'req.user', and calls next(), or returns 401 Unauthorized on failure.",
+    "ideal_answer": "An auth middleware extracts the Bearer token from the 'Authorization' header, verifies signature via jwt.verify(), attaches decoded user payload to 'req.user', and calls next(), or returns 401 Unauthorized on failure.",
+    "expected_concepts": [
+      "JWT",
+      "Authorization header",
+      "Bearer token",
+      "jwt.verify"
+    ],
+    "explanation": "Evaluates Express.js Authentication & Security and JWT Authentication Middleware comprehension."
+  },
+  {
+    "id": "express_009",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is CORS (Cross-Origin Resource Sharing), and how do you configure the cors middleware in Express?",
+    "difficulty": "easy",
+    "topic": "Security",
+    "concept": "CORS Configuration",
+    "questionFamily": "security",
+    "tags": [
+      "CORS",
+      "Access-Control-Allow-Origin",
+      "preflight",
+      "OPTIONS request"
+    ],
+    "idealAnswer": "CORS is a browser security mechanism blocking cross-origin AJAX requests. The 'cors' middleware sets 'Access-Control-Allow-Origin', allowed HTTP methods, allowed headers, and handles preflight OPTIONS requests.",
+    "ideal_answer": "CORS is a browser security mechanism blocking cross-origin AJAX requests. The 'cors' middleware sets 'Access-Control-Allow-Origin', allowed HTTP methods, allowed headers, and handles preflight OPTIONS requests.",
+    "expected_concepts": [
+      "CORS",
+      "Access-Control-Allow-Origin",
+      "preflight",
+      "OPTIONS request"
+    ],
+    "explanation": "Evaluates Express.js Security and CORS Configuration comprehension."
+  },
+  {
+    "id": "express_010",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Rate Limiting in Express using express-rate-limit and Redis store to prevent brute-force attacks.",
+    "difficulty": "medium",
+    "topic": "Security & Rate Limiting",
+    "concept": "Rate Limiting with Redis",
+    "questionFamily": "security",
+    "tags": [
+      "rate limiting",
+      "express-rate-limit",
+      "Redis",
+      "429 Too Many Requests",
+      "DDoS"
+    ],
+    "idealAnswer": "Rate limiting restricts the number of requests a client IP can make within a time window. Using express-rate-limit backed by Redis provides distributed rate limiting across multiple server instances with 429 status returns.",
+    "ideal_answer": "Rate limiting restricts the number of requests a client IP can make within a time window. Using express-rate-limit backed by Redis provides distributed rate limiting across multiple server instances with 429 status returns.",
+    "expected_concepts": [
+      "rate limiting",
+      "express-rate-limit",
+      "Redis",
+      "429 Too Many Requests"
+    ],
+    "explanation": "Evaluates Express.js Security & Rate Limiting and Rate Limiting with Redis comprehension."
+  },
+  {
+    "id": "express_011",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you perform Schema Validation on incoming request data in Express using libraries like Joi or Zod?",
+    "difficulty": "medium",
+    "topic": "Validation",
+    "concept": "Request Validation with Zod/Joi",
+    "questionFamily": "best_practice",
+    "tags": [
+      "validation",
+      "Zod",
+      "Joi",
+      "schema validation",
+      "400 Bad Request"
+    ],
+    "idealAnswer": "Validation middleware validates req.body, req.query, or req.params against predefined Zod/Joi schemas before reaching the controller. If validation fails, it immediately returns a structured 400 Bad Request with field errors.",
+    "ideal_answer": "Validation middleware validates req.body, req.query, or req.params against predefined Zod/Joi schemas before reaching the controller. If validation fails, it immediately returns a structured 400 Bad Request with field errors.",
+    "expected_concepts": [
+      "validation",
+      "Zod",
+      "Joi",
+      "schema validation"
+    ],
+    "explanation": "Evaluates Express.js Validation and Request Validation with Zod/Joi comprehension."
+  },
+  {
+    "id": "express_012",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Helmet middleware in Express, and what HTTP security headers does it set (HSTS, X-Frame-Options, X-Content-Type-Options)?",
+    "difficulty": "easy",
+    "topic": "Security",
+    "concept": "Helmet Security Headers",
+    "questionFamily": "security",
+    "tags": [
+      "Helmet",
+      "HSTS",
+      "X-Frame-Options",
+      "Content-Security-Policy",
+      "clickjacking"
+    ],
+    "idealAnswer": "Helmet sets 15+ secure HTTP response headers, preventing common web vulnerabilities like clickjacking (X-Frame-Options), MIME-type sniffing (X-Content-Type-Options), and enforcing HTTPS (Strict-Transport-Security).",
+    "ideal_answer": "Helmet sets 15+ secure HTTP response headers, preventing common web vulnerabilities like clickjacking (X-Frame-Options), MIME-type sniffing (X-Content-Type-Options), and enforcing HTTPS (Strict-Transport-Security).",
+    "expected_concepts": [
+      "Helmet",
+      "HSTS",
+      "X-Frame-Options",
+      "Content-Security-Policy"
+    ],
+    "explanation": "Evaluates Express.js Security and Helmet Security Headers comprehension."
+  },
+  {
+    "id": "express_013",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Template Rendering work in Express with engines like EJS, Pug, or Handlebars (res.render)?",
+    "difficulty": "easy",
+    "topic": "View Engines",
+    "concept": "Template Engines (EJS/Pug)",
+    "questionFamily": "implementation",
+    "tags": [
+      "res.render",
+      "EJS",
+      "Pug",
+      "view engine",
+      "server-rendered HTML"
+    ],
+    "idealAnswer": "Express configures view engines via app.set('view engine', 'ejs'). Calling res.render('viewName', data) compiles templates with dynamic data into HTML on the server before sending to the client.",
+    "ideal_answer": "Express configures view engines via app.set('view engine', 'ejs'). Calling res.render('viewName', data) compiles templates with dynamic data into HTML on the server before sending to the client.",
+    "expected_concepts": [
+      "res.render",
+      "EJS",
+      "Pug",
+      "view engine"
+    ],
+    "explanation": "Evaluates Express.js View Engines and Template Engines (EJS/Pug) comprehension."
+  },
+  {
+    "id": "express_014",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Session management in Express using express-session and connect-redis for scalable stateful sessions.",
+    "difficulty": "medium",
+    "topic": "Sessions & State",
+    "concept": "express-session & Redis Store",
+    "questionFamily": "architecture",
+    "tags": [
+      "express-session",
+      "connect-redis",
+      "session ID cookie",
+      "stateful auth"
+    ],
+    "idealAnswer": "express-session stores session data identified by a signed cookie. Using connect-redis stores session objects in centralized Redis rather than default memory (MemoryStore), enabling horizontal scaling across multiple Node processes.",
+    "ideal_answer": "express-session stores session data identified by a signed cookie. Using connect-redis stores session objects in centralized Redis rather than default memory (MemoryStore), enabling horizontal scaling across multiple Node processes.",
+    "expected_concepts": [
+      "express-session",
+      "connect-redis",
+      "session ID cookie",
+      "stateful auth"
+    ],
+    "explanation": "Evaluates Express.js Sessions & State and express-session & Redis Store comprehension."
+  },
+  {
+    "id": "express_015",
+    "skill": "Express.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you structure an enterprise Express codebase following Controller-Service-Repository (Layered Architecture)?",
+    "difficulty": "medium",
+    "topic": "Architecture",
+    "concept": "Layered Controller-Service-Repository Pattern",
+    "questionFamily": "best_practice",
+    "tags": [
+      "layered architecture",
+      "controller",
+      "service",
+      "repository",
+      "separation of concerns"
+    ],
+    "idealAnswer": "Layered architecture separates concerns: Routes define endpoints; Controllers handle HTTP req/res; Services contain pure business logic; Repositories/DAOs manage database queries, ensuring high testability and clean separation.",
+    "ideal_answer": "Layered architecture separates concerns: Routes define endpoints; Controllers handle HTTP req/res; Services contain pure business logic; Repositories/DAOs manage database queries, ensuring high testability and clean separation.",
+    "expected_concepts": [
+      "layered architecture",
+      "controller",
+      "service",
+      "repository"
+    ],
+    "explanation": "Evaluates Express.js Architecture and Layered Controller-Service-Repository Pattern comprehension."
   }
 ]

@@ -1,0 +1,1657 @@
+[
+  {
+    "id": "sql_001",
+    "title": "Find the Second-Highest Salary",
+    "topic": "Subquery & Aggregation",
+    "difficulty": "Medium",
+    "description": "Write a query to find the second-highest salary among all employees in the Employees table.",
+    "tables": [
+      {
+        "name": "Employees",
+        "columns": [
+          "employee_id",
+          "employee_name",
+          "department_id",
+          "salary",
+          "joining_date"
+        ],
+        "rows": [
+          {
+            "employee_id": 1,
+            "employee_name": "Arun Kumar",
+            "department_id": 10,
+            "salary": 50000,
+            "joining_date": "2023-01-10"
+          },
+          {
+            "employee_id": 2,
+            "employee_name": "Bala Murugan",
+            "department_id": 20,
+            "salary": 65000,
+            "joining_date": "2022-05-15"
+          },
+          {
+            "employee_id": 3,
+            "employee_name": "Charan Raj",
+            "department_id": 10,
+            "salary": 92000,
+            "joining_date": "2021-07-20"
+          },
+          {
+            "employee_id": 4,
+            "employee_name": "Divya Prakash",
+            "department_id": 30,
+            "salary": 78000,
+            "joining_date": "2024-02-12"
+          },
+          {
+            "employee_id": 5,
+            "employee_name": "Ezhil Vendan",
+            "department_id": 20,
+            "salary": 92000,
+            "joining_date": "2020-11-05"
+          },
+          {
+            "employee_id": 6,
+            "employee_name": "Farhana Banu",
+            "department_id": 10,
+            "salary": 85000,
+            "joining_date": "2023-08-01"
+          }
+        ]
+      },
+      {
+        "name": "Departments",
+        "columns": [
+          "department_id",
+          "department_name",
+          "location",
+          "manager_name",
+          "budget"
+        ],
+        "rows": [
+          {
+            "department_id": 10,
+            "department_name": "Engineering",
+            "location": "Chennai",
+            "manager_name": "Ravi Shastri",
+            "budget": 1200000
+          },
+          {
+            "department_id": 20,
+            "department_name": "Human Resources",
+            "location": "Bengaluru",
+            "manager_name": "Meena Sundaram",
+            "budget": 750000
+          },
+          {
+            "department_id": 30,
+            "department_name": "Finance",
+            "location": "Hyderabad",
+            "manager_name": "Kiran Reddy",
+            "budget": 850000
+          },
+          {
+            "department_id": 40,
+            "department_name": "Sales",
+            "location": "Mumbai",
+            "manager_name": "Priya Sharma",
+            "budget": 950000
+          },
+          {
+            "department_id": 50,
+            "department_name": "Marketing",
+            "location": "Pune",
+            "manager_name": "Suresh Raina",
+            "budget": 600000
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "second_highest_salary"
+      ],
+      "row_count": 1,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns exactly 1 row containing the second highest salary value."
+    },
+    "expected_result": [
+      {
+        "second_highest_salary": 85000
+      }
+    ],
+    "expected_query": "SELECT MAX(salary) AS second_highest_salary FROM Employees WHERE salary < (SELECT MAX(salary) FROM Employees);",
+    "explanation": "The inner subquery selects the overall maximum salary (92000), and the outer query finds the maximum salary strictly less than that (85000)."
+  },
+  {
+    "id": "sql_002",
+    "title": "Department-Wise Average Salary with Threshold",
+    "topic": "GROUP BY & HAVING",
+    "difficulty": "Medium",
+    "description": "Write a query to display the department name and average salary for each department that has an average salary greater than 60,000. Order the result by average salary in descending order.",
+    "tables": [
+      {
+        "name": "Employees",
+        "columns": [
+          "employee_id",
+          "employee_name",
+          "department_id",
+          "salary",
+          "designation"
+        ],
+        "rows": [
+          {
+            "employee_id": 101,
+            "employee_name": "Kavitha S",
+            "department_id": 1,
+            "salary": 75000,
+            "designation": "Software Engineer"
+          },
+          {
+            "employee_id": 102,
+            "employee_name": "Manoj K",
+            "department_id": 1,
+            "salary": 85000,
+            "designation": "Senior Engineer"
+          },
+          {
+            "employee_id": 103,
+            "employee_name": "Nandhini R",
+            "department_id": 2,
+            "salary": 52000,
+            "designation": "HR Specialist"
+          },
+          {
+            "employee_id": 104,
+            "employee_name": "Pradeep V",
+            "department_id": 2,
+            "salary": 58000,
+            "designation": "HR Lead"
+          },
+          {
+            "employee_id": 105,
+            "employee_name": "Sandhya G",
+            "department_id": 3,
+            "salary": 90000,
+            "designation": "Financial Analyst"
+          },
+          {
+            "employee_id": 106,
+            "employee_name": "Vijay T",
+            "department_id": 3,
+            "salary": 65000,
+            "designation": "Accountant"
+          }
+        ]
+      },
+      {
+        "name": "Departments",
+        "columns": [
+          "department_id",
+          "department_name",
+          "building",
+          "floor_number",
+          "headcount"
+        ],
+        "rows": [
+          {
+            "department_id": 1,
+            "department_name": "Technology",
+            "building": "Block A",
+            "floor_number": 4,
+            "headcount": 45
+          },
+          {
+            "department_id": 2,
+            "department_name": "People Operations",
+            "building": "Block B",
+            "floor_number": 2,
+            "headcount": 12
+          },
+          {
+            "department_id": 3,
+            "department_name": "Corporate Finance",
+            "building": "Block A",
+            "floor_number": 5,
+            "headcount": 18
+          },
+          {
+            "department_id": 4,
+            "department_name": "Operations",
+            "building": "Block C",
+            "floor_number": 1,
+            "headcount": 30
+          },
+          {
+            "department_id": 5,
+            "department_name": "Legal",
+            "building": "Block B",
+            "floor_number": 3,
+            "headcount": 8
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "department_name",
+        "avg_salary"
+      ],
+      "row_count": 2,
+      "order_required": true,
+      "ordering": "avg_salary DESC",
+      "notes": "Returns 2 rows with department_name and avg_salary sorted descending by avg_salary."
+    },
+    "expected_result": [
+      {
+        "department_name": "Technology",
+        "avg_salary": 80000
+      },
+      {
+        "department_name": "Corporate Finance",
+        "avg_salary": 77500
+      }
+    ],
+    "expected_query": "SELECT d.department_name, AVG(e.salary) AS avg_salary FROM Employees e JOIN Departments d ON e.department_id = d.department_id GROUP BY d.department_name HAVING AVG(e.salary) > 60000 ORDER BY avg_salary DESC;",
+    "explanation": "Joins Employees and Departments on department_id, aggregates with GROUP BY on department_name, filters groups having AVG(salary) > 60000, and orders descending."
+  },
+  {
+    "id": "sql_003",
+    "title": "Customers with No Orders",
+    "topic": "LEFT JOIN & NULL Check",
+    "difficulty": "Easy",
+    "description": "Write a query to find the names and email addresses of all customers who have never placed an order.",
+    "tables": [
+      {
+        "name": "Customers",
+        "columns": [
+          "customer_id",
+          "customer_name",
+          "email",
+          "city",
+          "signup_date"
+        ],
+        "rows": [
+          {
+            "customer_id": 1,
+            "customer_name": "Aakash Patel",
+            "email": "aakash@gmail.com",
+            "city": "Ahmedabad",
+            "signup_date": "2023-01-15"
+          },
+          {
+            "customer_id": 2,
+            "customer_name": "Deepa Nair",
+            "email": "deepa@gmail.com",
+            "city": "Kochi",
+            "signup_date": "2023-03-22"
+          },
+          {
+            "customer_id": 3,
+            "customer_name": "Gautam Sen",
+            "email": "gautam@gmail.com",
+            "city": "Kolkata",
+            "signup_date": "2023-05-10"
+          },
+          {
+            "customer_id": 4,
+            "customer_name": "Hema Malini",
+            "email": "hema@gmail.com",
+            "city": "Chennai",
+            "signup_date": "2023-07-04"
+          },
+          {
+            "customer_id": 5,
+            "customer_name": "Imran Khan",
+            "email": "imran@gmail.com",
+            "city": "Delhi",
+            "signup_date": "2023-09-18"
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "columns": [
+          "order_id",
+          "customer_id",
+          "order_date",
+          "total_amount",
+          "order_status"
+        ],
+        "rows": [
+          {
+            "order_id": 5001,
+            "customer_id": 1,
+            "order_date": "2023-02-01",
+            "total_amount": 3400.0,
+            "order_status": "Delivered"
+          },
+          {
+            "order_id": 5002,
+            "customer_id": 1,
+            "order_date": "2023-04-12",
+            "total_amount": 1200.0,
+            "order_status": "Delivered"
+          },
+          {
+            "order_id": 5003,
+            "customer_id": 3,
+            "order_date": "2023-06-19",
+            "total_amount": 8900.0,
+            "order_status": "Shipped"
+          },
+          {
+            "order_id": 5004,
+            "customer_id": 5,
+            "order_date": "2023-10-05",
+            "total_amount": 2500.0,
+            "order_status": "Processing"
+          },
+          {
+            "order_id": 5005,
+            "customer_id": 3,
+            "order_date": "2023-11-20",
+            "total_amount": 4300.0,
+            "order_status": "Delivered"
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "customer_name",
+        "email"
+      ],
+      "row_count": 2,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns customer_name and email of customers with no order records."
+    },
+    "expected_result": [
+      {
+        "customer_name": "Deepa Nair",
+        "email": "deepa@gmail.com"
+      },
+      {
+        "customer_name": "Hema Malini",
+        "email": "hema@gmail.com"
+      }
+    ],
+    "expected_query": "SELECT c.customer_name, c.email FROM Customers c LEFT JOIN Orders o ON c.customer_id = o.customer_id WHERE o.order_id IS NULL;",
+    "explanation": "A LEFT JOIN preserves all customers; filtering WHERE o.order_id IS NULL identifies customers (Deepa Nair and Hema Malini) without matching orders."
+  },
+  {
+    "id": "sql_004",
+    "title": "Highest Paid Employee in Each Department",
+    "topic": "Correlated Subquery / JOIN",
+    "difficulty": "Hard",
+    "description": "Write a query to find the employee name, department name, and salary of the highest-paid employee in each department.",
+    "tables": [
+      {
+        "name": "Employees",
+        "columns": [
+          "employee_id",
+          "employee_name",
+          "department_id",
+          "salary",
+          "experience_years"
+        ],
+        "rows": [
+          {
+            "employee_id": 1,
+            "employee_name": "Rohan",
+            "department_id": 10,
+            "salary": 80000,
+            "experience_years": 5
+          },
+          {
+            "employee_id": 2,
+            "employee_name": "Simran",
+            "department_id": 10,
+            "salary": 95000,
+            "experience_years": 8
+          },
+          {
+            "employee_id": 3,
+            "employee_name": "Ananya",
+            "department_id": 20,
+            "salary": 60000,
+            "experience_years": 4
+          },
+          {
+            "employee_id": 4,
+            "employee_name": "Vikram",
+            "department_id": 20,
+            "salary": 72000,
+            "experience_years": 7
+          },
+          {
+            "employee_id": 5,
+            "employee_name": "Tara",
+            "department_id": 30,
+            "salary": 88000,
+            "experience_years": 6
+          },
+          {
+            "employee_id": 6,
+            "employee_name": "Varun",
+            "department_id": 30,
+            "salary": 88000,
+            "experience_years": 6
+          }
+        ]
+      },
+      {
+        "name": "Departments",
+        "columns": [
+          "department_id",
+          "department_name",
+          "branch_code",
+          "country",
+          "annual_revenue"
+        ],
+        "rows": [
+          {
+            "department_id": 10,
+            "department_name": "Engineering",
+            "branch_code": "BLR-01",
+            "country": "India",
+            "annual_revenue": 5000000
+          },
+          {
+            "department_id": 20,
+            "department_name": "Marketing",
+            "branch_code": "MUM-02",
+            "country": "India",
+            "annual_revenue": 2000000
+          },
+          {
+            "department_id": 30,
+            "department_name": "Sales",
+            "branch_code": "DEL-03",
+            "country": "India",
+            "annual_revenue": 3500000
+          },
+          {
+            "department_id": 40,
+            "department_name": "Support",
+            "branch_code": "HYD-04",
+            "country": "India",
+            "annual_revenue": 1500000
+          },
+          {
+            "department_id": 50,
+            "department_name": "Administration",
+            "branch_code": "CHE-05",
+            "country": "India",
+            "annual_revenue": 1000000
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "employee_name",
+        "department_name",
+        "salary"
+      ],
+      "row_count": 4,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns 4 rows with employee_name, department_name, and salary for the highest earner in each department (including ties)."
+    },
+    "expected_result": [
+      {
+        "employee_name": "Simran",
+        "department_name": "Engineering",
+        "salary": 95000
+      },
+      {
+        "employee_name": "Vikram",
+        "department_name": "Marketing",
+        "salary": 72000
+      },
+      {
+        "employee_name": "Tara",
+        "department_name": "Sales",
+        "salary": 88000
+      },
+      {
+        "employee_name": "Varun",
+        "department_name": "Sales",
+        "salary": 88000
+      }
+    ],
+    "expected_query": "SELECT e.employee_name, d.department_name, e.salary FROM Employees e JOIN Departments d ON e.department_id = d.department_id WHERE e.salary = (SELECT MAX(e2.salary) FROM Employees e2 WHERE e2.department_id = e.department_id);",
+    "explanation": "Uses a correlated subquery to match each employee's salary with the maximum salary in their specific department."
+  },
+  {
+    "id": "sql_005",
+    "title": "Top 3 Highest Spending Customers",
+    "topic": "Aggregate & ORDER BY & LIMIT",
+    "difficulty": "Medium",
+    "description": "Write a query to find the top 3 customers who have spent the highest total amount across all their orders. Display customer name, email, and total spent amount.",
+    "tables": [
+      {
+        "name": "Customers",
+        "columns": [
+          "customer_id",
+          "customer_name",
+          "email",
+          "phone_number",
+          "membership_level"
+        ],
+        "rows": [
+          {
+            "customer_id": 1,
+            "customer_name": "Amit Shah",
+            "email": "amit@corp.com",
+            "phone_number": "9876543210",
+            "membership_level": "Gold"
+          },
+          {
+            "customer_id": 2,
+            "customer_name": "Barkha Dutt",
+            "email": "barkha@media.com",
+            "phone_number": "9876543211",
+            "membership_level": "Platinum"
+          },
+          {
+            "customer_id": 3,
+            "customer_name": "Chetan Bhagat",
+            "email": "chetan@author.com",
+            "phone_number": "9876543212",
+            "membership_level": "Silver"
+          },
+          {
+            "customer_id": 4,
+            "customer_name": "Deepika Padukone",
+            "email": "deepika@film.com",
+            "phone_number": "9876543213",
+            "membership_level": "Platinum"
+          },
+          {
+            "customer_id": 5,
+            "customer_name": "Esha Deol",
+            "email": "esha@film.com",
+            "phone_number": "9876543214",
+            "membership_level": "Bronze"
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "columns": [
+          "order_id",
+          "customer_id",
+          "order_date",
+          "total_amount",
+          "payment_mode"
+        ],
+        "rows": [
+          {
+            "order_id": 101,
+            "customer_id": 1,
+            "order_date": "2024-01-05",
+            "total_amount": 15000,
+            "payment_mode": "Credit Card"
+          },
+          {
+            "order_id": 102,
+            "customer_id": 2,
+            "order_date": "2024-01-10",
+            "total_amount": 42000,
+            "payment_mode": "UPI"
+          },
+          {
+            "order_id": 103,
+            "customer_id": 1,
+            "order_date": "2024-02-01",
+            "total_amount": 25000,
+            "payment_mode": "Net Banking"
+          },
+          {
+            "order_id": 104,
+            "customer_id": 4,
+            "order_date": "2024-02-15",
+            "total_amount": 55000,
+            "payment_mode": "Credit Card"
+          },
+          {
+            "order_id": 105,
+            "customer_id": 3,
+            "order_date": "2024-02-20",
+            "total_amount": 8000,
+            "payment_mode": "Cash on Delivery"
+          },
+          {
+            "order_id": 106,
+            "customer_id": 2,
+            "order_date": "2024-03-01",
+            "total_amount": 18000,
+            "payment_mode": "UPI"
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "customer_name",
+        "email",
+        "total_spent"
+      ],
+      "row_count": 3,
+      "order_required": true,
+      "ordering": "total_spent DESC",
+      "notes": "Returns exactly 3 rows with customer_name, email, and total_spent sorted descending by total_spent."
+    },
+    "expected_result": [
+      {
+        "customer_name": "Barkha Dutt",
+        "email": "barkha@media.com",
+        "total_spent": 60000
+      },
+      {
+        "customer_name": "Deepika Padukone",
+        "email": "deepika@film.com",
+        "total_spent": 55000
+      },
+      {
+        "customer_name": "Amit Shah",
+        "email": "amit@corp.com",
+        "total_spent": 40000
+      }
+    ],
+    "expected_query": "SELECT c.customer_name, c.email, SUM(o.total_amount) AS total_spent FROM Customers c JOIN Orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id, c.customer_name, c.email ORDER BY total_spent DESC LIMIT 3;",
+    "explanation": "Joins Customers and Orders, sums the order amounts per customer, orders by total_spent descending, and limits to the top 3 records."
+  },
+  {
+    "id": "sql_006",
+    "title": "Products That Have Never Been Sold",
+    "topic": "Subquery & NOT IN / NOT EXISTS",
+    "difficulty": "Easy",
+    "description": "Write a query to retrieve product_name, category, and unit_price of all products that have zero sales recorded in the Sales table.",
+    "tables": [
+      {
+        "name": "Products",
+        "columns": [
+          "product_id",
+          "product_name",
+          "category",
+          "unit_price",
+          "stock_quantity"
+        ],
+        "rows": [
+          {
+            "product_id": 1,
+            "product_name": "Mechanical Keyboard",
+            "category": "Electronics",
+            "unit_price": 4500,
+            "stock_quantity": 25
+          },
+          {
+            "product_id": 2,
+            "product_name": "Ergonomic Mouse",
+            "category": "Electronics",
+            "unit_price": 2200,
+            "stock_quantity": 40
+          },
+          {
+            "product_id": 3,
+            "product_name": "Standing Desk",
+            "category": "Furniture",
+            "unit_price": 18000,
+            "stock_quantity": 10
+          },
+          {
+            "product_id": 4,
+            "product_name": "USB-C Hub",
+            "category": "Accessories",
+            "unit_price": 1500,
+            "stock_quantity": 50
+          },
+          {
+            "product_id": 5,
+            "product_name": "Noise Cancelling Headphones",
+            "category": "Audio",
+            "unit_price": 12500,
+            "stock_quantity": 15
+          }
+        ]
+      },
+      {
+        "name": "Sales",
+        "columns": [
+          "sale_id",
+          "product_id",
+          "quantity_sold",
+          "sale_date",
+          "discount_percentage"
+        ],
+        "rows": [
+          {
+            "sale_id": 1001,
+            "product_id": 1,
+            "quantity_sold": 3,
+            "sale_date": "2024-01-10",
+            "discount_percentage": 5
+          },
+          {
+            "sale_id": 1002,
+            "product_id": 2,
+            "quantity_sold": 5,
+            "sale_date": "2024-01-12",
+            "discount_percentage": 10
+          },
+          {
+            "sale_id": 1003,
+            "product_id": 1,
+            "quantity_sold": 2,
+            "sale_date": "2024-02-05",
+            "discount_percentage": 0
+          },
+          {
+            "sale_id": 1004,
+            "product_id": 4,
+            "quantity_sold": 8,
+            "sale_date": "2024-02-18",
+            "discount_percentage": 15
+          },
+          {
+            "sale_id": 1005,
+            "product_id": 2,
+            "quantity_sold": 4,
+            "sale_date": "2024-03-01",
+            "discount_percentage": 5
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "product_name",
+        "category",
+        "unit_price"
+      ],
+      "row_count": 2,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns 2 rows with product_name, category, and unit_price for unsold products."
+    },
+    "expected_result": [
+      {
+        "product_name": "Standing Desk",
+        "category": "Furniture",
+        "unit_price": 18000
+      },
+      {
+        "product_name": "Noise Cancelling Headphones",
+        "category": "Audio",
+        "unit_price": 12500
+      }
+    ],
+    "expected_query": "SELECT product_name, category, unit_price FROM Products WHERE product_id NOT IN (SELECT product_id FROM Sales);",
+    "explanation": "Selects products whose product_id does not exist in the Sales table (Standing Desk and Noise Cancelling Headphones)."
+  },
+  {
+    "id": "sql_007",
+    "title": "Rank Employees by Salary Within Department",
+    "topic": "Window Functions (DENSE_RANK)",
+    "difficulty": "Medium",
+    "description": "Write a query to assign a salary rank (dense rank) to each employee within their respective department, ordered from highest salary to lowest. Return employee_name, department_id, salary, and salary_rank.",
+    "tables": [
+      {
+        "name": "Employees",
+        "columns": [
+          "employee_id",
+          "employee_name",
+          "department_id",
+          "salary",
+          "rating"
+        ],
+        "rows": [
+          {
+            "employee_id": 1,
+            "employee_name": "Harish",
+            "department_id": 10,
+            "salary": 70000,
+            "rating": 4.2
+          },
+          {
+            "employee_id": 2,
+            "employee_name": "Ishaan",
+            "department_id": 10,
+            "salary": 85000,
+            "rating": 4.8
+          },
+          {
+            "employee_id": 3,
+            "employee_name": "Janani",
+            "department_id": 10,
+            "salary": 70000,
+            "rating": 4.0
+          },
+          {
+            "employee_id": 4,
+            "employee_name": "Karthik",
+            "department_id": 20,
+            "salary": 90000,
+            "rating": 4.9
+          },
+          {
+            "employee_id": 5,
+            "employee_name": "Lavanya",
+            "department_id": 20,
+            "salary": 65000,
+            "rating": 3.9
+          },
+          {
+            "employee_id": 6,
+            "employee_name": "Mohan",
+            "department_id": 20,
+            "salary": 90000,
+            "rating": 4.7
+          }
+        ]
+      },
+      {
+        "name": "Departments",
+        "columns": [
+          "department_id",
+          "department_name",
+          "division",
+          "city",
+          "target_growth"
+        ],
+        "rows": [
+          {
+            "department_id": 10,
+            "department_name": "Research",
+            "division": "Core",
+            "city": "Bengaluru",
+            "target_growth": 15
+          },
+          {
+            "department_id": 20,
+            "department_name": "Development",
+            "division": "Products",
+            "city": "Hyderabad",
+            "target_growth": 25
+          },
+          {
+            "department_id": 30,
+            "department_name": "QA",
+            "division": "Quality",
+            "city": "Chennai",
+            "target_growth": 10
+          },
+          {
+            "department_id": 40,
+            "department_name": "Infrastructure",
+            "division": "Cloud",
+            "city": "Pune",
+            "target_growth": 20
+          },
+          {
+            "department_id": 50,
+            "department_name": "Design",
+            "division": "UX",
+            "city": "Delhi",
+            "target_growth": 12
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "employee_name",
+        "department_id",
+        "salary",
+        "salary_rank"
+      ],
+      "row_count": 6,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns 6 rows with employee_name, department_id, salary, and dense rank per department."
+    },
+    "expected_result": [
+      {
+        "employee_name": "Ishaan",
+        "department_id": 10,
+        "salary": 85000,
+        "salary_rank": 1
+      },
+      {
+        "employee_name": "Harish",
+        "department_id": 10,
+        "salary": 70000,
+        "salary_rank": 2
+      },
+      {
+        "employee_name": "Janani",
+        "department_id": 10,
+        "salary": 70000,
+        "salary_rank": 2
+      },
+      {
+        "employee_name": "Karthik",
+        "department_id": 20,
+        "salary": 90000,
+        "salary_rank": 1
+      },
+      {
+        "employee_name": "Mohan",
+        "department_id": 20,
+        "salary": 90000,
+        "salary_rank": 1
+      },
+      {
+        "employee_name": "Lavanya",
+        "department_id": 20,
+        "salary": 65000,
+        "salary_rank": 2
+      }
+    ],
+    "expected_query": "SELECT employee_name, department_id, salary, DENSE_RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) AS salary_rank FROM Employees;",
+    "explanation": "Uses DENSE_RANK() window function partitioned by department_id and ordered by salary descending to rank employees without gaps."
+  },
+  {
+    "id": "sql_008",
+    "title": "Authors with More Than 1 Published Book",
+    "topic": "JOIN & COUNT with HAVING",
+    "difficulty": "Easy",
+    "description": "Write a query to list author_name, country, and the total number of books written (as book_count) for all authors who have written more than 1 book.",
+    "tables": [
+      {
+        "name": "Authors",
+        "columns": [
+          "author_id",
+          "author_name",
+          "country",
+          "birth_year",
+          "awards_count"
+        ],
+        "rows": [
+          {
+            "author_id": 1,
+            "author_name": "R.K. Narayan",
+            "country": "India",
+            "birth_year": 1906,
+            "awards_count": 5
+          },
+          {
+            "author_id": 2,
+            "author_name": "George Orwell",
+            "country": "UK",
+            "birth_year": 1903,
+            "awards_count": 8
+          },
+          {
+            "author_id": 3,
+            "author_name": "Arundhati Roy",
+            "country": "India",
+            "birth_year": 1961,
+            "awards_count": 4
+          },
+          {
+            "author_id": 4,
+            "author_name": "Gabriel Marquez",
+            "country": "Colombia",
+            "birth_year": 1927,
+            "awards_count": 9
+          },
+          {
+            "author_id": 5,
+            "author_name": "J.K. Rowling",
+            "country": "UK",
+            "birth_year": 1965,
+            "awards_count": 12
+          }
+        ]
+      },
+      {
+        "name": "Books",
+        "columns": [
+          "book_id",
+          "author_id",
+          "title",
+          "publication_year",
+          "price"
+        ],
+        "rows": [
+          {
+            "book_id": 201,
+            "author_id": 1,
+            "title": "Malgudi Days",
+            "publication_year": 1943,
+            "price": 299
+          },
+          {
+            "book_id": 202,
+            "author_id": 1,
+            "title": "The Guide",
+            "publication_year": 1958,
+            "price": 350
+          },
+          {
+            "book_id": 203,
+            "author_id": 2,
+            "title": "1984",
+            "publication_year": 1949,
+            "price": 450
+          },
+          {
+            "book_id": 204,
+            "author_id": 2,
+            "title": "Animal Farm",
+            "publication_year": 1945,
+            "price": 320
+          },
+          {
+            "book_id": 205,
+            "author_id": 3,
+            "title": "The God of Small Things",
+            "publication_year": 1997,
+            "price": 499
+          },
+          {
+            "book_id": 206,
+            "author_id": 5,
+            "title": "Harry Potter 1",
+            "publication_year": 1997,
+            "price": 599
+          },
+          {
+            "book_id": 207,
+            "author_id": 5,
+            "title": "Harry Potter 2",
+            "publication_year": 1998,
+            "price": 599
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "author_name",
+        "country",
+        "book_count"
+      ],
+      "row_count": 3,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns 3 rows with author_name, country, and book_count for authors with more than 1 book."
+    },
+    "expected_result": [
+      {
+        "author_name": "R.K. Narayan",
+        "country": "India",
+        "book_count": 2
+      },
+      {
+        "author_name": "George Orwell",
+        "country": "UK",
+        "book_count": 2
+      },
+      {
+        "author_name": "J.K. Rowling",
+        "country": "UK",
+        "book_count": 2
+      }
+    ],
+    "expected_query": "SELECT a.author_name, a.country, COUNT(b.book_id) AS book_count FROM Authors a JOIN Books b ON a.author_id = b.author_id GROUP BY a.author_id, a.author_name, a.country HAVING COUNT(b.book_id) > 1;",
+    "explanation": "Joins Authors and Books, groups by author details, and filters authors having a book count greater than 1."
+  },
+  {
+    "id": "sql_009",
+    "title": "Categorize Customers by Total Orders (CASE Statement)",
+    "topic": "CASE Statement & Aggregation",
+    "difficulty": "Medium",
+    "description": "Write a query to display customer_name, total_orders (count of orders), and customer_category where customer_category is 'Frequent' if total_orders >= 3, 'Regular' if total_orders between 1 and 2, and 'Inactive' if 0.",
+    "tables": [
+      {
+        "name": "Customers",
+        "columns": [
+          "customer_id",
+          "customer_name",
+          "city",
+          "state",
+          "loyalty_points"
+        ],
+        "rows": [
+          {
+            "customer_id": 1,
+            "customer_name": "Pooja Hegde",
+            "city": "Mumbai",
+            "state": "Maharashtra",
+            "loyalty_points": 450
+          },
+          {
+            "customer_id": 2,
+            "customer_name": "Rahul Dravid",
+            "city": "Bengaluru",
+            "state": "Karnataka",
+            "loyalty_points": 890
+          },
+          {
+            "customer_id": 3,
+            "customer_name": "Saina Nehwal",
+            "city": "Hyderabad",
+            "state": "Telangana",
+            "loyalty_points": 120
+          },
+          {
+            "customer_id": 4,
+            "customer_name": "Tanmay Bhat",
+            "city": "Mumbai",
+            "state": "Maharashtra",
+            "loyalty_points": 600
+          },
+          {
+            "customer_id": 5,
+            "customer_name": "Urmila Matondkar",
+            "city": "Pune",
+            "state": "Maharashtra",
+            "loyalty_points": 0
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "columns": [
+          "order_id",
+          "customer_id",
+          "order_date",
+          "status",
+          "delivery_days"
+        ],
+        "rows": [
+          {
+            "order_id": 301,
+            "customer_id": 1,
+            "order_date": "2024-01-10",
+            "status": "Completed",
+            "delivery_days": 2
+          },
+          {
+            "order_id": 302,
+            "customer_id": 1,
+            "order_date": "2024-02-12",
+            "status": "Completed",
+            "delivery_days": 3
+          },
+          {
+            "order_id": 303,
+            "customer_id": 1,
+            "order_date": "2024-03-01",
+            "status": "Completed",
+            "delivery_days": 1
+          },
+          {
+            "order_id": 304,
+            "customer_id": 2,
+            "order_date": "2024-02-14",
+            "status": "Completed",
+            "delivery_days": 2
+          },
+          {
+            "order_id": 305,
+            "customer_id": 4,
+            "order_date": "2024-01-20",
+            "status": "Completed",
+            "delivery_days": 4
+          },
+          {
+            "order_id": 306,
+            "customer_id": 4,
+            "order_date": "2024-03-05",
+            "status": "Completed",
+            "delivery_days": 2
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "customer_name",
+        "total_orders",
+        "customer_category"
+      ],
+      "row_count": 5,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns 5 rows with customer_name, total_orders count, and categorized label (Frequent, Regular, or Inactive)."
+    },
+    "expected_result": [
+      {
+        "customer_name": "Pooja Hegde",
+        "total_orders": 3,
+        "customer_category": "Frequent"
+      },
+      {
+        "customer_name": "Rahul Dravid",
+        "total_orders": 1,
+        "customer_category": "Regular"
+      },
+      {
+        "customer_name": "Saina Nehwal",
+        "total_orders": 0,
+        "customer_category": "Inactive"
+      },
+      {
+        "customer_name": "Tanmay Bhat",
+        "total_orders": 2,
+        "customer_category": "Regular"
+      },
+      {
+        "customer_name": "Urmila Matondkar",
+        "total_orders": 0,
+        "customer_category": "Inactive"
+      }
+    ],
+    "expected_query": "SELECT c.customer_name, COUNT(o.order_id) AS total_orders, CASE WHEN COUNT(o.order_id) >= 3 THEN 'Frequent' WHEN COUNT(o.order_id) >= 1 THEN 'Regular' ELSE 'Inactive' END AS customer_category FROM Customers c LEFT JOIN Orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id, c.customer_name;",
+    "explanation": "Uses a LEFT JOIN to count orders per customer and a CASE expression to categorize customers into Frequent, Regular, or Inactive tiers."
+  },
+  {
+    "id": "sql_010",
+    "title": "Students Enrolled in Multiple Courses",
+    "topic": "JOIN & COUNT with GROUP BY",
+    "difficulty": "Easy",
+    "description": "Write a query to find the names and emails of students who are enrolled in more than 1 course, along with their course count.",
+    "tables": [
+      {
+        "name": "Students",
+        "columns": [
+          "student_id",
+          "student_name",
+          "email",
+          "batch_year",
+          "major"
+        ],
+        "rows": [
+          {
+            "student_id": 1,
+            "student_name": "Arya Stark",
+            "email": "arya@winterfell.edu",
+            "batch_year": 2024,
+            "major": "Computer Science"
+          },
+          {
+            "student_id": 2,
+            "student_name": "Bran Stark",
+            "email": "bran@winterfell.edu",
+            "batch_year": 2023,
+            "major": "Data Science"
+          },
+          {
+            "student_id": 3,
+            "student_name": "Jon Snow",
+            "email": "jon@wall.edu",
+            "batch_year": 2024,
+            "major": "Computer Science"
+          },
+          {
+            "student_id": 4,
+            "student_name": "Sansa Stark",
+            "email": "sansa@winterfell.edu",
+            "batch_year": 2025,
+            "major": "Cyber Security"
+          },
+          {
+            "student_id": 5,
+            "student_name": "Robb Stark",
+            "email": "robb@winterfell.edu",
+            "batch_year": 2022,
+            "major": "Information Tech"
+          }
+        ]
+      },
+      {
+        "name": "Enrollments",
+        "columns": [
+          "enrollment_id",
+          "student_id",
+          "course_code",
+          "semester",
+          "grade"
+        ],
+        "rows": [
+          {
+            "enrollment_id": 701,
+            "student_id": 1,
+            "course_code": "CS101",
+            "semester": "Fall 2024",
+            "grade": "A"
+          },
+          {
+            "enrollment_id": 702,
+            "student_id": 1,
+            "course_code": "DS201",
+            "semester": "Fall 2024",
+            "grade": "A+"
+          },
+          {
+            "enrollment_id": 703,
+            "student_id": 2,
+            "course_code": "DS201",
+            "semester": "Fall 2024",
+            "grade": "B"
+          },
+          {
+            "enrollment_id": 704,
+            "student_id": 3,
+            "course_code": "CS101",
+            "semester": "Fall 2024",
+            "grade": "A"
+          },
+          {
+            "enrollment_id": 705,
+            "student_id": 3,
+            "course_code": "CS102",
+            "semester": "Fall 2024",
+            "grade": "B+"
+          },
+          {
+            "enrollment_id": 706,
+            "student_id": 3,
+            "course_code": "DS201",
+            "semester": "Fall 2024",
+            "grade": "A"
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "student_name",
+        "email",
+        "enrolled_courses"
+      ],
+      "row_count": 2,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns 2 rows with student_name, email, and enrolled_courses count for multi-course students."
+    },
+    "expected_result": [
+      {
+        "student_name": "Arya Stark",
+        "email": "arya@winterfell.edu",
+        "enrolled_courses": 2
+      },
+      {
+        "student_name": "Jon Snow",
+        "email": "jon@wall.edu",
+        "enrolled_courses": 3
+      }
+    ],
+    "expected_query": "SELECT s.student_name, s.email, COUNT(e.course_code) AS enrolled_courses FROM Students s JOIN Enrollments e ON s.student_id = e.student_id GROUP BY s.student_id, s.student_name, s.email HAVING COUNT(e.course_code) > 1;",
+    "explanation": "Joins Students with Enrollments, groups by student, and uses HAVING COUNT > 1 to identify multi-course enrollees (Arya and Jon)."
+  },
+  {
+    "id": "sql_011",
+    "title": "Department Budget Utilization Percentage",
+    "topic": "JOIN, SUM & Arithmetic",
+    "difficulty": "Medium",
+    "description": "Write a query to calculate the total salary spent per department and the percentage of department budget utilized (rounded to 2 decimal places). Return department_name, budget, total_salary_spent, and budget_utilization_pct.",
+    "tables": [
+      {
+        "name": "Departments",
+        "columns": [
+          "department_id",
+          "department_name",
+          "location",
+          "manager_id",
+          "budget"
+        ],
+        "rows": [
+          {
+            "department_id": 10,
+            "department_name": "Artificial Intelligence",
+            "location": "Bengaluru",
+            "manager_id": 1,
+            "budget": 500000
+          },
+          {
+            "department_id": 20,
+            "department_name": "Cloud Infrastructure",
+            "location": "Hyderabad",
+            "manager_id": 2,
+            "budget": 400000
+          },
+          {
+            "department_id": 30,
+            "department_name": "Cyber Defense",
+            "location": "Chennai",
+            "manager_id": 3,
+            "budget": 300000
+          },
+          {
+            "department_id": 40,
+            "department_name": "Human Resources",
+            "location": "Pune",
+            "manager_id": 4,
+            "budget": 200000
+          },
+          {
+            "department_id": 50,
+            "department_name": "Marketing",
+            "location": "Mumbai",
+            "manager_id": 5,
+            "budget": 250000
+          }
+        ]
+      },
+      {
+        "name": "Employees",
+        "columns": [
+          "employee_id",
+          "employee_name",
+          "department_id",
+          "salary",
+          "shift"
+        ],
+        "rows": [
+          {
+            "employee_id": 1,
+            "employee_name": "Aditya Rao",
+            "department_id": 10,
+            "salary": 180000,
+            "shift": "Day"
+          },
+          {
+            "employee_id": 2,
+            "employee_name": "Bhavna Jain",
+            "department_id": 10,
+            "salary": 160000,
+            "shift": "Day"
+          },
+          {
+            "employee_id": 3,
+            "employee_name": "Cyrus Mistri",
+            "department_id": 20,
+            "salary": 150000,
+            "shift": "Night"
+          },
+          {
+            "employee_id": 4,
+            "employee_name": "Dinesh Karthik",
+            "department_id": 20,
+            "salary": 130000,
+            "shift": "Day"
+          },
+          {
+            "employee_id": 5,
+            "employee_name": "Ekta Kapoor",
+            "department_id": 30,
+            "salary": 210000,
+            "shift": "Day"
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "department_name",
+        "budget",
+        "total_salary_spent",
+        "budget_utilization_pct"
+      ],
+      "row_count": 3,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns 3 rows with department_name, budget, total_salary_spent, and budget_utilization_pct rounded to 2 decimal places."
+    },
+    "expected_result": [
+      {
+        "department_name": "Artificial Intelligence",
+        "budget": 500000,
+        "total_salary_spent": 340000,
+        "budget_utilization_pct": 68.0
+      },
+      {
+        "department_name": "Cloud Infrastructure",
+        "budget": 400000,
+        "total_salary_spent": 280000,
+        "budget_utilization_pct": 70.0
+      },
+      {
+        "department_name": "Cyber Defense",
+        "budget": 300000,
+        "total_salary_spent": 210000,
+        "budget_utilization_pct": 70.0
+      }
+    ],
+    "expected_query": "SELECT d.department_name, d.budget, SUM(e.salary) AS total_salary_spent, ROUND((SUM(e.salary) * 100.0 / d.budget), 2) AS budget_utilization_pct FROM Departments d JOIN Employees e ON d.department_id = e.department_id GROUP BY d.department_id, d.department_name, d.budget;",
+    "explanation": "Sums employee salaries per department, calculates budget percentage via (SUM(salary)*100.0/budget), and rounds to 2 decimal places."
+  },
+  {
+    "id": "sql_012",
+    "title": "Employees with Above Average Salary in Department",
+    "topic": "Correlated Subquery & Filtering",
+    "difficulty": "Hard",
+    "description": "Write a query to find all employees whose salary is strictly greater than the average salary of their own department. Return employee_name, department_id, and salary.",
+    "tables": [
+      {
+        "name": "Employees",
+        "columns": [
+          "employee_id",
+          "employee_name",
+          "department_id",
+          "salary",
+          "bonus"
+        ],
+        "rows": [
+          {
+            "employee_id": 101,
+            "employee_name": "Ajay",
+            "department_id": 1,
+            "salary": 90000,
+            "bonus": 5000
+          },
+          {
+            "employee_id": 102,
+            "employee_name": "Binod",
+            "department_id": 1,
+            "salary": 60000,
+            "bonus": 3000
+          },
+          {
+            "employee_id": 103,
+            "employee_name": "Chitra",
+            "department_id": 1,
+            "salary": 60000,
+            "bonus": 4000
+          },
+          {
+            "employee_id": 104,
+            "employee_name": "Deepak",
+            "department_id": 2,
+            "salary": 80000,
+            "bonus": 7000
+          },
+          {
+            "employee_id": 105,
+            "employee_name": "Gita",
+            "department_id": 2,
+            "salary": 40000,
+            "bonus": 2000
+          }
+        ]
+      },
+      {
+        "name": "Departments",
+        "columns": [
+          "department_id",
+          "department_name",
+          "head_office",
+          "phone_extension",
+          "status"
+        ],
+        "rows": [
+          {
+            "department_id": 1,
+            "department_name": "Sales",
+            "head_office": "Mumbai",
+            "phone_extension": "401",
+            "status": "Active"
+          },
+          {
+            "department_id": 2,
+            "department_name": "Finance",
+            "head_office": "Delhi",
+            "phone_extension": "402",
+            "status": "Active"
+          },
+          {
+            "department_id": 3,
+            "department_name": "IT",
+            "head_office": "Bengaluru",
+            "phone_extension": "403",
+            "status": "Active"
+          },
+          {
+            "department_id": 4,
+            "department_name": "Operations",
+            "head_office": "Chennai",
+            "phone_extension": "404",
+            "status": "Active"
+          },
+          {
+            "department_id": 5,
+            "department_name": "Legal",
+            "head_office": "Kolkata",
+            "phone_extension": "405",
+            "status": "Active"
+          }
+        ]
+      }
+    ],
+    "expected_output": {
+      "columns": [
+        "employee_name",
+        "department_id",
+        "salary"
+      ],
+      "row_count": 2,
+      "order_required": false,
+      "ordering": "None",
+      "notes": "Returns 2 rows with employee_name, department_id, and salary for employees earning above department average."
+    },
+    "expected_result": [
+      {
+        "employee_name": "Ajay",
+        "department_id": 1,
+        "salary": 90000
+      },
+      {
+        "employee_name": "Deepak",
+        "department_id": 2,
+        "salary": 80000
+      }
+    ],
+    "expected_query": "SELECT e.employee_name, e.department_id, e.salary FROM Employees e WHERE e.salary > (SELECT AVG(e2.salary) FROM Employees e2 WHERE e2.department_id = e.department_id);",
+    "explanation": "Compares each employee's salary with the average computed by a correlated subquery for that employee's department."
+  }
+]

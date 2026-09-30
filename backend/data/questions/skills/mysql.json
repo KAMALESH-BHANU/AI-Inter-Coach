@@ -1,33 +1,410 @@
 [
   {
-    "id": "MYSQL_001",
+    "id": "mysql_001",
     "skill": "MySQL",
-    "difficulty": "medium",
-    "question": "Explain ACID properties in database transactions and how InnoDB implements them.",
-    "expected_concepts": [
-      "Atomicity",
-      "Consistency",
-      "Isolation",
-      "Durability",
-      "Undo log",
-      "Redo log",
-      "MVCC"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between Primary Key and Foreign Key constraints in MySQL, and how foreign keys enforce Referential Integrity.",
+    "difficulty": "easy",
+    "topic": "Constraints",
+    "concept": "Primary vs Foreign Keys",
+    "questionFamily": "comparison",
+    "tags": [
+      "primary key",
+      "foreign key",
+      "referential integrity",
+      "CASCADE",
+      "InnoDB"
     ],
-    "ideal_answer": "ACID stands for Atomicity, Consistency, Isolation, and Durability. InnoDB achieves Atomicity via Undo logs, Durability via Redo logs/WAL, Isolation via Multi-Version Concurrency Control (MVCC) and locks, and Consistency by enforcing table constraints.",
-    "explanation": "Essential database engine principles."
+    "idealAnswer": "A Primary Key uniquely identifies each row in a table (non-null, unique, clustered index in InnoDB). A Foreign Key establishes a relationship with another table's primary key, enforcing referential integrity with ON DELETE/UPDATE actions (CASCADE, SET NULL, RESTRICT).",
+    "ideal_answer": "A Primary Key uniquely identifies each row in a table (non-null, unique, clustered index in InnoDB). A Foreign Key establishes a relationship with another table's primary key, enforcing referential integrity with ON DELETE/UPDATE actions (CASCADE, SET NULL, RESTRICT).",
+    "expected_concepts": [
+      "primary key",
+      "foreign key",
+      "referential integrity",
+      "CASCADE"
+    ],
+    "explanation": "Evaluates MySQL Constraints and Primary vs Foreign Keys comprehension."
   },
   {
-    "id": "MYSQL_002",
+    "id": "mysql_002",
     "skill": "MySQL",
-    "difficulty": "medium",
-    "question": "What is the difference between Clustered Index and Non-Clustered Index in InnoDB?",
-    "expected_concepts": [
-      "B+ Tree",
-      "Primary key index",
-      "Secondary index",
-      "Table row data storage"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SQL Joins in MySQL: INNER JOIN, LEFT JOIN, RIGHT JOIN, and CROSS JOIN, and how to simulate FULL OUTER JOIN.",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "concept": "SQL Joins & Outer Join Simulation",
+    "questionFamily": "comparison",
+    "tags": [
+      "INNER JOIN",
+      "LEFT JOIN",
+      "RIGHT JOIN",
+      "FULL OUTER JOIN",
+      "UNION"
     ],
-    "ideal_answer": "A Clustered Index stores actual table rows in the leaf nodes of the B+ Tree (InnoDB primary key). A Non-Clustered (secondary) Index leaf node stores the primary key value, requiring a secondary lookup to retrieve row data unless covered.",
-    "explanation": "Evaluates database indexing internals."
+    "idealAnswer": "INNER JOIN returns matching rows from both tables. LEFT JOIN returns all rows from left table plus matching right rows. MySQL does not support FULL OUTER JOIN natively; it is simulated by taking the UNION of a LEFT JOIN and a RIGHT JOIN.",
+    "ideal_answer": "INNER JOIN returns matching rows from both tables. LEFT JOIN returns all rows from left table plus matching right rows. MySQL does not support FULL OUTER JOIN natively; it is simulated by taking the UNION of a LEFT JOIN and a RIGHT JOIN.",
+    "expected_concepts": [
+      "INNER JOIN",
+      "LEFT JOIN",
+      "RIGHT JOIN",
+      "FULL OUTER JOIN"
+    ],
+    "explanation": "Evaluates MySQL Joins and SQL Joins & Outer Join Simulation comprehension."
+  },
+  {
+    "id": "mysql_003",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between GROUP BY and HAVING clauses in MySQL, and why cannot WHERE filter aggregate results?",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "concept": "GROUP BY vs HAVING Clauses",
+    "questionFamily": "comparison",
+    "tags": [
+      "GROUP BY",
+      "HAVING",
+      "WHERE",
+      "aggregate functions",
+      "execution order"
+    ],
+    "idealAnswer": "WHERE filters individual rows BEFORE grouping and aggregation occur (cannot reference aggregate functions). GROUP BY groups rows into summary rows. HAVING filters aggregated groups AFTER GROUP BY calculations are completed.",
+    "ideal_answer": "WHERE filters individual rows BEFORE grouping and aggregation occur (cannot reference aggregate functions). GROUP BY groups rows into summary rows. HAVING filters aggregated groups AFTER GROUP BY calculations are completed.",
+    "expected_concepts": [
+      "GROUP BY",
+      "HAVING",
+      "WHERE",
+      "aggregate functions"
+    ],
+    "explanation": "Evaluates MySQL Aggregation and GROUP BY vs HAVING Clauses comprehension."
+  },
+  {
+    "id": "mysql_004",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain MySQL Aggregate Functions (COUNT, SUM, AVG, MIN, MAX) and how COUNT(*), COUNT(1), and COUNT(column) handle NULL values.",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "concept": "Aggregate Functions & COUNT NULL Handling",
+    "questionFamily": "implementation",
+    "tags": [
+      "COUNT",
+      "SUM",
+      "AVG",
+      "NULL handling",
+      "COUNT(*) vs COUNT(col)"
+    ],
+    "idealAnswer": "Aggregate functions perform calculations across sets of rows. COUNT(*) and COUNT(1) count all rows including rows with NULL columns. COUNT(column_name) counts only rows where the specified column is NOT NULL.",
+    "ideal_answer": "Aggregate functions perform calculations across sets of rows. COUNT(*) and COUNT(1) count all rows including rows with NULL columns. COUNT(column_name) counts only rows where the specified column is NOT NULL.",
+    "expected_concepts": [
+      "COUNT",
+      "SUM",
+      "AVG",
+      "NULL handling"
+    ],
+    "explanation": "Evaluates MySQL Aggregation and Aggregate Functions & COUNT NULL Handling comprehension."
+  },
+  {
+    "id": "mysql_005",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Subqueries in MySQL (Scalar, Correlated, Subquery in FROM/WHERE), and how do EXISTS and IN operators compare in performance?",
+    "difficulty": "medium",
+    "topic": "Subqueries",
+    "concept": "Correlated Subqueries & EXISTS vs IN",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "subqueries",
+      "correlated subquery",
+      "EXISTS",
+      "IN",
+      "query optimization"
+    ],
+    "idealAnswer": "A scalar subquery returns a single value. A correlated subquery references columns from the outer query, evaluating once per outer row. EXISTS short-circuits upon finding the first match (efficient for correlated checks), while IN builds a value list.",
+    "ideal_answer": "A scalar subquery returns a single value. A correlated subquery references columns from the outer query, evaluating once per outer row. EXISTS short-circuits upon finding the first match (efficient for correlated checks), while IN builds a value list.",
+    "expected_concepts": [
+      "subqueries",
+      "correlated subquery",
+      "EXISTS",
+      "IN"
+    ],
+    "explanation": "Evaluates MySQL Subqueries and Correlated Subqueries & EXISTS vs IN comprehension."
+  },
+  {
+    "id": "mysql_006",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Indexes in MySQL (B+ Tree, Clustered vs Secondary Indexes, Composite Indexes, and the Leftmost Prefix Rule).",
+    "difficulty": "hard",
+    "topic": "Indexes",
+    "concept": "B+ Tree Indexes & Leftmost Prefix Rule",
+    "questionFamily": "architecture",
+    "tags": [
+      "index",
+      "B+ Tree",
+      "clustered index",
+      "secondary index",
+      "composite index",
+      "leftmost prefix"
+    ],
+    "idealAnswer": "InnoDB organizes table data in a Clustered Index ordered by Primary Key. Secondary indexes store indexed column values pointing to the primary key. Composite indexes (A, B, C) can only be used by queries that match the leftmost prefix columns (A, or A+B, or A+B+C).",
+    "ideal_answer": "InnoDB organizes table data in a Clustered Index ordered by Primary Key. Secondary indexes store indexed column values pointing to the primary key. Composite indexes (A, B, C) can only be used by queries that match the leftmost prefix columns (A, or A+B, or A+B+C).",
+    "expected_concepts": [
+      "index",
+      "B+ Tree",
+      "clustered index",
+      "secondary index"
+    ],
+    "explanation": "Evaluates MySQL Indexes and B+ Tree Indexes & Leftmost Prefix Rule comprehension."
+  },
+  {
+    "id": "mysql_007",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Database Normalization: 1NF, 2NF, 3NF, and BCNF, and when Denormalization is beneficial in high-throughput read systems.",
+    "difficulty": "medium",
+    "topic": "Database Design",
+    "concept": "Normalization (1NF-BCNF) vs Denormalization",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "normalization",
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF",
+      "denormalization"
+    ],
+    "idealAnswer": "1NF eliminates repeating groups and ensures atomic values. 2NF removes partial functional dependencies on composite keys. 3NF removes transitive dependencies. Denormalization intentionally adds redundancy to avoid expensive multi-table JOINs in read-heavy analytics.",
+    "ideal_answer": "1NF eliminates repeating groups and ensures atomic values. 2NF removes partial functional dependencies on composite keys. 3NF removes transitive dependencies. Denormalization intentionally adds redundancy to avoid expensive multi-table JOINs in read-heavy analytics.",
+    "expected_concepts": [
+      "normalization",
+      "1NF",
+      "2NF",
+      "3NF"
+    ],
+    "explanation": "Evaluates MySQL Database Design and Normalization (1NF-BCNF) vs Denormalization comprehension."
+  },
+  {
+    "id": "mysql_008",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Database Transactions and the ACID properties (Atomicity, Consistency, Isolation, Durability) in MySQL InnoDB.",
+    "difficulty": "medium",
+    "topic": "Transactions",
+    "concept": "ACID Properties & InnoDB Engine",
+    "questionFamily": "architecture",
+    "tags": [
+      "ACID",
+      "atomicity",
+      "consistency",
+      "isolation",
+      "durability",
+      "redo log",
+      "undo log"
+    ],
+    "idealAnswer": "Atomicity: all operations succeed or all roll back (undo log). Consistency: state transitions preserve schema integrity constraints. Isolation: concurrent transactions do not interfere. Durability: committed transactions survive crashes (redo log / WAL).",
+    "ideal_answer": "Atomicity: all operations succeed or all roll back (undo log). Consistency: state transitions preserve schema integrity constraints. Isolation: concurrent transactions do not interfere. Durability: committed transactions survive crashes (redo log / WAL).",
+    "expected_concepts": [
+      "ACID",
+      "atomicity",
+      "consistency",
+      "isolation"
+    ],
+    "explanation": "Evaluates MySQL Transactions and ACID Properties & InnoDB Engine comprehension."
+  },
+  {
+    "id": "mysql_009",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Transaction Isolation Levels in MySQL (READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE) and phenomena (Dirty Read, Non-Repeatable Read, Phantom Read).",
+    "difficulty": "hard",
+    "topic": "Transactions",
+    "concept": "Isolation Levels & Concurrency Phenomena",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "isolation levels",
+      "REPEATABLE READ",
+      "dirty read",
+      "phantom read",
+      "MVCC"
+    ],
+    "idealAnswer": "READ UNCOMMITTED allows Dirty Reads. READ COMMITTED prevents Dirty Reads (read committed snapshot). REPEATABLE READ (InnoDB default) prevents Dirty and Non-Repeatable Reads and uses Next-Key locks to prevent Phantom Reads. SERIALIZABLE strictly orders transactions.",
+    "ideal_answer": "READ UNCOMMITTED allows Dirty Reads. READ COMMITTED prevents Dirty Reads (read committed snapshot). REPEATABLE READ (InnoDB default) prevents Dirty and Non-Repeatable Reads and uses Next-Key locks to prevent Phantom Reads. SERIALIZABLE strictly orders transactions.",
+    "expected_concepts": [
+      "isolation levels",
+      "REPEATABLE READ",
+      "dirty read",
+      "phantom read"
+    ],
+    "explanation": "Evaluates MySQL Transactions and Isolation Levels & Concurrency Phenomena comprehension."
+  },
+  {
+    "id": "mysql_010",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does MVCC (Multi-Version Concurrency Control) work in MySQL InnoDB using Undo Logs and Read Views?",
+    "difficulty": "hard",
+    "topic": "InnoDB Internals",
+    "concept": "InnoDB MVCC & Undo Logs",
+    "questionFamily": "architecture",
+    "tags": [
+      "MVCC",
+      "undo log",
+      "read view",
+      "non-blocking reads",
+      "row versioning"
+    ],
+    "idealAnswer": "MVCC allows non-blocking consistent reads without table locks. When rows are updated, old versions are saved in Undo Logs. A Read View defines visible transaction IDs: SELECT queries read the snapshot corresponding to their transaction start point.",
+    "ideal_answer": "MVCC allows non-blocking consistent reads without table locks. When rows are updated, old versions are saved in Undo Logs. A Read View defines visible transaction IDs: SELECT queries read the snapshot corresponding to their transaction start point.",
+    "expected_concepts": [
+      "MVCC",
+      "undo log",
+      "read view",
+      "non-blocking reads"
+    ],
+    "explanation": "Evaluates MySQL InnoDB Internals and InnoDB MVCC & Undo Logs comprehension."
+  },
+  {
+    "id": "mysql_011",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are MySQL Views, and what are the limitations of Updatable Views?",
+    "difficulty": "easy",
+    "topic": "Views",
+    "concept": "Database Views & Updatable Views",
+    "questionFamily": "definition",
+    "tags": [
+      "views",
+      "updatable views",
+      "virtual table",
+      "security abstraction"
+    ],
+    "idealAnswer": "A View is a stored virtual table defined by an SQL query. Views simplify complex queries and restrict column access for security. Views are not updatable if they contain aggregate functions, DISTINCT, GROUP BY, UNION, or subqueries in SELECT.",
+    "ideal_answer": "A View is a stored virtual table defined by an SQL query. Views simplify complex queries and restrict column access for security. Views are not updatable if they contain aggregate functions, DISTINCT, GROUP BY, UNION, or subqueries in SELECT.",
+    "expected_concepts": [
+      "views",
+      "updatable views",
+      "virtual table",
+      "security abstraction"
+    ],
+    "explanation": "Evaluates MySQL Views and Database Views & Updatable Views comprehension."
+  },
+  {
+    "id": "mysql_012",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Stored Procedures and Triggers in MySQL, and their tradeoffs regarding business logic encapsulation vs database load.",
+    "difficulty": "medium",
+    "topic": "Stored Programs",
+    "concept": "Stored Procedures & Triggers Tradeoffs",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "stored procedures",
+      "triggers",
+      "business logic",
+      "database CPU load"
+    ],
+    "idealAnswer": "Stored procedures are precompiled SQL routines executed on the database server. Triggers execute automatically on INSERT/UPDATE/DELETE. Tradeoff: reduces network roundtrips, but shifts compute load to the database server and makes unit testing and version control harder.",
+    "ideal_answer": "Stored procedures are precompiled SQL routines executed on the database server. Triggers execute automatically on INSERT/UPDATE/DELETE. Tradeoff: reduces network roundtrips, but shifts compute load to the database server and makes unit testing and version control harder.",
+    "expected_concepts": [
+      "stored procedures",
+      "triggers",
+      "business logic",
+      "database CPU load"
+    ],
+    "explanation": "Evaluates MySQL Stored Programs and Stored Procedures & Triggers Tradeoffs comprehension."
+  },
+  {
+    "id": "mysql_013",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are MySQL Table Storage Engines (InnoDB vs MyISAM vs Memory) and their differences in transactions, locking, and crash recovery?",
+    "difficulty": "medium",
+    "topic": "Storage Engines",
+    "concept": "InnoDB vs MyISAM vs Memory Engines",
+    "questionFamily": "comparison",
+    "tags": [
+      "storage engines",
+      "InnoDB",
+      "MyISAM",
+      "row-level locking",
+      "table-level locking"
+    ],
+    "idealAnswer": "InnoDB supports ACID transactions, foreign keys, crash recovery, and row-level locking. MyISAM only supports table-level locking and no transactions (legacy). Memory engine stores tables in RAM with hash indexes for temporary high-speed lookups.",
+    "ideal_answer": "InnoDB supports ACID transactions, foreign keys, crash recovery, and row-level locking. MyISAM only supports table-level locking and no transactions (legacy). Memory engine stores tables in RAM with hash indexes for temporary high-speed lookups.",
+    "expected_concepts": [
+      "storage engines",
+      "InnoDB",
+      "MyISAM",
+      "row-level locking"
+    ],
+    "explanation": "Evaluates MySQL Storage Engines and InnoDB vs MyISAM vs Memory Engines comprehension."
+  },
+  {
+    "id": "mysql_014",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you analyze and optimize slow queries in MySQL using EXPLAIN / EXPLAIN ANALYZE and Slow Query Log?",
+    "difficulty": "hard",
+    "topic": "Query Optimization",
+    "concept": "EXPLAIN & Slow Query Optimization",
+    "questionFamily": "optimization",
+    "tags": [
+      "EXPLAIN",
+      "EXPLAIN ANALYZE",
+      "slow query log",
+      "type: ALL",
+      "filesort",
+      "covering index"
+    ],
+    "idealAnswer": "Enable slow query log (long_query_time). Run EXPLAIN on slow queries: look for 'type: ALL' (full table scan), 'Using filesort', or 'Using temporary'. Optimize by creating covering indexes, refining WHERE filters, and ensuring join columns have matching index types.",
+    "ideal_answer": "Enable slow query log (long_query_time). Run EXPLAIN on slow queries: look for 'type: ALL' (full table scan), 'Using filesort', or 'Using temporary'. Optimize by creating covering indexes, refining WHERE filters, and ensuring join columns have matching index types.",
+    "expected_concepts": [
+      "EXPLAIN",
+      "EXPLAIN ANALYZE",
+      "slow query log",
+      "type: ALL"
+    ],
+    "explanation": "Evaluates MySQL Query Optimization and EXPLAIN & Slow Query Optimization comprehension."
+  },
+  {
+    "id": "mysql_015",
+    "skill": "MySQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain MySQL Replication architectures (Master-Slave / Primary-Replica, Asynchronous vs Semi-Synchronous) and GTID (Global Transaction Identifier).",
+    "difficulty": "hard",
+    "topic": "Replication & HA",
+    "concept": "Replication Architectures & GTID",
+    "questionFamily": "architecture",
+    "tags": [
+      "replication",
+      "binary log",
+      "GTID",
+      "primary-replica",
+      "semi-synchronous"
+    ],
+    "idealAnswer": "MySQL primary writes changes to the Binary Log (binlog). Replica I/O thread reads binlog events and writes them to Relay Log, where SQL thread executes them. GTIDs uniquely identify transactions across replication topologies, simplifying failover.",
+    "ideal_answer": "MySQL primary writes changes to the Binary Log (binlog). Replica I/O thread reads binlog events and writes them to Relay Log, where SQL thread executes them. GTIDs uniquely identify transactions across replication topologies, simplifying failover.",
+    "expected_concepts": [
+      "replication",
+      "binary log",
+      "GTID",
+      "primary-replica"
+    ],
+    "explanation": "Evaluates MySQL Replication & HA and Replication Architectures & GTID comprehension."
   }
 ]

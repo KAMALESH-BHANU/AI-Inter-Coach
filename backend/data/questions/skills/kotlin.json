@@ -1,0 +1,405 @@
+[
+  {
+    "id": "kotlin_001",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Kotlin enforce Null Safety at the type system level, and what are safe calls (?.), Elvis operator (?:), and not-null assertions (!!)?",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "Null Safety",
+    "questionFamily": "security",
+    "tags": [
+      "null safety",
+      "nullable types",
+      "Elvis operator",
+      "safe call",
+      "NPE"
+    ],
+    "idealAnswer": "Kotlin distinguishes nullable (Type?) from non-nullable (Type) types at compile time. Safe calls (obj?.prop) return null if object is null. The Elvis operator (a ?: b) provides a fallback value on null. '!!' forces unwrapping, throwing an NPE if null.",
+    "ideal_answer": "Kotlin distinguishes nullable (Type?) from non-nullable (Type) types at compile time. Safe calls (obj?.prop) return null if object is null. The Elvis operator (a ?: b) provides a fallback value on null. '!!' forces unwrapping, throwing an NPE if null.",
+    "expected_concepts": [
+      "null safety",
+      "nullable types",
+      "Elvis operator",
+      "safe call"
+    ],
+    "explanation": "Evaluates Kotlin Core Concepts and Null Safety comprehension."
+  },
+  {
+    "id": "kotlin_002",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Kotlin Coroutines: what are suspend functions, Dispatchers, and CoroutineScope?",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "Coroutines & Structured Concurrency",
+    "questionFamily": "architecture",
+    "tags": [
+      "coroutines",
+      "suspend function",
+      "Dispatchers",
+      "CoroutineScope",
+      "async/await"
+    ],
+    "idealAnswer": "Coroutines are lightweight user-space threads that perform non-blocking asynchronous work. 'suspend' functions can pause and resume execution without blocking OS threads. CoroutineScope manages coroutine lifecycles (structured concurrency), and Dispatchers (Main, IO, Default) assign thread execution.",
+    "ideal_answer": "Coroutines are lightweight user-space threads that perform non-blocking asynchronous work. 'suspend' functions can pause and resume execution without blocking OS threads. CoroutineScope manages coroutine lifecycles (structured concurrency), and Dispatchers (Main, IO, Default) assign thread execution.",
+    "expected_concepts": [
+      "coroutines",
+      "suspend function",
+      "Dispatchers",
+      "CoroutineScope"
+    ],
+    "explanation": "Evaluates Kotlin Concurrency and Coroutines & Structured Concurrency comprehension."
+  },
+  {
+    "id": "kotlin_003",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Data Classes in Kotlin, and what standard methods does the compiler generate automatically?",
+    "difficulty": "easy",
+    "topic": "OOP",
+    "concept": "Data Classes",
+    "questionFamily": "definition",
+    "tags": [
+      "data class",
+      "equals",
+      "hashCode",
+      "toString",
+      "copy",
+      "componentN"
+    ],
+    "idealAnswer": "Data classes (data class User(...)) are designed to hold data. The compiler automatically generates equals(), hashCode(), toString(), copy() for immutable cloning, and componentN() functions for destructuring declarations.",
+    "ideal_answer": "Data classes (data class User(...)) are designed to hold data. The compiler automatically generates equals(), hashCode(), toString(), copy() for immutable cloning, and componentN() functions for destructuring declarations.",
+    "expected_concepts": [
+      "data class",
+      "equals",
+      "hashCode",
+      "toString"
+    ],
+    "explanation": "Evaluates Kotlin OOP and Data Classes comprehension."
+  },
+  {
+    "id": "kotlin_004",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Extension Functions in Kotlin and how they are resolved statically under the hood.",
+    "difficulty": "medium",
+    "topic": "Language Features",
+    "concept": "Extension Functions",
+    "questionFamily": "implementation",
+    "tags": [
+      "extension functions",
+      "static dispatch",
+      "syntactic sugar",
+      "receiver type"
+    ],
+    "idealAnswer": "Extension functions allow adding new methods to existing classes without modifying source code or subclassing (e.g. String.toTitleCase()). They are compiled into static methods where the receiver object is passed as the first parameter (static dispatch).",
+    "ideal_answer": "Extension functions allow adding new methods to existing classes without modifying source code or subclassing (e.g. String.toTitleCase()). They are compiled into static methods where the receiver object is passed as the first parameter (static dispatch).",
+    "expected_concepts": [
+      "extension functions",
+      "static dispatch",
+      "syntactic sugar",
+      "receiver type"
+    ],
+    "explanation": "Evaluates Kotlin Language Features and Extension Functions comprehension."
+  },
+  {
+    "id": "kotlin_005",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Sealed Classes and Sealed Interfaces in Kotlin, and how do they enable exhaustive 'when' expressions?",
+    "difficulty": "medium",
+    "topic": "OOP & Types",
+    "concept": "Sealed Classes & Exhaustiveness",
+    "questionFamily": "design",
+    "tags": [
+      "sealed class",
+      "sealed interface",
+      "when expression",
+      "pattern matching",
+      "ADT"
+    ],
+    "idealAnswer": "Sealed classes represent restricted class hierarchies where all direct subclasses must be known at compile time. In 'when' expressions, the compiler verifies all possible subclasses are handled, eliminating the need for an 'else' branch.",
+    "ideal_answer": "Sealed classes represent restricted class hierarchies where all direct subclasses must be known at compile time. In 'when' expressions, the compiler verifies all possible subclasses are handled, eliminating the need for an 'else' branch.",
+    "expected_concepts": [
+      "sealed class",
+      "sealed interface",
+      "when expression",
+      "pattern matching"
+    ],
+    "explanation": "Evaluates Kotlin OOP & Types and Sealed Classes & Exhaustiveness comprehension."
+  },
+  {
+    "id": "kotlin_006",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between 'val', 'var', 'const val', and 'lateinit var' in Kotlin?",
+    "difficulty": "easy",
+    "topic": "Variables & Types",
+    "concept": "Variable Declarations & Initialization",
+    "questionFamily": "comparison",
+    "tags": [
+      "val",
+      "var",
+      "const val",
+      "lateinit",
+      "lazy"
+    ],
+    "idealAnswer": "val is a read-only local variable assigned once. var is mutable. const val is a compile-time constant known at compilation. lateinit var allows non-null var properties to be initialized after construction (e.g., in dependency injection).",
+    "ideal_answer": "val is a read-only local variable assigned once. var is mutable. const val is a compile-time constant known at compilation. lateinit var allows non-null var properties to be initialized after construction (e.g., in dependency injection).",
+    "expected_concepts": [
+      "val",
+      "var",
+      "const val",
+      "lateinit"
+    ],
+    "explanation": "Evaluates Kotlin Variables & Types and Variable Declarations & Initialization comprehension."
+  },
+  {
+    "id": "kotlin_007",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between 'lazy' initialization (by lazy) and 'lateinit' in Kotlin.",
+    "difficulty": "medium",
+    "topic": "Initialization",
+    "concept": "Lazy vs Lateinit",
+    "questionFamily": "comparison",
+    "tags": [
+      "by lazy",
+      "lateinit",
+      "thread-safety",
+      "delegated property"
+    ],
+    "idealAnswer": "'by lazy' is a thread-safe delegated property for read-only (val) variables computed on first access. 'lateinit' is for mutable (var) non-primitive types initialized manually before use.",
+    "ideal_answer": "'by lazy' is a thread-safe delegated property for read-only (val) variables computed on first access. 'lateinit' is for mutable (var) non-primitive types initialized manually before use.",
+    "expected_concepts": [
+      "by lazy",
+      "lateinit",
+      "thread-safety",
+      "delegated property"
+    ],
+    "explanation": "Evaluates Kotlin Initialization and Lazy vs Lateinit comprehension."
+  },
+  {
+    "id": "kotlin_008",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Scope Functions in Kotlin (let, run, with, apply, also), and what are their receiver (this vs it) and return value differences?",
+    "difficulty": "medium",
+    "topic": "Standard Library",
+    "concept": "Scope Functions",
+    "questionFamily": "comparison",
+    "tags": [
+      "scope functions",
+      "let",
+      "run",
+      "with",
+      "apply",
+      "also",
+      "receiver"
+    ],
+    "idealAnswer": "Scope functions execute code blocks within an object's context: 'apply' (this) and 'also' (it) return the context object itself (configuration). 'let' (it), 'run' (this), and 'with' (this) return the lambda's result.",
+    "ideal_answer": "Scope functions execute code blocks within an object's context: 'apply' (this) and 'also' (it) return the context object itself (configuration). 'let' (it), 'run' (this), and 'with' (this) return the lambda's result.",
+    "expected_concepts": [
+      "scope functions",
+      "let",
+      "run",
+      "with"
+    ],
+    "explanation": "Evaluates Kotlin Standard Library and Scope Functions comprehension."
+  },
+  {
+    "id": "kotlin_009",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain High-Order Functions, Lambdas, and the 'inline', 'noinline', and 'crossinline' modifiers in Kotlin.",
+    "difficulty": "hard",
+    "topic": "Functional Programming",
+    "concept": "Inline Functions",
+    "questionFamily": "optimization",
+    "tags": [
+      "high-order functions",
+      "inline",
+      "noinline",
+      "crossinline",
+      "bytecode overhead"
+    ],
+    "idealAnswer": "Higher-order functions accept or return lambdas. The 'inline' modifier copies the function and lambda bytecode directly into call sites, eliminating lambda object allocation overhead. 'noinline' excludes specific lambdas from inlining; 'crossinline' prevents non-local returns.",
+    "ideal_answer": "Higher-order functions accept or return lambdas. The 'inline' modifier copies the function and lambda bytecode directly into call sites, eliminating lambda object allocation overhead. 'noinline' excludes specific lambdas from inlining; 'crossinline' prevents non-local returns.",
+    "expected_concepts": [
+      "high-order functions",
+      "inline",
+      "noinline",
+      "crossinline"
+    ],
+    "explanation": "Evaluates Kotlin Functional Programming and Inline Functions comprehension."
+  },
+  {
+    "id": "kotlin_010",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Generics Variance work in Kotlin using declaration-site variance (out / in) compared to Java wildcards?",
+    "difficulty": "hard",
+    "topic": "Generics",
+    "concept": "Declaration-Site Variance (out/in)",
+    "questionFamily": "comparison",
+    "tags": [
+      "generics",
+      "covariance",
+      "contravariance",
+      "out keyword",
+      "in keyword"
+    ],
+    "idealAnswer": "Kotlin uses declaration-site variance: 'out T' produces Covariance (T can only be output/returned, like ? extends T in Java); 'in T' produces Contravariance (T can only be consumed/passed in, like ? super T in Java).",
+    "ideal_answer": "Kotlin uses declaration-site variance: 'out T' produces Covariance (T can only be output/returned, like ? extends T in Java); 'in T' produces Contravariance (T can only be consumed/passed in, like ? super T in Java).",
+    "expected_concepts": [
+      "generics",
+      "covariance",
+      "contravariance",
+      "out keyword"
+    ],
+    "explanation": "Evaluates Kotlin Generics and Declaration-Site Variance (out/in) comprehension."
+  },
+  {
+    "id": "kotlin_011",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Object Declarations, Companion Objects, and Object Expressions in Kotlin?",
+    "difficulty": "medium",
+    "topic": "OOP",
+    "concept": "Objects & Companion Objects",
+    "questionFamily": "architecture",
+    "tags": [
+      "object",
+      "companion object",
+      "singleton",
+      "factory pattern"
+    ],
+    "idealAnswer": "Object declaration creates a thread-safe singleton instance. Companion object creates an object tied to a class, providing static-like factory methods and constants. Object expression creates an anonymous inner class on the fly.",
+    "ideal_answer": "Object declaration creates a thread-safe singleton instance. Companion object creates an object tied to a class, providing static-like factory methods and constants. Object expression creates an anonymous inner class on the fly.",
+    "expected_concepts": [
+      "object",
+      "companion object",
+      "singleton",
+      "factory pattern"
+    ],
+    "explanation": "Evaluates Kotlin OOP and Objects & Companion Objects comprehension."
+  },
+  {
+    "id": "kotlin_012",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Kotlin Flows (Cold Flow vs StateFlow vs SharedFlow) in asynchronous programming.",
+    "difficulty": "hard",
+    "topic": "Concurrency & Streams",
+    "concept": "Kotlin Flows & StateFlow",
+    "questionFamily": "architecture",
+    "tags": [
+      "Flow",
+      "StateFlow",
+      "SharedFlow",
+      "cold stream",
+      "hot stream"
+    ],
+    "idealAnswer": "Flow is a cold asynchronous stream that produces values on collection. StateFlow is a hot stream holding a current state value and emitting updates to collectors. SharedFlow is a hot stream that broadcasts events to multiple subscribers.",
+    "ideal_answer": "Flow is a cold asynchronous stream that produces values on collection. StateFlow is a hot stream holding a current state value and emitting updates to collectors. SharedFlow is a hot stream that broadcasts events to multiple subscribers.",
+    "expected_concepts": [
+      "Flow",
+      "StateFlow",
+      "SharedFlow",
+      "cold stream"
+    ],
+    "explanation": "Evaluates Kotlin Concurrency & Streams and Kotlin Flows & StateFlow comprehension."
+  },
+  {
+    "id": "kotlin_013",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Kotlin achieve 100% interoperability with Java, and how do annotations like @JvmStatic and @JvmOverloads help?",
+    "difficulty": "medium",
+    "topic": "Interoperability",
+    "concept": "Kotlin-Java Interoperability",
+    "questionFamily": "implementation",
+    "tags": [
+      "interop",
+      "Java",
+      "@JvmStatic",
+      "@JvmOverloads",
+      "@JvmField"
+    ],
+    "idealAnswer": "Kotlin compiles to standard Java bytecode. When called from Java: @JvmStatic exposes companion object methods as true static methods; @JvmOverloads generates overloaded methods for default parameter values; @JvmField exposes fields directly without getters.",
+    "ideal_answer": "Kotlin compiles to standard Java bytecode. When called from Java: @JvmStatic exposes companion object methods as true static methods; @JvmOverloads generates overloaded methods for default parameter values; @JvmField exposes fields directly without getters.",
+    "expected_concepts": [
+      "interop",
+      "Java",
+      "@JvmStatic",
+      "@JvmOverloads"
+    ],
+    "explanation": "Evaluates Kotlin Interoperability and Kotlin-Java Interoperability comprehension."
+  },
+  {
+    "id": "kotlin_014",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Property Delegates in Kotlin, and how do you implement a custom ReadWriteProperty delegate?",
+    "difficulty": "medium",
+    "topic": "Language Features",
+    "concept": "Delegated Properties",
+    "questionFamily": "design",
+    "tags": [
+      "delegation",
+      "by keyword",
+      "ReadWriteProperty",
+      "observable"
+    ],
+    "idealAnswer": "Property delegates (using the 'by' keyword) delegate getter and setter logic to a separate helper class. Custom delegates implement ReadOnlyProperty or ReadWriteProperty defining getValue() and setValue() methods.",
+    "ideal_answer": "Property delegates (using the 'by' keyword) delegate getter and setter logic to a separate helper class. Custom delegates implement ReadOnlyProperty or ReadWriteProperty defining getValue() and setValue() methods.",
+    "expected_concepts": [
+      "delegation",
+      "by keyword",
+      "ReadWriteProperty",
+      "observable"
+    ],
+    "explanation": "Evaluates Kotlin Language Features and Delegated Properties comprehension."
+  },
+  {
+    "id": "kotlin_015",
+    "skill": "Kotlin",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Inline Value Classes (value class) in Kotlin, and how do they avoid memory allocation overhead?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Inline Value Classes",
+    "questionFamily": "optimization",
+    "tags": [
+      "value class",
+      "inline class",
+      "type safety",
+      "unboxed primitive"
+    ],
+    "idealAnswer": "Value classes wrap a single underlying value at compile time to provide type safety without runtime object allocation overhead; the compiler unboxes the value class into the underlying primitive/reference in bytecode.",
+    "ideal_answer": "Value classes wrap a single underlying value at compile time to provide type safety without runtime object allocation overhead; the compiler unboxes the value class into the underlying primitive/reference in bytecode.",
+    "expected_concepts": [
+      "value class",
+      "inline class",
+      "type safety",
+      "unboxed primitive"
+    ],
+    "explanation": "Evaluates Kotlin Performance and Inline Value Classes comprehension."
+  }
+]

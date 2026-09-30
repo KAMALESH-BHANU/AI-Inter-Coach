@@ -1,44 +1,418 @@
 [
   {
-    "id": "GENERATIVE_AI_001",
+    "id": "genai_001",
     "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the core architecture of Large Language Models (LLMs): Autoregressive Causal Decoder-Only Models (GPT) vs Encoder-Decoder (T5).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Generative AI in modern software engineering?",
-    "expected_concepts": [
-      "Generative AI fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "LLM Architecture",
+    "concept": "Decoder-Only vs Encoder-Decoder LLMs",
+    "questionFamily": "architecture",
+    "tags": [
+      "Generative AI",
+      "LLM",
+      "Decoder-only",
+      "Encoder-Decoder",
+      "autoregressive",
+      "causal mask"
     ],
-    "ideal_answer": "Generative AI is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Generative AI."
+    "idealAnswer": "Decoder-Only models (GPT-4, Llama, Claude) use causal self-attention masking to predict the next token autoregressively (dominant for generation). Encoder-Decoder models (T5, BART) process inputs bi-directionally in the encoder and generate outputs autoregressively in the decoder (translation/summarization).",
+    "ideal_answer": "Decoder-Only models (GPT-4, Llama, Claude) use causal self-attention masking to predict the next token autoregressively (dominant for generation). Encoder-Decoder models (T5, BART) process inputs bi-directionally in the encoder and generate outputs autoregressively in the decoder (translation/summarization).",
+    "expected_concepts": [
+      "Generative AI",
+      "LLM",
+      "Decoder-only",
+      "Encoder-Decoder"
+    ],
+    "explanation": "Evaluates Generative AI LLM Architecture and Decoder-Only vs Encoder-Decoder LLMs comprehension."
   },
   {
-    "id": "GENERATIVE_AI_002",
+    "id": "genai_002",
     "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Retrieval-Augmented Generation (RAG): Ingestion (Chunking, Embedding, Vector Store) and Retrieval-Generation pipeline.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Generative AI in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "RAG Systems",
+    "concept": "RAG Pipeline Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "RAG",
+      "Retrieval-Augmented Generation",
+      "embeddings",
+      "vector store",
+      "chunking",
+      "semantic search"
     ],
-    "ideal_answer": "Common challenges with Generative AI include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Generative AI."
+    "idealAnswer": "RAG enhances LLMs with external knowledge: Ingestion chunks documents and indexes embeddings in a vector database. At query time, semantic search retrieves top-k relevant document chunks, which are injected into the prompt context for grounded generation.",
+    "ideal_answer": "RAG enhances LLMs with external knowledge: Ingestion chunks documents and indexes embeddings in a vector database. At query time, semantic search retrieves top-k relevant document chunks, which are injected into the prompt context for grounded generation.",
+    "expected_concepts": [
+      "RAG",
+      "Retrieval-Augmented Generation",
+      "embeddings",
+      "vector store"
+    ],
+    "explanation": "Evaluates Generative AI RAG Systems and RAG Pipeline Architecture comprehension."
   },
   {
-    "id": "GENERATIVE_AI_003",
+    "id": "genai_003",
     "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Vector Databases (Pinecone, Weaviate, Milvus, Chroma, pgvector), and how does HNSW (Hierarchical Navigable Small World) perform Approximate Nearest Neighbor (ANN) search?",
     "difficulty": "hard",
-    "question": "How does Generative AI handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "topic": "Vector Stores",
+    "concept": "Vector Databases & HNSW Indexing",
+    "questionFamily": "architecture",
+    "tags": [
+      "vector database",
+      "HNSW",
+      "ANN search",
+      "embeddings",
+      "cosine similarity",
+      "cosine distance"
     ],
-    "ideal_answer": "Generative AI handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Generative AI."
+    "idealAnswer": "Vector databases index high-dimensional embeddings for similarity search. HNSW builds multi-layer graphs where top layers have long-range links for fast express routing and bottom layers have dense local connections, achieving O(log N) Approximate Nearest Neighbor (ANN) search.",
+    "ideal_answer": "Vector databases index high-dimensional embeddings for similarity search. HNSW builds multi-layer graphs where top layers have long-range links for fast express routing and bottom layers have dense local connections, achieving O(log N) Approximate Nearest Neighbor (ANN) search.",
+    "expected_concepts": [
+      "vector database",
+      "HNSW",
+      "ANN search",
+      "embeddings"
+    ],
+    "explanation": "Evaluates Generative AI Vector Stores and Vector Databases & HNSW Indexing comprehension."
+  },
+  {
+    "id": "genai_004",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Advanced RAG techniques: Hybrid Search (BM25 + Dense Vectors), Re-ranking (Cross-Encoders), Parent Document Retrieval, and Self-RAG.",
+    "difficulty": "hard",
+    "topic": "Advanced RAG",
+    "concept": "Advanced RAG & Re-ranking",
+    "questionFamily": "optimization",
+    "tags": [
+      "Hybrid Search",
+      "BM25",
+      "dense retrieval",
+      "Cross-Encoder",
+      "Re-ranking",
+      "Self-RAG"
+    ],
+    "idealAnswer": "Standard RAG suffers from semantic mismatch. Advanced RAG combines keyword search (BM25) and dense embeddings via Reciprocal Rank Fusion (RRF), passes retrieved chunks through a Cross-Encoder Re-ranker, and fetches full parent document context for precision.",
+    "ideal_answer": "Standard RAG suffers from semantic mismatch. Advanced RAG combines keyword search (BM25) and dense embeddings via Reciprocal Rank Fusion (RRF), passes retrieved chunks through a Cross-Encoder Re-ranker, and fetches full parent document context for precision.",
+    "expected_concepts": [
+      "Hybrid Search",
+      "BM25",
+      "dense retrieval",
+      "Cross-Encoder"
+    ],
+    "explanation": "Evaluates Generative AI Advanced RAG and Advanced RAG & Re-ranking comprehension."
+  },
+  {
+    "id": "genai_005",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Parameter-Efficient Fine-Tuning (PEFT): LoRA (Low-Rank Adaptation), QLoRA (4-bit Quantized LoRA), and Prefix Tuning.",
+    "difficulty": "hard",
+    "topic": "Fine-Tuning & PEFT",
+    "concept": "LoRA & QLoRA Fine-Tuning",
+    "questionFamily": "optimization",
+    "tags": [
+      "PEFT",
+      "LoRA",
+      "QLoRA",
+      "low-rank adaptation",
+      "rank decomposition",
+      "4-bit quantization"
+    ],
+    "idealAnswer": "Full fine-tuning updates all model weights (computationally prohibitive). LoRA freezes pretrained weights W and injects low-rank trainable decomposition matrices A and B (delta W = B * A, where rank r << d), reducing trainable parameters by 99%. QLoRA quantizes base weights to 4-bit NormalFloat (NF4).",
+    "ideal_answer": "Full fine-tuning updates all model weights (computationally prohibitive). LoRA freezes pretrained weights W and injects low-rank trainable decomposition matrices A and B (delta W = B * A, where rank r << d), reducing trainable parameters by 99%. QLoRA quantizes base weights to 4-bit NormalFloat (NF4).",
+    "expected_concepts": [
+      "PEFT",
+      "LoRA",
+      "QLoRA",
+      "low-rank adaptation"
+    ],
+    "explanation": "Evaluates Generative AI Fine-Tuning & PEFT and LoRA & QLoRA Fine-Tuning comprehension."
+  },
+  {
+    "id": "genai_006",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Reinforcement Learning from Human Feedback (RLHF), and how does DPO (Direct Preference Optimization) simplify preference alignment?",
+    "difficulty": "hard",
+    "topic": "Model Alignment",
+    "concept": "RLHF vs Direct Preference Optimization (DPO)",
+    "questionFamily": "architecture",
+    "tags": [
+      "RLHF",
+      "DPO",
+      "Reward Model",
+      "PPO",
+      "human feedback",
+      "alignment"
+    ],
+    "idealAnswer": "RLHF aligns models with human preferences via 3 stages: Supervised Fine-Tuning (SFT) -> Train Reward Model on human preference pairs -> Optimize policy using PPO. DPO directly optimizes the language model policy on preference data with a closed-form loss function, completely bypassing the complex reward model and PPO loop.",
+    "ideal_answer": "RLHF aligns models with human preferences via 3 stages: Supervised Fine-Tuning (SFT) -> Train Reward Model on human preference pairs -> Optimize policy using PPO. DPO directly optimizes the language model policy on preference data with a closed-form loss function, completely bypassing the complex reward model and PPO loop.",
+    "expected_concepts": [
+      "RLHF",
+      "DPO",
+      "Reward Model",
+      "PPO"
+    ],
+    "explanation": "Evaluates Generative AI Model Alignment and RLHF vs Direct Preference Optimization (DPO) comprehension."
+  },
+  {
+    "id": "genai_007",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Prompt Engineering techniques: Few-Shot Prompting, Chain-of-Thought (CoT), Tree-of-Thoughts (ToT), and ReAct (Reason + Act).",
+    "difficulty": "easy",
+    "topic": "Prompt Engineering",
+    "concept": "Prompt Engineering Patterns (CoT, ReAct)",
+    "questionFamily": "best_practice",
+    "tags": [
+      "prompt engineering",
+      "Chain-of-Thought",
+      "Few-Shot",
+      "ReAct pattern",
+      "Tree-of-Thoughts"
+    ],
+    "idealAnswer": "Few-shot gives example demonstrations. Chain-of-Thought (CoT) instructs the model to 'think step by step', unlocking multi-step arithmetic/logical reasoning. ReAct interleaves reasoning traces ('Thought') with concrete tool invocations ('Action' and 'Observation').",
+    "ideal_answer": "Few-shot gives example demonstrations. Chain-of-Thought (CoT) instructs the model to 'think step by step', unlocking multi-step arithmetic/logical reasoning. ReAct interleaves reasoning traces ('Thought') with concrete tool invocations ('Action' and 'Observation').",
+    "expected_concepts": [
+      "prompt engineering",
+      "Chain-of-Thought",
+      "Few-Shot",
+      "ReAct pattern"
+    ],
+    "explanation": "Evaluates Generative AI Prompt Engineering and Prompt Engineering Patterns (CoT, ReAct) comprehension."
+  },
+  {
+    "id": "genai_008",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Autonomous AI Agents (AutoGPT, CrewAI, LangGraph), and how do they use Tools, Memory (Episodic/Working), and Planning loops?",
+    "difficulty": "medium",
+    "topic": "AI Agents",
+    "concept": "Autonomous AI Agents Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "AI Agents",
+      "LangGraph",
+      "tool use",
+      "function calling",
+      "working memory",
+      "planning loop"
+    ],
+    "idealAnswer": "AI agents use LLMs as reasoning engines within continuous perception-action loops. They decompose complex goals into sub-tasks, maintain short-term working memory and long-term vector memory, and execute external API/tools (search, code execution, databases) until the objective is reached.",
+    "ideal_answer": "AI agents use LLMs as reasoning engines within continuous perception-action loops. They decompose complex goals into sub-tasks, maintain short-term working memory and long-term vector memory, and execute external API/tools (search, code execution, databases) until the objective is reached.",
+    "expected_concepts": [
+      "AI Agents",
+      "LangGraph",
+      "tool use",
+      "function calling"
+    ],
+    "explanation": "Evaluates Generative AI AI Agents and Autonomous AI Agents Architecture comprehension."
+  },
+  {
+    "id": "genai_009",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Function Calling / Tool Calling in LLMs (OpenAI Tools Schema / Gemini Function Declarations) and Structured JSON Output (JSON Schema mode).",
+    "difficulty": "medium",
+    "topic": "Tool Calling & Structured Data",
+    "concept": "Function Calling & JSON Schema Enforcement",
+    "questionFamily": "implementation",
+    "tags": [
+      "function calling",
+      "tool calling",
+      "JSON schema",
+      "structured outputs",
+      "pydantic parser"
+    ],
+    "idealAnswer": "LLMs receive JSON Schema definitions of available functions. The model determines when to invoke a function and emits structured JSON arguments matching the schema. Constrained decoding (Structured Outputs) forces the model's token sampling probabilities to conform strictly to the grammar/schema.",
+    "ideal_answer": "LLMs receive JSON Schema definitions of available functions. The model determines when to invoke a function and emits structured JSON arguments matching the schema. Constrained decoding (Structured Outputs) forces the model's token sampling probabilities to conform strictly to the grammar/schema.",
+    "expected_concepts": [
+      "function calling",
+      "tool calling",
+      "JSON schema",
+      "structured outputs"
+    ],
+    "explanation": "Evaluates Generative AI Tool Calling & Structured Data and Function Calling & JSON Schema Enforcement comprehension."
+  },
+  {
+    "id": "genai_010",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain LLM Sampling Parameters: Temperature, Top-P (Nucleus Sampling), Top-K, Frequency Penalty, and Presence Penalty.",
+    "difficulty": "easy",
+    "topic": "Sampling & Inference",
+    "concept": "Temperature, Top-P, & Top-K Sampling",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "Temperature",
+      "Top-P",
+      "Nucleus Sampling",
+      "Top-K",
+      "repetition penalty"
+    ],
+    "idealAnswer": "Temperature scales logit values: lower temperature (<0.2) makes distribution sharper (deterministic/factual); higher (>0.8) makes it uniform (creative). Top-K restricts sampling to the K most likely tokens. Top-P (Nucleus) dynamically samples the smallest token set whose cumulative probability reaches P.",
+    "ideal_answer": "Temperature scales logit values: lower temperature (<0.2) makes distribution sharper (deterministic/factual); higher (>0.8) makes it uniform (creative). Top-K restricts sampling to the K most likely tokens. Top-P (Nucleus) dynamically samples the smallest token set whose cumulative probability reaches P.",
+    "expected_concepts": [
+      "Temperature",
+      "Top-P",
+      "Nucleus Sampling",
+      "Top-K"
+    ],
+    "explanation": "Evaluates Generative AI Sampling & Inference and Temperature, Top-P, & Top-K Sampling comprehension."
+  },
+  {
+    "id": "genai_011",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Context Window Scaling in LLMs (FlashAttention, KV Cache, and Long-Context needle-in-a-haystack evaluation)?",
+    "difficulty": "hard",
+    "topic": "LLM Performance",
+    "concept": "FlashAttention, KV Caching, & Needle in a Haystack",
+    "questionFamily": "optimization",
+    "tags": [
+      "context window",
+      "FlashAttention",
+      "KV Cache",
+      "GPU SRAM",
+      "needle in a haystack"
+    ],
+    "idealAnswer": "During autoregressive generation, KV Caching stores computed Key and Value vectors in GPU VRAM to avoid recomputing past tokens. FlashAttention optimizes GPU memory I/O by tiling attention matrix calculations in fast SRAM without materializing the full N x N matrix in HBM.",
+    "ideal_answer": "During autoregressive generation, KV Caching stores computed Key and Value vectors in GPU VRAM to avoid recomputing past tokens. FlashAttention optimizes GPU memory I/O by tiling attention matrix calculations in fast SRAM without materializing the full N x N matrix in HBM.",
+    "expected_concepts": [
+      "context window",
+      "FlashAttention",
+      "KV Cache",
+      "GPU SRAM"
+    ],
+    "explanation": "Evaluates Generative AI LLM Performance and FlashAttention, KV Caching, & Needle in a Haystack comprehension."
+  },
+  {
+    "id": "genai_012",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Model Quantization techniques for LLMs: Post-Training Quantization (PTQ), AWQ (Activation-aware Weight Quantization), and GGUF format.",
+    "difficulty": "hard",
+    "topic": "Inference Optimization",
+    "concept": "Quantization (AWQ, GPTQ, GGUF)",
+    "questionFamily": "optimization",
+    "tags": [
+      "quantization",
+      "AWQ",
+      "GPTQ",
+      "GGUF",
+      "llama.cpp",
+      "INT4",
+      "VRAM reduction"
+    ],
+    "idealAnswer": "Quantization compresses 16-bit float (FP16) weights to 8-bit or 4-bit integers. AWQ protects salient weights that correspond to large activation magnitudes. GGUF is the binary container format used by llama.cpp for ultra-fast quantized CPU and Apple Metal GPU inference.",
+    "ideal_answer": "Quantization compresses 16-bit float (FP16) weights to 8-bit or 4-bit integers. AWQ protects salient weights that correspond to large activation magnitudes. GGUF is the binary container format used by llama.cpp for ultra-fast quantized CPU and Apple Metal GPU inference.",
+    "expected_concepts": [
+      "quantization",
+      "AWQ",
+      "GPTQ",
+      "GGUF"
+    ],
+    "explanation": "Evaluates Generative AI Inference Optimization and Quantization (AWQ, GPTQ, GGUF) comprehension."
+  },
+  {
+    "id": "genai_013",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Diffusion Models (Stable Diffusion, Midjourney) vs Autoregressive Visual Generation (DALL-E)?",
+    "difficulty": "medium",
+    "topic": "Image Generation",
+    "concept": "Diffusion Models & Latent Diffusion",
+    "questionFamily": "comparison",
+    "tags": [
+      "Stable Diffusion",
+      "Latent Diffusion",
+      "CLIP text encoder",
+      "VAE",
+      "denoising U-Net"
+    ],
+    "idealAnswer": "Latent Diffusion Models (Stable Diffusion) compress images into a latent space via a VAE, run iterative reverse diffusion with a denoising U-Net conditioned on CLIP text embeddings, and decode latents back to high-resolution pixels with lower compute than pixel-space diffusion.",
+    "ideal_answer": "Latent Diffusion Models (Stable Diffusion) compress images into a latent space via a VAE, run iterative reverse diffusion with a denoising U-Net conditioned on CLIP text embeddings, and decode latents back to high-resolution pixels with lower compute than pixel-space diffusion.",
+    "expected_concepts": [
+      "Stable Diffusion",
+      "Latent Diffusion",
+      "CLIP text encoder",
+      "VAE"
+    ],
+    "explanation": "Evaluates Generative AI Image Generation and Diffusion Models & Latent Diffusion comprehension."
+  },
+  {
+    "id": "genai_014",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain LLM Evaluation frameworks (Ragas, TruLens, G-Eval / LLM-as-a-Judge) for measuring Faithfulness, Answer Relevance, and Context Precision.",
+    "difficulty": "medium",
+    "topic": "Evaluation & Quality",
+    "concept": "RAG Triad & LLM-as-a-Judge Evaluation",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Ragas",
+      "LLM-as-a-Judge",
+      "faithfulness",
+      "answer relevance",
+      "context precision",
+      "RAG triad"
+    ],
+    "idealAnswer": "RAG evaluation uses the RAG Triad: Context Relevance (is retrieved context relevant to query?), Faithfulness / Groundedness (is the response derived strictly from retrieved context without hallucination?), and Answer Relevance (does response directly address user prompt?).",
+    "ideal_answer": "RAG evaluation uses the RAG Triad: Context Relevance (is retrieved context relevant to query?), Faithfulness / Groundedness (is the response derived strictly from retrieved context without hallucination?), and Answer Relevance (does response directly address user prompt?).",
+    "expected_concepts": [
+      "Ragas",
+      "LLM-as-a-Judge",
+      "faithfulness",
+      "answer relevance"
+    ],
+    "explanation": "Evaluates Generative AI Evaluation & Quality and RAG Triad & LLM-as-a-Judge Evaluation comprehension."
+  },
+  {
+    "id": "genai_015",
+    "skill": "Generative AI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Security Vulnerabilities in Generative AI: Prompt Injection (Direct vs Indirect), Jailbreaking, Data Poisoning, and Guardrails (NeMo Guardrails)?",
+    "difficulty": "medium",
+    "topic": "Security & Safety",
+    "concept": "Prompt Injection & NeMo Guardrails",
+    "questionFamily": "security",
+    "tags": [
+      "prompt injection",
+      "indirect prompt injection",
+      "jailbreaking",
+      "NeMo Guardrails",
+      "Llama Guard",
+      "system prompt leak"
+    ],
+    "idealAnswer": "Direct Prompt Injection overrides system instructions via user prompt. Indirect Prompt Injection hides malicious instructions inside external web pages or ingested documents. Defense: input/output guardrails (NeMo Guardrails, Llama Guard), robust system delimiters, and separating data and instruction streams.",
+    "ideal_answer": "Direct Prompt Injection overrides system instructions via user prompt. Indirect Prompt Injection hides malicious instructions inside external web pages or ingested documents. Defense: input/output guardrails (NeMo Guardrails, Llama Guard), robust system delimiters, and separating data and instruction streams.",
+    "expected_concepts": [
+      "prompt injection",
+      "indirect prompt injection",
+      "jailbreaking",
+      "NeMo Guardrails"
+    ],
+    "explanation": "Evaluates Generative AI Security & Safety and Prompt Injection & NeMo Guardrails comprehension."
   }
 ]

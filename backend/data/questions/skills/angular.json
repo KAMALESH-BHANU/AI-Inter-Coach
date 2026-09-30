@@ -1,0 +1,401 @@
+[
+  {
+    "id": "angular_001",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the core architecture of Angular (Modules, Components, Templates, Metadata, Services, Dependency Injection).",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "Angular Architecture Overview",
+    "questionFamily": "architecture",
+    "tags": [
+      "Angular",
+      "components",
+      "services",
+      "dependency injection",
+      "NgModule"
+    ],
+    "idealAnswer": "Angular is an enterprise TypeScript framework built around Components (UI logic & templates), Services (business logic & HTTP), and hierarchical Dependency Injection, traditionally grouped in NgModules or Standalone Components.",
+    "ideal_answer": "Angular is an enterprise TypeScript framework built around Components (UI logic & templates), Services (business logic & HTTP), and hierarchical Dependency Injection, traditionally grouped in NgModules or Standalone Components.",
+    "expected_concepts": [
+      "Angular",
+      "components",
+      "services",
+      "dependency injection"
+    ],
+    "explanation": "Evaluates Angular Architecture and Angular Architecture Overview comprehension."
+  },
+  {
+    "id": "angular_002",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Standalone Components in Angular 14+, and how do they eliminate the requirement for NgModules?",
+    "difficulty": "easy",
+    "topic": "Modern Angular",
+    "concept": "Standalone Components",
+    "questionFamily": "architecture",
+    "tags": [
+      "standalone components",
+      "NgModule",
+      "imports array",
+      "Angular 14+"
+    ],
+    "idealAnswer": "Standalone components set 'standalone: true' and declare their own dependencies in an 'imports' array, simplifying application structure, improving tree-shaking, and removing the boilerplate of creating NgModules.",
+    "ideal_answer": "Standalone components set 'standalone: true' and declare their own dependencies in an 'imports' array, simplifying application structure, improving tree-shaking, and removing the boilerplate of creating NgModules.",
+    "expected_concepts": [
+      "standalone components",
+      "NgModule",
+      "imports array",
+      "Angular 14+"
+    ],
+    "explanation": "Evaluates Angular Modern Angular and Standalone Components comprehension."
+  },
+  {
+    "id": "angular_003",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dependency Injection (DI) in Angular, hierarchical injectors, and service provision scopes (providedIn: 'root' vs component level).",
+    "difficulty": "medium",
+    "topic": "Dependency Injection",
+    "concept": "Hierarchical Dependency Injection",
+    "questionFamily": "design",
+    "tags": [
+      "dependency injection",
+      "providedIn root",
+      "hierarchical injectors",
+      "singleton"
+    ],
+    "idealAnswer": "Angular DI uses a hierarchical injector tree. Services providedIn: 'root' are application-wide singletons. Services provided at component level instantiate a new service instance scoped exclusively to that component and its children.",
+    "ideal_answer": "Angular DI uses a hierarchical injector tree. Services providedIn: 'root' are application-wide singletons. Services provided at component level instantiate a new service instance scoped exclusively to that component and its children.",
+    "expected_concepts": [
+      "dependency injection",
+      "providedIn root",
+      "hierarchical injectors",
+      "singleton"
+    ],
+    "explanation": "Evaluates Angular Dependency Injection and Hierarchical Dependency Injection comprehension."
+  },
+  {
+    "id": "angular_004",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Change Detection in Angular, and how does ChangeDetectionStrategy.OnPush improve performance over Default?",
+    "difficulty": "hard",
+    "topic": "Change Detection",
+    "concept": "Default vs OnPush Change Detection",
+    "questionFamily": "optimization",
+    "tags": [
+      "change detection",
+      "Zone.js",
+      "OnPush",
+      "immutability",
+      "re-render"
+    ],
+    "idealAnswer": "Angular's change detection checks if model values changed to update the DOM. Default strategy checks all components on every browser event. OnPush strategy checks a component only when an @Input() reference changes, an event originates within it, or an async pipe emits.",
+    "ideal_answer": "Angular's change detection checks if model values changed to update the DOM. Default strategy checks all components on every browser event. OnPush strategy checks a component only when an @Input() reference changes, an event originates within it, or an async pipe emits.",
+    "expected_concepts": [
+      "change detection",
+      "Zone.js",
+      "OnPush",
+      "immutability"
+    ],
+    "explanation": "Evaluates Angular Change Detection and Default vs OnPush Change Detection comprehension."
+  },
+  {
+    "id": "angular_005",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Angular Signals (signal, computed, effect) introduced in Angular 16+ and how they enable fine-grained reactivity without Zone.js.",
+    "difficulty": "hard",
+    "topic": "Modern Angular",
+    "concept": "Angular Signals & Zoneless Reactivity",
+    "questionFamily": "architecture",
+    "tags": [
+      "Signals",
+      "computed",
+      "effect",
+      "Zoneless Angular",
+      "fine-grained reactivity"
+    ],
+    "idealAnswer": "Signals are reactive value wrappers that track reads and trigger precise updates. Unlike Zone.js which triggers broad dirty-checking passes across component trees, Signals enable fine-grained reactivity and Zoneless Angular.",
+    "ideal_answer": "Signals are reactive value wrappers that track reads and trigger precise updates. Unlike Zone.js which triggers broad dirty-checking passes across component trees, Signals enable fine-grained reactivity and Zoneless Angular.",
+    "expected_concepts": [
+      "Signals",
+      "computed",
+      "effect",
+      "Zoneless Angular"
+    ],
+    "explanation": "Evaluates Angular Modern Angular and Angular Signals & Zoneless Reactivity comprehension."
+  },
+  {
+    "id": "angular_006",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Reactive Forms (FormGroup, FormControl) and Template-Driven Forms in Angular?",
+    "difficulty": "medium",
+    "topic": "Forms",
+    "concept": "Reactive vs Template-Driven Forms",
+    "questionFamily": "comparison",
+    "tags": [
+      "reactive forms",
+      "template-driven forms",
+      "FormGroup",
+      "FormControl",
+      "validation"
+    ],
+    "idealAnswer": "Reactive Forms manage form state programmatically in TypeScript using FormGroups and FormControls with synchronous, immutable data streams and easy unit testing. Template-Driven Forms rely on two-way binding ([(ngModel)]) in templates.",
+    "ideal_answer": "Reactive Forms manage form state programmatically in TypeScript using FormGroups and FormControls with synchronous, immutable data streams and easy unit testing. Template-Driven Forms rely on two-way binding ([(ngModel)]) in templates.",
+    "expected_concepts": [
+      "reactive forms",
+      "template-driven forms",
+      "FormGroup",
+      "FormControl"
+    ],
+    "explanation": "Evaluates Angular Forms and Reactive vs Template-Driven Forms comprehension."
+  },
+  {
+    "id": "angular_007",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain RxJS Observables, Observers, and common operators (map, filter, switchMap, mergeMap, debounceTime) in Angular.",
+    "difficulty": "medium",
+    "topic": "RxJS",
+    "concept": "RxJS Operators & Streams",
+    "questionFamily": "implementation",
+    "tags": [
+      "RxJS",
+      "Observable",
+      "switchMap",
+      "mergeMap",
+      "debounceTime"
+    ],
+    "idealAnswer": "RxJS handles asynchronous event streams. switchMap cancels previous in-flight inner observables on new emission (ideal for search autocomplete); mergeMap processes all inner observables concurrently; debounceTime delays emissions until a quiet interval.",
+    "ideal_answer": "RxJS handles asynchronous event streams. switchMap cancels previous in-flight inner observables on new emission (ideal for search autocomplete); mergeMap processes all inner observables concurrently; debounceTime delays emissions until a quiet interval.",
+    "expected_concepts": [
+      "RxJS",
+      "Observable",
+      "switchMap",
+      "mergeMap"
+    ],
+    "explanation": "Evaluates Angular RxJS and RxJS Operators & Streams comprehension."
+  },
+  {
+    "id": "angular_008",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the 'async' pipe in Angular templates, and why is it preferred over manual Observable subscription?",
+    "difficulty": "easy",
+    "topic": "Templates & RxJS",
+    "concept": "Async Pipe Benefits",
+    "questionFamily": "best_practice",
+    "tags": [
+      "async pipe",
+      "Observable",
+      "auto-unsubscribe",
+      "memory leak",
+      "OnPush"
+    ],
+    "idealAnswer": "The async pipe automatically subscribes to Observables or Promises, returns latest emitted values to template, marks OnPush components for check, and automatically unsubscribes on component destruction to prevent memory leaks.",
+    "ideal_answer": "The async pipe automatically subscribes to Observables or Promises, returns latest emitted values to template, marks OnPush components for check, and automatically unsubscribes on component destruction to prevent memory leaks.",
+    "expected_concepts": [
+      "async pipe",
+      "Observable",
+      "auto-unsubscribe",
+      "memory leak"
+    ],
+    "explanation": "Evaluates Angular Templates & RxJS and Async Pipe Benefits comprehension."
+  },
+  {
+    "id": "angular_009",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Component Lifecycle Hooks in Angular (ngOnInit, ngOnChanges, ngAfterViewInit, ngOnDestroy) and their execution order.",
+    "difficulty": "medium",
+    "topic": "Lifecycle",
+    "concept": "Component Lifecycle Hooks",
+    "questionFamily": "architecture",
+    "tags": [
+      "lifecycle",
+      "ngOnInit",
+      "ngOnChanges",
+      "ngAfterViewInit",
+      "ngOnDestroy"
+    ],
+    "idealAnswer": "ngOnChanges runs on input changes; ngOnInit runs after initial input binding; ngAfterViewInit runs after component view and child views initialize (safe for DOM queries); ngOnDestroy runs before destruction for cleanup.",
+    "ideal_answer": "ngOnChanges runs on input changes; ngOnInit runs after initial input binding; ngAfterViewInit runs after component view and child views initialize (safe for DOM queries); ngOnDestroy runs before destruction for cleanup.",
+    "expected_concepts": [
+      "lifecycle",
+      "ngOnInit",
+      "ngOnChanges",
+      "ngAfterViewInit"
+    ],
+    "explanation": "Evaluates Angular Lifecycle and Component Lifecycle Hooks comprehension."
+  },
+  {
+    "id": "angular_010",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Directives in Angular: Structural Directives (*ngIf, *ngFor, or new @if/@for control flow) vs Attribute Directives (ngClass, ngStyle)?",
+    "difficulty": "easy",
+    "topic": "Directives",
+    "concept": "Structural vs Attribute Directives",
+    "questionFamily": "implementation",
+    "tags": [
+      "directives",
+      "structural directives",
+      "attribute directives",
+      "@if @for control flow"
+    ],
+    "idealAnswer": "Structural directives alter DOM layout by adding or removing elements (*ngIf, *ngFor, or Angular 17+ built-in control flow @if/@for). Attribute directives alter the appearance or behavior of existing DOM elements (ngClass, custom directives).",
+    "ideal_answer": "Structural directives alter DOM layout by adding or removing elements (*ngIf, *ngFor, or Angular 17+ built-in control flow @if/@for). Attribute directives alter the appearance or behavior of existing DOM elements (ngClass, custom directives).",
+    "expected_concepts": [
+      "directives",
+      "structural directives",
+      "attribute directives",
+      "@if @for control flow"
+    ],
+    "explanation": "Evaluates Angular Directives and Structural vs Attribute Directives comprehension."
+  },
+  {
+    "id": "angular_011",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Pipes in Angular, and what is the difference between Pure and Impure Pipes?",
+    "difficulty": "medium",
+    "topic": "Pipes",
+    "concept": "Pure vs Impure Pipes",
+    "questionFamily": "comparison",
+    "tags": [
+      "pipes",
+      "pure pipe",
+      "impure pipe",
+      "data transformation",
+      "caching"
+    ],
+    "idealAnswer": "Pipes transform template values (e.g. {{ date | date:'short' }}). Pure pipes execute only when primitive input values or object references change (cached and fast). Impure pipes execute on every single change detection cycle (expensive).",
+    "ideal_answer": "Pipes transform template values (e.g. {{ date | date:'short' }}). Pure pipes execute only when primitive input values or object references change (cached and fast). Impure pipes execute on every single change detection cycle (expensive).",
+    "expected_concepts": [
+      "pipes",
+      "pure pipe",
+      "impure pipe",
+      "data transformation"
+    ],
+    "explanation": "Evaluates Angular Pipes and Pure vs Impure Pipes comprehension."
+  },
+  {
+    "id": "angular_012",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Angular Routing: Route Guards (CanActivate, CanDeactivate, Resolve) and Lazy Loading with loadChildren.",
+    "difficulty": "medium",
+    "topic": "Routing",
+    "concept": "Route Guards & Lazy Loading",
+    "questionFamily": "implementation",
+    "tags": [
+      "router",
+      "CanActivate",
+      "lazy loading",
+      "loadChildren",
+      "Route Guards"
+    ],
+    "idealAnswer": "Angular Router configures URL navigation. Route Guards protect routes based on auth (CanActivate) or warn unsaved changes (CanDeactivate). Lazy loading (loadChildren: () => import(...)) splits feature bundles so modules/components load only on navigation.",
+    "ideal_answer": "Angular Router configures URL navigation. Route Guards protect routes based on auth (CanActivate) or warn unsaved changes (CanDeactivate). Lazy loading (loadChildren: () => import(...)) splits feature bundles so modules/components load only on navigation.",
+    "expected_concepts": [
+      "router",
+      "CanActivate",
+      "lazy loading",
+      "loadChildren"
+    ],
+    "explanation": "Evaluates Angular Routing and Route Guards & Lazy Loading comprehension."
+  },
+  {
+    "id": "angular_013",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is ViewEncapsulation in Angular (Emulated, ShadowDom, None), and how does Emulated scoping work?",
+    "difficulty": "medium",
+    "topic": "Styling & DOM",
+    "concept": "ViewEncapsulation Modes",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "ViewEncapsulation",
+      "Emulated",
+      "ShadowDom",
+      "_ngcontent attribute"
+    ],
+    "idealAnswer": "ViewEncapsulation controls CSS scoping. Emulated (default) simulates Shadow DOM by appending unique host attributes (_ngcontent-xxx) to elements and selectors. ShadowDom uses real browser Shadow DOM. None leaves CSS global.",
+    "ideal_answer": "ViewEncapsulation controls CSS scoping. Emulated (default) simulates Shadow DOM by appending unique host attributes (_ngcontent-xxx) to elements and selectors. ShadowDom uses real browser Shadow DOM. None leaves CSS global.",
+    "expected_concepts": [
+      "ViewEncapsulation",
+      "Emulated",
+      "ShadowDom",
+      "_ngcontent attribute"
+    ],
+    "explanation": "Evaluates Angular Styling & DOM and ViewEncapsulation Modes comprehension."
+  },
+  {
+    "id": "angular_014",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain HTTP Interceptors (HttpInterceptorFn) in Angular and common use cases like attaching JWT tokens or logging.",
+    "difficulty": "medium",
+    "topic": "HTTP & Security",
+    "concept": "HTTP Interceptors",
+    "questionFamily": "security",
+    "tags": [
+      "HttpInterceptor",
+      "JWT",
+      "bearer token",
+      "HTTP error handling"
+    ],
+    "idealAnswer": "HTTP Interceptors intercept outgoing HttpRequest and incoming HttpResponse globally, allowing automatic attachment of Authorization Bearer JWT headers, centralized error handling, and request retry logic.",
+    "ideal_answer": "HTTP Interceptors intercept outgoing HttpRequest and incoming HttpResponse globally, allowing automatic attachment of Authorization Bearer JWT headers, centralized error handling, and request retry logic.",
+    "expected_concepts": [
+      "HttpInterceptor",
+      "JWT",
+      "bearer token",
+      "HTTP error handling"
+    ],
+    "explanation": "Evaluates Angular HTTP & Security and HTTP Interceptors comprehension."
+  },
+  {
+    "id": "angular_015",
+    "skill": "Angular",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Content Projection (<ng-content>) and ViewChild/ContentChild queries in Angular?",
+    "difficulty": "medium",
+    "topic": "Component Design",
+    "concept": "Content Projection & ViewChild",
+    "questionFamily": "design",
+    "tags": [
+      "ng-content",
+      "ViewChild",
+      "ContentChild",
+      "transclusion"
+    ],
+    "idealAnswer": "<ng-content> projects external HTML content into component template slots (transclusion). @ViewChild queries elements/components in the component's own template; @ContentChild queries elements projected into the component via <ng-content>.",
+    "ideal_answer": "<ng-content> projects external HTML content into component template slots (transclusion). @ViewChild queries elements/components in the component's own template; @ContentChild queries elements projected into the component via <ng-content>.",
+    "expected_concepts": [
+      "ng-content",
+      "ViewChild",
+      "ContentChild",
+      "transclusion"
+    ],
+    "explanation": "Evaluates Angular Component Design and Content Projection & ViewChild comprehension."
+  }
+]

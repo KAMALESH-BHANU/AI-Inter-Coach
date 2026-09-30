@@ -1,0 +1,410 @@
+[
+  {
+    "id": "django_001",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Django MTV (Model-Template-View) architectural pattern and how it compares to traditional MVC.",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "Django MTV Pattern",
+    "questionFamily": "architecture",
+    "tags": [
+      "Django",
+      "MTV",
+      "MVC",
+      "Model",
+      "Template",
+      "View",
+      "ORM"
+    ],
+    "idealAnswer": "Django MTV: Model handles data structure and ORM; Template handles presentation/HTML layout (equivalent to View in MVC); View handles business logic and HTTP processing (equivalent to Controller in MVC).",
+    "ideal_answer": "Django MTV: Model handles data structure and ORM; Template handles presentation/HTML layout (equivalent to View in MVC); View handles business logic and HTTP processing (equivalent to Controller in MVC).",
+    "expected_concepts": [
+      "Django",
+      "MTV",
+      "MVC",
+      "Model"
+    ],
+    "explanation": "Evaluates Django Architecture and Django MTV Pattern comprehension."
+  },
+  {
+    "id": "django_002",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does the Django ORM handle QuerySet evaluation, lazy loading, and caching?",
+    "difficulty": "medium",
+    "topic": "Django ORM",
+    "concept": "Lazy QuerySet Evaluation",
+    "questionFamily": "implementation",
+    "tags": [
+      "QuerySet",
+      "lazy evaluation",
+      "caching",
+      "database query",
+      "slicing"
+    ],
+    "idealAnswer": "Django QuerySets are lazy: constructing a QuerySet does not query the database. The database query is executed only when evaluated (iteration, slicing, len(), list()). Evaluated QuerySets cache results in memory for reuse.",
+    "ideal_answer": "Django QuerySets are lazy: constructing a QuerySet does not query the database. The database query is executed only when evaluated (iteration, slicing, len(), list()). Evaluated QuerySets cache results in memory for reuse.",
+    "expected_concepts": [
+      "QuerySet",
+      "lazy evaluation",
+      "caching",
+      "database query"
+    ],
+    "explanation": "Evaluates Django Django ORM and Lazy QuerySet Evaluation comprehension."
+  },
+  {
+    "id": "django_003",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain select_related and prefetch_related in Django ORM and when to use each to prevent N+1 queries.",
+    "difficulty": "medium",
+    "topic": "Django ORM",
+    "concept": "select_related vs prefetch_related",
+    "questionFamily": "optimization",
+    "tags": [
+      "select_related",
+      "prefetch_related",
+      "N+1 query",
+      "SQL JOIN",
+      "ForeignKey"
+    ],
+    "idealAnswer": "select_related performs an SQL JOIN in a single query and is used for single-valued relationships (ForeignKey, OneToOne). prefetch_related executes a separate query with 'WHERE id IN (...)' and joins in Python, used for multi-valued relationships (ManyToMany, reverse ForeignKey).",
+    "ideal_answer": "select_related performs an SQL JOIN in a single query and is used for single-valued relationships (ForeignKey, OneToOne). prefetch_related executes a separate query with 'WHERE id IN (...)' and joins in Python, used for multi-valued relationships (ManyToMany, reverse ForeignKey).",
+    "expected_concepts": [
+      "select_related",
+      "prefetch_related",
+      "N+1 query",
+      "SQL JOIN"
+    ],
+    "explanation": "Evaluates Django Django ORM and select_related vs prefetch_related comprehension."
+  },
+  {
+    "id": "django_004",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Django Migrations work (makemigrations, migrate, squashing, data migrations)?",
+    "difficulty": "easy",
+    "topic": "Migrations",
+    "concept": "Django Migrations System",
+    "questionFamily": "implementation",
+    "tags": [
+      "migrations",
+      "makemigrations",
+      "migrate",
+      "schema migration",
+      "data migration"
+    ],
+    "idealAnswer": "Django migrations track model changes over time. 'makemigrations' inspects models.py and creates migration files. 'migrate' applies migrations to the database and records executed migrations in django_migrations table.",
+    "ideal_answer": "Django migrations track model changes over time. 'makemigrations' inspects models.py and creates migration files. 'migrate' applies migrations to the database and records executed migrations in django_migrations table.",
+    "expected_concepts": [
+      "migrations",
+      "makemigrations",
+      "migrate",
+      "schema migration"
+    ],
+    "explanation": "Evaluates Django Migrations and Django Migrations System comprehension."
+  },
+  {
+    "id": "django_005",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Django Middleware (process_request, process_response, process_view, process_exception) and request execution order.",
+    "difficulty": "medium",
+    "topic": "Middleware",
+    "concept": "Django Middleware Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "middleware",
+      "__call__",
+      "request pipeline",
+      "security middleware",
+      "CSRF"
+    ],
+    "idealAnswer": "Middleware hooks into Django's request/response processing. Middleware executes in top-down order during the request phase and reverse bottom-up order during the response phase, handling tasks like session attachment, authentication, and CSRF token verification.",
+    "ideal_answer": "Middleware hooks into Django's request/response processing. Middleware executes in top-down order during the request phase and reverse bottom-up order during the response phase, handling tasks like session attachment, authentication, and CSRF token verification.",
+    "expected_concepts": [
+      "middleware",
+      "__call__",
+      "request pipeline",
+      "security middleware"
+    ],
+    "explanation": "Evaluates Django Middleware and Django Middleware Architecture comprehension."
+  },
+  {
+    "id": "django_006",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Django protect against CSRF (Cross-Site Request Forgery) using {% csrf_token %} and CSRF cookies?",
+    "difficulty": "easy",
+    "topic": "Security",
+    "concept": "CSRF Protection Mechanism",
+    "questionFamily": "security",
+    "tags": [
+      "CSRF",
+      "{% csrf_token %}",
+      "csrftoken cookie",
+      "SameSite",
+      "POST security"
+    ],
+    "idealAnswer": "Django sets a random 'csrftoken' cookie and injects a matching hidden form input via {% csrf_token %}. On POST/PUT/DELETE requests, CsrfViewMiddleware verifies that the submitted form token matches the cookie token before processing.",
+    "ideal_answer": "Django sets a random 'csrftoken' cookie and injects a matching hidden form input via {% csrf_token %}. On POST/PUT/DELETE requests, CsrfViewMiddleware verifies that the submitted form token matches the cookie token before processing.",
+    "expected_concepts": [
+      "CSRF",
+      "{% csrf_token %}",
+      "csrftoken cookie",
+      "SameSite"
+    ],
+    "explanation": "Evaluates Django Security and CSRF Protection Mechanism comprehension."
+  },
+  {
+    "id": "django_007",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Django Authentication System: User model, AbstractUser vs AbstractBaseUser, and custom user models.",
+    "difficulty": "medium",
+    "topic": "Authentication",
+    "concept": "Custom User Model (AbstractUser vs AbstractBaseUser)",
+    "questionFamily": "design",
+    "tags": [
+      "auth",
+      "AbstractUser",
+      "AbstractBaseUser",
+      "AUTH_USER_MODEL",
+      "custom user"
+    ],
+    "idealAnswer": "AbstractUser extends Django's default user fields (username, email, first_name) with custom fields. AbstractBaseUser provides only password hashing and auth mechanics, allowing complete customization (e.g. using email as primary login identifier).",
+    "ideal_answer": "AbstractUser extends Django's default user fields (username, email, first_name) with custom fields. AbstractBaseUser provides only password hashing and auth mechanics, allowing complete customization (e.g. using email as primary login identifier).",
+    "expected_concepts": [
+      "auth",
+      "AbstractUser",
+      "AbstractBaseUser",
+      "AUTH_USER_MODEL"
+    ],
+    "explanation": "Evaluates Django Authentication and Custom User Model (AbstractUser vs AbstractBaseUser) comprehension."
+  },
+  {
+    "id": "django_008",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Django REST Framework (DRF), and how do Serializers (ModelSerializer) validate and transform data?",
+    "difficulty": "easy",
+    "topic": "DRF",
+    "concept": "DRF Serializers & Validation",
+    "questionFamily": "implementation",
+    "tags": [
+      "DRF",
+      "Serializer",
+      "ModelSerializer",
+      "validation",
+      "JSON serialization"
+    ],
+    "idealAnswer": "DRF Serializers convert complex model instances and QuerySets into native Python datatypes that easily render into JSON, and deserialize incoming JSON with validation (validate_<field> and validate() methods) into Python objects.",
+    "ideal_answer": "DRF Serializers convert complex model instances and QuerySets into native Python datatypes that easily render into JSON, and deserialize incoming JSON with validation (validate_<field> and validate() methods) into Python objects.",
+    "expected_concepts": [
+      "DRF",
+      "Serializer",
+      "ModelSerializer",
+      "validation"
+    ],
+    "explanation": "Evaluates Django DRF and DRF Serializers & Validation comprehension."
+  },
+  {
+    "id": "django_009",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain DRF ViewSets (ModelViewSet) and Routers (DefaultRouter) for generating RESTful CRUD endpoints.",
+    "difficulty": "easy",
+    "topic": "DRF",
+    "concept": "DRF ViewSets & Routers",
+    "questionFamily": "architecture",
+    "tags": [
+      "ModelViewSet",
+      "DefaultRouter",
+      "CRUD",
+      "REST API",
+      "action decorator"
+    ],
+    "idealAnswer": "ModelViewSet combines list, create, retrieve, update, and destroy actions into a single class. DefaultRouter automatically generates standard RESTful URL routing patterns (/items/, /items/{id}/) without writing individual URL patterns.",
+    "ideal_answer": "ModelViewSet combines list, create, retrieve, update, and destroy actions into a single class. DefaultRouter automatically generates standard RESTful URL routing patterns (/items/, /items/{id}/) without writing individual URL patterns.",
+    "expected_concepts": [
+      "ModelViewSet",
+      "DefaultRouter",
+      "CRUD",
+      "REST API"
+    ],
+    "explanation": "Evaluates Django DRF and DRF ViewSets & Routers comprehension."
+  },
+  {
+    "id": "django_010",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Django Signals (post_save, pre_save, m2m_changed) work, and why should business logic in signals be used cautiously?",
+    "difficulty": "medium",
+    "topic": "Signals",
+    "concept": "Django Signals & Side Effects",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "signals",
+      "post_save",
+      "receiver",
+      "decoupling",
+      "hidden side effects"
+    ],
+    "idealAnswer": "Django Signals allow decoupled senders to notify receivers of actions (e.g., post_save creating a user profile). However, signals create implicit, hidden control flow that makes debugging difficult and doesn't run during bulk operations (bulk_create).",
+    "ideal_answer": "Django Signals allow decoupled senders to notify receivers of actions (e.g., post_save creating a user profile). However, signals create implicit, hidden control flow that makes debugging difficult and doesn't run during bulk operations (bulk_create).",
+    "expected_concepts": [
+      "signals",
+      "post_save",
+      "receiver",
+      "decoupling"
+    ],
+    "explanation": "Evaluates Django Signals and Django Signals & Side Effects comprehension."
+  },
+  {
+    "id": "django_011",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Django Forms and ModelForms, and how does the clean() and is_valid() lifecycle work?",
+    "difficulty": "easy",
+    "topic": "Forms",
+    "concept": "Forms & ModelForms Validation",
+    "questionFamily": "implementation",
+    "tags": [
+      "Forms",
+      "ModelForms",
+      "is_valid",
+      "clean_field",
+      "cleaned_data"
+    ],
+    "idealAnswer": "Django Forms validate and render HTML forms. Calling form.is_valid() runs field validation, clean_<fieldname>() methods, and form-wide clean() method, populating form.cleaned_data or form.errors.",
+    "ideal_answer": "Django Forms validate and render HTML forms. Calling form.is_valid() runs field validation, clean_<fieldname>() methods, and form-wide clean() method, populating form.cleaned_data or form.errors.",
+    "expected_concepts": [
+      "Forms",
+      "ModelForms",
+      "is_valid",
+      "clean_field"
+    ],
+    "explanation": "Evaluates Django Forms and Forms & ModelForms Validation comprehension."
+  },
+  {
+    "id": "django_012",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Caching in Django (Memcached/Redis backend, per-site, per-view, template fragment, low-level cache API).",
+    "difficulty": "medium",
+    "topic": "Performance & Caching",
+    "concept": "Django Caching Strategies",
+    "questionFamily": "optimization",
+    "tags": [
+      "caching",
+      "Redis",
+      "Memcached",
+      "per-view cache",
+      "low-level cache"
+    ],
+    "idealAnswer": "Django supports caching at multiple granularities: whole-site cache via middleware; per-view cache via @cache_page; template fragment cache via {% load cache %}; and programmatic key-value caching via django.core.cache.cache API.",
+    "ideal_answer": "Django supports caching at multiple granularities: whole-site cache via middleware; per-view cache via @cache_page; template fragment cache via {% load cache %}; and programmatic key-value caching via django.core.cache.cache API.",
+    "expected_concepts": [
+      "caching",
+      "Redis",
+      "Memcached",
+      "per-view cache"
+    ],
+    "explanation": "Evaluates Django Performance & Caching and Django Caching Strategies comprehension."
+  },
+  {
+    "id": "django_013",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Django Class-Based Views (CBVs) vs Function-Based Views (FBVs), and how do generic CBVs (ListView, DetailView, CreateView) work?",
+    "difficulty": "medium",
+    "topic": "Views",
+    "concept": "Class-Based Views vs FBVs",
+    "questionFamily": "comparison",
+    "tags": [
+      "CBV",
+      "FBV",
+      "ListView",
+      "DetailView",
+      "mixins",
+      "inheritance"
+    ],
+    "idealAnswer": "FBVs are explicit and straightforward. CBVs organize view logic using OOP classes and inheritance, providing generic views (ListView, DetailView, FormView) and reusable Mixins (LoginRequiredMixin) to reduce duplicate view code.",
+    "ideal_answer": "FBVs are explicit and straightforward. CBVs organize view logic using OOP classes and inheritance, providing generic views (ListView, DetailView, FormView) and reusable Mixins (LoginRequiredMixin) to reduce duplicate view code.",
+    "expected_concepts": [
+      "CBV",
+      "FBV",
+      "ListView",
+      "DetailView"
+    ],
+    "explanation": "Evaluates Django Views and Class-Based Views vs FBVs comprehension."
+  },
+  {
+    "id": "django_014",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Asynchronous Django (ASGI vs WSGI, async views, async ORM queries).",
+    "difficulty": "hard",
+    "topic": "Async Django",
+    "concept": "ASGI & Async Django",
+    "questionFamily": "architecture",
+    "tags": [
+      "ASGI",
+      "WSGI",
+      "async views",
+      "sync_to_async",
+      "channels"
+    ],
+    "idealAnswer": "WSGI is synchronous request-response. ASGI supports asynchronous protocols (WebSockets, HTTP long-polling). Django async views (async def) allow non-blocking I/O, utilizing async ORM methods (aget, afilter) or sync_to_async wrappers.",
+    "ideal_answer": "WSGI is synchronous request-response. ASGI supports asynchronous protocols (WebSockets, HTTP long-polling). Django async views (async def) allow non-blocking I/O, utilizing async ORM methods (aget, afilter) or sync_to_async wrappers.",
+    "expected_concepts": [
+      "ASGI",
+      "WSGI",
+      "async views",
+      "sync_to_async"
+    ],
+    "explanation": "Evaluates Django Async Django and ASGI & Async Django comprehension."
+  },
+  {
+    "id": "django_015",
+    "skill": "Django",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you handle background tasks in Django using Celery and Redis/RabbitMQ message brokers?",
+    "difficulty": "medium",
+    "topic": "Background Tasks",
+    "concept": "Celery & Asynchronous Tasks",
+    "questionFamily": "architecture",
+    "tags": [
+      "Celery",
+      "RabbitMQ",
+      "Redis",
+      "background tasks",
+      "shared_task"
+    ],
+    "idealAnswer": "Celery offloads long-running tasks (email sending, image processing) to asynchronous worker queues backed by Redis or RabbitMQ brokers. Defining @shared_task enables tasks to be dispatched asynchronously via task.delay().",
+    "ideal_answer": "Celery offloads long-running tasks (email sending, image processing) to asynchronous worker queues backed by Redis or RabbitMQ brokers. Defining @shared_task enables tasks to be dispatched asynchronously via task.delay().",
+    "expected_concepts": [
+      "Celery",
+      "RabbitMQ",
+      "Redis",
+      "background tasks"
+    ],
+    "explanation": "Evaluates Django Background Tasks and Celery & Asynchronous Tasks comprehension."
+  }
+]

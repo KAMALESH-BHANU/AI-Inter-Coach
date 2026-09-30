@@ -65,12 +65,24 @@ class GeminiService:
         q_summary = []
         for i, q in enumerate(questions):
             ans = answers[i] if i < len(answers) else None
+            candidate_ans = "No response"
+            if ans:
+                if q.type == QuestionType.SQL:
+                    candidate_ans = ans.candidate_query or (ans.transcript if ans.transcript != 'SQL Query Submitted' else '') or "No query submitted"
+                elif q.type in [QuestionType.PSEUDOCODE, QuestionType.PSEUDOCODE_MCQ]:
+                    sel = ans.selected_option_id or ans.selected_option
+                    candidate_ans = f"Selected Option: {sel}" if sel else "Not answered"
+                else:
+                    candidate_ans = ans.transcript or "No response"
+                    if candidate_ans.startswith("-- Write your MySQL query"):
+                        candidate_ans = "No response"
+
             q_summary.append({
                 "question_number": i + 1,
                 "type": q.type,
                 "skill": q.skill,
                 "question": q.question,
-                "candidate_answer": ans.transcript if ans else "No response",
+                "candidate_answer": candidate_ans,
                 "technical_score": ans.technical_score if ans else 0.0,
                 "eye_contact": ans.eye_contact_pct if ans else 0.0,
                 "wpm": ans.wpm if ans else 0.0,
@@ -109,6 +121,17 @@ Output ONLY valid JSON with this exact schema:
   "final_feedback": "Encouraging final closing remarks"
 }}
 """
+
+    @classmethod
+    def generate_fallback_feedback(
+        cls, 
+        skills: List[str], 
+        scores: ScoreBreakdown, 
+        questions: List[Any] = None, 
+        answers: List[Any] = None, 
+        reason: str = ""
+    ) -> GeminiFeedbackModel:
+        return cls._generate_fallback_feedback(skills, scores)
 
     @classmethod
     def _generate_fallback_feedback(cls, skills: List[str], scores: ScoreBreakdown) -> GeminiFeedbackModel:

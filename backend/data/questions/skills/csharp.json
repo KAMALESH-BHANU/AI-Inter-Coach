@@ -1,0 +1,403 @@
+[
+  {
+    "id": "csharp_001",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between Value Types and Reference Types in C#, and how stack vs heap allocation works.",
+    "difficulty": "easy",
+    "topic": "Type System",
+    "concept": "Value vs Reference Types",
+    "questionFamily": "comparison",
+    "tags": [
+      "value types",
+      "reference types",
+      "struct",
+      "class",
+      "stack vs heap"
+    ],
+    "idealAnswer": "Value types (structs, int, bool) store data directly and are allocated on the stack (or inline in objects). Reference types (classes, strings, arrays) store a reference pointer to data allocated on the managed heap.",
+    "ideal_answer": "Value types (structs, int, bool) store data directly and are allocated on the stack (or inline in objects). Reference types (classes, strings, arrays) store a reference pointer to data allocated on the managed heap.",
+    "expected_concepts": [
+      "value types",
+      "reference types",
+      "struct",
+      "class"
+    ],
+    "explanation": "Evaluates C# Type System and Value vs Reference Types comprehension."
+  },
+  {
+    "id": "csharp_002",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Boxing and Unboxing in C#, and what are the performance implications?",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Boxing and Unboxing",
+    "questionFamily": "optimization",
+    "tags": [
+      "boxing",
+      "unboxing",
+      "heap allocation",
+      "casting",
+      "generics"
+    ],
+    "idealAnswer": "Boxing is the implicit conversion of a value type to an object reference type, allocating a wrapper on the heap. Unboxing is the explicit extraction of the value type from the object. Excessive boxing causes GC pressure, which Generics solve.",
+    "ideal_answer": "Boxing is the implicit conversion of a value type to an object reference type, allocating a wrapper on the heap. Unboxing is the explicit extraction of the value type from the object. Excessive boxing causes GC pressure, which Generics solve.",
+    "expected_concepts": [
+      "boxing",
+      "unboxing",
+      "heap allocation",
+      "casting"
+    ],
+    "explanation": "Evaluates C# Memory Management and Boxing and Unboxing comprehension."
+  },
+  {
+    "id": "csharp_003",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Garbage Collection work in the .NET CLR (Generational GC with Gen 0, 1, 2, and Large Object Heap)?",
+    "difficulty": "hard",
+    "topic": "CLR & Runtime",
+    "concept": "Generational Garbage Collection",
+    "questionFamily": "architecture",
+    "tags": [
+      "garbage collection",
+      "Gen 0",
+      "Gen 1",
+      "Gen 2",
+      "LOH",
+      "CLR"
+    ],
+    "idealAnswer": "The CLR GC divides heap memory into Gen 0 (short-lived objects), Gen 1 (buffer between 0 and 2), and Gen 2 (long-lived objects), plus the Large Object Heap (LOH for objects >= 85,000 bytes). Gen 0 collections are frequent and fast; Gen 2/Full collections compact memory.",
+    "ideal_answer": "The CLR GC divides heap memory into Gen 0 (short-lived objects), Gen 1 (buffer between 0 and 2), and Gen 2 (long-lived objects), plus the Large Object Heap (LOH for objects >= 85,000 bytes). Gen 0 collections are frequent and fast; Gen 2/Full collections compact memory.",
+    "expected_concepts": [
+      "garbage collection",
+      "Gen 0",
+      "Gen 1",
+      "Gen 2"
+    ],
+    "explanation": "Evaluates C# CLR & Runtime and Generational Garbage Collection comprehension."
+  },
+  {
+    "id": "csharp_004",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the IDisposable interface and the 'using' statement/declaration in C# for unmanaged resource cleanup.",
+    "difficulty": "medium",
+    "topic": "Resource Management",
+    "concept": "IDisposable & Using Statement",
+    "questionFamily": "best_practice",
+    "tags": [
+      "IDisposable",
+      "Dispose",
+      "using statement",
+      "unmanaged resources",
+      "finalizer"
+    ],
+    "idealAnswer": "IDisposable provides the Dispose() method for deterministic release of unmanaged resources (database connections, file streams). The 'using' statement wraps code in a try-finally block, ensuring Dispose() is called even if exceptions occur.",
+    "ideal_answer": "IDisposable provides the Dispose() method for deterministic release of unmanaged resources (database connections, file streams). The 'using' statement wraps code in a try-finally block, ensuring Dispose() is called even if exceptions occur.",
+    "expected_concepts": [
+      "IDisposable",
+      "Dispose",
+      "using statement",
+      "unmanaged resources"
+    ],
+    "explanation": "Evaluates C# Resource Management and IDisposable & Using Statement comprehension."
+  },
+  {
+    "id": "csharp_005",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain asynchronous programming in C# with async/await, Task, and ValueTask.",
+    "difficulty": "medium",
+    "topic": "Asynchronous Programming",
+    "concept": "Async/Await & Task",
+    "questionFamily": "implementation",
+    "tags": [
+      "async",
+      "await",
+      "Task",
+      "ValueTask",
+      "state machine"
+    ],
+    "idealAnswer": "The compiler transforms async methods into state machines. Await yields control back to the caller until the Task completes. ValueTask is a struct-based alternative to Task that avoids heap allocation when an operation completes synchronously.",
+    "ideal_answer": "The compiler transforms async methods into state machines. Await yields control back to the caller until the Task completes. ValueTask is a struct-based alternative to Task that avoids heap allocation when an operation completes synchronously.",
+    "expected_concepts": [
+      "async",
+      "await",
+      "Task",
+      "ValueTask"
+    ],
+    "explanation": "Evaluates C# Asynchronous Programming and Async/Await & Task comprehension."
+  },
+  {
+    "id": "csharp_006",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Delegates, Events, and Actions/Funcs in C#, and how does the publisher-subscriber pattern work?",
+    "difficulty": "medium",
+    "topic": "Language Features",
+    "concept": "Delegates & Events",
+    "questionFamily": "design",
+    "tags": [
+      "delegates",
+      "events",
+      "Action",
+      "Func",
+      "event handler"
+    ],
+    "idealAnswer": "A delegate is a type-safe function pointer. Events encapsulate delegates to enforce the publisher-subscriber pattern, allowing external classes to only subscribe (+=) or unsubscribe (-=). Action (void return) and Func (value return) are built-in generic delegates.",
+    "ideal_answer": "A delegate is a type-safe function pointer. Events encapsulate delegates to enforce the publisher-subscriber pattern, allowing external classes to only subscribe (+=) or unsubscribe (-=). Action (void return) and Func (value return) are built-in generic delegates.",
+    "expected_concepts": [
+      "delegates",
+      "events",
+      "Action",
+      "Func"
+    ],
+    "explanation": "Evaluates C# Language Features and Delegates & Events comprehension."
+  },
+  {
+    "id": "csharp_007",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain LINQ (Language Integrated Query) in C#, deferred execution vs immediate execution, and IQueryable vs IEnumerable.",
+    "difficulty": "medium",
+    "topic": "LINQ",
+    "concept": "LINQ & Deferred Execution",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "LINQ",
+      "deferred execution",
+      "IEnumerable",
+      "IQueryable",
+      "expression trees"
+    ],
+    "idealAnswer": "LINQ provides SQL-like querying over collections. IEnumerable operates on in-memory collections using deferred execution (iterating on foreach). IQueryable converts expressions into expression trees to translate queries into native SQL on remote databases.",
+    "ideal_answer": "LINQ provides SQL-like querying over collections. IEnumerable operates on in-memory collections using deferred execution (iterating on foreach). IQueryable converts expressions into expression trees to translate queries into native SQL on remote databases.",
+    "expected_concepts": [
+      "LINQ",
+      "deferred execution",
+      "IEnumerable",
+      "IQueryable"
+    ],
+    "explanation": "Evaluates C# LINQ and LINQ & Deferred Execution comprehension."
+  },
+  {
+    "id": "csharp_008",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Generics in C#, and what generic constraints (where T : class, struct, new(), IFoo) can be applied?",
+    "difficulty": "medium",
+    "topic": "Generics",
+    "concept": "Generic Constraints",
+    "questionFamily": "implementation",
+    "tags": [
+      "generics",
+      "constraints",
+      "where clause",
+      "type safety"
+    ],
+    "idealAnswer": "Generics allow defining classes and methods with type parameters, eliminating casting and boxing. Constraints (where T : class, struct, notnull, new(), BaseClass, Interface) restrict allowed types to ensure specific operations are valid.",
+    "ideal_answer": "Generics allow defining classes and methods with type parameters, eliminating casting and boxing. Constraints (where T : class, struct, notnull, new(), BaseClass, Interface) restrict allowed types to ensure specific operations are valid.",
+    "expected_concepts": [
+      "generics",
+      "constraints",
+      "where clause",
+      "type safety"
+    ],
+    "explanation": "Evaluates C# Generics and Generic Constraints comprehension."
+  },
+  {
+    "id": "csharp_009",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Dependency Injection lifetimes in .NET Core / .NET 6+ (Transient, Scoped, Singleton)?",
+    "difficulty": "easy",
+    "topic": "Architecture & DI",
+    "concept": "DI Service Lifetimes",
+    "questionFamily": "architecture",
+    "tags": [
+      "dependency injection",
+      "Transient",
+      "Scoped",
+      "Singleton",
+      "IServiceCollection"
+    ],
+    "idealAnswer": "Transient creates a new instance every time requested. Scoped creates a single instance per HTTP request/scope. Singleton creates a single instance for the entire application lifetime.",
+    "ideal_answer": "Transient creates a new instance every time requested. Scoped creates a single instance per HTTP request/scope. Singleton creates a single instance for the entire application lifetime.",
+    "expected_concepts": [
+      "dependency injection",
+      "Transient",
+      "Scoped",
+      "Singleton"
+    ],
+    "explanation": "Evaluates C# Architecture & DI and DI Service Lifetimes comprehension."
+  },
+  {
+    "id": "csharp_010",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain modern C# features (Record types, Pattern Matching, Init-only setters, Nullable Reference Types).",
+    "difficulty": "medium",
+    "topic": "Modern C#",
+    "concept": "C# 9/10/11 Features",
+    "questionFamily": "implementation",
+    "tags": [
+      "records",
+      "pattern matching",
+      "init-only",
+      "nullable reference types"
+    ],
+    "idealAnswer": "Records provide immutable reference/value types with built-in value equality and 'with' non-destructive mutation. Pattern matching allows expressive type and property checks. Nullable reference types detect potential null dereferences at compile time.",
+    "ideal_answer": "Records provide immutable reference/value types with built-in value equality and 'with' non-destructive mutation. Pattern matching allows expressive type and property checks. Nullable reference types detect potential null dereferences at compile time.",
+    "expected_concepts": [
+      "records",
+      "pattern matching",
+      "init-only",
+      "nullable reference types"
+    ],
+    "explanation": "Evaluates C# Modern C# and C# 9/10/11 Features comprehension."
+  },
+  {
+    "id": "csharp_011",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Attributes and Reflection in C#, and what are the performance considerations of using Reflection?",
+    "difficulty": "medium",
+    "topic": "Metaprogramming",
+    "concept": "Attributes & Reflection",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "attributes",
+      "reflection",
+      "metadata",
+      "performance"
+    ],
+    "idealAnswer": "Attributes attach declarative metadata to code elements. Reflection inspects types, metadata, and invokes members dynamically at runtime, which carries significant CPU overhead compared to compiled direct calls.",
+    "ideal_answer": "Attributes attach declarative metadata to code elements. Reflection inspects types, metadata, and invokes members dynamically at runtime, which carries significant CPU overhead compared to compiled direct calls.",
+    "expected_concepts": [
+      "attributes",
+      "reflection",
+      "metadata",
+      "performance"
+    ],
+    "explanation": "Evaluates C# Metaprogramming and Attributes & Reflection comprehension."
+  },
+  {
+    "id": "csharp_012",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between 'abstract' class and 'interface' in C#, including default interface implementations in C# 8?",
+    "difficulty": "medium",
+    "topic": "OOP",
+    "concept": "Abstract Class vs Interface",
+    "questionFamily": "comparison",
+    "tags": [
+      "abstract class",
+      "interface",
+      "multiple inheritance",
+      "default implementation"
+    ],
+    "idealAnswer": "An abstract class can contain state (fields), constructors, and access modifiers. Interfaces define contracts without state; C# 8+ allows default interface implementations to extend interfaces without breaking existing implementers.",
+    "ideal_answer": "An abstract class can contain state (fields), constructors, and access modifiers. Interfaces define contracts without state; C# 8+ allows default interface implementations to extend interfaces without breaking existing implementers.",
+    "expected_concepts": [
+      "abstract class",
+      "interface",
+      "multiple inheritance",
+      "default implementation"
+    ],
+    "explanation": "Evaluates C# OOP and Abstract Class vs Interface comprehension."
+  },
+  {
+    "id": "csharp_013",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain thread synchronization in C# using lock, Monitor, SemaphoreSlim, and Mutex.",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "Thread Synchronization Primitives",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "lock",
+      "Monitor",
+      "SemaphoreSlim",
+      "Mutex",
+      "async lock"
+    ],
+    "idealAnswer": "The 'lock' keyword (syntactic sugar over Monitor.Enter/Exit) provides exclusive in-process synchronization. SemaphoreSlim limits concurrent thread access and supports async waiting (WaitAsync). Mutex coordinates synchronization across separate OS processes.",
+    "ideal_answer": "The 'lock' keyword (syntactic sugar over Monitor.Enter/Exit) provides exclusive in-process synchronization. SemaphoreSlim limits concurrent thread access and supports async waiting (WaitAsync). Mutex coordinates synchronization across separate OS processes.",
+    "expected_concepts": [
+      "lock",
+      "Monitor",
+      "SemaphoreSlim",
+      "Mutex"
+    ],
+    "explanation": "Evaluates C# Concurrency and Thread Synchronization Primitives comprehension."
+  },
+  {
+    "id": "csharp_014",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Entity Framework Core (EF Core), and how do Change Tracker and AsNoTracking() affect query performance?",
+    "difficulty": "medium",
+    "topic": "Data Access",
+    "concept": "EF Core & Change Tracking",
+    "questionFamily": "optimization",
+    "tags": [
+      "EF Core",
+      "ChangeTracker",
+      "AsNoTracking",
+      "ORM",
+      "performance"
+    ],
+    "idealAnswer": "EF Core is an Object-Relational Mapper. By default, queries track returned entities in the ChangeTracker to detect updates. Calling AsNoTracking() disables entity tracking for read-only queries, significantly reducing memory and CPU overhead.",
+    "ideal_answer": "EF Core is an Object-Relational Mapper. By default, queries track returned entities in the ChangeTracker to detect updates. Calling AsNoTracking() disables entity tracking for read-only queries, significantly reducing memory and CPU overhead.",
+    "expected_concepts": [
+      "EF Core",
+      "ChangeTracker",
+      "AsNoTracking",
+      "ORM"
+    ],
+    "explanation": "Evaluates C# Data Access and EF Core & Change Tracking comprehension."
+  },
+  {
+    "id": "csharp_015",
+    "skill": "C#",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Middleware and Action Filters in ASP.NET Core request pipeline?",
+    "difficulty": "medium",
+    "topic": "ASP.NET Core",
+    "concept": "Middleware vs Action Filters",
+    "questionFamily": "comparison",
+    "tags": [
+      "middleware",
+      "action filters",
+      "request pipeline",
+      "ASP.NET Core"
+    ],
+    "idealAnswer": "Middleware executes globally for every HTTP request early in the pipeline before routing. Action Filters execute only after routing has determined the specific MVC/API Controller Action, with access to action arguments and ModelState.",
+    "ideal_answer": "Middleware executes globally for every HTTP request early in the pipeline before routing. Action Filters execute only after routing has determined the specific MVC/API Controller Action, with access to action arguments and ModelState.",
+    "expected_concepts": [
+      "middleware",
+      "action filters",
+      "request pipeline",
+      "ASP.NET Core"
+    ],
+    "explanation": "Evaluates C# ASP.NET Core and Middleware vs Action Filters comprehension."
+  }
+]

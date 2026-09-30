@@ -1,170 +1,1952 @@
 [
   {
-    "id": "PSEUDO_001",
-    "difficulty": "medium",
-    "language": "Java",
-    "question": "What is the output of the following Java snippet?\n\nint count = 0;\nfor (int i = 0; i < 5; i++) {\n    if (i % 2 == 0) continue;\n    count += i;\n}\nSystem.out.println(count);",
-    "options": [
-      "6",
-      "10",
-      "4",
-      "0"
-    ],
-    "correct_answer": "4",
-    "explanation": "Loops through i = 0, 1, 2, 3, 4. Even numbers (0, 2, 4) hit 'continue'. Odd numbers (1, 3) add to count: 1 + 3 = 4."
-  },
-  {
-    "id": "PSEUDO_002",
-    "difficulty": "medium",
-    "language": "Python",
-    "question": "What is the output of the following Python code?\n\ndef func(val, lst=[]):\n    lst.append(val)\n    return lst\n\nprint(func(1))\nprint(func(2))",
-    "options": [
-      "[1] then [2]",
-      "[1] then [1, 2]",
-      "[1, 2] then [1, 2]",
-      "[1] then []"
-    ],
-    "correct_answer": "[1] then [1, 2]",
-    "explanation": "Default argument `lst=[]` is evaluated ONCE when function is defined in Python. Subsequent calls reuse the same mutable list object in memory."
-  },
-  {
-    "id": "PSEUDO_003",
+    "id": "pseudo_mcq_001",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "CONDITIONS",
     "difficulty": "easy",
-    "language": "JavaScript",
-    "question": "What is the result of `console.log(1 + '2' + 3)` in JavaScript?",
+    "topic": "Even or Odd",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD number\nIF number MOD 2 = 0 THEN\n    DISPLAY \"EVEN\"\nELSE\n    DISPLAY \"ODD\"\nEND IF\nSTOP",
+    "code_snippet": "START\nREAD number\nIF number MOD 2 = 0 THEN\n    DISPLAY \"EVEN\"\nELSE\n    DISPLAY \"ODD\"\nEND IF\nSTOP",
+    "input": "number = 15",
+    "input_description": "number = 15",
     "options": [
-      "6",
-      "'123'",
-      "'15'",
-      "NaN"
+      {
+        "id": "A",
+        "text": "EVEN"
+      },
+      {
+        "id": "B",
+        "text": "ODD"
+      },
+      {
+        "id": "C",
+        "text": "15"
+      },
+      {
+        "id": "D",
+        "text": "0"
+      }
     ],
-    "correct_answer": "'123'",
-    "explanation": "`1 + '2'` performs string coercion returning `'12'`, then `'12' + 3` yields `'123'`."
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "15 MOD 2 equals 1 (non-zero), so the ELSE branch executes, displaying 'ODD'.",
+    "score": 1
   },
   {
-    "id": "PSEUDO_004",
+    "id": "pseudo_mcq_002",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "CONDITIONS",
+    "difficulty": "easy",
+    "topic": "Sign Check",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD val\nIF val > 0 THEN\n    DISPLAY \"POSITIVE\"\nELSE IF val < 0 THEN\n    DISPLAY \"NEGATIVE\"\nELSE\n    DISPLAY \"ZERO\"\nEND IF\nSTOP",
+    "code_snippet": "START\nREAD val\nIF val > 0 THEN\n    DISPLAY \"POSITIVE\"\nELSE IF val < 0 THEN\n    DISPLAY \"NEGATIVE\"\nELSE\n    DISPLAY \"ZERO\"\nEND IF\nSTOP",
+    "input": "val = -7",
+    "input_description": "val = -7",
+    "options": [
+      {
+        "id": "A",
+        "text": "POSITIVE"
+      },
+      {
+        "id": "B",
+        "text": "ZERO"
+      },
+      {
+        "id": "C",
+        "text": "NEGATIVE"
+      },
+      {
+        "id": "D",
+        "text": "ERROR"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "val is -7, which is less than 0, triggering the ELSE IF branch that displays 'NEGATIVE'.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_003",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "CONDITIONS",
+    "difficulty": "medium",
+    "topic": "Largest of Three",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD a, b, c\nSET maxVal = a\nIF b > maxVal THEN\n    SET maxVal = b\nEND IF\nIF c > maxVal THEN\n    SET maxVal = c\nEND IF\nDISPLAY maxVal\nSTOP",
+    "code_snippet": "START\nREAD a, b, c\nSET maxVal = a\nIF b > maxVal THEN\n    SET maxVal = b\nEND IF\nIF c > maxVal THEN\n    SET maxVal = c\nEND IF\nDISPLAY maxVal\nSTOP",
+    "input": "a = 18, b = 42, c = 29",
+    "input_description": "a = 18, b = 42, c = 29",
+    "options": [
+      {
+        "id": "A",
+        "text": "18"
+      },
+      {
+        "id": "B",
+        "text": "29"
+      },
+      {
+        "id": "C",
+        "text": "42"
+      },
+      {
+        "id": "D",
+        "text": "89"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "maxVal is initialized to 18. Since 42 > 18, maxVal becomes 42. Since 29 is not > 42, maxVal remains 42.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_004",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "CONDITIONS",
+    "difficulty": "medium",
+    "topic": "Grade Classification",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD score\nIF score >= 90 THEN\n    DISPLAY \"A\"\nELSE IF score >= 75 THEN\n    DISPLAY \"B\"\nELSE IF score >= 60 THEN\n    DISPLAY \"C\"\nELSE\n    DISPLAY \"F\"\nEND IF\nSTOP",
+    "code_snippet": "START\nREAD score\nIF score >= 90 THEN\n    DISPLAY \"A\"\nELSE IF score >= 75 THEN\n    DISPLAY \"B\"\nELSE IF score >= 60 THEN\n    DISPLAY \"C\"\nELSE\n    DISPLAY \"F\"\nEND IF\nSTOP",
+    "input": "score = 78",
+    "input_description": "score = 78",
+    "options": [
+      {
+        "id": "A",
+        "text": "A"
+      },
+      {
+        "id": "B",
+        "text": "B"
+      },
+      {
+        "id": "C",
+        "text": "C"
+      },
+      {
+        "id": "D",
+        "text": "F"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "78 is not >= 90, but it is >= 75. Therefore 'B' is displayed.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_005",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "CONDITIONS",
+    "difficulty": "medium",
+    "topic": "Nested Conditions",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD x, y\nSET res = 0\nIF x > 5 THEN\n    IF y > 10 THEN\n        SET res = x * y\n    ELSE\n        SET res = x + y\n    END IF\nELSE\n    SET res = x - y\nEND IF\nDISPLAY res\nSTOP",
+    "code_snippet": "START\nREAD x, y\nSET res = 0\nIF x > 5 THEN\n    IF y > 10 THEN\n        SET res = x * y\n    ELSE\n        SET res = x + y\n    END IF\nELSE\n    SET res = x - y\nEND IF\nDISPLAY res\nSTOP",
+    "input": "x = 8, y = 4",
+    "input_description": "x = 8, y = 4",
+    "options": [
+      {
+        "id": "A",
+        "text": "32"
+      },
+      {
+        "id": "B",
+        "text": "12"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "0"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "Since x = 8 > 5, outer IF holds. Since y = 4 is not > 10, the nested ELSE executes: res = x + y = 8 + 4 = 12.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_006",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "CONDITIONS",
     "difficulty": "hard",
-    "language": "Java",
-    "question": "What does this recursive function return for foo(4)?\n\nint foo(int n) {\n    if (n <= 1) return 1;\n    return n * foo(n - 1);\n}",
+    "topic": "Leap Year Logic",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD yr\nIF (yr MOD 400 = 0) OR ((yr MOD 4 = 0) AND (yr MOD 100 != 0)) THEN\n    DISPLAY \"LEAP\"\nELSE\n    DISPLAY \"COMMON\"\nEND IF\nSTOP",
+    "code_snippet": "START\nREAD yr\nIF (yr MOD 400 = 0) OR ((yr MOD 4 = 0) AND (yr MOD 100 != 0)) THEN\n    DISPLAY \"LEAP\"\nELSE\n    DISPLAY \"COMMON\"\nEND IF\nSTOP",
+    "input": "yr = 1900",
+    "input_description": "yr = 1900",
     "options": [
-      "24",
-      "12",
-      "4",
-      "16"
+      {
+        "id": "A",
+        "text": "LEAP"
+      },
+      {
+        "id": "B",
+        "text": "COMMON"
+      },
+      {
+        "id": "C",
+        "text": "ERROR"
+      },
+      {
+        "id": "D",
+        "text": "UNDEFINED"
+      }
     ],
-    "correct_answer": "24",
-    "explanation": "Calculates factorial of 4: 4 * 3 * 2 * 1 = 24."
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "1900 is divisible by 100 but not 400, so both branches of the OR condition evaluate to FALSE. Hence 'COMMON' is displayed.",
+    "score": 1
   },
   {
-    "id": "PSEUDO_005",
+    "id": "pseudo_mcq_007",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "CONDITIONS",
     "difficulty": "medium",
-    "language": "C++",
-    "question": "What is the output of the following C++ code?\n\nint a = 5, b = 10;\nint *p = &a;\n*p = 20;\np = &b;\n*p = 30;\ncout << a << \" \" << b;",
+    "topic": "Triangle Inequality",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD a, b, c\nIF (a + b > c) AND (a + c > b) AND (b + c > a) THEN\n    DISPLAY \"VALID\"\nELSE\n    DISPLAY \"INVALID\"\nEND IF\nSTOP",
+    "code_snippet": "START\nREAD a, b, c\nIF (a + b > c) AND (a + c > b) AND (b + c > a) THEN\n    DISPLAY \"VALID\"\nELSE\n    DISPLAY \"INVALID\"\nEND IF\nSTOP",
+    "input": "a = 3, b = 4, c = 8",
+    "input_description": "a = 3, b = 4, c = 8",
     "options": [
-      "20 30",
-      "5 10",
-      "20 10",
-      "5 30"
+      {
+        "id": "A",
+        "text": "VALID"
+      },
+      {
+        "id": "B",
+        "text": "INVALID"
+      },
+      {
+        "id": "C",
+        "text": "7"
+      },
+      {
+        "id": "D",
+        "text": "8"
+      }
     ],
-    "correct_answer": "20 30",
-    "explanation": "Pointer p points to a, changing *p modifies a to 20. Then p points to b, modifying *p changes b to 30. Output is '20 30'."
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "a + b = 3 + 4 = 7, which is NOT > 8 (c). Triangle inequality fails, displaying 'INVALID'.",
+    "score": 1
   },
   {
-    "id": "PSEUDO_006",
-    "difficulty": "medium",
-    "language": "Algorithms",
-    "question": "What is the worst-case time complexity of QuickSort when a naive pivot (e.g. first element) is chosen on an already sorted array?",
-    "options": [
-      "O(n log n)",
-      "O(n^2)",
-      "O(n)",
-      "O(log n)"
-    ],
-    "correct_answer": "O(n^2)",
-    "explanation": "When partitioning on an already sorted array with first element as pivot, subarray partitions are unbalanced (size 0 and n-1), resulting in O(n^2) time."
-  },
-  {
-    "id": "PSEUDO_007",
+    "id": "pseudo_mcq_008",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "CONDITIONS",
     "difficulty": "easy",
-    "language": "Python",
-    "question": "What is the output of the following Python list slice?\n\narr = [10, 20, 30, 40, 50]\nprint(arr[::-2])",
+    "topic": "Boolean AND / OR Evaluation",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nSET p = TRUE\nSET q = FALSE\nSET r = TRUE\nIF (p AND q) OR r THEN\n    DISPLAY \"SUCCESS\"\nELSE\n    DISPLAY \"FAILURE\"\nEND IF\nSTOP",
+    "code_snippet": "START\nSET p = TRUE\nSET q = FALSE\nSET r = TRUE\nIF (p AND q) OR r THEN\n    DISPLAY \"SUCCESS\"\nELSE\n    DISPLAY \"FAILURE\"\nEND IF\nSTOP",
+    "input": "p = TRUE, q = FALSE, r = TRUE",
+    "input_description": "p = TRUE, q = FALSE, r = TRUE",
     "options": [
-      "[50, 30, 10]",
-      "[10, 30, 50]",
-      "[50, 40, 30]",
-      "[40, 20]"
+      {
+        "id": "A",
+        "text": "SUCCESS"
+      },
+      {
+        "id": "B",
+        "text": "FAILURE"
+      },
+      {
+        "id": "C",
+        "text": "FALSE"
+      },
+      {
+        "id": "D",
+        "text": "NULL"
+      }
     ],
-    "correct_answer": "[50, 30, 10]",
-    "explanation": "The slice `[::-2]` traverses the list in reverse order starting from the last element (50) with step size of 2: 50 -> 30 -> 10."
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "(TRUE AND FALSE) evaluates to FALSE. FALSE OR TRUE evaluates to TRUE. Thus 'SUCCESS' is displayed.",
+    "score": 1
   },
   {
-    "id": "PSEUDO_008",
-    "difficulty": "medium",
-    "language": "JavaScript",
-    "question": "What is printed to console in the following closure example?\n\nfor (var i = 0; i < 3; i++) {\n    setTimeout(() => console.log(i), 0);\n}",
-    "options": [
-      "0 1 2",
-      "3 3 3",
-      "undefined",
-      "0 0 0"
-    ],
-    "correct_answer": "3 3 3",
-    "explanation": "Because `var` is function-scoped (not block-scoped), all setTimeout callbacks share the same `i` variable which equals 3 when the loop finishes."
-  },
-  {
-    "id": "PSEUDO_009",
-    "difficulty": "medium",
-    "language": "Data Structures",
-    "question": "In a max-heap with n elements, what is the time complexity of deleting the maximum element (extract-max)?",
-    "options": [
-      "O(1)",
-      "O(log n)",
-      "O(n)",
-      "O(n log n)"
-    ],
-    "correct_answer": "O(log n)",
-    "explanation": "Replacing root with the last leaf takes O(1), and heapifying down the tree takes O(log n) time proportional to tree height."
-  },
-  {
-    "id": "PSEUDO_010",
+    "id": "pseudo_mcq_009",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "LOOPS",
     "difficulty": "easy",
-    "language": "Java",
-    "question": "What is the output of the following Java code snippet?\n\nString s1 = \"Hello\";\nString s2 = new String(\"Hello\");\nSystem.out.println((s1 == s2) + \" \" + s1.equals(s2));",
+    "topic": "Sum of Range",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nSET sum = 0\nFOR i = 1 TO 4\n    SET sum = sum + i\nEND FOR\nDISPLAY sum\nSTOP",
+    "code_snippet": "START\nSET sum = 0\nFOR i = 1 TO 4\n    SET sum = sum + i\nEND FOR\nDISPLAY sum\nSTOP",
+    "input": "Loop runs for i = 1, 2, 3, 4",
+    "input_description": "Loop runs for i = 1, 2, 3, 4",
     "options": [
-      "true true",
-      "false true",
-      "true false",
-      "false false"
+      {
+        "id": "A",
+        "text": "4"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "15"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
     ],
-    "correct_answer": "false true",
-    "explanation": "`s1 == s2` checks memory reference (false because s2 is new heap object). `s1.equals(s2)` checks string content (true)."
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "sum = 1 + 2 + 3 + 4 = 10.",
+    "score": 1
   },
   {
-    "id": "PSEUDO_011",
+    "id": "pseudo_mcq_010",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "LOOPS",
     "difficulty": "medium",
-    "language": "Python",
-    "question": "What is the output of this Python dictionary comprehension?\n\nd = {x: x**2 for x in (2, 3, 4) if x % 2 == 0}\nprint(d)",
+    "topic": "Sum of Odd Numbers",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nSET total = 0\nFOR num = 1 TO 6\n    IF num MOD 2 != 0 THEN\n        SET total = total + num\n    END IF\nEND FOR\nDISPLAY total\nSTOP",
+    "code_snippet": "START\nSET total = 0\nFOR num = 1 TO 6\n    IF num MOD 2 != 0 THEN\n        SET total = total + num\n    END IF\nEND FOR\nDISPLAY total\nSTOP",
+    "input": "Loop processes numbers 1 through 6",
+    "input_description": "Loop processes numbers 1 through 6",
     "options": [
-      "{2: 4, 3: 9, 4: 16}",
-      "{2: 4, 4: 16}",
-      "{4: 16}",
-      "[4, 16]"
+      {
+        "id": "A",
+        "text": "9"
+      },
+      {
+        "id": "B",
+        "text": "12"
+      },
+      {
+        "id": "C",
+        "text": "21"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
     ],
-    "correct_answer": "{2: 4, 4: 16}",
-    "explanation": "Filters only even numbers (2, 4) and maps them to their squares: {2: 4, 4: 16}."
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "Odd numbers from 1 to 6 are 1, 3, and 5. total = 1 + 3 + 5 = 9.",
+    "score": 1
   },
   {
-    "id": "PSEUDO_012",
+    "id": "pseudo_mcq_011",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "LOOPS",
+    "difficulty": "medium",
+    "topic": "Factorial Calculation",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD n\nSET fact = 1\nSET count = 1\nWHILE count <= n\n    SET fact = fact * count\n    SET count = count + 1\nEND WHILE\nDISPLAY fact\nSTOP",
+    "code_snippet": "START\nREAD n\nSET fact = 1\nSET count = 1\nWHILE count <= n\n    SET fact = fact * count\n    SET count = count + 1\nEND WHILE\nDISPLAY fact\nSTOP",
+    "input": "n = 5",
+    "input_description": "n = 5",
+    "options": [
+      {
+        "id": "A",
+        "text": "24"
+      },
+      {
+        "id": "B",
+        "text": "60"
+      },
+      {
+        "id": "C",
+        "text": "120"
+      },
+      {
+        "id": "D",
+        "text": "720"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "Calculates 5! = 1 * 2 * 3 * 4 * 5 = 120.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_012",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "LOOPS",
     "difficulty": "hard",
-    "language": "Algorithms",
-    "question": "What is the space complexity of standard Depth First Search (DFS) on a binary tree of height h using recursion?",
+    "topic": "Nested Loop Tracing",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nSET count = 0\nFOR i = 1 TO 3\n    FOR j = 1 TO i\n        SET count = count + 1\n    END FOR\nEND FOR\nDISPLAY count\nSTOP",
+    "code_snippet": "START\nSET count = 0\nFOR i = 1 TO 3\n    FOR j = 1 TO i\n        SET count = count + 1\n    END FOR\nEND FOR\nDISPLAY count\nSTOP",
+    "input": "Outer loop i = 1..3, Inner loop j = 1..i",
+    "input_description": "Outer loop i = 1..3, Inner loop j = 1..i",
     "options": [
-      "O(1)",
-      "O(h)",
-      "O(n^2)",
-      "O(2^h)"
+      {
+        "id": "A",
+        "text": "9"
+      },
+      {
+        "id": "B",
+        "text": "6"
+      },
+      {
+        "id": "C",
+        "text": "3"
+      },
+      {
+        "id": "D",
+        "text": "12"
+      }
     ],
-    "correct_answer": "O(h)",
-    "explanation": "Recursive DFS consumes call stack frames proportional to the maximum height h of the tree (O(h) auxiliary memory)."
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "When i=1: 1 iteration; i=2: 2 iterations; i=3: 3 iterations. Total count = 1 + 2 + 3 = 6.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_013",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "LOOPS",
+    "difficulty": "medium",
+    "topic": "Step and Reverse Count",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nSET val = 20\nWHILE val > 5\n    SET val = val - 4\nEND WHILE\nDISPLAY val\nSTOP",
+    "code_snippet": "START\nSET val = 20\nWHILE val > 5\n    SET val = val - 4\nEND WHILE\nDISPLAY val\nSTOP",
+    "input": "Initial val = 20",
+    "input_description": "Initial val = 20",
+    "options": [
+      {
+        "id": "A",
+        "text": "4"
+      },
+      {
+        "id": "B",
+        "text": "5"
+      },
+      {
+        "id": "C",
+        "text": "8"
+      },
+      {
+        "id": "D",
+        "text": "0"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "Sequence: 20 -> 16 -> 12 -> 8 -> 4. Since 4 is not > 5, loop terminates and displays 4.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_014",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "LOOPS",
+    "difficulty": "easy",
+    "topic": "Iteration Counting",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nSET count = 0\nSET i = 1\nWHILE i < 16\n    SET count = count + 1\n    SET i = i * 2\nEND WHILE\nDISPLAY count\nSTOP",
+    "code_snippet": "START\nSET count = 0\nSET i = 1\nWHILE i < 16\n    SET count = count + 1\n    SET i = i * 2\nEND WHILE\nDISPLAY count\nSTOP",
+    "input": "i starts at 1, doubles each step until i >= 16",
+    "input_description": "i starts at 1, doubles each step until i >= 16",
+    "options": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "16"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "Iter 1: i=1 -> i=2; Iter 2: i=2 -> i=4; Iter 3: i=4 -> i=8; Iter 4: i=8 -> i=16. At i=16, 16 < 16 is false. Total iterations = 4.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_015",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "LOOPS",
+    "difficulty": "hard",
+    "topic": "Loop Accumulator with Skip",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nSET product = 1\nFOR k = 1 TO 5\n    IF k = 3 THEN\n        NEXT ITERATION\n    END IF\n    SET product = product * k\nEND FOR\nDISPLAY product\nSTOP",
+    "code_snippet": "START\nSET product = 1\nFOR k = 1 TO 5\n    IF k = 3 THEN\n        NEXT ITERATION\n    END IF\n    SET product = product * k\nEND FOR\nDISPLAY product\nSTOP",
+    "input": "k iterates from 1 to 5, skipping k = 3",
+    "input_description": "k iterates from 1 to 5, skipping k = 3",
+    "options": [
+      {
+        "id": "A",
+        "text": "120"
+      },
+      {
+        "id": "B",
+        "text": "40"
+      },
+      {
+        "id": "C",
+        "text": "24"
+      },
+      {
+        "id": "D",
+        "text": "60"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "product = 1 * 2 * 4 * 5 = 40 (3 is skipped).",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_016",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "LOOPS",
+    "difficulty": "medium",
+    "topic": "Power by Multiplication",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD base, exp\nSET result = 1\nFOR i = 1 TO exp\n    SET result = result * base\nEND FOR\nDISPLAY result\nSTOP",
+    "code_snippet": "START\nREAD base, exp\nSET result = 1\nFOR i = 1 TO exp\n    SET result = result * base\nEND FOR\nDISPLAY result\nSTOP",
+    "input": "base = 3, exp = 4",
+    "input_description": "base = 3, exp = 4",
+    "options": [
+      {
+        "id": "A",
+        "text": "12"
+      },
+      {
+        "id": "B",
+        "text": "27"
+      },
+      {
+        "id": "C",
+        "text": "81"
+      },
+      {
+        "id": "D",
+        "text": "64"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "3^4 = 3 * 3 * 3 * 3 = 81.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_017",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "ARRAYS",
+    "difficulty": "easy",
+    "topic": "Find Maximum in Array",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET maxVal = arr[0]\nFOR EACH item IN arr\n    IF item > maxVal THEN\n        SET maxVal = item\n    END IF\nEND FOR\nDISPLAY maxVal\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET maxVal = arr[0]\nFOR EACH item IN arr\n    IF item > maxVal THEN\n        SET maxVal = item\n    END IF\nEND FOR\nDISPLAY maxVal\nSTOP",
+    "input": "arr = [14, 52, 38, 91, 23]",
+    "input_description": "arr = [14, 52, 38, 91, 23]",
+    "options": [
+      {
+        "id": "A",
+        "text": "14"
+      },
+      {
+        "id": "B",
+        "text": "52"
+      },
+      {
+        "id": "C",
+        "text": "91"
+      },
+      {
+        "id": "D",
+        "text": "23"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "91 is the largest value in the array.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_018",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "ARRAYS",
+    "difficulty": "easy",
+    "topic": "Sum of Array Elements",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET total = 0\nFOR EACH num IN arr\n    SET total = total + num\nEND FOR\nDISPLAY total\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET total = 0\nFOR EACH num IN arr\n    SET total = total + num\nEND FOR\nDISPLAY total\nSTOP",
+    "input": "arr = [5, 10, 15, 20]",
+    "input_description": "arr = [5, 10, 15, 20]",
+    "options": [
+      {
+        "id": "A",
+        "text": "40"
+      },
+      {
+        "id": "B",
+        "text": "50"
+      },
+      {
+        "id": "C",
+        "text": "35"
+      },
+      {
+        "id": "D",
+        "text": "20"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "5 + 10 + 15 + 20 = 50.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_019",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "ARRAYS",
+    "difficulty": "medium",
+    "topic": "Count Even Elements",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET count = 0\nFOR EACH x IN arr\n    IF x MOD 2 = 0 THEN\n        SET count = count + 1\n    END IF\nEND FOR\nDISPLAY count\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET count = 0\nFOR EACH x IN arr\n    IF x MOD 2 = 0 THEN\n        SET count = count + 1\n    END IF\nEND FOR\nDISPLAY count\nSTOP",
+    "input": "arr = [2, 7, 4, 9, 12, 15, 18]",
+    "input_description": "arr = [2, 7, 4, 9, 12, 15, 18]",
+    "options": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "7"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "The even numbers in the array are 2, 4, 12, and 18 (total of 4).",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_020",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "ARRAYS",
+    "difficulty": "hard",
+    "topic": "Second Largest Element",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET first = -999999\nSET second = -999999\nFOR EACH x IN arr\n    IF x > first THEN\n        SET second = first\n        SET first = x\n    ELSE IF x > second AND x != first THEN\n        SET second = x\n    END IF\nEND FOR\nDISPLAY second\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET first = -999999\nSET second = -999999\nFOR EACH x IN arr\n    IF x > first THEN\n        SET second = first\n        SET first = x\n    ELSE IF x > second AND x != first THEN\n        SET second = x\n    END IF\nEND FOR\nDISPLAY second\nSTOP",
+    "input": "arr = [10, 45, 20, 45, 30]",
+    "input_description": "arr = [10, 45, 20, 45, 30]",
+    "options": [
+      {
+        "id": "A",
+        "text": "45"
+      },
+      {
+        "id": "B",
+        "text": "30"
+      },
+      {
+        "id": "C",
+        "text": "20"
+      },
+      {
+        "id": "D",
+        "text": "10"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "The distinct elements are 10, 20, 30, 45. The second largest distinct element is 30.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_021",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "ARRAYS",
+    "difficulty": "medium",
+    "topic": "Array Element Swapping",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET temp = arr[0]\nSET arr[0] = arr[3]\nSET arr[3] = temp\nDISPLAY arr\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET temp = arr[0]\nSET arr[0] = arr[3]\nSET arr[3] = temp\nDISPLAY arr\nSTOP",
+    "input": "arr = [1, 2, 3, 4]",
+    "input_description": "arr = [1, 2, 3, 4]",
+    "options": [
+      {
+        "id": "A",
+        "text": "[4, 2, 3, 1]"
+      },
+      {
+        "id": "B",
+        "text": "[1, 2, 3, 4]"
+      },
+      {
+        "id": "C",
+        "text": "[4, 3, 2, 1]"
+      },
+      {
+        "id": "D",
+        "text": "[1, 4, 3, 2]"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "Swapping the elements at index 0 (value 1) and index 3 (value 4) yields [4, 2, 3, 1].",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_022",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "ARRAYS",
+    "difficulty": "medium",
+    "topic": "Count Greater Than Threshold",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr, target\nSET count = 0\nFOR EACH val IN arr\n    IF val > target THEN\n        SET count = count + 1\n    END IF\nEND FOR\nDISPLAY count\nSTOP",
+    "code_snippet": "START\nREAD arr, target\nSET count = 0\nFOR EACH val IN arr\n    IF val > target THEN\n        SET count = count + 1\n    END IF\nEND FOR\nDISPLAY count\nSTOP",
+    "input": "arr = [12, 45, 8, 67, 34, 19], target = 30",
+    "input_description": "arr = [12, 45, 8, 67, 34, 19], target = 30",
+    "options": [
+      {
+        "id": "A",
+        "text": "2"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "1"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "Elements greater than 30 are 45, 67, and 34 (3 elements).",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_023",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "ARRAYS",
+    "difficulty": "hard",
+    "topic": "Running Difference",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET diff = arr[0]\nFOR i = 1 TO 3\n    SET diff = diff - arr[i]\nEND FOR\nDISPLAY diff\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET diff = arr[0]\nFOR i = 1 TO 3\n    SET diff = diff - arr[i]\nEND FOR\nDISPLAY diff\nSTOP",
+    "input": "arr = [100, 20, 15, 25]",
+    "input_description": "arr = [100, 20, 15, 25]",
+    "options": [
+      {
+        "id": "A",
+        "text": "40"
+      },
+      {
+        "id": "B",
+        "text": "60"
+      },
+      {
+        "id": "C",
+        "text": "50"
+      },
+      {
+        "id": "D",
+        "text": "100"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "100 - 20 = 80; 80 - 15 = 65; 65 - 25 = 40.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_024",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "ARRAYS",
+    "difficulty": "easy",
+    "topic": "Array Length and Last Element",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET lastIdx = LENGTH(arr) - 1\nDISPLAY arr[lastIdx]\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET lastIdx = LENGTH(arr) - 1\nDISPLAY arr[lastIdx]\nSTOP",
+    "input": "arr = [10, 20, 30, 40, 50]",
+    "input_description": "arr = [10, 20, 30, 40, 50]",
+    "options": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "40"
+      },
+      {
+        "id": "C",
+        "text": "50"
+      },
+      {
+        "id": "D",
+        "text": "5"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "LENGTH(arr) is 5. lastIdx is 4. arr[4] is 50.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_025",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SEARCHING",
+    "difficulty": "easy",
+    "topic": "Linear Search Index",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr, target\nSET foundIndex = -1\nFOR i = 0 TO LENGTH(arr) - 1\n    IF arr[i] = target THEN\n        SET foundIndex = i\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY foundIndex\nSTOP",
+    "code_snippet": "START\nREAD arr, target\nSET foundIndex = -1\nFOR i = 0 TO LENGTH(arr) - 1\n    IF arr[i] = target THEN\n        SET foundIndex = i\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY foundIndex\nSTOP",
+    "input": "arr = [10, 25, 30, 45, 50], target = 45",
+    "input_description": "arr = [10, 25, 30, 45, 50], target = 45",
+    "options": [
+      {
+        "id": "A",
+        "text": "2"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "-1"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "Target 45 is located at 0-based index 3.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_026",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SEARCHING",
+    "difficulty": "easy",
+    "topic": "Search Not Found",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr, target\nSET foundIndex = -1\nFOR i = 0 TO LENGTH(arr) - 1\n    IF arr[i] = target THEN\n        SET foundIndex = i\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY foundIndex\nSTOP",
+    "code_snippet": "START\nREAD arr, target\nSET foundIndex = -1\nFOR i = 0 TO LENGTH(arr) - 1\n    IF arr[i] = target THEN\n        SET foundIndex = i\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY foundIndex\nSTOP",
+    "input": "arr = [5, 12, 19, 23], target = 99",
+    "input_description": "arr = [5, 12, 19, 23], target = 99",
+    "options": [
+      {
+        "id": "A",
+        "text": "0"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "-1"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "Target 99 is not present in the array, so foundIndex remains -1.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_027",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SEARCHING",
+    "difficulty": "medium",
+    "topic": "Target Occurrence Count",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr, target\nSET occ = 0\nFOR EACH x IN arr\n    IF x = target THEN\n        SET occ = occ + 1\n    END IF\nEND FOR\nDISPLAY occ\nSTOP",
+    "code_snippet": "START\nREAD arr, target\nSET occ = 0\nFOR EACH x IN arr\n    IF x = target THEN\n        SET occ = occ + 1\n    END IF\nEND FOR\nDISPLAY occ\nSTOP",
+    "input": "arr = [7, 2, 7, 9, 7, 4], target = 7",
+    "input_description": "arr = [7, 2, 7, 9, 7, 4], target = 7",
+    "options": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "3"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "The value 7 appears 3 times in the array.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_028",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SEARCHING",
+    "difficulty": "hard",
+    "topic": "Binary Search Midpoint Trace",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr, target\nSET low = 0\nSET high = LENGTH(arr) - 1\nSET mid = (low + high) / 2\nDISPLAY arr[mid]\nSTOP",
+    "code_snippet": "START\nREAD arr, target\nSET low = 0\nSET high = LENGTH(arr) - 1\nSET mid = (low + high) / 2\nDISPLAY arr[mid]\nSTOP",
+    "input": "arr = [10, 20, 30, 40, 50, 60, 70], target = 50",
+    "input_description": "arr = [10, 20, 30, 40, 50, 60, 70], target = 50",
+    "options": [
+      {
+        "id": "A",
+        "text": "30"
+      },
+      {
+        "id": "B",
+        "text": "40"
+      },
+      {
+        "id": "C",
+        "text": "50"
+      },
+      {
+        "id": "D",
+        "text": "60"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "low = 0, high = 6. mid = (0 + 6) / 2 = 3. arr[3] is 40.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_029",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SEARCHING",
+    "difficulty": "medium",
+    "topic": "First Negative Value",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET firstNeg = 0\nFOR EACH x IN arr\n    IF x < 0 THEN\n        SET firstNeg = x\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY firstNeg\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET firstNeg = 0\nFOR EACH x IN arr\n    IF x < 0 THEN\n        SET firstNeg = x\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY firstNeg\nSTOP",
+    "input": "arr = [12, 8, -4, 15, -9]",
+    "input_description": "arr = [12, 8, -4, 15, -9]",
+    "options": [
+      {
+        "id": "A",
+        "text": "-4"
+      },
+      {
+        "id": "B",
+        "text": "-9"
+      },
+      {
+        "id": "C",
+        "text": "0"
+      },
+      {
+        "id": "D",
+        "text": "12"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "The first negative element encountered while scanning left to right is -4.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_030",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SEARCHING",
+    "difficulty": "medium",
+    "topic": "All Elements Match Condition",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET allPositive = TRUE\nFOR EACH val IN arr\n    IF val <= 0 THEN\n        SET allPositive = FALSE\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY allPositive\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET allPositive = TRUE\nFOR EACH val IN arr\n    IF val <= 0 THEN\n        SET allPositive = FALSE\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY allPositive\nSTOP",
+    "input": "arr = [4, 9, 0, 15]",
+    "input_description": "arr = [4, 9, 0, 15]",
+    "options": [
+      {
+        "id": "A",
+        "text": "TRUE"
+      },
+      {
+        "id": "B",
+        "text": "FALSE"
+      },
+      {
+        "id": "C",
+        "text": "0"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "0 satisfies val <= 0, causing allPositive to be set to FALSE and exiting immediately.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_031",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SORTING",
+    "difficulty": "medium",
+    "topic": "Single Bubble Sort Pass",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nFOR j = 0 TO 2\n    IF arr[j] > arr[j + 1] THEN\n        SET temp = arr[j]\n        SET arr[j] = arr[j + 1]\n        SET arr[j + 1] = temp\n    END IF\nEND FOR\nDISPLAY arr\nSTOP",
+    "code_snippet": "START\nREAD arr\nFOR j = 0 TO 2\n    IF arr[j] > arr[j + 1] THEN\n        SET temp = arr[j]\n        SET arr[j] = arr[j + 1]\n        SET arr[j + 1] = temp\n    END IF\nEND FOR\nDISPLAY arr\nSTOP",
+    "input": "arr = [5, 1, 4, 2]",
+    "input_description": "arr = [5, 1, 4, 2]",
+    "options": [
+      {
+        "id": "A",
+        "text": "[1, 4, 2, 5]"
+      },
+      {
+        "id": "B",
+        "text": "[1, 2, 4, 5]"
+      },
+      {
+        "id": "C",
+        "text": "[5, 4, 2, 1]"
+      },
+      {
+        "id": "D",
+        "text": "[5, 1, 2, 4]"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "j=0: [1, 5, 4, 2]; j=1: [1, 4, 5, 2]; j=2: [1, 4, 2, 5]. The largest element (5) bubbles to the end.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_032",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SORTING",
+    "difficulty": "medium",
+    "topic": "Count Swaps in Pass",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET swapCount = 0\nFOR i = 0 TO LENGTH(arr) - 2\n    IF arr[i] > arr[i + 1] THEN\n        SET temp = arr[i]\n        SET arr[i] = arr[i + 1]\n        SET arr[i + 1] = temp\n        SET swapCount = swapCount + 1\n    END IF\nEND FOR\nDISPLAY swapCount\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET swapCount = 0\nFOR i = 0 TO LENGTH(arr) - 2\n    IF arr[i] > arr[i + 1] THEN\n        SET temp = arr[i]\n        SET arr[i] = arr[i + 1]\n        SET arr[i + 1] = temp\n        SET swapCount = swapCount + 1\n    END IF\nEND FOR\nDISPLAY swapCount\nSTOP",
+    "input": "arr = [4, 3, 2, 1]",
+    "input_description": "arr = [4, 3, 2, 1]",
+    "options": [
+      {
+        "id": "A",
+        "text": "1"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "3"
+      },
+      {
+        "id": "D",
+        "text": "4"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "i=0: 4>3 (swap 1); i=1: 4>2 (swap 2); i=2: 4>1 (swap 3). Total swaps in pass = 3.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_033",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SORTING",
+    "difficulty": "easy",
+    "topic": "Is Array Sorted Ascending",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET isSorted = TRUE\nFOR i = 0 TO LENGTH(arr) - 2\n    IF arr[i] > arr[i + 1] THEN\n        SET isSorted = FALSE\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY isSorted\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET isSorted = TRUE\nFOR i = 0 TO LENGTH(arr) - 2\n    IF arr[i] > arr[i + 1] THEN\n        SET isSorted = FALSE\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY isSorted\nSTOP",
+    "input": "arr = [3, 8, 12, 15, 20]",
+    "input_description": "arr = [3, 8, 12, 15, 20]",
+    "options": [
+      {
+        "id": "A",
+        "text": "TRUE"
+      },
+      {
+        "id": "B",
+        "text": "FALSE"
+      },
+      {
+        "id": "C",
+        "text": "20"
+      },
+      {
+        "id": "D",
+        "text": "5"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "Every element is strictly <= its successor. isSorted remains TRUE.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_034",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SORTING",
+    "difficulty": "medium",
+    "topic": "Selection Sort Min Index",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET minIdx = 0\nFOR i = 1 TO LENGTH(arr) - 1\n    IF arr[i] < arr[minIdx] THEN\n        SET minIdx = i\n    END IF\nEND FOR\nDISPLAY minIdx\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET minIdx = 0\nFOR i = 1 TO LENGTH(arr) - 1\n    IF arr[i] < arr[minIdx] THEN\n        SET minIdx = i\n    END IF\nEND FOR\nDISPLAY minIdx\nSTOP",
+    "input": "arr = [64, 25, 12, 22, 11]",
+    "input_description": "arr = [64, 25, 12, 22, 11]",
+    "options": [
+      {
+        "id": "A",
+        "text": "2"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "11"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "11 is the minimum value, located at 0-based index 4.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_035",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SORTING",
+    "difficulty": "hard",
+    "topic": "Descending Insertion Shift",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr, newElement\nSET idx = LENGTH(arr)\nSET arr[idx] = newElement\nWHILE idx > 0 AND arr[idx] > arr[idx - 1]\n    SET temp = arr[idx]\n    SET arr[idx] = arr[idx - 1]\n    SET arr[idx - 1] = temp\n    SET idx = idx - 1\nEND WHILE\nDISPLAY arr\nSTOP",
+    "code_snippet": "START\nREAD arr, newElement\nSET idx = LENGTH(arr)\nSET arr[idx] = newElement\nWHILE idx > 0 AND arr[idx] > arr[idx - 1]\n    SET temp = arr[idx]\n    SET arr[idx] = arr[idx - 1]\n    SET arr[idx - 1] = temp\n    SET idx = idx - 1\nEND WHILE\nDISPLAY arr\nSTOP",
+    "input": "arr = [40, 30, 10], newElement = 35",
+    "input_description": "arr = [40, 30, 10], newElement = 35",
+    "options": [
+      {
+        "id": "A",
+        "text": "[40, 35, 30, 10]"
+      },
+      {
+        "id": "B",
+        "text": "[35, 40, 30, 10]"
+      },
+      {
+        "id": "C",
+        "text": "[40, 30, 35, 10]"
+      },
+      {
+        "id": "D",
+        "text": "[40, 30, 10, 35]"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "35 is inserted and shifts left past 10 and 30 until placed after 40, resulting in [40, 35, 30, 10].",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_036",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "SORTING",
+    "difficulty": "medium",
+    "topic": "Already Sorted Bubble Check",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr\nSET swapped = FALSE\nFOR i = 0 TO LENGTH(arr) - 2\n    IF arr[i] > arr[i + 1] THEN\n        SET swapped = TRUE\n        EXIT FOR\n    END IF\nEND FOR\nIF NOT swapped THEN\n    DISPLAY \"ALREADY_SORTED\"\nELSE\n    DISPLAY \"NEEDS_SORTING\"\nEND IF\nSTOP",
+    "code_snippet": "START\nREAD arr\nSET swapped = FALSE\nFOR i = 0 TO LENGTH(arr) - 2\n    IF arr[i] > arr[i + 1] THEN\n        SET swapped = TRUE\n        EXIT FOR\n    END IF\nEND FOR\nIF NOT swapped THEN\n    DISPLAY \"ALREADY_SORTED\"\nELSE\n    DISPLAY \"NEEDS_SORTING\"\nEND IF\nSTOP",
+    "input": "arr = [1, 2, 5, 8, 9]",
+    "input_description": "arr = [1, 2, 5, 8, 9]",
+    "options": [
+      {
+        "id": "A",
+        "text": "ALREADY_SORTED"
+      },
+      {
+        "id": "B",
+        "text": "NEEDS_SORTING"
+      },
+      {
+        "id": "C",
+        "text": "FALSE"
+      },
+      {
+        "id": "D",
+        "text": "ERROR"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "No inversion exists in [1, 2, 5, 8, 9], so swapped remains FALSE, displaying 'ALREADY_SORTED'.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_037",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "STRINGS",
+    "difficulty": "easy",
+    "topic": "Reverse String",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD text\nSET rev = \"\"\nFOR i = LENGTH(text) - 1 DOWNTO 0\n    SET rev = rev + text[i]\nEND FOR\nDISPLAY rev\nSTOP",
+    "code_snippet": "START\nREAD text\nSET rev = \"\"\nFOR i = LENGTH(text) - 1 DOWNTO 0\n    SET rev = rev + text[i]\nEND FOR\nDISPLAY rev\nSTOP",
+    "input": "text = \"DATA\"",
+    "input_description": "text = \"DATA\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "ATAD"
+      },
+      {
+        "id": "B",
+        "text": "DATA"
+      },
+      {
+        "id": "C",
+        "text": "ADTA"
+      },
+      {
+        "id": "D",
+        "text": "DATAD"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "Reversing the characters in 'DATA' yields 'ATAD'.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_038",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "STRINGS",
+    "difficulty": "medium",
+    "topic": "Vowel Count",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD word\nSET vowels = 0\nFOR EACH ch IN word\n    IF ch = 'a' OR ch = 'e' OR ch = 'i' OR ch = 'o' OR ch = 'u' THEN\n        SET vowels = vowels + 1\n    END IF\nEND FOR\nDISPLAY vowels\nSTOP",
+    "code_snippet": "START\nREAD word\nSET vowels = 0\nFOR EACH ch IN word\n    IF ch = 'a' OR ch = 'e' OR ch = 'i' OR ch = 'o' OR ch = 'u' THEN\n        SET vowels = vowels + 1\n    END IF\nEND FOR\nDISPLAY vowels\nSTOP",
+    "input": "word = \"interview\"",
+    "input_description": "word = \"interview\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "4"
+      },
+      {
+        "id": "C",
+        "text": "5"
+      },
+      {
+        "id": "D",
+        "text": "9"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "The vowels in 'interview' are i, e, i, e (total of 4).",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_039",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "STRINGS",
+    "difficulty": "medium",
+    "topic": "Palindrome Check",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD str\nSET isPal = TRUE\nSET left = 0\nSET right = LENGTH(str) - 1\nWHILE left < right\n    IF str[left] != str[right] THEN\n        SET isPal = FALSE\n        EXIT WHILE\n    END IF\n    SET left = left + 1\n    SET right = right - 1\nEND WHILE\nDISPLAY isPal\nSTOP",
+    "code_snippet": "START\nREAD str\nSET isPal = TRUE\nSET left = 0\nSET right = LENGTH(str) - 1\nWHILE left < right\n    IF str[left] != str[right] THEN\n        SET isPal = FALSE\n        EXIT WHILE\n    END IF\n    SET left = left + 1\n    SET right = right - 1\nEND WHILE\nDISPLAY isPal\nSTOP",
+    "input": "str = \"radar\"",
+    "input_description": "str = \"radar\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "TRUE"
+      },
+      {
+        "id": "B",
+        "text": "FALSE"
+      },
+      {
+        "id": "C",
+        "text": "radar"
+      },
+      {
+        "id": "D",
+        "text": "5"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "'radar' reads the same forwards and backwards. isPal is TRUE.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_040",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "STRINGS",
+    "difficulty": "easy",
+    "topic": "Character Occurrence",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD s, targetChar\nSET count = 0\nFOR EACH c IN s\n    IF c = targetChar THEN\n        SET count = count + 1\n    END IF\nEND FOR\nDISPLAY count\nSTOP",
+    "code_snippet": "START\nREAD s, targetChar\nSET count = 0\nFOR EACH c IN s\n    IF c = targetChar THEN\n        SET count = count + 1\n    END IF\nEND FOR\nDISPLAY count\nSTOP",
+    "input": "s = \"banana\", targetChar = 'a'",
+    "input_description": "s = \"banana\", targetChar = 'a'",
+    "options": [
+      {
+        "id": "A",
+        "text": "2"
+      },
+      {
+        "id": "B",
+        "text": "3"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "The letter 'a' appears 3 times in 'banana'.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_041",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "STRINGS",
+    "difficulty": "hard",
+    "topic": "String Character Replacement",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD text\nSET result = \"\"\nFOR EACH ch IN text\n    IF ch = ' ' THEN\n        SET result = result + \"_\"\n    ELSE\n        SET result = result + ch\n    END IF\nEND FOR\nDISPLAY result\nSTOP",
+    "code_snippet": "START\nREAD text\nSET result = \"\"\nFOR EACH ch IN text\n    IF ch = ' ' THEN\n        SET result = result + \"_\"\n    ELSE\n        SET result = result + ch\n    END IF\nEND FOR\nDISPLAY result\nSTOP",
+    "input": "text = \"AI Coach\"",
+    "input_description": "text = \"AI Coach\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "AI_Coach"
+      },
+      {
+        "id": "B",
+        "text": "AICoach"
+      },
+      {
+        "id": "C",
+        "text": "AI Coach"
+      },
+      {
+        "id": "D",
+        "text": "_AI_Coach_"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "Spaces are replaced by underscores, transforming 'AI Coach' into 'AI_Coach'.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_042",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "STRINGS",
+    "difficulty": "hard",
+    "topic": "First Non-Repeating Character",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD text\nSET found = \"NOT_FOUND\"\nFOR i = 0 TO LENGTH(text) - 1\n    SET isUnique = TRUE\n    FOR j = 0 TO LENGTH(text) - 1\n        IF i != j AND text[i] = text[j] THEN\n            SET isUnique = FALSE\n            EXIT FOR\n        END IF\n    END FOR\n    IF isUnique THEN\n        SET found = text[i]\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY found\nSTOP",
+    "code_snippet": "START\nREAD text\nSET found = \"NOT_FOUND\"\nFOR i = 0 TO LENGTH(text) - 1\n    SET isUnique = TRUE\n    FOR j = 0 TO LENGTH(text) - 1\n        IF i != j AND text[i] = text[j] THEN\n            SET isUnique = FALSE\n            EXIT FOR\n        END IF\n    END FOR\n    IF isUnique THEN\n        SET found = text[i]\n        EXIT FOR\n    END IF\nEND FOR\nDISPLAY found\nSTOP",
+    "input": "text = \"swiss\"",
+    "input_description": "text = \"swiss\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "s"
+      },
+      {
+        "id": "B",
+        "text": "w"
+      },
+      {
+        "id": "C",
+        "text": "i"
+      },
+      {
+        "id": "D",
+        "text": "NOT_FOUND"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "In 'swiss', 's' repeats 3 times. The next character 'w' appears only once.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_043",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "STRINGS",
+    "difficulty": "medium",
+    "topic": "String Length Accumulation",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD words\nSET totalChars = 0\nFOR EACH w IN words\n    SET totalChars = totalChars + LENGTH(w)\nEND FOR\nDISPLAY totalChars\nSTOP",
+    "code_snippet": "START\nREAD words\nSET totalChars = 0\nFOR EACH w IN words\n    SET totalChars = totalChars + LENGTH(w)\nEND FOR\nDISPLAY totalChars\nSTOP",
+    "input": "words = [\"AI\", \"Logic\", \"Code\"]",
+    "input_description": "words = [\"AI\", \"Logic\", \"Code\"]",
+    "options": [
+      {
+        "id": "A",
+        "text": "9"
+      },
+      {
+        "id": "B",
+        "text": "10"
+      },
+      {
+        "id": "C",
+        "text": "11"
+      },
+      {
+        "id": "D",
+        "text": "3"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "LENGTH(\"AI\")=2, LENGTH(\"Logic\")=5, LENGTH(\"Code\")=4. Total = 2 + 5 + 4 = 11.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_044",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "BASIC_ALGORITHMS",
+    "difficulty": "medium",
+    "topic": "Missing Number in 1 to N",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD arr, n\nSET expectedSum = n * (n + 1) / 2\nSET actualSum = 0\nFOR EACH val IN arr\n    SET actualSum = actualSum + val\nEND FOR\nSET missing = expectedSum - actualSum\nDISPLAY missing\nSTOP",
+    "code_snippet": "START\nREAD arr, n\nSET expectedSum = n * (n + 1) / 2\nSET actualSum = 0\nFOR EACH val IN arr\n    SET actualSum = actualSum + val\nEND FOR\nSET missing = expectedSum - actualSum\nDISPLAY missing\nSTOP",
+    "input": "arr = [1, 2, 4, 5], n = 5",
+    "input_description": "arr = [1, 2, 4, 5], n = 5",
+    "options": [
+      {
+        "id": "A",
+        "text": "3"
+      },
+      {
+        "id": "B",
+        "text": "2"
+      },
+      {
+        "id": "C",
+        "text": "4"
+      },
+      {
+        "id": "D",
+        "text": "0"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "Expected sum = 5 * 6 / 2 = 15. Actual sum = 1 + 2 + 4 + 5 = 12. Missing = 15 - 12 = 3.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_045",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "BASIC_ALGORITHMS",
+    "difficulty": "medium",
+    "topic": "Sum of Digits",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD num\nSET sumOfDigits = 0\nWHILE num > 0\n    SET digit = num MOD 10\n    SET sumOfDigits = sumOfDigits + digit\n    SET num = num / 10\nEND WHILE\nDISPLAY sumOfDigits\nSTOP",
+    "code_snippet": "START\nREAD num\nSET sumOfDigits = 0\nWHILE num > 0\n    SET digit = num MOD 10\n    SET sumOfDigits = sumOfDigits + digit\n    SET num = num / 10\nEND WHILE\nDISPLAY sumOfDigits\nSTOP",
+    "input": "num = 345",
+    "input_description": "num = 345",
+    "options": [
+      {
+        "id": "A",
+        "text": "12"
+      },
+      {
+        "id": "B",
+        "text": "15"
+      },
+      {
+        "id": "C",
+        "text": "14"
+      },
+      {
+        "id": "D",
+        "text": "345"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "3 + 4 + 5 = 12.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_046",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "BASIC_ALGORITHMS",
+    "difficulty": "medium",
+    "topic": "Reverse Integer Digits",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD n\nSET rev = 0\nWHILE n > 0\n    SET digit = n MOD 10\n    SET rev = (rev * 10) + digit\n    SET n = n / 10\nEND WHILE\nDISPLAY rev\nSTOP",
+    "code_snippet": "START\nREAD n\nSET rev = 0\nWHILE n > 0\n    SET digit = n MOD 10\n    SET rev = (rev * 10) + digit\n    SET n = n / 10\nEND WHILE\nDISPLAY rev\nSTOP",
+    "input": "n = 1234",
+    "input_description": "n = 1234",
+    "options": [
+      {
+        "id": "A",
+        "text": "4321"
+      },
+      {
+        "id": "B",
+        "text": "1234"
+      },
+      {
+        "id": "C",
+        "text": "10"
+      },
+      {
+        "id": "D",
+        "text": "4312"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "Extracting and reversing digits: 4 -> 43 -> 432 -> 4321.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_047",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "BASIC_ALGORITHMS",
+    "difficulty": "hard",
+    "topic": "Fibonacci Term Calculation",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD n\nSET a = 0\nSET b = 1\nFOR i = 2 TO n\n    SET c = a + b\n    SET a = b\n    SET b = c\nEND FOR\nDISPLAY b\nSTOP",
+    "code_snippet": "START\nREAD n\nSET a = 0\nSET b = 1\nFOR i = 2 TO n\n    SET c = a + b\n    SET a = b\n    SET b = c\nEND FOR\nDISPLAY b\nSTOP",
+    "input": "n = 6",
+    "input_description": "n = 6",
+    "options": [
+      {
+        "id": "A",
+        "text": "5"
+      },
+      {
+        "id": "B",
+        "text": "8"
+      },
+      {
+        "id": "C",
+        "text": "13"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "correctOptionId": "B",
+    "correct_option_id": "B",
+    "correct_answer": "B",
+    "explanation": "Fibonacci sequence: F(0)=0, F(1)=1, F(2)=1, F(3)=2, F(4)=3, F(5)=5, F(6)=8. For n=6, result is 8.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_048",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "BASIC_ALGORITHMS",
+    "difficulty": "medium",
+    "topic": "FizzBuzz Step Logic",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD val\nIF val MOD 15 = 0 THEN\n    DISPLAY \"FIZZBUZZ\"\nELSE IF val MOD 3 = 0 THEN\n    DISPLAY \"FIZZ\"\nELSE IF val MOD 5 = 0 THEN\n    DISPLAY \"BUZZ\"\nELSE\n    DISPLAY val\nEND IF\nSTOP",
+    "code_snippet": "START\nREAD val\nIF val MOD 15 = 0 THEN\n    DISPLAY \"FIZZBUZZ\"\nELSE IF val MOD 3 = 0 THEN\n    DISPLAY \"FIZZ\"\nELSE IF val MOD 5 = 0 THEN\n    DISPLAY \"BUZZ\"\nELSE\n    DISPLAY val\nEND IF\nSTOP",
+    "input": "val = 30",
+    "input_description": "val = 30",
+    "options": [
+      {
+        "id": "A",
+        "text": "FIZZ"
+      },
+      {
+        "id": "B",
+        "text": "BUZZ"
+      },
+      {
+        "id": "C",
+        "text": "FIZZBUZZ"
+      },
+      {
+        "id": "D",
+        "text": "30"
+      }
+    ],
+    "correctOptionId": "C",
+    "correct_option_id": "C",
+    "correct_answer": "C",
+    "explanation": "30 MOD 15 equals 0, so the first IF condition evaluates to TRUE, displaying 'FIZZBUZZ'.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_049",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "BASIC_ALGORITHMS",
+    "difficulty": "hard",
+    "topic": "Greatest Common Divisor (GCD)",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD a, b\nWHILE b != 0\n    SET remainder = a MOD b\n    SET a = b\n    SET b = remainder\nEND WHILE\nDISPLAY a\nSTOP",
+    "code_snippet": "START\nREAD a, b\nWHILE b != 0\n    SET remainder = a MOD b\n    SET a = b\n    SET b = remainder\nEND WHILE\nDISPLAY a\nSTOP",
+    "input": "a = 48, b = 18",
+    "input_description": "a = 48, b = 18",
+    "options": [
+      {
+        "id": "A",
+        "text": "6"
+      },
+      {
+        "id": "B",
+        "text": "12"
+      },
+      {
+        "id": "C",
+        "text": "18"
+      },
+      {
+        "id": "D",
+        "text": "2"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "Euclidean GCD: 48 MOD 18 = 12; 18 MOD 12 = 6; 12 MOD 6 = 0. GCD is 6.",
+    "score": 1
+  },
+  {
+    "id": "pseudo_mcq_050",
+    "questionType": "PSEUDOCODE_MCQ",
+    "type": "pseudocode_mcq",
+    "answerMode": "mcq",
+    "languageIndependent": true,
+    "language_independent": true,
+    "category": "BASIC_ALGORITHMS",
+    "difficulty": "hard",
+    "topic": "Check Prime Number",
+    "question": "What is the output of the following pseudocode?",
+    "pseudocode": "START\nREAD num\nSET isPrime = TRUE\nIF num <= 1 THEN\n    SET isPrime = FALSE\nELSE\n    FOR i = 2 TO num - 1\n        IF num MOD i = 0 THEN\n            SET isPrime = FALSE\n            EXIT FOR\n        END IF\n    END FOR\nEND IF\nDISPLAY isPrime\nSTOP",
+    "code_snippet": "START\nREAD num\nSET isPrime = TRUE\nIF num <= 1 THEN\n    SET isPrime = FALSE\nELSE\n    FOR i = 2 TO num - 1\n        IF num MOD i = 0 THEN\n            SET isPrime = FALSE\n            EXIT FOR\n        END IF\n    END FOR\nEND IF\nDISPLAY isPrime\nSTOP",
+    "input": "num = 17",
+    "input_description": "num = 17",
+    "options": [
+      {
+        "id": "A",
+        "text": "TRUE"
+      },
+      {
+        "id": "B",
+        "text": "FALSE"
+      },
+      {
+        "id": "C",
+        "text": "17"
+      },
+      {
+        "id": "D",
+        "text": "0"
+      }
+    ],
+    "correctOptionId": "A",
+    "correct_option_id": "A",
+    "correct_answer": "A",
+    "explanation": "17 is divisible only by 1 and 17. No divisor in range 2..16 divides 17. Output is TRUE.",
+    "score": 1
   }
 ]

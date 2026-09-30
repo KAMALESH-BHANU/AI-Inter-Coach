@@ -1,44 +1,411 @@
 [
   {
-    "id": "PYTORCH_001",
+    "id": "pytorch_001",
     "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the core philosophy of PyTorch: Dynamic Computational Graphs (Define-by-Run) vs Static Graphs.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of PyTorch in modern software engineering?",
-    "expected_concepts": [
-      "PyTorch fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Architecture",
+    "concept": "Dynamic Computational Graphs (Define-by-Run)",
+    "questionFamily": "architecture",
+    "tags": [
+      "PyTorch",
+      "Dynamic Graph",
+      "Define-by-Run",
+      "autograd",
+      "Pythonic"
     ],
-    "ideal_answer": "PyTorch is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of PyTorch."
+    "idealAnswer": "PyTorch builds computational graphs dynamically on the fly during the forward pass execution (Define-by-Run). This allows standard Python control flow (loops, if-statements, recursion) inside model architectures and simplifies interactive debugging with pdb.",
+    "ideal_answer": "PyTorch builds computational graphs dynamically on the fly during the forward pass execution (Define-by-Run). This allows standard Python control flow (loops, if-statements, recursion) inside model architectures and simplifies interactive debugging with pdb.",
+    "expected_concepts": [
+      "PyTorch",
+      "Dynamic Graph",
+      "Define-by-Run",
+      "autograd"
+    ],
+    "explanation": "Evaluates PyTorch Architecture and Dynamic Computational Graphs (Define-by-Run) comprehension."
   },
   {
-    "id": "PYTORCH_002",
+    "id": "pytorch_002",
     "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does PyTorch Autograd track tensor operations using 'requires_grad=True', 'grad_fn', and 'backward()'?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using PyTorch in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Autograd",
+    "concept": "PyTorch Autograd & Computational Graph",
+    "questionFamily": "implementation",
+    "tags": [
+      "autograd",
+      "requires_grad",
+      "grad_fn",
+      "backward()",
+      "tensor.grad"
     ],
-    "ideal_answer": "Common challenges with PyTorch include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of PyTorch."
+    "idealAnswer": "When a tensor has requires_grad=True, Autograd records operations creating a DAG of grad_fn objects. Calling loss.backward() traverses the graph in reverse, accumulating partial derivatives into each leaf tensor's '.grad' attribute.",
+    "ideal_answer": "When a tensor has requires_grad=True, Autograd records operations creating a DAG of grad_fn objects. Calling loss.backward() traverses the graph in reverse, accumulating partial derivatives into each leaf tensor's '.grad' attribute.",
+    "expected_concepts": [
+      "autograd",
+      "requires_grad",
+      "grad_fn",
+      "backward()"
+    ],
+    "explanation": "Evaluates PyTorch Autograd and PyTorch Autograd & Computational Graph comprehension."
   },
   {
-    "id": "PYTORCH_003",
+    "id": "pytorch_003",
     "skill": "PyTorch",
-    "difficulty": "hard",
-    "question": "How does PyTorch handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the role of 'optimizer.zero_grad()' in the PyTorch training loop, and why do gradients accumulate by default?",
+    "difficulty": "easy",
+    "topic": "Training Loop",
+    "concept": "Gradient Accumulation & zero_grad()",
+    "questionFamily": "debugging",
+    "tags": [
+      "zero_grad",
+      "gradient accumulation",
+      "backward",
+      "optimizer.step",
+      "batch size"
     ],
-    "ideal_answer": "PyTorch handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of PyTorch."
+    "idealAnswer": "In PyTorch, tensor gradients accumulate (.grad += new_grad) on every backward() call to allow simulating larger effective batch sizes across multiple forward-backward steps. Calling optimizer.zero_grad() at the beginning of each step resets gradients to zero.",
+    "ideal_answer": "In PyTorch, tensor gradients accumulate (.grad += new_grad) on every backward() call to allow simulating larger effective batch sizes across multiple forward-backward steps. Calling optimizer.zero_grad() at the beginning of each step resets gradients to zero.",
+    "expected_concepts": [
+      "zero_grad",
+      "gradient accumulation",
+      "backward",
+      "optimizer.step"
+    ],
+    "explanation": "Evaluates PyTorch Training Loop and Gradient Accumulation & zero_grad() comprehension."
+  },
+  {
+    "id": "pytorch_004",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between 'model.eval()' and 'with torch.no_grad():' during PyTorch inference.",
+    "difficulty": "medium",
+    "topic": "Inference & Evaluation",
+    "concept": "model.eval() vs torch.no_grad()",
+    "questionFamily": "comparison",
+    "tags": [
+      "model.eval()",
+      "torch.no_grad()",
+      "Dropout",
+      "BatchNorm",
+      "memory optimization"
+    ],
+    "idealAnswer": "'model.eval()' notifies layers to toggle behavioral mode (disabling Dropout and fixing BatchNorm running statistics). 'torch.no_grad()' is a context manager that disables the Autograd engine, preventing graph construction and saving VRAM during inference.",
+    "ideal_answer": "'model.eval()' notifies layers to toggle behavioral mode (disabling Dropout and fixing BatchNorm running statistics). 'torch.no_grad()' is a context manager that disables the Autograd engine, preventing graph construction and saving VRAM during inference.",
+    "expected_concepts": [
+      "model.eval()",
+      "torch.no_grad()",
+      "Dropout",
+      "BatchNorm"
+    ],
+    "explanation": "Evaluates PyTorch Inference & Evaluation and model.eval() vs torch.no_grad() comprehension."
+  },
+  {
+    "id": "pytorch_005",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain building custom neural networks in PyTorch with nn.Module, nn.Parameter, and the forward() method.",
+    "difficulty": "easy",
+    "topic": "Model Architecture",
+    "concept": "nn.Module & Custom Models",
+    "questionFamily": "implementation",
+    "tags": [
+      "nn.Module",
+      "forward method",
+      "nn.Parameter",
+      "children modules",
+      "state_dict"
+    ],
+    "idealAnswer": "Custom models subclass torch.nn.Module: initialize layers in __init__() and define data flow in forward(*inputs). PyTorch automatically tracks sub-modules and nn.Parameters, registering them for optimizer updates and state_dict serialization.",
+    "ideal_answer": "Custom models subclass torch.nn.Module: initialize layers in __init__() and define data flow in forward(*inputs). PyTorch automatically tracks sub-modules and nn.Parameters, registering them for optimizer updates and state_dict serialization.",
+    "expected_concepts": [
+      "nn.Module",
+      "forward method",
+      "nn.Parameter",
+      "children modules"
+    ],
+    "explanation": "Evaluates PyTorch Model Architecture and nn.Module & Custom Models comprehension."
+  },
+  {
+    "id": "pytorch_006",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Data Loading in PyTorch: Custom Dataset (subclassing torch.utils.data.Dataset with __len__ and __getitem__) and DataLoader (batching, shuffle, num_workers, collate_fn).",
+    "difficulty": "medium",
+    "topic": "Data Loading",
+    "concept": "Custom Dataset & DataLoader with collate_fn",
+    "questionFamily": "implementation",
+    "tags": [
+      "Dataset",
+      "DataLoader",
+      "__getitem__",
+      "__len__",
+      "collate_fn",
+      "num_workers"
+    ],
+    "idealAnswer": "A custom Dataset implements __len__() and __getitem__(idx) to fetch single samples. DataLoader wraps the dataset to provide multi-process data loading (num_workers), automated batching, shuffling, and custom batch assembly via 'collate_fn' (e.g. padding variable-length sequences).",
+    "ideal_answer": "A custom Dataset implements __len__() and __getitem__(idx) to fetch single samples. DataLoader wraps the dataset to provide multi-process data loading (num_workers), automated batching, shuffling, and custom batch assembly via 'collate_fn' (e.g. padding variable-length sequences).",
+    "expected_concepts": [
+      "Dataset",
+      "DataLoader",
+      "__getitem__",
+      "__len__"
+    ],
+    "explanation": "Evaluates PyTorch Data Loading and Custom Dataset & DataLoader with collate_fn comprehension."
+  },
+  {
+    "id": "pytorch_007",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is PyTorch DistributedDataParallel (DDP) and how does it outperform DataParallel (DP) by eliminating Python GIL contention?",
+    "difficulty": "hard",
+    "topic": "Distributed Training",
+    "concept": "DistributedDataParallel (DDP) vs DataParallel (DP)",
+    "questionFamily": "architecture",
+    "tags": [
+      "DDP",
+      "DistributedDataParallel",
+      "DataParallel",
+      "GIL",
+      "multiprocessing",
+      "AllReduce"
+    ],
+    "idealAnswer": "DataParallel (DP) is single-process multi-threaded on one machine, bottlenecked by the Python GIL and single-GPU master scatter/gather. DistributedDataParallel (DDP) spawns independent processes per GPU with dedicated memory, synchronizing gradients via Ring-AllReduce with zero GIL contention.",
+    "ideal_answer": "DataParallel (DP) is single-process multi-threaded on one machine, bottlenecked by the Python GIL and single-GPU master scatter/gather. DistributedDataParallel (DDP) spawns independent processes per GPU with dedicated memory, synchronizing gradients via Ring-AllReduce with zero GIL contention.",
+    "expected_concepts": [
+      "DDP",
+      "DistributedDataParallel",
+      "DataParallel",
+      "GIL"
+    ],
+    "explanation": "Evaluates PyTorch Distributed Training and DistributedDataParallel (DDP) vs DataParallel (DP) comprehension."
+  },
+  {
+    "id": "pytorch_008",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain PyTorch Tensor Memory Management: GPU tensor transfer (.to(device) / .cuda()), In-place operations (add_()), and CUDA Memory Fragmentation (torch.cuda.empty_cache()).",
+    "difficulty": "medium",
+    "topic": "GPU & Memory",
+    "concept": "CUDA Memory Management & In-place Operations",
+    "questionFamily": "optimization",
+    "tags": [
+      "CUDA",
+      "to(device)",
+      "in-place operation",
+      "empty_cache",
+      "VRAM fragmentation"
+    ],
+    "idealAnswer": "Tensors move to GPU via tensor.to('cuda'). In-place operations (suffixed with '_', e.g. tensor.add_()) modify underlying memory directly but can break Autograd graph history. torch.cuda.empty_cache() releases cached unused VRAM from PyTorch's caching allocator back to the OS.",
+    "ideal_answer": "Tensors move to GPU via tensor.to('cuda'). In-place operations (suffixed with '_', e.g. tensor.add_()) modify underlying memory directly but can break Autograd graph history. torch.cuda.empty_cache() releases cached unused VRAM from PyTorch's caching allocator back to the OS.",
+    "expected_concepts": [
+      "CUDA",
+      "to(device)",
+      "in-place operation",
+      "empty_cache"
+    ],
+    "explanation": "Evaluates PyTorch GPU & Memory and CUDA Memory Management & In-place Operations comprehension."
+  },
+  {
+    "id": "pytorch_009",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is TorchScript (Tracing with torch.jit.trace vs Scripting with torch.jit.script), and how does it export models to C++ production runtimes?",
+    "difficulty": "hard",
+    "topic": "Model Export",
+    "concept": "TorchScript (Tracing vs Scripting)",
+    "questionFamily": "architecture",
+    "tags": [
+      "TorchScript",
+      "torch.jit.trace",
+      "torch.jit.script",
+      "C++ runtime",
+      "LibTorch"
+    ],
+    "idealAnswer": "TorchScript compiles PyTorch models into serializable graph representations executable without Python in C++ (LibTorch). Tracing (torch.jit.trace) records tensor operations on sample inputs (misses dynamic branches). Scripting (torch.jit.script) parses Python AST directly to capture dynamic control flow.",
+    "ideal_answer": "TorchScript compiles PyTorch models into serializable graph representations executable without Python in C++ (LibTorch). Tracing (torch.jit.trace) records tensor operations on sample inputs (misses dynamic branches). Scripting (torch.jit.script) parses Python AST directly to capture dynamic control flow.",
+    "expected_concepts": [
+      "TorchScript",
+      "torch.jit.trace",
+      "torch.jit.script",
+      "C++ runtime"
+    ],
+    "explanation": "Evaluates PyTorch Model Export and TorchScript (Tracing vs Scripting) comprehension."
+  },
+  {
+    "id": "pytorch_010",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain torch.compile in PyTorch 2.0 (TorchDynamo, AOTAutograd, PrimTorch, and TorchInductor) and JIT graph compilation.",
+    "difficulty": "hard",
+    "topic": "Modern PyTorch",
+    "concept": "PyTorch 2.0 torch.compile Architecture",
+    "questionFamily": "optimization",
+    "tags": [
+      "torch.compile",
+      "PyTorch 2.0",
+      "TorchDynamo",
+      "TorchInductor",
+      "Triton",
+      "kernel fusion"
+    ],
+    "idealAnswer": "torch.compile accelerates models with a single line of code without changing source code. TorchDynamo intercepts Python frame bytecode; AOTAutograd captures forward/backward graphs; TorchInductor generates optimized GPU kernels via OpenAI Triton with deep fusion.",
+    "ideal_answer": "torch.compile accelerates models with a single line of code without changing source code. TorchDynamo intercepts Python frame bytecode; AOTAutograd captures forward/backward graphs; TorchInductor generates optimized GPU kernels via OpenAI Triton with deep fusion.",
+    "expected_concepts": [
+      "torch.compile",
+      "PyTorch 2.0",
+      "TorchDynamo",
+      "TorchInductor"
+    ],
+    "explanation": "Evaluates PyTorch Modern PyTorch and PyTorch 2.0 torch.compile Architecture comprehension."
+  },
+  {
+    "id": "pytorch_011",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Mixed Precision Training work in PyTorch using torch.amp.autocast and GradScaler?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Automatic Mixed Precision (AMP) & GradScaler",
+    "questionFamily": "optimization",
+    "tags": [
+      "AMP",
+      "autocast",
+      "GradScaler",
+      "float16",
+      "gradient unscaling"
+    ],
+    "idealAnswer": "Mixed precision pairs 'with torch.autocast(device_type='cuda', dtype=torch.float16):' (which runs matrix multiplications in FP16 and sensitive operations in FP32) with a GradScaler (which scales loss to prevent underflow, unscales gradients, and steps optimizer).",
+    "ideal_answer": "Mixed precision pairs 'with torch.autocast(device_type='cuda', dtype=torch.float16):' (which runs matrix multiplications in FP16 and sensitive operations in FP32) with a GradScaler (which scales loss to prevent underflow, unscales gradients, and steps optimizer).",
+    "expected_concepts": [
+      "AMP",
+      "autocast",
+      "GradScaler",
+      "float16"
+    ],
+    "explanation": "Evaluates PyTorch Performance and Automatic Mixed Precision (AMP) & GradScaler comprehension."
+  },
+  {
+    "id": "pytorch_012",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are PyTorch Hooks (register_forward_hook, register_backward_hook, tensor.register_hook) and how are they used for feature extraction and Grad-CAM?",
+    "difficulty": "hard",
+    "topic": "Hooks & Internals",
+    "concept": "PyTorch Forward & Backward Hooks",
+    "questionFamily": "implementation",
+    "tags": [
+      "hooks",
+      "register_forward_hook",
+      "register_backward_hook",
+      "Grad-CAM",
+      "feature extraction"
+    ],
+    "idealAnswer": "Hooks are custom callback functions attached to Modules or Tensors executed during forward or backward passes. They allow inspecting or modifying intermediate layer activations (for Grad-CAM visualization) and monitoring gradient flows without modifying model code.",
+    "ideal_answer": "Hooks are custom callback functions attached to Modules or Tensors executed during forward or backward passes. They allow inspecting or modifying intermediate layer activations (for Grad-CAM visualization) and monitoring gradient flows without modifying model code.",
+    "expected_concepts": [
+      "hooks",
+      "register_forward_hook",
+      "register_backward_hook",
+      "Grad-CAM"
+    ],
+    "explanation": "Evaluates PyTorch Hooks & Internals and PyTorch Forward & Backward Hooks comprehension."
+  },
+  {
+    "id": "pytorch_013",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain saving and loading PyTorch models: state_dict vs full model serialization, and checkpointing for resuming training.",
+    "difficulty": "easy",
+    "topic": "Serialization",
+    "concept": "state_dict vs Full Model Checkpointing",
+    "questionFamily": "best_practice",
+    "tags": [
+      "state_dict",
+      "torch.save",
+      "torch.load",
+      "load_state_dict",
+      "checkpointing"
+    ],
+    "idealAnswer": "Saving state_dict (torch.save(model.state_dict(), 'path.pt')) serializes only model parameter weights (recommended, decoupled from code). Checkpointing stores a dictionary containing model state_dict, optimizer state_dict, current epoch, and loss to enable resuming interrupted training.",
+    "ideal_answer": "Saving state_dict (torch.save(model.state_dict(), 'path.pt')) serializes only model parameter weights (recommended, decoupled from code). Checkpointing stores a dictionary containing model state_dict, optimizer state_dict, current epoch, and loss to enable resuming interrupted training.",
+    "expected_concepts": [
+      "state_dict",
+      "torch.save",
+      "torch.load",
+      "load_state_dict"
+    ],
+    "explanation": "Evaluates PyTorch Serialization and state_dict vs Full Model Checkpointing comprehension."
+  },
+  {
+    "id": "pytorch_014",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Fully Sharded Data Parallel (FSDP) in PyTorch, and how does Zero-Redundancy Optimizer (ZeRO) shard model parameters across GPUs?",
+    "difficulty": "hard",
+    "topic": "Distributed Training",
+    "concept": "Fully Sharded Data Parallel (FSDP)",
+    "questionFamily": "architecture",
+    "tags": [
+      "FSDP",
+      "FullyShardedDataParallel",
+      "ZeRO",
+      "parameter sharding",
+      "gradient sharding",
+      "VRAM reduction"
+    ],
+    "idealAnswer": "FSDP shards model parameters, gradients, and optimizer states across all GPUs (ZeRO Stage 3). Each GPU holds only 1/N of the total model weights, gathering parameters on demand before forward/backward execution and releasing them immediately, enabling training multi-billion parameter models.",
+    "ideal_answer": "FSDP shards model parameters, gradients, and optimizer states across all GPUs (ZeRO Stage 3). Each GPU holds only 1/N of the total model weights, gathering parameters on demand before forward/backward execution and releasing them immediately, enabling training multi-billion parameter models.",
+    "expected_concepts": [
+      "FSDP",
+      "FullyShardedDataParallel",
+      "ZeRO",
+      "parameter sharding"
+    ],
+    "explanation": "Evaluates PyTorch Distributed Training and Fully Sharded Data Parallel (FSDP) comprehension."
+  },
+  {
+    "id": "pytorch_015",
+    "skill": "PyTorch",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement Custom Autograd Functions by subclassing torch.autograd.Function with static forward() and backward() methods?",
+    "difficulty": "hard",
+    "topic": "Custom Autograd",
+    "concept": "Custom torch.autograd.Function",
+    "questionFamily": "implementation",
+    "tags": [
+      "torch.autograd.Function",
+      "ctx.save_for_backward",
+      "custom forward",
+      "custom backward",
+      "gradient formula"
+    ],
+    "idealAnswer": "Subclass torch.autograd.Function: implement static 'forward(ctx, x, ...)' (saving necessary tensors via ctx.save_for_backward) and static 'backward(ctx, grad_output)' (manually returning analytical gradient formulas for each input argument).",
+    "ideal_answer": "Subclass torch.autograd.Function: implement static 'forward(ctx, x, ...)' (saving necessary tensors via ctx.save_for_backward) and static 'backward(ctx, grad_output)' (manually returning analytical gradient formulas for each input argument).",
+    "expected_concepts": [
+      "torch.autograd.Function",
+      "ctx.save_for_backward",
+      "custom forward",
+      "custom backward"
+    ],
+    "explanation": "Evaluates PyTorch Custom Autograd and Custom torch.autograd.Function comprehension."
   }
 ]

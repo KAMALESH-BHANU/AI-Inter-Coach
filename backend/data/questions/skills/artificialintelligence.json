@@ -1,44 +1,417 @@
 [
   {
-    "id": "ARTIFICIAL_INTELLIGENCE_001",
+    "id": "ai_001",
     "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Turing Test and the Chinese Room Argument regarding Weak AI vs Strong AI (Artificial General Intelligence - AGI).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Artificial Intelligence in modern software engineering?",
-    "expected_concepts": [
-      "Artificial Intelligence fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Foundations of AI",
+    "concept": "Turing Test vs Chinese Room Argument",
+    "questionFamily": "definition",
+    "tags": [
+      "Turing Test",
+      "Chinese Room",
+      "John Searle",
+      "Weak AI",
+      "Strong AI",
+      "AGI"
     ],
-    "ideal_answer": "Artificial Intelligence is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Artificial Intelligence."
+    "idealAnswer": "The Turing Test evaluates if a machine's conversational output is indistinguishable from a human. John Searle's Chinese Room argument counters that syntactic symbol manipulation (following rules) does not constitute genuine semantic understanding or conscious intentionality (Weak AI vs Strong AI).",
+    "ideal_answer": "The Turing Test evaluates if a machine's conversational output is indistinguishable from a human. John Searle's Chinese Room argument counters that syntactic symbol manipulation (following rules) does not constitute genuine semantic understanding or conscious intentionality (Weak AI vs Strong AI).",
+    "expected_concepts": [
+      "Turing Test",
+      "Chinese Room",
+      "John Searle",
+      "Weak AI"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Foundations of AI and Turing Test vs Chinese Room Argument comprehension."
   },
   {
-    "id": "ARTIFICIAL_INTELLIGENCE_002",
+    "id": "ai_002",
     "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Intelligent Agents and PEAS framework (Performance measure, Environment, Actuators, Sensors) and agent environment types (Observable, Deterministic, Episodic, Static, Discrete).",
+    "difficulty": "easy",
+    "topic": "Agent Architecture",
+    "concept": "PEAS Framework & Environment Types",
+    "questionFamily": "architecture",
+    "tags": [
+      "Intelligent Agent",
+      "PEAS framework",
+      "actuators",
+      "sensors",
+      "deterministic vs stochastic",
+      "Markov decision"
+    ],
+    "idealAnswer": "PEAS specifies: Performance measure, Environment, Actuators, and Sensors. Environments are categorized: Fully vs Partially Observable, Deterministic vs Stochastic, Episodic vs Sequential, Static vs Dynamic, and Discrete vs Continuous.",
+    "ideal_answer": "PEAS specifies: Performance measure, Environment, Actuators, and Sensors. Environments are categorized: Fully vs Partially Observable, Deterministic vs Stochastic, Episodic vs Sequential, Static vs Dynamic, and Discrete vs Continuous.",
+    "expected_concepts": [
+      "Intelligent Agent",
+      "PEAS framework",
+      "actuators",
+      "sensors"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Agent Architecture and PEAS Framework & Environment Types comprehension."
+  },
+  {
+    "id": "ai_003",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Informed Search Algorithms: A* Search Algorithm, Admissible and Consistent Heuristics, and why A* is optimal.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Artificial Intelligence in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Search & Heuristics",
+    "concept": "A* Search & Admissible Heuristics",
+    "questionFamily": "algorithm",
+    "tags": [
+      "A* search",
+      "heuristic",
+      "f(n) = g(n) + h(n)",
+      "admissible",
+      "consistent heuristic",
+      "optimal path"
     ],
-    "ideal_answer": "Common challenges with Artificial Intelligence include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Artificial Intelligence."
+    "idealAnswer": "A* evaluates nodes using f(n) = g(n) + h(n), where g(n) is actual cost from start and h(n) is estimated cost to goal. If the heuristic h(n) is Admissible (never overestimates true cost) and Consistent (satisfies triangle inequality), A* is guaranteed to find the optimal shortest path.",
+    "ideal_answer": "A* evaluates nodes using f(n) = g(n) + h(n), where g(n) is actual cost from start and h(n) is estimated cost to goal. If the heuristic h(n) is Admissible (never overestimates true cost) and Consistent (satisfies triangle inequality), A* is guaranteed to find the optimal shortest path.",
+    "expected_concepts": [
+      "A* search",
+      "heuristic",
+      "f(n) = g(n) + h(n)",
+      "admissible"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Search & Heuristics and A* Search & Admissible Heuristics comprehension."
   },
   {
-    "id": "ARTIFICIAL_INTELLIGENCE_003",
+    "id": "ai_004",
     "skill": "Artificial Intelligence",
-    "difficulty": "hard",
-    "question": "How does Artificial Intelligence handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Adversarial Search: Minimax Algorithm and Alpha-Beta Pruning for two-player zero-sum games (Chess, Tic-Tac-Toe).",
+    "difficulty": "medium",
+    "topic": "Game Playing",
+    "concept": "Minimax & Alpha-Beta Pruning",
+    "questionFamily": "algorithm",
+    "tags": [
+      "Minimax",
+      "Alpha-Beta pruning",
+      "zero-sum game",
+      "game tree",
+      "branching factor"
     ],
-    "ideal_answer": "Artificial Intelligence handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Artificial Intelligence."
+    "idealAnswer": "Minimax evaluates game trees by maximizing the player's payoff while assuming the opponent minimizes it. Alpha-Beta Pruning maintains alpha (best already explored choice for maximizer) and beta (best for minimizer), skipping subtrees that cannot influence the final decision without losing optimality.",
+    "ideal_answer": "Minimax evaluates game trees by maximizing the player's payoff while assuming the opponent minimizes it. Alpha-Beta Pruning maintains alpha (best already explored choice for maximizer) and beta (best for minimizer), skipping subtrees that cannot influence the final decision without losing optimality.",
+    "expected_concepts": [
+      "Minimax",
+      "Alpha-Beta pruning",
+      "zero-sum game",
+      "game tree"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Game Playing and Minimax & Alpha-Beta Pruning comprehension."
+  },
+  {
+    "id": "ai_005",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Constraint Satisfaction Problem (CSP), and how do Backtracking Search, Forward Checking, and AC-3 (Arc Consistency) solve CSPs?",
+    "difficulty": "medium",
+    "topic": "Constraint Satisfaction",
+    "concept": "CSP & AC-3 Algorithm",
+    "questionFamily": "algorithm",
+    "tags": [
+      "CSP",
+      "constraint satisfaction",
+      "AC-3",
+      "arc consistency",
+      "forward checking",
+      "backtracking"
+    ],
+    "idealAnswer": "A CSP defines variables, domains, and constraints (e.g. Map Coloring, Sudoku). AC-3 enforces Arc Consistency by iteratively pruning values from variable domains that have no valid corresponding values in constrained neighboring domains, reducing search space before backtracking.",
+    "ideal_answer": "A CSP defines variables, domains, and constraints (e.g. Map Coloring, Sudoku). AC-3 enforces Arc Consistency by iteratively pruning values from variable domains that have no valid corresponding values in constrained neighboring domains, reducing search space before backtracking.",
+    "expected_concepts": [
+      "CSP",
+      "constraint satisfaction",
+      "AC-3",
+      "arc consistency"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Constraint Satisfaction and CSP & AC-3 Algorithm comprehension."
+  },
+  {
+    "id": "ai_006",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Knowledge Representation: First-Order Logic (Quantifiers, Predicates), Forward Chaining, and Backward Chaining in Inference Engines.",
+    "difficulty": "medium",
+    "topic": "Logic & Reasoning",
+    "concept": "First-Order Logic & Inference Engines",
+    "questionFamily": "implementation",
+    "tags": [
+      "First-Order Logic",
+      "predicates",
+      "quantifiers",
+      "forward chaining",
+      "backward chaining",
+      "inference engine"
+    ],
+    "idealAnswer": "First-Order Logic represents facts, relations, and quantifiers (forall, exists). Forward Chaining is data-driven: starts from known facts and applies inference rules to derive new conclusions. Backward Chaining is goal-driven: starts with a goal hypothesis and works backward to find supporting facts.",
+    "ideal_answer": "First-Order Logic represents facts, relations, and quantifiers (forall, exists). Forward Chaining is data-driven: starts from known facts and applies inference rules to derive new conclusions. Backward Chaining is goal-driven: starts with a goal hypothesis and works backward to find supporting facts.",
+    "expected_concepts": [
+      "First-Order Logic",
+      "predicates",
+      "quantifiers",
+      "forward chaining"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Logic & Reasoning and First-Order Logic & Inference Engines comprehension."
+  },
+  {
+    "id": "ai_007",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Knowledge Graph, and how do Ontologies (RDF, OWL, SPARQL) represent semantic entities and relationships?",
+    "difficulty": "medium",
+    "topic": "Semantic Web & Graphs",
+    "concept": "Knowledge Graphs & Ontologies",
+    "questionFamily": "architecture",
+    "tags": [
+      "Knowledge Graph",
+      "ontology",
+      "RDF triples",
+      "SPARQL",
+      "entity resolution"
+    ],
+    "idealAnswer": "A Knowledge Graph represents real-world entities and their semantic relationships as a graph of subject-predicate-object triples (RDF). Ontologies (OWL) define formal schemas and taxonomy constraints, queried via SPARQL.",
+    "ideal_answer": "A Knowledge Graph represents real-world entities and their semantic relationships as a graph of subject-predicate-object triples (RDF). Ontologies (OWL) define formal schemas and taxonomy constraints, queried via SPARQL.",
+    "expected_concepts": [
+      "Knowledge Graph",
+      "ontology",
+      "RDF triples",
+      "SPARQL"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Semantic Web & Graphs and Knowledge Graphs & Ontologies comprehension."
+  },
+  {
+    "id": "ai_008",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Bayesian Networks (Belief Networks): Conditional Probability Tables (CPT), D-Separation, and probabilistic inference.",
+    "difficulty": "hard",
+    "topic": "Probabilistic Reasoning",
+    "concept": "Bayesian Networks & D-Separation",
+    "questionFamily": "architecture",
+    "tags": [
+      "Bayesian Network",
+      "DAG",
+      "CPT",
+      "conditional independence",
+      "D-Separation",
+      "Bayes theorem"
+    ],
+    "idealAnswer": "A Bayesian Network is a Directed Acyclic Graph (DAG) modeling probabilistic dependencies among variables. Nodes represent random variables with Conditional Probability Tables (CPT); directed edges represent direct dependencies. D-Separation tests conditional independence between variable sets.",
+    "ideal_answer": "A Bayesian Network is a Directed Acyclic Graph (DAG) modeling probabilistic dependencies among variables. Nodes represent random variables with Conditional Probability Tables (CPT); directed edges represent direct dependencies. D-Separation tests conditional independence between variable sets.",
+    "expected_concepts": [
+      "Bayesian Network",
+      "DAG",
+      "CPT",
+      "conditional independence"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Probabilistic Reasoning and Bayesian Networks & D-Separation comprehension."
+  },
+  {
+    "id": "ai_009",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Markov Decision Processes (MDPs): States, Actions, Transition Probabilities, Reward Function, and Bellman Equation.",
+    "difficulty": "hard",
+    "topic": "Reinforcement Learning",
+    "concept": "MDP & Bellman Equation",
+    "questionFamily": "architecture",
+    "tags": [
+      "MDP",
+      "Markov Decision Process",
+      "Bellman equation",
+      "discount factor gamma",
+      "value iteration",
+      "policy iteration"
+    ],
+    "idealAnswer": "An MDP models decision-making in stochastic environments: (S, A, P, R, gamma). The Bellman Equation decomposes value functions recursively: V(s) = max_a sum(P(s'|s,a) * [R(s,a,s') + gamma * V(s')]), solved via Value Iteration or Policy Iteration.",
+    "ideal_answer": "An MDP models decision-making in stochastic environments: (S, A, P, R, gamma). The Bellman Equation decomposes value functions recursively: V(s) = max_a sum(P(s'|s,a) * [R(s,a,s') + gamma * V(s')]), solved via Value Iteration or Policy Iteration.",
+    "expected_concepts": [
+      "MDP",
+      "Markov Decision Process",
+      "Bellman equation",
+      "discount factor gamma"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Reinforcement Learning and MDP & Bellman Equation comprehension."
+  },
+  {
+    "id": "ai_010",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Q-Learning (Model-Free Off-Policy RL) vs SARSA (On-Policy RL) and Exploration vs Exploitation (Epsilon-Greedy strategy).",
+    "difficulty": "hard",
+    "topic": "Reinforcement Learning",
+    "concept": "Q-Learning vs SARSA",
+    "questionFamily": "comparison",
+    "tags": [
+      "Q-Learning",
+      "SARSA",
+      "off-policy",
+      "on-policy",
+      "epsilon-greedy",
+      "exploration vs exploitation"
+    ],
+    "idealAnswer": "Q-Learning is off-policy: it updates Q-values using the greedy maximum possible future action (max_a' Q(s', a')), regardless of the actual action taken. SARSA is on-policy: it updates Q-values using the actual next action chosen under the current policy (e.g. epsilon-greedy).",
+    "ideal_answer": "Q-Learning is off-policy: it updates Q-values using the greedy maximum possible future action (max_a' Q(s', a')), regardless of the actual action taken. SARSA is on-policy: it updates Q-values using the actual next action chosen under the current policy (e.g. epsilon-greedy).",
+    "expected_concepts": [
+      "Q-Learning",
+      "SARSA",
+      "off-policy",
+      "on-policy"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Reinforcement Learning and Q-Learning vs SARSA comprehension."
+  },
+  {
+    "id": "ai_011",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Genetic Algorithm (Evolutionary AI): Population, Fitness Function, Selection (Roulette Wheel / Tournament), Crossover, and Mutation?",
+    "difficulty": "medium",
+    "topic": "Evolutionary AI",
+    "concept": "Genetic Algorithm Optimization",
+    "questionFamily": "algorithm",
+    "tags": [
+      "genetic algorithm",
+      "fitness function",
+      "crossover",
+      "mutation",
+      "selection",
+      "global optimization"
+    ],
+    "idealAnswer": "Genetic Algorithms mimic natural selection: 1) Initialize random chromosome population; 2) Evaluate fitness scores; 3) Select fittest parents (Tournament/Roulette); 4) Perform Crossover to combine traits; 5) Apply random Mutation to maintain diversity and escape local optima.",
+    "ideal_answer": "Genetic Algorithms mimic natural selection: 1) Initialize random chromosome population; 2) Evaluate fitness scores; 3) Select fittest parents (Tournament/Roulette); 4) Perform Crossover to combine traits; 5) Apply random Mutation to maintain diversity and escape local optima.",
+    "expected_concepts": [
+      "genetic algorithm",
+      "fitness function",
+      "crossover",
+      "mutation"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Evolutionary AI and Genetic Algorithm Optimization comprehension."
+  },
+  {
+    "id": "ai_012",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Explainable AI (XAI): SHAP (Shapley Additive exPlanations) values vs LIME (Local Interpretable Model-agnostic Explanations).",
+    "difficulty": "medium",
+    "topic": "Explainability & XAI",
+    "concept": "SHAP vs LIME Explainability",
+    "questionFamily": "comparison",
+    "tags": [
+      "SHAP",
+      "LIME",
+      "XAI",
+      "Shapley values",
+      "feature attribution",
+      "model interpretability"
+    ],
+    "idealAnswer": "SHAP is rooted in cooperative game theory, computing unique Shapley values to measure the exact marginal contribution of each feature to the model's prediction across all possible coalitions (globally consistent). LIME trains local surrogate interpretable linear models around individual perturbed predictions.",
+    "ideal_answer": "SHAP is rooted in cooperative game theory, computing unique Shapley values to measure the exact marginal contribution of each feature to the model's prediction across all possible coalitions (globally consistent). LIME trains local surrogate interpretable linear models around individual perturbed predictions.",
+    "expected_concepts": [
+      "SHAP",
+      "LIME",
+      "XAI",
+      "Shapley values"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Explainability & XAI and SHAP vs LIME Explainability comprehension."
+  },
+  {
+    "id": "ai_013",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you mitigate AI Bias, Algorithmic Fairness, and Hallucinations in production AI systems?",
+    "difficulty": "medium",
+    "topic": "AI Ethics & Safety",
+    "concept": "AI Bias, Fairness, & Hallucination Mitigation",
+    "questionFamily": "security",
+    "tags": [
+      "AI bias",
+      "algorithmic fairness",
+      "demographic parity",
+      "equal opportunity",
+      "hallucinations"
+    ],
+    "idealAnswer": "Bias stems from skewed training data. Mitigation techniques include re-weighting datasets for Demographic Parity and Equalized Odds, adding adversarial debiasing layers during training, and grounding outputs with Retrieval-Augmented Generation (RAG) to eliminate hallucinations.",
+    "ideal_answer": "Bias stems from skewed training data. Mitigation techniques include re-weighting datasets for Demographic Parity and Equalized Odds, adding adversarial debiasing layers during training, and grounding outputs with Retrieval-Augmented Generation (RAG) to eliminate hallucinations.",
+    "expected_concepts": [
+      "AI bias",
+      "algorithmic fairness",
+      "demographic parity",
+      "equal opportunity"
+    ],
+    "explanation": "Evaluates Artificial Intelligence AI Ethics & Safety and AI Bias, Fairness, & Hallucination Mitigation comprehension."
+  },
+  {
+    "id": "ai_014",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Multi-Agent Systems (MAS): Cooperative vs Competitive agents, Consensus Protocols, and Communication languages (FIPA-ACL)?",
+    "difficulty": "hard",
+    "topic": "Multi-Agent Systems",
+    "concept": "Multi-Agent Systems & Coordination",
+    "questionFamily": "architecture",
+    "tags": [
+      "Multi-Agent Systems",
+      "MAS",
+      "FIPA-ACL",
+      "contract net protocol",
+      "cooperative agents"
+    ],
+    "idealAnswer": "Multi-Agent Systems consist of multiple autonomous interacting agents. Coordination mechanisms include Contract Net Protocol (task bidding and allocation), game-theoretic auction mechanisms, and structured message-passing protocols (FIPA-ACL).",
+    "ideal_answer": "Multi-Agent Systems consist of multiple autonomous interacting agents. Coordination mechanisms include Contract Net Protocol (task bidding and allocation), game-theoretic auction mechanisms, and structured message-passing protocols (FIPA-ACL).",
+    "expected_concepts": [
+      "Multi-Agent Systems",
+      "MAS",
+      "FIPA-ACL",
+      "contract net protocol"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Multi-Agent Systems and Multi-Agent Systems & Coordination comprehension."
+  },
+  {
+    "id": "ai_015",
+    "skill": "Artificial Intelligence",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Monte Carlo Tree Search (MCTS): Selection, Expansion, Simulation (Rollout), and Backpropagation in AlphaGo.",
+    "difficulty": "hard",
+    "topic": "Advanced Search & MCTS",
+    "concept": "Monte Carlo Tree Search (MCTS)",
+    "questionFamily": "algorithm",
+    "tags": [
+      "MCTS",
+      "Monte Carlo Tree Search",
+      "Upper Confidence Bound (UCT)",
+      "AlphaGo",
+      "rollout"
+    ],
+    "idealAnswer": "MCTS evaluates game decisions using 4 phases: 1) Selection (traverses tree using Upper Confidence Bound for Trees - UCT); 2) Expansion (adds child node); 3) Simulation / Rollout (plays random simulation to terminal state); 4) Backpropagation (updates visit counts and win rates up the tree).",
+    "ideal_answer": "MCTS evaluates game decisions using 4 phases: 1) Selection (traverses tree using Upper Confidence Bound for Trees - UCT); 2) Expansion (adds child node); 3) Simulation / Rollout (plays random simulation to terminal state); 4) Backpropagation (updates visit counts and win rates up the tree).",
+    "expected_concepts": [
+      "MCTS",
+      "Monte Carlo Tree Search",
+      "Upper Confidence Bound (UCT)",
+      "AlphaGo"
+    ],
+    "explanation": "Evaluates Artificial Intelligence Advanced Search & MCTS and Monte Carlo Tree Search (MCTS) comprehension."
   }
 ]

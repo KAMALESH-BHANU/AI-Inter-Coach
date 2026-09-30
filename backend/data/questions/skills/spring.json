@@ -1,0 +1,401 @@
+[
+  {
+    "id": "spring_001",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Inversion of Control (IoC) and Dependency Injection (DI) in the Spring Framework.",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "IoC and Dependency Injection",
+    "questionFamily": "architecture",
+    "tags": [
+      "IoC",
+      "Dependency Injection",
+      "ApplicationContext",
+      "decoupling"
+    ],
+    "idealAnswer": "Inversion of Control transfers the responsibility of object instantiation and lifecycle management from application code to the Spring container. Dependency Injection is the mechanism where the container injects dependent objects into dependent classes.",
+    "ideal_answer": "Inversion of Control transfers the responsibility of object instantiation and lifecycle management from application code to the Spring container. Dependency Injection is the mechanism where the container injects dependent objects into dependent classes.",
+    "expected_concepts": [
+      "IoC",
+      "Dependency Injection",
+      "ApplicationContext",
+      "decoupling"
+    ],
+    "explanation": "Evaluates Spring Core Concepts and IoC and Dependency Injection comprehension."
+  },
+  {
+    "id": "spring_002",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Spring IoC Container, and how does ApplicationContext differ from BeanFactory?",
+    "difficulty": "medium",
+    "topic": "IoC Container",
+    "concept": "BeanFactory vs ApplicationContext",
+    "questionFamily": "comparison",
+    "tags": [
+      "BeanFactory",
+      "ApplicationContext",
+      "lazy loading",
+      "eager initialization",
+      "AOP"
+    ],
+    "idealAnswer": "BeanFactory is the basic container with lazy initialization. ApplicationContext extends BeanFactory with eager singleton pre-instantiation, AOP integration, internationalization (MessageSource), and event publishing.",
+    "ideal_answer": "BeanFactory is the basic container with lazy initialization. ApplicationContext extends BeanFactory with eager singleton pre-instantiation, AOP integration, internationalization (MessageSource), and event publishing.",
+    "expected_concepts": [
+      "BeanFactory",
+      "ApplicationContext",
+      "lazy loading",
+      "eager initialization"
+    ],
+    "explanation": "Evaluates Spring IoC Container and BeanFactory vs ApplicationContext comprehension."
+  },
+  {
+    "id": "spring_003",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Spring Bean Scopes: Singleton, Prototype, Request, Session, and Application.",
+    "difficulty": "medium",
+    "topic": "Bean Lifecycle",
+    "concept": "Spring Bean Scopes",
+    "questionFamily": "definition",
+    "tags": [
+      "singleton",
+      "prototype",
+      "request scope",
+      "session scope",
+      "thread safety"
+    ],
+    "idealAnswer": "Singleton (default) creates one shared bean instance per Spring container. Prototype creates a new instance every time requested. Request, Session, and Application scopes are web-aware scopes tied to HTTP lifecycles.",
+    "ideal_answer": "Singleton (default) creates one shared bean instance per Spring container. Prototype creates a new instance every time requested. Request, Session, and Application scopes are web-aware scopes tied to HTTP lifecycles.",
+    "expected_concepts": [
+      "singleton",
+      "prototype",
+      "request scope",
+      "session scope"
+    ],
+    "explanation": "Evaluates Spring Bean Lifecycle and Spring Bean Scopes comprehension."
+  },
+  {
+    "id": "spring_004",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Spring Bean Lifecycle, and what are the roles of @PostConstruct, @PreDestroy, and BeanPostProcessor?",
+    "difficulty": "hard",
+    "topic": "Bean Lifecycle",
+    "concept": "Bean Lifecycle & BeanPostProcessor",
+    "questionFamily": "architecture",
+    "tags": [
+      "bean lifecycle",
+      "@PostConstruct",
+      "@PreDestroy",
+      "InitializingBean",
+      "BeanPostProcessor"
+    ],
+    "idealAnswer": "Bean lifecycle: Instantiation -> Populate Properties -> BeanNameAware/BeanFactoryAware -> postProcessBeforeInitialization -> @PostConstruct / InitializingBean -> postProcessAfterInitialization (AOP proxying) -> Ready -> @PreDestroy -> DisposableBean.",
+    "ideal_answer": "Bean lifecycle: Instantiation -> Populate Properties -> BeanNameAware/BeanFactoryAware -> postProcessBeforeInitialization -> @PostConstruct / InitializingBean -> postProcessAfterInitialization (AOP proxying) -> Ready -> @PreDestroy -> DisposableBean.",
+    "expected_concepts": [
+      "bean lifecycle",
+      "@PostConstruct",
+      "@PreDestroy",
+      "InitializingBean"
+    ],
+    "explanation": "Evaluates Spring Bean Lifecycle and Bean Lifecycle & BeanPostProcessor comprehension."
+  },
+  {
+    "id": "spring_005",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dependency Injection types in Spring: Constructor Injection vs Setter Injection vs Field Injection (@Autowired).",
+    "difficulty": "medium",
+    "topic": "Dependency Injection",
+    "concept": "Constructor vs Field vs Setter Injection",
+    "questionFamily": "comparison",
+    "tags": [
+      "constructor injection",
+      "field injection",
+      "@Autowired",
+      "immutability",
+      "unit testing"
+    ],
+    "idealAnswer": "Constructor injection is the industry standard: enforces required dependencies, supports final immutable fields, and eases unit testing without Spring context. Field injection is discouraged due to testing difficulties and circular dependency risks.",
+    "ideal_answer": "Constructor injection is the industry standard: enforces required dependencies, supports final immutable fields, and eases unit testing without Spring context. Field injection is discouraged due to testing difficulties and circular dependency risks.",
+    "expected_concepts": [
+      "constructor injection",
+      "field injection",
+      "@Autowired",
+      "immutability"
+    ],
+    "explanation": "Evaluates Spring Dependency Injection and Constructor vs Field vs Setter Injection comprehension."
+  },
+  {
+    "id": "spring_006",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Spring handle Circular Dependencies between beans, and how does the Three-Level Cache in DefaultSingletonBeanRegistry resolve them?",
+    "difficulty": "hard",
+    "topic": "IoC Internals",
+    "concept": "Circular Dependencies & Three-Level Cache",
+    "questionFamily": "implementation",
+    "tags": [
+      "circular dependency",
+      "three-level cache",
+      "singletonFactories",
+      "earlySingletonObjects"
+    ],
+    "idealAnswer": "Spring resolves circular singleton references for setter/field injection using a 3-level cache: singletonObjects (ready beans), earlySingletonObjects (early initialized instances), and singletonFactories (ObjectFactories for AOP proxies). Circular constructor injection fails with BeanCurrentlyInCreationException.",
+    "ideal_answer": "Spring resolves circular singleton references for setter/field injection using a 3-level cache: singletonObjects (ready beans), earlySingletonObjects (early initialized instances), and singletonFactories (ObjectFactories for AOP proxies). Circular constructor injection fails with BeanCurrentlyInCreationException.",
+    "expected_concepts": [
+      "circular dependency",
+      "three-level cache",
+      "singletonFactories",
+      "earlySingletonObjects"
+    ],
+    "explanation": "Evaluates Spring IoC Internals and Circular Dependencies & Three-Level Cache comprehension."
+  },
+  {
+    "id": "spring_007",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Aspect-Oriented Programming (AOP) in Spring: Aspects, Pointcuts, Joinpoints, Advices (@Before, @After, @Around).",
+    "difficulty": "hard",
+    "topic": "AOP",
+    "concept": "Spring AOP & Advice Types",
+    "questionFamily": "architecture",
+    "tags": [
+      "AOP",
+      "Aspect",
+      "Pointcut",
+      "Joinpoint",
+      "@Around",
+      "cross-cutting concerns"
+    ],
+    "idealAnswer": "AOP modularizes cross-cutting concerns (logging, security, transactions). Aspect is the module; Joinpoint is execution point; Pointcut defines matching methods; Advice is the action taken (@Before, @AfterReturning, @AfterThrowing, @After, @Around).",
+    "ideal_answer": "AOP modularizes cross-cutting concerns (logging, security, transactions). Aspect is the module; Joinpoint is execution point; Pointcut defines matching methods; Advice is the action taken (@Before, @AfterReturning, @AfterThrowing, @After, @Around).",
+    "expected_concepts": [
+      "AOP",
+      "Aspect",
+      "Pointcut",
+      "Joinpoint"
+    ],
+    "explanation": "Evaluates Spring AOP and Spring AOP & Advice Types comprehension."
+  },
+  {
+    "id": "spring_008",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Spring AOP (runtime dynamic proxies with JDK Proxy / CGLIB) and AspectJ (compile/load-time weaving)?",
+    "difficulty": "hard",
+    "topic": "AOP",
+    "concept": "Spring AOP vs AspectJ",
+    "questionFamily": "comparison",
+    "tags": [
+      "Spring AOP",
+      "AspectJ",
+      "JDK Dynamic Proxy",
+      "CGLIB",
+      "weaving"
+    ],
+    "idealAnswer": "Spring AOP uses runtime dynamic proxies (JDK Dynamic Proxy for interfaces, CGLIB for classes) intercepting only public Spring bean methods. AspectJ is a full AOP framework using compile-time, post-compile, or load-time bytecode weaving across any method or field.",
+    "ideal_answer": "Spring AOP uses runtime dynamic proxies (JDK Dynamic Proxy for interfaces, CGLIB for classes) intercepting only public Spring bean methods. AspectJ is a full AOP framework using compile-time, post-compile, or load-time bytecode weaving across any method or field.",
+    "expected_concepts": [
+      "Spring AOP",
+      "AspectJ",
+      "JDK Dynamic Proxy",
+      "CGLIB"
+    ],
+    "explanation": "Evaluates Spring AOP and Spring AOP vs AspectJ comprehension."
+  },
+  {
+    "id": "spring_009",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Declarative Transaction Management in Spring with @Transactional and rollback rules.",
+    "difficulty": "medium",
+    "topic": "Transactions",
+    "concept": "Declarative @Transactional",
+    "questionFamily": "implementation",
+    "tags": [
+      "@Transactional",
+      "rollbackFor",
+      "RuntimeException",
+      "checked exceptions"
+    ],
+    "idealAnswer": "@Transactional intercepts methods to manage database transactions. By default, it rolls back on unchecked exceptions (RuntimeException and Error) but commits on checked exceptions unless specified via 'rollbackFor = Exception.class'.",
+    "ideal_answer": "@Transactional intercepts methods to manage database transactions. By default, it rolls back on unchecked exceptions (RuntimeException and Error) but commits on checked exceptions unless specified via 'rollbackFor = Exception.class'.",
+    "expected_concepts": [
+      "@Transactional",
+      "rollbackFor",
+      "RuntimeException",
+      "checked exceptions"
+    ],
+    "explanation": "Evaluates Spring Transactions and Declarative @Transactional comprehension."
+  },
+  {
+    "id": "spring_010",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Transaction Propagation levels in Spring (REQUIRED, REQUIRES_NEW, NESTED, SUPPORTS, MANDATORY, NEVER)?",
+    "difficulty": "hard",
+    "topic": "Transactions",
+    "concept": "Transaction Propagation Levels",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "propagation",
+      "REQUIRED",
+      "REQUIRES_NEW",
+      "NESTED",
+      "transaction boundary"
+    ],
+    "idealAnswer": "REQUIRED joins existing transaction or creates a new one. REQUIRES_NEW always suspends existing transaction and runs in an independent new transaction. NESTED runs inside a savepoint within the parent transaction.",
+    "ideal_answer": "REQUIRED joins existing transaction or creates a new one. REQUIRES_NEW always suspends existing transaction and runs in an independent new transaction. NESTED runs inside a savepoint within the parent transaction.",
+    "expected_concepts": [
+      "propagation",
+      "REQUIRED",
+      "REQUIRES_NEW",
+      "NESTED"
+    ],
+    "explanation": "Evaluates Spring Transactions and Transaction Propagation Levels comprehension."
+  },
+  {
+    "id": "spring_011",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Why does calling a @Transactional method from another method within the same class (self-invocation) fail to start a transaction?",
+    "difficulty": "hard",
+    "topic": "AOP & Transactions",
+    "concept": "Self-Invocation Proxy Bypass",
+    "questionFamily": "debugging",
+    "tags": [
+      "self-invocation",
+      "proxy bypass",
+      "AOP proxy",
+      "@Transactional"
+    ],
+    "idealAnswer": "Spring @Transactional works via AOP proxy wrappers around beans. When method A calls method B inside the same bean instance using 'this.methodB()', the call bypasses the Spring proxy and invokes target instance directly, skipping the transaction interceptor.",
+    "ideal_answer": "Spring @Transactional works via AOP proxy wrappers around beans. When method A calls method B inside the same bean instance using 'this.methodB()', the call bypasses the Spring proxy and invokes target instance directly, skipping the transaction interceptor.",
+    "expected_concepts": [
+      "self-invocation",
+      "proxy bypass",
+      "AOP proxy",
+      "@Transactional"
+    ],
+    "explanation": "Evaluates Spring AOP & Transactions and Self-Invocation Proxy Bypass comprehension."
+  },
+  {
+    "id": "spring_012",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Spring Event Publishing with ApplicationEventPublisher, ApplicationEvent, and @EventListener / @TransactionalEventListener.",
+    "difficulty": "medium",
+    "topic": "Events",
+    "concept": "Spring Event System",
+    "questionFamily": "design",
+    "tags": [
+      "ApplicationEventPublisher",
+      "@EventListener",
+      "@TransactionalEventListener",
+      "decoupled events"
+    ],
+    "idealAnswer": "Spring provides in-process event pub/sub. Beans publish events via ApplicationEventPublisher. Listeners handle events with @EventListener; @TransactionalEventListener binds event handling to transaction phases (AFTER_COMMIT, AFTER_ROLLBACK).",
+    "ideal_answer": "Spring provides in-process event pub/sub. Beans publish events via ApplicationEventPublisher. Listeners handle events with @EventListener; @TransactionalEventListener binds event handling to transaction phases (AFTER_COMMIT, AFTER_ROLLBACK).",
+    "expected_concepts": [
+      "ApplicationEventPublisher",
+      "@EventListener",
+      "@TransactionalEventListener",
+      "decoupled events"
+    ],
+    "explanation": "Evaluates Spring Events and Spring Event System comprehension."
+  },
+  {
+    "id": "spring_013",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Spring Profiles (@Profile) and Environment abstraction for multi-environment configuration (dev, test, prod)?",
+    "difficulty": "easy",
+    "topic": "Configuration",
+    "concept": "Spring Profiles",
+    "questionFamily": "best_practice",
+    "tags": [
+      "@Profile",
+      "Environment",
+      "dev vs prod",
+      "conditional configuration"
+    ],
+    "idealAnswer": "Spring Profiles allow segregating parts of application configuration to be available only in specific environments (e.g. @Profile('dev') vs @Profile('prod')), activated via spring.profiles.active.",
+    "ideal_answer": "Spring Profiles allow segregating parts of application configuration to be available only in specific environments (e.g. @Profile('dev') vs @Profile('prod')), activated via spring.profiles.active.",
+    "expected_concepts": [
+      "@Profile",
+      "Environment",
+      "dev vs prod",
+      "conditional configuration"
+    ],
+    "explanation": "Evaluates Spring Configuration and Spring Profiles comprehension."
+  },
+  {
+    "id": "spring_014",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain @Conditional and custom Condition classes in Spring for conditional bean creation.",
+    "difficulty": "medium",
+    "topic": "Configuration",
+    "concept": "@Conditional & Custom Conditions",
+    "questionFamily": "implementation",
+    "tags": [
+      "@Conditional",
+      "ConditionContext",
+      "conditional bean",
+      "SpringBootCondition"
+    ],
+    "idealAnswer": "@Conditional registers beans conditionally based on custom logic evaluated at runtime. A custom class implementing Condition checks the Environment, class path, or system properties in its matches() method.",
+    "ideal_answer": "@Conditional registers beans conditionally based on custom logic evaluated at runtime. A custom class implementing Condition checks the Environment, class path, or system properties in its matches() method.",
+    "expected_concepts": [
+      "@Conditional",
+      "ConditionContext",
+      "conditional bean",
+      "SpringBootCondition"
+    ],
+    "explanation": "Evaluates Spring Configuration and @Conditional & Custom Conditions comprehension."
+  },
+  {
+    "id": "spring_015",
+    "skill": "Spring",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Spring MVC dispatch requests using DispatcherServlet, HandlerMapping, and ViewResolver?",
+    "difficulty": "medium",
+    "topic": "Spring MVC",
+    "concept": "DispatcherServlet Request Flow",
+    "questionFamily": "architecture",
+    "tags": [
+      "DispatcherServlet",
+      "HandlerMapping",
+      "HandlerAdapter",
+      "ViewResolver",
+      "Front Controller"
+    ],
+    "idealAnswer": "Spring MVC implements the Front Controller pattern: DispatcherServlet receives HTTP requests, consults HandlerMapping to find controller, calls HandlerAdapter to execute method, and uses ViewResolver/HttpMessageConverter to format response.",
+    "ideal_answer": "Spring MVC implements the Front Controller pattern: DispatcherServlet receives HTTP requests, consults HandlerMapping to find controller, calls HandlerAdapter to execute method, and uses ViewResolver/HttpMessageConverter to format response.",
+    "expected_concepts": [
+      "DispatcherServlet",
+      "HandlerMapping",
+      "HandlerAdapter",
+      "ViewResolver"
+    ],
+    "explanation": "Evaluates Spring Spring MVC and DispatcherServlet Request Flow comprehension."
+  }
+]

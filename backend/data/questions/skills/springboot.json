@@ -1,44 +1,403 @@
 [
   {
-    "id": "SB_001",
+    "id": "springboot_001",
     "skill": "Spring Boot",
-    "difficulty": "medium",
-    "question": "Explain Dependency Injection and Inversion of Control (IoC) in Spring Framework.",
-    "expected_concepts": [
-      "IoC Container",
-      "Dependency Injection",
-      "@Autowired",
-      "Bean lifecycle",
-      "Loose coupling"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the core advantages of Spring Boot over standard Spring Framework (Auto-Configuration, Starters, Embedded Servers).",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "Spring Boot Core Advantages",
+    "questionFamily": "architecture",
+    "tags": [
+      "Spring Boot",
+      "auto-configuration",
+      "starter dependencies",
+      "embedded Tomcat",
+      "opinionated"
     ],
-    "ideal_answer": "Inversion of Control transfers object creation and dependency management responsibility to the Spring IoC container. Dependency Injection (DI) is the pattern where dependencies are injected into a class (via constructor, setter, or field) rather than instantiated directly, achieving loose coupling.",
-    "explanation": "Core Spring philosophy and architecture."
+    "idealAnswer": "Spring Boot eliminates boilerplate XML/Java configuration through Auto-Configuration (@EnableAutoConfiguration), bundled Starter POMs (spring-boot-starter-web), and embedded servers (Tomcat/Jetty) for standalone JAR execution.",
+    "ideal_answer": "Spring Boot eliminates boilerplate XML/Java configuration through Auto-Configuration (@EnableAutoConfiguration), bundled Starter POMs (spring-boot-starter-web), and embedded servers (Tomcat/Jetty) for standalone JAR execution.",
+    "expected_concepts": [
+      "Spring Boot",
+      "auto-configuration",
+      "starter dependencies",
+      "embedded Tomcat"
+    ],
+    "explanation": "Evaluates Spring Boot Core Concepts and Spring Boot Core Advantages comprehension."
   },
   {
-    "id": "SB_002",
+    "id": "springboot_002",
     "skill": "Spring Boot",
-    "difficulty": "medium",
-    "question": "What is the difference between @Component, @Service, @Repository, and @Controller annotations?",
-    "expected_concepts": [
-      "Stereotype annotations",
-      "Spring Bean registration",
-      "Persistence exception translation"
-    ],
-    "ideal_answer": "@Component is the generic stereotype annotation. @Service annotates business logic layer classes. @Repository annotates data access layer classes and provides automatic exception translation. @Controller annotates web controller layers.",
-    "explanation": "Spring bean stereotype classification."
-  },
-  {
-    "id": "SB_003",
-    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Spring Boot Auto-Configuration work under the hood using @EnableAutoConfiguration and META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports?",
     "difficulty": "hard",
-    "question": "How does Spring Boot Auto-Configuration work under the hood?",
-    "expected_concepts": [
-      "@EnableAutoConfiguration",
+    "topic": "Auto-Configuration",
+    "concept": "Auto-Configuration Mechanism",
+    "questionFamily": "architecture",
+    "tags": [
+      "AutoConfiguration",
       "@ConditionalOnClass",
-      "spring.factories / AutoConfiguration.imports",
-      "Spring Boot starter"
+      "@ConditionalOnMissingBean",
+      "spring.factories"
     ],
-    "ideal_answer": "Spring Boot inspects classpath dependencies using @EnableAutoConfiguration and imports auto-configuration classes specified in spring.factories/AutoConfiguration.imports. Conditional annotations (@ConditionalOnClass, @ConditionalOnMissingBean) trigger bean creation only if requirements are satisfied.",
-    "explanation": "Advanced Spring Boot framework mechanics."
+    "idealAnswer": "Spring Boot scans auto-configuration classes listed in imports files. These classes use conditional annotations (@ConditionalOnClass, @ConditionalOnMissingBean, @ConditionalOnProperty) to instantiate beans only if required libraries or custom beans are present.",
+    "ideal_answer": "Spring Boot scans auto-configuration classes listed in imports files. These classes use conditional annotations (@ConditionalOnClass, @ConditionalOnMissingBean, @ConditionalOnProperty) to instantiate beans only if required libraries or custom beans are present.",
+    "expected_concepts": [
+      "AutoConfiguration",
+      "@ConditionalOnClass",
+      "@ConditionalOnMissingBean",
+      "spring.factories"
+    ],
+    "explanation": "Evaluates Spring Boot Auto-Configuration and Auto-Configuration Mechanism comprehension."
+  },
+  {
+    "id": "springboot_003",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What does @SpringBootApplication encapsulate (@Configuration, @EnableAutoConfiguration, @ComponentScan)?",
+    "difficulty": "easy",
+    "topic": "Annotations",
+    "concept": "@SpringBootApplication Anatomy",
+    "questionFamily": "definition",
+    "tags": [
+      "@SpringBootApplication",
+      "@Configuration",
+      "@EnableAutoConfiguration",
+      "@ComponentScan"
+    ],
+    "idealAnswer": "@SpringBootApplication combines three annotations: @Configuration (marks class as bean source), @EnableAutoConfiguration (triggers auto-configuration), and @ComponentScan (scans packages for @Component, @Service, @Repository, @Controller).",
+    "ideal_answer": "@SpringBootApplication combines three annotations: @Configuration (marks class as bean source), @EnableAutoConfiguration (triggers auto-configuration), and @ComponentScan (scans packages for @Component, @Service, @Repository, @Controller).",
+    "expected_concepts": [
+      "@SpringBootApplication",
+      "@Configuration",
+      "@EnableAutoConfiguration",
+      "@ComponentScan"
+    ],
+    "explanation": "Evaluates Spring Boot Annotations and @SpringBootApplication Anatomy comprehension."
+  },
+  {
+    "id": "springboot_004",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Spring Boot Starter dependencies (e.g. spring-boot-starter-web, spring-boot-starter-data-jpa) and how they manage transitive versions.",
+    "difficulty": "easy",
+    "topic": "Dependencies",
+    "concept": "Starters & Dependency Management",
+    "questionFamily": "best_practice",
+    "tags": [
+      "starters",
+      "spring-boot-starter-parent",
+      "BOM",
+      "dependency management"
+    ],
+    "idealAnswer": "Starters aggregate curated sets of compatible transitive dependencies. Used alongside spring-boot-starter-parent, they manage dependency versions without requiring explicit version tags in pom.xml.",
+    "ideal_answer": "Starters aggregate curated sets of compatible transitive dependencies. Used alongside spring-boot-starter-parent, they manage dependency versions without requiring explicit version tags in pom.xml.",
+    "expected_concepts": [
+      "starters",
+      "spring-boot-starter-parent",
+      "BOM",
+      "dependency management"
+    ],
+    "explanation": "Evaluates Spring Boot Dependencies and Starters & Dependency Management comprehension."
+  },
+  {
+    "id": "springboot_005",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Spring Boot Actuator, and how do endpoints (/actuator/health, /metrics, /env, /prometheus) enable production monitoring?",
+    "difficulty": "medium",
+    "topic": "Production & Monitoring",
+    "concept": "Spring Boot Actuator",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Actuator",
+      "/health",
+      "/metrics",
+      "Prometheus",
+      "monitoring",
+      "Micrometer"
+    ],
+    "idealAnswer": "Actuator provides production-ready monitoring endpoints exposing application health, JVM metrics, thread dumps, and configuration properties, integrating seamlessly with monitoring tools like Prometheus and Grafana.",
+    "ideal_answer": "Actuator provides production-ready monitoring endpoints exposing application health, JVM metrics, thread dumps, and configuration properties, integrating seamlessly with monitoring tools like Prometheus and Grafana.",
+    "expected_concepts": [
+      "Actuator",
+      "/health",
+      "/metrics",
+      "Prometheus"
+    ],
+    "explanation": "Evaluates Spring Boot Production & Monitoring and Spring Boot Actuator comprehension."
+  },
+  {
+    "id": "springboot_006",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Spring Data JPA: JpaRepository, Query Methods by method names, and @Query (JPQL vs Native SQL).",
+    "difficulty": "medium",
+    "topic": "Data Access",
+    "concept": "Spring Data JPA & Repositories",
+    "questionFamily": "implementation",
+    "tags": [
+      "Spring Data JPA",
+      "JpaRepository",
+      "JPQL",
+      "Native SQL",
+      "@Query"
+    ],
+    "idealAnswer": "Spring Data JPA reduces boilerplate data access. JpaRepository provides CRUD and pagination out-of-the-box. Derived query methods generate queries from method names (findByEmailAndActive). @Query executes custom JPQL or native SQL.",
+    "ideal_answer": "Spring Data JPA reduces boilerplate data access. JpaRepository provides CRUD and pagination out-of-the-box. Derived query methods generate queries from method names (findByEmailAndActive). @Query executes custom JPQL or native SQL.",
+    "expected_concepts": [
+      "Spring Data JPA",
+      "JpaRepository",
+      "JPQL",
+      "Native SQL"
+    ],
+    "explanation": "Evaluates Spring Boot Data Access and Spring Data JPA & Repositories comprehension."
+  },
+  {
+    "id": "springboot_007",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Entity Relationships in JPA/Hibernate (@OneToOne, @OneToMany, @ManyToOne, @ManyToMany), and what is FetchType.LAZY vs EAGER?",
+    "difficulty": "medium",
+    "topic": "Data Access & JPA",
+    "concept": "JPA Entity Relationships & Fetch Types",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "@OneToMany",
+      "@ManyToOne",
+      "FetchType.LAZY",
+      "FetchType.EAGER",
+      "N+1 problem"
+    ],
+    "idealAnswer": "Relationships define cardinality between entities. FetchType.LAZY loads associated entities on demand when accessed (preventing massive queries). FetchType.EAGER joins and loads associations immediately.",
+    "ideal_answer": "Relationships define cardinality between entities. FetchType.LAZY loads associated entities on demand when accessed (preventing massive queries). FetchType.EAGER joins and loads associations immediately.",
+    "expected_concepts": [
+      "@OneToMany",
+      "@ManyToOne",
+      "FetchType.LAZY",
+      "FetchType.EAGER"
+    ],
+    "explanation": "Evaluates Spring Boot Data Access & JPA and JPA Entity Relationships & Fetch Types comprehension."
+  },
+  {
+    "id": "springboot_008",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you solve the N+1 Query Problem in Spring Data JPA using JOIN FETCH, @EntityGraph, or DTO Projections?",
+    "difficulty": "hard",
+    "topic": "Performance & JPA",
+    "concept": "N+1 Problem Resolution",
+    "questionFamily": "optimization",
+    "tags": [
+      "N+1 problem",
+      "JOIN FETCH",
+      "@EntityGraph",
+      "DTO projection",
+      "Hibernate"
+    ],
+    "idealAnswer": "The N+1 problem occurs when fetching N entities triggers N additional queries to load lazy relationships. It is solved using JPQL 'JOIN FETCH', @EntityGraph to define fetch plans, or constructor DTO projections.",
+    "ideal_answer": "The N+1 problem occurs when fetching N entities triggers N additional queries to load lazy relationships. It is solved using JPQL 'JOIN FETCH', @EntityGraph to define fetch plans, or constructor DTO projections.",
+    "expected_concepts": [
+      "N+1 problem",
+      "JOIN FETCH",
+      "@EntityGraph",
+      "DTO projection"
+    ],
+    "explanation": "Evaluates Spring Boot Performance & JPA and N+1 Problem Resolution comprehension."
+  },
+  {
+    "id": "springboot_009",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Exception Handling in Spring Boot REST APIs using @ControllerAdvice, @RestControllerAdvice, and @ExceptionHandler.",
+    "difficulty": "medium",
+    "topic": "REST & Error Handling",
+    "concept": "Centralized Exception Handling",
+    "questionFamily": "best_practice",
+    "tags": [
+      "@RestControllerAdvice",
+      "@ExceptionHandler",
+      "ProblemDetail",
+      "ResponseEntity"
+    ],
+    "idealAnswer": "@RestControllerAdvice provides centralized exception interception across all REST controllers. Methods annotated with @ExceptionHandler(CustomException.class) catch exceptions and return structured JSON error responses.",
+    "ideal_answer": "@RestControllerAdvice provides centralized exception interception across all REST controllers. Methods annotated with @ExceptionHandler(CustomException.class) catch exceptions and return structured JSON error responses.",
+    "expected_concepts": [
+      "@RestControllerAdvice",
+      "@ExceptionHandler",
+      "ProblemDetail",
+      "ResponseEntity"
+    ],
+    "explanation": "Evaluates Spring Boot REST & Error Handling and Centralized Exception Handling comprehension."
+  },
+  {
+    "id": "springboot_010",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Bean Validation (Hibernate Validator) work in Spring Boot using @Valid, @NotNull, @Size, and custom ConstraintValidators?",
+    "difficulty": "easy",
+    "topic": "Validation",
+    "concept": "Bean Validation (@Valid)",
+    "questionFamily": "implementation",
+    "tags": [
+      "Bean Validation",
+      "@Valid",
+      "@NotNull",
+      "@Size",
+      "ConstraintValidator"
+    ],
+    "idealAnswer": "Spring Boot integrates Jakarta Bean Validation. Adding @Valid / @Validated on controller request bodies validates model annotations (@NotNull, @Email, @Size). Custom validators implement ConstraintValidator<Annotation, Type>.",
+    "ideal_answer": "Spring Boot integrates Jakarta Bean Validation. Adding @Valid / @Validated on controller request bodies validates model annotations (@NotNull, @Email, @Size). Custom validators implement ConstraintValidator<Annotation, Type>.",
+    "expected_concepts": [
+      "Bean Validation",
+      "@Valid",
+      "@NotNull",
+      "@Size"
+    ],
+    "explanation": "Evaluates Spring Boot Validation and Bean Validation (@Valid) comprehension."
+  },
+  {
+    "id": "springboot_011",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Spring Security architecture in Spring Boot: SecurityFilterChain, AuthenticationManager, and UserDetailsService.",
+    "difficulty": "hard",
+    "topic": "Security",
+    "concept": "Spring Security Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Spring Security",
+      "SecurityFilterChain",
+      "AuthenticationManager",
+      "UserDetailsService",
+      "filter chain"
+    ],
+    "idealAnswer": "Spring Security processes HTTP requests through a chain of filters (SecurityFilterChain). AuthenticationManager delegates credentials verification to AuthenticationProvider, which loads user details via UserDetailsService and validates passwords with PasswordEncoder.",
+    "ideal_answer": "Spring Security processes HTTP requests through a chain of filters (SecurityFilterChain). AuthenticationManager delegates credentials verification to AuthenticationProvider, which loads user details via UserDetailsService and validates passwords with PasswordEncoder.",
+    "expected_concepts": [
+      "Spring Security",
+      "SecurityFilterChain",
+      "AuthenticationManager",
+      "UserDetailsService"
+    ],
+    "explanation": "Evaluates Spring Boot Security and Spring Security Architecture comprehension."
+  },
+  {
+    "id": "springboot_012",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement Stateless JWT (JSON Web Token) Authentication and Authorization in Spring Boot 3?",
+    "difficulty": "hard",
+    "topic": "Security",
+    "concept": "JWT Authentication in Spring Boot 3",
+    "questionFamily": "security",
+    "tags": [
+      "JWT",
+      "OncePerRequestFilter",
+      "Bearer token",
+      "SecurityContextHolder",
+      "stateless"
+    ],
+    "idealAnswer": "Create a custom OncePerRequestFilter that extracts the JWT token from the Authorization header, validates the signature, extracts username and roles, and sets an Authentication object in the SecurityContextHolder.",
+    "ideal_answer": "Create a custom OncePerRequestFilter that extracts the JWT token from the Authorization header, validates the signature, extracts username and roles, and sets an Authentication object in the SecurityContextHolder.",
+    "expected_concepts": [
+      "JWT",
+      "OncePerRequestFilter",
+      "Bearer token",
+      "SecurityContextHolder"
+    ],
+    "explanation": "Evaluates Spring Boot Security and JWT Authentication in Spring Boot 3 comprehension."
+  },
+  {
+    "id": "springboot_013",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain externalized configuration in Spring Boot using application.properties / application.yml and @ConfigurationProperties.",
+    "difficulty": "easy",
+    "topic": "Configuration",
+    "concept": "@ConfigurationProperties & YAML",
+    "questionFamily": "best_practice",
+    "tags": [
+      "application.yml",
+      "@ConfigurationProperties",
+      "@Value",
+      "type-safe configuration"
+    ],
+    "idealAnswer": "Spring Boot externalizes configuration using application.yml/properties. @ConfigurationProperties binds structured hierarchical configuration sections into strongly-typed Java bean classes with validation support.",
+    "ideal_answer": "Spring Boot externalizes configuration using application.yml/properties. @ConfigurationProperties binds structured hierarchical configuration sections into strongly-typed Java bean classes with validation support.",
+    "expected_concepts": [
+      "application.yml",
+      "@ConfigurationProperties",
+      "@Value",
+      "type-safe configuration"
+    ],
+    "explanation": "Evaluates Spring Boot Configuration and @ConfigurationProperties & YAML comprehension."
+  },
+  {
+    "id": "springboot_014",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you write Integration Tests in Spring Boot using @SpringBootTest, @WebMvcTest, @DataJpaTest, and Testcontainers?",
+    "difficulty": "medium",
+    "topic": "Testing",
+    "concept": "Spring Boot Testing Slices",
+    "questionFamily": "best_practice",
+    "tags": [
+      "@SpringBootTest",
+      "@WebMvcTest",
+      "@DataJpaTest",
+      "Testcontainers",
+      "MockMvc"
+    ],
+    "idealAnswer": "@SpringBootTest loads full ApplicationContext for end-to-end integration tests. Test slices (@WebMvcTest for controllers with MockMvc, @DataJpaTest for repositories) load minimal contexts for fast unit testing. Testcontainers runs real Docker databases during tests.",
+    "ideal_answer": "@SpringBootTest loads full ApplicationContext for end-to-end integration tests. Test slices (@WebMvcTest for controllers with MockMvc, @DataJpaTest for repositories) load minimal contexts for fast unit testing. Testcontainers runs real Docker databases during tests.",
+    "expected_concepts": [
+      "@SpringBootTest",
+      "@WebMvcTest",
+      "@DataJpaTest",
+      "Testcontainers"
+    ],
+    "explanation": "Evaluates Spring Boot Testing and Spring Boot Testing Slices comprehension."
+  },
+  {
+    "id": "springboot_015",
+    "skill": "Spring Boot",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Spring Boot Native Compilation with GraalVM (AOT processing), and what are the benefits for startup time and memory footprint?",
+    "difficulty": "hard",
+    "topic": "Modern Spring Boot",
+    "concept": "Spring Boot GraalVM Native Image",
+    "questionFamily": "optimization",
+    "tags": [
+      "GraalVM",
+      "AOT compilation",
+      "Native Image",
+      "instant startup",
+      "memory reduction"
+    ],
+    "idealAnswer": "Spring Boot 3 supports ahead-of-time (AOT) compilation with GraalVM Native Image. It precomputes reflection and bean definitions at build time, generating standalone native binaries with sub-second startup times and minuscule memory footprint.",
+    "ideal_answer": "Spring Boot 3 supports ahead-of-time (AOT) compilation with GraalVM Native Image. It precomputes reflection and bean definitions at build time, generating standalone native binaries with sub-second startup times and minuscule memory footprint.",
+    "expected_concepts": [
+      "GraalVM",
+      "AOT compilation",
+      "Native Image",
+      "instant startup"
+    ],
+    "explanation": "Evaluates Spring Boot Modern Spring Boot and Spring Boot GraalVM Native Image comprehension."
   }
 ]

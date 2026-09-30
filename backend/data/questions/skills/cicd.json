@@ -1,0 +1,412 @@
+[
+  {
+    "id": "cicd_001",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the core concepts of Continuous Integration (CI), Continuous Delivery (CD), and Continuous Deployment.",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "CI vs CD vs Continuous Deployment",
+    "questionFamily": "comparison",
+    "tags": [
+      "Continuous Integration",
+      "Continuous Delivery",
+      "Continuous Deployment",
+      "automated testing",
+      "release pipeline"
+    ],
+    "idealAnswer": "Continuous Integration (CI): developers frequently merge code to main, triggering automated builds and tests. Continuous Delivery (CD): every passing build is automatically packaged and staged, ready for manual 1-click production release. Continuous Deployment: every passing build automatically deploys to production with zero human intervention.",
+    "ideal_answer": "Continuous Integration (CI): developers frequently merge code to main, triggering automated builds and tests. Continuous Delivery (CD): every passing build is automatically packaged and staged, ready for manual 1-click production release. Continuous Deployment: every passing build automatically deploys to production with zero human intervention.",
+    "expected_concepts": [
+      "Continuous Integration",
+      "Continuous Delivery",
+      "Continuous Deployment",
+      "automated testing"
+    ],
+    "explanation": "Evaluates CI/CD Core Concepts and CI vs CD vs Continuous Deployment comprehension."
+  },
+  {
+    "id": "cicd_002",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Pipeline-as-Code, and why is version-controlling pipeline definitions (Jenkinsfile, .gitlab-ci.yml) essential?",
+    "difficulty": "easy",
+    "topic": "Pipeline Architecture",
+    "concept": "Pipeline-as-Code & Version Control",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Pipeline-as-Code",
+      "Jenkinsfile",
+      ".gitlab-ci.yml",
+      "reproducible builds",
+      "version control"
+    ],
+    "idealAnswer": "Pipeline-as-Code stores build/test/deploy instructions in declarative configuration files within the Git repository. It enables peer review on pipeline changes, branch-specific pipeline testing, historical tracking, and reproducible CI environments.",
+    "ideal_answer": "Pipeline-as-Code stores build/test/deploy instructions in declarative configuration files within the Git repository. It enables peer review on pipeline changes, branch-specific pipeline testing, historical tracking, and reproducible CI environments.",
+    "expected_concepts": [
+      "Pipeline-as-Code",
+      "Jenkinsfile",
+      ".gitlab-ci.yml",
+      "reproducible builds"
+    ],
+    "explanation": "Evaluates CI/CD Pipeline Architecture and Pipeline-as-Code & Version Control comprehension."
+  },
+  {
+    "id": "cicd_003",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Testing Pyramids in CI/CD: Unit Tests, Integration Tests, End-to-End (E2E) Tests, and Smoke Tests.",
+    "difficulty": "medium",
+    "topic": "Testing Strategy",
+    "concept": "Testing Pyramid & CI Stages",
+    "questionFamily": "architecture",
+    "tags": [
+      "testing pyramid",
+      "unit tests",
+      "integration tests",
+      "E2E tests",
+      "smoke tests",
+      "fast feedback"
+    ],
+    "idealAnswer": "The Testing Pyramid guides test distribution: large base of fast, isolated Unit Tests (run first on every commit); middle layer of Integration Tests (API/DB contracts); small top layer of slow End-to-End Tests. Smoke tests run post-deployment to verify basic health.",
+    "ideal_answer": "The Testing Pyramid guides test distribution: large base of fast, isolated Unit Tests (run first on every commit); middle layer of Integration Tests (API/DB contracts); small top layer of slow End-to-End Tests. Smoke tests run post-deployment to verify basic health.",
+    "expected_concepts": [
+      "testing pyramid",
+      "unit tests",
+      "integration tests",
+      "E2E tests"
+    ],
+    "explanation": "Evaluates CI/CD Testing Strategy and Testing Pyramid & CI Stages comprehension."
+  },
+  {
+    "id": "cicd_004",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Artifact Repositories (Nexus, JFrog Artifactory), and why should CI build binaries once and promote across environments?",
+    "difficulty": "medium",
+    "topic": "Artifact Management",
+    "concept": "Build Once, Deploy Anywhere Pattern",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Artifactory",
+      "Nexus",
+      "immutable artifacts",
+      "build once deploy anywhere",
+      "Docker image"
+    ],
+    "idealAnswer": "The 'Build Once, Deploy Anywhere' principle dictates that CI should compile code and build Docker images/binaries exactly once. The immutable artifact is published to an artifact repository and promoted across dev, staging, and production environments, eliminating environment build variances.",
+    "ideal_answer": "The 'Build Once, Deploy Anywhere' principle dictates that CI should compile code and build Docker images/binaries exactly once. The immutable artifact is published to an artifact repository and promoted across dev, staging, and production environments, eliminating environment build variances.",
+    "expected_concepts": [
+      "Artifactory",
+      "Nexus",
+      "immutable artifacts",
+      "build once deploy anywhere"
+    ],
+    "explanation": "Evaluates CI/CD Artifact Management and Build Once, Deploy Anywhere Pattern comprehension."
+  },
+  {
+    "id": "cicd_005",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Deployment Strategies: Recreate, Rolling Update, Blue-Green Deployment, and Canary Deployment.",
+    "difficulty": "medium",
+    "topic": "Deployment Strategies",
+    "concept": "Deployment Strategies Comparison",
+    "questionFamily": "comparison",
+    "tags": [
+      "Blue-Green",
+      "Canary deployment",
+      "Rolling update",
+      "Recreate",
+      "rollback speed"
+    ],
+    "idealAnswer": "Recreate: shuts down old version before starting new (downtime). Rolling: incrementally updates pods/servers. Blue-Green: runs parallel identical environments and switches router traffic instantly (instant rollback). Canary: routes small percentage of traffic to new version, monitoring error rates before full rollout.",
+    "ideal_answer": "Recreate: shuts down old version before starting new (downtime). Rolling: incrementally updates pods/servers. Blue-Green: runs parallel identical environments and switches router traffic instantly (instant rollback). Canary: routes small percentage of traffic to new version, monitoring error rates before full rollout.",
+    "expected_concepts": [
+      "Blue-Green",
+      "Canary deployment",
+      "Rolling update",
+      "Recreate"
+    ],
+    "explanation": "Evaluates CI/CD Deployment Strategies and Deployment Strategies Comparison comprehension."
+  },
+  {
+    "id": "cicd_006",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is GitOps (ArgoCD / FluxCD), and how does declarative Git reconciliation manage Kubernetes cluster state?",
+    "difficulty": "hard",
+    "topic": "GitOps",
+    "concept": "GitOps & ArgoCD Reconciliation",
+    "questionFamily": "architecture",
+    "tags": [
+      "GitOps",
+      "ArgoCD",
+      "FluxCD",
+      "declarative state",
+      "reconciliation loop",
+      "drift detection"
+    ],
+    "idealAnswer": "GitOps uses Git repositories as the single source of truth for infrastructure and application state. An in-cluster GitOps operator (ArgoCD/Flux) continuously compares live cluster state against Git manifests, automatically synchronizing and correcting configuration drift.",
+    "ideal_answer": "GitOps uses Git repositories as the single source of truth for infrastructure and application state. An in-cluster GitOps operator (ArgoCD/Flux) continuously compares live cluster state against Git manifests, automatically synchronizing and correcting configuration drift.",
+    "expected_concepts": [
+      "GitOps",
+      "ArgoCD",
+      "FluxCD",
+      "declarative state"
+    ],
+    "explanation": "Evaluates CI/CD GitOps and GitOps & ArgoCD Reconciliation comprehension."
+  },
+  {
+    "id": "cicd_007",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Trunk-Based Development and how Feature Flags (LaunchDarkly / Unleash) decouple deployment from feature release.",
+    "difficulty": "medium",
+    "topic": "Development Patterns",
+    "concept": "Trunk-Based Development & Feature Flags",
+    "questionFamily": "best_practice",
+    "tags": [
+      "trunk-based development",
+      "feature flags",
+      "decoupling deployment",
+      "dark launching",
+      "A/B testing"
+    ],
+    "idealAnswer": "Trunk-Based Development involves merging small, frequent commits into main branch. Feature Flags wrap new features in conditional toggles, allowing incomplete code to be safely deployed to production (dark launching) and turned on dynamically without redeploying code.",
+    "ideal_answer": "Trunk-Based Development involves merging small, frequent commits into main branch. Feature Flags wrap new features in conditional toggles, allowing incomplete code to be safely deployed to production (dark launching) and turned on dynamically without redeploying code.",
+    "expected_concepts": [
+      "trunk-based development",
+      "feature flags",
+      "decoupling deployment",
+      "dark launching"
+    ],
+    "explanation": "Evaluates CI/CD Development Patterns and Trunk-Based Development & Feature Flags comprehension."
+  },
+  {
+    "id": "cicd_008",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Static Application Security Testing (SAST) vs Dynamic Application Security Testing (DAST) in DevSecOps pipelines?",
+    "difficulty": "medium",
+    "topic": "DevSecOps",
+    "concept": "SAST vs DAST Security Scans",
+    "questionFamily": "comparison",
+    "tags": [
+      "DevSecOps",
+      "SAST",
+      "DAST",
+      "SonarQube",
+      "OWASP ZAP",
+      "vulnerability scanning"
+    ],
+    "idealAnswer": "SAST (SonarQube, Snyk) analyzes source code statically at compile time for security flaws and code smells. DAST (OWASP ZAP) tests running applications externally from the outside, probing exposed HTTP endpoints for runtime vulnerabilities (SQLi, XSS, auth bypass).",
+    "ideal_answer": "SAST (SonarQube, Snyk) analyzes source code statically at compile time for security flaws and code smells. DAST (OWASP ZAP) tests running applications externally from the outside, probing exposed HTTP endpoints for runtime vulnerabilities (SQLi, XSS, auth bypass).",
+    "expected_concepts": [
+      "DevSecOps",
+      "SAST",
+      "DAST",
+      "SonarQube"
+    ],
+    "explanation": "Evaluates CI/CD DevSecOps and SAST vs DAST Security Scans comprehension."
+  },
+  {
+    "id": "cicd_009",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Software Supply Chain Security: Container Image Scanning (Trivy), SBOM (Software Bill of Materials), and Sigstore / Cosign signing.",
+    "difficulty": "hard",
+    "topic": "Supply Chain Security",
+    "concept": "Supply Chain Security (SBOM & Cosign)",
+    "questionFamily": "security",
+    "tags": [
+      "Trivy",
+      "SBOM",
+      "Cosign",
+      "Sigstore",
+      "supply chain security",
+      "SLSA"
+    ],
+    "idealAnswer": "Supply chain security protects against malicious dependencies. Trivy scans container images for known OS and package CVEs. SBOM generates an inventory of all constituent components (CycloneDX/SPDX). Cosign cryptographically signs container images, verifying signature before deployment.",
+    "ideal_answer": "Supply chain security protects against malicious dependencies. Trivy scans container images for known OS and package CVEs. SBOM generates an inventory of all constituent components (CycloneDX/SPDX). Cosign cryptographically signs container images, verifying signature before deployment.",
+    "expected_concepts": [
+      "Trivy",
+      "SBOM",
+      "Cosign",
+      "Sigstore"
+    ],
+    "explanation": "Evaluates CI/CD Supply Chain Security and Supply Chain Security (SBOM & Cosign) comprehension."
+  },
+  {
+    "id": "cicd_010",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you optimize CI/CD pipeline execution time (Parallelism, Caching, Test Splitting, Ephemeral Environments)?",
+    "difficulty": "medium",
+    "topic": "Optimization",
+    "concept": "CI Pipeline Speed Optimization",
+    "questionFamily": "optimization",
+    "tags": [
+      "pipeline optimization",
+      "parallelism",
+      "test splitting",
+      "caching dependencies",
+      "ephemeral runners"
+    ],
+    "idealAnswer": "Techniques: 1) Cache package manager dependencies across runs; 2) Split test suites across parallel runner nodes; 3) Use shallow Git clones (--depth 1); 4) Leverage Docker layer cache mounts; 5) Run independent build/lint jobs concurrently in parallel stages.",
+    "ideal_answer": "Techniques: 1) Cache package manager dependencies across runs; 2) Split test suites across parallel runner nodes; 3) Use shallow Git clones (--depth 1); 4) Leverage Docker layer cache mounts; 5) Run independent build/lint jobs concurrently in parallel stages.",
+    "expected_concepts": [
+      "pipeline optimization",
+      "parallelism",
+      "test splitting",
+      "caching dependencies"
+    ],
+    "explanation": "Evaluates CI/CD Optimization and CI Pipeline Speed Optimization comprehension."
+  },
+  {
+    "id": "cicd_011",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Automated Rollbacks in CI/CD, and how do health check signals, Prometheus metrics, and automated canary analysis trigger rollbacks?",
+    "difficulty": "medium",
+    "topic": "Resilience & Deployment",
+    "concept": "Automated Rollbacks & Canary Analysis",
+    "questionFamily": "automation",
+    "tags": [
+      "automated rollback",
+      "canary analysis",
+      "Kayenta",
+      "Prometheus alerts",
+      "health checks"
+    ],
+    "idealAnswer": "Continuous deployment systems monitor post-deployment health metrics (HTTP 5xx rate, latency p99). Automated canary analysis tools (Kayenta, Flagger) compare metrics between canary and baseline: if error thresholds are exceeded, the deployment automatically aborts and rolls back.",
+    "ideal_answer": "Continuous deployment systems monitor post-deployment health metrics (HTTP 5xx rate, latency p99). Automated canary analysis tools (Kayenta, Flagger) compare metrics between canary and baseline: if error thresholds are exceeded, the deployment automatically aborts and rolls back.",
+    "expected_concepts": [
+      "automated rollback",
+      "canary analysis",
+      "Kayenta",
+      "Prometheus alerts"
+    ],
+    "explanation": "Evaluates CI/CD Resilience & Deployment and Automated Rollbacks & Canary Analysis comprehension."
+  },
+  {
+    "id": "cicd_012",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Infrastructure as Code (IaC) pipelines using Terraform: terraform plan, terraform apply, remote state locking with S3 and DynamoDB.",
+    "difficulty": "medium",
+    "topic": "IaC & Terraform",
+    "concept": "Terraform IaC Pipeline & State Locking",
+    "questionFamily": "implementation",
+    "tags": [
+      "Terraform",
+      "terraform plan",
+      "terraform apply",
+      "state locking",
+      "DynamoDB",
+      "S3 backend"
+    ],
+    "idealAnswer": "IaC pipelines automate infrastructure provisioning. In CI: 'terraform plan' generates a speculative execution plan for PR review. On merge: 'terraform apply' applies changes. Remote state is stored in S3 with DynamoDB locking to prevent concurrent state corruption.",
+    "ideal_answer": "IaC pipelines automate infrastructure provisioning. In CI: 'terraform plan' generates a speculative execution plan for PR review. On merge: 'terraform apply' applies changes. Remote state is stored in S3 with DynamoDB locking to prevent concurrent state corruption.",
+    "expected_concepts": [
+      "Terraform",
+      "terraform plan",
+      "terraform apply",
+      "state locking"
+    ],
+    "explanation": "Evaluates CI/CD IaC & Terraform and Terraform IaC Pipeline & State Locking comprehension."
+  },
+  {
+    "id": "cicd_013",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Database Migration in CI/CD (Flyway, Liquibase), and how do Zero-Downtime Expand-Contract (Parallel Run) patterns work?",
+    "difficulty": "hard",
+    "topic": "Database CI/CD",
+    "concept": "Zero-Downtime Database Migrations (Expand-Contract)",
+    "questionFamily": "architecture",
+    "tags": [
+      "Flyway",
+      "Liquibase",
+      "expand-contract pattern",
+      "zero-downtime database",
+      "backward compatibility"
+    ],
+    "idealAnswer": "Direct destructive schema changes break running applications. The Expand-Contract pattern executes changes in phases: 1) Expand (add new nullable column without removing old); 2) Dual-write in code; 3) Migrate historical data; 4) Update code to read new column; 5) Contract (drop old column).",
+    "ideal_answer": "Direct destructive schema changes break running applications. The Expand-Contract pattern executes changes in phases: 1) Expand (add new nullable column without removing old); 2) Dual-write in code; 3) Migrate historical data; 4) Update code to read new column; 5) Contract (drop old column).",
+    "expected_concepts": [
+      "Flyway",
+      "Liquibase",
+      "expand-contract pattern",
+      "zero-downtime database"
+    ],
+    "explanation": "Evaluates CI/CD Database CI/CD and Zero-Downtime Database Migrations (Expand-Contract) comprehension."
+  },
+  {
+    "id": "cicd_014",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Ephemeral Environments (Preview Environments / PR Environments) in CI/CD and automated cleanup.",
+    "difficulty": "medium",
+    "topic": "Environment Management",
+    "concept": "Ephemeral Preview Environments",
+    "questionFamily": "architecture",
+    "tags": [
+      "ephemeral environments",
+      "preview environments",
+      "Kubernetes namespaces",
+      "PR preview",
+      "cost control"
+    ],
+    "idealAnswer": "When a PR is opened, CI automatically spins up an isolated, ephemeral preview environment (e.g. unique Kubernetes namespace or Cloud Run service) with seeded test data and generates a unique preview URL for testing, automatically tearing down when PR closes.",
+    "ideal_answer": "When a PR is opened, CI automatically spins up an isolated, ephemeral preview environment (e.g. unique Kubernetes namespace or Cloud Run service) with seeded test data and generates a unique preview URL for testing, automatically tearing down when PR closes.",
+    "expected_concepts": [
+      "ephemeral environments",
+      "preview environments",
+      "Kubernetes namespaces",
+      "PR preview"
+    ],
+    "explanation": "Evaluates CI/CD Environment Management and Ephemeral Preview Environments comprehension."
+  },
+  {
+    "id": "cicd_015",
+    "skill": "CI/CD",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Chaos Engineering in continuous deployment pipelines (Chaos Mesh, Gremlin, Chaos Monkey), and why is proactive fault injection valuable?",
+    "difficulty": "hard",
+    "topic": "Resilience & Chaos Engineering",
+    "concept": "Chaos Engineering & Fault Injection",
+    "questionFamily": "testing",
+    "tags": [
+      "Chaos Engineering",
+      "Chaos Monkey",
+      "fault injection",
+      "network latency injection",
+      "resilience"
+    ],
+    "idealAnswer": "Chaos Engineering deliberately injects controlled failures (killing pods, introducing network latency, dropping packets) into staging/production environments to proactively uncover weaknesses, validating that failovers and circuit breakers operate as expected.",
+    "ideal_answer": "Chaos Engineering deliberately injects controlled failures (killing pods, introducing network latency, dropping packets) into staging/production environments to proactively uncover weaknesses, validating that failovers and circuit breakers operate as expected.",
+    "expected_concepts": [
+      "Chaos Engineering",
+      "Chaos Monkey",
+      "fault injection",
+      "network latency injection"
+    ],
+    "explanation": "Evaluates CI/CD Resilience & Chaos Engineering and Chaos Engineering & Fault Injection comprehension."
+  }
+]

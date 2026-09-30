@@ -1,0 +1,421 @@
+[
+  {
+    "id": "llm_001",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the scaling laws in Large Language Models (Chinchilla Scaling Laws vs Kaplan Scaling Laws: compute, dataset size, parameters).",
+    "difficulty": "medium",
+    "topic": "LLM Scaling & Theory",
+    "concept": "Chinchilla Scaling Laws",
+    "questionFamily": "architecture",
+    "tags": [
+      "scaling laws",
+      "Chinchilla",
+      "Kaplan",
+      "compute-optimal",
+      "tokens vs parameters",
+      "FLOPs"
+    ],
+    "idealAnswer": "Kaplan laws favored scaling model parameters over tokens. DeepMind's Chinchilla laws showed that for compute-optimal training, model parameter count and training dataset tokens must scale equally (1:1 ratio, ~20 tokens per parameter).",
+    "ideal_answer": "Kaplan laws favored scaling model parameters over tokens. DeepMind's Chinchilla laws showed that for compute-optimal training, model parameter count and training dataset tokens must scale equally (1:1 ratio, ~20 tokens per parameter).",
+    "expected_concepts": [
+      "scaling laws",
+      "Chinchilla",
+      "Kaplan",
+      "compute-optimal"
+    ],
+    "explanation": "Evaluates LLMs LLM Scaling & Theory and Chinchilla Scaling Laws comprehension."
+  },
+  {
+    "id": "llm_002",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Causal Decoder-Only LLM Pre-training objectives and Next-Token Prediction with Cross-Entropy Loss.",
+    "difficulty": "easy",
+    "topic": "Pre-training",
+    "concept": "Next-Token Prediction & Pre-training",
+    "questionFamily": "architecture",
+    "tags": [
+      "next-token prediction",
+      "cross-entropy loss",
+      "autoregressive",
+      "pre-training",
+      "causal language model"
+    ],
+    "idealAnswer": "Decoder-only LLMs train autoregressively on trillion-token corpora to maximize the log-likelihood of the next token given preceding tokens: Loss = -sum(log P(w_t | w_1, ..., w_{t-1})). Cross-entropy loss trains the model's internal world representation.",
+    "ideal_answer": "Decoder-only LLMs train autoregressively on trillion-token corpora to maximize the log-likelihood of the next token given preceding tokens: Loss = -sum(log P(w_t | w_1, ..., w_{t-1})). Cross-entropy loss trains the model's internal world representation.",
+    "expected_concepts": [
+      "next-token prediction",
+      "cross-entropy loss",
+      "autoregressive",
+      "pre-training"
+    ],
+    "explanation": "Evaluates LLMs Pre-training and Next-Token Prediction & Pre-training comprehension."
+  },
+  {
+    "id": "llm_003",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Instruction Tuning (Supervised Fine-Tuning - SFT), and how does multi-turn conversational dataset formatting (ChatML / Llama-3 format) prepare base models?",
+    "difficulty": "easy",
+    "topic": "Post-Training",
+    "concept": "Supervised Fine-Tuning & ChatML",
+    "questionFamily": "implementation",
+    "tags": [
+      "SFT",
+      "instruction tuning",
+      "ChatML",
+      "system prompt",
+      "user role",
+      "assistant role"
+    ],
+    "idealAnswer": "Base pre-trained models act as document completers. Supervised Fine-Tuning (SFT) trains models on curated instruction-response pairs formatted with role delimiters (<|im_start|>system/user/assistant), teaching models to act as helpful conversational assistants.",
+    "ideal_answer": "Base pre-trained models act as document completers. Supervised Fine-Tuning (SFT) trains models on curated instruction-response pairs formatted with role delimiters (<|im_start|>system/user/assistant), teaching models to act as helpful conversational assistants.",
+    "expected_concepts": [
+      "SFT",
+      "instruction tuning",
+      "ChatML",
+      "system prompt"
+    ],
+    "explanation": "Evaluates LLMs Post-Training and Supervised Fine-Tuning & ChatML comprehension."
+  },
+  {
+    "id": "llm_004",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Grouped-Query Attention (GQA) and Multi-Query Attention (MQA) vs Standard Multi-Head Attention (MHA) for reducing KV Cache memory.",
+    "difficulty": "hard",
+    "topic": "LLM Architecture",
+    "concept": "Grouped-Query Attention (GQA)",
+    "questionFamily": "optimization",
+    "tags": [
+      "GQA",
+      "MQA",
+      "MHA",
+      "KV cache",
+      "memory bandwidth",
+      "Llama-3 architecture"
+    ],
+    "idealAnswer": "In Multi-Head Attention (MHA), every query head has a dedicated Key-Value head (large KV cache). Multi-Query Attention (MQA) shares a single KV head across all query heads. Grouped-Query Attention (GQA) groups query heads into clusters sharing a KV head (used in Llama-3/Mistral to reduce KV cache size by 8x).",
+    "ideal_answer": "In Multi-Head Attention (MHA), every query head has a dedicated Key-Value head (large KV cache). Multi-Query Attention (MQA) shares a single KV head across all query heads. Grouped-Query Attention (GQA) groups query heads into clusters sharing a KV head (used in Llama-3/Mistral to reduce KV cache size by 8x).",
+    "expected_concepts": [
+      "GQA",
+      "MQA",
+      "MHA",
+      "KV cache"
+    ],
+    "explanation": "Evaluates LLMs LLM Architecture and Grouped-Query Attention (GQA) comprehension."
+  },
+  {
+    "id": "llm_005",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Mixture of Experts (MoE - e.g. Mixtral 8x7B, DeepSeek-V2/V3), and how does the Router / Gating Network activate top-k experts conditionally?",
+    "difficulty": "hard",
+    "topic": "LLM Architecture",
+    "concept": "Mixture of Experts (MoE) & Router Gating",
+    "questionFamily": "architecture",
+    "tags": [
+      "Mixture of Experts",
+      "MoE",
+      "Mixtral",
+      "Sparse MoE",
+      "router network",
+      "top-2 gating"
+    ],
+    "idealAnswer": "Sparse MoE replaces standard feedforward layers with multiple independent 'Expert' networks. A lightweight Gating/Router network computes softmax probabilities to dynamically route each token to only top-K experts (e.g. 2 out of 8), providing massive parameter capacity with low active FLOP compute.",
+    "ideal_answer": "Sparse MoE replaces standard feedforward layers with multiple independent 'Expert' networks. A lightweight Gating/Router network computes softmax probabilities to dynamically route each token to only top-K experts (e.g. 2 out of 8), providing massive parameter capacity with low active FLOP compute.",
+    "expected_concepts": [
+      "Mixture of Experts",
+      "MoE",
+      "Mixtral",
+      "Sparse MoE"
+    ],
+    "explanation": "Evaluates LLMs LLM Architecture and Mixture of Experts (MoE) & Router Gating comprehension."
+  },
+  {
+    "id": "llm_006",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Rotary Position Embedding (RoPE) and Context Length Extension methods (YaRN, LongLoRA, Position Interpolation).",
+    "difficulty": "hard",
+    "topic": "Positional Embeddings",
+    "concept": "RoPE & Context Length Extension (YaRN)",
+    "questionFamily": "algorithm",
+    "tags": [
+      "RoPE",
+      "Rotary Position Embedding",
+      "YaRN",
+      "Position Interpolation",
+      "context length expansion"
+    ],
+    "idealAnswer": "RoPE multiplies queries and keys by rotational 2D rotation matrices in complex space. To extend context length beyond pre-trained limits without catastrophic degradation, Position Interpolation scales position indices down, while YaRN (Yet another RoPE extensioN) scales high and low frequency attention dimensions differently.",
+    "ideal_answer": "RoPE multiplies queries and keys by rotational 2D rotation matrices in complex space. To extend context length beyond pre-trained limits without catastrophic degradation, Position Interpolation scales position indices down, while YaRN (Yet another RoPE extensioN) scales high and low frequency attention dimensions differently.",
+    "expected_concepts": [
+      "RoPE",
+      "Rotary Position Embedding",
+      "YaRN",
+      "Position Interpolation"
+    ],
+    "explanation": "Evaluates LLMs Positional Embeddings and RoPE & Context Length Extension (YaRN) comprehension."
+  },
+  {
+    "id": "llm_007",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Speculative Decoding, and how does a small Draft Model accelerate inference latency of a large Target LLM?",
+    "difficulty": "hard",
+    "topic": "Inference Optimization",
+    "concept": "Speculative Decoding",
+    "questionFamily": "optimization",
+    "tags": [
+      "speculative decoding",
+      "draft model",
+      "target model",
+      "memory-bandwidth bound",
+      "lossless speedup"
+    ],
+    "idealAnswer": "LLM inference is memory-bandwidth bound. Speculative decoding runs a tiny fast Draft Model to generate K speculative draft tokens in parallel; the large Target Model verifies all K tokens in a single forward pass, accepting valid tokens and achieving 2x-3x lossless speedup.",
+    "ideal_answer": "LLM inference is memory-bandwidth bound. Speculative decoding runs a tiny fast Draft Model to generate K speculative draft tokens in parallel; the large Target Model verifies all K tokens in a single forward pass, accepting valid tokens and achieving 2x-3x lossless speedup.",
+    "expected_concepts": [
+      "speculative decoding",
+      "draft model",
+      "target model",
+      "memory-bandwidth bound"
+    ],
+    "explanation": "Evaluates LLMs Inference Optimization and Speculative Decoding comprehension."
+  },
+  {
+    "id": "llm_008",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Continuous Batching (vLLM / TGI) and PagedAttention for eliminating GPU memory fragmentation during LLM serving.",
+    "difficulty": "hard",
+    "topic": "Serving & Optimization",
+    "concept": "PagedAttention & Continuous Batching (vLLM)",
+    "questionFamily": "architecture",
+    "tags": [
+      "vLLM",
+      "PagedAttention",
+      "continuous batching",
+      "KV cache",
+      "memory fragmentation",
+      "throughput"
+    ],
+    "idealAnswer": "Static batching wastes VRAM on worst-case padding. Continuous batching processes requests at iteration-level granularity. PagedAttention (vLLM) manages KV cache memory like virtual memory pages in operating systems, eliminating internal memory fragmentation and boosting throughput by 4x.",
+    "ideal_answer": "Static batching wastes VRAM on worst-case padding. Continuous batching processes requests at iteration-level granularity. PagedAttention (vLLM) manages KV cache memory like virtual memory pages in operating systems, eliminating internal memory fragmentation and boosting throughput by 4x.",
+    "expected_concepts": [
+      "vLLM",
+      "PagedAttention",
+      "continuous batching",
+      "KV cache"
+    ],
+    "explanation": "Evaluates LLMs Serving & Optimization and PagedAttention & Continuous Batching (vLLM) comprehension."
+  },
+  {
+    "id": "llm_009",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Model Alignment: RLHF (Reinforcement Learning from Human Feedback), DPO (Direct Preference Optimization), and KTO (Kahneman-Tversky Optimization).",
+    "difficulty": "hard",
+    "topic": "Alignment & Safety",
+    "concept": "DPO vs KTO vs RLHF",
+    "questionFamily": "comparison",
+    "tags": [
+      "RLHF",
+      "DPO",
+      "KTO",
+      "model alignment",
+      "preference learning",
+      "reward model"
+    ],
+    "idealAnswer": "RLHF aligns models with human preferences via a reward model and PPO. DPO optimizes policy directly on pairwise winner-loser preferences without a reward model. KTO optimizes directly from binary signal (thumbs-up / thumbs-down) using prospect theory value functions.",
+    "ideal_answer": "RLHF aligns models with human preferences via a reward model and PPO. DPO optimizes policy directly on pairwise winner-loser preferences without a reward model. KTO optimizes directly from binary signal (thumbs-up / thumbs-down) using prospect theory value functions.",
+    "expected_concepts": [
+      "RLHF",
+      "DPO",
+      "KTO",
+      "model alignment"
+    ],
+    "explanation": "Evaluates LLMs Alignment & Safety and DPO vs KTO vs RLHF comprehension."
+  },
+  {
+    "id": "llm_010",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Hallucination in LLMs, what causes it (out-of-domain knowledge, sycophancy), and how is it mitigated (RAG, Chain-of-Verification, decoding constraints)?",
+    "difficulty": "medium",
+    "topic": "Reliability & Safety",
+    "concept": "LLM Hallucination Causes & Mitigation",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "hallucination",
+      "sycophancy",
+      "grounding",
+      "Chain-of-Verification",
+      "RAG",
+      "factual accuracy"
+    ],
+    "idealAnswer": "Hallucination occurs when an LLM generates syntactically fluent but factually incorrect outputs, caused by training data noise, statistical extrapolation, or sycophancy. Mitigated via RAG grounding, Chain-of-Verification (CoVe), citation prompts, and lower temperature decoding.",
+    "ideal_answer": "Hallucination occurs when an LLM generates syntactically fluent but factually incorrect outputs, caused by training data noise, statistical extrapolation, or sycophancy. Mitigated via RAG grounding, Chain-of-Verification (CoVe), citation prompts, and lower temperature decoding.",
+    "expected_concepts": [
+      "hallucination",
+      "sycophancy",
+      "grounding",
+      "Chain-of-Verification"
+    ],
+    "explanation": "Evaluates LLMs Reliability & Safety and LLM Hallucination Causes & Mitigation comprehension."
+  },
+  {
+    "id": "llm_011",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain LLM Quantization: Weight-Only (GPTQ, AWQ) vs Weight-and-Activation Quantization (SmoothQuant, FP8) for inference acceleration.",
+    "difficulty": "hard",
+    "topic": "Quantization",
+    "concept": "Weight-Only vs Weight-Activation Quantization",
+    "questionFamily": "optimization",
+    "tags": [
+      "GPTQ",
+      "AWQ",
+      "SmoothQuant",
+      "FP8",
+      "quantization",
+      "outlier activations"
+    ],
+    "idealAnswer": "Weight-Only quantization (AWQ, GPTQ) compresses weights to INT4 to save VRAM and memory bandwidth. Weight-and-Activation quantization (SmoothQuant, FP8) quantizes both weights and activations to INT8/FP8, accelerating compute on tensor cores by smoothing outlier activation channels.",
+    "ideal_answer": "Weight-Only quantization (AWQ, GPTQ) compresses weights to INT4 to save VRAM and memory bandwidth. Weight-and-Activation quantization (SmoothQuant, FP8) quantizes both weights and activations to INT8/FP8, accelerating compute on tensor cores by smoothing outlier activation channels.",
+    "expected_concepts": [
+      "GPTQ",
+      "AWQ",
+      "SmoothQuant",
+      "FP8"
+    ],
+    "explanation": "Evaluates LLMs Quantization and Weight-Only vs Weight-Activation Quantization comprehension."
+  },
+  {
+    "id": "llm_012",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Synthetic Data Generation for LLM training: Self-Instruct, Evol-Instruct, and AI Feedback (RLAIF).",
+    "difficulty": "medium",
+    "topic": "Data Engineering",
+    "concept": "Synthetic Data & Self-Instruct",
+    "questionFamily": "best_practice",
+    "tags": [
+      "synthetic data",
+      "Self-Instruct",
+      "Evol-Instruct",
+      "RLAIF",
+      "UltraFeedback",
+      "data curation"
+    ],
+    "idealAnswer": "Synthetic data leverages strong frontier LLMs (e.g. GPT-4) to generate diverse training datasets. Self-Instruct prompts models to brainstorm new instructions. Evol-Instruct iteratively complicates tasks (adding constraints, deep reasoning). RLAIF replaces human annotators with LLMs as judges.",
+    "ideal_answer": "Synthetic data leverages strong frontier LLMs (e.g. GPT-4) to generate diverse training datasets. Self-Instruct prompts models to brainstorm new instructions. Evol-Instruct iteratively complicates tasks (adding constraints, deep reasoning). RLAIF replaces human annotators with LLMs as judges.",
+    "expected_concepts": [
+      "synthetic data",
+      "Self-Instruct",
+      "Evol-Instruct",
+      "RLAIF"
+    ],
+    "explanation": "Evaluates LLMs Data Engineering and Synthetic Data & Self-Instruct comprehension."
+  },
+  {
+    "id": "llm_013",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Prompt Injection Attacks (Direct vs Indirect) and Jailbreaking techniques, and how do system delimiters and safety classifiers defend LLMs?",
+    "difficulty": "medium",
+    "topic": "Security",
+    "concept": "Prompt Injection & Jailbreak Defenses",
+    "questionFamily": "security",
+    "tags": [
+      "prompt injection",
+      "jailbreaking",
+      "Llama Guard",
+      "delimiters",
+      "adversarial attack",
+      "system prompt"
+    ],
+    "idealAnswer": "Direct injection uses adversarial prompts ('Ignore all previous instructions'). Indirect injection hides instructions in external retrieved text. Defenses: structural XML/Markdown delimiters, dual-LLM architectures (untrusted input parsed by a separate worker), and safety guardrail classifiers (Llama Guard).",
+    "ideal_answer": "Direct injection uses adversarial prompts ('Ignore all previous instructions'). Indirect injection hides instructions in external retrieved text. Defenses: structural XML/Markdown delimiters, dual-LLM architectures (untrusted input parsed by a separate worker), and safety guardrail classifiers (Llama Guard).",
+    "expected_concepts": [
+      "prompt injection",
+      "jailbreaking",
+      "Llama Guard",
+      "delimiters"
+    ],
+    "explanation": "Evaluates LLMs Security and Prompt Injection & Jailbreak Defenses comprehension."
+  },
+  {
+    "id": "llm_014",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain LLM Evaluation benchmarks: MMLU (Multitask Language Understanding), GSM8K (Math), HumanEval (Coding), and Chatbot Arena (Elo rating).",
+    "difficulty": "easy",
+    "topic": "Evaluation & Benchmarks",
+    "concept": "Standard LLM Benchmarks (MMLU, GSM8K, HumanEval)",
+    "questionFamily": "best_practice",
+    "tags": [
+      "MMLU",
+      "GSM8K",
+      "HumanEval",
+      "Chatbot Arena",
+      "LMSYS",
+      "Elo rating",
+      "contamination"
+    ],
+    "idealAnswer": "MMLU tests broad knowledge across 57 academic subjects. GSM8K evaluates multi-step grade school math reasoning. HumanEval evaluates Python code generation (pass@1). LMSYS Chatbot Arena computes human-voted Elo ratings across blinded head-to-head model battles.",
+    "ideal_answer": "MMLU tests broad knowledge across 57 academic subjects. GSM8K evaluates multi-step grade school math reasoning. HumanEval evaluates Python code generation (pass@1). LMSYS Chatbot Arena computes human-voted Elo ratings across blinded head-to-head model battles.",
+    "expected_concepts": [
+      "MMLU",
+      "GSM8K",
+      "HumanEval",
+      "Chatbot Arena"
+    ],
+    "explanation": "Evaluates LLMs Evaluation & Benchmarks and Standard LLM Benchmarks (MMLU, GSM8K, HumanEval) comprehension."
+  },
+  {
+    "id": "llm_015",
+    "skill": "LLMs",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Multi-Modal Large Language Models (MLLMs - GPT-4V, Llama-Vision, Gemini): Vision Encoders (CLIP / SigLIP) and Cross-Attention Projection.",
+    "difficulty": "hard",
+    "topic": "Multimodal AI",
+    "concept": "Multimodal LLM Architecture (Vision Encoders)",
+    "questionFamily": "architecture",
+    "tags": [
+      "MLLM",
+      "Vision-Language",
+      "CLIP",
+      "SigLIP",
+      "cross-attention",
+      "projector",
+      "image tokens"
+    ],
+    "idealAnswer": "MLLMs process image and text inputs together. A vision encoder (CLIP/SigLIP) encodes images into visual patch tokens. A cross-modal projection layer (MLP or Perceiver Resampler) aligns visual tokens into the LLM's text embedding space, allowing the LLM decoder to attend to visual and text tokens seamlessly.",
+    "ideal_answer": "MLLMs process image and text inputs together. A vision encoder (CLIP/SigLIP) encodes images into visual patch tokens. A cross-modal projection layer (MLP or Perceiver Resampler) aligns visual tokens into the LLM's text embedding space, allowing the LLM decoder to attend to visual and text tokens seamlessly.",
+    "expected_concepts": [
+      "MLLM",
+      "Vision-Language",
+      "CLIP",
+      "SigLIP"
+    ],
+    "explanation": "Evaluates LLMs Multimodal AI and Multimodal LLM Architecture (Vision Encoders) comprehension."
+  }
+]

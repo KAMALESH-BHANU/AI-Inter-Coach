@@ -1,0 +1,412 @@
+[
+  {
+    "id": "redis_001",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Redis in-memory architecture and single-threaded event loop (I/O multiplexing with epoll).",
+    "difficulty": "medium",
+    "topic": "Architecture",
+    "concept": "In-Memory Single-Threaded Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Redis",
+      "in-memory",
+      "single-threaded",
+      "epoll",
+      "I/O multiplexing"
+    ],
+    "idealAnswer": "Redis stores all data in RAM, achieving sub-millisecond latencies. It processes commands using a single-threaded event loop driven by I/O multiplexing (epoll/kqueue), eliminating thread context-switching and lock contention overhead.",
+    "ideal_answer": "Redis stores all data in RAM, achieving sub-millisecond latencies. It processes commands using a single-threaded event loop driven by I/O multiplexing (epoll/kqueue), eliminating thread context-switching and lock contention overhead.",
+    "expected_concepts": [
+      "Redis",
+      "in-memory",
+      "single-threaded",
+      "epoll"
+    ],
+    "explanation": "Evaluates Redis Architecture and In-Memory Single-Threaded Architecture comprehension."
+  },
+  {
+    "id": "redis_002",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain core Redis Data Structures: Strings, Lists, Sets, Sorted Sets (ZSet), Hashes, Bitmaps, and HyperLogLogs.",
+    "difficulty": "easy",
+    "topic": "Data Structures",
+    "concept": "Redis Data Structures Overview",
+    "questionFamily": "definition",
+    "tags": [
+      "Strings",
+      "Lists",
+      "Sets",
+      "Sorted Sets",
+      "Hashes",
+      "HyperLogLog"
+    ],
+    "idealAnswer": "Strings store text/binary up to 512MB. Lists are linked lists for FIFO/LIFO queues. Sets store unique unordered items. Sorted Sets (ZSets) score elements in a SkipList. Hashes store field-value maps. HyperLogLogs estimate distinct cardinality with 12KB memory.",
+    "ideal_answer": "Strings store text/binary up to 512MB. Lists are linked lists for FIFO/LIFO queues. Sets store unique unordered items. Sorted Sets (ZSets) score elements in a SkipList. Hashes store field-value maps. HyperLogLogs estimate distinct cardinality with 12KB memory.",
+    "expected_concepts": [
+      "Strings",
+      "Lists",
+      "Sets",
+      "Sorted Sets"
+    ],
+    "explanation": "Evaluates Redis Data Structures and Redis Data Structures Overview comprehension."
+  },
+  {
+    "id": "redis_003",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Sorted Set (ZSet) work internally in Redis using SkipList and Hash Table?",
+    "difficulty": "hard",
+    "topic": "Data Structures",
+    "concept": "ZSet & SkipList Internals",
+    "questionFamily": "architecture",
+    "tags": [
+      "ZSet",
+      "SkipList",
+      "ZRANGEBYSCORE",
+      "ZADD",
+      "O(log N)"
+    ],
+    "idealAnswer": "A Redis Sorted Set combines a Hash Table (for O(1) score lookup by member) and a SkipList (a probabilistic multi-level linked list for O(log N) range queries and score-ordered traversal).",
+    "ideal_answer": "A Redis Sorted Set combines a Hash Table (for O(1) score lookup by member) and a SkipList (a probabilistic multi-level linked list for O(log N) range queries and score-ordered traversal).",
+    "expected_concepts": [
+      "ZSet",
+      "SkipList",
+      "ZRANGEBYSCORE",
+      "ZADD"
+    ],
+    "explanation": "Evaluates Redis Data Structures and ZSet & SkipList Internals comprehension."
+  },
+  {
+    "id": "redis_004",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Redis Persistence mechanisms: RDB (Redis Database Snapshot) vs AOF (Append Only File).",
+    "difficulty": "medium",
+    "topic": "Persistence",
+    "concept": "RDB Snapshots vs AOF Persistence",
+    "questionFamily": "comparison",
+    "tags": [
+      "RDB",
+      "AOF",
+      "fork",
+      "fsync",
+      "bgsave",
+      "durability"
+    ],
+    "idealAnswer": "RDB takes periodic point-in-time binary snapshots via fork() and bgsave (fast recovery, potential data loss between intervals). AOF logs every write command sequentially (configurable fsync: everysec, always; higher durability, larger file size).",
+    "ideal_answer": "RDB takes periodic point-in-time binary snapshots via fork() and bgsave (fast recovery, potential data loss between intervals). AOF logs every write command sequentially (configurable fsync: everysec, always; higher durability, larger file size).",
+    "expected_concepts": [
+      "RDB",
+      "AOF",
+      "fork",
+      "fsync"
+    ],
+    "explanation": "Evaluates Redis Persistence and RDB Snapshots vs AOF Persistence comprehension."
+  },
+  {
+    "id": "redis_005",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Redis Memory Eviction Policies (noeviction, allkeys-lru, volatile-lru, allkeys-lfu, volatile-ttl) when maxmemory is reached.",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Memory Eviction Policies",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "maxmemory",
+      "LRU",
+      "LFU",
+      "volatile-lru",
+      "noeviction"
+    ],
+    "idealAnswer": "When RAM hits 'maxmemory', Redis evicts keys based on policy: 'noeviction' returns write errors; 'allkeys-lru' evicts least-recently-used keys; 'allkeys-lfu' evicts least-frequently-used keys; 'volatile-ttl' evicts expiring keys with shortest TTL.",
+    "ideal_answer": "When RAM hits 'maxmemory', Redis evicts keys based on policy: 'noeviction' returns write errors; 'allkeys-lru' evicts least-recently-used keys; 'allkeys-lfu' evicts least-frequently-used keys; 'volatile-ttl' evicts expiring keys with shortest TTL.",
+    "expected_concepts": [
+      "maxmemory",
+      "LRU",
+      "LFU",
+      "volatile-lru"
+    ],
+    "explanation": "Evaluates Redis Memory Management and Memory Eviction Policies comprehension."
+  },
+  {
+    "id": "redis_006",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Cache Stampede (Thundering Herd / Cache Avalanche / Cache Breakdown), and how do Mutex Locks or Probabilistic Early Expiration mitigate it?",
+    "difficulty": "hard",
+    "topic": "Caching Patterns",
+    "concept": "Cache Stampede & Mitigation",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "cache stampede",
+      "thundering herd",
+      "mutex lock",
+      "probabilistic early expiration",
+      "cache breakdown"
+    ],
+    "idealAnswer": "Cache stampede occurs when a popular cached key expires, causing thousands of concurrent requests to hit the backend database simultaneously. Mitigations include distributed mutex locking around cache misses or XFetch probabilistic early expiration.",
+    "ideal_answer": "Cache stampede occurs when a popular cached key expires, causing thousands of concurrent requests to hit the backend database simultaneously. Mitigations include distributed mutex locking around cache misses or XFetch probabilistic early expiration.",
+    "expected_concepts": [
+      "cache stampede",
+      "thundering herd",
+      "mutex lock",
+      "probabilistic early expiration"
+    ],
+    "explanation": "Evaluates Redis Caching Patterns and Cache Stampede & Mitigation comprehension."
+  },
+  {
+    "id": "redis_007",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Cache Penetration and Cache Avalanche in Redis, and how do Bloom Filters and Random TTLs prevent them?",
+    "difficulty": "medium",
+    "topic": "Caching Patterns",
+    "concept": "Cache Penetration vs Cache Avalanche",
+    "questionFamily": "security",
+    "tags": [
+      "cache penetration",
+      "cache avalanche",
+      "Bloom filter",
+      "random TTL",
+      "null caching"
+    ],
+    "idealAnswer": "Cache Penetration occurs when queries search non-existent keys, continuously bypassing the cache (solved with Bloom Filters or caching nulls). Cache Avalanche occurs when many keys expire at the exact same moment (solved by adding random jitter to TTLs).",
+    "ideal_answer": "Cache Penetration occurs when queries search non-existent keys, continuously bypassing the cache (solved with Bloom Filters or caching nulls). Cache Avalanche occurs when many keys expire at the exact same moment (solved by adding random jitter to TTLs).",
+    "expected_concepts": [
+      "cache penetration",
+      "cache avalanche",
+      "Bloom filter",
+      "random TTL"
+    ],
+    "explanation": "Evaluates Redis Caching Patterns and Cache Penetration vs Cache Avalanche comprehension."
+  },
+  {
+    "id": "redis_008",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement Distributed Locks in Redis using SET resource_name my_random_value NX PX 30000 and the Redlock algorithm?",
+    "difficulty": "hard",
+    "topic": "Distributed Locking",
+    "concept": "Redis Distributed Locks & Redlock",
+    "questionFamily": "design",
+    "tags": [
+      "distributed lock",
+      "SET NX PX",
+      "Redlock",
+      "Lua script",
+      "lock release"
+    ],
+    "idealAnswer": "A safe single-instance lock uses 'SET lock_key token NX PX 30000'. Releasing the lock requires an atomic Lua script verifying that the caller owns the token before deleting the key. Redlock coordinates locks across N independent Redis masters.",
+    "ideal_answer": "A safe single-instance lock uses 'SET lock_key token NX PX 30000'. Releasing the lock requires an atomic Lua script verifying that the caller owns the token before deleting the key. Redlock coordinates locks across N independent Redis masters.",
+    "expected_concepts": [
+      "distributed lock",
+      "SET NX PX",
+      "Redlock",
+      "Lua script"
+    ],
+    "explanation": "Evaluates Redis Distributed Locking and Redis Distributed Locks & Redlock comprehension."
+  },
+  {
+    "id": "redis_009",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Redis Transactions (MULTI, EXEC, DISCARD, WATCH) and why Redis transactions do not support traditional rollback on runtime command errors.",
+    "difficulty": "medium",
+    "topic": "Transactions",
+    "concept": "Redis MULTI/EXEC & Optimistic Locking",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "MULTI",
+      "EXEC",
+      "WATCH",
+      "DISCARD",
+      "optimistic locking",
+      "no rollback"
+    ],
+    "idealAnswer": "MULTI/EXEC queues commands and executes them sequentially without interruption. WATCH enables optimistic locking on keys. If a queued command fails at runtime (e.g. operating on wrong data type), Redis continues executing other commands without rolling back.",
+    "ideal_answer": "MULTI/EXEC queues commands and executes them sequentially without interruption. WATCH enables optimistic locking on keys. If a queued command fails at runtime (e.g. operating on wrong data type), Redis continues executing other commands without rolling back.",
+    "expected_concepts": [
+      "MULTI",
+      "EXEC",
+      "WATCH",
+      "DISCARD"
+    ],
+    "explanation": "Evaluates Redis Transactions and Redis MULTI/EXEC & Optimistic Locking comprehension."
+  },
+  {
+    "id": "redis_010",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Redis execute Lua Scripts atomically using EVAL / EVALSHA, and why are Lua scripts preferred over MULTI/EXEC?",
+    "difficulty": "medium",
+    "topic": "Scripting",
+    "concept": "Lua Scripting & Atomic Execution",
+    "questionFamily": "implementation",
+    "tags": [
+      "Lua",
+      "EVAL",
+      "EVALSHA",
+      "atomic execution",
+      "script cache"
+    ],
+    "idealAnswer": "Lua scripts execute atomically within Redis's single thread without intervening commands. Unlike MULTI/EXEC, Lua scripts can conditionally read keys and perform subsequent writes in the same atomic execution pass.",
+    "ideal_answer": "Lua scripts execute atomically within Redis's single thread without intervening commands. Unlike MULTI/EXEC, Lua scripts can conditionally read keys and perform subsequent writes in the same atomic execution pass.",
+    "expected_concepts": [
+      "Lua",
+      "EVAL",
+      "EVALSHA",
+      "atomic execution"
+    ],
+    "explanation": "Evaluates Redis Scripting and Lua Scripting & Atomic Execution comprehension."
+  },
+  {
+    "id": "redis_011",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Redis Pub/Sub (PUBLISH, SUBSCRIBE, PSUBSCRIBE) vs Redis Streams (XADD, XREADGROUP) for message queuing.",
+    "difficulty": "medium",
+    "topic": "Messaging",
+    "concept": "Pub/Sub vs Redis Streams",
+    "questionFamily": "comparison",
+    "tags": [
+      "Pub/Sub",
+      "Redis Streams",
+      "consumer groups",
+      "XADD",
+      "at-least-once"
+    ],
+    "idealAnswer": "Pub/Sub is fire-and-forget: messages are not persisted and offline subscribers lose messages. Redis Streams (XADD) persist append-only logs supporting consumer groups, acknowledgment (XACK), message replay, and at-least-once delivery.",
+    "ideal_answer": "Pub/Sub is fire-and-forget: messages are not persisted and offline subscribers lose messages. Redis Streams (XADD) persist append-only logs supporting consumer groups, acknowledgment (XACK), message replay, and at-least-once delivery.",
+    "expected_concepts": [
+      "Pub/Sub",
+      "Redis Streams",
+      "consumer groups",
+      "XADD"
+    ],
+    "explanation": "Evaluates Redis Messaging and Pub/Sub vs Redis Streams comprehension."
+  },
+  {
+    "id": "redis_012",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Redis Sentinel architecture for High Availability (Monitoring, Notification, Automatic Failover, Configuration Provider).",
+    "difficulty": "medium",
+    "topic": "High Availability",
+    "concept": "Redis Sentinel & Failover",
+    "questionFamily": "architecture",
+    "tags": [
+      "Redis Sentinel",
+      "quorum",
+      "automatic failover",
+      "monitoring",
+      "heartbeat"
+    ],
+    "idealAnswer": "Redis Sentinel monitors primary and replica instances. When a quorum of Sentinels agree a primary is unreachable (ODOWN), Sentinel promotes a replica to primary, reconfigures remaining replicas, and notifies application clients of the new primary address.",
+    "ideal_answer": "Redis Sentinel monitors primary and replica instances. When a quorum of Sentinels agree a primary is unreachable (ODOWN), Sentinel promotes a replica to primary, reconfigures remaining replicas, and notifies application clients of the new primary address.",
+    "expected_concepts": [
+      "Redis Sentinel",
+      "quorum",
+      "automatic failover",
+      "monitoring"
+    ],
+    "explanation": "Evaluates Redis High Availability and Redis Sentinel & Failover comprehension."
+  },
+  {
+    "id": "redis_013",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Redis Cluster architecture: 16384 Hash Slots, CRC16 hashing, and MOVED / ASK redirection.",
+    "difficulty": "hard",
+    "topic": "Clustering & Scaling",
+    "concept": "Redis Cluster & 16384 Hash Slots",
+    "questionFamily": "architecture",
+    "tags": [
+      "Redis Cluster",
+      "hash slots",
+      "CRC16",
+      "MOVED redirection",
+      "ASK redirection",
+      "sharding"
+    ],
+    "idealAnswer": "Redis Cluster partitions data across 16384 hash slots using CRC16(key) mod 16384. Master nodes own slot ranges. If a client targets a key on the wrong node, the node responds with a MOVED or ASK redirection error pointing to the correct node.",
+    "ideal_answer": "Redis Cluster partitions data across 16384 hash slots using CRC16(key) mod 16384. Master nodes own slot ranges. If a client targets a key on the wrong node, the node responds with a MOVED or ASK redirection error pointing to the correct node.",
+    "expected_concepts": [
+      "Redis Cluster",
+      "hash slots",
+      "CRC16",
+      "MOVED redirection"
+    ],
+    "explanation": "Evaluates Redis Clustering & Scaling and Redis Cluster & 16384 Hash Slots comprehension."
+  },
+  {
+    "id": "redis_014",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Redis Pipelining and Multi-Key operations (MGET, MSET), and how do they reduce network round-trip time (RTT)?",
+    "difficulty": "easy",
+    "topic": "Performance",
+    "concept": "Pipelining & Batch Commands",
+    "questionFamily": "optimization",
+    "tags": [
+      "pipelining",
+      "RTT",
+      "round-trip time",
+      "MGET",
+      "network latency"
+    ],
+    "idealAnswer": "Standard Redis operations wait for a response per command. Pipelining allows clients to send multiple commands in batch over a single TCP socket without waiting for individual replies, drastically reducing round-trip network latency.",
+    "ideal_answer": "Standard Redis operations wait for a response per command. Pipelining allows clients to send multiple commands in batch over a single TCP socket without waiting for individual replies, drastically reducing round-trip network latency.",
+    "expected_concepts": [
+      "pipelining",
+      "RTT",
+      "round-trip time",
+      "MGET"
+    ],
+    "explanation": "Evaluates Redis Performance and Pipelining & Batch Commands comprehension."
+  },
+  {
+    "id": "redis_015",
+    "skill": "Redis",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Redis Bitmaps and Bitfields for tracking daily active user retention and millions of boolean flags.",
+    "difficulty": "easy",
+    "topic": "Data Structures",
+    "concept": "Bitmaps & Bitfields",
+    "questionFamily": "optimization",
+    "tags": [
+      "Bitmaps",
+      "SETBIT",
+      "GETBIT",
+      "BITCOUNT",
+      "BITOP",
+      "user retention"
+    ],
+    "idealAnswer": "Redis Bitmaps treat String values as arrays of bits. Using SETBIT, GETBIT, and BITCOUNT, an application can track active status for 100 million users daily using only ~12MB of RAM, performing fast bitwise union/intersection operations (BITOP).",
+    "ideal_answer": "Redis Bitmaps treat String values as arrays of bits. Using SETBIT, GETBIT, and BITCOUNT, an application can track active status for 100 million users daily using only ~12MB of RAM, performing fast bitwise union/intersection operations (BITOP).",
+    "expected_concepts": [
+      "Bitmaps",
+      "SETBIT",
+      "GETBIT",
+      "BITCOUNT"
+    ],
+    "explanation": "Evaluates Redis Data Structures and Bitmaps & Bitfields comprehension."
+  }
+]

@@ -1,44 +1,404 @@
 [
   {
-    "id": "TAILWIND_CSS_001",
+    "id": "tailwind_001",
     "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the utility-first CSS methodology of Tailwind CSS and its advantages over traditional semantic class names.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Tailwind CSS in modern software engineering?",
-    "expected_concepts": [
-      "Tailwind CSS fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Core Concepts",
+    "concept": "Utility-First Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "utility-first",
+      "Tailwind CSS",
+      "maintainability",
+      "CSS bloat"
     ],
-    "ideal_answer": "Tailwind CSS is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Tailwind CSS."
+    "idealAnswer": "Utility-first CSS uses single-purpose utility classes (e.g., flex, pt-4, text-center) directly in markup. It prevents CSS stylesheet bloat as apps grow, eliminates naming fatigue, and keeps styles co-located with component HTML.",
+    "ideal_answer": "Utility-first CSS uses single-purpose utility classes (e.g., flex, pt-4, text-center) directly in markup. It prevents CSS stylesheet bloat as apps grow, eliminates naming fatigue, and keeps styles co-located with component HTML.",
+    "expected_concepts": [
+      "utility-first",
+      "Tailwind CSS",
+      "maintainability",
+      "CSS bloat"
+    ],
+    "explanation": "Evaluates Tailwind CSS Core Concepts and Utility-First Architecture comprehension."
   },
   {
-    "id": "TAILWIND_CSS_002",
+    "id": "tailwind_002",
     "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Tailwind CSS Just-in-Time (JIT) compiler work, and what are arbitrary values (e.g. top-[117px])?",
+    "difficulty": "easy",
+    "topic": "Compilation",
+    "concept": "JIT Compiler & Arbitrary Values",
+    "questionFamily": "optimization",
+    "tags": [
+      "JIT compiler",
+      "arbitrary values",
+      "purge",
+      "build time",
+      "bundle size"
+    ],
+    "idealAnswer": "The JIT compiler scans source files in real-time and generates only the exact CSS utility classes used in markup on-demand. It enables arbitrary values (w-[350px], bg-[#1da1f2]) and keeps production CSS bundles tiny (~10KB).",
+    "ideal_answer": "The JIT compiler scans source files in real-time and generates only the exact CSS utility classes used in markup on-demand. It enables arbitrary values (w-[350px], bg-[#1da1f2]) and keeps production CSS bundles tiny (~10KB).",
+    "expected_concepts": [
+      "JIT compiler",
+      "arbitrary values",
+      "purge",
+      "build time"
+    ],
+    "explanation": "Evaluates Tailwind CSS Compilation and JIT Compiler & Arbitrary Values comprehension."
+  },
+  {
+    "id": "tailwind_003",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Responsive Design Breakpoint prefixes (sm:, md:, lg:, xl:, 2xl:) work in Tailwind CSS (Mobile-First approach)?",
+    "difficulty": "easy",
+    "topic": "Responsive Design",
+    "concept": "Responsive Modifiers",
+    "questionFamily": "implementation",
+    "tags": [
+      "responsive",
+      "breakpoints",
+      "mobile first",
+      "md:flex",
+      "media queries"
+    ],
+    "idealAnswer": "Tailwind uses mobile-first responsive modifiers. An un-prefixed class applies across all screens; prefixed classes (sm: >=640px, md: >=768px, lg: >=1024px) apply via min-width media queries at and above their breakpoint.",
+    "ideal_answer": "Tailwind uses mobile-first responsive modifiers. An un-prefixed class applies across all screens; prefixed classes (sm: >=640px, md: >=768px, lg: >=1024px) apply via min-width media queries at and above their breakpoint.",
+    "expected_concepts": [
+      "responsive",
+      "breakpoints",
+      "mobile first",
+      "md:flex"
+    ],
+    "explanation": "Evaluates Tailwind CSS Responsive Design and Responsive Modifiers comprehension."
+  },
+  {
+    "id": "tailwind_004",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain state variant modifiers in Tailwind CSS: hover:, focus:, active:, disabled:, and group-hover:.",
+    "difficulty": "easy",
+    "topic": "Modifiers",
+    "concept": "State Modifiers & Group Hover",
+    "questionFamily": "implementation",
+    "tags": [
+      "hover:",
+      "focus:",
+      "group-hover",
+      "peer",
+      "state variants"
+    ],
+    "idealAnswer": "State variants apply styles during specific states. 'hover:bg-blue-600' styles hover states. 'group' on a parent with 'group-hover:text-white' on children styles child elements when the parent container is hovered.",
+    "ideal_answer": "State variants apply styles during specific states. 'hover:bg-blue-600' styles hover states. 'group' on a parent with 'group-hover:text-white' on children styles child elements when the parent container is hovered.",
+    "expected_concepts": [
+      "hover:",
+      "focus:",
+      "group-hover",
+      "peer"
+    ],
+    "explanation": "Evaluates Tailwind CSS Modifiers and State Modifiers & Group Hover comprehension."
+  },
+  {
+    "id": "tailwind_005",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does the 'peer' and peer-* modifier work in Tailwind CSS for styling sibling elements?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Tailwind CSS in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Modifiers",
+    "concept": "Peer Sibling Modifiers",
+    "questionFamily": "implementation",
+    "tags": [
+      "peer",
+      "sibling selector",
+      "form validation",
+      "peer-checked",
+      "peer-focus"
     ],
-    "ideal_answer": "Common challenges with Tailwind CSS include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Tailwind CSS."
+    "idealAnswer": "Adding the 'peer' class to an input element allows sibling elements marked with 'peer-focus:text-blue-500' or 'peer-invalid:block' to style themselves conditionally based on the preceding sibling's state.",
+    "ideal_answer": "Adding the 'peer' class to an input element allows sibling elements marked with 'peer-focus:text-blue-500' or 'peer-invalid:block' to style themselves conditionally based on the preceding sibling's state.",
+    "expected_concepts": [
+      "peer",
+      "sibling selector",
+      "form validation",
+      "peer-checked"
+    ],
+    "explanation": "Evaluates Tailwind CSS Modifiers and Peer Sibling Modifiers comprehension."
   },
   {
-    "id": "TAILWIND_CSS_003",
+    "id": "tailwind_006",
     "skill": "Tailwind CSS",
-    "difficulty": "hard",
-    "question": "How does Tailwind CSS handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the purpose of tailwind.config.js, and how do you customize the theme (colors, fonts, spacing, extend)?",
+    "difficulty": "easy",
+    "topic": "Configuration",
+    "concept": "tailwind.config.js & Theme Extension",
+    "questionFamily": "design",
+    "tags": [
+      "tailwind.config.js",
+      "theme",
+      "extend",
+      "custom colors",
+      "plugins"
     ],
-    "ideal_answer": "Tailwind CSS handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Tailwind CSS."
+    "idealAnswer": "tailwind.config.js configures file scanning paths (content) and design tokens. Adding properties inside 'theme.extend' adds new custom values (colors, spacing, fonts) without overriding Tailwind's default palette.",
+    "ideal_answer": "tailwind.config.js configures file scanning paths (content) and design tokens. Adding properties inside 'theme.extend' adds new custom values (colors, spacing, fonts) without overriding Tailwind's default palette.",
+    "expected_concepts": [
+      "tailwind.config.js",
+      "theme",
+      "extend",
+      "custom colors"
+    ],
+    "explanation": "Evaluates Tailwind CSS Configuration and tailwind.config.js & Theme Extension comprehension."
+  },
+  {
+    "id": "tailwind_007",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dark Mode in Tailwind CSS: 'media' strategy vs 'class' strategy (dark: modifier).",
+    "difficulty": "easy",
+    "topic": "Theming",
+    "concept": "Dark Mode Strategies",
+    "questionFamily": "implementation",
+    "tags": [
+      "dark mode",
+      "dark:",
+      "class strategy",
+      "prefers-color-scheme",
+      "theme switching"
+    ],
+    "idealAnswer": "The 'media' strategy uses the OS prefers-color-scheme setting. The 'class' strategy ('darkMode: class') applies dark styles (e.g. 'dark:bg-slate-900') whenever a parent element (typically <html>) has the 'dark' CSS class.",
+    "ideal_answer": "The 'media' strategy uses the OS prefers-color-scheme setting. The 'class' strategy ('darkMode: class') applies dark styles (e.g. 'dark:bg-slate-900') whenever a parent element (typically <html>) has the 'dark' CSS class.",
+    "expected_concepts": [
+      "dark mode",
+      "dark:",
+      "class strategy",
+      "prefers-color-scheme"
+    ],
+    "explanation": "Evaluates Tailwind CSS Theming and Dark Mode Strategies comprehension."
+  },
+  {
+    "id": "tailwind_008",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the '@apply' directive in Tailwind CSS, and why should it be used sparingly?",
+    "difficulty": "medium",
+    "topic": "Directives",
+    "concept": "@apply Directive & Best Practices",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "@apply",
+      "custom CSS",
+      "reusability",
+      "CSS maintenance"
+    ],
+    "idealAnswer": "@apply inlines Tailwind utility styles into custom CSS classes. While useful for extracting recurring third-party HTML patterns, overusing @apply recreates traditional semantic CSS issues and bloats the final CSS bundle; component extraction in JSX/Vue is preferred.",
+    "ideal_answer": "@apply inlines Tailwind utility styles into custom CSS classes. While useful for extracting recurring third-party HTML patterns, overusing @apply recreates traditional semantic CSS issues and bloats the final CSS bundle; component extraction in JSX/Vue is preferred.",
+    "expected_concepts": [
+      "@apply",
+      "custom CSS",
+      "reusability",
+      "CSS maintenance"
+    ],
+    "explanation": "Evaluates Tailwind CSS Directives and @apply Directive & Best Practices comprehension."
+  },
+  {
+    "id": "tailwind_009",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you handle dynamic class names in Tailwind CSS, and why does string interpolation (e.g. bg-${color}-500) fail with Purge/JIT?",
+    "difficulty": "medium",
+    "topic": "JIT & Dynamic Classes",
+    "concept": "Dynamic Class Names & Purging",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "dynamic classes",
+      "string interpolation",
+      "JIT scanner",
+      "safelist",
+      "clsx"
+    ],
+    "idealAnswer": "Tailwind's scanner extracts complete unbroken class strings via regex. Dynamic string concatenation ('bg-' + color + '-500') breaks regex scanning so the class is not generated. Use full complete class mappings (e.g. { red: 'bg-red-500' }) or safelist.",
+    "ideal_answer": "Tailwind's scanner extracts complete unbroken class strings via regex. Dynamic string concatenation ('bg-' + color + '-500') breaks regex scanning so the class is not generated. Use full complete class mappings (e.g. { red: 'bg-red-500' }) or safelist.",
+    "expected_concepts": [
+      "dynamic classes",
+      "string interpolation",
+      "JIT scanner",
+      "safelist"
+    ],
+    "explanation": "Evaluates Tailwind CSS JIT & Dynamic Classes and Dynamic Class Names & Purging comprehension."
+  },
+  {
+    "id": "tailwind_010",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Tailwind CSS Plugins (official plugins like @tailwindcss/typography, @tailwindcss/forms) and custom plugins?",
+    "difficulty": "medium",
+    "topic": "Ecosystem",
+    "concept": "Plugins & Typography",
+    "questionFamily": "architecture",
+    "tags": [
+      "plugins",
+      "typography",
+      "forms",
+      "prose",
+      "custom utilities"
+    ],
+    "idealAnswer": "Tailwind plugins extend Tailwind with new utilities, components, or base styles. Official plugins like Typography (@tailwindcss/typography) provide 'prose' classes to beautifully style markdown/rich HTML text.",
+    "ideal_answer": "Tailwind plugins extend Tailwind with new utilities, components, or base styles. Official plugins like Typography (@tailwindcss/typography) provide 'prose' classes to beautifully style markdown/rich HTML text.",
+    "expected_concepts": [
+      "plugins",
+      "typography",
+      "forms",
+      "prose"
+    ],
+    "explanation": "Evaluates Tailwind CSS Ecosystem and Plugins & Typography comprehension."
+  },
+  {
+    "id": "tailwind_011",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you create Flexbox and CSS Grid layouts in Tailwind CSS (grid-cols-*, col-span-*, flex, justify-*, items-*)?",
+    "difficulty": "easy",
+    "topic": "Layout",
+    "concept": "Flexbox & Grid Utilities",
+    "questionFamily": "implementation",
+    "tags": [
+      "flex",
+      "grid",
+      "grid-cols",
+      "gap",
+      "justify-between",
+      "items-center"
+    ],
+    "idealAnswer": "Tailwind maps CSS layout models directly to classes: 'flex justify-between items-center' creates a centered flex container; 'grid grid-cols-3 gap-4' creates a 3-column grid with gap spacing.",
+    "ideal_answer": "Tailwind maps CSS layout models directly to classes: 'flex justify-between items-center' creates a centered flex container; 'grid grid-cols-3 gap-4' creates a 3-column grid with gap spacing.",
+    "expected_concepts": [
+      "flex",
+      "grid",
+      "grid-cols",
+      "gap"
+    ],
+    "explanation": "Evaluates Tailwind CSS Layout and Flexbox & Grid Utilities comprehension."
+  },
+  {
+    "id": "tailwind_012",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Container Queries in Tailwind CSS (@container and @[size]: modifiers)?",
+    "difficulty": "medium",
+    "topic": "Responsive Design",
+    "concept": "Container Queries in Tailwind",
+    "questionFamily": "implementation",
+    "tags": [
+      "container queries",
+      "@container",
+      "@md:",
+      "component-driven responsive"
+    ],
+    "idealAnswer": "Container queries style child elements based on the width of their immediate parent container rather than the global browser viewport, using '@container' on the parent and '@md:grid-cols-2' on children.",
+    "ideal_answer": "Container queries style child elements based on the width of their immediate parent container rather than the global browser viewport, using '@container' on the parent and '@md:grid-cols-2' on children.",
+    "expected_concepts": [
+      "container queries",
+      "@container",
+      "@md:",
+      "component-driven responsive"
+    ],
+    "explanation": "Evaluates Tailwind CSS Responsive Design and Container Queries in Tailwind comprehension."
+  },
+  {
+    "id": "tailwind_013",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain transitions, transforms, and animations in Tailwind (transition-all, duration-*, ease-*, scale-*, animate-spin).",
+    "difficulty": "easy",
+    "topic": "Animations",
+    "concept": "Transitions & Transforms",
+    "questionFamily": "implementation",
+    "tags": [
+      "transition",
+      "duration",
+      "transform",
+      "hover:scale-105",
+      "animate-pulse"
+    ],
+    "idealAnswer": "Tailwind provides classes for smooth CSS animations: 'transition duration-300 ease-in-out' handles timing; 'hover:scale-105 -rotate-2' applies 2D/3D transforms; 'animate-spin' and 'animate-pulse' apply keyframe animations.",
+    "ideal_answer": "Tailwind provides classes for smooth CSS animations: 'transition duration-300 ease-in-out' handles timing; 'hover:scale-105 -rotate-2' applies 2D/3D transforms; 'animate-spin' and 'animate-pulse' apply keyframe animations.",
+    "expected_concepts": [
+      "transition",
+      "duration",
+      "transform",
+      "hover:scale-105"
+    ],
+    "explanation": "Evaluates Tailwind CSS Animations and Transitions & Transforms comprehension."
+  },
+  {
+    "id": "tailwind_014",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Tailwind CSS v4 differ from v3 with CSS-first configuration and lightning-fast Oxide engine?",
+    "difficulty": "hard",
+    "topic": "Modern Tailwind",
+    "concept": "Tailwind v4 CSS-First Engine",
+    "questionFamily": "architecture",
+    "tags": [
+      "Tailwind v4",
+      "Oxide engine",
+      "CSS-first configuration",
+      "@theme directive"
+    ],
+    "idealAnswer": "Tailwind v4 features a ground-up rewrite in Rust (Oxide engine), replacing tailwind.config.js with CSS-native '@theme' directives directly in stylesheet files and achieving up to 10x faster builds without PostCSS.",
+    "ideal_answer": "Tailwind v4 features a ground-up rewrite in Rust (Oxide engine), replacing tailwind.config.js with CSS-native '@theme' directives directly in stylesheet files and achieving up to 10x faster builds without PostCSS.",
+    "expected_concepts": [
+      "Tailwind v4",
+      "Oxide engine",
+      "CSS-first configuration",
+      "@theme directive"
+    ],
+    "explanation": "Evaluates Tailwind CSS Modern Tailwind and Tailwind v4 CSS-First Engine comprehension."
+  },
+  {
+    "id": "tailwind_015",
+    "skill": "Tailwind CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you integrate Tailwind CSS with utility libraries like clsx and tailwind-merge (cn helper function)?",
+    "difficulty": "medium",
+    "topic": "Tooling & Integration",
+    "concept": "tailwind-merge & clsx (cn utility)",
+    "questionFamily": "best_practice",
+    "tags": [
+      "tailwind-merge",
+      "clsx",
+      "cn helper",
+      "class collision",
+      "component library"
+    ],
+    "idealAnswer": "Combining 'clsx' (for conditional class toggling) with 'tailwind-merge' (which intelligently resolves conflicting Tailwind utility classes where later props override earlier defaults) forms the standard 'cn()' utility used in component libraries like shadcn/ui.",
+    "ideal_answer": "Combining 'clsx' (for conditional class toggling) with 'tailwind-merge' (which intelligently resolves conflicting Tailwind utility classes where later props override earlier defaults) forms the standard 'cn()' utility used in component libraries like shadcn/ui.",
+    "expected_concepts": [
+      "tailwind-merge",
+      "clsx",
+      "cn helper",
+      "class collision"
+    ],
+    "explanation": "Evaluates Tailwind CSS Tooling & Integration and tailwind-merge & clsx (cn utility) comprehension."
   }
 ]

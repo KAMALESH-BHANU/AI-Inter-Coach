@@ -1,44 +1,407 @@
 [
   {
-    "id": "GIT_001",
+    "id": "git_001",
     "skill": "Git",
-    "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Git in modern software engineering?",
-    "expected_concepts": [
-      "Git fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
-    ],
-    "ideal_answer": "Git is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Git."
-  },
-  {
-    "id": "GIT_002",
-    "skill": "Git",
-    "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Git in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
-    ],
-    "ideal_answer": "Common challenges with Git include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Git."
-  },
-  {
-    "id": "GIT_003",
-    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Git internal object model: Blobs, Trees, Commits, and Annotated Tags in the .git/objects database.",
     "difficulty": "hard",
-    "question": "How does Git handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "topic": "Git Internals",
+    "concept": "Git Object Model (Blob, Tree, Commit, Tag)",
+    "questionFamily": "architecture",
+    "tags": [
+      "Git internals",
+      "Blob",
+      "Tree",
+      "Commit",
+      "SHA-1",
+      "directed acyclic graph"
     ],
-    "ideal_answer": "Git handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Git."
+    "idealAnswer": "Git is a content-addressable storage filesystem. Blobs store raw file contents. Trees represent directories linking filenames to blob/tree SHA-1 hashes. Commits reference top-level trees with author metadata, timestamp, and parent commit hashes forming a DAG. Tags point immutably to commits.",
+    "ideal_answer": "Git is a content-addressable storage filesystem. Blobs store raw file contents. Trees represent directories linking filenames to blob/tree SHA-1 hashes. Commits reference top-level trees with author metadata, timestamp, and parent commit hashes forming a DAG. Tags point immutably to commits.",
+    "expected_concepts": [
+      "Git internals",
+      "Blob",
+      "Tree",
+      "Commit"
+    ],
+    "explanation": "Evaluates Git Git Internals and Git Object Model (Blob, Tree, Commit, Tag) comprehension."
+  },
+  {
+    "id": "git_002",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Three Trees of Git: Working Directory, Staging Area (Index), and Git Repository (HEAD).",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "Working Directory, Staging Area, and HEAD",
+    "questionFamily": "definition",
+    "tags": [
+      "working directory",
+      "staging area",
+      "index",
+      "HEAD",
+      "git add",
+      "git commit"
+    ],
+    "idealAnswer": "The Working Directory is your local file checkout. The Staging Area (Index) is a binary file (.git/index) preparing the snapshot for the next commit (populated via git add). The Repository (HEAD) points to the current active commit snapshot.",
+    "ideal_answer": "The Working Directory is your local file checkout. The Staging Area (Index) is a binary file (.git/index) preparing the snapshot for the next commit (populated via git add). The Repository (HEAD) points to the current active commit snapshot.",
+    "expected_concepts": [
+      "working directory",
+      "staging area",
+      "index",
+      "HEAD"
+    ],
+    "explanation": "Evaluates Git Core Concepts and Working Directory, Staging Area, and HEAD comprehension."
+  },
+  {
+    "id": "git_003",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between git merge and git rebase, and what are the tradeoffs (linear history vs preserved context)?",
+    "difficulty": "medium",
+    "topic": "Branching & Merging",
+    "concept": "Git Merge vs Git Rebase",
+    "questionFamily": "comparison",
+    "tags": [
+      "git merge",
+      "git rebase",
+      "linear history",
+      "merge commit",
+      "fast-forward"
+    ],
+    "idealAnswer": "git merge combines branches with a dedicated merge commit, preserving historical chronology. git rebase replays your branch commits on top of the target base branch, creating a clean linear commit history without merge commits (golden rule: never rebase public shared branches).",
+    "ideal_answer": "git merge combines branches with a dedicated merge commit, preserving historical chronology. git rebase replays your branch commits on top of the target base branch, creating a clean linear commit history without merge commits (golden rule: never rebase public shared branches).",
+    "expected_concepts": [
+      "git merge",
+      "git rebase",
+      "linear history",
+      "merge commit"
+    ],
+    "explanation": "Evaluates Git Branching & Merging and Git Merge vs Git Rebase comprehension."
+  },
+  {
+    "id": "git_004",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between git reset (--soft, --mixed, --hard) and git revert.",
+    "difficulty": "medium",
+    "topic": "History Manipulation",
+    "concept": "git reset vs git revert",
+    "questionFamily": "comparison",
+    "tags": [
+      "git reset",
+      "git revert",
+      "--soft",
+      "--hard",
+      "--mixed",
+      "undo commit"
+    ],
+    "idealAnswer": "git reset moves HEAD backward: --soft leaves changes staged; --mixed leaves changes in working directory; --hard deletes changes from working directory. git revert creates a safe new commit that inverts previous changes without rewriting Git history.",
+    "ideal_answer": "git reset moves HEAD backward: --soft leaves changes staged; --mixed leaves changes in working directory; --hard deletes changes from working directory. git revert creates a safe new commit that inverts previous changes without rewriting Git history.",
+    "expected_concepts": [
+      "git reset",
+      "git revert",
+      "--soft",
+      "--hard"
+    ],
+    "explanation": "Evaluates Git History Manipulation and git reset vs git revert comprehension."
+  },
+  {
+    "id": "git_005",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Git Reflog (git reflog), and how do you recover deleted branches or 'lost' commits after a bad rebase/reset?",
+    "difficulty": "easy",
+    "topic": "Recovery & Reflog",
+    "concept": "Git Reflog & Commit Recovery",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "git reflog",
+      "HEAD@{n}",
+      "recovery",
+      "dangling commit",
+      "git checkout -b"
+    ],
+    "idealAnswer": "The Reflog records every change of HEAD pointers locally, even across branch deletions, hard resets, and rebases. By running 'git reflog', identifying the target SHA/ref (e.g. HEAD@{2}), and creating a branch from it ('git branch recovered-branch <SHA>'), lost work is fully restored.",
+    "ideal_answer": "The Reflog records every change of HEAD pointers locally, even across branch deletions, hard resets, and rebases. By running 'git reflog', identifying the target SHA/ref (e.g. HEAD@{2}), and creating a branch from it ('git branch recovered-branch <SHA>'), lost work is fully restored.",
+    "expected_concepts": [
+      "git reflog",
+      "HEAD@{n}",
+      "recovery",
+      "dangling commit"
+    ],
+    "explanation": "Evaluates Git Recovery & Reflog and Git Reflog & Commit Recovery comprehension."
+  },
+  {
+    "id": "git_006",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Git handle merge conflicts, and what is the role of Git Rerere (Reuse Recorded Resolution)?",
+    "difficulty": "medium",
+    "topic": "Conflict Resolution",
+    "concept": "Merge Conflicts & Git Rerere",
+    "questionFamily": "implementation",
+    "tags": [
+      "merge conflict",
+      "git rerere",
+      "conflict markers",
+      "HEAD",
+      "theirs vs ours"
+    ],
+    "idealAnswer": "Merge conflicts occur when competing commits modify identical lines in the same file. Git pauses and inserts conflict markers (<<<<<<< HEAD, =======, >>>>>>>). Enabling 'git config --global rerere.enabled true' automatically records and re-applies previous conflict resolutions.",
+    "ideal_answer": "Merge conflicts occur when competing commits modify identical lines in the same file. Git pauses and inserts conflict markers (<<<<<<< HEAD, =======, >>>>>>>). Enabling 'git config --global rerere.enabled true' automatically records and re-applies previous conflict resolutions.",
+    "expected_concepts": [
+      "merge conflict",
+      "git rerere",
+      "conflict markers",
+      "HEAD"
+    ],
+    "explanation": "Evaluates Git Conflict Resolution and Merge Conflicts & Git Rerere comprehension."
+  },
+  {
+    "id": "git_007",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Git Cherry-Pick (git cherry-pick) and how it applies specific individual commits from one branch onto another.",
+    "difficulty": "easy",
+    "topic": "Branching",
+    "concept": "Git Cherry-Pick",
+    "questionFamily": "implementation",
+    "tags": [
+      "git cherry-pick",
+      "patch",
+      "hotfix",
+      "commit transfer"
+    ],
+    "idealAnswer": "git cherry-pick takes the diff introduced by an individual specific commit from another branch and applies it as a brand new commit on the current active branch (ideal for backporting hotfixes to production branches).",
+    "ideal_answer": "git cherry-pick takes the diff introduced by an individual specific commit from another branch and applies it as a brand new commit on the current active branch (ideal for backporting hotfixes to production branches).",
+    "expected_concepts": [
+      "git cherry-pick",
+      "patch",
+      "hotfix",
+      "commit transfer"
+    ],
+    "explanation": "Evaluates Git Branching and Git Cherry-Pick comprehension."
+  },
+  {
+    "id": "git_008",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is git bisect, and how does it use binary search to locate the exact commit that introduced a bug?",
+    "difficulty": "medium",
+    "topic": "Debugging",
+    "concept": "Git Bisect Automated Bug Finding",
+    "questionFamily": "algorithm",
+    "tags": [
+      "git bisect",
+      "binary search",
+      "git bisect run",
+      "regression testing"
+    ],
+    "idealAnswer": "git bisect uses binary search through commit history between a known 'good' commit and a 'bad' commit. Git checks out intermediate commits for testing (or automates via 'git bisect run pytest') to pinpoint the regression commit in O(log N) steps.",
+    "ideal_answer": "git bisect uses binary search through commit history between a known 'good' commit and a 'bad' commit. Git checks out intermediate commits for testing (or automates via 'git bisect run pytest') to pinpoint the regression commit in O(log N) steps.",
+    "expected_concepts": [
+      "git bisect",
+      "binary search",
+      "git bisect run",
+      "regression testing"
+    ],
+    "explanation": "Evaluates Git Debugging and Git Bisect Automated Bug Finding comprehension."
+  },
+  {
+    "id": "git_009",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Git Hooks (pre-commit, pre-push, commit-msg) and how tools like Husky enforce linting, formatting, and commit standards.",
+    "difficulty": "easy",
+    "topic": "Automation & Quality",
+    "concept": "Git Hooks & Husky",
+    "questionFamily": "best_practice",
+    "tags": [
+      "git hooks",
+      "Husky",
+      "pre-commit",
+      "linting",
+      "commitlint"
+    ],
+    "idealAnswer": "Git hooks are client-side and server-side scripts triggered by events in .git/hooks. Tools like Husky manage pre-commit hooks that run ESLint/Prettier on staged files and commit-msg hooks to enforce Conventional Commits formatting before commits are allowed.",
+    "ideal_answer": "Git hooks are client-side and server-side scripts triggered by events in .git/hooks. Tools like Husky manage pre-commit hooks that run ESLint/Prettier on staged files and commit-msg hooks to enforce Conventional Commits formatting before commits are allowed.",
+    "expected_concepts": [
+      "git hooks",
+      "Husky",
+      "pre-commit",
+      "linting"
+    ],
+    "explanation": "Evaluates Git Automation & Quality and Git Hooks & Husky comprehension."
+  },
+  {
+    "id": "git_010",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between git fetch and git pull, and why is git pull --rebase often preferred?",
+    "difficulty": "easy",
+    "topic": "Remote Repositories",
+    "concept": "git fetch vs git pull --rebase",
+    "questionFamily": "comparison",
+    "tags": [
+      "git fetch",
+      "git pull",
+      "git pull --rebase",
+      "remote tracking branch",
+      "origin/main"
+    ],
+    "idealAnswer": "git fetch downloads new commits from remote branches without modifying your local working branch. git pull executes 'git fetch' followed immediately by 'git merge'. 'git pull --rebase' rebases your local unpushed commits on top of remote changes, preventing unnecessary merge bubbles.",
+    "ideal_answer": "git fetch downloads new commits from remote branches without modifying your local working branch. git pull executes 'git fetch' followed immediately by 'git merge'. 'git pull --rebase' rebases your local unpushed commits on top of remote changes, preventing unnecessary merge bubbles.",
+    "expected_concepts": [
+      "git fetch",
+      "git pull",
+      "git pull --rebase",
+      "remote tracking branch"
+    ],
+    "explanation": "Evaluates Git Remote Repositories and git fetch vs git pull --rebase comprehension."
+  },
+  {
+    "id": "git_011",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Git Submodules vs Git Subtrees for managing external repository dependencies inside a parent repository.",
+    "difficulty": "hard",
+    "topic": "Repository Management",
+    "concept": "Git Submodules vs Git Subtrees",
+    "questionFamily": "comparison",
+    "tags": [
+      "git submodule",
+      "git subtree",
+      "nested repositories",
+      ".gitmodules"
+    ],
+    "idealAnswer": "Git Submodules store a pointer (specific commit SHA) to an external repository recorded in .gitmodules (isolated, requires submodule update commands). Git Subtrees embed the entire external repository history directly into the main repository (simpler workflow for developers).",
+    "ideal_answer": "Git Submodules store a pointer (specific commit SHA) to an external repository recorded in .gitmodules (isolated, requires submodule update commands). Git Subtrees embed the entire external repository history directly into the main repository (simpler workflow for developers).",
+    "expected_concepts": [
+      "git submodule",
+      "git subtree",
+      "nested repositories",
+      ".gitmodules"
+    ],
+    "explanation": "Evaluates Git Repository Management and Git Submodules vs Git Subtrees comprehension."
+  },
+  {
+    "id": "git_012",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does git stash work (git stash pop, apply, branch, drop), and where does Git store stashed states?",
+    "difficulty": "easy",
+    "topic": "Working Directory",
+    "concept": "Git Stash Mechanisms",
+    "questionFamily": "implementation",
+    "tags": [
+      "git stash",
+      "git stash pop",
+      "git stash apply",
+      "refs/stash",
+      "uncommitted changes"
+    ],
+    "idealAnswer": "git stash saves dirty working directory and index modifications to a special commit stack (refs/stash) and reverts working directory to clean HEAD. 'git stash pop' applies and removes latest stash; 'git stash apply' applies without removing.",
+    "ideal_answer": "git stash saves dirty working directory and index modifications to a special commit stack (refs/stash) and reverts working directory to clean HEAD. 'git stash pop' applies and removes latest stash; 'git stash apply' applies without removing.",
+    "expected_concepts": [
+      "git stash",
+      "git stash pop",
+      "git stash apply",
+      "refs/stash"
+    ],
+    "explanation": "Evaluates Git Working Directory and Git Stash Mechanisms comprehension."
+  },
+  {
+    "id": "git_013",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Shallow Clone (git clone --depth 1) and Sparse Checkout (git sparse-checkout) in large repositories?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Shallow Clone & Sparse Checkout",
+    "questionFamily": "optimization",
+    "tags": [
+      "shallow clone",
+      "--depth 1",
+      "sparse checkout",
+      "monorepo",
+      "disk optimization"
+    ],
+    "idealAnswer": "Shallow clone ('git clone --depth 1') fetches only the latest single commit history, drastically cutting clone time and bandwidth in CI pipelines. Sparse checkout downloads and populates only specific subdirectories in massive monorepos.",
+    "ideal_answer": "Shallow clone ('git clone --depth 1') fetches only the latest single commit history, drastically cutting clone time and bandwidth in CI pipelines. Sparse checkout downloads and populates only specific subdirectories in massive monorepos.",
+    "expected_concepts": [
+      "shallow clone",
+      "--depth 1",
+      "sparse checkout",
+      "monorepo"
+    ],
+    "explanation": "Evaluates Git Performance and Shallow Clone & Sparse Checkout comprehension."
+  },
+  {
+    "id": "git_014",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Branching Strategies: GitFlow, GitHub Flow, and Trunk-Based Development.",
+    "difficulty": "medium",
+    "topic": "Workflows",
+    "concept": "Branching Strategies Comparison",
+    "questionFamily": "comparison",
+    "tags": [
+      "GitFlow",
+      "GitHub Flow",
+      "Trunk-Based Development",
+      "CI/CD",
+      "feature flags"
+    ],
+    "idealAnswer": "GitFlow uses permanent develop/main branches with release and hotfix branches (complex). GitHub Flow uses short-lived feature branches merged to main via PRs. Trunk-Based Development has developers merge small commits daily into main with feature flags for rapid CI/CD.",
+    "ideal_answer": "GitFlow uses permanent develop/main branches with release and hotfix branches (complex). GitHub Flow uses short-lived feature branches merged to main via PRs. Trunk-Based Development has developers merge small commits daily into main with feature flags for rapid CI/CD.",
+    "expected_concepts": [
+      "GitFlow",
+      "GitHub Flow",
+      "Trunk-Based Development",
+      "CI/CD"
+    ],
+    "explanation": "Evaluates Git Workflows and Branching Strategies Comparison comprehension."
+  },
+  {
+    "id": "git_015",
+    "skill": "Git",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Git LFS (Large File Storage) and how does it replace massive binary assets with lightweight text pointers?",
+    "difficulty": "medium",
+    "topic": "Asset Management",
+    "concept": "Git Large File Storage (LFS)",
+    "questionFamily": "architecture",
+    "tags": [
+      "Git LFS",
+      "large binary files",
+      "pointer files",
+      "blob storage",
+      "repository bloat"
+    ],
+    "idealAnswer": "Git LFS replaces large files (videos, models, datasets) in the repository with small 100-byte text pointer files containing file hashes. The actual large binary files are stored on remote dedicated object storage servers, preventing repository bloat.",
+    "ideal_answer": "Git LFS replaces large files (videos, models, datasets) in the repository with small 100-byte text pointer files containing file hashes. The actual large binary files are stored on remote dedicated object storage servers, preventing repository bloat.",
+    "expected_concepts": [
+      "Git LFS",
+      "large binary files",
+      "pointer files",
+      "blob storage"
+    ],
+    "explanation": "Evaluates Git Asset Management and Git Large File Storage (LFS) comprehension."
   }
 ]

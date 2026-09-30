@@ -1,44 +1,404 @@
 [
   {
-    "id": "HTML_001",
+    "id": "html_001",
     "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain HTML5 semantic elements (header, nav, main, article, section, aside, footer) and why they matter for accessibility and SEO.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of HTML in modern software engineering?",
-    "expected_concepts": [
-      "HTML fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Semantic HTML",
+    "concept": "Semantic Elements",
+    "questionFamily": "architecture",
+    "tags": [
+      "HTML5",
+      "semantic elements",
+      "accessibility",
+      "SEO",
+      "screen readers"
     ],
-    "ideal_answer": "HTML is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of HTML."
+    "idealAnswer": "Semantic elements describe their meaning to both browser and developer. They establish a clear document outline, enhance search engine indexing (SEO), and allow screen readers and assistive technologies to navigate page landmarks.",
+    "ideal_answer": "Semantic elements describe their meaning to both browser and developer. They establish a clear document outline, enhance search engine indexing (SEO), and allow screen readers and assistive technologies to navigate page landmarks.",
+    "expected_concepts": [
+      "HTML5",
+      "semantic elements",
+      "accessibility",
+      "SEO"
+    ],
+    "explanation": "Evaluates HTML Semantic HTML and Semantic Elements comprehension."
   },
   {
-    "id": "HTML_002",
+    "id": "html_002",
     "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the HTML DOM (Document Object Model) tree, and how does the browser construct the DOM from raw HTML markup?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using HTML in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "DOM & Parsing",
+    "concept": "DOM Construction",
+    "questionFamily": "architecture",
+    "tags": [
+      "DOM",
+      "parsing",
+      "tokenization",
+      "tree construction",
+      "HTML parser"
     ],
-    "ideal_answer": "Common challenges with HTML include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of HTML."
+    "idealAnswer": "The browser parses HTML bytes into characters, generates tokens (start/end tags), converts tokens into Node objects, and builds a hierarchical tree of nodes called the DOM (Document Object Model).",
+    "ideal_answer": "The browser parses HTML bytes into characters, generates tokens (start/end tags), converts tokens into Node objects, and builds a hierarchical tree of nodes called the DOM (Document Object Model).",
+    "expected_concepts": [
+      "DOM",
+      "parsing",
+      "tokenization",
+      "tree construction"
+    ],
+    "explanation": "Evaluates HTML DOM & Parsing and DOM Construction comprehension."
   },
   {
-    "id": "HTML_003",
+    "id": "html_003",
     "skill": "HTML",
-    "difficulty": "hard",
-    "question": "How does HTML handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the purpose of the <!DOCTYPE html> declaration and what happens in 'quirks mode' if it is omitted.",
+    "difficulty": "easy",
+    "topic": "Standards & Parsing",
+    "concept": "DOCTYPE & Quirks Mode",
+    "questionFamily": "definition",
+    "tags": [
+      "DOCTYPE",
+      "quirks mode",
+      "standards mode",
+      "rendering engine"
     ],
-    "ideal_answer": "HTML handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of HTML."
+    "idealAnswer": "<!DOCTYPE html> instructs the browser to render the document in full Standards Mode following W3C specifications. Omitting it triggers Quirks Mode where the browser emulates legacy bugs from older browsers (e.g. IE5/6 box model).",
+    "ideal_answer": "<!DOCTYPE html> instructs the browser to render the document in full Standards Mode following W3C specifications. Omitting it triggers Quirks Mode where the browser emulates legacy bugs from older browsers (e.g. IE5/6 box model).",
+    "expected_concepts": [
+      "DOCTYPE",
+      "quirks mode",
+      "standards mode",
+      "rendering engine"
+    ],
+    "explanation": "Evaluates HTML Standards & Parsing and DOCTYPE & Quirks Mode comprehension."
+  },
+  {
+    "id": "html_004",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do form validation attributes in HTML5 (required, pattern, min, max, type='email') work, and why is client-side validation alone insufficient?",
+    "difficulty": "easy",
+    "topic": "Forms",
+    "concept": "HTML5 Form Validation",
+    "questionFamily": "security",
+    "tags": [
+      "forms",
+      "validation",
+      "regex pattern",
+      "client-side vs server-side"
+    ],
+    "idealAnswer": "HTML5 provides built-in constraint validation attributes (required, pattern, type) checked by the browser before submission. However, client validation can be easily bypassed by attackers; thus server-side validation is strictly required for security.",
+    "ideal_answer": "HTML5 provides built-in constraint validation attributes (required, pattern, type) checked by the browser before submission. However, client validation can be easily bypassed by attackers; thus server-side validation is strictly required for security.",
+    "expected_concepts": [
+      "forms",
+      "validation",
+      "regex pattern",
+      "client-side vs server-side"
+    ],
+    "explanation": "Evaluates HTML Forms and HTML5 Form Validation comprehension."
+  },
+  {
+    "id": "html_005",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between the <script>, <script async>, and <script defer> attributes regarding HTML parsing and execution timing.",
+    "difficulty": "medium",
+    "topic": "Performance & Scripts",
+    "concept": "Script Loading Attributes",
+    "questionFamily": "comparison",
+    "tags": [
+      "script",
+      "async",
+      "defer",
+      "DOM parsing",
+      "render blocking"
+    ],
+    "idealAnswer": "Plain <script> pauses HTML parsing, downloads, and executes immediately. <script async> downloads in parallel and executes as soon as downloaded (pausing HTML parsing and running out-of-order). <script defer> downloads in parallel and executes in document order after HTML parsing is complete.",
+    "ideal_answer": "Plain <script> pauses HTML parsing, downloads, and executes immediately. <script async> downloads in parallel and executes as soon as downloaded (pausing HTML parsing and running out-of-order). <script defer> downloads in parallel and executes in document order after HTML parsing is complete.",
+    "expected_concepts": [
+      "script",
+      "async",
+      "defer",
+      "DOM parsing"
+    ],
+    "explanation": "Evaluates HTML Performance & Scripts and Script Loading Attributes comprehension."
+  },
+  {
+    "id": "html_006",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are ARIA attributes (role, aria-label, aria-live, aria-expanded), and how do they improve web accessibility (a11y)?",
+    "difficulty": "medium",
+    "topic": "Accessibility",
+    "concept": "WAI-ARIA Attributes",
+    "questionFamily": "best_practice",
+    "tags": [
+      "ARIA",
+      "accessibility",
+      "a11y",
+      "screen reader",
+      "role"
+    ],
+    "idealAnswer": "WAI-ARIA attributes provide supplemental semantic meaning and state information to assistive technologies when native HTML elements cannot convey dynamic UI behaviors (e.g. modals, expandable accordions, live region updates).",
+    "ideal_answer": "WAI-ARIA attributes provide supplemental semantic meaning and state information to assistive technologies when native HTML elements cannot convey dynamic UI behaviors (e.g. modals, expandable accordions, live region updates).",
+    "expected_concepts": [
+      "ARIA",
+      "accessibility",
+      "a11y",
+      "screen reader"
+    ],
+    "explanation": "Evaluates HTML Accessibility and WAI-ARIA Attributes comprehension."
+  },
+  {
+    "id": "html_007",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between <img>, <picture>, and the srcset/sizes attributes for responsive images in HTML.",
+    "difficulty": "medium",
+    "topic": "Media & Responsive",
+    "concept": "Responsive Images (picture & srcset)",
+    "questionFamily": "optimization",
+    "tags": [
+      "picture",
+      "srcset",
+      "sizes",
+      "responsive images",
+      "DPR"
+    ],
+    "idealAnswer": "The <img> with srcset and sizes allows the browser to select the optimal image resolution based on device pixel ratio (DPR) and viewport width. The <picture> element enables art direction and format switching (e.g. WebP/AVIF with JPEG fallback) using <source> media queries.",
+    "ideal_answer": "The <img> with srcset and sizes allows the browser to select the optimal image resolution based on device pixel ratio (DPR) and viewport width. The <picture> element enables art direction and format switching (e.g. WebP/AVIF with JPEG fallback) using <source> media queries.",
+    "expected_concepts": [
+      "picture",
+      "srcset",
+      "sizes",
+      "responsive images"
+    ],
+    "explanation": "Evaluates HTML Media & Responsive and Responsive Images (picture & srcset) comprehension."
+  },
+  {
+    "id": "html_008",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are meta tags in HTML (<meta name='viewport'>, Open Graph, meta description), and what role do they play in responsive design and SEO?",
+    "difficulty": "easy",
+    "topic": "Metadata & SEO",
+    "concept": "Meta Tags & Viewport",
+    "questionFamily": "best_practice",
+    "tags": [
+      "meta tags",
+      "viewport",
+      "Open Graph",
+      "SEO",
+      "social sharing"
+    ],
+    "idealAnswer": "Meta tags provide document metadata. <meta name='viewport' content='width=device-width, initial-scale=1.0'> is crucial for responsive mobile rendering. Open Graph (og:) tags control how links display on social platforms, and meta descriptions enhance search engine snippets.",
+    "ideal_answer": "Meta tags provide document metadata. <meta name='viewport' content='width=device-width, initial-scale=1.0'> is crucial for responsive mobile rendering. Open Graph (og:) tags control how links display on social platforms, and meta descriptions enhance search engine snippets.",
+    "expected_concepts": [
+      "meta tags",
+      "viewport",
+      "Open Graph",
+      "SEO"
+    ],
+    "explanation": "Evaluates HTML Metadata & SEO and Meta Tags & Viewport comprehension."
+  },
+  {
+    "id": "html_009",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between <iframe>, <embed>, and <object> tags and their security sandboxing attributes.",
+    "difficulty": "medium",
+    "topic": "Embedding & Security",
+    "concept": "Iframe Sandboxing",
+    "questionFamily": "security",
+    "tags": [
+      "iframe",
+      "sandbox",
+      "Same-Origin",
+      "clickjacking",
+      "embed"
+    ],
+    "idealAnswer": "<iframe> embeds an external HTML document inside the current page. The 'sandbox' attribute restricts capabilities (disabling scripts, forms, popups, and same-origin access) to prevent untrusted third-party content from launching cross-site attacks or clickjacking.",
+    "ideal_answer": "<iframe> embeds an external HTML document inside the current page. The 'sandbox' attribute restricts capabilities (disabling scripts, forms, popups, and same-origin access) to prevent untrusted third-party content from launching cross-site attacks or clickjacking.",
+    "expected_concepts": [
+      "iframe",
+      "sandbox",
+      "Same-Origin",
+      "clickjacking"
+    ],
+    "explanation": "Evaluates HTML Embedding & Security and Iframe Sandboxing comprehension."
+  },
+  {
+    "id": "html_010",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are custom data attributes (data-*) in HTML, and how are they accessed in JavaScript via dataset and CSS via attr()?",
+    "difficulty": "easy",
+    "topic": "Attributes & Data",
+    "concept": "Data Attributes (data-*)",
+    "questionFamily": "implementation",
+    "tags": [
+      "data attributes",
+      "dataset",
+      "DOM",
+      "CSS attr()"
+    ],
+    "idealAnswer": "Custom data attributes (data-*) allow embedding custom data on HTML elements without affecting rendering. In JavaScript, they are accessed as camelCase properties on element.dataset; in CSS, they can be targeted via attribute selectors [data-*] or used in generated content via attr().",
+    "ideal_answer": "Custom data attributes (data-*) allow embedding custom data on HTML elements without affecting rendering. In JavaScript, they are accessed as camelCase properties on element.dataset; in CSS, they can be targeted via attribute selectors [data-*] or used in generated content via attr().",
+    "expected_concepts": [
+      "data attributes",
+      "dataset",
+      "DOM",
+      "CSS attr()"
+    ],
+    "explanation": "Evaluates HTML Attributes & Data and Data Attributes (data-*) comprehension."
+  },
+  {
+    "id": "html_011",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between the HTML5 <canvas> element and SVG (Scalable Vector Graphics) regarding raster vs vector rendering and performance.",
+    "difficulty": "medium",
+    "topic": "Graphics & Media",
+    "concept": "Canvas vs SVG",
+    "questionFamily": "comparison",
+    "tags": [
+      "canvas",
+      "SVG",
+      "vector graphics",
+      "raster",
+      "DOM nodes"
+    ],
+    "idealAnswer": "Canvas is pixel/raster-based, drawn via JavaScript API in immediate mode (fast for rendering thousands of objects/games, but lacks DOM nodes and accessibility). SVG is XML/vector-based retained mode (each shape is a scalable DOM element with CSS styling, event listeners, and crisp resolution at any zoom).",
+    "ideal_answer": "Canvas is pixel/raster-based, drawn via JavaScript API in immediate mode (fast for rendering thousands of objects/games, but lacks DOM nodes and accessibility). SVG is XML/vector-based retained mode (each shape is a scalable DOM element with CSS styling, event listeners, and crisp resolution at any zoom).",
+    "expected_concepts": [
+      "canvas",
+      "SVG",
+      "vector graphics",
+      "raster"
+    ],
+    "explanation": "Evaluates HTML Graphics & Media and Canvas vs SVG comprehension."
+  },
+  {
+    "id": "html_012",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Web Components in modern HTML (Custom Elements, Shadow DOM, HTML Templates)?",
+    "difficulty": "hard",
+    "topic": "Web Components",
+    "concept": "Web Components Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Web Components",
+      "Custom Elements",
+      "Shadow DOM",
+      "HTML Template",
+      "encapsulation"
+    ],
+    "idealAnswer": "Web Components are standard browser features for reusable UI widgets: Custom Elements (custom HTML tags defined via customElements.define), Shadow DOM (encapsulated DOM subtree and scoped CSS), and <template>/<slot> (inert HTML fragments for dynamic rendering).",
+    "ideal_answer": "Web Components are standard browser features for reusable UI widgets: Custom Elements (custom HTML tags defined via customElements.define), Shadow DOM (encapsulated DOM subtree and scoped CSS), and <template>/<slot> (inert HTML fragments for dynamic rendering).",
+    "expected_concepts": [
+      "Web Components",
+      "Custom Elements",
+      "Shadow DOM",
+      "HTML Template"
+    ],
+    "explanation": "Evaluates HTML Web Components and Web Components Architecture comprehension."
+  },
+  {
+    "id": "html_013",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Web Workers work in HTML5, and how do they run CPU-intensive scripts off the main UI thread?",
+    "difficulty": "medium",
+    "topic": "Performance & APIs",
+    "concept": "Web Workers",
+    "questionFamily": "architecture",
+    "tags": [
+      "Web Workers",
+      "multithreading",
+      "postMessage",
+      "UI thread",
+      "concurrency"
+    ],
+    "idealAnswer": "Web Workers run JavaScript in background threads completely isolated from the main UI thread, communicating via asynchronous message passing (postMessage and onmessage). They prevent heavy computation from freezing the browser UI, though they cannot directly access the DOM.",
+    "ideal_answer": "Web Workers run JavaScript in background threads completely isolated from the main UI thread, communicating via asynchronous message passing (postMessage and onmessage). They prevent heavy computation from freezing the browser UI, though they cannot directly access the DOM.",
+    "expected_concepts": [
+      "Web Workers",
+      "multithreading",
+      "postMessage",
+      "UI thread"
+    ],
+    "explanation": "Evaluates HTML Performance & APIs and Web Workers comprehension."
+  },
+  {
+    "id": "html_014",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain resource hints in HTML (<link rel='preload'>, <link rel='prefetch'>, <link rel='preconnect'>, <link rel='dns-prefetch'>).",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Resource Hints",
+    "questionFamily": "optimization",
+    "tags": [
+      "preload",
+      "prefetch",
+      "preconnect",
+      "dns-prefetch",
+      "Core Web Vitals"
+    ],
+    "idealAnswer": "Resource hints instruct the browser to optimize resource loading: 'preload' fetches high-priority critical resources immediately; 'prefetch' downloads future navigation assets during idle time; 'preconnect' resolves DNS and establishes TCP/TLS connections in advance.",
+    "ideal_answer": "Resource hints instruct the browser to optimize resource loading: 'preload' fetches high-priority critical resources immediately; 'prefetch' downloads future navigation assets during idle time; 'preconnect' resolves DNS and establishes TCP/TLS connections in advance.",
+    "expected_concepts": [
+      "preload",
+      "prefetch",
+      "preconnect",
+      "dns-prefetch"
+    ],
+    "explanation": "Evaluates HTML Performance and Resource Hints comprehension."
+  },
+  {
+    "id": "html_015",
+    "skill": "HTML",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the purpose of the Content Security Policy (CSP) meta tag in HTML, and how does it prevent Cross-Site Scripting (XSS)?",
+    "difficulty": "hard",
+    "topic": "Security",
+    "concept": "Content Security Policy (CSP)",
+    "questionFamily": "security",
+    "tags": [
+      "CSP",
+      "XSS",
+      "meta tag",
+      "inline scripts",
+      "whitelisting"
+    ],
+    "idealAnswer": "A CSP meta tag (<meta http-equiv='Content-Security-Policy'>) defines approved source domains for scripts, stylesheets, images, and fonts. It blocks execution of unauthorized inline scripts and untrusted third-party scripts, drastically mitigating XSS injection attacks.",
+    "ideal_answer": "A CSP meta tag (<meta http-equiv='Content-Security-Policy'>) defines approved source domains for scripts, stylesheets, images, and fonts. It blocks execution of unauthorized inline scripts and untrusted third-party scripts, drastically mitigating XSS injection attacks.",
+    "expected_concepts": [
+      "CSP",
+      "XSS",
+      "meta tag",
+      "inline scripts"
+    ],
+    "explanation": "Evaluates HTML Security and Content Security Policy (CSP) comprehension."
   }
 ]

@@ -27,9 +27,14 @@ class Settings(BaseSettings):
 
     # Gemini & STT Models
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+    GEMINI_TIMEOUT_SECONDS: int = int(os.getenv("GEMINI_TIMEOUT_SECONDS", "60"))
+    GEMINI_MAX_OUTPUT_TOKENS: int = int(os.getenv("GEMINI_MAX_OUTPUT_TOKENS", "4096"))
     WHISPER_MODEL: str = os.getenv("WHISPER_MODEL", "tiny.en")
     WHISPER_COMPUTE_TYPE: str = os.getenv("WHISPER_COMPUTE_TYPE", "int8")
+
+    def is_gemini_configured(self) -> bool:
+        return bool(self.GEMINI_API_KEY and len(self.GEMINI_API_KEY.strip()) > 5)
 
     # Vision & Proctoring Configuration
     FACE_DETECTION_CONFIDENCE: float = float(os.getenv("FACE_DETECTION_CONFIDENCE", "0.5"))

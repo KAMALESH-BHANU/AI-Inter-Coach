@@ -1,73 +1,396 @@
 [
   {
-    "id": "PY_001",
+    "id": "python_001",
     "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between lists and tuples in Python in terms of mutability, performance, and use cases?",
+    "difficulty": "easy",
+    "topic": "Data Structures",
+    "concept": "Lists vs Tuples",
+    "questionFamily": "comparison",
+    "tags": [
+      "list",
+      "tuple",
+      "mutability",
+      "performance",
+      "hashable"
+    ],
+    "idealAnswer": "Lists are mutable, dynamic arrays with higher memory overhead suitable for homogeneous, changing collections. Tuples are immutable, fixed-size sequences that can be used as dictionary keys and require less memory.",
+    "ideal_answer": "Lists are mutable, dynamic arrays with higher memory overhead suitable for homogeneous, changing collections. Tuples are immutable, fixed-size sequences that can be used as dictionary keys and require less memory.",
+    "expected_concepts": [
+      "list",
+      "tuple",
+      "mutability",
+      "performance"
+    ],
+    "explanation": "Evaluates Python Data Structures and Lists vs Tuples comprehension."
+  },
+  {
+    "id": "python_002",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do dictionaries and sets work internally in Python, and what are the requirements for an object to be stored in them?",
     "difficulty": "medium",
-    "question": "What is the Global Interpreter Lock (GIL) in Python, and how does it affect multi-threading?",
+    "topic": "Data Structures",
+    "concept": "Dictionaries and Sets",
+    "questionFamily": "implementation",
+    "tags": [
+      "dict",
+      "set",
+      "hash table",
+      "__hash__",
+      "__eq__"
+    ],
+    "idealAnswer": "Dictionaries and sets are implemented as open-addressing hash tables providing average O(1) lookups. Stored keys/elements must be hashable—implementing consistent __hash__() and __eq__() methods, and usually being immutable.",
+    "ideal_answer": "Dictionaries and sets are implemented as open-addressing hash tables providing average O(1) lookups. Stored keys/elements must be hashable—implementing consistent __hash__() and __eq__() methods, and usually being immutable.",
+    "expected_concepts": [
+      "dict",
+      "set",
+      "hash table",
+      "__hash__"
+    ],
+    "explanation": "Evaluates Python Data Structures and Dictionaries and Sets comprehension."
+  },
+  {
+    "id": "python_003",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the concept of mutable vs immutable types in Python and how passing them to functions affects their values.",
+    "difficulty": "medium",
+    "topic": "Core Concepts",
+    "concept": "Mutability & Argument Passing",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "mutable",
+      "immutable",
+      "pass-by-assignment",
+      "reference"
+    ],
+    "idealAnswer": "Python uses pass-by-assignment (pass-by-object-reference). If a mutable object (like a list or dict) is modified inside a function in-place, the caller sees the changes. If an immutable object (like int, str, tuple) is rebound, the caller's reference remains unchanged.",
+    "ideal_answer": "Python uses pass-by-assignment (pass-by-object-reference). If a mutable object (like a list or dict) is modified inside a function in-place, the caller sees the changes. If an immutable object (like int, str, tuple) is rebound, the caller's reference remains unchanged.",
+    "expected_concepts": [
+      "mutable",
+      "immutable",
+      "pass-by-assignment",
+      "reference"
+    ],
+    "explanation": "Evaluates Python Core Concepts and Mutability & Argument Passing comprehension."
+  },
+  {
+    "id": "python_004",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do list comprehensions work in Python, and when should they be preferred over traditional for loops?",
+    "difficulty": "easy",
+    "topic": "Syntax & Features",
+    "concept": "List Comprehension",
+    "questionFamily": "best_practice",
+    "tags": [
+      "list comprehension",
+      "readability",
+      "functional",
+      "for loop"
+    ],
+    "idealAnswer": "List comprehensions provide a concise syntactic construct [expr for item in iterable if condition] to create lists. They are implemented in C under the hood, making them faster and more readable than standard loops, though nested or complex logic should use explicit loops for clarity.",
+    "ideal_answer": "List comprehensions provide a concise syntactic construct [expr for item in iterable if condition] to create lists. They are implemented in C under the hood, making them faster and more readable than standard loops, though nested or complex logic should use explicit loops for clarity.",
+    "expected_concepts": [
+      "list comprehension",
+      "readability",
+      "functional",
+      "for loop"
+    ],
+    "explanation": "Evaluates Python Syntax & Features and List Comprehension comprehension."
+  },
+  {
+    "id": "python_005",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain how generator functions and the 'yield' statement work in Python, and what memory advantages they provide.",
+    "difficulty": "medium",
+    "topic": "Iteration & Generators",
+    "concept": "Generators",
+    "questionFamily": "optimization",
+    "tags": [
+      "generator",
+      "yield",
+      "lazy evaluation",
+      "memory efficiency"
+    ],
+    "idealAnswer": "A generator function contains the 'yield' statement and returns a generator iterator. Instead of generating and storing all elements in memory at once, it yields values lazily one at a time on each next() call, maintaining internal execution state with minimal memory footprint.",
+    "ideal_answer": "A generator function contains the 'yield' statement and returns a generator iterator. Instead of generating and storing all elements in memory at once, it yields values lazily one at a time on each next() call, maintaining internal execution state with minimal memory footprint.",
+    "expected_concepts": [
+      "generator",
+      "yield",
+      "lazy evaluation",
+      "memory efficiency"
+    ],
+    "explanation": "Evaluates Python Iteration & Generators and Generators comprehension."
+  },
+  {
+    "id": "python_006",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between an iterable and an iterator in Python, and how does the iterator protocol work?",
+    "difficulty": "medium",
+    "topic": "Iteration & Generators",
+    "concept": "Iterator Protocol",
+    "questionFamily": "definition",
+    "tags": [
+      "iterable",
+      "iterator",
+      "__iter__",
+      "__next__",
+      "StopIteration"
+    ],
+    "idealAnswer": "An iterable is any object defining __iter__() that returns an iterator. An iterator is an object defining both __iter__() (returning self) and __next__() (returning the next item or raising StopIteration when exhausted).",
+    "ideal_answer": "An iterable is any object defining __iter__() that returns an iterator. An iterator is an object defining both __iter__() (returning self) and __next__() (returning the next item or raising StopIteration when exhausted).",
+    "expected_concepts": [
+      "iterable",
+      "iterator",
+      "__iter__",
+      "__next__"
+    ],
+    "explanation": "Evaluates Python Iteration & Generators and Iterator Protocol comprehension."
+  },
+  {
+    "id": "python_007",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are decorators in Python, and how do you write a decorator that accepts custom arguments?",
+    "difficulty": "hard",
+    "topic": "Advanced Features",
+    "concept": "Decorators",
+    "questionFamily": "implementation",
+    "tags": [
+      "decorator",
+      "higher-order functions",
+      "wraps",
+      "closures"
+    ],
+    "idealAnswer": "Decorators are higher-order functions that wrap another function to extend its behavior without modifying its source code. A decorator with arguments requires three levels of nested functions: the outer function takes the decorator arguments and returns the actual decorator, which takes the target function and returns the wrapper using functools.wraps.",
+    "ideal_answer": "Decorators are higher-order functions that wrap another function to extend its behavior without modifying its source code. A decorator with arguments requires three levels of nested functions: the outer function takes the decorator arguments and returns the actual decorator, which takes the target function and returns the wrapper using functools.wraps.",
+    "expected_concepts": [
+      "decorator",
+      "higher-order functions",
+      "wraps",
+      "closures"
+    ],
+    "explanation": "Evaluates Python Advanced Features and Decorators comprehension."
+  },
+  {
+    "id": "python_008",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does exception handling work in Python with try, except, else, and finally blocks?",
+    "difficulty": "easy",
+    "topic": "Error Handling",
+    "concept": "Exception Handling Lifecycle",
+    "questionFamily": "implementation",
+    "tags": [
+      "try-except",
+      "else",
+      "finally",
+      "custom exceptions"
+    ],
+    "idealAnswer": "The try block contains code that might raise an exception. The except block catches specific exceptions. The else block runs only if no exception was raised. The finally block always executes (e.g. for cleanup) regardless of whether an exception occurred or was handled.",
+    "ideal_answer": "The try block contains code that might raise an exception. The except block catches specific exceptions. The else block runs only if no exception was raised. The finally block always executes (e.g. for cleanup) regardless of whether an exception occurred or was handled.",
+    "expected_concepts": [
+      "try-except",
+      "else",
+      "finally",
+      "custom exceptions"
+    ],
+    "explanation": "Evaluates Python Error Handling and Exception Handling Lifecycle comprehension."
+  },
+  {
+    "id": "python_009",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between shallow copy and deep copy in Python using the copy module.",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Shallow vs Deep Copy",
+    "questionFamily": "comparison",
+    "tags": [
+      "copy",
+      "deepcopy",
+      "references",
+      "nested objects"
+    ],
+    "idealAnswer": "A shallow copy (copy.copy()) constructs a new collection and inserts references to the original nested objects. A deep copy (copy.deepcopy()) recursively copies all nested objects, creating completely independent copies with no shared references.",
+    "ideal_answer": "A shallow copy (copy.copy()) constructs a new collection and inserts references to the original nested objects. A deep copy (copy.deepcopy()) recursively copies all nested objects, creating completely independent copies with no shared references.",
+    "expected_concepts": [
+      "copy",
+      "deepcopy",
+      "references",
+      "nested objects"
+    ],
+    "explanation": "Evaluates Python Memory Management and Shallow vs Deep Copy comprehension."
+  },
+  {
+    "id": "python_010",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are *args and **kwargs in Python function definitions, and how are they used in function unpacking?",
+    "difficulty": "easy",
+    "topic": "Functions",
+    "concept": "Variable Arguments",
+    "questionFamily": "implementation",
+    "tags": [
+      "*args",
+      "**kwargs",
+      "variable arguments",
+      "unpacking"
+    ],
+    "idealAnswer": "*args captures any number of positional arguments into a tuple. **kwargs captures arbitrary keyword arguments into a dictionary. They also allow unpacking tuples/lists (*iterable) and dicts (**mapping) into function calls.",
+    "ideal_answer": "*args captures any number of positional arguments into a tuple. **kwargs captures arbitrary keyword arguments into a dictionary. They also allow unpacking tuples/lists (*iterable) and dicts (**mapping) into function calls.",
+    "expected_concepts": [
+      "*args",
+      "**kwargs",
+      "variable arguments",
+      "unpacking"
+    ],
+    "explanation": "Evaluates Python Functions and Variable Arguments comprehension."
+  },
+  {
+    "id": "python_011",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are lambda functions in Python, and what are their limitations compared to standard def functions?",
+    "difficulty": "easy",
+    "topic": "Functions",
+    "concept": "Lambda Functions",
+    "questionFamily": "comparison",
+    "tags": [
+      "lambda",
+      "anonymous function",
+      "def",
+      "limitations"
+    ],
+    "idealAnswer": "Lambda functions are single-expression anonymous functions defined with 'lambda arguments: expression'. They implicitly return the result of their single expression and cannot contain multi-line statements, annotations, or complex assignments.",
+    "ideal_answer": "Lambda functions are single-expression anonymous functions defined with 'lambda arguments: expression'. They implicitly return the result of their single expression and cannot contain multi-line statements, annotations, or complex assignments.",
+    "expected_concepts": [
+      "lambda",
+      "anonymous function",
+      "def",
+      "limitations"
+    ],
+    "explanation": "Evaluates Python Functions and Lambda Functions comprehension."
+  },
+  {
+    "id": "python_012",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the purpose of virtual environments in Python (e.g. venv, conda), and how do they isolate dependencies?",
+    "difficulty": "easy",
+    "topic": "Environment & Packaging",
+    "concept": "Virtual Environments",
+    "questionFamily": "architecture",
+    "tags": [
+      "virtualenv",
+      "venv",
+      "pip",
+      "dependency isolation"
+    ],
+    "idealAnswer": "Virtual environments create isolated directories containing dedicated Python binaries and site-packages. This prevents dependency conflicts and version clashes between different projects running on the same machine.",
+    "ideal_answer": "Virtual environments create isolated directories containing dedicated Python binaries and site-packages. This prevents dependency conflicts and version clashes between different projects running on the same machine.",
+    "expected_concepts": [
+      "virtualenv",
+      "venv",
+      "pip",
+      "dependency isolation"
+    ],
+    "explanation": "Evaluates Python Environment & Packaging and Virtual Environments comprehension."
+  },
+  {
+    "id": "python_013",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Python handle memory management and garbage collection through reference counting and cyclic GC?",
+    "difficulty": "hard",
+    "topic": "Memory Management",
+    "concept": "Memory & GC Internals",
+    "questionFamily": "architecture",
+    "tags": [
+      "reference counting",
+      "garbage collection",
+      "gc module",
+      "cyclic references"
+    ],
+    "idealAnswer": "Python's primary memory management is reference counting (deallocating objects immediately when reference count hits zero). To resolve cyclic references (objects referencing each other), Python employs a generational cyclic garbage collector that tracks container objects across 3 generations.",
+    "ideal_answer": "Python's primary memory management is reference counting (deallocating objects immediately when reference count hits zero). To resolve cyclic references (objects referencing each other), Python employs a generational cyclic garbage collector that tracks container objects across 3 generations.",
+    "expected_concepts": [
+      "reference counting",
+      "garbage collection",
+      "gc module",
+      "cyclic references"
+    ],
+    "explanation": "Evaluates Python Memory Management and Memory & GC Internals comprehension."
+  },
+  {
+    "id": "python_014",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Python modules and packages differ, and what is the role of __init__.py and __name__ == '__main__'?",
+    "difficulty": "medium",
+    "topic": "Packaging & Architecture",
+    "concept": "Modules & Packages",
+    "questionFamily": "design",
+    "tags": [
+      "module",
+      "package",
+      "__init__.py",
+      "__name__"
+    ],
+    "idealAnswer": "A module is a single Python file (.py), while a package is a directory containing modules and an optional __init__.py. The guard 'if __name__ == \"__main__\":' ensures code only runs when the script is executed directly, not when imported as a module.",
+    "ideal_answer": "A module is a single Python file (.py), while a package is a directory containing modules and an optional __init__.py. The guard 'if __name__ == \"__main__\":' ensures code only runs when the script is executed directly, not when imported as a module.",
+    "expected_concepts": [
+      "module",
+      "package",
+      "__init__.py",
+      "__name__"
+    ],
+    "explanation": "Evaluates Python Packaging & Architecture and Modules & Packages comprehension."
+  },
+  {
+    "id": "python_015",
+    "skill": "Python",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Global Interpreter Lock (GIL) in CPython, and how does it affect CPU-bound vs I/O-bound concurrency?",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "GIL and Multiprocessing",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "GIL",
+      "CPython",
+      "threading",
+      "multiprocessing",
+      "CPU-bound"
+    ],
+    "idealAnswer": "The GIL is a mutex in CPython that allows only one native thread to execute Python bytecode at a time. Consequently, multi-threading cannot achieve true CPU parallelism for CPU-bound tasks (which should use multiprocessing instead), but effectively handles I/O-bound concurrency.",
+    "ideal_answer": "The GIL is a mutex in CPython that allows only one native thread to execute Python bytecode at a time. Consequently, multi-threading cannot achieve true CPU parallelism for CPU-bound tasks (which should use multiprocessing instead), but effectively handles I/O-bound concurrency.",
     "expected_concepts": [
       "GIL",
       "CPython",
-      "Thread safety",
-      "CPU-bound vs I/O-bound",
-      "Multiprocessing"
+      "threading",
+      "multiprocessing"
     ],
-    "ideal_answer": "The GIL is a mutex in CPython that allows only one thread to execute Python bytecode at a time. It prevents multi-threaded CPU-bound execution across multiple CPU cores. For CPU-intensive tasks, multiprocessing or C extensions are used instead of threading.",
-    "explanation": "Critical Python runtime architecture question."
-  },
-  {
-    "id": "PY_002",
-    "skill": "Python",
-    "difficulty": "medium",
-    "question": "Explain Python Generators and the yield keyword. How do they save memory?",
-    "expected_concepts": [
-      "Generators",
-      "yield statement",
-      "Iterator protocol",
-      "Lazy evaluation",
-      "Memory efficiency"
-    ],
-    "ideal_answer": "Generators yield values one at a time on demand rather than loading an entire dataset into memory at once. They implement the iterator protocol lazily, keeping track of execution state between calls.",
-    "explanation": "Evaluates Python memory management and iterator concepts."
-  },
-  {
-    "id": "PY_003",
-    "skill": "Python",
-    "difficulty": "easy",
-    "question": "What is the difference between mutable and immutable types in Python? Give examples.",
-    "expected_concepts": [
-      "Mutability",
-      "Memory references",
-      "list/dict/set vs tuple/str/int"
-    ],
-    "ideal_answer": "Mutable objects (lists, dicts, sets) can be modified in place without changing their memory address (id). Immutable objects (strings, tuples, ints, floats) create a new object when modified.",
-    "explanation": "Core Python data type semantics."
-  },
-  {
-    "id": "PY_004",
-    "skill": "Python",
-    "difficulty": "hard",
-    "question": "How do decorators work in Python? Write the structure of a decorator accepting arguments.",
-    "expected_concepts": [
-      "First-class functions",
-      "Closures",
-      "functools.wraps",
-      "Decorator arguments"
-    ],
-    "ideal_answer": "Decorators take a function as an argument, extend or modify its behavior inside a wrapper function, and return the wrapper. For decorators accepting arguments, an extra outer function layer receives arguments and returns the decorator function.",
-    "explanation": "Assesses functional programming and closure understanding in Python."
-  },
-  {
-    "id": "PY_005",
-    "skill": "Python",
-    "difficulty": "medium",
-    "question": "Explain Python's Memory Management, Reference Counting, and Garbage Collection.",
-    "expected_concepts": [
-      "Reference counting",
-      "Cyclic garbage collection",
-      "Generational GC",
-      "gc module"
-    ],
-    "ideal_answer": "Python uses reference counting as its primary memory management mechanism; when reference count reaches 0, memory is freed immediately. A cyclic garbage collector detects and cleans up circular references using generational collection.",
-    "explanation": "Advanced Python runtime internals."
+    "explanation": "Evaluates Python Concurrency and GIL and Multiprocessing comprehension."
   }
 ]

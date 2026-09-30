@@ -1,44 +1,413 @@
 [
   {
-    "id": "DOCKER_001",
+    "id": "docker_001",
     "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the core architecture of Docker: Docker Engine, Docker Daemon (dockerd), Containerd, Runc, and Docker CLI.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Docker in modern software engineering?",
-    "expected_concepts": [
-      "Docker fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Architecture",
+    "concept": "Docker Architecture & OCI Runtime",
+    "questionFamily": "architecture",
+    "tags": [
+      "Docker Engine",
+      "dockerd",
+      "containerd",
+      "runc",
+      "OCI specification",
+      "Docker CLI"
     ],
-    "ideal_answer": "Docker is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Docker."
+    "idealAnswer": "Docker CLI sends REST API commands to the background Docker Daemon (dockerd). Dockerd manages images and networks, delegating container lifecycle management to 'containerd', which invokes the low-level OCI reference runtime 'runc' to execute containers.",
+    "ideal_answer": "Docker CLI sends REST API commands to the background Docker Daemon (dockerd). Dockerd manages images and networks, delegating container lifecycle management to 'containerd', which invokes the low-level OCI reference runtime 'runc' to execute containers.",
+    "expected_concepts": [
+      "Docker Engine",
+      "dockerd",
+      "containerd",
+      "runc"
+    ],
+    "explanation": "Evaluates Docker Architecture and Docker Architecture & OCI Runtime comprehension."
   },
   {
-    "id": "DOCKER_002",
+    "id": "docker_002",
     "skill": "Docker",
-    "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Docker in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
-    ],
-    "ideal_answer": "Common challenges with Docker include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Docker."
-  },
-  {
-    "id": "DOCKER_003",
-    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Linux kernel primitives that make containers possible: Namespaces (isolation) and Cgroups (resource limits).",
     "difficulty": "hard",
-    "question": "How does Docker handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "topic": "Container Internals",
+    "concept": "Namespaces and Cgroups",
+    "questionFamily": "architecture",
+    "tags": [
+      "namespaces",
+      "cgroups",
+      "chroot",
+      "process isolation",
+      "resource limits",
+      "PID namespace"
     ],
-    "ideal_answer": "Docker handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Docker."
+    "idealAnswer": "Containers are isolated Linux processes, not virtual machines. Linux Namespaces isolate system resources: PID (processes), NET (networking), MNT (filesystems), IPC, and UTS (hostname). Control Groups (cgroups) meter and enforce CPU, memory, and I/O resource limits.",
+    "ideal_answer": "Containers are isolated Linux processes, not virtual machines. Linux Namespaces isolate system resources: PID (processes), NET (networking), MNT (filesystems), IPC, and UTS (hostname). Control Groups (cgroups) meter and enforce CPU, memory, and I/O resource limits.",
+    "expected_concepts": [
+      "namespaces",
+      "cgroups",
+      "chroot",
+      "process isolation"
+    ],
+    "explanation": "Evaluates Docker Container Internals and Namespaces and Cgroups comprehension."
+  },
+  {
+    "id": "docker_003",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Docker Containers and Virtual Machines (Hypervisor vs OS-Level Virtualization)?",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "Containers vs Virtual Machines",
+    "questionFamily": "comparison",
+    "tags": [
+      "containers",
+      "virtual machines",
+      "hypervisor",
+      "guest OS",
+      "lightweight",
+      "startup time"
+    ],
+    "idealAnswer": "Virtual Machines run on a Type 1/2 Hypervisor, packaging a complete Guest OS (gigabytes in size, minutes to boot). Containers share the host Linux kernel directly, isolating processes in user space (megabytes in size, sub-second boot time).",
+    "ideal_answer": "Virtual Machines run on a Type 1/2 Hypervisor, packaging a complete Guest OS (gigabytes in size, minutes to boot). Containers share the host Linux kernel directly, isolating processes in user space (megabytes in size, sub-second boot time).",
+    "expected_concepts": [
+      "containers",
+      "virtual machines",
+      "hypervisor",
+      "guest OS"
+    ],
+    "explanation": "Evaluates Docker Core Concepts and Containers vs Virtual Machines comprehension."
+  },
+  {
+    "id": "docker_004",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Docker Images, Image Layers (Union File System / OverlayFS), and Copy-on-Write (CoW) mechanism.",
+    "difficulty": "medium",
+    "topic": "Image Architecture",
+    "concept": "Docker Layers & OverlayFS (Copy-on-Write)",
+    "questionFamily": "architecture",
+    "tags": [
+      "Docker image",
+      "layers",
+      "OverlayFS",
+      "Copy-on-Write",
+      "immutable",
+      "UnionFS"
+    ],
+    "idealAnswer": "Docker images are immutable stacks of read-only layers built by Dockerfile instructions. When a container runs, Docker attaches a thin writable layer on top using OverlayFS with Copy-on-Write: modified files are copied to the writable layer, leaving underlying image layers untouched.",
+    "ideal_answer": "Docker images are immutable stacks of read-only layers built by Dockerfile instructions. When a container runs, Docker attaches a thin writable layer on top using OverlayFS with Copy-on-Write: modified files are copied to the writable layer, leaving underlying image layers untouched.",
+    "expected_concepts": [
+      "Docker image",
+      "layers",
+      "OverlayFS",
+      "Copy-on-Write"
+    ],
+    "explanation": "Evaluates Docker Image Architecture and Docker Layers & OverlayFS (Copy-on-Write) comprehension."
+  },
+  {
+    "id": "docker_005",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Multi-Stage Builds in Dockerfile, and how do they reduce production image size by separating build and runtime environments?",
+    "difficulty": "easy",
+    "topic": "Dockerfile Best Practices",
+    "concept": "Multi-Stage Builds",
+    "questionFamily": "optimization",
+    "tags": [
+      "multi-stage build",
+      "Dockerfile",
+      "image optimization",
+      "minimal image",
+      "distroless"
+    ],
+    "idealAnswer": "Multi-stage builds define multiple 'FROM' instructions in a single Dockerfile. Heavy compilers and SDKs run in early builder stages; only final compiled binaries/assets are copied into a lean runtime base image (Alpine/Distroless), shrinking images from gigabytes to tens of megabytes.",
+    "ideal_answer": "Multi-stage builds define multiple 'FROM' instructions in a single Dockerfile. Heavy compilers and SDKs run in early builder stages; only final compiled binaries/assets are copied into a lean runtime base image (Alpine/Distroless), shrinking images from gigabytes to tens of megabytes.",
+    "expected_concepts": [
+      "multi-stage build",
+      "Dockerfile",
+      "image optimization",
+      "minimal image"
+    ],
+    "explanation": "Evaluates Docker Dockerfile Best Practices and Multi-Stage Builds comprehension."
+  },
+  {
+    "id": "docker_006",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between CMD and ENTRYPOINT in Dockerfile (Exec form vs Shell form).",
+    "difficulty": "medium",
+    "topic": "Dockerfile",
+    "concept": "CMD vs ENTRYPOINT",
+    "questionFamily": "comparison",
+    "tags": [
+      "CMD",
+      "ENTRYPOINT",
+      "exec form",
+      "shell form",
+      "CLI arguments"
+    ],
+    "idealAnswer": "ENTRYPOINT sets the fixed default executable for the container. CMD provides default arguments that can be completely overridden when running 'docker run <args>'. Exec form (['executable', 'param']) is preferred over Shell form because it executes as PID 1, receiving OS shutdown signals.",
+    "ideal_answer": "ENTRYPOINT sets the fixed default executable for the container. CMD provides default arguments that can be completely overridden when running 'docker run <args>'. Exec form (['executable', 'param']) is preferred over Shell form because it executes as PID 1, receiving OS shutdown signals.",
+    "expected_concepts": [
+      "CMD",
+      "ENTRYPOINT",
+      "exec form",
+      "shell form"
+    ],
+    "explanation": "Evaluates Docker Dockerfile and CMD vs ENTRYPOINT comprehension."
+  },
+  {
+    "id": "docker_007",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Docker Networking drivers: Bridge (default), Host, Overlay, Macvlan, and None.",
+    "difficulty": "medium",
+    "topic": "Networking",
+    "concept": "Docker Network Drivers",
+    "questionFamily": "comparison",
+    "tags": [
+      "bridge network",
+      "host network",
+      "overlay network",
+      "macvlan",
+      "port forwarding"
+    ],
+    "idealAnswer": "Bridge creates an isolated private internal network on the host with NAT. Host removes network isolation (container shares host IP/ports directly). Overlay enables multi-host container networking across Swarm/Kubernetes. Macvlan assigns a physical MAC address to containers.",
+    "ideal_answer": "Bridge creates an isolated private internal network on the host with NAT. Host removes network isolation (container shares host IP/ports directly). Overlay enables multi-host container networking across Swarm/Kubernetes. Macvlan assigns a physical MAC address to containers.",
+    "expected_concepts": [
+      "bridge network",
+      "host network",
+      "overlay network",
+      "macvlan"
+    ],
+    "explanation": "Evaluates Docker Networking and Docker Network Drivers comprehension."
+  },
+  {
+    "id": "docker_008",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Docker Volumes differ from Bind Mounts and tmpfs mounts regarding host lifecycle and persistence?",
+    "difficulty": "medium",
+    "topic": "Storage & Persistence",
+    "concept": "Volumes vs Bind Mounts vs tmpfs",
+    "questionFamily": "comparison",
+    "tags": [
+      "volumes",
+      "bind mounts",
+      "tmpfs",
+      "data persistence",
+      "/var/lib/docker/volumes"
+    ],
+    "idealAnswer": "Volumes are managed entirely by Docker in host storage (/var/lib/docker/volumes), isolated from host core filesystem (ideal for production database persistence). Bind Mounts map arbitrary host directories directly into containers. tmpfs mounts store data in host RAM only.",
+    "ideal_answer": "Volumes are managed entirely by Docker in host storage (/var/lib/docker/volumes), isolated from host core filesystem (ideal for production database persistence). Bind Mounts map arbitrary host directories directly into containers. tmpfs mounts store data in host RAM only.",
+    "expected_concepts": [
+      "volumes",
+      "bind mounts",
+      "tmpfs",
+      "data persistence"
+    ],
+    "explanation": "Evaluates Docker Storage & Persistence and Volumes vs Bind Mounts vs tmpfs comprehension."
+  },
+  {
+    "id": "docker_009",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Docker Compose: services, networks, volumes, environment variables, and multi-container orchestration.",
+    "difficulty": "easy",
+    "topic": "Docker Compose",
+    "concept": "Docker Compose Architecture",
+    "questionFamily": "implementation",
+    "tags": [
+      "docker-compose.yml",
+      "services",
+      "networks",
+      "volumes",
+      "depends_on",
+      "environment"
+    ],
+    "idealAnswer": "Docker Compose defines and coordinates multi-container application stacks in a single YAML file (docker-compose.yml). It sets up shared networks, shared volumes, dependency startup order, and environment variables across containers with 'docker compose up'.",
+    "ideal_answer": "Docker Compose defines and coordinates multi-container application stacks in a single YAML file (docker-compose.yml). It sets up shared networks, shared volumes, dependency startup order, and environment variables across containers with 'docker compose up'.",
+    "expected_concepts": [
+      "docker-compose.yml",
+      "services",
+      "networks",
+      "volumes"
+    ],
+    "explanation": "Evaluates Docker Docker Compose and Docker Compose Architecture comprehension."
+  },
+  {
+    "id": "docker_010",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Docker Security Best Practices (Non-root user, Rootless Docker, Read-only filesystems, Dropping Linux Capabilities)?",
+    "difficulty": "hard",
+    "topic": "Security",
+    "concept": "Docker Container Security Hardening",
+    "questionFamily": "security",
+    "tags": [
+      "rootless Docker",
+      "non-root user",
+      "drop capabilities",
+      "read-only filesystem",
+      "seccomp"
+    ],
+    "idealAnswer": "By default, container root is host root (dangerous on container breakout). Best practices: run as non-root (USER 1001), use Rootless Docker, mount read-only root filesystems (--read-only), drop unnecessary Linux capabilities (--cap-drop ALL --cap-add NET_BIND_SERVICE), and enable Seccomp profiles.",
+    "ideal_answer": "By default, container root is host root (dangerous on container breakout). Best practices: run as non-root (USER 1001), use Rootless Docker, mount read-only root filesystems (--read-only), drop unnecessary Linux capabilities (--cap-drop ALL --cap-add NET_BIND_SERVICE), and enable Seccomp profiles.",
+    "expected_concepts": [
+      "rootless Docker",
+      "non-root user",
+      "drop capabilities",
+      "read-only filesystem"
+    ],
+    "explanation": "Evaluates Docker Security and Docker Container Security Hardening comprehension."
+  },
+  {
+    "id": "docker_011",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Docker Build Cache, instruction ordering, and how BuildKit (DOCKER_BUILDKIT=1) speeds up builds.",
+    "difficulty": "easy",
+    "topic": "Performance & Build",
+    "concept": "Build Cache & BuildKit",
+    "questionFamily": "optimization",
+    "tags": [
+      "build cache",
+      "BuildKit",
+      "layer caching",
+      "cache invalidation",
+      "RUN mount=type=cache"
+    ],
+    "idealAnswer": "Docker caches each layer: if an instruction's inputs haven't changed, Docker reuses the cached layer. Placing static instructions (COPY package.json) before dynamic code (COPY .) prevents cache busts. BuildKit compiles layers concurrently and supports persistent package caches (--mount=type=cache).",
+    "ideal_answer": "Docker caches each layer: if an instruction's inputs haven't changed, Docker reuses the cached layer. Placing static instructions (COPY package.json) before dynamic code (COPY .) prevents cache busts. BuildKit compiles layers concurrently and supports persistent package caches (--mount=type=cache).",
+    "expected_concepts": [
+      "build cache",
+      "BuildKit",
+      "layer caching",
+      "cache invalidation"
+    ],
+    "explanation": "Evaluates Docker Performance & Build and Build Cache & BuildKit comprehension."
+  },
+  {
+    "id": "docker_012",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the role of the HEALTHCHECK instruction in Dockerfile, and how do container runtimes detect unhealthy containers?",
+    "difficulty": "easy",
+    "topic": "Health Checks",
+    "concept": "HEALTHCHECK Instruction",
+    "questionFamily": "best_practice",
+    "tags": [
+      "HEALTHCHECK",
+      "curl /health",
+      "container status",
+      "unhealthy",
+      "interval timeout"
+    ],
+    "idealAnswer": "HEALTHCHECK tells Docker how to test if a container is actually functioning (e.g. 'HEALTHCHECK --interval=30s CMD curl -f http://localhost:8080/health || exit 1'). Containers transition through 'starting', 'healthy', and 'unhealthy' states, guiding load balancers.",
+    "ideal_answer": "HEALTHCHECK tells Docker how to test if a container is actually functioning (e.g. 'HEALTHCHECK --interval=30s CMD curl -f http://localhost:8080/health || exit 1'). Containers transition through 'starting', 'healthy', and 'unhealthy' states, guiding load balancers.",
+    "expected_concepts": [
+      "HEALTHCHECK",
+      "curl /health",
+      "container status",
+      "unhealthy"
+    ],
+    "explanation": "Evaluates Docker Health Checks and HEALTHCHECK Instruction comprehension."
+  },
+  {
+    "id": "docker_013",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain PID 1 and Zombie Process Reaping in Docker containers (why dumb-init or tini is used).",
+    "difficulty": "hard",
+    "topic": "Container Internals",
+    "concept": "PID 1 & Zombie Reaping (tini / dumb-init)",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "PID 1",
+      "zombie processes",
+      "tini",
+      "dumb-init",
+      "SIGTERM forwarding"
+    ],
+    "idealAnswer": "In Linux, PID 1 is responsible for reaping orphaned zombie child processes and forwarding OS signals (SIGTERM). Standard runtimes (like Node.js or Python) do not implement full init process signal forwarding, causing hanging containers; 'tini' or 'dumb-init' acts as a lightweight PID 1 init process.",
+    "ideal_answer": "In Linux, PID 1 is responsible for reaping orphaned zombie child processes and forwarding OS signals (SIGTERM). Standard runtimes (like Node.js or Python) do not implement full init process signal forwarding, causing hanging containers; 'tini' or 'dumb-init' acts as a lightweight PID 1 init process.",
+    "expected_concepts": [
+      "PID 1",
+      "zombie processes",
+      "tini",
+      "dumb-init"
+    ],
+    "explanation": "Evaluates Docker Container Internals and PID 1 & Zombie Reaping (tini / dumb-init) comprehension."
+  },
+  {
+    "id": "docker_014",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you inspect container resource consumption and logs using docker stats, docker logs, and logging drivers (json-file, syslog, fluentd)?",
+    "difficulty": "easy",
+    "topic": "Monitoring & Logs",
+    "concept": "Docker Stats & Logging Drivers",
+    "questionFamily": "implementation",
+    "tags": [
+      "docker stats",
+      "docker logs",
+      "logging drivers",
+      "json-file",
+      "log rotation"
+    ],
+    "idealAnswer": "docker stats displays live CPU, memory, network I/O, and block I/O usage. docker logs streams stdout/stderr from containers. In production, configure logging drivers (json-file with max-size/max-file rotation, or fluentd/syslog) to prevent disks from filling up with unrotated logs.",
+    "ideal_answer": "docker stats displays live CPU, memory, network I/O, and block I/O usage. docker logs streams stdout/stderr from containers. In production, configure logging drivers (json-file with max-size/max-file rotation, or fluentd/syslog) to prevent disks from filling up with unrotated logs.",
+    "expected_concepts": [
+      "docker stats",
+      "docker logs",
+      "logging drivers",
+      "json-file"
+    ],
+    "explanation": "Evaluates Docker Monitoring & Logs and Docker Stats & Logging Drivers comprehension."
+  },
+  {
+    "id": "docker_015",
+    "skill": "Docker",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Multi-Platform Images in Docker (buildx, QEMU, OCI manifest lists) for ARM64 and AMD64 architectures?",
+    "difficulty": "medium",
+    "topic": "Cross-Platform",
+    "concept": "Docker Buildx & Multi-Arch Manifests",
+    "questionFamily": "implementation",
+    "tags": [
+      "buildx",
+      "QEMU",
+      "multi-arch",
+      "ARM64",
+      "AMD64",
+      "manifest list"
+    ],
+    "idealAnswer": "Docker Buildx uses QEMU emulation or remote builders to build multi-architecture images. It packages AMD64 and ARM64 binaries into a single multi-platform OCI image manifest list, allowing the same image tag to run seamlessly across Intel servers and Apple Silicon/ARM cloud instances.",
+    "ideal_answer": "Docker Buildx uses QEMU emulation or remote builders to build multi-architecture images. It packages AMD64 and ARM64 binaries into a single multi-platform OCI image manifest list, allowing the same image tag to run seamlessly across Intel servers and Apple Silicon/ARM cloud instances.",
+    "expected_concepts": [
+      "buildx",
+      "QEMU",
+      "multi-arch",
+      "ARM64"
+    ],
+    "explanation": "Evaluates Docker Cross-Platform and Docker Buildx & Multi-Arch Manifests comprehension."
   }
 ]

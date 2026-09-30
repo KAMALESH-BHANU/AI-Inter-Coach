@@ -1,0 +1,405 @@
+[
+  {
+    "id": "sqlite_001",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SQLite architecture: Embedded Serverless Database Engine, single-file storage, and in-process execution.",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "Embedded Serverless Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "SQLite",
+      "embedded database",
+      "serverless",
+      "single-file",
+      "in-process C library"
+    ],
+    "idealAnswer": "SQLite is a self-contained, serverless, zero-configuration embedded SQL database engine compiled directly into the application process. The entire database (schema, tables, indexes, data) is stored in a single cross-platform disk file.",
+    "ideal_answer": "SQLite is a self-contained, serverless, zero-configuration embedded SQL database engine compiled directly into the application process. The entire database (schema, tables, indexes, data) is stored in a single cross-platform disk file.",
+    "expected_concepts": [
+      "SQLite",
+      "embedded database",
+      "serverless",
+      "single-file"
+    ],
+    "explanation": "Evaluates SQLite Architecture and Embedded Serverless Architecture comprehension."
+  },
+  {
+    "id": "sqlite_002",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SQLite Concurrency and Locking modes: Rollback Journal (DELETE, TRUNCATE, PERSIST, MEMORY) vs WAL (Write-Ahead Logging).",
+    "difficulty": "hard",
+    "topic": "Concurrency & WAL",
+    "concept": "Rollback Journal vs WAL Mode",
+    "questionFamily": "comparison",
+    "tags": [
+      "WAL mode",
+      "rollback journal",
+      "concurrency",
+      "readers block writers",
+      "checkpoint"
+    ],
+    "idealAnswer": "In Rollback Journal mode, writers lock the entire database and block all readers. In WAL (Write-Ahead Logging) mode, changes append to a -wal file: readers never block writers, and writers never block readers, dramatically boosting concurrency.",
+    "ideal_answer": "In Rollback Journal mode, writers lock the entire database and block all readers. In WAL (Write-Ahead Logging) mode, changes append to a -wal file: readers never block writers, and writers never block readers, dramatically boosting concurrency.",
+    "expected_concepts": [
+      "WAL mode",
+      "rollback journal",
+      "concurrency",
+      "readers block writers"
+    ],
+    "explanation": "Evaluates SQLite Concurrency & WAL and Rollback Journal vs WAL Mode comprehension."
+  },
+  {
+    "id": "sqlite_003",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Dynamic Typing (Type Affinity) in SQLite, and how does it differ from strict static typing in traditional RDBMS?",
+    "difficulty": "medium",
+    "topic": "Type System",
+    "concept": "Type Affinity & Dynamic Typing",
+    "questionFamily": "definition",
+    "tags": [
+      "type affinity",
+      "dynamic typing",
+      "INTEGER",
+      "TEXT",
+      "BLOB",
+      "REAL",
+      "NUMERIC"
+    ],
+    "idealAnswer": "SQLite uses dynamic typing: data type is associated with the value itself, not the column. A column with TEXT affinity can legally store an INTEGER or BLOB. Columns use 5 type affinities (TEXT, NUMERIC, INTEGER, REAL, BLOB) to guide preferred conversions (Strict Tables in 3.37+ enforce static types).",
+    "ideal_answer": "SQLite uses dynamic typing: data type is associated with the value itself, not the column. A column with TEXT affinity can legally store an INTEGER or BLOB. Columns use 5 type affinities (TEXT, NUMERIC, INTEGER, REAL, BLOB) to guide preferred conversions (Strict Tables in 3.37+ enforce static types).",
+    "expected_concepts": [
+      "type affinity",
+      "dynamic typing",
+      "INTEGER",
+      "TEXT"
+    ],
+    "explanation": "Evaluates SQLite Type System and Type Affinity & Dynamic Typing comprehension."
+  },
+  {
+    "id": "sqlite_004",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SQLite Primary Keys and the special behavior of INTEGER PRIMARY KEY (ROWID alias).",
+    "difficulty": "easy",
+    "topic": "Data Model",
+    "concept": "INTEGER PRIMARY KEY & ROWID",
+    "questionFamily": "implementation",
+    "tags": [
+      "INTEGER PRIMARY KEY",
+      "ROWID",
+      "auto-increment",
+      "B-Tree key",
+      "64-bit int"
+    ],
+    "idealAnswer": "Every non-WITHOUT ROWID SQLite table has a hidden 64-bit integer ROWID. If a column is declared exactly as 'INTEGER PRIMARY KEY' (case-sensitive), it becomes a direct alias for the 64-bit ROWID B-Tree key.",
+    "ideal_answer": "Every non-WITHOUT ROWID SQLite table has a hidden 64-bit integer ROWID. If a column is declared exactly as 'INTEGER PRIMARY KEY' (case-sensitive), it becomes a direct alias for the 64-bit ROWID B-Tree key.",
+    "expected_concepts": [
+      "INTEGER PRIMARY KEY",
+      "ROWID",
+      "auto-increment",
+      "B-Tree key"
+    ],
+    "explanation": "Evaluates SQLite Data Model and INTEGER PRIMARY KEY & ROWID comprehension."
+  },
+  {
+    "id": "sqlite_005",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are WITHOUT ROWID tables in SQLite, and when do they optimize memory and query performance?",
+    "difficulty": "medium",
+    "topic": "Storage Optimization",
+    "concept": "WITHOUT ROWID Tables",
+    "questionFamily": "optimization",
+    "tags": [
+      "WITHOUT ROWID",
+      "clustered index",
+      "composite primary key",
+      "storage space"
+    ],
+    "idealAnswer": "Appending 'WITHOUT ROWID' to CREATE TABLE creates a clustered index on the primary key, eliminating the hidden ROWID column and secondary index pointer lookup. It saves disk space and speeds queries for tables with composite or non-integer primary keys.",
+    "ideal_answer": "Appending 'WITHOUT ROWID' to CREATE TABLE creates a clustered index on the primary key, eliminating the hidden ROWID column and secondary index pointer lookup. It saves disk space and speeds queries for tables with composite or non-integer primary keys.",
+    "expected_concepts": [
+      "WITHOUT ROWID",
+      "clustered index",
+      "composite primary key",
+      "storage space"
+    ],
+    "explanation": "Evaluates SQLite Storage Optimization and WITHOUT ROWID Tables comprehension."
+  },
+  {
+    "id": "sqlite_006",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SQLite Transactions (BEGIN DEFERRED, BEGIN IMMEDIATE, BEGIN EXCLUSIVE) and how they acquire database locks.",
+    "difficulty": "hard",
+    "topic": "Transactions & Locking",
+    "concept": "Transaction Locking Modes",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "BEGIN DEFERRED",
+      "BEGIN IMMEDIATE",
+      "BEGIN EXCLUSIVE",
+      "SQLITE_BUSY",
+      "lock escalation"
+    ],
+    "idealAnswer": "BEGIN DEFERRED acquires no locks until the first read/write. BEGIN IMMEDIATE acquires a RESERVED lock immediately, guaranteeing no other writer can start and avoiding SQLITE_BUSY deadlocks during mid-transaction upgrades. BEGIN EXCLUSIVE acquires an EXCLUSIVE lock immediately.",
+    "ideal_answer": "BEGIN DEFERRED acquires no locks until the first read/write. BEGIN IMMEDIATE acquires a RESERVED lock immediately, guaranteeing no other writer can start and avoiding SQLITE_BUSY deadlocks during mid-transaction upgrades. BEGIN EXCLUSIVE acquires an EXCLUSIVE lock immediately.",
+    "expected_concepts": [
+      "BEGIN DEFERRED",
+      "BEGIN IMMEDIATE",
+      "BEGIN EXCLUSIVE",
+      "SQLITE_BUSY"
+    ],
+    "explanation": "Evaluates SQLite Transactions & Locking and Transaction Locking Modes comprehension."
+  },
+  {
+    "id": "sqlite_007",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you handle SQLITE_BUSY errors in concurrent SQLite applications using sqlite3_busy_timeout and WAL mode?",
+    "difficulty": "medium",
+    "topic": "Concurrency & Error Handling",
+    "concept": "SQLITE_BUSY & Busy Timeout",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "SQLITE_BUSY",
+      "busy_timeout",
+      "WAL",
+      "concurrent writes",
+      "exponential backoff"
+    ],
+    "idealAnswer": "When a thread attempts to write while another transaction holds the lock, SQLite returns SQLITE_BUSY. Enabling WAL mode and setting 'sqlite3_busy_timeout(5000)' makes threads sleep and retry automatically up to 5 seconds before erroring.",
+    "ideal_answer": "When a thread attempts to write while another transaction holds the lock, SQLite returns SQLITE_BUSY. Enabling WAL mode and setting 'sqlite3_busy_timeout(5000)' makes threads sleep and retry automatically up to 5 seconds before erroring.",
+    "expected_concepts": [
+      "SQLITE_BUSY",
+      "busy_timeout",
+      "WAL",
+      "concurrent writes"
+    ],
+    "explanation": "Evaluates SQLite Concurrency & Error Handling and SQLITE_BUSY & Busy Timeout comprehension."
+  },
+  {
+    "id": "sqlite_008",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain In-Memory SQLite Databases (:memory: vs URI shared memory file:memdb1?mode=memory&cache=shared).",
+    "difficulty": "easy",
+    "topic": "In-Memory Database",
+    "concept": "In-Memory SQLite & Shared Cache",
+    "questionFamily": "implementation",
+    "tags": [
+      ":memory:",
+      "in-memory database",
+      "shared cache",
+      "URI filename",
+      "zero disk I/O"
+    ],
+    "idealAnswer": "Passing ':memory:' creates a purely RAM-based database that vanishes when the connection closes. Using URI filenames with 'cache=shared' allows multiple threads/connections within the same process to share the same in-memory database.",
+    "ideal_answer": "Passing ':memory:' creates a purely RAM-based database that vanishes when the connection closes. Using URI filenames with 'cache=shared' allows multiple threads/connections within the same process to share the same in-memory database.",
+    "expected_concepts": [
+      ":memory:",
+      "in-memory database",
+      "shared cache",
+      "URI filename"
+    ],
+    "explanation": "Evaluates SQLite In-Memory Database and In-Memory SQLite & Shared Cache comprehension."
+  },
+  {
+    "id": "sqlite_009",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Full-Text Search in SQLite using FTS5 virtual tables (MATCH operator, bm25 ranking, trigram tokenizers).",
+    "difficulty": "medium",
+    "topic": "Full-Text Search",
+    "concept": "SQLite FTS5 Extension",
+    "questionFamily": "implementation",
+    "tags": [
+      "FTS5",
+      "virtual table",
+      "MATCH operator",
+      "bm25",
+      "trigram tokenizer"
+    ],
+    "idealAnswer": "FTS5 is a built-in virtual table module providing full-text indexing. It supports phrase searches, prefix queries with the MATCH operator, relevance ranking via Okapi BM25, and trigram tokenization for substring search.",
+    "ideal_answer": "FTS5 is a built-in virtual table module providing full-text indexing. It supports phrase searches, prefix queries with the MATCH operator, relevance ranking via Okapi BM25, and trigram tokenization for substring search.",
+    "expected_concepts": [
+      "FTS5",
+      "virtual table",
+      "MATCH operator",
+      "bm25"
+    ],
+    "explanation": "Evaluates SQLite Full-Text Search and SQLite FTS5 Extension comprehension."
+  },
+  {
+    "id": "sqlite_010",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are SQLite Virtual Tables and the Virtual Table Mechanism (xCreate, xConnect, xFilter, xNext)?",
+    "difficulty": "hard",
+    "topic": "Extensibility",
+    "concept": "Virtual Tables Extension Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Virtual Tables",
+      "sqlite3_module",
+      "xFilter",
+      "xNext",
+      "external data"
+    ],
+    "idealAnswer": "Virtual tables appear as standard SQL tables but are backed by custom C/application code implementing the sqlite3_module interface (xFilter, xNext, xColumn). They enable querying CSV files, Git repositories, or REST APIs directly in SQL.",
+    "ideal_answer": "Virtual tables appear as standard SQL tables but are backed by custom C/application code implementing the sqlite3_module interface (xFilter, xNext, xColumn). They enable querying CSV files, Git repositories, or REST APIs directly in SQL.",
+    "expected_concepts": [
+      "Virtual Tables",
+      "sqlite3_module",
+      "xFilter",
+      "xNext"
+    ],
+    "explanation": "Evaluates SQLite Extensibility and Virtual Tables Extension Architecture comprehension."
+  },
+  {
+    "id": "sqlite_011",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you define Custom Application-Defined SQL Functions, Aggregates, and Collations in SQLite?",
+    "difficulty": "medium",
+    "topic": "Extensibility",
+    "concept": "Custom SQL Functions & Aggregates",
+    "questionFamily": "implementation",
+    "tags": [
+      "sqlite3_create_function",
+      "scalar function",
+      "aggregate function",
+      "custom collation"
+    ],
+    "idealAnswer": "SQLite allows registering custom scalar functions (sqlite3_create_function), user-defined aggregate functions (step and final callbacks), and custom collation sequences directly from host programming languages (C, Python, Java).",
+    "ideal_answer": "SQLite allows registering custom scalar functions (sqlite3_create_function), user-defined aggregate functions (step and final callbacks), and custom collation sequences directly from host programming languages (C, Python, Java).",
+    "expected_concepts": [
+      "sqlite3_create_function",
+      "scalar function",
+      "aggregate function",
+      "custom collation"
+    ],
+    "explanation": "Evaluates SQLite Extensibility and Custom SQL Functions & Aggregates comprehension."
+  },
+  {
+    "id": "sqlite_012",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SQLite PRAGMA statements (PRAGMA foreign_keys, PRAGMA journal_mode, PRAGMA synchronous, PRAGMA cache_size).",
+    "difficulty": "medium",
+    "topic": "Configuration & PRAGMAs",
+    "concept": "Essential SQLite PRAGMAs",
+    "questionFamily": "best_practice",
+    "tags": [
+      "PRAGMA",
+      "foreign_keys = ON",
+      "journal_mode = WAL",
+      "synchronous = NORMAL",
+      "cache_size"
+    ],
+    "idealAnswer": "PRAGMAs configure engine behavior: 'PRAGMA foreign_keys = ON' enables foreign key enforcement (disabled by default for legacy compatibility); 'PRAGMA synchronous = NORMAL' speeds up WAL writes safely; 'PRAGMA cache_size' increases memory page cache.",
+    "ideal_answer": "PRAGMAs configure engine behavior: 'PRAGMA foreign_keys = ON' enables foreign key enforcement (disabled by default for legacy compatibility); 'PRAGMA synchronous = NORMAL' speeds up WAL writes safely; 'PRAGMA cache_size' increases memory page cache.",
+    "expected_concepts": [
+      "PRAGMA",
+      "foreign_keys = ON",
+      "journal_mode = WAL",
+      "synchronous = NORMAL"
+    ],
+    "explanation": "Evaluates SQLite Configuration & PRAGMAs and Essential SQLite PRAGMAs comprehension."
+  },
+  {
+    "id": "sqlite_013",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SQLite Backup API (sqlite3_backup_init, sqlite3_backup_step) for online non-blocking database backups.",
+    "difficulty": "medium",
+    "topic": "Backup & Recovery",
+    "concept": "Online SQLite Backup API",
+    "questionFamily": "implementation",
+    "tags": [
+      "sqlite3_backup_init",
+      "online backup",
+      "hot backup",
+      "page copying"
+    ],
+    "idealAnswer": "The SQLite Online Backup API copies data pages incrementally from a source database to a destination backup file while the source database is actively being read and modified by other threads without locking the whole database.",
+    "ideal_answer": "The SQLite Online Backup API copies data pages incrementally from a source database to a destination backup file while the source database is actively being read and modified by other threads without locking the whole database.",
+    "expected_concepts": [
+      "sqlite3_backup_init",
+      "online backup",
+      "hot backup",
+      "page copying"
+    ],
+    "explanation": "Evaluates SQLite Backup & Recovery and Online SQLite Backup API comprehension."
+  },
+  {
+    "id": "sqlite_014",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the SQLite B-Tree and Pager subsystem, and how does page caching and disk page I/O work?",
+    "difficulty": "hard",
+    "topic": "Internals",
+    "concept": "SQLite Pager & B-Tree Subsystem",
+    "questionFamily": "architecture",
+    "tags": [
+      "Pager",
+      "B-Tree",
+      "page cache",
+      "OS file lock",
+      "sector size"
+    ],
+    "idealAnswer": "The SQLite core consists of: Pager layer (manages disk blocks, page cache, transaction atomicity, and OS file locking) and B-Tree layer (organizes data pages into table B+ Trees and index B-Trees with 4KB page allocations).",
+    "ideal_answer": "The SQLite core consists of: Pager layer (manages disk blocks, page cache, transaction atomicity, and OS file locking) and B-Tree layer (organizes data pages into table B+ Trees and index B-Trees with 4KB page allocations).",
+    "expected_concepts": [
+      "Pager",
+      "B-Tree",
+      "page cache",
+      "OS file lock"
+    ],
+    "explanation": "Evaluates SQLite Internals and SQLite Pager & B-Tree Subsystem comprehension."
+  },
+  {
+    "id": "sqlite_015",
+    "skill": "SQLite",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you optimize Bulk Inserts in SQLite (wrapping in single explicit transaction, prepared statement reuse)?",
+    "difficulty": "easy",
+    "topic": "Performance",
+    "concept": "Bulk Insert Optimization",
+    "questionFamily": "optimization",
+    "tags": [
+      "bulk insert",
+      "single transaction",
+      "prepared statement reuse",
+      "PRAGMA synchronous"
+    ],
+    "idealAnswer": "By default, every standalone INSERT executes in its own auto-commit transaction with fsync disk flush (~50 writes/sec). Wrapping 100,000 inserts inside a single explicit 'BEGIN ... COMMIT' transaction increases throughput to over 50,000 inserts/second.",
+    "ideal_answer": "By default, every standalone INSERT executes in its own auto-commit transaction with fsync disk flush (~50 writes/sec). Wrapping 100,000 inserts inside a single explicit 'BEGIN ... COMMIT' transaction increases throughput to over 50,000 inserts/second.",
+    "expected_concepts": [
+      "bulk insert",
+      "single transaction",
+      "prepared statement reuse",
+      "PRAGMA synchronous"
+    ],
+    "explanation": "Evaluates SQLite Performance and Bulk Insert Optimization comprehension."
+  }
+]

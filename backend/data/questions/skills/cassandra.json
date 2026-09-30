@@ -1,0 +1,404 @@
+[
+  {
+    "id": "cas_001",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Apache Cassandra distributed architecture: Masterless Peer-to-Peer ring, Gossip Protocol, and Snitches.",
+    "difficulty": "medium",
+    "topic": "Architecture",
+    "concept": "Masterless Architecture & Gossip Protocol",
+    "questionFamily": "architecture",
+    "tags": [
+      "Cassandra",
+      "masterless",
+      "peer-to-peer",
+      "gossip protocol",
+      "snitch",
+      "ring topology"
+    ],
+    "idealAnswer": "Cassandra has a masterless, decentralized peer-to-peer architecture with no single point of failure. All nodes are equal and communicate cluster state and node health via the Gossip Protocol. Snitches determine network topology and rack proximity.",
+    "ideal_answer": "Cassandra has a masterless, decentralized peer-to-peer architecture with no single point of failure. All nodes are equal and communicate cluster state and node health via the Gossip Protocol. Snitches determine network topology and rack proximity.",
+    "expected_concepts": [
+      "Cassandra",
+      "masterless",
+      "peer-to-peer",
+      "gossip protocol"
+    ],
+    "explanation": "Evaluates Cassandra Architecture and Masterless Architecture & Gossip Protocol comprehension."
+  },
+  {
+    "id": "cas_002",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cassandra Data Model: Partition Key vs Clustering Key (Composite Primary Key) and data sorting.",
+    "difficulty": "hard",
+    "topic": "Data Modeling",
+    "concept": "Partition Key vs Clustering Key",
+    "questionFamily": "design",
+    "tags": [
+      "partition key",
+      "clustering key",
+      "primary key",
+      "token range",
+      "on-disk sort order"
+    ],
+    "idealAnswer": "The Partition Key determines which node in the token ring stores the row via Murmur3Partitioner hashing. The Clustering Key determines the physical sort order of rows within that partition on disk (enabling efficient range queries within a single partition).",
+    "ideal_answer": "The Partition Key determines which node in the token ring stores the row via Murmur3Partitioner hashing. The Clustering Key determines the physical sort order of rows within that partition on disk (enabling efficient range queries within a single partition).",
+    "expected_concepts": [
+      "partition key",
+      "clustering key",
+      "primary key",
+      "token range"
+    ],
+    "explanation": "Evaluates Cassandra Data Modeling and Partition Key vs Clustering Key comprehension."
+  },
+  {
+    "id": "cas_003",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cassandra Write Path: CommitLog, Memtable, SSTables, and why writes are append-only and fast.",
+    "difficulty": "hard",
+    "topic": "Write Path Internals",
+    "concept": "Cassandra Write Path Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "CommitLog",
+      "Memtable",
+      "SSTable",
+      "sequential write",
+      "append-only"
+    ],
+    "idealAnswer": "Writes are append-only: 1) Written sequentially to CommitLog on disk for crash durability; 2) Written to in-memory Memtable; 3) Acknowledged immediately. When Memtable fills, it flushes to immutable SSTables (Sorted String Tables) on disk without random disk seeks.",
+    "ideal_answer": "Writes are append-only: 1) Written sequentially to CommitLog on disk for crash durability; 2) Written to in-memory Memtable; 3) Acknowledged immediately. When Memtable fills, it flushes to immutable SSTables (Sorted String Tables) on disk without random disk seeks.",
+    "expected_concepts": [
+      "CommitLog",
+      "Memtable",
+      "SSTable",
+      "sequential write"
+    ],
+    "explanation": "Evaluates Cassandra Write Path Internals and Cassandra Write Path Architecture comprehension."
+  },
+  {
+    "id": "cas_004",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cassandra Read Path: Memtable, Key Cache, Bloom Filters, Partition Summary, Index, and SSTables.",
+    "difficulty": "hard",
+    "topic": "Read Path Internals",
+    "concept": "Cassandra Read Path Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "read path",
+      "Bloom filter",
+      "key cache",
+      "partition summary",
+      "SSTable index"
+    ],
+    "idealAnswer": "Read path: Checks Memtable -> Checks Key Cache -> Checks Bloom Filter (quickly checks if SSTable might contain partition) -> Scans Partition Summary & Index -> Reads data from SSTable -> Merges versions and returns latest timestamped data.",
+    "ideal_answer": "Read path: Checks Memtable -> Checks Key Cache -> Checks Bloom Filter (quickly checks if SSTable might contain partition) -> Scans Partition Summary & Index -> Reads data from SSTable -> Merges versions and returns latest timestamped data.",
+    "expected_concepts": [
+      "read path",
+      "Bloom filter",
+      "key cache",
+      "partition summary"
+    ],
+    "explanation": "Evaluates Cassandra Read Path Internals and Cassandra Read Path Architecture comprehension."
+  },
+  {
+    "id": "cas_005",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Compaction in Cassandra (Size-Tiered Compaction vs Leveled Compaction vs Time-Window Compaction)?",
+    "difficulty": "hard",
+    "topic": "Compaction",
+    "concept": "Compaction Strategies (STCS vs LCS vs TWCS)",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "compaction",
+      "STCS",
+      "LCS",
+      "TWCS",
+      "SSTable merge",
+      "tombstone removal"
+    ],
+    "idealAnswer": "Compaction merges multiple immutable SSTables, resolving overwrites and purging deleted tombstone records. Size-Tiered (STCS) suits write-heavy workloads; Leveled (LCS) guarantees fast reads with minimal space overhead; Time-Window (TWCS) is optimized for time-series data.",
+    "ideal_answer": "Compaction merges multiple immutable SSTables, resolving overwrites and purging deleted tombstone records. Size-Tiered (STCS) suits write-heavy workloads; Leveled (LCS) guarantees fast reads with minimal space overhead; Time-Window (TWCS) is optimized for time-series data.",
+    "expected_concepts": [
+      "compaction",
+      "STCS",
+      "LCS",
+      "TWCS"
+    ],
+    "explanation": "Evaluates Cassandra Compaction and Compaction Strategies (STCS vs LCS vs TWCS) comprehension."
+  },
+  {
+    "id": "cas_006",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Tombstone handling work in Cassandra, and what causes TombstoneOverwhelmingException?",
+    "difficulty": "hard",
+    "topic": "Deletions & Internals",
+    "concept": "Tombstones & gc_grace_seconds",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "tombstones",
+      "gc_grace_seconds",
+      "TombstoneOverwhelmingException",
+      "soft delete"
+    ],
+    "idealAnswer": "Deletions in Cassandra do not delete data immediately; they write a marker called a Tombstone with a deletion timestamp. Tombstones persist for gc_grace_seconds (default 10 days) to propagate across replicas before compaction. Scanning >100,000 tombstones triggers TombstoneOverwhelmingException.",
+    "ideal_answer": "Deletions in Cassandra do not delete data immediately; they write a marker called a Tombstone with a deletion timestamp. Tombstones persist for gc_grace_seconds (default 10 days) to propagate across replicas before compaction. Scanning >100,000 tombstones triggers TombstoneOverwhelmingException.",
+    "expected_concepts": [
+      "tombstones",
+      "gc_grace_seconds",
+      "TombstoneOverwhelmingException",
+      "soft delete"
+    ],
+    "explanation": "Evaluates Cassandra Deletions & Internals and Tombstones & gc_grace_seconds comprehension."
+  },
+  {
+    "id": "cas_007",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Tunable Consistency in Cassandra: Consistency Levels (ONE, QUORUM, LOCAL_QUORUM, ALL) and the formula R + W > N for Strong Consistency.",
+    "difficulty": "hard",
+    "topic": "Consistency & CAP Theorem",
+    "concept": "Tunable Consistency & R + W > N Formula",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "tunable consistency",
+      "QUORUM",
+      "LOCAL_QUORUM",
+      "strong consistency",
+      "eventual consistency"
+    ],
+    "idealAnswer": "Cassandra allows clients to tune consistency per query. Formula: If Read Consistency (R) + Write Consistency (W) > Replication Factor (N), strong consistency is guaranteed because read and write replica sets overlap by at least one node containing the latest timestamp.",
+    "ideal_answer": "Cassandra allows clients to tune consistency per query. Formula: If Read Consistency (R) + Write Consistency (W) > Replication Factor (N), strong consistency is guaranteed because read and write replica sets overlap by at least one node containing the latest timestamp.",
+    "expected_concepts": [
+      "tunable consistency",
+      "QUORUM",
+      "LOCAL_QUORUM",
+      "strong consistency"
+    ],
+    "explanation": "Evaluates Cassandra Consistency & CAP Theorem and Tunable Consistency & R + W > N Formula comprehension."
+  },
+  {
+    "id": "cas_008",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Cassandra's approach to the CAP Theorem (AP system with Tunable Consistency)?",
+    "difficulty": "medium",
+    "topic": "CAP Theorem",
+    "concept": "Cassandra CAP Theorem Tradeoffs",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "CAP theorem",
+      "Availability",
+      "Partition tolerance",
+      "AP system",
+      "eventual consistency"
+    ],
+    "idealAnswer": "Cassandra is fundamentally an AP (Availability + Partition tolerance) system designed to remain fully writable even during network partitions, while offering tunable consistency to achieve strong consistency when required.",
+    "ideal_answer": "Cassandra is fundamentally an AP (Availability + Partition tolerance) system designed to remain fully writable even during network partitions, while offering tunable consistency to achieve strong consistency when required.",
+    "expected_concepts": [
+      "CAP theorem",
+      "Availability",
+      "Partition tolerance",
+      "AP system"
+    ],
+    "explanation": "Evaluates Cassandra CAP Theorem and Cassandra CAP Theorem Tradeoffs comprehension."
+  },
+  {
+    "id": "cas_009",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cassandra Anti-Entropy Repair (Nodetool Repair) and Merkle Trees for resolving replica divergence.",
+    "difficulty": "hard",
+    "topic": "Repair & Consistency",
+    "concept": "Anti-Entropy Repair & Merkle Trees",
+    "questionFamily": "architecture",
+    "tags": [
+      "anti-entropy repair",
+      "nodetool repair",
+      "Merkle tree",
+      "replica synchronization"
+    ],
+    "idealAnswer": "When replicas diverge due to missed writes or node downtime, 'nodetool repair' builds cryptographic Merkle Trees of token ranges on each replica. Comparing Merkle trees quickly pinpoints mismatched ranges and streams missing data between replicas.",
+    "ideal_answer": "When replicas diverge due to missed writes or node downtime, 'nodetool repair' builds cryptographic Merkle Trees of token ranges on each replica. Comparing Merkle trees quickly pinpoints mismatched ranges and streams missing data between replicas.",
+    "expected_concepts": [
+      "anti-entropy repair",
+      "nodetool repair",
+      "Merkle tree",
+      "replica synchronization"
+    ],
+    "explanation": "Evaluates Cassandra Repair & Consistency and Anti-Entropy Repair & Merkle Trees comprehension."
+  },
+  {
+    "id": "cas_010",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Hinted Handoff in Cassandra, and what happens when a replica is unreachable during a write?",
+    "difficulty": "medium",
+    "topic": "Replication & Fault Tolerance",
+    "concept": "Hinted Handoff",
+    "questionFamily": "architecture",
+    "tags": [
+      "hinted handoff",
+      "coordinator node",
+      "max_hint_window_in_ms",
+      "gossip"
+    ],
+    "idealAnswer": "If a replica node is dead during a write with sufficient consistency (e.g. ONE), the Coordinator node writes a 'hint' to its local disk. When Gossip detects the dead replica is online again within the hint window, the coordinator replays the hints.",
+    "ideal_answer": "If a replica node is dead during a write with sufficient consistency (e.g. ONE), the Coordinator node writes a 'hint' to its local disk. When Gossip detects the dead replica is online again within the hint window, the coordinator replays the hints.",
+    "expected_concepts": [
+      "hinted handoff",
+      "coordinator node",
+      "max_hint_window_in_ms",
+      "gossip"
+    ],
+    "explanation": "Evaluates Cassandra Replication & Fault Tolerance and Hinted Handoff comprehension."
+  },
+  {
+    "id": "cas_011",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Read Repair in Cassandra (Foreground Read Repair vs Background Asynchronous Read Repair).",
+    "difficulty": "medium",
+    "topic": "Consistency",
+    "concept": "Read Repair Mechanisms",
+    "questionFamily": "implementation",
+    "tags": [
+      "read repair",
+      "coordinator",
+      "digest mismatch",
+      "data reconciliation"
+    ],
+    "idealAnswer": "When reading at QUORUM, the coordinator queries full data from one replica and cryptographic digests from others. If digests mismatch, the coordinator queries full data from all replicas, returns the newest timestamp to the client, and sends asynchronous write updates to stale replicas.",
+    "ideal_answer": "When reading at QUORUM, the coordinator queries full data from one replica and cryptographic digests from others. If digests mismatch, the coordinator queries full data from all replicas, returns the newest timestamp to the client, and sends asynchronous write updates to stale replicas.",
+    "expected_concepts": [
+      "read repair",
+      "coordinator",
+      "digest mismatch",
+      "data reconciliation"
+    ],
+    "explanation": "Evaluates Cassandra Consistency and Read Repair Mechanisms comprehension."
+  },
+  {
+    "id": "cas_012",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Why does Cassandra prohibit secondary index queries on unpartitioned tables and why is Query-First Data Modeling required?",
+    "difficulty": "hard",
+    "topic": "Data Modeling",
+    "concept": "Query-First Modeling vs Secondary Indexes",
+    "questionFamily": "design",
+    "tags": [
+      "query-first modeling",
+      "secondary index antipattern",
+      "table per query",
+      "partition key"
+    ],
+    "idealAnswer": "Secondary indexes in Cassandra require querying every single node in the cluster (scatter-gather). In Cassandra, you must design tables around specific query patterns (Query-First modeling): if you need to query by three patterns, you create three denormalized tables.",
+    "ideal_answer": "Secondary indexes in Cassandra require querying every single node in the cluster (scatter-gather). In Cassandra, you must design tables around specific query patterns (Query-First modeling): if you need to query by three patterns, you create three denormalized tables.",
+    "expected_concepts": [
+      "query-first modeling",
+      "secondary index antipattern",
+      "table per query",
+      "partition key"
+    ],
+    "explanation": "Evaluates Cassandra Data Modeling and Query-First Modeling vs Secondary Indexes comprehension."
+  },
+  {
+    "id": "cas_013",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Lightweight Transactions (LWT) in Cassandra using Paxos consensus (IF NOT EXISTS / IF condition)?",
+    "difficulty": "hard",
+    "topic": "Transactions",
+    "concept": "Lightweight Transactions & Paxos",
+    "questionFamily": "implementation",
+    "tags": [
+      "LWT",
+      "Paxos consensus",
+      "IF NOT EXISTS",
+      "linearizable consistency",
+      "4 roundtrips"
+    ],
+    "idealAnswer": "LWT provides linearizable consistency for conditional writes ('INSERT ... IF NOT EXISTS'). It executes a 4-phase Paxos consensus protocol (Prepare/Promise, Propose/Accept, Commit) across replicas, trading write throughput for strong consistency.",
+    "ideal_answer": "LWT provides linearizable consistency for conditional writes ('INSERT ... IF NOT EXISTS'). It executes a 4-phase Paxos consensus protocol (Prepare/Promise, Propose/Accept, Commit) across replicas, trading write throughput for strong consistency.",
+    "expected_concepts": [
+      "LWT",
+      "Paxos consensus",
+      "IF NOT EXISTS",
+      "linearizable consistency"
+    ],
+    "explanation": "Evaluates Cassandra Transactions and Lightweight Transactions & Paxos comprehension."
+  },
+  {
+    "id": "cas_014",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cassandra Keyspace configuration: Replication Strategy (SimpleStrategy vs NetworkTopologyStrategy) and Replication Factor.",
+    "difficulty": "easy",
+    "topic": "Configuration",
+    "concept": "Keyspace Replication Strategies",
+    "questionFamily": "architecture",
+    "tags": [
+      "keyspace",
+      "NetworkTopologyStrategy",
+      "SimpleStrategy",
+      "datacenter-aware",
+      "replication factor"
+    ],
+    "idealAnswer": "A Keyspace is the top-level container for tables. SimpleStrategy is for single-datacenter testing. NetworkTopologyStrategy is for production multi-datacenter setups, defining exact replica counts per datacenter (e.g. {'dc-east': 3, 'dc-west': 3}).",
+    "ideal_answer": "A Keyspace is the top-level container for tables. SimpleStrategy is for single-datacenter testing. NetworkTopologyStrategy is for production multi-datacenter setups, defining exact replica counts per datacenter (e.g. {'dc-east': 3, 'dc-west': 3}).",
+    "expected_concepts": [
+      "keyspace",
+      "NetworkTopologyStrategy",
+      "SimpleStrategy",
+      "datacenter-aware"
+    ],
+    "explanation": "Evaluates Cassandra Configuration and Keyspace Replication Strategies comprehension."
+  },
+  {
+    "id": "cas_015",
+    "skill": "Cassandra",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Cassandra Collections (List, Set, Map), User-Defined Types (UDT), and Frozen Collections?",
+    "difficulty": "medium",
+    "topic": "Data Types",
+    "concept": "Collections, UDTs, & Frozen Modifier",
+    "questionFamily": "implementation",
+    "tags": [
+      "collections",
+      "UDT",
+      "frozen",
+      "non-frozen",
+      "cell overhead"
+    ],
+    "idealAnswer": "Cassandra supports Lists, Sets, Maps, and custom UDTs. Non-frozen collections allow appending/updating individual elements. The 'frozen' modifier serializes the entire collection into a single binary value, which must be overwritten entirely upon update.",
+    "ideal_answer": "Cassandra supports Lists, Sets, Maps, and custom UDTs. Non-frozen collections allow appending/updating individual elements. The 'frozen' modifier serializes the entire collection into a single binary value, which must be overwritten entirely upon update.",
+    "expected_concepts": [
+      "collections",
+      "UDT",
+      "frozen",
+      "non-frozen"
+    ],
+    "explanation": "Evaluates Cassandra Data Types and Collections, UDTs, & Frozen Modifier comprehension."
+  }
+]

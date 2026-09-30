@@ -1,74 +1,407 @@
 [
   {
-    "id": "REACT_001",
+    "id": "react_001",
     "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Functional Components versus Class Components in React and why the industry shifted to Functional Components with Hooks.",
+    "difficulty": "easy",
+    "topic": "Components",
+    "concept": "Functional vs Class Components",
+    "questionFamily": "comparison",
+    "tags": [
+      "functional components",
+      "class components",
+      "hooks",
+      "lifecycle",
+      "state"
+    ],
+    "idealAnswer": "Class components rely on ES6 classes, 'this' binding, and verbose lifecycle methods. Functional components with Hooks offer concise, composable logic, eliminate 'this' complexity, improve tree-shaking, and allow clean custom hook reuse.",
+    "ideal_answer": "Class components rely on ES6 classes, 'this' binding, and verbose lifecycle methods. Functional components with Hooks offer concise, composable logic, eliminate 'this' complexity, improve tree-shaking, and allow clean custom hook reuse.",
+    "expected_concepts": [
+      "functional components",
+      "class components",
+      "hooks",
+      "lifecycle"
+    ],
+    "explanation": "Evaluates React Components and Functional vs Class Components comprehension."
+  },
+  {
+    "id": "react_002",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Props and State in React in terms of ownership, mutability, and component re-rendering?",
+    "difficulty": "easy",
+    "topic": "State & Props",
+    "concept": "Props vs State",
+    "questionFamily": "comparison",
+    "tags": [
+      "props",
+      "state",
+      "immutability",
+      "unidirectional data flow",
+      "re-render"
+    ],
+    "idealAnswer": "Props are read-only inputs passed from parent to child (unidirectional data flow). State is private, mutable data managed internally by the component. When state or props change, React triggers a component re-render.",
+    "ideal_answer": "Props are read-only inputs passed from parent to child (unidirectional data flow). State is private, mutable data managed internally by the component. When state or props change, React triggers a component re-render.",
+    "expected_concepts": [
+      "props",
+      "state",
+      "immutability",
+      "unidirectional data flow"
+    ],
+    "explanation": "Evaluates React State & Props and Props vs State comprehension."
+  },
+  {
+    "id": "react_003",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain React Hooks rules and how React tracks Hook state internally using a linked list keyed by execution order.",
     "difficulty": "medium",
-    "question": "Explain how the Virtual DOM works and the Reconciliation process in React.",
+    "topic": "Hooks",
+    "concept": "Rules of Hooks & Internal Storage",
+    "questionFamily": "architecture",
+    "tags": [
+      "hooks",
+      "rules of hooks",
+      "call order",
+      "linked list",
+      "fiber node"
+    ],
+    "idealAnswer": "Rules of Hooks: 1) Only call hooks at the top level (never inside loops, conditions, or nested functions). 2) Only call hooks from React functions. React Fiber stores hook states in a sequential linked list on the fiber node, relying strictly on invocation order.",
+    "ideal_answer": "Rules of Hooks: 1) Only call hooks at the top level (never inside loops, conditions, or nested functions). 2) Only call hooks from React functions. React Fiber stores hook states in a sequential linked list on the fiber node, relying strictly on invocation order.",
+    "expected_concepts": [
+      "hooks",
+      "rules of hooks",
+      "call order",
+      "linked list"
+    ],
+    "explanation": "Evaluates React Hooks and Rules of Hooks & Internal Storage comprehension."
+  },
+  {
+    "id": "react_004",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does useState work in React, and why must state updates be treated as immutable and asynchronous/batched?",
+    "difficulty": "medium",
+    "topic": "Hooks",
+    "concept": "useState & State Batching",
+    "questionFamily": "implementation",
+    "tags": [
+      "useState",
+      "immutability",
+      "batching",
+      "functional update",
+      "Automatic Batching"
+    ],
+    "idealAnswer": "useState declares a state variable and setter. State updates are batched (Automatic Batching in React 18) for performance. Direct mutation fails to trigger re-renders; developers must provide new object/array copies or use functional updates (setCount(prev => prev + 1)).",
+    "ideal_answer": "useState declares a state variable and setter. State updates are batched (Automatic Batching in React 18) for performance. Direct mutation fails to trigger re-renders; developers must provide new object/array copies or use functional updates (setCount(prev => prev + 1)).",
+    "expected_concepts": [
+      "useState",
+      "immutability",
+      "batching",
+      "functional update"
+    ],
+    "explanation": "Evaluates React Hooks and useState & State Batching comprehension."
+  },
+  {
+    "id": "react_005",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain useEffect in React, its execution timing, and how cleanup functions prevent memory leaks on unmounting.",
+    "difficulty": "medium",
+    "topic": "Hooks",
+    "concept": "useEffect & Cleanup Functions",
+    "questionFamily": "implementation",
+    "tags": [
+      "useEffect",
+      "side effects",
+      "cleanup function",
+      "unmount",
+      "memory leak"
+    ],
+    "idealAnswer": "useEffect executes side effects (data fetching, subscriptions, timers) after the DOM has painted. The returned cleanup function runs before re-running the effect and when the component unmounts, clearing event listeners or cancelling network requests.",
+    "ideal_answer": "useEffect executes side effects (data fetching, subscriptions, timers) after the DOM has painted. The returned cleanup function runs before re-running the effect and when the component unmounts, clearing event listeners or cancelling network requests.",
+    "expected_concepts": [
+      "useEffect",
+      "side effects",
+      "cleanup function",
+      "unmount"
+    ],
+    "explanation": "Evaluates React Hooks and useEffect & Cleanup Functions comprehension."
+  },
+  {
+    "id": "react_006",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the role of the dependency array in useEffect, and what happens when it is omitted, empty ([]), or contains dependencies?",
+    "difficulty": "easy",
+    "topic": "Hooks",
+    "concept": "useEffect Dependency Array",
+    "questionFamily": "best_practice",
+    "tags": [
+      "useEffect",
+      "dependency array",
+      "infinite loop",
+      "stale closures"
+    ],
+    "idealAnswer": "If omitted, the effect runs on every render. If empty ([]), it runs only once after mount. If provided with dependencies ([a, b]), it runs only when specified dependencies change. Omitting required dependencies causes stale closures; unstable object references cause infinite loops.",
+    "ideal_answer": "If omitted, the effect runs on every render. If empty ([]), it runs only once after mount. If provided with dependencies ([a, b]), it runs only when specified dependencies change. Omitting required dependencies causes stale closures; unstable object references cause infinite loops.",
+    "expected_concepts": [
+      "useEffect",
+      "dependency array",
+      "infinite loop",
+      "stale closures"
+    ],
+    "explanation": "Evaluates React Hooks and useEffect Dependency Array comprehension."
+  },
+  {
+    "id": "react_007",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Controlled and Uncontrolled Components in React form handling?",
+    "difficulty": "easy",
+    "topic": "Forms",
+    "concept": "Controlled vs Uncontrolled Components",
+    "questionFamily": "comparison",
+    "tags": [
+      "controlled components",
+      "uncontrolled components",
+      "useRef",
+      "value",
+      "onChange"
+    ],
+    "idealAnswer": "Controlled components have their form element values driven directly by React state via 'value' and 'onChange' props. Uncontrolled components store their value in the DOM itself, accessed imperatively using a 'ref' (useRef).",
+    "ideal_answer": "Controlled components have their form element values driven directly by React state via 'value' and 'onChange' props. Uncontrolled components store their value in the DOM itself, accessed imperatively using a 'ref' (useRef).",
+    "expected_concepts": [
+      "controlled components",
+      "uncontrolled components",
+      "useRef",
+      "value"
+    ],
+    "explanation": "Evaluates React Forms and Controlled vs Uncontrolled Components comprehension."
+  },
+  {
+    "id": "react_008",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does the React Component Lifecycle map between Class Component methods (componentDidMount, etc.) and Functional Hooks?",
+    "difficulty": "medium",
+    "topic": "Lifecycle",
+    "concept": "Component Lifecycle to Hooks Mapping",
+    "questionFamily": "architecture",
+    "tags": [
+      "lifecycle",
+      "componentDidMount",
+      "componentDidUpdate",
+      "componentWillUnmount",
+      "useEffect"
+    ],
+    "idealAnswer": "componentDidMount maps to useEffect with []; componentDidUpdate maps to useEffect with dependencies; componentWillUnmount maps to the useEffect cleanup return function; shouldComponentUpdate maps to React.memo.",
+    "ideal_answer": "componentDidMount maps to useEffect with []; componentDidUpdate maps to useEffect with dependencies; componentWillUnmount maps to the useEffect cleanup return function; shouldComponentUpdate maps to React.memo.",
+    "expected_concepts": [
+      "lifecycle",
+      "componentDidMount",
+      "componentDidUpdate",
+      "componentWillUnmount"
+    ],
+    "explanation": "Evaluates React Lifecycle and Component Lifecycle to Hooks Mapping comprehension."
+  },
+  {
+    "id": "react_009",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Virtual DOM in React, the Reconciliation algorithm, and React Fiber architecture.",
+    "difficulty": "hard",
+    "topic": "Architecture",
+    "concept": "Virtual DOM & Fiber Reconciliation",
+    "questionFamily": "architecture",
+    "tags": [
+      "Virtual DOM",
+      "Reconciliation",
+      "React Fiber",
+      "diffing algorithm",
+      "workInProgress tree"
+    ],
+    "idealAnswer": "The Virtual DOM is a lightweight in-memory JavaScript representation of the actual DOM. When state changes, React builds a new virtual tree, diffs it with the previous tree using heuristic O(n) reconciliation, and commits minimal DOM changes. React Fiber enables interruptible, prioritized incremental rendering.",
+    "ideal_answer": "The Virtual DOM is a lightweight in-memory JavaScript representation of the actual DOM. When state changes, React builds a new virtual tree, diffs it with the previous tree using heuristic O(n) reconciliation, and commits minimal DOM changes. React Fiber enables interruptible, prioritized incremental rendering.",
     "expected_concepts": [
       "Virtual DOM",
       "Reconciliation",
-      "Diffing algorithm",
-      "Fiber architecture",
-      "Keys"
+      "React Fiber",
+      "diffing algorithm"
     ],
-    "ideal_answer": "React creates an in-memory lightweight representation of the real DOM called Virtual DOM. When state changes, React creates a new Virtual DOM tree, diffs it against the previous tree using the heuristic Reconciliation algorithm (O(n)), and patches only necessary changes to the real DOM.",
-    "explanation": "Core rendering architecture of React."
+    "explanation": "Evaluates React Architecture and Virtual DOM & Fiber Reconciliation comprehension."
   },
   {
-    "id": "REACT_002",
+    "id": "react_010",
     "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Why are 'key' props essential when rendering lists in React, and why should array indices be avoided as keys for dynamic lists?",
     "difficulty": "medium",
-    "question": "What are the rules of React Hooks, and why must useEffect dependencies be specified accurately?",
-    "expected_concepts": [
-      "Call order top-level",
-      "Stale closures",
-      "Dependency array",
-      "Cleanup function"
+    "topic": "Reconciliation",
+    "concept": "List Keys & Reconciliation",
+    "questionFamily": "debugging",
+    "tags": [
+      "key prop",
+      "reconciliation",
+      "list rendering",
+      "array index key",
+      "DOM recycling"
     ],
-    "ideal_answer": "Hooks must only be called at the top level of React functions (not inside loops or conditions) to ensure call order preservation across renders. Missing dependencies in useEffect lead to stale closures where outdated state/props are captured.",
-    "explanation": "Assesses hooks state management and lifecycle comprehension."
+    "idealAnswer": "The 'key' prop provides a stable identity across renders, allowing React's diffing algorithm to match elements and reuse DOM nodes. Using array indices causes UI bugs, broken inputs, and incorrect animations when items are inserted, deleted, or reordered.",
+    "ideal_answer": "The 'key' prop provides a stable identity across renders, allowing React's diffing algorithm to match elements and reuse DOM nodes. Using array indices causes UI bugs, broken inputs, and incorrect animations when items are inserted, deleted, or reordered.",
+    "expected_concepts": [
+      "key prop",
+      "reconciliation",
+      "list rendering",
+      "array index key"
+    ],
+    "explanation": "Evaluates React Reconciliation and List Keys & Reconciliation comprehension."
   },
   {
-    "id": "REACT_003",
+    "id": "react_011",
     "skill": "React",
-    "difficulty": "hard",
-    "question": "How do useMemo, useCallback, and React.memo optimize component rendering?",
-    "expected_concepts": [
-      "Re-rendering prevention",
-      "Memoization",
-      "Referential equality",
-      "Expensive computations"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the React Context API (createContext, useContext, Provider) and how to prevent unnecessary re-renders in consumers.",
+    "difficulty": "medium",
+    "topic": "State Management",
+    "concept": "Context API & Optimization",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "Context API",
+      "createContext",
+      "useContext",
+      "prop drilling",
+      "re-render optimization"
     ],
-    "ideal_answer": "React.memo skips re-rendering a component if props have not changed. useMemo memoizes the result of expensive calculations. useCallback memoizes callback function instances to preserve referential equality across renders.",
-    "explanation": "Evaluates React performance optimization techniques."
+    "idealAnswer": "Context API shares global data (theming, user auth) across the component tree without prop drilling. Because any update re-renders all consumers of that context, best practices include splitting contexts by concern and memoizing provider value objects with useMemo.",
+    "ideal_answer": "Context API shares global data (theming, user auth) across the component tree without prop drilling. Because any update re-renders all consumers of that context, best practices include splitting contexts by concern and memoizing provider value objects with useMemo.",
+    "expected_concepts": [
+      "Context API",
+      "createContext",
+      "useContext",
+      "prop drilling"
+    ],
+    "explanation": "Evaluates React State Management and Context API & Optimization comprehension."
   },
   {
-    "id": "REACT_004",
+    "id": "react_012",
     "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does client-side routing work in React Router (BrowserRouter, Routes, Route, useNavigate, useParams)?",
     "difficulty": "easy",
-    "question": "What is State vs Props in React, and what does unidirectional data flow mean?",
-    "expected_concepts": [
-      "Component internal state",
-      "Read-only props",
-      "Top-down data flow",
-      "Lifting state up"
+    "topic": "Routing",
+    "concept": "React Router & SPA Routing",
+    "questionFamily": "implementation",
+    "tags": [
+      "React Router",
+      "BrowserRouter",
+      "Routes",
+      "useNavigate",
+      "useParams",
+      "SPA"
     ],
-    "ideal_answer": "Props are read-only inputs passed down from parent to child components. State is local component data managed internally that triggers re-renders when updated. Unidirectional data flow means data flows down via props and events bubble up via callbacks.",
-    "explanation": "Basic React component architecture."
+    "idealAnswer": "React Router manages single-page application navigation by intercepting URL changes via the HTML5 History API (pushState, popState) without full page reloads, conditionally rendering matched component trees based on route patterns.",
+    "ideal_answer": "React Router manages single-page application navigation by intercepting URL changes via the HTML5 History API (pushState, popState) without full page reloads, conditionally rendering matched component trees based on route patterns.",
+    "expected_concepts": [
+      "React Router",
+      "BrowserRouter",
+      "Routes",
+      "useNavigate"
+    ],
+    "explanation": "Evaluates React Routing and React Router & SPA Routing comprehension."
   },
   {
-    "id": "REACT_005",
+    "id": "react_013",
     "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain memoization in React using React.memo, useMemo, and useCallback, and when NOT to use them.",
     "difficulty": "medium",
-    "question": "Compare React Context API vs Redux Toolkit for state management.",
-    "expected_concepts": [
-      "Prop drilling",
-      "Global state",
-      "Middleware",
-      "Re-render scope",
-      "DevTools"
+    "topic": "Performance",
+    "concept": "Memoization (React.memo, useMemo, useCallback)",
+    "questionFamily": "optimization",
+    "tags": [
+      "React.memo",
+      "useMemo",
+      "useCallback",
+      "referential equality",
+      "premature optimization"
     ],
-    "ideal_answer": "Context API is built-in and ideal for low-frequency global state (theme, user auth). Redux Toolkit is designed for complex, high-frequency state updates with predictable action dispatching, middleware support, and fine-grained selector re-rendering controls.",
-    "explanation": "Architectural state management comparison."
+    "idealAnswer": "React.memo prevents component re-renders if props don't change. useMemo caches computed values. useCallback caches function reference instances across renders. They should not be used everywhere prematurely because memoization itself incurs memory and comparison overhead.",
+    "ideal_answer": "React.memo prevents component re-renders if props don't change. useMemo caches computed values. useCallback caches function reference instances across renders. They should not be used everywhere prematurely because memoization itself incurs memory and comparison overhead.",
+    "expected_concepts": [
+      "React.memo",
+      "useMemo",
+      "useCallback",
+      "referential equality"
+    ],
+    "explanation": "Evaluates React Performance and Memoization (React.memo, useMemo, useCallback) comprehension."
+  },
+  {
+    "id": "react_014",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are React 18 Concurrent Features: Transitions (useTransition, useDeferredValue), Suspense, and Streaming SSR?",
+    "difficulty": "hard",
+    "topic": "Modern React",
+    "concept": "React 18 Concurrent Features",
+    "questionFamily": "architecture",
+    "tags": [
+      "React 18",
+      "useTransition",
+      "useDeferredValue",
+      "Suspense",
+      "Streaming SSR"
+    ],
+    "idealAnswer": "Concurrent React allows rendering to be paused, interrupted, or abandoned. useTransition marks state updates as non-urgent transitions (keeping UI responsive during heavy updates). useDeferredValue defers re-rendering slow subtrees. Suspense coordinates loading states and streaming SSR.",
+    "ideal_answer": "Concurrent React allows rendering to be paused, interrupted, or abandoned. useTransition marks state updates as non-urgent transitions (keeping UI responsive during heavy updates). useDeferredValue defers re-rendering slow subtrees. Suspense coordinates loading states and streaming SSR.",
+    "expected_concepts": [
+      "React 18",
+      "useTransition",
+      "useDeferredValue",
+      "Suspense"
+    ],
+    "explanation": "Evaluates React Modern React and React 18 Concurrent Features comprehension."
+  },
+  {
+    "id": "react_015",
+    "skill": "React",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare React State Management patterns: Local state, Context API, Redux Toolkit, and Zustand/Jotai.",
+    "difficulty": "hard",
+    "topic": "State Management",
+    "concept": "State Management Architecture Tradeoffs",
+    "questionFamily": "comparison",
+    "tags": [
+      "Redux Toolkit",
+      "Zustand",
+      "Context API",
+      "atomic state",
+      "global state"
+    ],
+    "idealAnswer": "Local state (useState) handles UI-specific state. Context API handles low-frequency global data. Redux Toolkit provides predictable centralized state with middleware and time-travel debugging for complex enterprise apps. Zustand/Jotai provide lightweight, boilerplate-free atomic state management.",
+    "ideal_answer": "Local state (useState) handles UI-specific state. Context API handles low-frequency global data. Redux Toolkit provides predictable centralized state with middleware and time-travel debugging for complex enterprise apps. Zustand/Jotai provide lightweight, boilerplate-free atomic state management.",
+    "expected_concepts": [
+      "Redux Toolkit",
+      "Zustand",
+      "Context API",
+      "atomic state"
+    ],
+    "explanation": "Evaluates React State Management and State Management Architecture Tradeoffs comprehension."
   }
 ]

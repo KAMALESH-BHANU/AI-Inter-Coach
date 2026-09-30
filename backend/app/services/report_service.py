@@ -81,17 +81,19 @@ class ReportService:
             [
                 Paragraph("<b>Overall Score</b>", bold_text),
                 Paragraph("<b>Technical Knowledge</b>", bold_text),
+                Paragraph("<b>SQL Score (Q12-Q13)</b>", bold_text),
                 Paragraph("<b>Communication</b>", bold_text),
                 Paragraph("<b>Presentation & Gaze</b>", bold_text)
             ],
             [
                 Paragraph(f"<font size=16 color='#2563EB'><b>{scores.overall_score}/100</b></font>", normal_text),
-                Paragraph(f"<font size=14><b>{scores.technical_knowledge}/100</b></font>", normal_text),
-                Paragraph(f"<font size=14><b>{scores.communication}/100</b></font>", normal_text),
-                Paragraph(f"<font size=14><b>{scores.presentation}/100</b></font>", normal_text)
+                Paragraph(f"<font size=13><b>{scores.technical_knowledge}/100</b></font>", normal_text),
+                Paragraph(f"<font size=13 color='#0D9488'><b>{scores.sql_score}%</b></font>", normal_text),
+                Paragraph(f"<font size=13><b>{scores.communication}/100</b></font>", normal_text),
+                Paragraph(f"<font size=13><b>{scores.presentation}/100</b></font>", normal_text)
             ]
         ]
-        score_table = Table(score_data, colWidths=[130, 130, 130, 130])
+        score_table = Table(score_data, colWidths=[105, 105, 110, 100, 100])
         score_table.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), colors.HexColor("#F8FAFC")),
             ('ALIGN', (0,0), (-1,-1), 'CENTER'),
@@ -104,9 +106,10 @@ class ReportService:
         elements.append(Spacer(1, 15))
 
         # 3. Speech & Vision Metrics Section
-        elements.append(Paragraph("Speech & Behavioral Dynamics", section_heading))
+        elements.append(Paragraph("Speech, Coding & Behavioral Dynamics", section_heading))
         metrics_data = [
             [Paragraph("<b>Metric</b>", bold_text), Paragraph("<b>Value</b>", bold_text), Paragraph("<b>Assessment</b>", bold_text)],
+            [Paragraph("SQL Coding Assessment (Q12 & Q13)", normal_text), Paragraph(f"{scores.sql_score}%", normal_text), Paragraph("All SQL queries verified correct" if scores.sql_score == 100 else ("1 SQL query passed" if scores.sql_score == 50 else "Practice SQL queries & joins"), normal_text)],
             [Paragraph("Average Eye Contact", normal_text), Paragraph(f"{scores.eye_contact}%", normal_text), Paragraph("Optimal camera gaze" if scores.eye_contact >= 75 else "Improve camera alignment", normal_text)],
             [Paragraph("Average Speaking Rate", normal_text), Paragraph(f"{session.speech_metrics.average_wpm} WPM", normal_text), Paragraph("Optimal pace (110-160 WPM)" if 110 <= session.speech_metrics.average_wpm <= 160 else "Pacing adjustment recommended", normal_text)],
             [Paragraph("Total Filler Words", normal_text), Paragraph(f"{session.speech_metrics.total_fillers} words", normal_text), Paragraph("Minimal fillers" if session.speech_metrics.total_fillers <= 5 else "Reduce vocal pauses", normal_text)],
@@ -142,9 +145,60 @@ class ReportService:
             elements.append(proctor_table)
             elements.append(Spacer(1, 15))
 
-        # 5. Gemini Qualitative Feedback Section
+        # 5. Gemini AI Suggestions & Coaching Section
+        sug = getattr(session, "suggestions", None)
         fb = session.gemini_feedback
-        if fb:
+
+        if sug:
+            elements.append(Paragraph("AI Performance Feedback & Actionable Coaching", section_heading))
+            summary_txt = sug.get("overallSummary") or sug.get("overall_summary") or ""
+            elements.append(Paragraph(f"<b>Executive Summary:</b> {summary_txt}", normal_text))
+            elements.append(Spacer(1, 6))
+
+            strengths_list = sug.get("strengths", [])
+            if strengths_list:
+                elements.append(Paragraph("<b>Key Strengths:</b>", bold_text))
+                for st in strengths_list[:4]:
+                    elements.append(Paragraph(f"• {st}", normal_text))
+                elements.append(Spacer(1, 6))
+
+            improvements_list = sug.get("improvementAreas") or sug.get("areas_to_improve") or []
+            if improvements_list:
+                elements.append(Paragraph("<b>Areas for Growth:</b>", bold_text))
+                for imp in improvements_list[:4]:
+                    elements.append(Paragraph(f"• {imp}", normal_text))
+                elements.append(Spacer(1, 6))
+
+            comm_fb = sug.get("communicationFeedback")
+            if comm_fb and isinstance(comm_fb, dict):
+                elements.append(Paragraph("<b>Communication Coaching:</b>", bold_text))
+                for k, v in comm_fb.items():
+                    elements.append(Paragraph(f"• <b>{k.capitalize()}:</b> {v}", normal_text))
+                elements.append(Spacer(1, 6))
+
+            topics_list = sug.get("recommendedTopics") or sug.get("recommended_topics") or []
+            if topics_list:
+                elements.append(Paragraph(f"<b>Recommended Study Topics:</b> {', '.join(topics_list[:6])}", normal_text))
+                elements.append(Spacer(1, 6))
+
+            practice_plan = sug.get("practicePlan")
+            if practice_plan and isinstance(practice_plan, list):
+                elements.append(Paragraph("<b>5-Day Structured Practice Plan:</b>", bold_text))
+                for day_item in practice_plan[:5]:
+                    d_num = day_item.get("day", 1)
+                    d_focus = day_item.get("focus", "")
+                    d_tasks = ", ".join(day_item.get("tasks", []))
+                    elements.append(Paragraph(f"• <b>Day {d_num} ({d_focus}):</b> {d_tasks}", normal_text))
+                elements.append(Spacer(1, 6))
+
+            goals_list = sug.get("nextInterviewGoals") or []
+            if goals_list:
+                elements.append(Paragraph("<b>Goals for Next Mock Interview:</b>", bold_text))
+                for g in goals_list[:4]:
+                    elements.append(Paragraph(f"• {g}", normal_text))
+                elements.append(Spacer(1, 10))
+
+        elif fb:
             elements.append(Paragraph("AI Performance Feedback & Actionable Recommendations", section_heading))
             elements.append(Paragraph(f"<b>Summary:</b> {fb.overall_summary}", normal_text))
             elements.append(Spacer(1, 6))
@@ -170,17 +224,31 @@ class ReportService:
         elements.append(Paragraph("Detailed Question-by-Question Breakdown", section_heading))
 
         q_table_data = [
-            [Paragraph("<b>#</b>", bold_text), Paragraph("<b>Question</b>", bold_text), Paragraph("<b>Candidate Answer Transcript</b>", bold_text), Paragraph("<b>Score</b>", bold_text)]
+            [Paragraph("<b>#</b>", bold_text), Paragraph("<b>Question</b>", bold_text), Paragraph("<b>Candidate Answer / Response</b>", bold_text), Paragraph("<b>Score</b>", bold_text)]
         ]
 
         for i, q in enumerate(session.questions):
             ans = session.answers[i] if i < len(session.answers) else None
-            transcript_snippet = ans.transcript[:150] + "..." if ans and len(ans.transcript) > 150 else (ans.transcript if ans else "No response recorded")
+            ans_text = ""
+            if ans:
+                if q.type == "sql":
+                    ans_text = (ans.candidate_query or (ans.transcript if ans.transcript != 'SQL Query Submitted' else '') or "No query submitted").strip()
+                elif q.type in ["pseudocode", "pseudocode_mcq"]:
+                    sel_id = ans.selected_option_id or ans.selected_option
+                    ans_text = f"Selected Option: {sel_id}" if sel_id else "Not answered"
+                else:
+                    ans_text = (ans.transcript or "No response recorded").strip()
+                    if ans_text.startswith("-- Write your MySQL query"):
+                        ans_text = "No response recorded"
+            else:
+                ans_text = "Not answered" if q.type in ["pseudocode", "pseudocode_mcq"] else "No response recorded"
+
+            transcript_snippet = (ans_text[:150] + "...") if len(ans_text) > 150 else (ans_text or "No response recorded")
             score_val = f"{ans.technical_score}/100" if ans else "N/A"
             
             q_table_data.append([
                 Paragraph(str(i + 1), normal_text),
-                Paragraph(f"<b>[{q.type.upper()}] ({q.skill})</b><br/>{q.question[:120]}", normal_text),
+                Paragraph(f"<b>[{str(q.type).upper()}] ({q.skill})</b><br/>{q.question[:120]}", normal_text),
                 Paragraph(transcript_snippet, normal_text),
                 Paragraph(f"<b>{score_val}</b>", normal_text)
             ])

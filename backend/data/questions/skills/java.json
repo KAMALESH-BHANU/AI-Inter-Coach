@@ -1,74 +1,403 @@
 [
   {
-    "id": "JAVA_001",
+    "id": "java_001",
     "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the four core principles of Object-Oriented Programming (OOP) and how they are implemented in Java.",
     "difficulty": "medium",
-    "question": "What is the difference between final, finally, and finalize in Java?",
-    "expected_concepts": [
-      "final keyword",
-      "finally block",
-      "finalize method",
-      "garbage collection"
+    "topic": "OOP",
+    "concept": "Core OOP Principles",
+    "questionFamily": "architecture",
+    "tags": [
+      "OOP",
+      "encapsulation",
+      "inheritance",
+      "polymorphism",
+      "abstraction"
     ],
-    "ideal_answer": "final is a keyword to declare constants, prevent method overriding or class inheritance. finally is a block used in exception handling that executes regardless of whether an exception occurs. finalize is a method on Object called by the Garbage Collector before an object is reclaimed.",
-    "explanation": "Tests understanding of Java core keywords, exception handling flow, and GC lifecycle."
+    "idealAnswer": "Encapsulation restricts direct access to state via private fields and getters/setters. Inheritance allows subclassing using 'extends'. Polymorphism enables method overriding and overloading. Abstraction hides implementation details using abstract classes and interfaces.",
+    "ideal_answer": "Encapsulation restricts direct access to state via private fields and getters/setters. Inheritance allows subclassing using 'extends'. Polymorphism enables method overriding and overloading. Abstraction hides implementation details using abstract classes and interfaces.",
+    "expected_concepts": [
+      "OOP",
+      "encapsulation",
+      "inheritance",
+      "polymorphism"
+    ],
+    "explanation": "Evaluates Java OOP and Core OOP Principles comprehension."
   },
   {
-    "id": "JAVA_002",
+    "id": "java_002",
     "skill": "Java",
-    "difficulty": "medium",
-    "question": "Explain how HashMap works internally in Java.",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between method overloading and method overriding in Java.",
+    "difficulty": "easy",
+    "topic": "OOP",
+    "concept": "Polymorphism",
+    "questionFamily": "comparison",
+    "tags": [
+      "overloading",
+      "overriding",
+      "polymorphism",
+      "method signature"
+    ],
+    "idealAnswer": "Method overloading occurs within the same class with same method name but different parameter list (compile-time polymorphism). Method overriding occurs when a subclass redefines a method from its superclass with identical signature and return type (runtime polymorphism).",
+    "ideal_answer": "Method overloading occurs within the same class with same method name but different parameter list (compile-time polymorphism). Method overriding occurs when a subclass redefines a method from its superclass with identical signature and return type (runtime polymorphism).",
     "expected_concepts": [
-      "hashcode",
+      "overloading",
+      "overriding",
+      "polymorphism",
+      "method signature"
+    ],
+    "explanation": "Evaluates Java OOP and Polymorphism comprehension."
+  },
+  {
+    "id": "java_003",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between an abstract class and an interface in Java, especially after Java 8 and 9?",
+    "difficulty": "medium",
+    "topic": "OOP",
+    "concept": "Abstraction Mechanisms",
+    "questionFamily": "comparison",
+    "tags": [
+      "abstract class",
+      "interface",
+      "default methods",
+      "multiple inheritance"
+    ],
+    "idealAnswer": "An abstract class can maintain state (instance fields), constructors, and both abstract and concrete methods. An interface specifies behavior, supports multiple inheritance, and since Java 8/9 can have default, static, and private methods, but cannot have instance state.",
+    "ideal_answer": "An abstract class can maintain state (instance fields), constructors, and both abstract and concrete methods. An interface specifies behavior, supports multiple inheritance, and since Java 8/9 can have default, static, and private methods, but cannot have instance state.",
+    "expected_concepts": [
+      "abstract class",
+      "interface",
+      "default methods",
+      "multiple inheritance"
+    ],
+    "explanation": "Evaluates Java OOP and Abstraction Mechanisms comprehension."
+  },
+  {
+    "id": "java_004",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Java's exception handling hierarchy work, and what is the role of try-with-resources?",
+    "difficulty": "medium",
+    "topic": "Exception Handling",
+    "concept": "Exception Propagation & Lifecycle",
+    "questionFamily": "implementation",
+    "tags": [
+      "exceptions",
+      "try-with-resources",
+      "AutoCloseable",
+      "checked vs unchecked"
+    ],
+    "idealAnswer": "Throwable is the root class, divided into Error and Exception. try-with-resources automatically closes any resource implementing AutoCloseable (e.g. Streams, Connections) at the end of the statement, eliminating manual finally blocks.",
+    "ideal_answer": "Throwable is the root class, divided into Error and Exception. try-with-resources automatically closes any resource implementing AutoCloseable (e.g. Streams, Connections) at the end of the statement, eliminating manual finally blocks.",
+    "expected_concepts": [
+      "exceptions",
+      "try-with-resources",
+      "AutoCloseable",
+      "checked vs unchecked"
+    ],
+    "explanation": "Evaluates Java Exception Handling and Exception Propagation & Lifecycle comprehension."
+  },
+  {
+    "id": "java_005",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between checked and unchecked exceptions in Java with concrete examples.",
+    "difficulty": "easy",
+    "topic": "Exception Handling",
+    "concept": "Checked vs Unchecked",
+    "questionFamily": "comparison",
+    "tags": [
+      "checked exception",
+      "unchecked exception",
+      "RuntimeException",
+      "IOException"
+    ],
+    "idealAnswer": "Checked exceptions inherit from Exception (excluding RuntimeException) and must be handled or declared with throws (e.g., IOException, SQLException). Unchecked exceptions inherit from RuntimeException or Error and represent programming bugs (e.g., NullPointerException, IllegalArgumentException).",
+    "ideal_answer": "Checked exceptions inherit from Exception (excluding RuntimeException) and must be handled or declared with throws (e.g., IOException, SQLException). Unchecked exceptions inherit from RuntimeException or Error and represent programming bugs (e.g., NullPointerException, IllegalArgumentException).",
+    "expected_concepts": [
+      "checked exception",
+      "unchecked exception",
+      "RuntimeException",
+      "IOException"
+    ],
+    "explanation": "Evaluates Java Exception Handling and Checked vs Unchecked comprehension."
+  },
+  {
+    "id": "java_006",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the hierarchy and major interfaces of the Java Collections Framework.",
+    "difficulty": "medium",
+    "topic": "Collections",
+    "concept": "Collection Hierarchy",
+    "questionFamily": "architecture",
+    "tags": [
+      "Collection",
+      "List",
+      "Set",
+      "Map",
+      "Queue"
+    ],
+    "idealAnswer": "The root interface is Iterable, followed by Collection, which branches into List (ordered, indexed), Set (unique elements), and Queue/Deque. Map (key-value pairs) is independent but part of the framework.",
+    "ideal_answer": "The root interface is Iterable, followed by Collection, which branches into List (ordered, indexed), Set (unique elements), and Queue/Deque. Map (key-value pairs) is independent but part of the framework.",
+    "expected_concepts": [
+      "Collection",
+      "List",
+      "Set",
+      "Map"
+    ],
+    "explanation": "Evaluates Java Collections and Collection Hierarchy comprehension."
+  },
+  {
+    "id": "java_007",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare ArrayList and LinkedList in Java regarding their internal data structures and time complexities.",
+    "difficulty": "easy",
+    "topic": "Collections",
+    "concept": "List Implementations",
+    "questionFamily": "comparison",
+    "tags": [
+      "ArrayList",
+      "LinkedList",
+      "dynamic array",
+      "doubly linked list",
+      "time complexity"
+    ],
+    "idealAnswer": "ArrayList uses a resizable dynamic array offering O(1) random access by index but O(n) insertions/deletions in the middle. LinkedList uses a doubly linked list offering O(1) insertions/deletions at ends but O(n) element lookup by index.",
+    "ideal_answer": "ArrayList uses a resizable dynamic array offering O(1) random access by index but O(n) insertions/deletions in the middle. LinkedList uses a doubly linked list offering O(1) insertions/deletions at ends but O(n) element lookup by index.",
+    "expected_concepts": [
+      "ArrayList",
+      "LinkedList",
+      "dynamic array",
+      "doubly linked list"
+    ],
+    "explanation": "Evaluates Java Collections and List Implementations comprehension."
+  },
+  {
+    "id": "java_008",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain how HashMap works internally in Java, including collision resolution and Java 8 treeification.",
+    "difficulty": "hard",
+    "topic": "Collections",
+    "concept": "HashMap Internals",
+    "questionFamily": "implementation",
+    "tags": [
+      "HashMap",
+      "hashCode",
       "equals",
       "buckets",
-      "collision handling",
-      "red-black tree"
+      "treeification",
+      "Red-Black tree"
     ],
-    "ideal_answer": "HashMap uses key's hashCode() to compute the bucket index. Key-value pairs are stored as Node objects in linked lists. Since Java 8, if a bucket linked list exceeds 8 nodes, it transforms into a balanced Red-Black tree (O(log n) lookup).",
-    "explanation": "Evaluates knowledge of data structures in Java collections framework."
-  },
-  {
-    "id": "JAVA_003",
-    "skill": "Java",
-    "difficulty": "hard",
-    "question": "What is the Java Memory Model, and how do volatile and synchronized keywords differ?",
+    "idealAnswer": "HashMap uses hashCode() and a hashing function to map keys to bucket array indices. Collisions are handled via linked lists. In Java 8+, if a bucket's entries reach TREEIFY_THRESHOLD (8) and capacity is at least 64, the linked list converts to a balanced Red-Black tree (TreeNode), reducing worst-case lookup from O(n) to O(log n).",
+    "ideal_answer": "HashMap uses hashCode() and a hashing function to map keys to bucket array indices. Collisions are handled via linked lists. In Java 8+, if a bucket's entries reach TREEIFY_THRESHOLD (8) and capacity is at least 64, the linked list converts to a balanced Red-Black tree (TreeNode), reducing worst-case lookup from O(n) to O(log n).",
     "expected_concepts": [
-      "Java Memory Model",
-      "Heap vs Thread Stack",
-      "volatile visibility",
-      "synchronized atomicity & locking"
+      "HashMap",
+      "hashCode",
+      "equals",
+      "buckets"
     ],
-    "ideal_answer": "The JMM defines how threads interact with main memory and CPU caches. volatile ensures visibility of variable updates across threads by forcing reads/writes from main memory, but doesn't guarantee atomicity. synchronized guarantees both visibility and mutual exclusion (atomicity) by locking an object monitor.",
-    "explanation": "Assesses multi-threading and concurrency fundamentals in Java."
+    "explanation": "Evaluates Java Collections and HashMap Internals comprehension."
   },
   {
-    "id": "JAVA_004",
+    "id": "java_009",
     "skill": "Java",
-    "difficulty": "easy",
-    "question": "Explain String immutability in Java and why String is immutable.",
-    "expected_concepts": [
-      "String pool",
-      "Immutability",
-      "Security",
-      "Thread-safety",
-      "Caching hashcode"
-    ],
-    "ideal_answer": "String objects cannot be changed once created. Immutability improves security (network connections, file paths), allows string pooling to save memory, makes strings thread-safe without locks, and allows hashcodes to be cached.",
-    "explanation": "Fundamental core Java memory management question."
-  },
-  {
-    "id": "JAVA_005",
-    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does HashSet ensure uniqueness of elements internally, and why must equals() and hashCode() be consistent?",
     "difficulty": "medium",
-    "question": "What is the difference between Abstract Class and Interface in Java 8+?",
-    "expected_concepts": [
-      "Multiple inheritance",
-      "default methods",
-      "static methods",
-      "state/instance variables"
+    "topic": "Collections",
+    "concept": "HashSet Uniqueness",
+    "questionFamily": "design",
+    "tags": [
+      "HashSet",
+      "hashCode",
+      "equals",
+      "contract"
     ],
-    "ideal_answer": "Abstract classes can hold state (instance variables) and constructors. Interfaces cannot hold state (only static final constants). Interfaces allow multiple inheritance of behavior, and since Java 8 support default and static methods, and Java 9 private methods.",
-    "explanation": "Tests Object-Oriented design understanding in Java."
+    "idealAnswer": "HashSet is backed internally by a HashMap where elements are keys and a dummy PRESENT object is the value. If two equal objects have different hashCodes, they land in different buckets, breaking the uniqueness guarantee.",
+    "ideal_answer": "HashSet is backed internally by a HashMap where elements are keys and a dummy PRESENT object is the value. If two equal objects have different hashCodes, they land in different buckets, breaking the uniqueness guarantee.",
+    "expected_concepts": [
+      "HashSet",
+      "hashCode",
+      "equals",
+      "contract"
+    ],
+    "explanation": "Evaluates Java Collections and HashSet Uniqueness comprehension."
+  },
+  {
+    "id": "java_010",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you create and manage threads in Java, and what are the advantages of using the ExecutorService over manual Thread creation?",
+    "difficulty": "medium",
+    "topic": "Concurrency",
+    "concept": "Thread Management",
+    "questionFamily": "best_practice",
+    "tags": [
+      "threads",
+      "ExecutorService",
+      "ThreadPoolExecutor",
+      "Callable",
+      "Future"
+    ],
+    "idealAnswer": "Threads can be created by implementing Runnable/Callable or extending Thread. ExecutorService manages a thread pool, reusing existing threads to reduce creation overhead, controlling concurrency limits, and handling task scheduling via Futures.",
+    "ideal_answer": "Threads can be created by implementing Runnable/Callable or extending Thread. ExecutorService manages a thread pool, reusing existing threads to reduce creation overhead, controlling concurrency limits, and handling task scheduling via Futures.",
+    "expected_concepts": [
+      "threads",
+      "ExecutorService",
+      "ThreadPoolExecutor",
+      "Callable"
+    ],
+    "explanation": "Evaluates Java Concurrency and Thread Management comprehension."
+  },
+  {
+    "id": "java_011",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between synchronized blocks, ReentrantLock, and the volatile keyword in Java.",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "Synchronization and Locks",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "synchronized",
+      "ReentrantLock",
+      "volatile",
+      "visibility",
+      "atomicity"
+    ],
+    "idealAnswer": "volatile guarantees visibility of variable changes across threads and prevents instruction reordering, but not atomicity. synchronized guarantees mutual exclusion and memory visibility. ReentrantLock adds advanced capabilities like tryLock(), timed locks, interruptible locks, and fairness policies.",
+    "ideal_answer": "volatile guarantees visibility of variable changes across threads and prevents instruction reordering, but not atomicity. synchronized guarantees mutual exclusion and memory visibility. ReentrantLock adds advanced capabilities like tryLock(), timed locks, interruptible locks, and fairness policies.",
+    "expected_concepts": [
+      "synchronized",
+      "ReentrantLock",
+      "volatile",
+      "visibility"
+    ],
+    "explanation": "Evaluates Java Concurrency and Synchronization and Locks comprehension."
+  },
+  {
+    "id": "java_012",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between JVM, JDK, and JRE, and how does the JIT compiler improve performance?",
+    "difficulty": "easy",
+    "topic": "JVM",
+    "concept": "JVM Architecture",
+    "questionFamily": "definition",
+    "tags": [
+      "JVM",
+      "JDK",
+      "JRE",
+      "JIT",
+      "bytecode"
+    ],
+    "idealAnswer": "JDK is the development kit including compiler (javac) and tools. JRE provides runtime libraries and JVM to run apps. JVM executes bytecode. The JIT (Just-In-Time) compiler translates frequently executed bytecode (hot spots) directly into native machine code at runtime.",
+    "ideal_answer": "JDK is the development kit including compiler (javac) and tools. JRE provides runtime libraries and JVM to run apps. JVM executes bytecode. The JIT (Just-In-Time) compiler translates frequently executed bytecode (hot spots) directly into native machine code at runtime.",
+    "expected_concepts": [
+      "JVM",
+      "JDK",
+      "JRE",
+      "JIT"
+    ],
+    "explanation": "Evaluates Java JVM and JVM Architecture comprehension."
+  },
+  {
+    "id": "java_013",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the generational garbage collection strategy in the JVM and common GC algorithms.",
+    "difficulty": "hard",
+    "topic": "JVM",
+    "concept": "Garbage Collection",
+    "questionFamily": "optimization",
+    "tags": [
+      "Garbage Collection",
+      "Young Generation",
+      "Old Generation",
+      "G1GC",
+      "ZGC"
+    ],
+    "idealAnswer": "JVM heap is divided into Young Gen (Eden, Survivor spaces) and Old/Tenured Gen. Most objects die young (Minor GC). Long-lived objects are promoted to Old Gen (Major/Full GC). Modern collectors like G1GC and ZGC divide heap into regions and perform concurrent marking to minimize stop-the-world pauses.",
+    "ideal_answer": "JVM heap is divided into Young Gen (Eden, Survivor spaces) and Old/Tenured Gen. Most objects die young (Minor GC). Long-lived objects are promoted to Old Gen (Major/Full GC). Modern collectors like G1GC and ZGC divide heap into regions and perform concurrent marking to minimize stop-the-world pauses.",
+    "expected_concepts": [
+      "Garbage Collection",
+      "Young Generation",
+      "Old Generation",
+      "G1GC"
+    ],
+    "explanation": "Evaluates Java JVM and Garbage Collection comprehension."
+  },
+  {
+    "id": "java_014",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are the key functional programming features introduced in Java 8, and how does the Stream API differ from Collections?",
+    "difficulty": "medium",
+    "topic": "Java 8+",
+    "concept": "Functional Programming & Streams",
+    "questionFamily": "implementation",
+    "tags": [
+      "Java 8",
+      "Streams",
+      "Lambdas",
+      "FunctionalInterface",
+      "Optional"
+    ],
+    "idealAnswer": "Java 8 introduced lambda expressions, functional interfaces (@FunctionalInterface), method references, Optional, and Streams. Collections hold in-memory data structures, while Streams provide lazy, pipeline-based declarative computations (filter, map, reduce) without modifying the source.",
+    "ideal_answer": "Java 8 introduced lambda expressions, functional interfaces (@FunctionalInterface), method references, Optional, and Streams. Collections hold in-memory data structures, while Streams provide lazy, pipeline-based declarative computations (filter, map, reduce) without modifying the source.",
+    "expected_concepts": [
+      "Java 8",
+      "Streams",
+      "Lambdas",
+      "FunctionalInterface"
+    ],
+    "explanation": "Evaluates Java Java 8+ and Functional Programming & Streams comprehension."
+  },
+  {
+    "id": "java_015",
+    "skill": "Java",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain String immutability in Java, why String was designed to be immutable, and the difference between String, StringBuilder, and StringBuffer.",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "String Immutability",
+    "questionFamily": "comparison",
+    "tags": [
+      "String",
+      "StringBuilder",
+      "StringBuffer",
+      "String Pool",
+      "thread-safety"
+    ],
+    "idealAnswer": "Strings are immutable: their internal char/byte array is final and cannot be modified. This enables String Pool caching, hashcode caching, security in class loaders/network connections, and thread-safety. StringBuilder is mutable and not thread-safe (fast), while StringBuffer is mutable and synchronized (thread-safe).",
+    "ideal_answer": "Strings are immutable: their internal char/byte array is final and cannot be modified. This enables String Pool caching, hashcode caching, security in class loaders/network connections, and thread-safety. StringBuilder is mutable and not thread-safe (fast), while StringBuffer is mutable and synchronized (thread-safe).",
+    "expected_concepts": [
+      "String",
+      "StringBuilder",
+      "StringBuffer",
+      "String Pool"
+    ],
+    "explanation": "Evaluates Java Memory Management and String Immutability comprehension."
   }
 ]

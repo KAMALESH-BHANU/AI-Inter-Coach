@@ -6,9 +6,12 @@ from datetime import datetime
 from pydantic import BaseModel, Field, model_validator
 
 class QuestionType(str, Enum):
+    INTRODUCTION = "introduction"
     PROJECT = "project"
     TECHNICAL = "technical"
     PSEUDOCODE = "pseudocode"
+    PSEUDOCODE_MCQ = "pseudocode_mcq"
+    SQL = "sql"
 
 class InterviewState(str, Enum):
     CREATED = "CREATED"
@@ -36,8 +39,42 @@ class QuestionModel(BaseModel):
     ideal_answer: str = ""
     explanation: Optional[str] = None
     code_snippet: Optional[str] = None
-    options: Optional[List[str]] = None  # for pseudocode MCQs
+    options: Optional[List[Any]] = None  # for pseudocode MCQs (list of dicts [{"id": "A", "text": "..."}] or strings)
     correct_answer: Optional[str] = None
+    correct_option_id: Optional[str] = None
+    correctOptionId: Optional[str] = None
+    # Technical and question family metadata
+    concept: Optional[str] = None
+    question_family: Optional[str] = None
+    questionFamily: Optional[str] = None
+    tags: Optional[List[str]] = []
+    idealAnswer: Optional[str] = None
+    # Pseudocode and general problem solving fields
+    category: Optional[str] = None
+    topic: Optional[str] = None
+    prompt: Optional[str] = None
+    input_description: Optional[str] = None
+    input: Optional[str] = None
+    expected_output_description: Optional[str] = None
+    example: Optional[Dict[str, Any]] = None
+    pseudocode: Optional[str] = None
+    language_independent: Optional[bool] = True
+    languageIndependent: Optional[bool] = True
+    supported_languages: Optional[List[str]] = None
+    answer_mode: Optional[str] = None
+    answerMode: Optional[str] = None
+    question_number: Optional[int] = None
+    questionNumber: Optional[int] = None
+    question_type: Optional[str] = None
+    questionType: Optional[str] = None
+    score: Optional[int] = 1
+    # SQL specific fields
+    title: Optional[str] = None
+    description: Optional[str] = None
+    tables: Optional[List[Dict[str, Any]]] = None
+    expected_query: Optional[str] = None
+    expected_output: Optional[Dict[str, Any]] = None
+    expected_result: Optional[List[Dict[str, Any]]] = None
 
 class CandidateAnswerModel(BaseModel):
     question_id: str
@@ -61,7 +98,24 @@ class CandidateAnswerModel(BaseModel):
     missing_face_events: int = 0
     multiple_face_events: int = 0
     dominant_expression: str = "Neutral"
-    selected_option: Optional[str] = None  # for pseudocode questions
+    # Pseudocode MCQ answer fields
+    selected_option: Optional[str] = None
+    selected_option_id: Optional[str] = None
+    selectedOptionId: Optional[str] = None
+    selected_option_text: Optional[str] = None
+    selectedOptionText: Optional[str] = None
+    correct_option_id: Optional[str] = None
+    correctOptionId: Optional[str] = None
+    answer_mode: Optional[str] = None
+    answerMode: Optional[str] = None
+    status: Optional[str] = None  # "ANSWERED" | "NOT_ANSWERED"
+    # SQL specific answer fields
+    candidate_query: Optional[str] = None
+    query_result: Optional[List[Dict[str, Any]]] = None
+    expected_result: Optional[List[Dict[str, Any]]] = None
+    is_correct: Optional[bool] = None
+    execution_error: Optional[str] = None
+    execution_time_ms: Optional[float] = None
     technical_score: float = 0.0
     quality_score: float = 0.0
     communication_score: float = 0.0
@@ -100,6 +154,7 @@ class ScoreBreakdown(BaseModel):
     eye_contact: float = 0.0
     speech_fluency: float = 0.0
     pseudocode_score: float = 0.0
+    sql_score: float = 0.0
     overall_score: float = 0.0
 
 class GeminiFeedbackModel(BaseModel):
@@ -127,14 +182,22 @@ class InterviewSessionModel(BaseModel):
     projects: List[Dict[str, Any]] = []
     resume_extracted: bool = False
     
-    current_question_index: int = 0  # 0 to 9
+    current_question_index: int = 0  # 0 to 12
     questions: List[QuestionModel] = []
     answers: List[CandidateAnswerModel] = []
+    sql_question_ids: List[str] = []
     
     speech_metrics: SpeechMetricsSummary = Field(default_factory=SpeechMetricsSummary)
     vision_metrics: VisionMetricsSummary = Field(default_factory=VisionMetricsSummary)
     scores: ScoreBreakdown = Field(default_factory=ScoreBreakdown)
     gemini_feedback: Optional[GeminiFeedbackModel] = None
+    
+    # AI Suggestions & Feedback Service fields
+    suggestions: Optional[Dict[str, Any]] = None
+    suggestion_status: str = "NOT_REQUESTED"  # NOT_REQUESTED | GENERATING | COMPLETED | FAILED
+    suggestion_attempts: int = 0
+    suggestion_error: Optional[str] = None
+    suggestions_generated_at: Optional[datetime] = None
     
     video_path: Optional[str] = None
     video_replay_count: int = 0
@@ -147,6 +210,8 @@ class UserModel(BaseModel):
     full_name: str = "Candidate"
     hashed_password: str
     skills: List[str] = []
+    recent_technical_question_ids: List[str] = []
+    recent_technical_question_fingerprints: List[str] = []
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
     @model_validator(mode="before")

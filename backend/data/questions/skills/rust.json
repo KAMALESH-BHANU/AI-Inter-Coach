@@ -1,0 +1,407 @@
+[
+  {
+    "id": "rust_001",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Rust's Ownership model and its three fundamental rules that guarantee memory safety without a garbage collector.",
+    "difficulty": "hard",
+    "topic": "Core Principles",
+    "concept": "Ownership System",
+    "questionFamily": "architecture",
+    "tags": [
+      "ownership",
+      "borrowing",
+      "memory safety",
+      "RAII",
+      "scope"
+    ],
+    "idealAnswer": "Rust ownership rules: 1) Each value has an owner. 2) There can only be one owner at a time. 3) When the owner goes out of scope, the value is automatically dropped. This eliminates manual memory management and garbage collection pauses.",
+    "ideal_answer": "Rust ownership rules: 1) Each value has an owner. 2) There can only be one owner at a time. 3) When the owner goes out of scope, the value is automatically dropped. This eliminates manual memory management and garbage collection pauses.",
+    "expected_concepts": [
+      "ownership",
+      "borrowing",
+      "memory safety",
+      "RAII"
+    ],
+    "explanation": "Evaluates Rust Core Principles and Ownership System comprehension."
+  },
+  {
+    "id": "rust_002",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Borrowing and References in Rust: what is the aliasing rule regarding immutable (&T) and mutable (&mut T) references?",
+    "difficulty": "hard",
+    "topic": "Borrowing",
+    "concept": "Borrow Checker Rules",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "borrowing",
+      "references",
+      "mutable reference",
+      "aliasing rule",
+      "data races"
+    ],
+    "idealAnswer": "The borrow checker enforces: at any given time, you can have either one mutable reference (&mut T) OR any number of immutable references (&T), but never both. This eliminates data races at compile-time.",
+    "ideal_answer": "The borrow checker enforces: at any given time, you can have either one mutable reference (&mut T) OR any number of immutable references (&T), but never both. This eliminates data races at compile-time.",
+    "expected_concepts": [
+      "borrowing",
+      "references",
+      "mutable reference",
+      "aliasing rule"
+    ],
+    "explanation": "Evaluates Rust Borrowing and Borrow Checker Rules comprehension."
+  },
+  {
+    "id": "rust_003",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Lifetimes in Rust ('a), why does the borrow checker need lifetime annotations, and what is lifetime elision?",
+    "difficulty": "hard",
+    "topic": "Lifetimes",
+    "concept": "Lifetime Annotations",
+    "questionFamily": "implementation",
+    "tags": [
+      "lifetimes",
+      "borrow checker",
+      "lifetime elision",
+      "dangling references"
+    ],
+    "idealAnswer": "Lifetimes specify the duration for which references are valid, preventing dangling references. Lifetime annotations (e.g. &'a str) do not change runtime lifetimes but describe relationships between parameter and return references. Lifetime elision rules infer obvious lifetimes automatically.",
+    "ideal_answer": "Lifetimes specify the duration for which references are valid, preventing dangling references. Lifetime annotations (e.g. &'a str) do not change runtime lifetimes but describe relationships between parameter and return references. Lifetime elision rules infer obvious lifetimes automatically.",
+    "expected_concepts": [
+      "lifetimes",
+      "borrow checker",
+      "lifetime elision",
+      "dangling references"
+    ],
+    "explanation": "Evaluates Rust Lifetimes and Lifetime Annotations comprehension."
+  },
+  {
+    "id": "rust_004",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between String and &str in Rust in terms of allocation and memory ownership.",
+    "difficulty": "medium",
+    "topic": "Data Types",
+    "concept": "String vs &str",
+    "questionFamily": "comparison",
+    "tags": [
+      "String",
+      "&str",
+      "heap allocation",
+      "string slice",
+      "borrowing"
+    ],
+    "idealAnswer": "String is a heap-allocated, growable, owned UTF-8 byte buffer. &str is an immutable string slice borrowing a view into string data located on the heap, stack, or static binary memory.",
+    "ideal_answer": "String is a heap-allocated, growable, owned UTF-8 byte buffer. &str is an immutable string slice borrowing a view into string data located on the heap, stack, or static binary memory.",
+    "expected_concepts": [
+      "String",
+      "&str",
+      "heap allocation",
+      "string slice"
+    ],
+    "explanation": "Evaluates Rust Data Types and String vs &str comprehension."
+  },
+  {
+    "id": "rust_005",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Option<T> and Result<T, E> replace null pointers and exceptions in Rust, and how does the '?' operator work?",
+    "difficulty": "medium",
+    "topic": "Error Handling",
+    "concept": "Option, Result, & '?' Operator",
+    "questionFamily": "implementation",
+    "tags": [
+      "Option",
+      "Result",
+      "match",
+      "question mark operator",
+      "unwrap"
+    ],
+    "idealAnswer": "Rust lacks null and exceptions. Option<T> (Some/None) handles presence/absence; Result<T, E> (Ok/Err) handles fallible operations. The '?' operator unpacks Ok(val) or early-returns Err(err) from the calling function.",
+    "ideal_answer": "Rust lacks null and exceptions. Option<T> (Some/None) handles presence/absence; Result<T, E> (Ok/Err) handles fallible operations. The '?' operator unpacks Ok(val) or early-returns Err(err) from the calling function.",
+    "expected_concepts": [
+      "Option",
+      "Result",
+      "match",
+      "question mark operator"
+    ],
+    "explanation": "Evaluates Rust Error Handling and Option, Result, & '?' Operator comprehension."
+  },
+  {
+    "id": "rust_006",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Traits in Rust, and how do Trait Bounds (T: Trait) enable polymorphic behavior?",
+    "difficulty": "medium",
+    "topic": "Traits & Generics",
+    "concept": "Traits & Trait Bounds",
+    "questionFamily": "design",
+    "tags": [
+      "traits",
+      "trait bounds",
+      "generics",
+      "polymorphism",
+      "interfaces"
+    ],
+    "idealAnswer": "Traits define shared behavior contracts similar to interfaces. Trait bounds constrain generic type parameters (e.g. fn print<T: Display>(item: T)) to guarantee specific capabilities at compile-time.",
+    "ideal_answer": "Traits define shared behavior contracts similar to interfaces. Trait bounds constrain generic type parameters (e.g. fn print<T: Display>(item: T)) to guarantee specific capabilities at compile-time.",
+    "expected_concepts": [
+      "traits",
+      "trait bounds",
+      "generics",
+      "polymorphism"
+    ],
+    "explanation": "Evaluates Rust Traits & Generics and Traits & Trait Bounds comprehension."
+  },
+  {
+    "id": "rust_007",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Static Dispatch (impl Trait / Generics with Monomorphization) vs Dynamic Dispatch (dyn Trait with Trait Objects) in Rust.",
+    "difficulty": "hard",
+    "topic": "Polymorphism",
+    "concept": "Static vs Dynamic Dispatch",
+    "questionFamily": "comparison",
+    "tags": [
+      "monomorphization",
+      "static dispatch",
+      "dyn Trait",
+      "vtable",
+      "fat pointer"
+    ],
+    "idealAnswer": "Static dispatch generates dedicated code for each concrete type at compile time via monomorphization (zero runtime overhead, larger binary). Dynamic dispatch uses trait objects (&dyn Trait) resolving methods at runtime via vtables with fat pointers.",
+    "ideal_answer": "Static dispatch generates dedicated code for each concrete type at compile time via monomorphization (zero runtime overhead, larger binary). Dynamic dispatch uses trait objects (&dyn Trait) resolving methods at runtime via vtables with fat pointers.",
+    "expected_concepts": [
+      "monomorphization",
+      "static dispatch",
+      "dyn Trait",
+      "vtable"
+    ],
+    "explanation": "Evaluates Rust Polymorphism and Static vs Dynamic Dispatch comprehension."
+  },
+  {
+    "id": "rust_008",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Pattern Matching in Rust with the 'match' keyword and destructuring, and why match must be exhaustive.",
+    "difficulty": "medium",
+    "topic": "Control Flow",
+    "concept": "Exhaustive Pattern Matching",
+    "questionFamily": "implementation",
+    "tags": [
+      "match",
+      "pattern matching",
+      "destructuring",
+      "exhaustiveness",
+      "if let"
+    ],
+    "idealAnswer": "The 'match' expression branches on patterns and must be exhaustive—every possible value must be handled, preventing unhandled edge cases. Patterns support guards, ranges, binding, and struct/enum destructuring.",
+    "ideal_answer": "The 'match' expression branches on patterns and must be exhaustive—every possible value must be handled, preventing unhandled edge cases. Patterns support guards, ranges, binding, and struct/enum destructuring.",
+    "expected_concepts": [
+      "match",
+      "pattern matching",
+      "destructuring",
+      "exhaustiveness"
+    ],
+    "explanation": "Evaluates Rust Control Flow and Exhaustive Pattern Matching comprehension."
+  },
+  {
+    "id": "rust_009",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are smart pointers in Rust: Box<T>, Rc<T>, Arc<T>, and RefCell<T>, and when is each used?",
+    "difficulty": "hard",
+    "topic": "Memory Management",
+    "concept": "Smart Pointers & Interior Mutability",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "Box",
+      "Rc",
+      "Arc",
+      "RefCell",
+      "interior mutability"
+    ],
+    "idealAnswer": "Box<T> allocates data on the heap. Rc<T> enables single-threaded reference counted shared ownership. Arc<T> enables thread-safe atomic reference counted ownership. RefCell<T> enables interior mutability by moving borrow checks to runtime.",
+    "ideal_answer": "Box<T> allocates data on the heap. Rc<T> enables single-threaded reference counted shared ownership. Arc<T> enables thread-safe atomic reference counted ownership. RefCell<T> enables interior mutability by moving borrow checks to runtime.",
+    "expected_concepts": [
+      "Box",
+      "Rc",
+      "Arc",
+      "RefCell"
+    ],
+    "explanation": "Evaluates Rust Memory Management and Smart Pointers & Interior Mutability comprehension."
+  },
+  {
+    "id": "rust_010",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the concept of Interior Mutability in Rust and how Mutex<T> or RefCell<T> achieve it safely.",
+    "difficulty": "hard",
+    "topic": "Concurrency & Safety",
+    "concept": "Interior Mutability",
+    "questionFamily": "design",
+    "tags": [
+      "interior mutability",
+      "RefCell",
+      "Mutex",
+      "unsafe",
+      "borrowing"
+    ],
+    "idealAnswer": "Interior mutability allows mutating data even through an immutable reference (&T). RefCell<T> enforces borrowing rules at runtime, while Mutex<T> uses OS/hardware synchronization primitives to lock data for exclusive thread-safe mutation.",
+    "ideal_answer": "Interior mutability allows mutating data even through an immutable reference (&T). RefCell<T> enforces borrowing rules at runtime, while Mutex<T> uses OS/hardware synchronization primitives to lock data for exclusive thread-safe mutation.",
+    "expected_concepts": [
+      "interior mutability",
+      "RefCell",
+      "Mutex",
+      "unsafe"
+    ],
+    "explanation": "Evaluates Rust Concurrency & Safety and Interior Mutability comprehension."
+  },
+  {
+    "id": "rust_011",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Rust achieve Fearless Concurrency using Send and Sync auto-traits?",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "Send and Sync Traits",
+    "questionFamily": "architecture",
+    "tags": [
+      "concurrency",
+      "Send",
+      "Sync",
+      "thread safety",
+      "data races"
+    ],
+    "idealAnswer": "The compiler enforces thread safety using marker traits: Send indicates a type can transfer ownership across thread boundaries; Sync indicates a type can safely share references across threads (&T is Send). If all fields implement Send/Sync, the type automatically implements them.",
+    "ideal_answer": "The compiler enforces thread safety using marker traits: Send indicates a type can transfer ownership across thread boundaries; Sync indicates a type can safely share references across threads (&T is Send). If all fields implement Send/Sync, the type automatically implements them.",
+    "expected_concepts": [
+      "concurrency",
+      "Send",
+      "Sync",
+      "thread safety"
+    ],
+    "explanation": "Evaluates Rust Concurrency and Send and Sync Traits comprehension."
+  },
+  {
+    "id": "rust_012",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is unsafe Rust, what superpowers does the 'unsafe' block grant, and how should it be encapsulated?",
+    "difficulty": "hard",
+    "topic": "Safety & FFI",
+    "concept": "Unsafe Rust",
+    "questionFamily": "security",
+    "tags": [
+      "unsafe",
+      "raw pointers",
+      "FFI",
+      "memory safety",
+      "undefined behavior"
+    ],
+    "idealAnswer": "The 'unsafe' keyword disables compiler safety guarantees for 5 operations: dereferencing raw pointers, calling unsafe functions/FFI, implementing unsafe traits, mutating mutable static variables, and accessing union fields. Unsafe code must be wrapped inside safe abstractions.",
+    "ideal_answer": "The 'unsafe' keyword disables compiler safety guarantees for 5 operations: dereferencing raw pointers, calling unsafe functions/FFI, implementing unsafe traits, mutating mutable static variables, and accessing union fields. Unsafe code must be wrapped inside safe abstractions.",
+    "expected_concepts": [
+      "unsafe",
+      "raw pointers",
+      "FFI",
+      "memory safety"
+    ],
+    "explanation": "Evaluates Rust Safety & FFI and Unsafe Rust comprehension."
+  },
+  {
+    "id": "rust_013",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does asynchronous programming work in Rust using Future, async/await, and async runtimes like Tokio?",
+    "difficulty": "hard",
+    "topic": "Asynchronous Rust",
+    "concept": "Futures & Async Runtimes",
+    "questionFamily": "architecture",
+    "tags": [
+      "async",
+      "await",
+      "Future",
+      "Tokio",
+      "poll",
+      "pinning"
+    ],
+    "idealAnswer": "Async functions in Rust compile into state machines implementing the Future trait with a poll() method. Unlike Go/Node, Rust does not include a built-in runtime; an external runtime like Tokio drives futures to completion.",
+    "ideal_answer": "Async functions in Rust compile into state machines implementing the Future trait with a poll() method. Unlike Go/Node, Rust does not include a built-in runtime; an external runtime like Tokio drives futures to completion.",
+    "expected_concepts": [
+      "async",
+      "await",
+      "Future",
+      "Tokio"
+    ],
+    "explanation": "Evaluates Rust Asynchronous Rust and Futures & Async Runtimes comprehension."
+  },
+  {
+    "id": "rust_014",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Macros in Rust (Declarative macro_rules! vs Procedural Macros), and how do they differ from C macros?",
+    "difficulty": "hard",
+    "topic": "Metaprogramming",
+    "concept": "Declarative & Procedural Macros",
+    "questionFamily": "implementation",
+    "tags": [
+      "macros",
+      "macro_rules",
+      "procedural macros",
+      "derive",
+      "AST"
+    ],
+    "idealAnswer": "Rust macros operate on Abstract Syntax Tree (AST) tokens rather than raw text substitution, providing hygienic macro expansion. Declarative macros (macro_rules!) match syntax patterns; Procedural macros (Derive, Attribute, Function-like) run custom Rust code during compilation to generate syntax trees.",
+    "ideal_answer": "Rust macros operate on Abstract Syntax Tree (AST) tokens rather than raw text substitution, providing hygienic macro expansion. Declarative macros (macro_rules!) match syntax patterns; Procedural macros (Derive, Attribute, Function-like) run custom Rust code during compilation to generate syntax trees.",
+    "expected_concepts": [
+      "macros",
+      "macro_rules",
+      "procedural macros",
+      "derive"
+    ],
+    "explanation": "Evaluates Rust Metaprogramming and Declarative & Procedural Macros comprehension."
+  },
+  {
+    "id": "rust_015",
+    "skill": "Rust",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cargo, crates.io, Cargo.toml, Cargo.lock, and workspace features in the Rust ecosystem.",
+    "difficulty": "easy",
+    "topic": "Ecosystem & Tooling",
+    "concept": "Cargo & Packaging",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Cargo",
+      "Cargo.toml",
+      "Cargo.lock",
+      "crates.io",
+      "workspaces"
+    ],
+    "idealAnswer": "Cargo is Rust's package manager and build tool. Cargo.toml specifies package metadata and dependencies. Cargo.lock records exact resolved dependency versions for reproducible builds. Workspaces allow sharing a single lockfile and output directory across multiple related crates.",
+    "ideal_answer": "Cargo is Rust's package manager and build tool. Cargo.toml specifies package metadata and dependencies. Cargo.lock records exact resolved dependency versions for reproducible builds. Workspaces allow sharing a single lockfile and output directory across multiple related crates.",
+    "expected_concepts": [
+      "Cargo",
+      "Cargo.toml",
+      "Cargo.lock",
+      "crates.io"
+    ],
+    "explanation": "Evaluates Rust Ecosystem & Tooling and Cargo & Packaging comprehension."
+  }
+]

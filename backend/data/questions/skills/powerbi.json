@@ -1,0 +1,414 @@
+[
+  {
+    "id": "pbi_001",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Power BI Architecture: Power BI Desktop, Power BI Service, Power BI Gateway, and Power BI Mobile.",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "Power BI Core Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Power BI",
+      "Power BI Desktop",
+      "Power BI Service",
+      "On-Premises Gateway",
+      "PaaS",
+      "dashboards"
+    ],
+    "idealAnswer": "Power BI Desktop is the authoring tool for data modeling and report design. Reports are published to Power BI Service (cloud SaaS) for sharing and scheduled refresh. On-Premises Data Gateway connects cloud reports to local on-prem databases.",
+    "ideal_answer": "Power BI Desktop is the authoring tool for data modeling and report design. Reports are published to Power BI Service (cloud SaaS) for sharing and scheduled refresh. On-Premises Data Gateway connects cloud reports to local on-prem databases.",
+    "expected_concepts": [
+      "Power BI",
+      "Power BI Desktop",
+      "Power BI Service",
+      "On-Premises Gateway"
+    ],
+    "explanation": "Evaluates Power BI Architecture and Power BI Core Architecture comprehension."
+  },
+  {
+    "id": "pbi_002",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Power Query (M Language) and DAX (Data Analysis Expressions) in Power BI?",
+    "difficulty": "easy",
+    "topic": "Data Modeling & DAX",
+    "concept": "Power Query (M) vs DAX",
+    "questionFamily": "comparison",
+    "tags": [
+      "Power Query",
+      "M language",
+      "DAX",
+      "ETL",
+      "calculated columns",
+      "measures"
+    ],
+    "idealAnswer": "Power Query (M language) executes ETL data transformations during data ingestion before data is loaded into memory. DAX (Data Analysis Expressions) is a formula language for calculating dynamic measures and calculated columns over loaded tabular data at query time.",
+    "ideal_answer": "Power Query (M language) executes ETL data transformations during data ingestion before data is loaded into memory. DAX (Data Analysis Expressions) is a formula language for calculating dynamic measures and calculated columns over loaded tabular data at query time.",
+    "expected_concepts": [
+      "Power Query",
+      "M language",
+      "DAX",
+      "ETL"
+    ],
+    "explanation": "Evaluates Power BI Data Modeling & DAX and Power Query (M) vs DAX comprehension."
+  },
+  {
+    "id": "pbi_003",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between Calculated Columns and Measures in DAX regarding memory storage and evaluation context.",
+    "difficulty": "medium",
+    "topic": "DAX",
+    "concept": "Calculated Columns vs Measures",
+    "questionFamily": "comparison",
+    "tags": [
+      "calculated column",
+      "DAX measure",
+      "row context",
+      "filter context",
+      "RAM memory",
+      "CPU on demand"
+    ],
+    "idealAnswer": "Calculated Columns are evaluated during data refresh using Row Context and stored in RAM disk memory (consumes RAM). Measures are evaluated dynamically on-the-fly at query time using Filter Context (consumes CPU, zero RAM storage overhead; best practice for metrics).",
+    "ideal_answer": "Calculated Columns are evaluated during data refresh using Row Context and stored in RAM disk memory (consumes RAM). Measures are evaluated dynamically on-the-fly at query time using Filter Context (consumes CPU, zero RAM storage overhead; best practice for metrics).",
+    "expected_concepts": [
+      "calculated column",
+      "DAX measure",
+      "row context",
+      "filter context"
+    ],
+    "explanation": "Evaluates Power BI DAX and Calculated Columns vs Measures comprehension."
+  },
+  {
+    "id": "pbi_004",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Evaluation Context in DAX: Row Context vs Filter Context vs Context Transition.",
+    "difficulty": "hard",
+    "topic": "DAX Context",
+    "concept": "Row Context, Filter Context, & Context Transition",
+    "questionFamily": "architecture",
+    "tags": [
+      "Row Context",
+      "Filter Context",
+      "Context Transition",
+      "CALCULATE",
+      "iterator functions"
+    ],
+    "idealAnswer": "Row Context evaluates expressions row-by-row (calculated columns or iterators like SUMX). Filter Context is the set of active filters from visuals, slicers, and relationships. Context Transition occurs when CALCULATE() converts an active Row Context into an equivalent Filter Context.",
+    "ideal_answer": "Row Context evaluates expressions row-by-row (calculated columns or iterators like SUMX). Filter Context is the set of active filters from visuals, slicers, and relationships. Context Transition occurs when CALCULATE() converts an active Row Context into an equivalent Filter Context.",
+    "expected_concepts": [
+      "Row Context",
+      "Filter Context",
+      "Context Transition",
+      "CALCULATE"
+    ],
+    "explanation": "Evaluates Power BI DAX Context and Row Context, Filter Context, & Context Transition comprehension."
+  },
+  {
+    "id": "pbi_005",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the CALCULATE() function in DAX and how it modifies, replaces, and overrides active filter contexts.",
+    "difficulty": "hard",
+    "topic": "DAX",
+    "concept": "CALCULATE Function & Filter Overrides",
+    "questionFamily": "implementation",
+    "tags": [
+      "CALCULATE",
+      "filter override",
+      "ALL",
+      "FILTER",
+      "KEEPFILTERS",
+      "DAX"
+    ],
+    "idealAnswer": "CALCULATE(Expression, Filter1, Filter2) is the most powerful DAX function. It evaluates an expression under modified filter contexts: it can add new filters, modify active filters, or remove filters using ALL(), overriding visual slicers.",
+    "ideal_answer": "CALCULATE(Expression, Filter1, Filter2) is the most powerful DAX function. It evaluates an expression under modified filter contexts: it can add new filters, modify active filters, or remove filters using ALL(), overriding visual slicers.",
+    "expected_concepts": [
+      "CALCULATE",
+      "filter override",
+      "ALL",
+      "FILTER"
+    ],
+    "explanation": "Evaluates Power BI DAX and CALCULATE Function & Filter Overrides comprehension."
+  },
+  {
+    "id": "pbi_006",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the VertiPaq Storage Engine in Power BI, and how do Columnar Storage, Dictionary Encoding, and Run-Length Encoding (RLE) achieve extreme compression?",
+    "difficulty": "hard",
+    "topic": "Storage Engine",
+    "concept": "VertiPaq Engine & Data Compression",
+    "questionFamily": "architecture",
+    "tags": [
+      "VertiPaq",
+      "columnar storage",
+      "Dictionary Encoding",
+      "RLE",
+      "Run-Length Encoding",
+      "in-memory"
+    ],
+    "idealAnswer": "VertiPaq is Power BI's in-memory columnar database. It achieves up to 10x-20x compression using Value Encoding, Dictionary Encoding (mapping unique strings to bit integers), and Run-Length Encoding (RLE compressing contiguous identical values).",
+    "ideal_answer": "VertiPaq is Power BI's in-memory columnar database. It achieves up to 10x-20x compression using Value Encoding, Dictionary Encoding (mapping unique strings to bit integers), and Run-Length Encoding (RLE compressing contiguous identical values).",
+    "expected_concepts": [
+      "VertiPaq",
+      "columnar storage",
+      "Dictionary Encoding",
+      "RLE"
+    ],
+    "explanation": "Evaluates Power BI Storage Engine and VertiPaq Engine & Data Compression comprehension."
+  },
+  {
+    "id": "pbi_007",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Power BI Connectivity Modes: Import Mode vs DirectQuery vs Composite Models (Dual Storage).",
+    "difficulty": "medium",
+    "topic": "Data Connectivity",
+    "concept": "Import Mode vs DirectQuery vs Composite Models",
+    "questionFamily": "comparison",
+    "tags": [
+      "Import Mode",
+      "DirectQuery",
+      "Composite Models",
+      "Dual storage",
+      "VertiPaq",
+      "live query"
+    ],
+    "idealAnswer": "Import Mode loads data snapshots into VertiPaq RAM (fastest performance, 1GB dataset limit in Pro, scheduled refresh). DirectQuery leaves data in source database, querying SQL live on visual interactions (slower, real-time data). Composite Models blend Import and DirectQuery tables.",
+    "ideal_answer": "Import Mode loads data snapshots into VertiPaq RAM (fastest performance, 1GB dataset limit in Pro, scheduled refresh). DirectQuery leaves data in source database, querying SQL live on visual interactions (slower, real-time data). Composite Models blend Import and DirectQuery tables.",
+    "expected_concepts": [
+      "Import Mode",
+      "DirectQuery",
+      "Composite Models",
+      "Dual storage"
+    ],
+    "explanation": "Evaluates Power BI Data Connectivity and Import Mode vs DirectQuery vs Composite Models comprehension."
+  },
+  {
+    "id": "pbi_008",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Star Schema Data Modeling in Power BI: Fact Tables, Dimension Tables, Relationship Cardinality (1:*, *:*, 1:1), and Cross-Filter Direction (Single vs Both).",
+    "difficulty": "medium",
+    "topic": "Data Modeling",
+    "concept": "Star Schema & Cross-Filter Direction",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Star schema",
+      "relationship cardinality",
+      "cross-filter direction",
+      "bi-directional filtering",
+      "ambiguity"
+    ],
+    "idealAnswer": "Star Schema is the gold standard in Power BI. 1-to-many (1:*) relationships link Dimensions to Facts. Single cross-filter direction filters from Dimension to Fact. Bi-directional filtering ('Both') should be minimized as it introduces query ambiguity and degrades performance.",
+    "ideal_answer": "Star Schema is the gold standard in Power BI. 1-to-many (1:*) relationships link Dimensions to Facts. Single cross-filter direction filters from Dimension to Fact. Bi-directional filtering ('Both') should be minimized as it introduces query ambiguity and degrades performance.",
+    "expected_concepts": [
+      "Star schema",
+      "relationship cardinality",
+      "cross-filter direction",
+      "bi-directional filtering"
+    ],
+    "explanation": "Evaluates Power BI Data Modeling and Star Schema & Cross-Filter Direction comprehension."
+  },
+  {
+    "id": "pbi_009",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Time Intelligence functions in DAX (TOTALYTD, SAMEPERIODLASTYEAR, DATEADD, DATESYTD) and the requirement for a dedicated Date Dimension table.",
+    "difficulty": "medium",
+    "topic": "DAX Time Intelligence",
+    "concept": "Time Intelligence & Date Tables",
+    "questionFamily": "implementation",
+    "tags": [
+      "Time Intelligence",
+      "TOTALYTD",
+      "SAMEPERIODLASTYEAR",
+      "DATEADD",
+      "calendar table",
+      "contiguous dates"
+    ],
+    "idealAnswer": "Time intelligence functions compute period comparisons (YTD, Year-over-Year). They require a dedicated contiguous Date/Calendar table marked as a Date Table with no missing dates and valid 1-to-many relationships to Fact date columns.",
+    "ideal_answer": "Time intelligence functions compute period comparisons (YTD, Year-over-Year). They require a dedicated contiguous Date/Calendar table marked as a Date Table with no missing dates and valid 1-to-many relationships to Fact date columns.",
+    "expected_concepts": [
+      "Time Intelligence",
+      "TOTALYTD",
+      "SAMEPERIODLASTYEAR",
+      "DATEADD"
+    ],
+    "explanation": "Evaluates Power BI DAX Time Intelligence and Time Intelligence & Date Tables comprehension."
+  },
+  {
+    "id": "pbi_010",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement Row-Level Security (RLS) and Dynamic RLS in Power BI using USERNAME() / USERPRINCIPALNAME()?",
+    "difficulty": "medium",
+    "topic": "Security & Governance",
+    "concept": "Row-Level Security (RLS) & Dynamic RLS",
+    "questionFamily": "security",
+    "tags": [
+      "RLS",
+      "Row-Level Security",
+      "USERPRINCIPALNAME",
+      "security roles",
+      "data privacy"
+    ],
+    "idealAnswer": "Static RLS creates roles with fixed DAX filters (e.g. Region = 'North'). Dynamic RLS filters tables based on the logged-in user's email: 'UserTable[Email] = USERPRINCIPALNAME()', restricting data visibility in Power BI Service automatically.",
+    "ideal_answer": "Static RLS creates roles with fixed DAX filters (e.g. Region = 'North'). Dynamic RLS filters tables based on the logged-in user's email: 'UserTable[Email] = USERPRINCIPALNAME()', restricting data visibility in Power BI Service automatically.",
+    "expected_concepts": [
+      "RLS",
+      "Row-Level Security",
+      "USERPRINCIPALNAME",
+      "security roles"
+    ],
+    "explanation": "Evaluates Power BI Security & Governance and Row-Level Security (RLS) & Dynamic RLS comprehension."
+  },
+  {
+    "id": "pbi_011",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Query Folding in Power Query, and why is it critical for data refresh performance?",
+    "difficulty": "medium",
+    "topic": "Power Query ETL",
+    "concept": "Query Folding & Source Offloading",
+    "questionFamily": "optimization",
+    "tags": [
+      "query folding",
+      "Power Query",
+      "M engine",
+      "SQL translation",
+      "data refresh"
+    ],
+    "idealAnswer": "Query Folding translates Power Query (M) transformations into a single native SQL query executed directly on the source database server. Non-foldable transformations force Power Query to download full datasets over the network to transform in local RAM (slow).",
+    "ideal_answer": "Query Folding translates Power Query (M) transformations into a single native SQL query executed directly on the source database server. Non-foldable transformations force Power Query to download full datasets over the network to transform in local RAM (slow).",
+    "expected_concepts": [
+      "query folding",
+      "Power Query",
+      "M engine",
+      "SQL translation"
+    ],
+    "explanation": "Evaluates Power BI Power Query ETL and Query Folding & Source Offloading comprehension."
+  },
+  {
+    "id": "pbi_012",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain DAX Iterator Functions (SUMX, AVERAGEX, COUNTX) vs Standard Aggregators (SUM, AVERAGE).",
+    "difficulty": "easy",
+    "topic": "DAX",
+    "concept": "Iterator Functions (SUMX vs SUM)",
+    "questionFamily": "comparison",
+    "tags": [
+      "SUMX",
+      "AVERAGEX",
+      "iterator function",
+      "Row Context",
+      "multi-column calculation"
+    ],
+    "idealAnswer": "Standard aggregators (SUM) take a single column as input. Iterators (SUMX(table, expression)) iterate row-by-row through a table in a Row Context, evaluate a multi-column expression per row (e.g. Price * Quantity), and sum the row results.",
+    "ideal_answer": "Standard aggregators (SUM) take a single column as input. Iterators (SUMX(table, expression)) iterate row-by-row through a table in a Row Context, evaluate a multi-column expression per row (e.g. Price * Quantity), and sum the row results.",
+    "expected_concepts": [
+      "SUMX",
+      "AVERAGEX",
+      "iterator function",
+      "Row Context"
+    ],
+    "explanation": "Evaluates Power BI DAX and Iterator Functions (SUMX vs SUM) comprehension."
+  },
+  {
+    "id": "pbi_013",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you optimize slow Power BI reports using Performance Analyzer, DAX Studio, and Tabular Editor (BPA)?",
+    "difficulty": "hard",
+    "topic": "Performance Optimization",
+    "concept": "Performance Analyzer & DAX Studio Tuning",
+    "questionFamily": "optimization",
+    "tags": [
+      "Performance Analyzer",
+      "DAX Studio",
+      "Tabular Editor",
+      "Best Practice Analyzer",
+      "cardinality reduction"
+    ],
+    "idealAnswer": "Run Performance Analyzer to identify slow visual render times, DAX query execution, and visual display times. In DAX Studio, analyze Server Timings (Formula Engine vs Storage Engine). In Tabular Editor, run Best Practice Analyzer and eliminate high-cardinality unused columns (timestamps/IDs).",
+    "ideal_answer": "Run Performance Analyzer to identify slow visual render times, DAX query execution, and visual display times. In DAX Studio, analyze Server Timings (Formula Engine vs Storage Engine). In Tabular Editor, run Best Practice Analyzer and eliminate high-cardinality unused columns (timestamps/IDs).",
+    "expected_concepts": [
+      "Performance Analyzer",
+      "DAX Studio",
+      "Tabular Editor",
+      "Best Practice Analyzer"
+    ],
+    "explanation": "Evaluates Power BI Performance Optimization and Performance Analyzer & DAX Studio Tuning comprehension."
+  },
+  {
+    "id": "pbi_014",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Power BI Incremental Refresh and RangeStart / RangeEnd parameters for enterprise datasets.",
+    "difficulty": "medium",
+    "topic": "Dataset Refresh",
+    "concept": "Incremental Refresh (RangeStart/RangeEnd)",
+    "questionFamily": "optimization",
+    "tags": [
+      "incremental refresh",
+      "RangeStart",
+      "RangeEnd",
+      "partitioning",
+      "large datasets"
+    ],
+    "idealAnswer": "Incremental refresh partitions large tables by date using RangeStart and RangeEnd parameters. Historical partitions are archived and locked; only recent changing data partitions (e.g. last 3 days) are refreshed, slashing refresh duration and network bandwidth.",
+    "ideal_answer": "Incremental refresh partitions large tables by date using RangeStart and RangeEnd parameters. Historical partitions are archived and locked; only recent changing data partitions (e.g. last 3 days) are refreshed, slashing refresh duration and network bandwidth.",
+    "expected_concepts": [
+      "incremental refresh",
+      "RangeStart",
+      "RangeEnd",
+      "partitioning"
+    ],
+    "explanation": "Evaluates Power BI Dataset Refresh and Incremental Refresh (RangeStart/RangeEnd) comprehension."
+  },
+  {
+    "id": "pbi_015",
+    "skill": "Power BI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Calculation Groups in DAX (Tabular Editor), and how do they reduce hundreds of redundant measures (e.g. YTD, YoY, QTD)?",
+    "difficulty": "hard",
+    "topic": "Advanced Modeling",
+    "concept": "Calculation Groups & SELECTEDMEASURE",
+    "questionFamily": "design",
+    "tags": [
+      "Calculation Groups",
+      "Tabular Editor",
+      "SELECTEDMEASURE",
+      "measure sprawl",
+      "time intelligence pattern"
+    ],
+    "idealAnswer": "Calculation Groups eliminate measure sprawl by applying dynamic calculations (YTD, YoY%, Prior Year) across existing measures using SELECTEDMEASURE(). A single Calculation Group with 5 items transforms 50 base measures into 250 metric permutations without writing individual measures.",
+    "ideal_answer": "Calculation Groups eliminate measure sprawl by applying dynamic calculations (YTD, YoY%, Prior Year) across existing measures using SELECTEDMEASURE(). A single Calculation Group with 5 items transforms 50 base measures into 250 metric permutations without writing individual measures.",
+    "expected_concepts": [
+      "Calculation Groups",
+      "Tabular Editor",
+      "SELECTEDMEASURE",
+      "measure sprawl"
+    ],
+    "explanation": "Evaluates Power BI Advanced Modeling and Calculation Groups & SELECTEDMEASURE comprehension."
+  }
+]

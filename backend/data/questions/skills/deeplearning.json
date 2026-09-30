@@ -1,44 +1,419 @@
 [
   {
-    "id": "DEEP_LEARNING_001",
+    "id": "dl_001",
     "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Perceptron, Multilayer Perceptron (MLP), and the role of Activation Functions (ReLU, Leaky ReLU, Sigmoid, Tanh, GELU).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Deep Learning in modern software engineering?",
-    "expected_concepts": [
-      "Deep Learning fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Neural Networks",
+    "concept": "Activation Functions & Non-Linearity",
+    "questionFamily": "definition",
+    "tags": [
+      "Perceptron",
+      "MLP",
+      "ReLU",
+      "GELU",
+      "Sigmoid",
+      "vanishing gradient"
     ],
-    "ideal_answer": "Deep Learning is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Deep Learning."
+    "idealAnswer": "Activation functions introduce non-linearity, allowing deep networks to learn complex decision boundaries. Sigmoid and Tanh saturate at extremes, causing vanishing gradients. ReLU (max(0, x)) provides fast computation and constant gradients for positive values. GELU smooths ReLU probabilistically in Transformers.",
+    "ideal_answer": "Activation functions introduce non-linearity, allowing deep networks to learn complex decision boundaries. Sigmoid and Tanh saturate at extremes, causing vanishing gradients. ReLU (max(0, x)) provides fast computation and constant gradients for positive values. GELU smooths ReLU probabilistically in Transformers.",
+    "expected_concepts": [
+      "Perceptron",
+      "MLP",
+      "ReLU",
+      "GELU"
+    ],
+    "explanation": "Evaluates Deep Learning Neural Networks and Activation Functions & Non-Linearity comprehension."
   },
   {
-    "id": "DEEP_LEARNING_002",
+    "id": "dl_002",
     "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Backpropagation and the Chain Rule of Calculus in computing weight gradients across deep neural network layers.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Deep Learning in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Optimization & Math",
+    "concept": "Backpropagation & Chain Rule",
+    "questionFamily": "architecture",
+    "tags": [
+      "backpropagation",
+      "chain rule",
+      "gradient descent",
+      "computational graph",
+      "loss function"
     ],
-    "ideal_answer": "Common challenges with Deep Learning include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Deep Learning."
+    "idealAnswer": "Forward pass computes layer activations and loss. Backpropagation traverses the computational graph in reverse using the Chain Rule of calculus to compute partial derivatives of the loss with respect to every weight parameter (dL/dW), which are used by optimizers to update weights.",
+    "ideal_answer": "Forward pass computes layer activations and loss. Backpropagation traverses the computational graph in reverse using the Chain Rule of calculus to compute partial derivatives of the loss with respect to every weight parameter (dL/dW), which are used by optimizers to update weights.",
+    "expected_concepts": [
+      "backpropagation",
+      "chain rule",
+      "gradient descent",
+      "computational graph"
+    ],
+    "explanation": "Evaluates Deep Learning Optimization & Math and Backpropagation & Chain Rule comprehension."
   },
   {
-    "id": "DEEP_LEARNING_003",
+    "id": "dl_003",
     "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are the Vanishing Gradient and Exploding Gradient problems in deep architectures, and how do Residual Connections, Batch Normalization, and He/Xavier initialization solve them?",
     "difficulty": "hard",
-    "question": "How does Deep Learning handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "topic": "Optimization",
+    "concept": "Vanishing & Exploding Gradients",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "vanishing gradient",
+      "exploding gradient",
+      "ResNet skip connections",
+      "Batch Normalization",
+      "He initialization"
     ],
-    "ideal_answer": "Deep Learning handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Deep Learning."
+    "idealAnswer": "In deep networks, multiplying small/large derivative matrices across layers causes gradients to shrink exponentially to zero (vanishing) or blow up to NaN (exploding). Solutions: Residual Skip Connections (identity shortcuts in ResNet), Batch Normalization, He/Xavier weight initialization, and Gradient Clipping.",
+    "ideal_answer": "In deep networks, multiplying small/large derivative matrices across layers causes gradients to shrink exponentially to zero (vanishing) or blow up to NaN (exploding). Solutions: Residual Skip Connections (identity shortcuts in ResNet), Batch Normalization, He/Xavier weight initialization, and Gradient Clipping.",
+    "expected_concepts": [
+      "vanishing gradient",
+      "exploding gradient",
+      "ResNet skip connections",
+      "Batch Normalization"
+    ],
+    "explanation": "Evaluates Deep Learning Optimization and Vanishing & Exploding Gradients comprehension."
+  },
+  {
+    "id": "dl_004",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Deep Learning Optimizers: Stochastic Gradient Descent (SGD with Momentum), RMSprop, and Adam / AdamW (weight decay decoupled).",
+    "difficulty": "medium",
+    "topic": "Optimizers",
+    "concept": "SGD Momentum vs RMSprop vs AdamW",
+    "questionFamily": "comparison",
+    "tags": [
+      "SGD",
+      "momentum",
+      "RMSprop",
+      "Adam",
+      "AdamW",
+      "adaptive learning rate",
+      "weight decay"
+    ],
+    "idealAnswer": "SGD updates weights along the immediate gradient with noisy convergence. Momentum accelerates updates through momentum velocity. RMSprop divides gradient by running average of squared gradients. Adam combines Momentum and RMSprop. AdamW decouples L2 weight decay from moving gradient moments, providing better generalization.",
+    "ideal_answer": "SGD updates weights along the immediate gradient with noisy convergence. Momentum accelerates updates through momentum velocity. RMSprop divides gradient by running average of squared gradients. Adam combines Momentum and RMSprop. AdamW decouples L2 weight decay from moving gradient moments, providing better generalization.",
+    "expected_concepts": [
+      "SGD",
+      "momentum",
+      "RMSprop",
+      "Adam"
+    ],
+    "explanation": "Evaluates Deep Learning Optimizers and SGD Momentum vs RMSprop vs AdamW comprehension."
+  },
+  {
+    "id": "dl_005",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Convolutional Neural Networks (CNNs): Convolutional Layers, Kernel/Filter Stride, Padding (Valid vs Same), and Pooling Layers (Max vs Average).",
+    "difficulty": "medium",
+    "topic": "Computer Vision & CNN",
+    "concept": "CNN Architecture (Convolution, Stride, Pooling)",
+    "questionFamily": "architecture",
+    "tags": [
+      "CNN",
+      "convolution",
+      "kernel",
+      "stride",
+      "padding",
+      "max pooling",
+      "receptive field"
+    ],
+    "idealAnswer": "CNNs leverage spatial locality and parameter sharing. Convolutional filters slide across feature maps with defined stride and padding ('same' padding preserves dimensions). Pooling layers (MaxPool) reduce spatial resolution, providing translation invariance and reducing compute.",
+    "ideal_answer": "CNNs leverage spatial locality and parameter sharing. Convolutional filters slide across feature maps with defined stride and padding ('same' padding preserves dimensions). Pooling layers (MaxPool) reduce spatial resolution, providing translation invariance and reducing compute.",
+    "expected_concepts": [
+      "CNN",
+      "convolution",
+      "kernel",
+      "stride"
+    ],
+    "explanation": "Evaluates Deep Learning Computer Vision & CNN and CNN Architecture (Convolution, Stride, Pooling) comprehension."
+  },
+  {
+    "id": "dl_006",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Recurrent Neural Networks (RNNs), Long Short-Term Memory (LSTM), and Gated Recurrent Units (GRU) for sequential data.",
+    "difficulty": "medium",
+    "topic": "Sequential Modeling",
+    "concept": "RNN vs LSTM vs GRU",
+    "questionFamily": "comparison",
+    "tags": [
+      "RNN",
+      "LSTM",
+      "GRU",
+      "forget gate",
+      "hidden state",
+      "cell state",
+      "sequential data"
+    ],
+    "idealAnswer": "Standard RNNs suffer from vanishing gradients across long time steps. LSTM introduces a constant-error Cell State regulated by 3 gates: Forget Gate (discards info), Input Gate (stores new info), and Output Gate. GRU simplifies LSTM by combining cell and hidden state with Reset and Update gates.",
+    "ideal_answer": "Standard RNNs suffer from vanishing gradients across long time steps. LSTM introduces a constant-error Cell State regulated by 3 gates: Forget Gate (discards info), Input Gate (stores new info), and Output Gate. GRU simplifies LSTM by combining cell and hidden state with Reset and Update gates.",
+    "expected_concepts": [
+      "RNN",
+      "LSTM",
+      "GRU",
+      "forget gate"
+    ],
+    "explanation": "Evaluates Deep Learning Sequential Modeling and RNN vs LSTM vs GRU comprehension."
+  },
+  {
+    "id": "dl_007",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Transformer Architecture: Scaled Dot-Product Self-Attention and Multi-Head Attention equations (Attention(Q, K, V)).",
+    "difficulty": "hard",
+    "topic": "Transformers",
+    "concept": "Self-Attention Mechanism & Multi-Head Attention",
+    "questionFamily": "architecture",
+    "tags": [
+      "Transformer",
+      "Self-Attention",
+      "Multi-Head Attention",
+      "Query Key Value",
+      "softmax",
+      "O(N^2) complexity"
+    ],
+    "idealAnswer": "Self-Attention calculates relationships between all tokens in parallel: Attention(Q, K, V) = softmax(Q * K^T / sqrt(d_k)) * V. Multi-Head Attention projects Q, K, V into multiple representation subspaces, allowing the model to attend to information at different positions and semantic levels simultaneously.",
+    "ideal_answer": "Self-Attention calculates relationships between all tokens in parallel: Attention(Q, K, V) = softmax(Q * K^T / sqrt(d_k)) * V. Multi-Head Attention projects Q, K, V into multiple representation subspaces, allowing the model to attend to information at different positions and semantic levels simultaneously.",
+    "expected_concepts": [
+      "Transformer",
+      "Self-Attention",
+      "Multi-Head Attention",
+      "Query Key Value"
+    ],
+    "explanation": "Evaluates Deep Learning Transformers and Self-Attention Mechanism & Multi-Head Attention comprehension."
+  },
+  {
+    "id": "dl_008",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Positional Encodings in Transformers: Sinusoidal Positional Encoding vs Learned Embeddings vs Rotary Position Embedding (RoPE).",
+    "difficulty": "hard",
+    "topic": "Transformers",
+    "concept": "Positional Encodings & RoPE",
+    "questionFamily": "architecture",
+    "tags": [
+      "positional encoding",
+      "sinusoidal",
+      "RoPE",
+      "Rotary Position Embedding",
+      "relative distance"
+    ],
+    "idealAnswer": "Because self-attention is permutation invariant, positional encodings inject token order. Sinusoidal encodings use fixed sine/cosine frequencies. Rotary Position Embedding (RoPE) rotates Query and Key representations in complex vector space, naturally encoding relative token distances and generalizing to longer context lengths.",
+    "ideal_answer": "Because self-attention is permutation invariant, positional encodings inject token order. Sinusoidal encodings use fixed sine/cosine frequencies. Rotary Position Embedding (RoPE) rotates Query and Key representations in complex vector space, naturally encoding relative token distances and generalizing to longer context lengths.",
+    "expected_concepts": [
+      "positional encoding",
+      "sinusoidal",
+      "RoPE",
+      "Rotary Position Embedding"
+    ],
+    "explanation": "Evaluates Deep Learning Transformers and Positional Encodings & RoPE comprehension."
+  },
+  {
+    "id": "dl_009",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Normalization techniques in Deep Learning: Batch Normalization, Layer Normalization, and RMSNorm, and why Transformers use LayerNorm.",
+    "difficulty": "medium",
+    "topic": "Normalization",
+    "concept": "Batch Normalization vs Layer Normalization vs RMSNorm",
+    "questionFamily": "comparison",
+    "tags": [
+      "Batch Normalization",
+      "Layer Normalization",
+      "RMSNorm",
+      "batch size",
+      "sequence length"
+    ],
+    "idealAnswer": "Batch Normalization normalizes across the batch dimension per feature (depends on batch size; problematic for variable sequence lengths). Layer Normalization normalizes across all features for a single sample independently of batch size (ideal for NLP/Transformers). RMSNorm scales by root-mean-square without mean centering for speed.",
+    "ideal_answer": "Batch Normalization normalizes across the batch dimension per feature (depends on batch size; problematic for variable sequence lengths). Layer Normalization normalizes across all features for a single sample independently of batch size (ideal for NLP/Transformers). RMSNorm scales by root-mean-square without mean centering for speed.",
+    "expected_concepts": [
+      "Batch Normalization",
+      "Layer Normalization",
+      "RMSNorm",
+      "batch size"
+    ],
+    "explanation": "Evaluates Deep Learning Normalization and Batch Normalization vs Layer Normalization vs RMSNorm comprehension."
+  },
+  {
+    "id": "dl_010",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Regularization in Deep Networks: Dropout, Spatial Dropout, DropPath (Stochastic Depth), and Data Augmentation.",
+    "difficulty": "easy",
+    "topic": "Regularization",
+    "concept": "Dropout & Stochastic Depth",
+    "questionFamily": "optimization",
+    "tags": [
+      "Dropout",
+      "inverted dropout",
+      "stochastic depth",
+      "data augmentation",
+      "co-adaptation"
+    ],
+    "idealAnswer": "Dropout randomly sets a fraction of neuron activations to zero during training, preventing complex co-adaptations between neurons. Spatial Dropout drops entire feature map channels in CNNs. Stochastic Depth randomly skips residual blocks in very deep networks.",
+    "ideal_answer": "Dropout randomly sets a fraction of neuron activations to zero during training, preventing complex co-adaptations between neurons. Spatial Dropout drops entire feature map channels in CNNs. Stochastic Depth randomly skips residual blocks in very deep networks.",
+    "expected_concepts": [
+      "Dropout",
+      "inverted dropout",
+      "stochastic depth",
+      "data augmentation"
+    ],
+    "explanation": "Evaluates Deep Learning Regularization and Dropout & Stochastic Depth comprehension."
+  },
+  {
+    "id": "dl_011",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Autoencoders: Vanilla Autoencoders, Denoising Autoencoders, and Variational Autoencoders (VAEs with Reparameterization Trick).",
+    "difficulty": "hard",
+    "topic": "Generative Models",
+    "concept": "Variational Autoencoders & Reparameterization Trick",
+    "questionFamily": "architecture",
+    "tags": [
+      "Autoencoder",
+      "VAE",
+      "latent space",
+      "reparameterization trick",
+      "KL divergence",
+      "generative"
+    ],
+    "idealAnswer": "Autoencoders compress inputs into a bottleneck latent space and reconstruct them. Variational Autoencoders (VAEs) map inputs to probability distribution parameters (mean mu and variance sigma). The Reparameterization Trick (z = mu + sigma * epsilon) allows backpropagation through random sampling nodes.",
+    "ideal_answer": "Autoencoders compress inputs into a bottleneck latent space and reconstruct them. Variational Autoencoders (VAEs) map inputs to probability distribution parameters (mean mu and variance sigma). The Reparameterization Trick (z = mu + sigma * epsilon) allows backpropagation through random sampling nodes.",
+    "expected_concepts": [
+      "Autoencoder",
+      "VAE",
+      "latent space",
+      "reparameterization trick"
+    ],
+    "explanation": "Evaluates Deep Learning Generative Models and Variational Autoencoders & Reparameterization Trick comprehension."
+  },
+  {
+    "id": "dl_012",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Generative Adversarial Networks (GANs): Generator vs Discriminator, Minimax Game, and Mode Collapse?",
+    "difficulty": "hard",
+    "topic": "Generative Models",
+    "concept": "GAN Architecture & Mode Collapse",
+    "questionFamily": "architecture",
+    "tags": [
+      "GAN",
+      "Generator",
+      "Discriminator",
+      "minimax loss",
+      "mode collapse",
+      "Wasserstein GAN"
+    ],
+    "idealAnswer": "GANs pit two neural networks in a minimax game: Generator creates synthetic data; Discriminator distinguishes real from fake. Mode Collapse occurs when the generator produces a limited variety of repetitive outputs; stabilized by Wasserstein GAN (WGAN) and gradient penalties.",
+    "ideal_answer": "GANs pit two neural networks in a minimax game: Generator creates synthetic data; Discriminator distinguishes real from fake. Mode Collapse occurs when the generator produces a limited variety of repetitive outputs; stabilized by Wasserstein GAN (WGAN) and gradient penalties.",
+    "expected_concepts": [
+      "GAN",
+      "Generator",
+      "Discriminator",
+      "minimax loss"
+    ],
+    "explanation": "Evaluates Deep Learning Generative Models and GAN Architecture & Mode Collapse comprehension."
+  },
+  {
+    "id": "dl_013",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Diffusion Models (DDPM - Denoising Diffusion Probabilistic Models): Forward Noising Process vs Reverse Denoising Process with U-Net.",
+    "difficulty": "hard",
+    "topic": "Generative Models",
+    "concept": "Diffusion Models & Reverse Denoising",
+    "questionFamily": "architecture",
+    "tags": [
+      "Diffusion Models",
+      "DDPM",
+      "forward process",
+      "reverse process",
+      "U-Net",
+      "score matching"
+    ],
+    "idealAnswer": "Forward process incrementally adds Gaussian noise to an image across T steps until it becomes pure noise. Reverse process trains a U-Net to predict and subtract the added noise step-by-step, generating high-fidelity images from random noise vectors.",
+    "ideal_answer": "Forward process incrementally adds Gaussian noise to an image across T steps until it becomes pure noise. Reverse process trains a U-Net to predict and subtract the added noise step-by-step, generating high-fidelity images from random noise vectors.",
+    "expected_concepts": [
+      "Diffusion Models",
+      "DDPM",
+      "forward process",
+      "reverse process"
+    ],
+    "explanation": "Evaluates Deep Learning Generative Models and Diffusion Models & Reverse Denoising comprehension."
+  },
+  {
+    "id": "dl_014",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Transfer Learning and Fine-Tuning in Deep Learning, and how does freezing early feature layers save training time and prevent catastrophic forgetting?",
+    "difficulty": "easy",
+    "topic": "Transfer Learning",
+    "concept": "Transfer Learning & Layer Freezing",
+    "questionFamily": "best_practice",
+    "tags": [
+      "transfer learning",
+      "fine-tuning",
+      "pretrained weights",
+      "feature extraction",
+      "catastrophic forgetting"
+    ],
+    "idealAnswer": "Transfer learning reuses pretrained weights from massive datasets (ImageNet, CommonCrawl). Early feature extraction layers (edges, textures, grammar) are frozen, and only domain-specific top classification heads are trained, saving massive compute and preventing catastrophic forgetting of base representations.",
+    "ideal_answer": "Transfer learning reuses pretrained weights from massive datasets (ImageNet, CommonCrawl). Early feature extraction layers (edges, textures, grammar) are frozen, and only domain-specific top classification heads are trained, saving massive compute and preventing catastrophic forgetting of base representations.",
+    "expected_concepts": [
+      "transfer learning",
+      "fine-tuning",
+      "pretrained weights",
+      "feature extraction"
+    ],
+    "explanation": "Evaluates Deep Learning Transfer Learning and Transfer Learning & Layer Freezing comprehension."
+  },
+  {
+    "id": "dl_015",
+    "skill": "Deep Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Distributed Training in Deep Learning: Data Parallelism (DDP), Model/Tensor Parallelism (Megatron-LM), and Pipeline Parallelism (DeepSpeed ZeRO).",
+    "difficulty": "hard",
+    "topic": "Distributed DL",
+    "concept": "Distributed Training (DDP, Megatron, ZeRO)",
+    "questionFamily": "architecture",
+    "tags": [
+      "DDP",
+      "DistributedDataParallel",
+      "Tensor Parallelism",
+      "Pipeline Parallelism",
+      "DeepSpeed ZeRO",
+      "AllReduce"
+    ],
+    "idealAnswer": "Data Parallelism (DDP) replicates model on each GPU and averages gradients via AllReduce. Tensor Parallelism splits individual weight matrices across GPUs within a node. Pipeline Parallelism splits layers across nodes. DeepSpeed ZeRO partitions optimizer states, gradients, and parameters to train 100B+ models on limited VRAM.",
+    "ideal_answer": "Data Parallelism (DDP) replicates model on each GPU and averages gradients via AllReduce. Tensor Parallelism splits individual weight matrices across GPUs within a node. Pipeline Parallelism splits layers across nodes. DeepSpeed ZeRO partitions optimizer states, gradients, and parameters to train 100B+ models on limited VRAM.",
+    "expected_concepts": [
+      "DDP",
+      "DistributedDataParallel",
+      "Tensor Parallelism",
+      "Pipeline Parallelism"
+    ],
+    "explanation": "Evaluates Deep Learning Distributed DL and Distributed Training (DDP, Megatron, ZeRO) comprehension."
   }
 ]

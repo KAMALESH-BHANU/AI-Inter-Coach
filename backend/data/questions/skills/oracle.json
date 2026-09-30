@@ -1,0 +1,410 @@
+[
+  {
+    "id": "oracle_001",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Oracle Database Architecture: Memory Structures (SGA, PGA) and Background Processes (DBWn, LGWR, CKPT, SMON, PMON).",
+    "difficulty": "hard",
+    "topic": "Architecture",
+    "concept": "Oracle SGA/PGA & Background Processes",
+    "questionFamily": "architecture",
+    "tags": [
+      "Oracle",
+      "SGA",
+      "PGA",
+      "DBWn",
+      "LGWR",
+      "CKPT",
+      "SMON",
+      "PMON"
+    ],
+    "idealAnswer": "SGA (System Global Area) is shared memory holding Database Buffer Cache and Shared Pool. PGA is private server process memory. DBWn writes dirty blocks to disk; LGWR writes redo entries to redo log files; CKPT updates headers during checkpoints; SMON recovers instances; PMON cleans failed processes.",
+    "ideal_answer": "SGA (System Global Area) is shared memory holding Database Buffer Cache and Shared Pool. PGA is private server process memory. DBWn writes dirty blocks to disk; LGWR writes redo entries to redo log files; CKPT updates headers during checkpoints; SMON recovers instances; PMON cleans failed processes.",
+    "expected_concepts": [
+      "Oracle",
+      "SGA",
+      "PGA",
+      "DBWn"
+    ],
+    "explanation": "Evaluates Oracle Architecture and Oracle SGA/PGA & Background Processes comprehension."
+  },
+  {
+    "id": "oracle_002",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Oracle Storage Architecture: Tablespaces, Datafiles, Segments, Extents, and Oracle Data Blocks.",
+    "difficulty": "medium",
+    "topic": "Storage Structure",
+    "concept": "Tablespaces, Segments, & Extents",
+    "questionFamily": "architecture",
+    "tags": [
+      "tablespace",
+      "datafile",
+      "segment",
+      "extent",
+      "data block"
+    ],
+    "idealAnswer": "Logical hierarchy: Tablespace contains Datafiles. Tablespace contains Segments (tables/indexes). Segments allocate contiguous blocks called Extents. An Oracle Data Block is the smallest unit of database I/O.",
+    "ideal_answer": "Logical hierarchy: Tablespace contains Datafiles. Tablespace contains Segments (tables/indexes). Segments allocate contiguous blocks called Extents. An Oracle Data Block is the smallest unit of database I/O.",
+    "expected_concepts": [
+      "tablespace",
+      "datafile",
+      "segment",
+      "extent"
+    ],
+    "explanation": "Evaluates Oracle Storage Structure and Tablespaces, Segments, & Extents comprehension."
+  },
+  {
+    "id": "oracle_003",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is PL/SQL in Oracle, and how do Packages, Procedures, Functions, and Cursors encapsulate business logic?",
+    "difficulty": "medium",
+    "topic": "PL/SQL",
+    "concept": "PL/SQL Architecture & Packages",
+    "questionFamily": "implementation",
+    "tags": [
+      "PL/SQL",
+      "packages",
+      "procedures",
+      "cursors",
+      "package specification"
+    ],
+    "idealAnswer": "PL/SQL is Oracle's procedural extension to SQL. Packages group related type declarations, procedures, and functions into a public specification and private implementation body, compiled and cached in the Shared Pool.",
+    "ideal_answer": "PL/SQL is Oracle's procedural extension to SQL. Packages group related type declarations, procedures, and functions into a public specification and private implementation body, compiled and cached in the Shared Pool.",
+    "expected_concepts": [
+      "PL/SQL",
+      "packages",
+      "procedures",
+      "cursors"
+    ],
+    "explanation": "Evaluates Oracle PL/SQL and PL/SQL Architecture & Packages comprehension."
+  },
+  {
+    "id": "oracle_004",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain PL/SQL Cursors: Implicit Cursors, Explicit Cursors, Cursor FOR Loops, and REF CURSORs.",
+    "difficulty": "medium",
+    "topic": "PL/SQL",
+    "concept": "Explicit Cursors vs REF CURSORs",
+    "questionFamily": "implementation",
+    "tags": [
+      "cursor",
+      "OPEN FETCH CLOSE",
+      "REF CURSOR",
+      "SYS_REFCURSOR",
+      "cursor attributes"
+    ],
+    "idealAnswer": "An explicit cursor points to a query context area with lifecycle: OPEN, FETCH, CLOSE. Cursor FOR loops manage lifecycle automatically. REF CURSORs (SYS_REFCURSOR) are pointer variables that pass query result sets between PL/SQL and client applications.",
+    "ideal_answer": "An explicit cursor points to a query context area with lifecycle: OPEN, FETCH, CLOSE. Cursor FOR loops manage lifecycle automatically. REF CURSORs (SYS_REFCURSOR) are pointer variables that pass query result sets between PL/SQL and client applications.",
+    "expected_concepts": [
+      "cursor",
+      "OPEN FETCH CLOSE",
+      "REF CURSOR",
+      "SYS_REFCURSOR"
+    ],
+    "explanation": "Evaluates Oracle PL/SQL and Explicit Cursors vs REF CURSORs comprehension."
+  },
+  {
+    "id": "oracle_005",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Bulk Processing in PL/SQL using BULK COLLECT and FORALL, and how does it prevent context switching?",
+    "difficulty": "hard",
+    "topic": "Performance & PL/SQL",
+    "concept": "BULK COLLECT & FORALL",
+    "questionFamily": "optimization",
+    "tags": [
+      "BULK COLLECT",
+      "FORALL",
+      "context switching",
+      "PL/SQL engine",
+      "SQL engine"
+    ],
+    "idealAnswer": "Switching execution between PL/SQL and SQL engines is expensive. BULK COLLECT fetches entire query result sets into collections in a single context switch. FORALL sends batch DML operations to the SQL engine simultaneously, speeding up data processing by orders of magnitude.",
+    "ideal_answer": "Switching execution between PL/SQL and SQL engines is expensive. BULK COLLECT fetches entire query result sets into collections in a single context switch. FORALL sends batch DML operations to the SQL engine simultaneously, speeding up data processing by orders of magnitude.",
+    "expected_concepts": [
+      "BULK COLLECT",
+      "FORALL",
+      "context switching",
+      "PL/SQL engine"
+    ],
+    "explanation": "Evaluates Oracle Performance & PL/SQL and BULK COLLECT & FORALL comprehension."
+  },
+  {
+    "id": "oracle_006",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Undo Tablespaces and Flashback Technology in Oracle (Flashback Query, Flashback Table, Flashback Drop).",
+    "difficulty": "hard",
+    "topic": "Recovery & Undo",
+    "concept": "Oracle Flashback Technology",
+    "questionFamily": "architecture",
+    "tags": [
+      "undo tablespace",
+      "flashback query",
+      "AS OF TIMESTAMP",
+      "flashback drop",
+      "recyclebin"
+    ],
+    "idealAnswer": "Undo data stores pre-image blocks of modified data. Oracle Flashback leverages undo data to query past snapshots ('SELECT * FROM emp AS OF TIMESTAMP ...'), recover dropped tables from the recycle bin, or revert tables without full backups.",
+    "ideal_answer": "Undo data stores pre-image blocks of modified data. Oracle Flashback leverages undo data to query past snapshots ('SELECT * FROM emp AS OF TIMESTAMP ...'), recover dropped tables from the recycle bin, or revert tables without full backups.",
+    "expected_concepts": [
+      "undo tablespace",
+      "flashback query",
+      "AS OF TIMESTAMP",
+      "flashback drop"
+    ],
+    "explanation": "Evaluates Oracle Recovery & Undo and Oracle Flashback Technology comprehension."
+  },
+  {
+    "id": "oracle_007",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Oracle RAC (Real Application Clusters), and how does Cache Fusion share memory across cluster nodes?",
+    "difficulty": "hard",
+    "topic": "High Availability & RAC",
+    "concept": "Oracle RAC & Cache Fusion",
+    "questionFamily": "architecture",
+    "tags": [
+      "Oracle RAC",
+      "Cache Fusion",
+      "shared disk",
+      "interconnect",
+      "global cache service"
+    ],
+    "idealAnswer": "Oracle RAC runs multiple database instances on separate servers accessing a shared disk storage. Cache Fusion transfers data blocks directly between instance SGAs across a high-speed private interconnect without writing to disk first.",
+    "ideal_answer": "Oracle RAC runs multiple database instances on separate servers accessing a shared disk storage. Cache Fusion transfers data blocks directly between instance SGAs across a high-speed private interconnect without writing to disk first.",
+    "expected_concepts": [
+      "Oracle RAC",
+      "Cache Fusion",
+      "shared disk",
+      "interconnect"
+    ],
+    "explanation": "Evaluates Oracle High Availability & RAC and Oracle RAC & Cache Fusion comprehension."
+  },
+  {
+    "id": "oracle_008",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Oracle Data Guard (Primary vs Standby Databases: Physical Standby, Logical Standby, Active Data Guard).",
+    "difficulty": "hard",
+    "topic": "Disaster Recovery",
+    "concept": "Oracle Data Guard & Standby Databases",
+    "questionFamily": "architecture",
+    "tags": [
+      "Data Guard",
+      "Physical Standby",
+      "Active Data Guard",
+      "redo apply",
+      "failover"
+    ],
+    "idealAnswer": "Data Guard provides disaster recovery by transmitting redo data from primary to standby databases. Physical Standby applies redo directly (block-for-block exact replica). Active Data Guard allows read-only queries and backups on the physical standby while redo applies.",
+    "ideal_answer": "Data Guard provides disaster recovery by transmitting redo data from primary to standby databases. Physical Standby applies redo directly (block-for-block exact replica). Active Data Guard allows read-only queries and backups on the physical standby while redo applies.",
+    "expected_concepts": [
+      "Data Guard",
+      "Physical Standby",
+      "Active Data Guard",
+      "redo apply"
+    ],
+    "explanation": "Evaluates Oracle Disaster Recovery and Oracle Data Guard & Standby Databases comprehension."
+  },
+  {
+    "id": "oracle_009",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Oracle Partitioning strategies: Range, List, Hash, Composite, and Interval Partitioning.",
+    "difficulty": "medium",
+    "topic": "Data Management",
+    "concept": "Oracle Partitioning & Interval Partitioning",
+    "questionFamily": "architecture",
+    "tags": [
+      "partitioning",
+      "interval partitioning",
+      "range-hash",
+      "partition pruning"
+    ],
+    "idealAnswer": "Oracle partitioning breaks large tables into manageable pieces: Range, List, Hash, and Composite. Interval Partitioning extends range partitioning by automatically creating new monthly/yearly partition segments when new date data is inserted.",
+    "ideal_answer": "Oracle partitioning breaks large tables into manageable pieces: Range, List, Hash, and Composite. Interval Partitioning extends range partitioning by automatically creating new monthly/yearly partition segments when new date data is inserted.",
+    "expected_concepts": [
+      "partitioning",
+      "interval partitioning",
+      "range-hash",
+      "partition pruning"
+    ],
+    "explanation": "Evaluates Oracle Data Management and Oracle Partitioning & Interval Partitioning comprehension."
+  },
+  {
+    "id": "oracle_010",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Oracle Indexes: B-Tree, Bitmap Indexes, Function-Based Indexes, and Reverse Key Indexes?",
+    "difficulty": "medium",
+    "topic": "Indexes",
+    "concept": "Oracle Index Types (B-Tree, Bitmap, Reverse Key)",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "B-Tree",
+      "Bitmap Index",
+      "Function-Based",
+      "Reverse Key",
+      "low cardinality"
+    ],
+    "idealAnswer": "B-Tree indexes suit high-cardinality unique data in OLTP. Bitmap indexes use bit arrays for low-cardinality columns (e.g. status, gender) in read-heavy data warehouses. Reverse Key indexes reverse byte orders to prevent right-hand B-Tree contention on sequence inserts.",
+    "ideal_answer": "B-Tree indexes suit high-cardinality unique data in OLTP. Bitmap indexes use bit arrays for low-cardinality columns (e.g. status, gender) in read-heavy data warehouses. Reverse Key indexes reverse byte orders to prevent right-hand B-Tree contention on sequence inserts.",
+    "expected_concepts": [
+      "B-Tree",
+      "Bitmap Index",
+      "Function-Based",
+      "Reverse Key"
+    ],
+    "explanation": "Evaluates Oracle Indexes and Oracle Index Types (B-Tree, Bitmap, Reverse Key) comprehension."
+  },
+  {
+    "id": "oracle_011",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Oracle Autonomous Database (Serverless vs Dedicated) and self-driving, self-securing, self-repairing capabilities.",
+    "difficulty": "medium",
+    "topic": "Cloud & Autonomous",
+    "concept": "Oracle Autonomous Database",
+    "questionFamily": "architecture",
+    "tags": [
+      "Autonomous Database",
+      "machine learning",
+      "auto-indexing",
+      "self-repairing",
+      "OCI"
+    ],
+    "idealAnswer": "Oracle Autonomous Database in OCI utilizes machine learning for automated indexing, tuning, patching, security vulnerability remediation, and scaling with zero human DBA intervention and zero downtime.",
+    "ideal_answer": "Oracle Autonomous Database in OCI utilizes machine learning for automated indexing, tuning, patching, security vulnerability remediation, and scaling with zero human DBA intervention and zero downtime.",
+    "expected_concepts": [
+      "Autonomous Database",
+      "machine learning",
+      "auto-indexing",
+      "self-repairing"
+    ],
+    "explanation": "Evaluates Oracle Cloud & Autonomous and Oracle Autonomous Database comprehension."
+  },
+  {
+    "id": "oracle_012",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does the Cost-Based Optimizer (CBO) work in Oracle, and what role do DBMS_STATS and Histograms play?",
+    "difficulty": "hard",
+    "topic": "Optimizer & Performance",
+    "concept": "Cost-Based Optimizer & DBMS_STATS",
+    "questionFamily": "optimization",
+    "tags": [
+      "CBO",
+      "DBMS_STATS",
+      "histograms",
+      "execution plan",
+      "cardinality estimation"
+    ],
+    "idealAnswer": "The CBO evaluates multiple candidate execution plans and selects the one with lowest estimated cost. DBMS_STATS gathers table, column, and index statistics. Frequency and Top-Frequency histograms guide cardinality estimation for skewed data distributions.",
+    "ideal_answer": "The CBO evaluates multiple candidate execution plans and selects the one with lowest estimated cost. DBMS_STATS gathers table, column, and index statistics. Frequency and Top-Frequency histograms guide cardinality estimation for skewed data distributions.",
+    "expected_concepts": [
+      "CBO",
+      "DBMS_STATS",
+      "histograms",
+      "execution plan"
+    ],
+    "explanation": "Evaluates Oracle Optimizer & Performance and Cost-Based Optimizer & DBMS_STATS comprehension."
+  },
+  {
+    "id": "oracle_013",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Oracle Automatic Workload Repository (AWR) and Active Session History (ASH) reports for performance troubleshooting.",
+    "difficulty": "hard",
+    "topic": "Performance Tuning",
+    "concept": "AWR & ASH Reports",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "AWR report",
+      "ASH",
+      "wait events",
+      "top SQL",
+      "DB time",
+      "performance bottleneck"
+    ],
+    "idealAnswer": "AWR snapshots system performance metrics periodically. ASH samples active session wait states every second. Analyzing AWR/ASH reports identifies dominant wait events (db file sequential read, enq: TX - row lock), CPU bottlenecks, and top resource-consuming SQL.",
+    "ideal_answer": "AWR snapshots system performance metrics periodically. ASH samples active session wait states every second. Analyzing AWR/ASH reports identifies dominant wait events (db file sequential read, enq: TX - row lock), CPU bottlenecks, and top resource-consuming SQL.",
+    "expected_concepts": [
+      "AWR report",
+      "ASH",
+      "wait events",
+      "top SQL"
+    ],
+    "explanation": "Evaluates Oracle Performance Tuning and AWR & ASH Reports comprehension."
+  },
+  {
+    "id": "oracle_014",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Oracle Multitenant Architecture: Container Database (CDB) and Pluggable Databases (PDB)?",
+    "difficulty": "medium",
+    "topic": "Multitenancy",
+    "concept": "Oracle Multitenant (CDB and PDB)",
+    "questionFamily": "architecture",
+    "tags": [
+      "Multitenant",
+      "CDB",
+      "PDB",
+      "pluggable database",
+      "consolidation"
+    ],
+    "idealAnswer": "CDB (Container Database) acts as the parent database sharing background processes and memory. Multiple isolated PDBs (Pluggable Databases) plug into the CDB, sharing infrastructure while maintaining isolated schemas, data, and users.",
+    "ideal_answer": "CDB (Container Database) acts as the parent database sharing background processes and memory. Multiple isolated PDBs (Pluggable Databases) plug into the CDB, sharing infrastructure while maintaining isolated schemas, data, and users.",
+    "expected_concepts": [
+      "Multitenant",
+      "CDB",
+      "PDB",
+      "pluggable database"
+    ],
+    "explanation": "Evaluates Oracle Multitenancy and Oracle Multitenant (CDB and PDB) comprehension."
+  },
+  {
+    "id": "oracle_015",
+    "skill": "Oracle",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Oracle Virtual Private Database (VPD) / Fine-Grained Auditing (FGA) for row-level security.",
+    "difficulty": "hard",
+    "topic": "Security",
+    "concept": "Virtual Private Database (VPD) & Fine-Grained Auditing",
+    "questionFamily": "security",
+    "tags": [
+      "VPD",
+      "Row-Level Security",
+      "DBMS_RLS",
+      "Fine-Grained Auditing",
+      "security policies"
+    ],
+    "idealAnswer": "VPD (Fine-Grained Access Control via DBMS_RLS) dynamically intercepts SQL queries to append security WHERE predicates based on application user context, enforcing row-level and column-level security invisibly to client applications.",
+    "ideal_answer": "VPD (Fine-Grained Access Control via DBMS_RLS) dynamically intercepts SQL queries to append security WHERE predicates based on application user context, enforcing row-level and column-level security invisibly to client applications.",
+    "expected_concepts": [
+      "VPD",
+      "Row-Level Security",
+      "DBMS_RLS",
+      "Fine-Grained Auditing"
+    ],
+    "explanation": "Evaluates Oracle Security and Virtual Private Database (VPD) & Fine-Grained Auditing comprehension."
+  }
+]

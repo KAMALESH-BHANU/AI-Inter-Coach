@@ -1,44 +1,412 @@
 [
   {
-    "id": "SQL_001",
+    "id": "sql_001",
     "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between DDL (Data Definition Language), DML (Data Manipulation Language), DCL (Data Control Language), and TCL (Transaction Control Language).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of SQL in modern software engineering?",
-    "expected_concepts": [
-      "SQL fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "SQL Sublanguages",
+    "concept": "DDL vs DML vs DCL vs TCL",
+    "questionFamily": "comparison",
+    "tags": [
+      "DDL",
+      "DML",
+      "DCL",
+      "TCL",
+      "CREATE",
+      "INSERT",
+      "GRANT",
+      "COMMIT"
     ],
-    "ideal_answer": "SQL is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of SQL."
+    "idealAnswer": "DDL defines schema structure (CREATE, ALTER, DROP). DML manipulates data rows (SELECT, INSERT, UPDATE, DELETE). DCL manages permissions (GRANT, REVOKE). TCL manages transaction boundaries (COMMIT, ROLLBACK, SAVEPOINT).",
+    "ideal_answer": "DDL defines schema structure (CREATE, ALTER, DROP). DML manipulates data rows (SELECT, INSERT, UPDATE, DELETE). DCL manages permissions (GRANT, REVOKE). TCL manages transaction boundaries (COMMIT, ROLLBACK, SAVEPOINT).",
+    "expected_concepts": [
+      "DDL",
+      "DML",
+      "DCL",
+      "TCL"
+    ],
+    "explanation": "Evaluates SQL SQL Sublanguages and DDL vs DML vs DCL vs TCL comprehension."
   },
   {
-    "id": "SQL_002",
+    "id": "sql_002",
     "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the logical query processing order in SQL (FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> DISTINCT -> ORDER BY -> LIMIT).",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using SQL in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Query Execution",
+    "concept": "Logical SQL Execution Order",
+    "questionFamily": "architecture",
+    "tags": [
+      "execution order",
+      "FROM",
+      "WHERE",
+      "GROUP BY",
+      "HAVING",
+      "SELECT",
+      "ORDER BY"
     ],
-    "ideal_answer": "Common challenges with SQL include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of SQL."
+    "idealAnswer": "SQL is declarative: engines evaluate queries in logical order: 1) FROM/JOINs, 2) WHERE filters, 3) GROUP BY, 4) HAVING filters, 5) SELECT projections, 6) DISTINCT, 7) ORDER BY, 8) LIMIT/OFFSET.",
+    "ideal_answer": "SQL is declarative: engines evaluate queries in logical order: 1) FROM/JOINs, 2) WHERE filters, 3) GROUP BY, 4) HAVING filters, 5) SELECT projections, 6) DISTINCT, 7) ORDER BY, 8) LIMIT/OFFSET.",
+    "expected_concepts": [
+      "execution order",
+      "FROM",
+      "WHERE",
+      "GROUP BY"
+    ],
+    "explanation": "Evaluates SQL Query Execution and Logical SQL Execution Order comprehension."
   },
   {
-    "id": "SQL_003",
+    "id": "sql_003",
     "skill": "SQL",
-    "difficulty": "hard",
-    "question": "How does SQL handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between UNION and UNION ALL in SQL regarding duplicate elimination and query performance?",
+    "difficulty": "easy",
+    "topic": "Set Operations",
+    "concept": "UNION vs UNION ALL",
+    "questionFamily": "comparison",
+    "tags": [
+      "UNION",
+      "UNION ALL",
+      "set operations",
+      "duplicate elimination",
+      "sorting"
     ],
-    "ideal_answer": "SQL handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of SQL."
+    "idealAnswer": "UNION combines results from two queries and performs an implicit DISTINCT sort to eliminate duplicate rows (higher CPU cost). UNION ALL combines result sets directly without deduplication, offering significantly faster execution.",
+    "ideal_answer": "UNION combines results from two queries and performs an implicit DISTINCT sort to eliminate duplicate rows (higher CPU cost). UNION ALL combines result sets directly without deduplication, offering significantly faster execution.",
+    "expected_concepts": [
+      "UNION",
+      "UNION ALL",
+      "set operations",
+      "duplicate elimination"
+    ],
+    "explanation": "Evaluates SQL Set Operations and UNION vs UNION ALL comprehension."
+  },
+  {
+    "id": "sql_004",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SQL Window Functions and the difference between RANK(), DENSE_RANK(), and ROW_NUMBER().",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "concept": "RANK vs DENSE_RANK vs ROW_NUMBER",
+    "questionFamily": "comparison",
+    "tags": [
+      "ROW_NUMBER",
+      "RANK",
+      "DENSE_RANK",
+      "window functions",
+      "ties handling"
+    ],
+    "idealAnswer": "ROW_NUMBER assigns unique sequential integers (1, 2, 3, 4) regardless of ties. RANK assigns identical ranks to ties and skips subsequent rank numbers (1, 2, 2, 4). DENSE_RANK assigns identical ranks to ties without skipping subsequent numbers (1, 2, 2, 3).",
+    "ideal_answer": "ROW_NUMBER assigns unique sequential integers (1, 2, 3, 4) regardless of ties. RANK assigns identical ranks to ties and skips subsequent rank numbers (1, 2, 2, 4). DENSE_RANK assigns identical ranks to ties without skipping subsequent numbers (1, 2, 2, 3).",
+    "expected_concepts": [
+      "ROW_NUMBER",
+      "RANK",
+      "DENSE_RANK",
+      "window functions"
+    ],
+    "explanation": "Evaluates SQL Window Functions and RANK vs DENSE_RANK vs ROW_NUMBER comprehension."
+  },
+  {
+    "id": "sql_005",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between TRUNCATE, DELETE, and DROP commands in SQL in terms of speed, rollback, and triggers?",
+    "difficulty": "easy",
+    "topic": "Data Removal",
+    "concept": "TRUNCATE vs DELETE vs DROP",
+    "questionFamily": "comparison",
+    "tags": [
+      "TRUNCATE",
+      "DELETE",
+      "DROP",
+      "transaction rollback",
+      "triggers"
+    ],
+    "idealAnswer": "DELETE is a logged DML operation that deletes rows conditionally, fires triggers, and can be rolled back. TRUNCATE is a fast DDL operation that deallocates entire table data pages without firing triggers. DROP removes data and table schema completely.",
+    "ideal_answer": "DELETE is a logged DML operation that deletes rows conditionally, fires triggers, and can be rolled back. TRUNCATE is a fast DDL operation that deallocates entire table data pages without firing triggers. DROP removes data and table schema completely.",
+    "expected_concepts": [
+      "TRUNCATE",
+      "DELETE",
+      "DROP",
+      "transaction rollback"
+    ],
+    "explanation": "Evaluates SQL Data Removal and TRUNCATE vs DELETE vs DROP comprehension."
+  },
+  {
+    "id": "sql_006",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain NULL handling in SQL: Three-Valued Logic (TRUE, FALSE, UNKNOWN), IS NULL, and COALESCE / NULLIF functions.",
+    "difficulty": "medium",
+    "topic": "NULL & Logic",
+    "concept": "Three-Valued Logic & COALESCE",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "NULL",
+      "three-valued logic",
+      "UNKNOWN",
+      "COALESCE",
+      "NULLIF",
+      "IS NULL"
+    ],
+    "idealAnswer": "SQL uses Three-Valued Logic where comparisons with NULL evaluate to UNKNOWN (neither TRUE nor FALSE; 'NULL = NULL' evaluates to UNKNOWN). Checks require 'IS NULL'. COALESCE returns the first non-null argument; NULLIF(a, b) returns NULL if a = b.",
+    "ideal_answer": "SQL uses Three-Valued Logic where comparisons with NULL evaluate to UNKNOWN (neither TRUE nor FALSE; 'NULL = NULL' evaluates to UNKNOWN). Checks require 'IS NULL'. COALESCE returns the first non-null argument; NULLIF(a, b) returns NULL if a = b.",
+    "expected_concepts": [
+      "NULL",
+      "three-valued logic",
+      "UNKNOWN",
+      "COALESCE"
+    ],
+    "explanation": "Evaluates SQL NULL & Logic and Three-Valued Logic & COALESCE comprehension."
+  },
+  {
+    "id": "sql_007",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is an SQL Injection attack, and how do Parameterized Queries (Prepared Statements) completely prevent it?",
+    "difficulty": "easy",
+    "topic": "Security",
+    "concept": "SQL Injection & Parameterized Queries",
+    "questionFamily": "security",
+    "tags": [
+      "SQL injection",
+      "prepared statements",
+      "parameter binding",
+      "OWASP",
+      "sanitization"
+    ],
+    "idealAnswer": "SQL Injection occurs when untrusted user input is directly concatenated into SQL query strings, allowing attackers to manipulate query structure. Parameterized queries precompile the SQL statement template on the database and treat input strictly as literal parameter data.",
+    "ideal_answer": "SQL Injection occurs when untrusted user input is directly concatenated into SQL query strings, allowing attackers to manipulate query structure. Parameterized queries precompile the SQL statement template on the database and treat input strictly as literal parameter data.",
+    "expected_concepts": [
+      "SQL injection",
+      "prepared statements",
+      "parameter binding",
+      "OWASP"
+    ],
+    "explanation": "Evaluates SQL Security and SQL Injection & Parameterized Queries comprehension."
+  },
+  {
+    "id": "sql_008",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Self-Joins and Cross-Joins (Cartesian Products) in SQL with practical examples.",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "concept": "Self-Joins & Cartesian Products",
+    "questionFamily": "implementation",
+    "tags": [
+      "self-join",
+      "cross-join",
+      "cartesian product",
+      "hierarchies",
+      "employee-manager"
+    ],
+    "idealAnswer": "A Self-Join joins a table to itself using table aliases, commonly used for hierarchical parent-child data (e.g. employee.manager_id = manager.id). A Cross-Join produces the Cartesian product combining every row of table A with every row of table B.",
+    "ideal_answer": "A Self-Join joins a table to itself using table aliases, commonly used for hierarchical parent-child data (e.g. employee.manager_id = manager.id). A Cross-Join produces the Cartesian product combining every row of table A with every row of table B.",
+    "expected_concepts": [
+      "self-join",
+      "cross-join",
+      "cartesian product",
+      "hierarchies"
+    ],
+    "explanation": "Evaluates SQL Joins and Self-Joins & Cartesian Products comprehension."
+  },
+  {
+    "id": "sql_009",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are CTEs (Common Table Expressions) and Recursive CTEs in SQL, and when are they cleaner than nested subqueries?",
+    "difficulty": "medium",
+    "topic": "Querying",
+    "concept": "Common Table Expressions & Recursive CTEs",
+    "questionFamily": "design",
+    "tags": [
+      "CTE",
+      "WITH clause",
+      "recursive query",
+      "nested subqueries",
+      "readability"
+    ],
+    "idealAnswer": "A CTE (WITH cte_name AS (...)) defines a temporary named result set within an execution scope, dramatically improving query readability over deep subqueries. Recursive CTEs iterate to traverse graph structures and hierarchical bill-of-materials.",
+    "ideal_answer": "A CTE (WITH cte_name AS (...)) defines a temporary named result set within an execution scope, dramatically improving query readability over deep subqueries. Recursive CTEs iterate to traverse graph structures and hierarchical bill-of-materials.",
+    "expected_concepts": [
+      "CTE",
+      "WITH clause",
+      "recursive query",
+      "nested subqueries"
+    ],
+    "explanation": "Evaluates SQL Querying and Common Table Expressions & Recursive CTEs comprehension."
+  },
+  {
+    "id": "sql_010",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Database Indexing strategies: Clustered vs Non-Clustered Indexes and Composite Indexes.",
+    "difficulty": "medium",
+    "topic": "Performance & Indexing",
+    "concept": "Clustered vs Non-Clustered Indexes",
+    "questionFamily": "architecture",
+    "tags": [
+      "clustered index",
+      "non-clustered index",
+      "B-Tree",
+      "composite index",
+      "lookup"
+    ],
+    "idealAnswer": "A Clustered Index dictates the physical ordering of table rows on disk (one per table). Non-Clustered indexes are separate B-Tree structures containing indexed columns and row pointers/keys pointing to table rows.",
+    "ideal_answer": "A Clustered Index dictates the physical ordering of table rows on disk (one per table). Non-Clustered indexes are separate B-Tree structures containing indexed columns and row pointers/keys pointing to table rows.",
+    "expected_concepts": [
+      "clustered index",
+      "non-clustered index",
+      "B-Tree",
+      "composite index"
+    ],
+    "explanation": "Evaluates SQL Performance & Indexing and Clustered vs Non-Clustered Indexes comprehension."
+  },
+  {
+    "id": "sql_011",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Database Transactions, and what is the difference between COMMIT, ROLLBACK, and SAVEPOINT?",
+    "difficulty": "easy",
+    "topic": "Transactions",
+    "concept": "Transactions & Savepoints",
+    "questionFamily": "implementation",
+    "tags": [
+      "COMMIT",
+      "ROLLBACK",
+      "SAVEPOINT",
+      "atomic transactions",
+      "TCL"
+    ],
+    "idealAnswer": "A transaction bundles multiple SQL statements into an atomic unit. COMMIT makes all changes permanent. ROLLBACK cancels all changes. SAVEPOINT creates a checkpoint within a transaction allowing partial rollback to that specific point.",
+    "ideal_answer": "A transaction bundles multiple SQL statements into an atomic unit. COMMIT makes all changes permanent. ROLLBACK cancels all changes. SAVEPOINT creates a checkpoint within a transaction allowing partial rollback to that specific point.",
+    "expected_concepts": [
+      "COMMIT",
+      "ROLLBACK",
+      "SAVEPOINT",
+      "atomic transactions"
+    ],
+    "explanation": "Evaluates SQL Transactions and Transactions & Savepoints comprehension."
+  },
+  {
+    "id": "sql_012",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the CASE expression in SQL (Simple CASE vs Searched CASE) and how it enables conditional logic inside queries.",
+    "difficulty": "easy",
+    "topic": "Expressions",
+    "concept": "CASE Conditional Expressions",
+    "questionFamily": "implementation",
+    "tags": [
+      "CASE WHEN",
+      "conditional logic",
+      "pivot query",
+      "searched CASE"
+    ],
+    "idealAnswer": "CASE expressions evaluate conditions and return values in SQL statements. Simple CASE compares an expression to values (CASE col WHEN 'A' THEN 1 END); Searched CASE evaluates boolean expressions (CASE WHEN age >= 18 THEN 'Adult' END).",
+    "ideal_answer": "CASE expressions evaluate conditions and return values in SQL statements. Simple CASE compares an expression to values (CASE col WHEN 'A' THEN 1 END); Searched CASE evaluates boolean expressions (CASE WHEN age >= 18 THEN 'Adult' END).",
+    "expected_concepts": [
+      "CASE WHEN",
+      "conditional logic",
+      "pivot query",
+      "searched CASE"
+    ],
+    "explanation": "Evaluates SQL Expressions and CASE Conditional Expressions comprehension."
+  },
+  {
+    "id": "sql_013",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does the EXISTS operator differ from IN and JOIN in SQL subquery evaluation?",
+    "difficulty": "medium",
+    "topic": "Query Optimization",
+    "concept": "EXISTS vs IN vs JOIN",
+    "questionFamily": "comparison",
+    "tags": [
+      "EXISTS",
+      "IN",
+      "JOIN",
+      "short-circuit",
+      "NULL safety"
+    ],
+    "idealAnswer": "EXISTS checks for the existence of rows matching a correlated subquery and short-circuits on the first match without building full lists. Unlike IN, which evaluates to UNKNOWN if the subquery returns NULL values, EXISTS handles NULL values safely.",
+    "ideal_answer": "EXISTS checks for the existence of rows matching a correlated subquery and short-circuits on the first match without building full lists. Unlike IN, which evaluates to UNKNOWN if the subquery returns NULL values, EXISTS handles NULL values safely.",
+    "expected_concepts": [
+      "EXISTS",
+      "IN",
+      "JOIN",
+      "short-circuit"
+    ],
+    "explanation": "Evaluates SQL Query Optimization and EXISTS vs IN vs JOIN comprehension."
+  },
+  {
+    "id": "sql_014",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Database Constraints (PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, NOT NULL, DEFAULT)?",
+    "difficulty": "easy",
+    "topic": "Constraints",
+    "concept": "Database Integrity Constraints",
+    "questionFamily": "definition",
+    "tags": [
+      "CHECK constraint",
+      "UNIQUE",
+      "NOT NULL",
+      "DEFAULT",
+      "referential integrity"
+    ],
+    "idealAnswer": "Constraints enforce data integrity rules at the database engine level: PRIMARY KEY guarantees uniqueness and non-nullability; UNIQUE prevents duplicates; CHECK validates boolean rules (e.g. CHECK (salary > 0)); DEFAULT assigns fallback values.",
+    "ideal_answer": "Constraints enforce data integrity rules at the database engine level: PRIMARY KEY guarantees uniqueness and non-nullability; UNIQUE prevents duplicates; CHECK validates boolean rules (e.g. CHECK (salary > 0)); DEFAULT assigns fallback values.",
+    "expected_concepts": [
+      "CHECK constraint",
+      "UNIQUE",
+      "NOT NULL",
+      "DEFAULT"
+    ],
+    "explanation": "Evaluates SQL Constraints and Database Integrity Constraints comprehension."
+  },
+  {
+    "id": "sql_015",
+    "skill": "SQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you detect and optimize Slow Queries in SQL using Query Execution Plans?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Query Execution Plan Analysis",
+    "questionFamily": "optimization",
+    "tags": [
+      "execution plan",
+      "table scan",
+      "index scan",
+      "cardinality",
+      "query tuning"
+    ],
+    "idealAnswer": "Generate execution plans to inspect query cost trees. Identify full table scans on large tables, mismatch in estimated vs actual row counts (indicating stale statistics), expensive nested loop joins, and introduce targeted indexes or refactor predicates.",
+    "ideal_answer": "Generate execution plans to inspect query cost trees. Identify full table scans on large tables, mismatch in estimated vs actual row counts (indicating stale statistics), expensive nested loop joins, and introduce targeted indexes or refactor predicates.",
+    "expected_concepts": [
+      "execution plan",
+      "table scan",
+      "index scan",
+      "cardinality"
+    ],
+    "explanation": "Evaluates SQL Performance and Query Execution Plan Analysis comprehension."
   }
 ]

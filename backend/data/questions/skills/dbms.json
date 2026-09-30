@@ -1,44 +1,406 @@
 [
   {
-    "id": "DBMS_001",
+    "id": "dbms_001",
     "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the 3-Schema Architecture of DBMS (Physical/Internal, Conceptual/Logical, External/View) and Data Independence.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of DBMS in modern software engineering?",
-    "expected_concepts": [
-      "DBMS fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Architecture",
+    "concept": "3-Schema Architecture & Data Independence",
+    "questionFamily": "architecture",
+    "tags": [
+      "3-schema architecture",
+      "physical level",
+      "conceptual level",
+      "view level",
+      "data independence"
     ],
-    "ideal_answer": "DBMS is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of DBMS."
+    "idealAnswer": "3-Schema Architecture separates user views (External level), community logical schema (Conceptual level), and physical storage structures (Internal level). Logical Data Independence isolates views from logical changes; Physical Data Independence isolates schema from storage disk changes.",
+    "ideal_answer": "3-Schema Architecture separates user views (External level), community logical schema (Conceptual level), and physical storage structures (Internal level). Logical Data Independence isolates views from logical changes; Physical Data Independence isolates schema from storage disk changes.",
+    "expected_concepts": [
+      "3-schema architecture",
+      "physical level",
+      "conceptual level",
+      "view level"
+    ],
+    "explanation": "Evaluates DBMS Architecture and 3-Schema Architecture & Data Independence comprehension."
   },
   {
-    "id": "DBMS_002",
+    "id": "dbms_002",
     "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Relational Data Model: Relations, Tuples, Attributes, Cardinality, Degree, and Domain.",
+    "difficulty": "easy",
+    "topic": "Relational Model",
+    "concept": "Relational Model Terminology",
+    "questionFamily": "definition",
+    "tags": [
+      "relation",
+      "tuple",
+      "attribute",
+      "cardinality",
+      "degree",
+      "domain"
+    ],
+    "idealAnswer": "A Relation corresponds to a table. A Tuple is a row. An Attribute is a column. Cardinality is total row count. Degree is total column count. Domain is the set of permissible values for an attribute.",
+    "ideal_answer": "A Relation corresponds to a table. A Tuple is a row. An Attribute is a column. Cardinality is total row count. Degree is total column count. Domain is the set of permissible values for an attribute.",
+    "expected_concepts": [
+      "relation",
+      "tuple",
+      "attribute",
+      "cardinality"
+    ],
+    "explanation": "Evaluates DBMS Relational Model and Relational Model Terminology comprehension."
+  },
+  {
+    "id": "dbms_003",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Integrity Constraints in DBMS: Entity Integrity, Referential Integrity, Domain Integrity, and Key Constraints.",
+    "difficulty": "easy",
+    "topic": "Integrity Constraints",
+    "concept": "Database Integrity Constraints",
+    "questionFamily": "definition",
+    "tags": [
+      "entity integrity",
+      "referential integrity",
+      "domain integrity",
+      "foreign key"
+    ],
+    "idealAnswer": "Entity Integrity: Primary keys must be unique and NOT NULL. Referential Integrity: Foreign key values must match existing primary keys or be NULL. Domain Integrity: column values must conform to valid defined datatypes and ranges.",
+    "ideal_answer": "Entity Integrity: Primary keys must be unique and NOT NULL. Referential Integrity: Foreign key values must match existing primary keys or be NULL. Domain Integrity: column values must conform to valid defined datatypes and ranges.",
+    "expected_concepts": [
+      "entity integrity",
+      "referential integrity",
+      "domain integrity",
+      "foreign key"
+    ],
+    "explanation": "Evaluates DBMS Integrity Constraints and Database Integrity Constraints comprehension."
+  },
+  {
+    "id": "dbms_004",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Relational Algebra, and how do Fundamental Operators (Select σ, Project π, Union ∪, Set Difference -, Cartesian Product ×, Rename ρ) operate?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using DBMS in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Relational Algebra",
+    "concept": "Relational Algebra Operations",
+    "questionFamily": "implementation",
+    "tags": [
+      "relational algebra",
+      "selection",
+      "projection",
+      "cartesian product",
+      "join operator"
     ],
-    "ideal_answer": "Common challenges with DBMS include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of DBMS."
+    "idealAnswer": "Relational Algebra is the procedural mathematical query language underlying SQL: Selection (sigma) filters tuples; Projection (pi) selects columns; Cartesian Product (x) pairs tuples; Join (bowtie) combines relations based on matching conditions.",
+    "ideal_answer": "Relational Algebra is the procedural mathematical query language underlying SQL: Selection (sigma) filters tuples; Projection (pi) selects columns; Cartesian Product (x) pairs tuples; Join (bowtie) combines relations based on matching conditions.",
+    "expected_concepts": [
+      "relational algebra",
+      "selection",
+      "projection",
+      "cartesian product"
+    ],
+    "explanation": "Evaluates DBMS Relational Algebra and Relational Algebra Operations comprehension."
   },
   {
-    "id": "DBMS_003",
+    "id": "dbms_005",
     "skill": "DBMS",
-    "difficulty": "hard",
-    "question": "How does DBMS handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Functional Dependency (FD), Armstrong's Axioms (Reflexivity, Augmentation, Transitivity), and Attribute Closure calculation.",
+    "difficulty": "medium",
+    "topic": "Database Theory",
+    "concept": "Functional Dependencies & Armstrong Axioms",
+    "questionFamily": "implementation",
+    "tags": [
+      "functional dependency",
+      "Armstrong axioms",
+      "attribute closure",
+      "candidate key"
     ],
-    "ideal_answer": "DBMS handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of DBMS."
+    "idealAnswer": "An FD (X -> Y) asserts that attribute X uniquely determines attribute Y. Armstrong's Axioms are inference rules: Reflexivity (if Y subset X, X->Y), Augmentation (if X->Y, XZ->YZ), and Transitivity (if X->Y and Y->Z, X->Z). Attribute closure X+ determines candidate keys.",
+    "ideal_answer": "An FD (X -> Y) asserts that attribute X uniquely determines attribute Y. Armstrong's Axioms are inference rules: Reflexivity (if Y subset X, X->Y), Augmentation (if X->Y, XZ->YZ), and Transitivity (if X->Y and Y->Z, X->Z). Attribute closure X+ determines candidate keys.",
+    "expected_concepts": [
+      "functional dependency",
+      "Armstrong axioms",
+      "attribute closure",
+      "candidate key"
+    ],
+    "explanation": "Evaluates DBMS Database Theory and Functional Dependencies & Armstrong Axioms comprehension."
+  },
+  {
+    "id": "dbms_006",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Normal Forms: 1NF, 2NF, 3NF, BCNF, 4NF (Multivalued Dependencies), and 5NF (Join Dependencies).",
+    "difficulty": "hard",
+    "topic": "Normalization",
+    "concept": "Normal Forms (1NF through 5NF)",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF",
+      "4NF",
+      "multivalued dependency",
+      "lossless join"
+    ],
+    "idealAnswer": "1NF enforces atomic values. 2NF removes partial key dependencies. 3NF removes transitive dependencies (X->A where X is superkey or A is prime). BCNF requires every determinant X in X->A to be a superkey. 4NF removes multivalued dependencies. 5NF removes join anomalies.",
+    "ideal_answer": "1NF enforces atomic values. 2NF removes partial key dependencies. 3NF removes transitive dependencies (X->A where X is superkey or A is prime). BCNF requires every determinant X in X->A to be a superkey. 4NF removes multivalued dependencies. 5NF removes join anomalies.",
+    "expected_concepts": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "explanation": "Evaluates DBMS Normalization and Normal Forms (1NF through 5NF) comprehension."
+  },
+  {
+    "id": "dbms_007",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Lossless-Join Decomposition and Dependency Preservation in database normalization?",
+    "difficulty": "hard",
+    "topic": "Normalization",
+    "concept": "Lossless Join & Dependency Preservation",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "lossless join",
+      "dependency preservation",
+      "decomposition",
+      "natural join"
+    ],
+    "idealAnswer": "A decomposition is Lossless-Join if natural joining decomposed tables reconstructs the original table without spurious tuples (R1 intersect R2 -> R1 or R2). Dependency Preservation ensures all original functional dependencies can be verified on individual decomposed tables.",
+    "ideal_answer": "A decomposition is Lossless-Join if natural joining decomposed tables reconstructs the original table without spurious tuples (R1 intersect R2 -> R1 or R2). Dependency Preservation ensures all original functional dependencies can be verified on individual decomposed tables.",
+    "expected_concepts": [
+      "lossless join",
+      "dependency preservation",
+      "decomposition",
+      "natural join"
+    ],
+    "explanation": "Evaluates DBMS Normalization and Lossless Join & Dependency Preservation comprehension."
+  },
+  {
+    "id": "dbms_008",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Transaction Schedules: Serial, Serializable, Conflict Serializable, and View Serializable Schedules.",
+    "difficulty": "hard",
+    "topic": "Concurrency Control",
+    "concept": "Conflict & View Serializability",
+    "questionFamily": "architecture",
+    "tags": [
+      "serializable schedule",
+      "conflict serializable",
+      "view serializable",
+      "precedence graph"
+    ],
+    "idealAnswer": "A concurrent schedule is Conflict Serializable if it can be transformed into a serial schedule by swapping non-conflicting adjacent operations (verified using acyclic Precedence Graphs). View Serializability is broader but NP-complete to test.",
+    "ideal_answer": "A concurrent schedule is Conflict Serializable if it can be transformed into a serial schedule by swapping non-conflicting adjacent operations (verified using acyclic Precedence Graphs). View Serializability is broader but NP-complete to test.",
+    "expected_concepts": [
+      "serializable schedule",
+      "conflict serializable",
+      "view serializable",
+      "precedence graph"
+    ],
+    "explanation": "Evaluates DBMS Concurrency Control and Conflict & View Serializability comprehension."
+  },
+  {
+    "id": "dbms_009",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Two-Phase Locking (2PL) Protocol (Growing Phase, Shrinking Phase, Strict 2PL, Rigorous 2PL) and Serializability guarantee.",
+    "difficulty": "hard",
+    "topic": "Concurrency Control",
+    "concept": "Two-Phase Locking (2PL) Protocol",
+    "questionFamily": "architecture",
+    "tags": [
+      "2PL",
+      "growing phase",
+      "shrinking phase",
+      "Strict 2PL",
+      "cascadeless rollback"
+    ],
+    "idealAnswer": "2PL guarantees conflict serializability: during the Growing Phase locks are acquired; during the Shrinking Phase locks are released (no new locks). Strict 2PL holds exclusive locks until transaction commit/abort to prevent cascading rollbacks.",
+    "ideal_answer": "2PL guarantees conflict serializability: during the Growing Phase locks are acquired; during the Shrinking Phase locks are released (no new locks). Strict 2PL holds exclusive locks until transaction commit/abort to prevent cascading rollbacks.",
+    "expected_concepts": [
+      "2PL",
+      "growing phase",
+      "shrinking phase",
+      "Strict 2PL"
+    ],
+    "explanation": "Evaluates DBMS Concurrency Control and Two-Phase Locking (2PL) Protocol comprehension."
+  },
+  {
+    "id": "dbms_010",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Timestamp-Based Concurrency Control (Thomas Write Rule and Read/Write timestamps)?",
+    "difficulty": "hard",
+    "topic": "Concurrency Control",
+    "concept": "Timestamp Ordering & Thomas Write Rule",
+    "questionFamily": "algorithm",
+    "tags": [
+      "timestamp ordering",
+      "read timestamp",
+      "write timestamp",
+      "Thomas write rule"
+    ],
+    "idealAnswer": "Timestamp ordering assigns unique monotonic timestamps to transactions. Operations are rejected and transactions rolled back if they attempt to read/write data updated by younger transactions. Thomas Write Rule allows obsolete writes to be silently ignored.",
+    "ideal_answer": "Timestamp ordering assigns unique monotonic timestamps to transactions. Operations are rejected and transactions rolled back if they attempt to read/write data updated by younger transactions. Thomas Write Rule allows obsolete writes to be silently ignored.",
+    "expected_concepts": [
+      "timestamp ordering",
+      "read timestamp",
+      "write timestamp",
+      "Thomas write rule"
+    ],
+    "explanation": "Evaluates DBMS Concurrency Control and Timestamp Ordering & Thomas Write Rule comprehension."
+  },
+  {
+    "id": "dbms_011",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Database Recovery Techniques: Write-Ahead Logging (WAL), Checkpointing, and ARIES Recovery Algorithm.",
+    "difficulty": "hard",
+    "topic": "Recovery Management",
+    "concept": "ARIES Recovery & Write-Ahead Logging",
+    "questionFamily": "architecture",
+    "tags": [
+      "ARIES",
+      "WAL",
+      "checkpoint",
+      "Analysis phase",
+      "Redo phase",
+      "Undo phase"
+    ],
+    "idealAnswer": "ARIES recovery uses WAL with LSN (Log Sequence Numbers) and periodic fuzzy checkpoints. On crash restart, it runs 3 phases: 1) Analysis (determines dirty pages/active transactions), 2) Redo (repeats history to restore pre-crash state), 3) Undo (rolls back uncommitted transactions).",
+    "ideal_answer": "ARIES recovery uses WAL with LSN (Log Sequence Numbers) and periodic fuzzy checkpoints. On crash restart, it runs 3 phases: 1) Analysis (determines dirty pages/active transactions), 2) Redo (repeats history to restore pre-crash state), 3) Undo (rolls back uncommitted transactions).",
+    "expected_concepts": [
+      "ARIES",
+      "WAL",
+      "checkpoint",
+      "Analysis phase"
+    ],
+    "explanation": "Evaluates DBMS Recovery Management and ARIES Recovery & Write-Ahead Logging comprehension."
+  },
+  {
+    "id": "dbms_012",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Deadlock Detection using Wait-For Graphs (WFG) and Deadlock Prevention schemes (Wait-Die vs Wound-Wait)?",
+    "difficulty": "medium",
+    "topic": "Deadlocks",
+    "concept": "Wait-For Graphs & Wait-Die vs Wound-Wait",
+    "questionFamily": "comparison",
+    "tags": [
+      "deadlock",
+      "wait-for graph",
+      "wait-die",
+      "wound-wait",
+      "timestamp preemptive"
+    ],
+    "idealAnswer": "Deadlocks are detected via cycles in Wait-For Graphs. Prevention schemes use timestamps: Wait-Die (non-preemptive: older waits for younger, younger dies). Wound-Wait (preemptive: older wounds/preempts younger, younger waits for older).",
+    "ideal_answer": "Deadlocks are detected via cycles in Wait-For Graphs. Prevention schemes use timestamps: Wait-Die (non-preemptive: older waits for younger, younger dies). Wound-Wait (preemptive: older wounds/preempts younger, younger waits for older).",
+    "expected_concepts": [
+      "deadlock",
+      "wait-for graph",
+      "wait-die",
+      "wound-wait"
+    ],
+    "explanation": "Evaluates DBMS Deadlocks and Wait-For Graphs & Wait-Die vs Wound-Wait comprehension."
+  },
+  {
+    "id": "dbms_013",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Indexing Data Structures in DBMS: Dense vs Sparse Index, Primary vs Secondary Index, and Multi-Level Indexing.",
+    "difficulty": "medium",
+    "topic": "File Organization & Indexing",
+    "concept": "Dense vs Sparse & Multi-Level Indexes",
+    "questionFamily": "comparison",
+    "tags": [
+      "dense index",
+      "sparse index",
+      "primary index",
+      "secondary index",
+      "multi-level index"
+    ],
+    "idealAnswer": "Dense Index has an index record for every search key value in table. Sparse Index has records only for some data blocks. Multi-level indexing creates a hierarchy of index levels, reducing disk block reads to O(log N).",
+    "ideal_answer": "Dense Index has an index record for every search key value in table. Sparse Index has records only for some data blocks. Multi-level indexing creates a hierarchy of index levels, reducing disk block reads to O(log N).",
+    "expected_concepts": [
+      "dense index",
+      "sparse index",
+      "primary index",
+      "secondary index"
+    ],
+    "explanation": "Evaluates DBMS File Organization & Indexing and Dense vs Sparse & Multi-Level Indexes comprehension."
+  },
+  {
+    "id": "dbms_014",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Query Processing and Query Optimization stages: Parsing -> Translation to Relational Algebra -> Cost Estimation -> Execution Plan.",
+    "difficulty": "medium",
+    "topic": "Query Processing",
+    "concept": "Query Optimizer & Cost Evaluation",
+    "questionFamily": "architecture",
+    "tags": [
+      "query optimization",
+      "relational algebra tree",
+      "cost estimation",
+      "heuristics",
+      "pushdown"
+    ],
+    "idealAnswer": "The Query Engine parses SQL into relational algebra trees, applies heuristic transformations (predicate pushdown to filter rows early), estimates costs of candidate physical join algorithms (Hash Join, Nested Loop, Sort-Merge), and selects the lowest-cost execution plan.",
+    "ideal_answer": "The Query Engine parses SQL into relational algebra trees, applies heuristic transformations (predicate pushdown to filter rows early), estimates costs of candidate physical join algorithms (Hash Join, Nested Loop, Sort-Merge), and selects the lowest-cost execution plan.",
+    "expected_concepts": [
+      "query optimization",
+      "relational algebra tree",
+      "cost estimation",
+      "heuristics"
+    ],
+    "explanation": "Evaluates DBMS Query Processing and Query Optimizer & Cost Evaluation comprehension."
+  },
+  {
+    "id": "dbms_015",
+    "skill": "DBMS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Shadow Paging Recovery vs Log-Based Recovery in DBMS?",
+    "difficulty": "medium",
+    "topic": "Recovery Management",
+    "concept": "Shadow Paging vs Log-Based Recovery",
+    "questionFamily": "comparison",
+    "tags": [
+      "shadow paging",
+      "log-based recovery",
+      "current page table",
+      "shadow page table",
+      "atomic switch"
+    ],
+    "idealAnswer": "Shadow Paging maintains two page tables: current page table and shadow page table. Updates write to new disk pages. On commit, the pointer is atomically updated to the new table. It avoids log file parsing but causes data fragmentation on disk.",
+    "ideal_answer": "Shadow Paging maintains two page tables: current page table and shadow page table. Updates write to new disk pages. On commit, the pointer is atomically updated to the new table. It avoids log file parsing but causes data fragmentation on disk.",
+    "expected_concepts": [
+      "shadow paging",
+      "log-based recovery",
+      "current page table",
+      "shadow page table"
+    ],
+    "explanation": "Evaluates DBMS Recovery Management and Shadow Paging vs Log-Based Recovery comprehension."
   }
 ]

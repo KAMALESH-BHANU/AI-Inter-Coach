@@ -1,44 +1,406 @@
 [
   {
-    "id": "GITHUB_001",
+    "id": "github_001",
     "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GitHub Actions core concepts: Workflows (.github/workflows), Events, Jobs, Steps, Actions, and Runners.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of GitHub in modern software engineering?",
-    "expected_concepts": [
-      "GitHub fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "CI/CD & Actions",
+    "concept": "GitHub Actions Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "GitHub Actions",
+      "workflows",
+      "jobs",
+      "steps",
+      "runners",
+      "YAML"
     ],
-    "ideal_answer": "GitHub is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of GitHub."
+    "idealAnswer": "GitHub Actions automates CI/CD. Workflows are defined in YAML files triggered by repository events (push, pull_request). A workflow contains Jobs executed on Runners (hosted/self-hosted VM/container). Jobs execute sequences of Steps (shell commands or reusable Actions).",
+    "ideal_answer": "GitHub Actions automates CI/CD. Workflows are defined in YAML files triggered by repository events (push, pull_request). A workflow contains Jobs executed on Runners (hosted/self-hosted VM/container). Jobs execute sequences of Steps (shell commands or reusable Actions).",
+    "expected_concepts": [
+      "GitHub Actions",
+      "workflows",
+      "jobs",
+      "steps"
+    ],
+    "explanation": "Evaluates GitHub CI/CD & Actions and GitHub Actions Architecture comprehension."
   },
   {
-    "id": "GITHUB_002",
+    "id": "github_002",
     "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between GitHub-Hosted Runners and Self-Hosted Runners in GitHub Actions (security, cost, network access)?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using GitHub in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Runners & Infrastructure",
+    "concept": "Hosted vs Self-Hosted Runners",
+    "questionFamily": "comparison",
+    "tags": [
+      "hosted runners",
+      "self-hosted runners",
+      "security isolation",
+      "ephemeral VM",
+      "VPC"
     ],
-    "ideal_answer": "Common challenges with GitHub include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of GitHub."
+    "idealAnswer": "GitHub-hosted runners are clean, ephemeral cloud VMs managed by GitHub (high security, zero maintenance). Self-hosted runners run on custom dedicated hardware/VPC (custom GPU/tools, private network access, lower cost at scale, requiring manual security hardening).",
+    "ideal_answer": "GitHub-hosted runners are clean, ephemeral cloud VMs managed by GitHub (high security, zero maintenance). Self-hosted runners run on custom dedicated hardware/VPC (custom GPU/tools, private network access, lower cost at scale, requiring manual security hardening).",
+    "expected_concepts": [
+      "hosted runners",
+      "self-hosted runners",
+      "security isolation",
+      "ephemeral VM"
+    ],
+    "explanation": "Evaluates GitHub Runners & Infrastructure and Hosted vs Self-Hosted Runners comprehension."
   },
   {
-    "id": "GITHUB_003",
+    "id": "github_003",
     "skill": "GitHub",
-    "difficulty": "hard",
-    "question": "How does GitHub handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GitHub Pull Request (PR) workflow: Branch Protection Rules, Required Status Checks, and Code Owners (CODEOWNERS).",
+    "difficulty": "easy",
+    "topic": "Collaboration & Governance",
+    "concept": "Pull Request Governance & Branch Protection",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Pull Request",
+      "branch protection",
+      "CODEOWNERS",
+      "status checks",
+      "peer review"
     ],
-    "ideal_answer": "GitHub handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of GitHub."
+    "idealAnswer": "Branch Protection rules prevent direct pushes to main and require passing CI status checks and minimum approving reviews before merging. The CODEOWNERS file automatically assigns specific individuals/teams for review based on changed file paths.",
+    "ideal_answer": "Branch Protection rules prevent direct pushes to main and require passing CI status checks and minimum approving reviews before merging. The CODEOWNERS file automatically assigns specific individuals/teams for review based on changed file paths.",
+    "expected_concepts": [
+      "Pull Request",
+      "branch protection",
+      "CODEOWNERS",
+      "status checks"
+    ],
+    "explanation": "Evaluates GitHub Collaboration & Governance and Pull Request Governance & Branch Protection comprehension."
+  },
+  {
+    "id": "github_004",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do GitHub Actions Secrets, Environment Secrets, and OIDC (OpenID Connect) for AWS/GCP/Azure eliminate long-lived cloud keys?",
+    "difficulty": "hard",
+    "topic": "Security & Secrets",
+    "concept": "GitHub Secrets & OIDC Authentication",
+    "questionFamily": "security",
+    "tags": [
+      "GitHub Secrets",
+      "OIDC",
+      "AWS IAM role",
+      "assume role",
+      "zero long-lived credentials"
+    ],
+    "idealAnswer": "Encrypted Secrets store sensitive tokens. OpenID Connect (OIDC) allows GitHub Actions workflows to request short-lived identity tokens from GitHub and assume IAM roles directly in AWS/GCP/Azure without storing long-lived static cloud access keys in repository secrets.",
+    "ideal_answer": "Encrypted Secrets store sensitive tokens. OpenID Connect (OIDC) allows GitHub Actions workflows to request short-lived identity tokens from GitHub and assume IAM roles directly in AWS/GCP/Azure without storing long-lived static cloud access keys in repository secrets.",
+    "expected_concepts": [
+      "GitHub Secrets",
+      "OIDC",
+      "AWS IAM role",
+      "assume role"
+    ],
+    "explanation": "Evaluates GitHub Security & Secrets and GitHub Secrets & OIDC Authentication comprehension."
+  },
+  {
+    "id": "github_005",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Matrix Builds and Caching (actions/cache, actions/setup-node) in GitHub Actions workflows to accelerate build times.",
+    "difficulty": "medium",
+    "topic": "Performance & Optimization",
+    "concept": "Matrix Builds & actions/cache",
+    "questionFamily": "optimization",
+    "tags": [
+      "matrix build",
+      "actions/cache",
+      "dependency caching",
+      "node_modules",
+      "parallel execution"
+    ],
+    "idealAnswer": "Matrix builds execute jobs across combinations of OS (Ubuntu, Windows, macOS) and runtime versions (Node 18, 20, 22) in parallel. The 'actions/cache' action caches package dependencies (npm, pip, maven) across runs based on lockfile hash keys.",
+    "ideal_answer": "Matrix builds execute jobs across combinations of OS (Ubuntu, Windows, macOS) and runtime versions (Node 18, 20, 22) in parallel. The 'actions/cache' action caches package dependencies (npm, pip, maven) across runs based on lockfile hash keys.",
+    "expected_concepts": [
+      "matrix build",
+      "actions/cache",
+      "dependency caching",
+      "node_modules"
+    ],
+    "explanation": "Evaluates GitHub Performance & Optimization and Matrix Builds & actions/cache comprehension."
+  },
+  {
+    "id": "github_006",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Dependabot on GitHub: Dependabot Alerts, Dependabot Version Updates, and security vulnerability patching?",
+    "difficulty": "easy",
+    "topic": "Security & Dependencies",
+    "concept": "Dependabot Automated Patching",
+    "questionFamily": "security",
+    "tags": [
+      "Dependabot",
+      "vulnerability alerts",
+      "dependabot.yml",
+      "automated PR",
+      "CVE"
+    ],
+    "idealAnswer": "Dependabot monitors dependencies against GitHub Advisory Database CVEs. It creates automated alerts for vulnerable packages and generates automated Pull Requests updating dependency versions according to dependabot.yml schedules.",
+    "ideal_answer": "Dependabot monitors dependencies against GitHub Advisory Database CVEs. It creates automated alerts for vulnerable packages and generates automated Pull Requests updating dependency versions according to dependabot.yml schedules.",
+    "expected_concepts": [
+      "Dependabot",
+      "vulnerability alerts",
+      "dependabot.yml",
+      "automated PR"
+    ],
+    "explanation": "Evaluates GitHub Security & Dependencies and Dependabot Automated Patching comprehension."
+  },
+  {
+    "id": "github_007",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GitHub Advanced Security (GHAS): CodeQL Static Code Analysis, Secret Scanning, and Push Protection.",
+    "difficulty": "hard",
+    "topic": "Security",
+    "concept": "GitHub Advanced Security & CodeQL",
+    "questionFamily": "security",
+    "tags": [
+      "GHAS",
+      "CodeQL",
+      "Secret Scanning",
+      "Push Protection",
+      "SAST"
+    ],
+    "idealAnswer": "GHAS provides enterprise security: CodeQL treats code as data to query for semantic vulnerabilities (SQL injection, XSS); Secret Scanning scans commits for exposed API keys; Push Protection blocks commits containing leaked secrets in real time before push completes.",
+    "ideal_answer": "GHAS provides enterprise security: CodeQL treats code as data to query for semantic vulnerabilities (SQL injection, XSS); Secret Scanning scans commits for exposed API keys; Push Protection blocks commits containing leaked secrets in real time before push completes.",
+    "expected_concepts": [
+      "GHAS",
+      "CodeQL",
+      "Secret Scanning",
+      "Push Protection"
+    ],
+    "explanation": "Evaluates GitHub Security and GitHub Advanced Security & CodeQL comprehension."
+  },
+  {
+    "id": "github_008",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are GitHub Releases and Semantic Versioning (v1.0.0), and how do you automate release asset generation via GitHub Actions?",
+    "difficulty": "easy",
+    "topic": "Release Management",
+    "concept": "GitHub Releases & Tagging",
+    "questionFamily": "implementation",
+    "tags": [
+      "GitHub Releases",
+      "semantic versioning",
+      "git tag",
+      "release assets",
+      "changelog"
+    ],
+    "idealAnswer": "GitHub Releases attach changelogs and compiled binary release assets (tar.gz, zip) to specific Git tags. Workflows listening to 'on: push: tags: [v*]' automate compilation, packaging, and publishing via actions/create-release.",
+    "ideal_answer": "GitHub Releases attach changelogs and compiled binary release assets (tar.gz, zip) to specific Git tags. Workflows listening to 'on: push: tags: [v*]' automate compilation, packaging, and publishing via actions/create-release.",
+    "expected_concepts": [
+      "GitHub Releases",
+      "semantic versioning",
+      "git tag",
+      "release assets"
+    ],
+    "explanation": "Evaluates GitHub Release Management and GitHub Releases & Tagging comprehension."
+  },
+  {
+    "id": "github_009",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GitHub Packages (Container Registry ghcr.io, npm, Maven) and package access permissions.",
+    "difficulty": "medium",
+    "topic": "Package Registry",
+    "concept": "GitHub Container Registry (ghcr.io)",
+    "questionFamily": "implementation",
+    "tags": [
+      "GitHub Packages",
+      "ghcr.io",
+      "Docker image",
+      "npm registry",
+      "GITHUB_TOKEN"
+    ],
+    "idealAnswer": "GitHub Packages is a package hosting service integrated with GitHub identities and permissions. ghcr.io serves as an OCI-compliant container registry where Docker images are pushed directly from GitHub Actions using GITHUB_TOKEN authentication.",
+    "ideal_answer": "GitHub Packages is a package hosting service integrated with GitHub identities and permissions. ghcr.io serves as an OCI-compliant container registry where Docker images are pushed directly from GitHub Actions using GITHUB_TOKEN authentication.",
+    "expected_concepts": [
+      "GitHub Packages",
+      "ghcr.io",
+      "Docker image",
+      "npm registry"
+    ],
+    "explanation": "Evaluates GitHub Package Registry and GitHub Container Registry (ghcr.io) comprehension."
+  },
+  {
+    "id": "github_010",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is GITHUB_TOKEN, and how do you configure granular permissions (permissions: contents: read, pull-requests: write)?",
+    "difficulty": "medium",
+    "topic": "Security",
+    "concept": "GITHUB_TOKEN & Granular Permissions",
+    "questionFamily": "security",
+    "tags": [
+      "GITHUB_TOKEN",
+      "permissions",
+      "least privilege",
+      "id-token: write"
+    ],
+    "idealAnswer": "GITHUB_TOKEN is an ephemeral installation token created automatically for every workflow run. Modern workflows enforce least privilege by defining explicit 'permissions' blocks (e.g. contents: read, issues: write, id-token: write) in YAML.",
+    "ideal_answer": "GITHUB_TOKEN is an ephemeral installation token created automatically for every workflow run. Modern workflows enforce least privilege by defining explicit 'permissions' blocks (e.g. contents: read, issues: write, id-token: write) in YAML.",
+    "expected_concepts": [
+      "GITHUB_TOKEN",
+      "permissions",
+      "least privilege",
+      "id-token: write"
+    ],
+    "explanation": "Evaluates GitHub Security and GITHUB_TOKEN & Granular Permissions comprehension."
+  },
+  {
+    "id": "github_011",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Composite Actions vs Docker Container Actions vs JavaScript Actions when authoring custom reusable GitHub Actions.",
+    "difficulty": "medium",
+    "topic": "Actions Authoring",
+    "concept": "Composite vs JavaScript vs Docker Actions",
+    "questionFamily": "comparison",
+    "tags": [
+      "composite actions",
+      "JavaScript actions",
+      "Docker actions",
+      "action.yml",
+      "reusable actions"
+    ],
+    "idealAnswer": "Composite Actions combine multiple run steps into a single reusable action. JavaScript Actions run directly on the runner via Node.js (fast execution). Docker Container Actions package custom environments and tools into a Dockerfile (consistent across OS, slower startup on non-Linux runners).",
+    "ideal_answer": "Composite Actions combine multiple run steps into a single reusable action. JavaScript Actions run directly on the runner via Node.js (fast execution). Docker Container Actions package custom environments and tools into a Dockerfile (consistent across OS, slower startup on non-Linux runners).",
+    "expected_concepts": [
+      "composite actions",
+      "JavaScript actions",
+      "Docker actions",
+      "action.yml"
+    ],
+    "explanation": "Evaluates GitHub Actions Authoring and Composite vs JavaScript vs Docker Actions comprehension."
+  },
+  {
+    "id": "github_012",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Reusable Workflows (workflow_call) in GitHub Actions, and how do they differ from Composite Actions?",
+    "difficulty": "medium",
+    "topic": "CI/CD Architecture",
+    "concept": "Reusable Workflows (workflow_call)",
+    "questionFamily": "design",
+    "tags": [
+      "workflow_call",
+      "reusable workflow",
+      "composite action",
+      "modular CI/CD"
+    ],
+    "idealAnswer": "Reusable workflows use the 'workflow_call' trigger to call an entire multi-job workflow from another workflow, sharing complete pipelines, concurrency controls, and environments. Composite actions encapsulate only individual steps within a single job.",
+    "ideal_answer": "Reusable workflows use the 'workflow_call' trigger to call an entire multi-job workflow from another workflow, sharing complete pipelines, concurrency controls, and environments. Composite actions encapsulate only individual steps within a single job.",
+    "expected_concepts": [
+      "workflow_call",
+      "reusable workflow",
+      "composite action",
+      "modular CI/CD"
+    ],
+    "explanation": "Evaluates GitHub CI/CD Architecture and Reusable Workflows (workflow_call) comprehension."
+  },
+  {
+    "id": "github_013",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GitHub Environments, Deployment Protection Rules (manual approval gates, wait timers), and deployment tracking.",
+    "difficulty": "medium",
+    "topic": "Continuous Delivery",
+    "concept": "GitHub Environments & Approval Gates",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Environments",
+      "deployment protection rules",
+      "manual approval",
+      "production deployment"
+    ],
+    "idealAnswer": "Environments represent deployment targets (e.g. production, staging). They configure specific secret scopes and Deployment Protection Rules (requiring manual reviewer approvals or wait timers) before jobs targeting that environment are allowed to execute.",
+    "ideal_answer": "Environments represent deployment targets (e.g. production, staging). They configure specific secret scopes and Deployment Protection Rules (requiring manual reviewer approvals or wait timers) before jobs targeting that environment are allowed to execute.",
+    "expected_concepts": [
+      "Environments",
+      "deployment protection rules",
+      "manual approval",
+      "production deployment"
+    ],
+    "explanation": "Evaluates GitHub Continuous Delivery and GitHub Environments & Approval Gates comprehension."
+  },
+  {
+    "id": "github_014",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are GitHub Issues, Discussions, Projects (Kanban / Table views), and automated issue triage with labels?",
+    "difficulty": "easy",
+    "topic": "Project Management",
+    "concept": "GitHub Issues & Projects",
+    "questionFamily": "best_practice",
+    "tags": [
+      "GitHub Issues",
+      "Discussions",
+      "Projects",
+      "Kanban",
+      "issue triage",
+      "milestones"
+    ],
+    "idealAnswer": "GitHub Issues track bugs and tasks with labels, milestones, and assignees. Discussions host community Q&A. GitHub Projects provide customizable Kanban boards and roadmap table views synchronized with repository issues and PRs.",
+    "ideal_answer": "GitHub Issues track bugs and tasks with labels, milestones, and assignees. Discussions host community Q&A. GitHub Projects provide customizable Kanban boards and roadmap table views synchronized with repository issues and PRs.",
+    "expected_concepts": [
+      "GitHub Issues",
+      "Discussions",
+      "Projects",
+      "Kanban"
+    ],
+    "explanation": "Evaluates GitHub Project Management and GitHub Issues & Projects comprehension."
+  },
+  {
+    "id": "github_015",
+    "skill": "GitHub",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GitHub Webhooks and how external third-party services verify payload signatures using HMAC-SHA256 (X-Hub-Signature-256).",
+    "difficulty": "medium",
+    "topic": "Integrations",
+    "concept": "GitHub Webhooks & HMAC Verification",
+    "questionFamily": "security",
+    "tags": [
+      "webhooks",
+      "HMAC-SHA256",
+      "X-Hub-Signature-256",
+      "payload verification",
+      "events"
+    ],
+    "idealAnswer": "GitHub Webhooks send HTTP POST payloads to configured external URLs on repository events. To prevent spoofing, GitHub signs the payload with a shared secret using HMAC-SHA256, sent in the 'X-Hub-Signature-256' header for receiver verification.",
+    "ideal_answer": "GitHub Webhooks send HTTP POST payloads to configured external URLs on repository events. To prevent spoofing, GitHub signs the payload with a shared secret using HMAC-SHA256, sent in the 'X-Hub-Signature-256' header for receiver verification.",
+    "expected_concepts": [
+      "webhooks",
+      "HMAC-SHA256",
+      "X-Hub-Signature-256",
+      "payload verification"
+    ],
+    "explanation": "Evaluates GitHub Integrations and GitHub Webhooks & HMAC Verification comprehension."
   }
 ]

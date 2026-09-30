@@ -1,0 +1,406 @@
+[
+  {
+    "id": "next_001",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between Next.js App Router (app directory) and Pages Router (pages directory).",
+    "difficulty": "medium",
+    "topic": "Architecture",
+    "concept": "App Router vs Pages Router",
+    "questionFamily": "architecture",
+    "tags": [
+      "Next.js",
+      "App Router",
+      "Pages Router",
+      "React Server Components",
+      "layouts"
+    ],
+    "idealAnswer": "The Pages Router routes based on file paths with page-level data fetching (getServerSideProps). The App Router uses React Server Components (RSC) by default, supports nested layouts, loading/error boundaries, streaming, and Server Actions.",
+    "ideal_answer": "The Pages Router routes based on file paths with page-level data fetching (getServerSideProps). The App Router uses React Server Components (RSC) by default, supports nested layouts, loading/error boundaries, streaming, and Server Actions.",
+    "expected_concepts": [
+      "Next.js",
+      "App Router",
+      "Pages Router",
+      "React Server Components"
+    ],
+    "explanation": "Evaluates Next.js Architecture and App Router vs Pages Router comprehension."
+  },
+  {
+    "id": "next_002",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are React Server Components (RSC) in Next.js, and how do they differ from Client Components ('use client')?",
+    "difficulty": "medium",
+    "topic": "Server Components",
+    "concept": "Server Components vs Client Components",
+    "questionFamily": "comparison",
+    "tags": [
+      "React Server Components",
+      "use client",
+      "bundle size",
+      "zero client JS"
+    ],
+    "idealAnswer": "Server Components render exclusively on the server, have direct database access, and ship zero JavaScript bundle to the browser. Client Components ('use client') render on the server and hydrate in the browser, enabling interactivity, state (useState), and event listeners.",
+    "ideal_answer": "Server Components render exclusively on the server, have direct database access, and ship zero JavaScript bundle to the browser. Client Components ('use client') render on the server and hydrate in the browser, enabling interactivity, state (useState), and event listeners.",
+    "expected_concepts": [
+      "React Server Components",
+      "use client",
+      "bundle size",
+      "zero client JS"
+    ],
+    "explanation": "Evaluates Next.js Server Components and Server Components vs Client Components comprehension."
+  },
+  {
+    "id": "next_003",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Server-Side Rendering (SSR), Static Site Generation (SSG), and Client-Side Rendering (CSR) in Next.js.",
+    "difficulty": "medium",
+    "topic": "Rendering Strategies",
+    "concept": "SSR vs SSG vs CSR",
+    "questionFamily": "comparison",
+    "tags": [
+      "SSR",
+      "SSG",
+      "CSR",
+      "pre-rendering",
+      "TTFB"
+    ],
+    "idealAnswer": "SSR renders HTML on every incoming request (fresh data, higher TTFB). SSG generates static HTML at build time (blazing fast caching on CDN). CSR downloads empty HTML and renders on client via JS.",
+    "ideal_answer": "SSR renders HTML on every incoming request (fresh data, higher TTFB). SSG generates static HTML at build time (blazing fast caching on CDN). CSR downloads empty HTML and renders on client via JS.",
+    "expected_concepts": [
+      "SSR",
+      "SSG",
+      "CSR",
+      "pre-rendering"
+    ],
+    "explanation": "Evaluates Next.js Rendering Strategies and SSR vs SSG vs CSR comprehension."
+  },
+  {
+    "id": "next_004",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Incremental Static Regeneration (ISR) in Next.js, and how does background revalidation work?",
+    "difficulty": "medium",
+    "topic": "Rendering Strategies",
+    "concept": "Incremental Static Regeneration (ISR)",
+    "questionFamily": "optimization",
+    "tags": [
+      "ISR",
+      "revalidate",
+      "static generation",
+      "stale-while-revalidate",
+      "CDN"
+    ],
+    "idealAnswer": "ISR allows updating static pages in the background without rebuilding the entire website. Setting a revalidate interval serves cached static HTML immediately while regenerating fresh pages in the background when traffic arrives.",
+    "ideal_answer": "ISR allows updating static pages in the background without rebuilding the entire website. Setting a revalidate interval serves cached static HTML immediately while regenerating fresh pages in the background when traffic arrives.",
+    "expected_concepts": [
+      "ISR",
+      "revalidate",
+      "static generation",
+      "stale-while-revalidate"
+    ],
+    "explanation": "Evaluates Next.js Rendering Strategies and Incremental Static Regeneration (ISR) comprehension."
+  },
+  {
+    "id": "next_005",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Next.js Server Actions and how they enable secure mutations directly from client forms without dedicated API routes.",
+    "difficulty": "medium",
+    "topic": "Data Mutation",
+    "concept": "Server Actions",
+    "questionFamily": "implementation",
+    "tags": [
+      "Server Actions",
+      "formAction",
+      "mutations",
+      "POST request",
+      "useActionState"
+    ],
+    "idealAnswer": "Server Actions are asynchronous server functions invoked directly from client components or HTML forms (<form action={action}>). They eliminate the need to write manual API endpoints, handle form serialization, and automatically trigger cache revalidation (revalidatePath).",
+    "ideal_answer": "Server Actions are asynchronous server functions invoked directly from client components or HTML forms (<form action={action}>). They eliminate the need to write manual API endpoints, handle form serialization, and automatically trigger cache revalidation (revalidatePath).",
+    "expected_concepts": [
+      "Server Actions",
+      "formAction",
+      "mutations",
+      "POST request"
+    ],
+    "explanation": "Evaluates Next.js Data Mutation and Server Actions comprehension."
+  },
+  {
+    "id": "next_006",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Next.js Caching work across the 4 levels: Request Memoization, Data Cache, Full Route Cache, and Router Cache?",
+    "difficulty": "hard",
+    "topic": "Performance & Caching",
+    "concept": "Next.js 4-Tier Caching Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "caching",
+      "Data Cache",
+      "Full Route Cache",
+      "Router Cache",
+      "Request Memoization"
+    ],
+    "idealAnswer": "Next.js manages 4 caches: Request Memoization deduplicates identical fetch() calls in a render pass; Data Cache persists fetched data across requests; Full Route Cache stores rendered HTML/RSC payloads on server; Router Cache stores RSC payloads in browser memory.",
+    "ideal_answer": "Next.js manages 4 caches: Request Memoization deduplicates identical fetch() calls in a render pass; Data Cache persists fetched data across requests; Full Route Cache stores rendered HTML/RSC payloads on server; Router Cache stores RSC payloads in browser memory.",
+    "expected_concepts": [
+      "caching",
+      "Data Cache",
+      "Full Route Cache",
+      "Router Cache"
+    ],
+    "explanation": "Evaluates Next.js Performance & Caching and Next.js 4-Tier Caching Architecture comprehension."
+  },
+  {
+    "id": "next_007",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Next.js Middleware (middleware.ts), where it runs (Edge runtime), and common use cases (authentication, redirects, geolocation).",
+    "difficulty": "medium",
+    "topic": "Routing & Middleware",
+    "concept": "Edge Middleware",
+    "questionFamily": "implementation",
+    "tags": [
+      "middleware",
+      "Edge Runtime",
+      "NextResponse",
+      "auth redirect",
+      "JWT"
+    ],
+    "idealAnswer": "Middleware runs on the Edge before a request is completed. It inspects cookies/headers, performs authentication redirects, rewrites URLs, and injects custom headers with low latency before hitting server routes.",
+    "ideal_answer": "Middleware runs on the Edge before a request is completed. It inspects cookies/headers, performs authentication redirects, rewrites URLs, and injects custom headers with low latency before hitting server routes.",
+    "expected_concepts": [
+      "middleware",
+      "Edge Runtime",
+      "NextResponse",
+      "auth redirect"
+    ],
+    "explanation": "Evaluates Next.js Routing & Middleware and Edge Middleware comprehension."
+  },
+  {
+    "id": "next_008",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Image Optimization with the next/image component work, and what benefits does it provide over standard <img>?",
+    "difficulty": "easy",
+    "topic": "Performance",
+    "concept": "Next.js Image Component",
+    "questionFamily": "optimization",
+    "tags": [
+      "next/image",
+      "Core Web Vitals",
+      "AVIF",
+      "WebP",
+      "CLS",
+      "lazy loading"
+    ],
+    "idealAnswer": "The next/image component automatically optimizes image formats (serving WebP/AVIF), resizes images dynamically for client viewports, prevents Cumulative Layout Shift (CLS) via explicit dimensions, and lazily loads images offscreen.",
+    "ideal_answer": "The next/image component automatically optimizes image formats (serving WebP/AVIF), resizes images dynamically for client viewports, prevents Cumulative Layout Shift (CLS) via explicit dimensions, and lazily loads images offscreen.",
+    "expected_concepts": [
+      "next/image",
+      "Core Web Vitals",
+      "AVIF",
+      "WebP"
+    ],
+    "explanation": "Evaluates Next.js Performance and Next.js Image Component comprehension."
+  },
+  {
+    "id": "next_009",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Dynamic Routes, Catch-all routes ([...slug]), and Optional Catch-all routes ([[...slug]]) in Next.js?",
+    "difficulty": "easy",
+    "topic": "Routing",
+    "concept": "Dynamic & Catch-all Routes",
+    "questionFamily": "implementation",
+    "tags": [
+      "dynamic routing",
+      "catch-all routes",
+      "slug",
+      "params",
+      "generateStaticParams"
+    ],
+    "idealAnswer": "Dynamic routes ([id]) match variable URL parameters. Catch-all routes ([...slug]) match multi-level paths (e.g. /docs/a/b). Optional catch-all routes ([[...slug]]) also match the root route without parameters.",
+    "ideal_answer": "Dynamic routes ([id]) match variable URL parameters. Catch-all routes ([...slug]) match multi-level paths (e.g. /docs/a/b). Optional catch-all routes ([[...slug]]) also match the root route without parameters.",
+    "expected_concepts": [
+      "dynamic routing",
+      "catch-all routes",
+      "slug",
+      "params"
+    ],
+    "explanation": "Evaluates Next.js Routing and Dynamic & Catch-all Routes comprehension."
+  },
+  {
+    "id": "next_010",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain generateStaticParams in App Router and how it replaces getStaticPaths from the Pages Router.",
+    "difficulty": "medium",
+    "topic": "Static Generation",
+    "concept": "generateStaticParams",
+    "questionFamily": "implementation",
+    "tags": [
+      "generateStaticParams",
+      "getStaticPaths",
+      "SSG",
+      "dynamic params"
+    ],
+    "idealAnswer": "generateStaticParams generates static routes at build time for dynamic route segments ([slug]). It runs at build time to return an array of segment values, producing pre-rendered static HTML.",
+    "ideal_answer": "generateStaticParams generates static routes at build time for dynamic route segments ([slug]). It runs at build time to return an array of segment values, producing pre-rendered static HTML.",
+    "expected_concepts": [
+      "generateStaticParams",
+      "getStaticPaths",
+      "SSG",
+      "dynamic params"
+    ],
+    "explanation": "Evaluates Next.js Static Generation and generateStaticParams comprehension."
+  },
+  {
+    "id": "next_011",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Route Handlers (route.ts) work in Next.js App Router for REST API endpoints (GET, POST, PUT, DELETE)?",
+    "difficulty": "easy",
+    "topic": "API Routes",
+    "concept": "Route Handlers",
+    "questionFamily": "implementation",
+    "tags": [
+      "Route Handlers",
+      "route.ts",
+      "NextResponse",
+      "REST API",
+      "HTTP methods"
+    ],
+    "idealAnswer": "Route Handlers define custom request handlers for API routes using web-standard Request and Response objects. Exporting functions named GET, POST, PUT, DELETE handles corresponding HTTP requests with full Edge/Node runtime support.",
+    "ideal_answer": "Route Handlers define custom request handlers for API routes using web-standard Request and Response objects. Exporting functions named GET, POST, PUT, DELETE handles corresponding HTTP requests with full Edge/Node runtime support.",
+    "expected_concepts": [
+      "Route Handlers",
+      "route.ts",
+      "NextResponse",
+      "REST API"
+    ],
+    "explanation": "Evaluates Next.js API Routes and Route Handlers comprehension."
+  },
+  {
+    "id": "next_012",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Next.js Font Optimization with next/font and how it eliminates external network requests and layout shift.",
+    "difficulty": "easy",
+    "topic": "Performance",
+    "concept": "next/font Optimization",
+    "questionFamily": "optimization",
+    "tags": [
+      "next/font",
+      "Google Fonts",
+      "CLS",
+      "zero layout shift",
+      "self-hosting"
+    ],
+    "idealAnswer": "next/font automatically downloads and self-hosts Google Fonts or local fonts at build time. Fonts are served directly with the same domain assets, eliminating render-blocking external network requests and FOIT/FOUT layout shifts.",
+    "ideal_answer": "next/font automatically downloads and self-hosts Google Fonts or local fonts at build time. Fonts are served directly with the same domain assets, eliminating render-blocking external network requests and FOIT/FOUT layout shifts.",
+    "expected_concepts": [
+      "next/font",
+      "Google Fonts",
+      "CLS",
+      "zero layout shift"
+    ],
+    "explanation": "Evaluates Next.js Performance and next/font Optimization comprehension."
+  },
+  {
+    "id": "next_013",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Parallel Routes (@folder) and Intercepting Routes ((..)folder) in Next.js App Router?",
+    "difficulty": "hard",
+    "topic": "Advanced Routing",
+    "concept": "Parallel & Intercepting Routes",
+    "questionFamily": "design",
+    "tags": [
+      "parallel routes",
+      "intercepting routes",
+      "modals",
+      "slots",
+      "F5 refresh"
+    ],
+    "idealAnswer": "Parallel routes (@slot) allow simultaneously rendering multiple independent page slots in the same layout. Intercepting routes ((..)photo) allow loading a route inside the current context (e.g., photo modal in a feed) while preserving direct URL shareability on refresh.",
+    "ideal_answer": "Parallel routes (@slot) allow simultaneously rendering multiple independent page slots in the same layout. Intercepting routes ((..)photo) allow loading a route inside the current context (e.g., photo modal in a feed) while preserving direct URL shareability on refresh.",
+    "expected_concepts": [
+      "parallel routes",
+      "intercepting routes",
+      "modals",
+      "slots"
+    ],
+    "explanation": "Evaluates Next.js Advanced Routing and Parallel & Intercepting Routes comprehension."
+  },
+  {
+    "id": "next_014",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do loading.tsx, error.tsx, and not-found.tsx work as special files in Next.js App Router with React Suspense?",
+    "difficulty": "medium",
+    "topic": "Error & Loading",
+    "concept": "Special Boundary Files",
+    "questionFamily": "architecture",
+    "tags": [
+      "loading.js",
+      "error.js",
+      "not-found.js",
+      "Suspense",
+      "Error Boundary"
+    ],
+    "idealAnswer": "loading.tsx automatically wraps page components in React Suspense to show instant skeleton states. error.tsx creates a React Error Boundary catching runtime errors in route segments without crashing the entire page.",
+    "ideal_answer": "loading.tsx automatically wraps page components in React Suspense to show instant skeleton states. error.tsx creates a React Error Boundary catching runtime errors in route segments without crashing the entire page.",
+    "expected_concepts": [
+      "loading.js",
+      "error.js",
+      "not-found.js",
+      "Suspense"
+    ],
+    "explanation": "Evaluates Next.js Error & Loading and Special Boundary Files comprehension."
+  },
+  {
+    "id": "next_015",
+    "skill": "Next.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SEO optimization techniques in Next.js (Metadata API, generateMetadata, sitemap.ts, robots.ts).",
+    "difficulty": "medium",
+    "topic": "SEO",
+    "concept": "Next.js Metadata API & SEO",
+    "questionFamily": "best_practice",
+    "tags": [
+      "SEO",
+      "generateMetadata",
+      "Open Graph",
+      "sitemap.xml",
+      "robots.txt"
+    ],
+    "idealAnswer": "Next.js App Router provides a declarative Metadata API: exporting static 'metadata' objects or dynamic 'generateMetadata()' functions to define title, description, and OpenGraph tags, along with automated sitemap.ts and robots.ts generators.",
+    "ideal_answer": "Next.js App Router provides a declarative Metadata API: exporting static 'metadata' objects or dynamic 'generateMetadata()' functions to define title, description, and OpenGraph tags, along with automated sitemap.ts and robots.ts generators.",
+    "expected_concepts": [
+      "SEO",
+      "generateMetadata",
+      "Open Graph",
+      "sitemap.xml"
+    ],
+    "explanation": "Evaluates Next.js SEO and Next.js Metadata API & SEO comprehension."
+  }
+]

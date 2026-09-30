@@ -1,0 +1,406 @@
+[
+  {
+    "id": "vue_001",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between Vue 2 Options API and Vue 3 Composition API (<script setup>).",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "Options API vs Composition API",
+    "questionFamily": "comparison",
+    "tags": [
+      "Vue 3",
+      "Composition API",
+      "Options API",
+      "script setup",
+      "code organization"
+    ],
+    "idealAnswer": "Options API organizes code by component options (data, methods, computed, mounted). Composition API organizes code by logical feature concern using reactive primitives (ref, reactive) inside <script setup>, improving TypeScript support and composable logic reuse.",
+    "ideal_answer": "Options API organizes code by component options (data, methods, computed, mounted). Composition API organizes code by logical feature concern using reactive primitives (ref, reactive) inside <script setup>, improving TypeScript support and composable logic reuse.",
+    "expected_concepts": [
+      "Vue 3",
+      "Composition API",
+      "Options API",
+      "script setup"
+    ],
+    "explanation": "Evaluates Vue.js Architecture and Options API vs Composition API comprehension."
+  },
+  {
+    "id": "vue_002",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Vue 3 Reactivity work internally using ES6 Proxy vs Vue 2 Object.defineProperty()?",
+    "difficulty": "hard",
+    "topic": "Reactivity",
+    "concept": "Vue 3 Proxy Reactivity System",
+    "questionFamily": "architecture",
+    "tags": [
+      "Vue 3 Reactivity",
+      "Proxy",
+      "Object.defineProperty",
+      "track",
+      "trigger"
+    ],
+    "idealAnswer": "Vue 2 used Object.defineProperty to intercept getters/setters, unable to detect new property additions or array index mutations. Vue 3 uses ES6 Proxies to intercept all object operations, tracking dependencies during read (track) and triggering re-renders on mutation (trigger).",
+    "ideal_answer": "Vue 2 used Object.defineProperty to intercept getters/setters, unable to detect new property additions or array index mutations. Vue 3 uses ES6 Proxies to intercept all object operations, tracking dependencies during read (track) and triggering re-renders on mutation (trigger).",
+    "expected_concepts": [
+      "Vue 3 Reactivity",
+      "Proxy",
+      "Object.defineProperty",
+      "track"
+    ],
+    "explanation": "Evaluates Vue.js Reactivity and Vue 3 Proxy Reactivity System comprehension."
+  },
+  {
+    "id": "vue_003",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between 'ref()' and 'reactive()' in Vue 3, and when should you use each?",
+    "difficulty": "easy",
+    "topic": "Reactivity",
+    "concept": "ref vs reactive",
+    "questionFamily": "comparison",
+    "tags": [
+      "ref",
+      "reactive",
+      ".value",
+      "primitives",
+      "unwrapping"
+    ],
+    "idealAnswer": "'ref()' wraps any value (primitives or objects) in a Ref object accessed via .value (automatically unwrapped in templates). 'reactive()' creates a deep reactive proxy exclusively for objects/arrays and loses reactivity if destructured without toRefs().",
+    "ideal_answer": "'ref()' wraps any value (primitives or objects) in a Ref object accessed via .value (automatically unwrapped in templates). 'reactive()' creates a deep reactive proxy exclusively for objects/arrays and loses reactivity if destructured without toRefs().",
+    "expected_concepts": [
+      "ref",
+      "reactive",
+      ".value",
+      "primitives"
+    ],
+    "explanation": "Evaluates Vue.js Reactivity and ref vs reactive comprehension."
+  },
+  {
+    "id": "vue_004",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Computed Properties in Vue and how they differ from standard Methods regarding caching.",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "Computed vs Methods",
+    "questionFamily": "comparison",
+    "tags": [
+      "computed",
+      "methods",
+      "caching",
+      "dependency tracking",
+      "performance"
+    ],
+    "idealAnswer": "Computed properties are lazily evaluated and cached based on their reactive dependencies, re-evaluating only when dependencies change. Methods execute on every render regardless of whether dependencies changed.",
+    "ideal_answer": "Computed properties are lazily evaluated and cached based on their reactive dependencies, re-evaluating only when dependencies change. Methods execute on every render regardless of whether dependencies changed.",
+    "expected_concepts": [
+      "computed",
+      "methods",
+      "caching",
+      "dependency tracking"
+    ],
+    "explanation": "Evaluates Vue.js Core Concepts and Computed vs Methods comprehension."
+  },
+  {
+    "id": "vue_005",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between 'watch' and 'watchEffect' in Vue 3 Composition API?",
+    "difficulty": "medium",
+    "topic": "Reactivity",
+    "concept": "watch vs watchEffect",
+    "questionFamily": "comparison",
+    "tags": [
+      "watch",
+      "watchEffect",
+      "lazy evaluation",
+      "side effects"
+    ],
+    "idealAnswer": "'watch' explicitly tracks specified reactive sources and provides old and new values lazily. 'watchEffect' runs immediately and automatically tracks all reactive dependencies accessed inside its callback.",
+    "ideal_answer": "'watch' explicitly tracks specified reactive sources and provides old and new values lazily. 'watchEffect' runs immediately and automatically tracks all reactive dependencies accessed inside its callback.",
+    "expected_concepts": [
+      "watch",
+      "watchEffect",
+      "lazy evaluation",
+      "side effects"
+    ],
+    "explanation": "Evaluates Vue.js Reactivity and watch vs watchEffect comprehension."
+  },
+  {
+    "id": "vue_006",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Vue Single File Components (.vue): <template>, <script>, and <style scoped>.",
+    "difficulty": "easy",
+    "topic": "Component Architecture",
+    "concept": "Single File Components & Scoped CSS",
+    "questionFamily": "definition",
+    "tags": [
+      "SFC",
+      ".vue",
+      "scoped CSS",
+      "data-v attribute",
+      "template"
+    ],
+    "idealAnswer": "SFCs encapsulate HTML template, JavaScript logic, and CSS in a single .vue file. '<style scoped>' adds a unique data attribute (data-v-hash) to HTML elements and CSS selectors, preventing style leakage.",
+    "ideal_answer": "SFCs encapsulate HTML template, JavaScript logic, and CSS in a single .vue file. '<style scoped>' adds a unique data attribute (data-v-hash) to HTML elements and CSS selectors, preventing style leakage.",
+    "expected_concepts": [
+      "SFC",
+      ".vue",
+      "scoped CSS",
+      "data-v attribute"
+    ],
+    "explanation": "Evaluates Vue.js Component Architecture and Single File Components & Scoped CSS comprehension."
+  },
+  {
+    "id": "vue_007",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is v-model in Vue 3, and how do you implement two-way data binding with multiple v-models on custom components?",
+    "difficulty": "medium",
+    "topic": "Components",
+    "concept": "v-model & Custom Component Binding",
+    "questionFamily": "implementation",
+    "tags": [
+      "v-model",
+      "two-way binding",
+      "defineModel",
+      "emit",
+      "update:prop"
+    ],
+    "idealAnswer": "v-model is syntactic sugar for passing a prop ('modelValue') and listening for an update event ('update:modelValue'). Vue 3 supports multiple v-models on a single component (v-model:first, v-model:last) and defineModel() macro in Vue 3.4+.",
+    "ideal_answer": "v-model is syntactic sugar for passing a prop ('modelValue') and listening for an update event ('update:modelValue'). Vue 3 supports multiple v-models on a single component (v-model:first, v-model:last) and defineModel() macro in Vue 3.4+.",
+    "expected_concepts": [
+      "v-model",
+      "two-way binding",
+      "defineModel",
+      "emit"
+    ],
+    "explanation": "Evaluates Vue.js Components and v-model & Custom Component Binding comprehension."
+  },
+  {
+    "id": "vue_008",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Component Communication in Vue: Props, Emits, Provide/Inject, and Event Bus.",
+    "difficulty": "medium",
+    "topic": "Component Communication",
+    "concept": "Props, Emits, and Provide/Inject",
+    "questionFamily": "architecture",
+    "tags": [
+      "props",
+      "emits",
+      "provide",
+      "inject",
+      "prop drilling"
+    ],
+    "idealAnswer": "Parent-to-child communication uses props; child-to-parent uses emits (defineEmits). For deeply nested component hierarchies, provide/inject passes dependencies without prop drilling across intermediate layers.",
+    "ideal_answer": "Parent-to-child communication uses props; child-to-parent uses emits (defineEmits). For deeply nested component hierarchies, provide/inject passes dependencies without prop drilling across intermediate layers.",
+    "expected_concepts": [
+      "props",
+      "emits",
+      "provide",
+      "inject"
+    ],
+    "explanation": "Evaluates Vue.js Component Communication and Props, Emits, and Provide/Inject comprehension."
+  },
+  {
+    "id": "vue_009",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Vue 3 Lifecycle Hooks (onMounted, onUpdated, onUnmounted) and how they map to Vue 2 options.",
+    "difficulty": "easy",
+    "topic": "Lifecycle",
+    "concept": "Vue 3 Lifecycle Hooks",
+    "questionFamily": "comparison",
+    "tags": [
+      "lifecycle",
+      "onMounted",
+      "onUpdated",
+      "onUnmounted",
+      "cleanup"
+    ],
+    "idealAnswer": "Vue 3 Composition API provides lifecycle hooks: onMounted runs after initial DOM render; onUpdated runs after reactive state changes re-render the DOM; onUnmounted runs during component teardown to clean up timers/listeners.",
+    "ideal_answer": "Vue 3 Composition API provides lifecycle hooks: onMounted runs after initial DOM render; onUpdated runs after reactive state changes re-render the DOM; onUnmounted runs during component teardown to clean up timers/listeners.",
+    "expected_concepts": [
+      "lifecycle",
+      "onMounted",
+      "onUpdated",
+      "onUnmounted"
+    ],
+    "explanation": "Evaluates Vue.js Lifecycle and Vue 3 Lifecycle Hooks comprehension."
+  },
+  {
+    "id": "vue_010",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Custom Composables in Vue 3, and how do they replace Vue 2 Mixins without naming collisions?",
+    "difficulty": "medium",
+    "topic": "Composition & Reuse",
+    "concept": "Custom Composables vs Mixins",
+    "questionFamily": "best_practice",
+    "tags": [
+      "composables",
+      "mixins",
+      "useFeature",
+      "logic reuse",
+      "namespace"
+    ],
+    "idealAnswer": "Composables are functions that encapsulate and share stateful logic using Vue's Composition API (e.g. useMousePosition()). Unlike Mixins, composables make dependencies explicit, allow destructuring with renaming, and prevent property collision conflicts.",
+    "ideal_answer": "Composables are functions that encapsulate and share stateful logic using Vue's Composition API (e.g. useMousePosition()). Unlike Mixins, composables make dependencies explicit, allow destructuring with renaming, and prevent property collision conflicts.",
+    "expected_concepts": [
+      "composables",
+      "mixins",
+      "useFeature",
+      "logic reuse"
+    ],
+    "explanation": "Evaluates Vue.js Composition & Reuse and Custom Composables vs Mixins comprehension."
+  },
+  {
+    "id": "vue_011",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Slots in Vue: Default Slots, Named Slots, and Scoped Slots with slot-scope/v-slot.",
+    "difficulty": "medium",
+    "topic": "Components",
+    "concept": "Slots & Scoped Slots",
+    "questionFamily": "implementation",
+    "tags": [
+      "slots",
+      "named slots",
+      "scoped slots",
+      "v-slot",
+      "template outlet"
+    ],
+    "idealAnswer": "Slots allow parent components to inject custom HTML/components into child layout placeholders (<slot>). Named slots (<slot name='header'>) target specific sections; Scoped slots (<slot :item='item'>) pass data from child back to parent template slot.",
+    "ideal_answer": "Slots allow parent components to inject custom HTML/components into child layout placeholders (<slot>). Named slots (<slot name='header'>) target specific sections; Scoped slots (<slot :item='item'>) pass data from child back to parent template slot.",
+    "expected_concepts": [
+      "slots",
+      "named slots",
+      "scoped slots",
+      "v-slot"
+    ],
+    "explanation": "Evaluates Vue.js Components and Slots & Scoped Slots comprehension."
+  },
+  {
+    "id": "vue_012",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Pinia in Vue 3, and why has it replaced Vuex as the official state management library?",
+    "difficulty": "medium",
+    "topic": "State Management",
+    "concept": "Pinia vs Vuex",
+    "questionFamily": "comparison",
+    "tags": [
+      "Pinia",
+      "Vuex",
+      "state management",
+      "TypeScript",
+      "mutations"
+    ],
+    "idealAnswer": "Pinia is the official Vue state store. It eliminates Vuex mutations (allowing direct state modification in actions), offers first-class TypeScript inference, has no nested module complexity, and supports lightweight modular stores.",
+    "ideal_answer": "Pinia is the official Vue state store. It eliminates Vuex mutations (allowing direct state modification in actions), offers first-class TypeScript inference, has no nested module complexity, and supports lightweight modular stores.",
+    "expected_concepts": [
+      "Pinia",
+      "Vuex",
+      "state management",
+      "TypeScript"
+    ],
+    "explanation": "Evaluates Vue.js State Management and Pinia vs Vuex comprehension."
+  },
+  {
+    "id": "vue_013",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Vue Router: Route Navigation Guards (beforeEach, beforeRouteEnter) and Dynamic Route Matching.",
+    "difficulty": "medium",
+    "topic": "Routing",
+    "concept": "Vue Router & Navigation Guards",
+    "questionFamily": "implementation",
+    "tags": [
+      "Vue Router",
+      "navigation guards",
+      "beforeEach",
+      "dynamic routes",
+      "auth guard"
+    ],
+    "idealAnswer": "Vue Router manages single-page client routing. Navigation guards (router.beforeEach) intercept route transitions to perform authentication checks, permission validation, or cancel transitions before components render.",
+    "ideal_answer": "Vue Router manages single-page client routing. Navigation guards (router.beforeEach) intercept route transitions to perform authentication checks, permission validation, or cancel transitions before components render.",
+    "expected_concepts": [
+      "Vue Router",
+      "navigation guards",
+      "beforeEach",
+      "dynamic routes"
+    ],
+    "explanation": "Evaluates Vue.js Routing and Vue Router & Navigation Guards comprehension."
+  },
+  {
+    "id": "vue_014",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Teleport and Suspense built-in components in Vue 3?",
+    "difficulty": "medium",
+    "topic": "Built-in Components",
+    "concept": "Teleport and Suspense",
+    "questionFamily": "design",
+    "tags": [
+      "Teleport",
+      "Suspense",
+      "modals",
+      "async components",
+      "DOM portal"
+    ],
+    "idealAnswer": "<Teleport to='body'> renders a component's template into a different DOM node outside its parent hierarchy (ideal for modals/tooltips). <Suspense> coordinates async component loading and displays fallback templates while waiting.",
+    "ideal_answer": "<Teleport to='body'> renders a component's template into a different DOM node outside its parent hierarchy (ideal for modals/tooltips). <Suspense> coordinates async component loading and displays fallback templates while waiting.",
+    "expected_concepts": [
+      "Teleport",
+      "Suspense",
+      "modals",
+      "async components"
+    ],
+    "explanation": "Evaluates Vue.js Built-in Components and Teleport and Suspense comprehension."
+  },
+  {
+    "id": "vue_015",
+    "skill": "Vue.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Virtual DOM diffing work in Vue 3, and what compiler optimizations (Patch Flags, Hoisting, Block Tree) make it fast?",
+    "difficulty": "hard",
+    "topic": "Internals & Performance",
+    "concept": "Vue 3 Compiler Optimizations",
+    "questionFamily": "optimization",
+    "tags": [
+      "Virtual DOM",
+      "patch flags",
+      "static hoisting",
+      "block tree",
+      "compiler"
+    ],
+    "idealAnswer": "Vue 3 compiler analyzes templates statically at build time: Static Hoisting moves unchanging VNodes outside render functions; Patch Flags tag dynamic nodes with bitmasks (text, class, style), allowing the diff algorithm to skip static nodes entirely.",
+    "ideal_answer": "Vue 3 compiler analyzes templates statically at build time: Static Hoisting moves unchanging VNodes outside render functions; Patch Flags tag dynamic nodes with bitmasks (text, class, style), allowing the diff algorithm to skip static nodes entirely.",
+    "expected_concepts": [
+      "Virtual DOM",
+      "patch flags",
+      "static hoisting",
+      "block tree"
+    ],
+    "explanation": "Evaluates Vue.js Internals & Performance and Vue 3 Compiler Optimizations comprehension."
+  }
+]

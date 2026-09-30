@@ -273,55 +273,6 @@ def generate_questions_for_skill(skill_name):
         }
     ]
 
-# Pseudocode / Output Prediction Questions Bank (100+ questions target, 10 curated exemplars with distinct topics)
-PSEUDOCODE_QUESTIONS = [
-    {
-        "id": "PSEUDO_001",
-        "difficulty": "medium",
-        "language": "Java",
-        "question": "What is the output of the following Java snippet?\n\nint count = 0;\nfor (int i = 0; i < 5; i++) {\n    if (i % 2 == 0) continue;\n    count += i;\n}\nSystem.out.println(count);",
-        "options": ["6", "10", "4", "0"],
-        "correct_answer": "4",
-        "explanation": "Loops through i = 0, 1, 2, 3, 4. Even numbers (0, 2, 4) hit 'continue'. Odd numbers (1, 3) add to count: 1 + 3 = 4."
-    },
-    {
-        "id": "PSEUDO_002",
-        "difficulty": "medium",
-        "language": "Python",
-        "question": "What is the output of the following Python code?\n\ndef func(val, lst=[]):\n    lst.append(val)\n    return lst\n\nprint(func(1))\nprint(func(2))",
-        "options": ["[1] then [2]", "[1] then [1, 2]", "[1, 2] then [1, 2]", "[1] then []"],
-        "correct_answer": "[1] then [1, 2]",
-        "explanation": "Default argument `lst=[]` is evaluated ONCE when function is defined in Python. Subsequent calls reuse the same mutable list object."
-    },
-    {
-        "id": "PSEUDO_003",
-        "difficulty": "easy",
-        "language": "JavaScript",
-        "question": "What is the result of `console.log(1 + '2' + 3)` in JavaScript?",
-        "options": ["6", "'123'", "'15'", "NaN"],
-        "correct_answer": "'123'",
-        "explanation": "`1 + '2'` performs string concatenation returning `'12'`, then `'12' + 3` yields `'123'`."
-    },
-    {
-        "id": "PSEUDO_004",
-        "difficulty": "hard",
-        "language": "Java",
-        "question": "What does this recursive function return for foo(4)?\n\nint foo(int n) {\n    if (n <= 1) return 1;\n    return n * foo(n - 1);\n}",
-        "options": ["24", "12", "4", "16"],
-        "correct_answer": "24",
-        "explanation": "Calculates factorial of 4: 4 * 3 * 2 * 1 = 24."
-    },
-    {
-        "id": "PSEUDO_005",
-        "difficulty": "medium",
-        "language": "C++",
-        "question": "What is the output of the following C++ code?\n\nint a = 5, b = 10;\nint *p = &a;\n*p = 20;\np = &b;\n*p = 30;\ncout << a << \" \" << b;",
-        "options": ["20 30", "5 10", "20 10", "5 30"],
-        "correct_answer": "20 30",
-        "explanation": "Pointer p points to a, changing *p modifies a to 20. Then p points to b, modifying *p changes b to 30. Output is '20 30'."
-    }
-]
-
 def seed():
     print("Seeding question banks...")
     # Seed technical skill questions
@@ -340,11 +291,14 @@ def seed():
             with open(filepath, "w", encoding="utf-8") as f:
                 json.dump(q_list, f, indent=2)
 
-    # Seed pseudocode questions
+    # Pseudocode questions are stored in backend/data/questions/pseudocode.json as language-independent logic questions
     pseudocode_path = os.path.join(DATA_DIR, "pseudocode.json")
-    with open(pseudocode_path, "w", encoding="utf-8") as f:
-        json.dump(PSEUDOCODE_QUESTIONS, f, indent=2)
-    print(f"  [+] Saved {len(PSEUDOCODE_QUESTIONS)} pseudocode questions to {pseudocode_path}")
+    if os.path.exists(pseudocode_path):
+        with open(pseudocode_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        print(f"  [+] Verified {len(data)} language-independent pseudocode questions in {pseudocode_path}")
+    else:
+        print(f"  [-] Warning: {pseudocode_path} not found")
 
 if __name__ == "__main__":
     seed()

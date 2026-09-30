@@ -1,0 +1,416 @@
+[
+  {
+    "id": "da_001",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the four stages of Data Analytics: Descriptive, Diagnostic, Predictive, and Prescriptive Analytics.",
+    "difficulty": "easy",
+    "topic": "Analytics Framework",
+    "concept": "Four Stages of Data Analytics",
+    "questionFamily": "definition",
+    "tags": [
+      "descriptive analytics",
+      "diagnostic analytics",
+      "predictive analytics",
+      "prescriptive analytics",
+      "business intelligence"
+    ],
+    "idealAnswer": "Descriptive: What happened? (summary dashboards, KPIs). Diagnostic: Why did it happen? (root cause, drill-downs). Predictive: What is likely to happen? (statistical forecasting, ML). Prescriptive: What actions should we take? (optimization, decision automation).",
+    "ideal_answer": "Descriptive: What happened? (summary dashboards, KPIs). Diagnostic: Why did it happen? (root cause, drill-downs). Predictive: What is likely to happen? (statistical forecasting, ML). Prescriptive: What actions should we take? (optimization, decision automation).",
+    "expected_concepts": [
+      "descriptive analytics",
+      "diagnostic analytics",
+      "predictive analytics",
+      "prescriptive analytics"
+    ],
+    "explanation": "Evaluates Data Analytics Analytics Framework and Four Stages of Data Analytics comprehension."
+  },
+  {
+    "id": "da_002",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Exploratory Data Analysis (EDA): Summary Statistics, Distribution Skewness, Kurtosis, and Correlation Matrices.",
+    "difficulty": "easy",
+    "topic": "EDA",
+    "concept": "Exploratory Data Analysis (EDA)",
+    "questionFamily": "implementation",
+    "tags": [
+      "EDA",
+      "summary statistics",
+      "skewness",
+      "kurtosis",
+      "correlation matrix",
+      "histogram"
+    ],
+    "idealAnswer": "EDA explores dataset characteristics before modeling: summary statistics (mean, median, IQR), assessing distribution shapes (skewness, kurtosis), plotting histograms/boxplots, and computing correlation matrices (Pearson vs Spearman).",
+    "ideal_answer": "EDA explores dataset characteristics before modeling: summary statistics (mean, median, IQR), assessing distribution shapes (skewness, kurtosis), plotting histograms/boxplots, and computing correlation matrices (Pearson vs Spearman).",
+    "expected_concepts": [
+      "EDA",
+      "summary statistics",
+      "skewness",
+      "kurtosis"
+    ],
+    "explanation": "Evaluates Data Analytics EDA and Exploratory Data Analysis (EDA) comprehension."
+  },
+  {
+    "id": "da_003",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Pearson Correlation and Spearman Rank Correlation, and when should Spearman be used?",
+    "difficulty": "medium",
+    "topic": "Statistical Analysis",
+    "concept": "Pearson vs Spearman Correlation",
+    "questionFamily": "comparison",
+    "tags": [
+      "Pearson correlation",
+      "Spearman correlation",
+      "linear relationship",
+      "monotonic relationship",
+      "rank correlation"
+    ],
+    "idealAnswer": "Pearson correlation measures linear relationships between continuous normal variables (sensitive to outliers). Spearman rank correlation measures monotonic relationships between ranked variables, making it robust to non-linear relationships and extreme outliers.",
+    "ideal_answer": "Pearson correlation measures linear relationships between continuous normal variables (sensitive to outliers). Spearman rank correlation measures monotonic relationships between ranked variables, making it robust to non-linear relationships and extreme outliers.",
+    "expected_concepts": [
+      "Pearson correlation",
+      "Spearman correlation",
+      "linear relationship",
+      "monotonic relationship"
+    ],
+    "explanation": "Evaluates Data Analytics Statistical Analysis and Pearson vs Spearman Correlation comprehension."
+  },
+  {
+    "id": "da_004",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Data Warehousing concepts: Star Schema vs Snowflake Schema (Fact Tables vs Dimension Tables).",
+    "difficulty": "easy",
+    "topic": "Data Warehousing",
+    "concept": "Star Schema vs Snowflake Schema",
+    "questionFamily": "architecture",
+    "tags": [
+      "data warehouse",
+      "Star schema",
+      "Snowflake schema",
+      "Fact table",
+      "Dimension table",
+      "denormalization"
+    ],
+    "idealAnswer": "Fact tables store quantitative metrics (sales amounts, timestamps). Dimension tables store descriptive context (customers, products). Star Schema denormalizes dimension tables (fast queries, fewer JOINs). Snowflake Schema normalizes dimension tables (saves space, complex queries).",
+    "ideal_answer": "Fact tables store quantitative metrics (sales amounts, timestamps). Dimension tables store descriptive context (customers, products). Star Schema denormalizes dimension tables (fast queries, fewer JOINs). Snowflake Schema normalizes dimension tables (saves space, complex queries).",
+    "expected_concepts": [
+      "data warehouse",
+      "Star schema",
+      "Snowflake schema",
+      "Fact table"
+    ],
+    "explanation": "Evaluates Data Analytics Data Warehousing and Star Schema vs Snowflake Schema comprehension."
+  },
+  {
+    "id": "da_005",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain ETL (Extract, Transform, Load) vs ELT (Extract, Load, Transform) in modern cloud data analytics architectures.",
+    "difficulty": "medium",
+    "topic": "Data Pipelines",
+    "concept": "ETL vs ELT in Modern Data Stacks",
+    "questionFamily": "comparison",
+    "tags": [
+      "ETL",
+      "ELT",
+      "cloud data warehouse",
+      "BigQuery",
+      "Snowflake",
+      "dbt"
+    ],
+    "idealAnswer": "ETL transforms data on a dedicated compute server before loading into database (traditional, rigid). ELT extracts and loads raw data directly into scalable cloud data warehouses (Snowflake/BigQuery), transforming data inside the warehouse using SQL tools like dbt.",
+    "ideal_answer": "ETL transforms data on a dedicated compute server before loading into database (traditional, rigid). ELT extracts and loads raw data directly into scalable cloud data warehouses (Snowflake/BigQuery), transforming data inside the warehouse using SQL tools like dbt.",
+    "expected_concepts": [
+      "ETL",
+      "ELT",
+      "cloud data warehouse",
+      "BigQuery"
+    ],
+    "explanation": "Evaluates Data Analytics Data Pipelines and ETL vs ELT in Modern Data Stacks comprehension."
+  },
+  {
+    "id": "da_006",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain A/B Testing: Null Hypothesis (H0), Alternative Hypothesis (H1), P-Value, Significance Level (alpha), and Statistical Power (1 - beta).",
+    "difficulty": "hard",
+    "topic": "Experimentation",
+    "concept": "A/B Testing & Statistical Hypothesis Testing",
+    "questionFamily": "best_practice",
+    "tags": [
+      "A/B testing",
+      "p-value",
+      "significance level",
+      "statistical power",
+      "null hypothesis",
+      "Type I error"
+    ],
+    "idealAnswer": "A/B testing compares control and treatment variants: Null Hypothesis H0 states no effect; Alternative H1 states an effect exists. P-value < alpha (typically 0.05) rejects H0 (statistically significant). Statistical Power (1 - beta >= 0.80) ensures sufficient sample size to detect real effects.",
+    "ideal_answer": "A/B testing compares control and treatment variants: Null Hypothesis H0 states no effect; Alternative H1 states an effect exists. P-value < alpha (typically 0.05) rejects H0 (statistically significant). Statistical Power (1 - beta >= 0.80) ensures sufficient sample size to detect real effects.",
+    "expected_concepts": [
+      "A/B testing",
+      "p-value",
+      "significance level",
+      "statistical power"
+    ],
+    "explanation": "Evaluates Data Analytics Experimentation and A/B Testing & Statistical Hypothesis Testing comprehension."
+  },
+  {
+    "id": "da_007",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Type I Error (False Positive) and Type II Error (False Negative) in hypothesis testing?",
+    "difficulty": "easy",
+    "topic": "Statistical Testing",
+    "concept": "Type I vs Type II Errors",
+    "questionFamily": "comparison",
+    "tags": [
+      "Type I error",
+      "Type II error",
+      "false positive",
+      "false negative",
+      "alpha",
+      "beta"
+    ],
+    "idealAnswer": "Type I Error (alpha) is a False Positive: rejecting the null hypothesis when it is actually true. Type II Error (beta) is a False Negative: failing to reject the null hypothesis when a real effect exists.",
+    "ideal_answer": "Type I Error (alpha) is a False Positive: rejecting the null hypothesis when it is actually true. Type II Error (beta) is a False Negative: failing to reject the null hypothesis when a real effect exists.",
+    "expected_concepts": [
+      "Type I error",
+      "Type II error",
+      "false positive",
+      "false negative"
+    ],
+    "explanation": "Evaluates Data Analytics Statistical Testing and Type I vs Type II Errors comprehension."
+  },
+  {
+    "id": "da_008",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you detect and handle Outliers in analytics: Z-Score Method vs IQR (Interquartile Range) Method (Boxplots)?",
+    "difficulty": "easy",
+    "topic": "Data Cleaning",
+    "concept": "Outlier Detection (Z-Score vs IQR)",
+    "questionFamily": "implementation",
+    "tags": [
+      "outliers",
+      "Z-Score",
+      "IQR",
+      "Interquartile Range",
+      "boxplot",
+      "winsorization"
+    ],
+    "idealAnswer": "Z-score flags data points where |(x - mean) / std| > 3 (assumes normal distribution). IQR method flags values below Q1 - 1.5*IQR or above Q3 + 1.5*IQR (robust to non-normal distributions). Outliers are removed, transformed (log), or capped (winsorization).",
+    "ideal_answer": "Z-score flags data points where |(x - mean) / std| > 3 (assumes normal distribution). IQR method flags values below Q1 - 1.5*IQR or above Q3 + 1.5*IQR (robust to non-normal distributions). Outliers are removed, transformed (log), or capped (winsorization).",
+    "expected_concepts": [
+      "outliers",
+      "Z-Score",
+      "IQR",
+      "Interquartile Range"
+    ],
+    "explanation": "Evaluates Data Analytics Data Cleaning and Outlier Detection (Z-Score vs IQR) comprehension."
+  },
+  {
+    "id": "da_009",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cohort Analysis and Retention Curves in user engagement analytics.",
+    "difficulty": "medium",
+    "topic": "Business Analytics",
+    "concept": "Cohort Analysis & User Retention",
+    "questionFamily": "design",
+    "tags": [
+      "cohort analysis",
+      "retention curve",
+      "churn analysis",
+      "user engagement",
+      "lifecycle"
+    ],
+    "idealAnswer": "Cohort analysis groups users based on a shared timestamp event (e.g. signup month) and tracks behavioral metrics (retention, repeat purchases) over time. Retention curves plot active user percentages, identifying churn points across customer lifecycles.",
+    "ideal_answer": "Cohort analysis groups users based on a shared timestamp event (e.g. signup month) and tracks behavioral metrics (retention, repeat purchases) over time. Retention curves plot active user percentages, identifying churn points across customer lifecycles.",
+    "expected_concepts": [
+      "cohort analysis",
+      "retention curve",
+      "churn analysis",
+      "user engagement"
+    ],
+    "explanation": "Evaluates Data Analytics Business Analytics and Cohort Analysis & User Retention comprehension."
+  },
+  {
+    "id": "da_010",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Customer Lifetime Value (CLV / LTV) and Customer Acquisition Cost (CAC), and what is the target LTV:CAC ratio?",
+    "difficulty": "easy",
+    "topic": "Business Metrics",
+    "concept": "LTV:CAC Ratio & Customer Lifetime Value",
+    "questionFamily": "definition",
+    "tags": [
+      "LTV",
+      "CAC",
+      "Customer Lifetime Value",
+      "Customer Acquisition Cost",
+      "unit economics"
+    ],
+    "idealAnswer": "CAC is total marketing and sales expenses divided by acquired customers. LTV is average customer revenue multiplied by gross margin and lifespan. Healthy SaaS unit economics require an LTV:CAC ratio >= 3:1 with CAC payback period < 12 months.",
+    "ideal_answer": "CAC is total marketing and sales expenses divided by acquired customers. LTV is average customer revenue multiplied by gross margin and lifespan. Healthy SaaS unit economics require an LTV:CAC ratio >= 3:1 with CAC payback period < 12 months.",
+    "expected_concepts": [
+      "LTV",
+      "CAC",
+      "Customer Lifetime Value",
+      "Customer Acquisition Cost"
+    ],
+    "explanation": "Evaluates Data Analytics Business Metrics and LTV:CAC Ratio & Customer Lifetime Value comprehension."
+  },
+  {
+    "id": "da_011",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain RFM (Recency, Frequency, Monetary) Segmentation for customer segmentation.",
+    "difficulty": "medium",
+    "topic": "Customer Segmentation",
+    "concept": "RFM Customer Segmentation",
+    "questionFamily": "implementation",
+    "tags": [
+      "RFM",
+      "Recency",
+      "Frequency",
+      "Monetary",
+      "customer segmentation",
+      "clustering"
+    ],
+    "idealAnswer": "RFM scores customers across three dimensions: Recency (days since last purchase), Frequency (total transaction count), and Monetary (total spend). Grouping scores segments customers into Champions, Loyal Customers, At Risk, and Lost Customers.",
+    "ideal_answer": "RFM scores customers across three dimensions: Recency (days since last purchase), Frequency (total transaction count), and Monetary (total spend). Grouping scores segments customers into Champions, Loyal Customers, At Risk, and Lost Customers.",
+    "expected_concepts": [
+      "RFM",
+      "Recency",
+      "Frequency",
+      "Monetary"
+    ],
+    "explanation": "Evaluates Data Analytics Customer Segmentation and RFM Customer Segmentation comprehension."
+  },
+  {
+    "id": "da_012",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Time Series Decomposition: Trend, Seasonality, Cyclical, and Residual (Noise) components (Additive vs Multiplicative models).",
+    "difficulty": "medium",
+    "topic": "Time Series Analytics",
+    "concept": "Time Series Decomposition",
+    "questionFamily": "architecture",
+    "tags": [
+      "time series decomposition",
+      "trend",
+      "seasonality",
+      "residual",
+      "additive model",
+      "multiplicative model"
+    ],
+    "idealAnswer": "Decomposes time series into: Trend (long-term direction), Seasonality (repeating calendar cycles), Cyclical (economic waves), and Residual (random noise). Additive models (Y = T + S + R) suit constant seasonal amplitude; Multiplicative models (Y = T * S * R) suit amplitudes growing with trend.",
+    "ideal_answer": "Decomposes time series into: Trend (long-term direction), Seasonality (repeating calendar cycles), Cyclical (economic waves), and Residual (random noise). Additive models (Y = T + S + R) suit constant seasonal amplitude; Multiplicative models (Y = T * S * R) suit amplitudes growing with trend.",
+    "expected_concepts": [
+      "time series decomposition",
+      "trend",
+      "seasonality",
+      "residual"
+    ],
+    "explanation": "Evaluates Data Analytics Time Series Analytics and Time Series Decomposition comprehension."
+  },
+  {
+    "id": "da_013",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Simpson's Paradox in data analytics, and how does aggregating data mask or reverse trends within subgroups?",
+    "difficulty": "medium",
+    "topic": "Statistical Paradoxes",
+    "concept": "Simpson's Paradox & Confounding Variables",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "Simpson's paradox",
+      "confounding variable",
+      "aggregation bias",
+      "subgroup analysis"
+    ],
+    "idealAnswer": "Simpson's Paradox occurs when a statistical trend apparent across several individual subgroups disappears or reverses when the subgroups are combined into an aggregated dataset, caused by hidden confounding variables and unequal group sample sizes.",
+    "ideal_answer": "Simpson's Paradox occurs when a statistical trend apparent across several individual subgroups disappears or reverses when the subgroups are combined into an aggregated dataset, caused by hidden confounding variables and unequal group sample sizes.",
+    "expected_concepts": [
+      "Simpson's paradox",
+      "confounding variable",
+      "aggregation bias",
+      "subgroup analysis"
+    ],
+    "explanation": "Evaluates Data Analytics Statistical Paradoxes and Simpson's Paradox & Confounding Variables comprehension."
+  },
+  {
+    "id": "da_014",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Data Visualization Best Practices: choosing charts (Bar vs Line vs Scatter vs Heatmap) and avoiding deceptive visualizations.",
+    "difficulty": "easy",
+    "topic": "Data Visualization",
+    "concept": "Data Visualization Principles",
+    "questionFamily": "best_practice",
+    "tags": [
+      "data visualization",
+      "bar chart",
+      "scatter plot",
+      "heatmap",
+      "truncated axis",
+      "Edward Tufte"
+    ],
+    "idealAnswer": "Chart selection: Line charts for continuous time trends; Bar charts for discrete category comparisons; Scatter plots for correlation; Heatmaps for multidimensional density. Deceptive practices to avoid: truncating the Y-axis on bar charts, 3D pie charts, and inconsistent scaling.",
+    "ideal_answer": "Chart selection: Line charts for continuous time trends; Bar charts for discrete category comparisons; Scatter plots for correlation; Heatmaps for multidimensional density. Deceptive practices to avoid: truncating the Y-axis on bar charts, 3D pie charts, and inconsistent scaling.",
+    "expected_concepts": [
+      "data visualization",
+      "bar chart",
+      "scatter plot",
+      "heatmap"
+    ],
+    "explanation": "Evaluates Data Analytics Data Visualization and Data Visualization Principles comprehension."
+  },
+  {
+    "id": "da_015",
+    "skill": "Data Analytics",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Data Governance, Data Lineage, and Data Quality Dimensions (Accuracy, Completeness, Consistency, Timeliness, Validity).",
+    "difficulty": "easy",
+    "topic": "Data Governance",
+    "concept": "Data Quality Dimensions & Lineage",
+    "questionFamily": "governance",
+    "tags": [
+      "data governance",
+      "data lineage",
+      "data quality",
+      "accuracy",
+      "completeness",
+      "consistency"
+    ],
+    "idealAnswer": "Data Quality is evaluated on 5 dimensions: Accuracy, Completeness, Consistency across systems, Timeliness, and Validity. Data Lineage tracks data provenance from ingestion source through all intermediate transformations to final dashboard reporting.",
+    "ideal_answer": "Data Quality is evaluated on 5 dimensions: Accuracy, Completeness, Consistency across systems, Timeliness, and Validity. Data Lineage tracks data provenance from ingestion source through all intermediate transformations to final dashboard reporting.",
+    "expected_concepts": [
+      "data governance",
+      "data lineage",
+      "data quality",
+      "accuracy"
+    ],
+    "explanation": "Evaluates Data Analytics Data Governance and Data Quality Dimensions & Lineage comprehension."
+  }
+]

@@ -26,11 +26,11 @@ def test_full_interview_lifecycle():
     session_data = create_res.json()
     session_id = session_data["session_id"]
     total_q = session_data["total_questions"]
-    assert total_q == 10
+    assert total_q == 13
 
-    # 3. Answer all 10 questions
+    # 3. Answer all 13 questions
     for i in range(total_q):
-        ans_res = client.post(f"/api/interview/{session_id}/answer", json={
+        payload = {
             "question_id": f"Q_{i+1}",
             "question_index": i,
             "transcript": f"This is my detailed technical answer for question {i+1} covering object oriented programming and system design.",
@@ -40,7 +40,11 @@ def test_full_interview_lifecycle():
             "filler_count": 1,
             "eye_contact_pct": 85.0,
             "face_status": "SINGLE_FACE"
-        }, headers=headers)
+        }
+        if i >= 11:  # SQL questions
+            payload["candidate_query"] = "SELECT * FROM Employees WHERE salary > 50000;"
+
+        ans_res = client.post(f"/api/interview/{session_id}/answer", json=payload, headers=headers)
         assert ans_res.status_code == 200
 
     # 4. Complete Interview
@@ -56,9 +60,10 @@ def test_full_interview_lifecycle():
     assert results_res.status_code == 200
     results_data = results_res.json()
     assert results_data["state"] == "FEEDBACK_READY"
-    assert len(results_data["answers"]) == 10
+    assert len(results_data["answers"]) == 13
 
     # 6. Download PDF
     pdf_res = client.get(f"/api/interview/{session_id}/pdf", headers=headers)
     assert pdf_res.status_code == 200
     assert pdf_res.headers["content-type"] == "application/pdf"
+

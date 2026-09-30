@@ -1,44 +1,408 @@
 [
   {
-    "id": "HIBERNATE_001",
+    "id": "hibernate_001",
     "skill": "Hibernate",
-    "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Hibernate in modern software engineering?",
-    "expected_concepts": [
-      "Hibernate fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
-    ],
-    "ideal_answer": "Hibernate is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Hibernate."
-  },
-  {
-    "id": "HIBERNATE_002",
-    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Hibernate ORM architecture (SessionFactory, Session, Transaction) and the Object-Relational Impedance Mismatch.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Hibernate in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Architecture",
+    "concept": "Hibernate Core Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Hibernate",
+      "SessionFactory",
+      "Session",
+      "Transaction",
+      "ORM",
+      "impedance mismatch"
     ],
-    "ideal_answer": "Common challenges with Hibernate include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Hibernate."
+    "idealAnswer": "Hibernate bridges OOP models and relational databases (impedance mismatch). SessionFactory is a thread-safe, heavyweight factory for creating Sessions. Session represents a single-threaded unit of work wrapping JDBC connections.",
+    "ideal_answer": "Hibernate bridges OOP models and relational databases (impedance mismatch). SessionFactory is a thread-safe, heavyweight factory for creating Sessions. Session represents a single-threaded unit of work wrapping JDBC connections.",
+    "expected_concepts": [
+      "Hibernate",
+      "SessionFactory",
+      "Session",
+      "Transaction"
+    ],
+    "explanation": "Evaluates Hibernate Architecture and Hibernate Core Architecture comprehension."
   },
   {
-    "id": "HIBERNATE_003",
+    "id": "hibernate_002",
     "skill": "Hibernate",
-    "difficulty": "hard",
-    "question": "How does Hibernate handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Hibernate Entity States: Transient, Persistent/Managed, Detached, and Removed.",
+    "difficulty": "medium",
+    "topic": "Entity Lifecycle",
+    "concept": "Hibernate Entity States",
+    "questionFamily": "architecture",
+    "tags": [
+      "Transient",
+      "Persistent",
+      "Detached",
+      "Removed",
+      "EntityManager",
+      "merge"
     ],
-    "ideal_answer": "Hibernate handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Hibernate."
+    "idealAnswer": "Transient: newly instantiated object not associated with a Session. Persistent: associated with an open Session and tracked in persistence context. Detached: Session closed; entity retains ID but changes aren't tracked. Removed: marked for database deletion.",
+    "ideal_answer": "Transient: newly instantiated object not associated with a Session. Persistent: associated with an open Session and tracked in persistence context. Detached: Session closed; entity retains ID but changes aren't tracked. Removed: marked for database deletion.",
+    "expected_concepts": [
+      "Transient",
+      "Persistent",
+      "Detached",
+      "Removed"
+    ],
+    "explanation": "Evaluates Hibernate Entity Lifecycle and Hibernate Entity States comprehension."
+  },
+  {
+    "id": "hibernate_003",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does the Persistence Context (First-Level Cache) work in Hibernate, and what is Dirty Checking?",
+    "difficulty": "hard",
+    "topic": "Persistence Context",
+    "concept": "First-Level Cache & Dirty Checking",
+    "questionFamily": "implementation",
+    "tags": [
+      "First-Level Cache",
+      "persistence context",
+      "dirty checking",
+      "flush",
+      "snapshot"
+    ],
+    "idealAnswer": "The Persistence Context acts as a mandatory First-Level Cache within a Session. During flush, Hibernate compares the entity's current state with its initial snapshot loaded into memory (Dirty Checking) and automatically generates UPDATE SQL for modified fields.",
+    "ideal_answer": "The Persistence Context acts as a mandatory First-Level Cache within a Session. During flush, Hibernate compares the entity's current state with its initial snapshot loaded into memory (Dirty Checking) and automatically generates UPDATE SQL for modified fields.",
+    "expected_concepts": [
+      "First-Level Cache",
+      "persistence context",
+      "dirty checking",
+      "flush"
+    ],
+    "explanation": "Evaluates Hibernate Persistence Context and First-Level Cache & Dirty Checking comprehension."
+  },
+  {
+    "id": "hibernate_004",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Hibernate Second-Level Cache (L2 Cache) and Query Cache, and how region providers like Ehcache/Redis integrate.",
+    "difficulty": "hard",
+    "topic": "Caching",
+    "concept": "Second-Level & Query Cache",
+    "questionFamily": "optimization",
+    "tags": [
+      "Second-Level Cache",
+      "L2 Cache",
+      "Query Cache",
+      "Ehcache",
+      "read-write cache"
+    ],
+    "idealAnswer": "First-level cache is session-scoped. Second-level cache is SessionFactory-scoped, caching entity data across multiple sessions using providers like Ehcache or Redis. Query Cache caches query result IDs keyed by query string and parameters.",
+    "ideal_answer": "First-level cache is session-scoped. Second-level cache is SessionFactory-scoped, caching entity data across multiple sessions using providers like Ehcache or Redis. Query Cache caches query result IDs keyed by query string and parameters.",
+    "expected_concepts": [
+      "Second-Level Cache",
+      "L2 Cache",
+      "Query Cache",
+      "Ehcache"
+    ],
+    "explanation": "Evaluates Hibernate Caching and Second-Level & Query Cache comprehension."
+  },
+  {
+    "id": "hibernate_005",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between session.get() and session.load() (or EntityManager.find vs getReference) in Hibernate?",
+    "difficulty": "easy",
+    "topic": "Session Methods",
+    "concept": "get vs load / find vs getReference",
+    "questionFamily": "comparison",
+    "tags": [
+      "get",
+      "load",
+      "find",
+      "getReference",
+      "lazy proxy",
+      "EntityNotFoundException"
+    ],
+    "idealAnswer": "session.get() immediately queries the database and returns the entity (or null if not found). session.load() returns a lazy proxy object without hitting the database, throwing EntityNotFoundException if accessed when non-existent.",
+    "ideal_answer": "session.get() immediately queries the database and returns the entity (or null if not found). session.load() returns a lazy proxy object without hitting the database, throwing EntityNotFoundException if accessed when non-existent.",
+    "expected_concepts": [
+      "get",
+      "load",
+      "find",
+      "getReference"
+    ],
+    "explanation": "Evaluates Hibernate Session Methods and get vs load / find vs getReference comprehension."
+  },
+  {
+    "id": "hibernate_006",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Hibernate Proxy objects, ByteBuddy dynamic subclassing, and LazyInitializationException.",
+    "difficulty": "hard",
+    "topic": "Lazy Loading & Proxies",
+    "concept": "Lazy Proxies & LazyInitializationException",
+    "questionFamily": "debugging",
+    "tags": [
+      "LazyInitializationException",
+      "ByteBuddy",
+      "proxy",
+      "detached entity",
+      "Open Session in View"
+    ],
+    "idealAnswer": "Hibernate generates lazy proxies via bytecode instrumentation (ByteBuddy). If code accesses uninitialized lazy relationships after the Session/Transaction has closed, Hibernate throws LazyInitializationException because the proxy cannot query the database.",
+    "ideal_answer": "Hibernate generates lazy proxies via bytecode instrumentation (ByteBuddy). If code accesses uninitialized lazy relationships after the Session/Transaction has closed, Hibernate throws LazyInitializationException because the proxy cannot query the database.",
+    "expected_concepts": [
+      "LazyInitializationException",
+      "ByteBuddy",
+      "proxy",
+      "detached entity"
+    ],
+    "explanation": "Evaluates Hibernate Lazy Loading & Proxies and Lazy Proxies & LazyInitializationException comprehension."
+  },
+  {
+    "id": "hibernate_007",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Cascade Types in JPA/Hibernate (PERSIST, MERGE, REMOVE, REFRESH, DETACH, ALL) and Orphan Removal?",
+    "difficulty": "medium",
+    "topic": "Relationships",
+    "concept": "Cascade Types & Orphan Removal",
+    "questionFamily": "design",
+    "tags": [
+      "CascadeType",
+      "orphanRemoval",
+      "cascade delete",
+      "entity lifecycle"
+    ],
+    "idealAnswer": "Cascade types propagate entity state transitions from parent to child entities. CascadeType.REMOVE deletes child entities when the parent is deleted. orphanRemoval=true automatically deletes a child entity from the database when it is removed from the parent's collection.",
+    "ideal_answer": "Cascade types propagate entity state transitions from parent to child entities. CascadeType.REMOVE deletes child entities when the parent is deleted. orphanRemoval=true automatically deletes a child entity from the database when it is removed from the parent's collection.",
+    "expected_concepts": [
+      "CascadeType",
+      "orphanRemoval",
+      "cascade delete",
+      "entity lifecycle"
+    ],
+    "explanation": "Evaluates Hibernate Relationships and Cascade Types & Orphan Removal comprehension."
+  },
+  {
+    "id": "hibernate_008",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Hibernate Inheritance Mapping Strategies: Single Table, Joined Table, and Table Per Class.",
+    "difficulty": "medium",
+    "topic": "Inheritance",
+    "concept": "JPA Inheritance Strategies",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "Single Table",
+      "Joined Table",
+      "Table Per Class",
+      "@DiscriminatorColumn",
+      "normalization"
+    ],
+    "idealAnswer": "Single Table: all classes in hierarchy map to one table with discriminator column (fast queries, nullable columns). Joined Table: each subclass has its own table joined by foreign key (normalized, slow JOIN queries). Table Per Class: each concrete class has a separate independent table.",
+    "ideal_answer": "Single Table: all classes in hierarchy map to one table with discriminator column (fast queries, nullable columns). Joined Table: each subclass has its own table joined by foreign key (normalized, slow JOIN queries). Table Per Class: each concrete class has a separate independent table.",
+    "expected_concepts": [
+      "Single Table",
+      "Joined Table",
+      "Table Per Class",
+      "@DiscriminatorColumn"
+    ],
+    "explanation": "Evaluates Hibernate Inheritance and JPA Inheritance Strategies comprehension."
+  },
+  {
+    "id": "hibernate_009",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between HQL (Hibernate Query Language), JPQL, Criteria API, and Native SQL?",
+    "difficulty": "medium",
+    "topic": "Querying",
+    "concept": "HQL vs JPQL vs Criteria API",
+    "questionFamily": "comparison",
+    "tags": [
+      "HQL",
+      "JPQL",
+      "Criteria API",
+      "type-safe queries",
+      "Native SQL"
+    ],
+    "idealAnswer": "HQL and JPQL are object-oriented query languages operating on entity class names and properties rather than database tables/columns. Criteria API builds type-safe queries programmatically via Java code to avoid runtime syntax errors.",
+    "ideal_answer": "HQL and JPQL are object-oriented query languages operating on entity class names and properties rather than database tables/columns. Criteria API builds type-safe queries programmatically via Java code to avoid runtime syntax errors.",
+    "expected_concepts": [
+      "HQL",
+      "JPQL",
+      "Criteria API",
+      "type-safe queries"
+    ],
+    "explanation": "Evaluates Hibernate Querying and HQL vs JPQL vs Criteria API comprehension."
+  },
+  {
+    "id": "hibernate_010",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Optimistic Locking (@Version) vs Pessimistic Locking (PESSIMISTIC_READ / PESSIMISTIC_WRITE) in Hibernate.",
+    "difficulty": "hard",
+    "topic": "Locking & Concurrency",
+    "concept": "Optimistic vs Pessimistic Locking",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "Optimistic Locking",
+      "Pessimistic Locking",
+      "@Version",
+      "OptimisticLockException",
+      "SELECT FOR UPDATE"
+    ],
+    "idealAnswer": "Optimistic locking checks a @Version column upon update; if another transaction modified the row, it throws OptimisticLockException without database locks. Pessimistic locking issues 'SELECT FOR UPDATE' database locks, blocking concurrent transactions at the database level.",
+    "ideal_answer": "Optimistic locking checks a @Version column upon update; if another transaction modified the row, it throws OptimisticLockException without database locks. Pessimistic locking issues 'SELECT FOR UPDATE' database locks, blocking concurrent transactions at the database level.",
+    "expected_concepts": [
+      "Optimistic Locking",
+      "Pessimistic Locking",
+      "@Version",
+      "OptimisticLockException"
+    ],
+    "explanation": "Evaluates Hibernate Locking & Concurrency and Optimistic vs Pessimistic Locking comprehension."
+  },
+  {
+    "id": "hibernate_011",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Batch Processing work in Hibernate (hibernate.jdbc.batch_size), and why must you call session.flush() and session.clear()?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Hibernate Batch Processing",
+    "questionFamily": "optimization",
+    "tags": [
+      "batch processing",
+      "batch_size",
+      "flush",
+      "clear",
+      "OutOfMemoryError"
+    ],
+    "idealAnswer": "JDBC batching groups multiple INSERT/UPDATE statements into batch executions. When inserting thousands of entities, calling session.flush() and session.clear() periodically empties the first-level cache to prevent OutOfMemoryError.",
+    "ideal_answer": "JDBC batching groups multiple INSERT/UPDATE statements into batch executions. When inserting thousands of entities, calling session.flush() and session.clear() periodically empties the first-level cache to prevent OutOfMemoryError.",
+    "expected_concepts": [
+      "batch processing",
+      "batch_size",
+      "flush",
+      "clear"
+    ],
+    "explanation": "Evaluates Hibernate Performance and Hibernate Batch Processing comprehension."
+  },
+  {
+    "id": "hibernate_012",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Primary Key generation strategies in JPA/Hibernate: IDENTITY, SEQUENCE, TABLE, and AUTO?",
+    "difficulty": "easy",
+    "topic": "Identities",
+    "concept": "ID Generation Strategies",
+    "questionFamily": "comparison",
+    "tags": [
+      "GenerationType",
+      "IDENTITY",
+      "SEQUENCE",
+      "AUTO",
+      "allocationSize"
+    ],
+    "idealAnswer": "IDENTITY relies on auto-increment columns (disables JDBC batch insert). SEQUENCE uses database sequences and pre-allocates IDs (supports batch inserts via allocationSize). TABLE emulates sequences with a database table (slow). AUTO selects best strategy per dialect.",
+    "ideal_answer": "IDENTITY relies on auto-increment columns (disables JDBC batch insert). SEQUENCE uses database sequences and pre-allocates IDs (supports batch inserts via allocationSize). TABLE emulates sequences with a database table (slow). AUTO selects best strategy per dialect.",
+    "expected_concepts": [
+      "GenerationType",
+      "IDENTITY",
+      "SEQUENCE",
+      "AUTO"
+    ],
+    "explanation": "Evaluates Hibernate Identities and ID Generation Strategies comprehension."
+  },
+  {
+    "id": "hibernate_013",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Hibernate Composite Keys using @Embeddable / @EmbeddedId versus @IdClass.",
+    "difficulty": "medium",
+    "topic": "Mapping",
+    "concept": "Composite Primary Keys",
+    "questionFamily": "implementation",
+    "tags": [
+      "@EmbeddedId",
+      "@Embeddable",
+      "@IdClass",
+      "composite key",
+      "Serializable"
+    ],
+    "idealAnswer": "Composite keys represent primary keys consisting of multiple columns. @Embeddable + @EmbeddedId encapsulates composite key fields into an embeddable class. @IdClass defines key fields in a separate class mirrored in the entity.",
+    "ideal_answer": "Composite keys represent primary keys consisting of multiple columns. @Embeddable + @EmbeddedId encapsulates composite key fields into an embeddable class. @IdClass defines key fields in a separate class mirrored in the entity.",
+    "expected_concepts": [
+      "@EmbeddedId",
+      "@Embeddable",
+      "@IdClass",
+      "composite key"
+    ],
+    "explanation": "Evaluates Hibernate Mapping and Composite Primary Keys comprehension."
+  },
+  {
+    "id": "hibernate_014",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the N+1 select problem in Hibernate, and how do BatchSize (@BatchSize) and JOIN FETCH resolve it?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "N+1 Problem & @BatchSize",
+    "questionFamily": "optimization",
+    "tags": [
+      "N+1 problem",
+      "@BatchSize",
+      "JOIN FETCH",
+      "subselect fetching"
+    ],
+    "idealAnswer": "When loading a parent collection lazily, Hibernate executes 1 query for parents and N queries for children. Adding @BatchSize(size = 25) fetches lazy children in batches using 'WHERE parent_id IN (?, ?, ...)', reducing N queries to N/25 queries.",
+    "ideal_answer": "When loading a parent collection lazily, Hibernate executes 1 query for parents and N queries for children. Adding @BatchSize(size = 25) fetches lazy children in batches using 'WHERE parent_id IN (?, ?, ...)', reducing N queries to N/25 queries.",
+    "expected_concepts": [
+      "N+1 problem",
+      "@BatchSize",
+      "JOIN FETCH",
+      "subselect fetching"
+    ],
+    "explanation": "Evaluates Hibernate Performance and N+1 Problem & @BatchSize comprehension."
+  },
+  {
+    "id": "hibernate_015",
+    "skill": "Hibernate",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Hibernate Interceptors and Event Listeners (Envers for auditing) hook into entity persistence events?",
+    "difficulty": "hard",
+    "topic": "Auditing & Interceptors",
+    "concept": "Hibernate Interceptors & Envers",
+    "questionFamily": "architecture",
+    "tags": [
+      "Hibernate Envers",
+      "auditing",
+      "EmptyInterceptor",
+      "PreInsertEventListener",
+      "change log"
+    ],
+    "idealAnswer": "Hibernate provides Interceptors and EventListener SPIs to intercept entity lifecycle events (pre-insert, post-update). Hibernate Envers uses these hooks to automatically maintain historical audit log tables (@Audited) tracking entity revisions.",
+    "ideal_answer": "Hibernate provides Interceptors and EventListener SPIs to intercept entity lifecycle events (pre-insert, post-update). Hibernate Envers uses these hooks to automatically maintain historical audit log tables (@Audited) tracking entity revisions.",
+    "expected_concepts": [
+      "Hibernate Envers",
+      "auditing",
+      "EmptyInterceptor",
+      "PreInsertEventListener"
+    ],
+    "explanation": "Evaluates Hibernate Auditing & Interceptors and Hibernate Interceptors & Envers comprehension."
   }
 ]

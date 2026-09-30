@@ -1,0 +1,407 @@
+[
+  {
+    "id": "graphql_001",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GraphQL core concepts: Schema, Query, Mutation, Subscription, and how it solves REST Over-fetching and Under-fetching.",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "GraphQL Architecture & REST Comparison",
+    "questionFamily": "comparison",
+    "tags": [
+      "GraphQL",
+      "over-fetching",
+      "under-fetching",
+      "Schema",
+      "Query",
+      "Mutation"
+    ],
+    "idealAnswer": "GraphQL is a strongly-typed query language where clients specify the exact shape and fields of data needed in a single request. This eliminates REST over-fetching (retrieving unneeded payload data) and under-fetching (requiring multiple API round trips).",
+    "ideal_answer": "GraphQL is a strongly-typed query language where clients specify the exact shape and fields of data needed in a single request. This eliminates REST over-fetching (retrieving unneeded payload data) and under-fetching (requiring multiple API round trips).",
+    "expected_concepts": [
+      "GraphQL",
+      "over-fetching",
+      "under-fetching",
+      "Schema"
+    ],
+    "explanation": "Evaluates GraphQL Core Concepts and GraphQL Architecture & REST Comparison comprehension."
+  },
+  {
+    "id": "graphql_002",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the GraphQL Schema Definition Language (SDL), and what are Scalar types (Int, Float, String, Boolean, ID) vs Object types?",
+    "difficulty": "easy",
+    "topic": "Schema Design",
+    "concept": "GraphQL SDL & Types",
+    "questionFamily": "definition",
+    "tags": [
+      "SDL",
+      "Scalar types",
+      "Object types",
+      "type Schema",
+      "NonNull !"
+    ],
+    "idealAnswer": "GraphQL SDL defines the API contract. Built-in scalar types represent primitive leaves: Int, Float, String, Boolean, ID. Object types represent structured entities with fields. An exclamation mark (!) denotes non-null fields.",
+    "ideal_answer": "GraphQL SDL defines the API contract. Built-in scalar types represent primitive leaves: Int, Float, String, Boolean, ID. Object types represent structured entities with fields. An exclamation mark (!) denotes non-null fields.",
+    "expected_concepts": [
+      "SDL",
+      "Scalar types",
+      "Object types",
+      "type Schema"
+    ],
+    "explanation": "Evaluates GraphQL Schema Design and GraphQL SDL & Types comprehension."
+  },
+  {
+    "id": "graphql_003",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Resolver functions in GraphQL work, and what are their four standard arguments (parent/root, args, context, info)?",
+    "difficulty": "medium",
+    "topic": "Resolvers",
+    "concept": "Resolver Execution & Arguments",
+    "questionFamily": "implementation",
+    "tags": [
+      "resolvers",
+      "parent",
+      "args",
+      "context",
+      "info",
+      "execution tree"
+    ],
+    "idealAnswer": "Resolvers fetch data for individual schema fields. The 4 arguments are: 'parent' (result from parent resolver in execution tree), 'args' (arguments passed in query), 'context' (shared request state like DB connection/auth user), and 'info' (AST query execution metadata).",
+    "ideal_answer": "Resolvers fetch data for individual schema fields. The 4 arguments are: 'parent' (result from parent resolver in execution tree), 'args' (arguments passed in query), 'context' (shared request state like DB connection/auth user), and 'info' (AST query execution metadata).",
+    "expected_concepts": [
+      "resolvers",
+      "parent",
+      "args",
+      "context"
+    ],
+    "explanation": "Evaluates GraphQL Resolvers and Resolver Execution & Arguments comprehension."
+  },
+  {
+    "id": "graphql_004",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the N+1 Problem in GraphQL resolvers, and how does DataLoader solve it via batching and memoization caching?",
+    "difficulty": "hard",
+    "topic": "Performance",
+    "concept": "DataLoader & N+1 Problem",
+    "questionFamily": "optimization",
+    "tags": [
+      "DataLoader",
+      "N+1 problem",
+      "batching",
+      "memoization",
+      "event loop tick"
+    ],
+    "idealAnswer": "Because GraphQL resolvers execute independently per field in a tree, querying child relations across N parent items triggers N separate database queries (N+1 problem). DataLoader collects all single ID requests within one event loop tick and fires a single batch query (WHERE id IN (...)), caching results in memory.",
+    "ideal_answer": "Because GraphQL resolvers execute independently per field in a tree, querying child relations across N parent items triggers N separate database queries (N+1 problem). DataLoader collects all single ID requests within one event loop tick and fires a single batch query (WHERE id IN (...)), caching results in memory.",
+    "expected_concepts": [
+      "DataLoader",
+      "N+1 problem",
+      "batching",
+      "memoization"
+    ],
+    "explanation": "Evaluates GraphQL Performance and DataLoader & N+1 Problem comprehension."
+  },
+  {
+    "id": "graphql_005",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GraphQL Mutations: input types, return payloads, and handling partial failures.",
+    "difficulty": "medium",
+    "topic": "Mutations",
+    "concept": "GraphQL Mutations & Input Types",
+    "questionFamily": "design",
+    "tags": [
+      "Mutation",
+      "input type",
+      "mutation payload",
+      "error handling"
+    ],
+    "idealAnswer": "Mutations perform server-side write operations. Input types (input CreateUserInput) group complex input arguments. Best practices return rich mutation payloads (e.g. type CreateUserPayload { user: User, userErrors: [UserError] }) for granular error reporting.",
+    "ideal_answer": "Mutations perform server-side write operations. Input types (input CreateUserInput) group complex input arguments. Best practices return rich mutation payloads (e.g. type CreateUserPayload { user: User, userErrors: [UserError] }) for granular error reporting.",
+    "expected_concepts": [
+      "Mutation",
+      "input type",
+      "mutation payload",
+      "error handling"
+    ],
+    "explanation": "Evaluates GraphQL Mutations and GraphQL Mutations & Input Types comprehension."
+  },
+  {
+    "id": "graphql_006",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do GraphQL Subscriptions work over WebSockets, and what is the role of PubSub engines (Redis PubSub)?",
+    "difficulty": "medium",
+    "topic": "Subscriptions",
+    "concept": "GraphQL Subscriptions & PubSub",
+    "questionFamily": "architecture",
+    "tags": [
+      "Subscriptions",
+      "WebSockets",
+      "PubSub",
+      "Redis PubSub",
+      "real-time events"
+    ],
+    "idealAnswer": "Subscriptions enable real-time server-to-client event streaming over WebSockets. When a mutation occurs, the server publishes an event to a PubSub engine (e.g. Redis PubSub), which pushes updated data to active subscribed GraphQL clients.",
+    "ideal_answer": "Subscriptions enable real-time server-to-client event streaming over WebSockets. When a mutation occurs, the server publishes an event to a PubSub engine (e.g. Redis PubSub), which pushes updated data to active subscribed GraphQL clients.",
+    "expected_concepts": [
+      "Subscriptions",
+      "WebSockets",
+      "PubSub",
+      "Redis PubSub"
+    ],
+    "explanation": "Evaluates GraphQL Subscriptions and GraphQL Subscriptions & PubSub comprehension."
+  },
+  {
+    "id": "graphql_007",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Schema-First vs Code-First (Code-First in NestJS/TypeGraphQL) approaches in GraphQL development.",
+    "difficulty": "medium",
+    "topic": "Development Approaches",
+    "concept": "Schema-First vs Code-First",
+    "questionFamily": "comparison",
+    "tags": [
+      "schema-first",
+      "code-first",
+      "TypeGraphQL",
+      "Pothos",
+      "type safety"
+    ],
+    "idealAnswer": "Schema-First writes .graphql SDL files first and implements matching resolvers (clear contract design, manual typing). Code-First uses TypeScript classes and decorators to generate the GraphQL schema automatically (single source of truth, no type drift).",
+    "ideal_answer": "Schema-First writes .graphql SDL files first and implements matching resolvers (clear contract design, manual typing). Code-First uses TypeScript classes and decorators to generate the GraphQL schema automatically (single source of truth, no type drift).",
+    "expected_concepts": [
+      "schema-first",
+      "code-first",
+      "TypeGraphQL",
+      "Pothos"
+    ],
+    "explanation": "Evaluates GraphQL Development Approaches and Schema-First vs Code-First comprehension."
+  },
+  {
+    "id": "graphql_008",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are GraphQL Interfaces and Unions in SDL, and how do __resolveType and inline fragments (... on Type) resolve polymorphic types?",
+    "difficulty": "medium",
+    "topic": "Schema Design",
+    "concept": "Interfaces, Unions, & Inline Fragments",
+    "questionFamily": "implementation",
+    "tags": [
+      "Interface",
+      "Union",
+      "__resolveType",
+      "inline fragments",
+      "polymorphism"
+    ],
+    "idealAnswer": "Interfaces define shared field contracts implemented by object types. Unions group distinct object types that share no common fields. Resolvers use __resolveType to determine concrete runtime types, and clients query specific fields using inline fragments (... on ConcreteType).",
+    "ideal_answer": "Interfaces define shared field contracts implemented by object types. Unions group distinct object types that share no common fields. Resolvers use __resolveType to determine concrete runtime types, and clients query specific fields using inline fragments (... on ConcreteType).",
+    "expected_concepts": [
+      "Interface",
+      "Union",
+      "__resolveType",
+      "inline fragments"
+    ],
+    "explanation": "Evaluates GraphQL Schema Design and Interfaces, Unions, & Inline Fragments comprehension."
+  },
+  {
+    "id": "graphql_009",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement Authentication and Authorization in GraphQL APIs (context injection vs Directive-based @auth)?",
+    "difficulty": "medium",
+    "topic": "Security",
+    "concept": "GraphQL Authentication & Directives",
+    "questionFamily": "security",
+    "tags": [
+      "Authentication",
+      "Authorization",
+      "context",
+      "custom directives",
+      "@auth directive"
+    ],
+    "idealAnswer": "Authentication authenticates tokens in HTTP headers and attaches user objects to the GraphQL 'context'. Authorization is enforced inside field resolvers or via custom schema directives (e.g. @auth(role: ADMIN)) that wrap resolver execution.",
+    "ideal_answer": "Authentication authenticates tokens in HTTP headers and attaches user objects to the GraphQL 'context'. Authorization is enforced inside field resolvers or via custom schema directives (e.g. @auth(role: ADMIN)) that wrap resolver execution.",
+    "expected_concepts": [
+      "Authentication",
+      "Authorization",
+      "context",
+      "custom directives"
+    ],
+    "explanation": "Evaluates GraphQL Security and GraphQL Authentication & Directives comprehension."
+  },
+  {
+    "id": "graphql_010",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GraphQL Query Complexity Analysis and Depth Limiting to prevent Denial of Service (DoS) attacks from malicious nested queries.",
+    "difficulty": "hard",
+    "topic": "Security",
+    "concept": "Query Complexity & Depth Limiting",
+    "questionFamily": "security",
+    "tags": [
+      "DoS attack",
+      "query depth limit",
+      "query complexity",
+      "cost analysis",
+      "circular queries"
+    ],
+    "idealAnswer": "Because GraphQL allows clients to request arbitrary nested relations (e.g. author -> books -> author -> books), attackers can craft circular queries that crash database servers. Defenses include calculating query complexity cost scores and enforcing maximum query depth limits.",
+    "ideal_answer": "Because GraphQL allows clients to request arbitrary nested relations (e.g. author -> books -> author -> books), attackers can craft circular queries that crash database servers. Defenses include calculating query complexity cost scores and enforcing maximum query depth limits.",
+    "expected_concepts": [
+      "DoS attack",
+      "query depth limit",
+      "query complexity",
+      "cost analysis"
+    ],
+    "explanation": "Evaluates GraphQL Security and Query Complexity & Depth Limiting comprehension."
+  },
+  {
+    "id": "graphql_011",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is GraphQL Cursor-based Connection Specification (Relay Pagination: edges, node, pageInfo, hasNextPage)?",
+    "difficulty": "medium",
+    "topic": "Pagination",
+    "concept": "Relay Cursor Connection Specification",
+    "questionFamily": "design",
+    "tags": [
+      "Relay specification",
+      "edges",
+      "node",
+      "pageInfo",
+      "cursor pagination"
+    ],
+    "idealAnswer": "The Relay Connection spec standardizes cursor pagination in GraphQL: queries accept (first, after) arguments and return Connection types containing 'edges' (array of { node, cursor }) and 'pageInfo' (hasNextPage, endCursor).",
+    "ideal_answer": "The Relay Connection spec standardizes cursor pagination in GraphQL: queries accept (first, after) arguments and return Connection types containing 'edges' (array of { node, cursor }) and 'pageInfo' (hasNextPage, endCursor).",
+    "expected_concepts": [
+      "Relay specification",
+      "edges",
+      "node",
+      "pageInfo"
+    ],
+    "explanation": "Evaluates GraphQL Pagination and Relay Cursor Connection Specification comprehension."
+  },
+  {
+    "id": "graphql_012",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GraphQL Federation (Apollo Federation) and how subgraph services combine into a unified supergraph gateway using @key and @shareable.",
+    "difficulty": "hard",
+    "topic": "Federated GraphQL",
+    "concept": "Apollo Federation & Subgraphs",
+    "questionFamily": "architecture",
+    "tags": [
+      "Apollo Federation",
+      "supergraph",
+      "subgraph",
+      "@key directive",
+      "gateway router"
+    ],
+    "idealAnswer": "Apollo Federation composes multiple independent microservice GraphQL schemas (subgraphs) into a single unified API gateway (supergraph). Subgraphs declare entity boundaries using directives like @key(fields: 'id') and @shareable for cross-service entity resolution.",
+    "ideal_answer": "Apollo Federation composes multiple independent microservice GraphQL schemas (subgraphs) into a single unified API gateway (supergraph). Subgraphs declare entity boundaries using directives like @key(fields: 'id') and @shareable for cross-service entity resolution.",
+    "expected_concepts": [
+      "Apollo Federation",
+      "supergraph",
+      "subgraph",
+      "@key directive"
+    ],
+    "explanation": "Evaluates GraphQL Federated GraphQL and Apollo Federation & Subgraphs comprehension."
+  },
+  {
+    "id": "graphql_013",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Schema Directives in GraphQL (built-in @deprecated, @include, @skip vs custom directives)?",
+    "difficulty": "easy",
+    "topic": "Directives",
+    "concept": "Schema & Operation Directives",
+    "questionFamily": "definition",
+    "tags": [
+      "directives",
+      "@deprecated",
+      "@include",
+      "@skip",
+      "schema transformation"
+    ],
+    "idealAnswer": "Directives alter runtime execution or schema documentation. Client operation directives (@include(if: Boolean), @skip(if: Boolean)) conditionally include fields. Schema directives (@deprecated, custom @validate) annotate schema metadata and wrap field resolver behavior.",
+    "ideal_answer": "Directives alter runtime execution or schema documentation. Client operation directives (@include(if: Boolean), @skip(if: Boolean)) conditionally include fields. Schema directives (@deprecated, custom @validate) annotate schema metadata and wrap field resolver behavior.",
+    "expected_concepts": [
+      "directives",
+      "@deprecated",
+      "@include",
+      "@skip"
+    ],
+    "explanation": "Evaluates GraphQL Directives and Schema & Operation Directives comprehension."
+  },
+  {
+    "id": "graphql_014",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Error Handling in GraphQL differ from REST (partial success with data and errors array), and what are formatted errors?",
+    "difficulty": "easy",
+    "topic": "Error Handling",
+    "concept": "GraphQL Error Structure & Partial Errors",
+    "questionFamily": "comparison",
+    "tags": [
+      "errors array",
+      "partial success",
+      "GraphQL execution error",
+      "formatError"
+    ],
+    "idealAnswer": "GraphQL HTTP requests almost always return status 200 OK. If some field resolvers fail, GraphQL returns a response containing both a partial 'data' object and an 'errors' array detailing field paths, error messages, and custom extensions.",
+    "ideal_answer": "GraphQL HTTP requests almost always return status 200 OK. If some field resolvers fail, GraphQL returns a response containing both a partial 'data' object and an 'errors' array detailing field paths, error messages, and custom extensions.",
+    "expected_concepts": [
+      "errors array",
+      "partial success",
+      "GraphQL execution error",
+      "formatError"
+    ],
+    "explanation": "Evaluates GraphQL Error Handling and GraphQL Error Structure & Partial Errors comprehension."
+  },
+  {
+    "id": "graphql_015",
+    "skill": "GraphQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Client-Side GraphQL Caching mechanisms (Normalized Cache in Apollo Client / Relay with InMemoryCache)?",
+    "difficulty": "medium",
+    "topic": "Client-Side Caching",
+    "concept": "Apollo Client Normalized In-Memory Cache",
+    "questionFamily": "architecture",
+    "tags": [
+      "Apollo Client",
+      "normalized cache",
+      "InMemoryCache",
+      "__typename",
+      "optimistic UI"
+    ],
+    "idealAnswer": "Apollo Client's InMemoryCache normalizes flat entities into a cache dictionary keyed by unique ID (__typename:id). When queries or mutations return updated entities, all UI components referencing that normalized entity automatically update across the entire app.",
+    "ideal_answer": "Apollo Client's InMemoryCache normalizes flat entities into a cache dictionary keyed by unique ID (__typename:id). When queries or mutations return updated entities, all UI components referencing that normalized entity automatically update across the entire app.",
+    "expected_concepts": [
+      "Apollo Client",
+      "normalized cache",
+      "InMemoryCache",
+      "__typename"
+    ],
+    "explanation": "Evaluates GraphQL Client-Side Caching and Apollo Client Normalized In-Memory Cache comprehension."
+  }
+]

@@ -1,44 +1,411 @@
 [
   {
-    "id": "PANDAS_001",
+    "id": "pandas_001",
     "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Pandas Core Data Structures: Series (1D) vs DataFrame (2D), index alignment, and underlying NumPy array memory layout.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Pandas in modern software engineering?",
-    "expected_concepts": [
-      "Pandas fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Core Data Structures",
+    "concept": "Series vs DataFrame Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Pandas",
+      "Series",
+      "DataFrame",
+      "index alignment",
+      "NumPy array"
     ],
-    "ideal_answer": "Pandas is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Pandas."
+    "idealAnswer": "A Series is a 1D labeled array holding homogeneous data. A DataFrame is a 2D labeled tabular structure with heterogeneous columns. Pandas automatically aligns data based on index labels during arithmetic operations, storing columns as contiguous NumPy arrays.",
+    "ideal_answer": "A Series is a 1D labeled array holding homogeneous data. A DataFrame is a 2D labeled tabular structure with heterogeneous columns. Pandas automatically aligns data based on index labels during arithmetic operations, storing columns as contiguous NumPy arrays.",
+    "expected_concepts": [
+      "Pandas",
+      "Series",
+      "DataFrame",
+      "index alignment"
+    ],
+    "explanation": "Evaluates Pandas Core Data Structures and Series vs DataFrame Architecture comprehension."
   },
   {
-    "id": "PANDAS_002",
+    "id": "pandas_002",
     "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between .loc[] (label-based indexing) and .iloc[] (integer position-based indexing) in Pandas?",
+    "difficulty": "easy",
+    "topic": "Indexing & Slicing",
+    "concept": ".loc vs .iloc Indexing",
+    "questionFamily": "comparison",
+    "tags": [
+      ".loc",
+      ".iloc",
+      "label-based",
+      "position-based",
+      "endpoint inclusion"
+    ],
+    "idealAnswer": ".loc[] selects data using index and column labels (inclusive of both start and stop boundaries). .iloc[] selects data using integer 0-based positions (exclusive of the stop boundary, matching standard Python slicing).",
+    "ideal_answer": ".loc[] selects data using index and column labels (inclusive of both start and stop boundaries). .iloc[] selects data using integer 0-based positions (exclusive of the stop boundary, matching standard Python slicing).",
+    "expected_concepts": [
+      ".loc",
+      ".iloc",
+      "label-based",
+      "position-based"
+    ],
+    "explanation": "Evaluates Pandas Indexing & Slicing and .loc vs .iloc Indexing comprehension."
+  },
+  {
+    "id": "pandas_003",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain GroupBy operations in Pandas: Split-Apply-Combine pattern, custom aggregations (agg), and transform vs apply.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Pandas in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Aggregation & GroupBy",
+    "concept": "GroupBy Split-Apply-Combine & Transform",
+    "questionFamily": "implementation",
+    "tags": [
+      "groupby",
+      "split-apply-combine",
+      "agg",
+      "transform",
+      "apply",
+      "broadcasting"
     ],
-    "ideal_answer": "Common challenges with Pandas include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Pandas."
+    "idealAnswer": "GroupBy follows Split-Apply-Combine. .agg() computes summary statistics reducing rows. .transform() returns a Series with the same index and length as the original DataFrame (broadcasting group summary back to each row). .apply() executes arbitrary Python functions.",
+    "ideal_answer": "GroupBy follows Split-Apply-Combine. .agg() computes summary statistics reducing rows. .transform() returns a Series with the same index and length as the original DataFrame (broadcasting group summary back to each row). .apply() executes arbitrary Python functions.",
+    "expected_concepts": [
+      "groupby",
+      "split-apply-combine",
+      "agg",
+      "transform"
+    ],
+    "explanation": "Evaluates Pandas Aggregation & GroupBy and GroupBy Split-Apply-Combine & Transform comprehension."
   },
   {
-    "id": "PANDAS_003",
+    "id": "pandas_004",
     "skill": "Pandas",
-    "difficulty": "hard",
-    "question": "How does Pandas handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Merging, Joining, and Concatenating DataFrames in Pandas (pd.merge, df.join, pd.concat).",
+    "difficulty": "easy",
+    "topic": "Data Combining",
+    "concept": "Merge vs Join vs Concat",
+    "questionFamily": "comparison",
+    "tags": [
+      "pd.merge",
+      "df.join",
+      "pd.concat",
+      "inner join",
+      "outer join",
+      "axis=0 vs axis=1"
     ],
-    "ideal_answer": "Pandas handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Pandas."
+    "idealAnswer": "pd.merge() combines DataFrames along common columns or indices using relational SQL-like logic (how='inner', 'left', 'right', 'outer'). df.join() merges primarily on indices. pd.concat() stacks DataFrames along row axis (axis=0) or column axis (axis=1).",
+    "ideal_answer": "pd.merge() combines DataFrames along common columns or indices using relational SQL-like logic (how='inner', 'left', 'right', 'outer'). df.join() merges primarily on indices. pd.concat() stacks DataFrames along row axis (axis=0) or column axis (axis=1).",
+    "expected_concepts": [
+      "pd.merge",
+      "df.join",
+      "pd.concat",
+      "inner join"
+    ],
+    "explanation": "Evaluates Pandas Data Combining and Merge vs Join vs Concat comprehension."
+  },
+  {
+    "id": "pandas_005",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Pandas handle Missing Data: isna(), fillna(), dropna(), interpolate(), and the difference between np.nan and pd.NA?",
+    "difficulty": "easy",
+    "topic": "Data Cleaning",
+    "concept": "Missing Value Handling & pd.NA",
+    "questionFamily": "implementation",
+    "tags": [
+      "isna",
+      "dropna",
+      "fillna",
+      "interpolate",
+      "np.nan",
+      "pd.NA"
+    ],
+    "idealAnswer": "isna() detects missing values; dropna() removes rows/columns with nulls; fillna() imputes constants or forward/backward fills (ffill/bfill); interpolate() fills linear estimates. Unlike np.nan (float type that coerces integers to float), pd.NA represents missing values across nullable integer and boolean types.",
+    "ideal_answer": "isna() detects missing values; dropna() removes rows/columns with nulls; fillna() imputes constants or forward/backward fills (ffill/bfill); interpolate() fills linear estimates. Unlike np.nan (float type that coerces integers to float), pd.NA represents missing values across nullable integer and boolean types.",
+    "expected_concepts": [
+      "isna",
+      "dropna",
+      "fillna",
+      "interpolate"
+    ],
+    "explanation": "Evaluates Pandas Data Cleaning and Missing Value Handling & pd.NA comprehension."
+  },
+  {
+    "id": "pandas_006",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SettingWithCopyWarning in Pandas: Chained Indexing vs .loc assignment, and views vs copies.",
+    "difficulty": "medium",
+    "topic": "Indexing & Safety",
+    "concept": "SettingWithCopyWarning & Chained Indexing",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "SettingWithCopyWarning",
+      "chained indexing",
+      ".loc",
+      "view vs copy",
+      "inplace"
+    ],
+    "idealAnswer": "SettingWithCopyWarning occurs during chained indexing (df['A'][df['B'] > 0] = 5) where Pandas cannot guarantee if an operation modifies a view of the original DataFrame or a temporary copy. Fixed by using explicit single-indexer .loc (df.loc[df['B'] > 0, 'A'] = 5).",
+    "ideal_answer": "SettingWithCopyWarning occurs during chained indexing (df['A'][df['B'] > 0] = 5) where Pandas cannot guarantee if an operation modifies a view of the original DataFrame or a temporary copy. Fixed by using explicit single-indexer .loc (df.loc[df['B'] > 0, 'A'] = 5).",
+    "expected_concepts": [
+      "SettingWithCopyWarning",
+      "chained indexing",
+      ".loc",
+      "view vs copy"
+    ],
+    "explanation": "Evaluates Pandas Indexing & Safety and SettingWithCopyWarning & Chained Indexing comprehension."
+  },
+  {
+    "id": "pandas_007",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Reshaping DataFrames in Pandas: pivot, pivot_table (with aggregation), melt (unpivoting), and stack / unstack.",
+    "difficulty": "medium",
+    "topic": "Reshaping",
+    "concept": "Pivot, Melt, Stack, and Unstack",
+    "questionFamily": "implementation",
+    "tags": [
+      "pivot",
+      "pivot_table",
+      "melt",
+      "stack",
+      "unstack",
+      "wide to long"
+    ],
+    "idealAnswer": "pivot reshapes unique index/column pairs. pivot_table handles duplicate entries via aggregation functions. melt unpivots wide DataFrames into long format. stack compresses column levels into row multi-indices; unstack moves row multi-indices to column headers.",
+    "ideal_answer": "pivot reshapes unique index/column pairs. pivot_table handles duplicate entries via aggregation functions. melt unpivots wide DataFrames into long format. stack compresses column levels into row multi-indices; unstack moves row multi-indices to column headers.",
+    "expected_concepts": [
+      "pivot",
+      "pivot_table",
+      "melt",
+      "stack"
+    ],
+    "explanation": "Evaluates Pandas Reshaping and Pivot, Melt, Stack, and Unstack comprehension."
+  },
+  {
+    "id": "pandas_008",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Time Series functionality in Pandas: DatetimeIndex, pd.to_datetime, resampling (resample vs rolling), and time zone localization.",
+    "difficulty": "medium",
+    "topic": "Time Series",
+    "concept": "Time Series Resampling & Rolling Windows",
+    "questionFamily": "implementation",
+    "tags": [
+      "DatetimeIndex",
+      "pd.to_datetime",
+      "resample",
+      "rolling window",
+      "tz_localize"
+    ],
+    "idealAnswer": "Pandas provides native time series tools: pd.to_datetime converts string dates into DatetimeIndex. resample('D').mean() groups and aggregates data into time frequencies (like groupby for time). rolling(window=7).mean() calculates moving window statistics.",
+    "ideal_answer": "Pandas provides native time series tools: pd.to_datetime converts string dates into DatetimeIndex. resample('D').mean() groups and aggregates data into time frequencies (like groupby for time). rolling(window=7).mean() calculates moving window statistics.",
+    "expected_concepts": [
+      "DatetimeIndex",
+      "pd.to_datetime",
+      "resample",
+      "rolling window"
+    ],
+    "explanation": "Evaluates Pandas Time Series and Time Series Resampling & Rolling Windows comprehension."
+  },
+  {
+    "id": "pandas_009",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Categorical Data types (dtype='category') in Pandas reduce memory footprint and speed up groupby operations?",
+    "difficulty": "easy",
+    "topic": "Memory Optimization",
+    "concept": "Categorical Data Type Optimization",
+    "questionFamily": "optimization",
+    "tags": [
+      "categorical dtype",
+      "memory reduction",
+      "integer codes",
+      "groupby speedup"
+    ],
+    "idealAnswer": "For columns with repeated string values (e.g. state, gender), converting to 'category' replaces strings with integer codes referencing an internal categories dictionary, reducing memory consumption by up to 90% and speeding up groupbys.",
+    "ideal_answer": "For columns with repeated string values (e.g. state, gender), converting to 'category' replaces strings with integer codes referencing an internal categories dictionary, reducing memory consumption by up to 90% and speeding up groupbys.",
+    "expected_concepts": [
+      "categorical dtype",
+      "memory reduction",
+      "integer codes",
+      "groupby speedup"
+    ],
+    "explanation": "Evaluates Pandas Memory Optimization and Categorical Data Type Optimization comprehension."
+  },
+  {
+    "id": "pandas_010",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain MultiIndex (Hierarchical Indexing) in Pandas: creating, slicing with pd.IndexSlice, and cross-sections (xs).",
+    "difficulty": "medium",
+    "topic": "Hierarchical Indexing",
+    "concept": "MultiIndex & Cross-Sections (xs)",
+    "questionFamily": "implementation",
+    "tags": [
+      "MultiIndex",
+      "pd.IndexSlice",
+      "xs method",
+      "hierarchical indexing",
+      "level"
+    ],
+    "idealAnswer": "MultiIndex enables multi-dimensional indexing on 2D DataFrames. Slicing hierarchical indices uses df.loc[pd.IndexSlice[:, 'category'], :] or the cross-section method 'df.xs('category', level=1)' to extract slices across index levels.",
+    "ideal_answer": "MultiIndex enables multi-dimensional indexing on 2D DataFrames. Slicing hierarchical indices uses df.loc[pd.IndexSlice[:, 'category'], :] or the cross-section method 'df.xs('category', level=1)' to extract slices across index levels.",
+    "expected_concepts": [
+      "MultiIndex",
+      "pd.IndexSlice",
+      "xs method",
+      "hierarchical indexing"
+    ],
+    "explanation": "Evaluates Pandas Hierarchical Indexing and MultiIndex & Cross-Sections (xs) comprehension."
+  },
+  {
+    "id": "pandas_011",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you optimize Pandas performance for large datasets using Vectorization, apply, itertuples, and iterrows (performance hierarchy)?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Vectorization vs Itertuples vs Iterrows",
+    "questionFamily": "optimization",
+    "tags": [
+      "vectorization",
+      "itertuples",
+      "iterrows",
+      "performance hierarchy",
+      "NumPy ufuncs"
+    ],
+    "idealAnswer": "Performance hierarchy (fastest to slowest): 1) Vectorized NumPy/Pandas operations (compiled C execution); 2) Vectorized string/datetime methods; 3) List comprehensions; 4) df.itertuples() (named tuples, fast iteration); 5) df.apply(); 6) df.iterrows() (slowest, avoid in production).",
+    "ideal_answer": "Performance hierarchy (fastest to slowest): 1) Vectorized NumPy/Pandas operations (compiled C execution); 2) Vectorized string/datetime methods; 3) List comprehensions; 4) df.itertuples() (named tuples, fast iteration); 5) df.apply(); 6) df.iterrows() (slowest, avoid in production).",
+    "expected_concepts": [
+      "vectorization",
+      "itertuples",
+      "iterrows",
+      "performance hierarchy"
+    ],
+    "explanation": "Evaluates Pandas Performance and Vectorization vs Itertuples vs Iterrows comprehension."
+  },
+  {
+    "id": "pandas_012",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain reading large datasets in Pandas: chunksize parameter in pd.read_csv, usecols, and Arrow backend (engine='pyarrow').",
+    "difficulty": "medium",
+    "topic": "I/O & Memory",
+    "concept": "Chunking & PyArrow Engine",
+    "questionFamily": "optimization",
+    "tags": [
+      "chunksize",
+      "usecols",
+      "pyarrow",
+      "read_csv",
+      "out of memory"
+    ],
+    "idealAnswer": "To process datasets exceeding RAM: 1) Stream in chunks using 'pd.read_csv(file, chunksize=50000)'; 2) Filter needed columns via 'usecols'; 3) Use the Apache Arrow backend ('engine=\"pyarrow\"') for multi-threaded, memory-efficient parsing.",
+    "ideal_answer": "To process datasets exceeding RAM: 1) Stream in chunks using 'pd.read_csv(file, chunksize=50000)'; 2) Filter needed columns via 'usecols'; 3) Use the Apache Arrow backend ('engine=\"pyarrow\"') for multi-threaded, memory-efficient parsing.",
+    "expected_concepts": [
+      "chunksize",
+      "usecols",
+      "pyarrow",
+      "read_csv"
+    ],
+    "explanation": "Evaluates Pandas I/O & Memory and Chunking & PyArrow Engine comprehension."
+  },
+  {
+    "id": "pandas_013",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Parquet, Feather, and CSV file formats in Pandas for data storage and I/O speed?",
+    "difficulty": "easy",
+    "topic": "File Formats",
+    "concept": "Parquet vs Feather vs CSV",
+    "questionFamily": "comparison",
+    "tags": [
+      "Parquet",
+      "Feather",
+      "CSV",
+      "columnar storage",
+      "compression",
+      "Snappy"
+    ],
+    "idealAnswer": "CSV is plaintext, slow to parse, uncompressed, and loses data types. Parquet is an immutable compressed columnar format (Snappy) with metadata and column pruning (optimal for disk storage). Feather is an uncompressed Arrow memory dump (fastest for IPC and cache).",
+    "ideal_answer": "CSV is plaintext, slow to parse, uncompressed, and loses data types. Parquet is an immutable compressed columnar format (Snappy) with metadata and column pruning (optimal for disk storage). Feather is an uncompressed Arrow memory dump (fastest for IPC and cache).",
+    "expected_concepts": [
+      "Parquet",
+      "Feather",
+      "CSV",
+      "columnar storage"
+    ],
+    "explanation": "Evaluates Pandas File Formats and Parquet vs Feather vs CSV comprehension."
+  },
+  {
+    "id": "pandas_014",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain String Operations in Pandas with the .str accessor (vectorized regex, extract, split, contains).",
+    "difficulty": "easy",
+    "topic": "Text Manipulation",
+    "concept": "Vectorized String Accessor (.str)",
+    "questionFamily": "implementation",
+    "tags": [
+      ".str accessor",
+      "regex",
+      "extract",
+      "str.contains",
+      "text processing"
+    ],
+    "idealAnswer": "The '.str' accessor provides vectorized string operations over Series elements: str.contains(regex) performs boolean filtering; str.extract(r'(\\d+)') extracts regex capture groups; str.split() splits strings into lists or expanded DataFrames.",
+    "ideal_answer": "The '.str' accessor provides vectorized string operations over Series elements: str.contains(regex) performs boolean filtering; str.extract(r'(\\d+)') extracts regex capture groups; str.split() splits strings into lists or expanded DataFrames.",
+    "expected_concepts": [
+      ".str accessor",
+      "regex",
+      "extract",
+      "str.contains"
+    ],
+    "explanation": "Evaluates Pandas Text Manipulation and Vectorized String Accessor (.str) comprehension."
+  },
+  {
+    "id": "pandas_015",
+    "skill": "Pandas",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Method Chaining in Pandas (assign, pipe, query) and how does it improve data pipeline readability?",
+    "difficulty": "easy",
+    "topic": "Code Style & Chaining",
+    "concept": "Method Chaining (pipe, assign, query)",
+    "questionFamily": "best_practice",
+    "tags": [
+      "method chaining",
+      "df.pipe",
+      "df.assign",
+      "df.query",
+      "data pipeline"
+    ],
+    "idealAnswer": "Method chaining chains sequential operations into a readable pipeline without intermediate variable assignments: 'df.query(\"age > 18\").assign(income_k=lambda x: x.income/1000).pipe(clean_data)'.",
+    "ideal_answer": "Method chaining chains sequential operations into a readable pipeline without intermediate variable assignments: 'df.query(\"age > 18\").assign(income_k=lambda x: x.income/1000).pipe(clean_data)'.",
+    "expected_concepts": [
+      "method chaining",
+      "df.pipe",
+      "df.assign",
+      "df.query"
+    ],
+    "explanation": "Evaluates Pandas Code Style & Chaining and Method Chaining (pipe, assign, query) comprehension."
   }
 ]

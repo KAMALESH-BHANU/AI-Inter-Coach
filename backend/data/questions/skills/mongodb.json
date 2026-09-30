@@ -1,44 +1,410 @@
 [
   {
-    "id": "MONGODB_001",
+    "id": "mongo_001",
     "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain MongoDB Document model (BSON format), Collections, and how MongoDB differs from relational SQL databases.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of MongoDB in modern software engineering?",
-    "expected_concepts": [
-      "MongoDB fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Core Concepts",
+    "concept": "Document Model & BSON Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "MongoDB",
+      "BSON",
+      "collections",
+      "NoSQL",
+      "schema-less"
     ],
-    "ideal_answer": "MongoDB is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of MongoDB."
+    "idealAnswer": "MongoDB stores semi-structured data as BSON (Binary JSON) documents organized in collections. Unlike fixed tabular SQL schemas, documents support flexible, dynamic schemas with nested arrays and embedded objects.",
+    "ideal_answer": "MongoDB stores semi-structured data as BSON (Binary JSON) documents organized in collections. Unlike fixed tabular SQL schemas, documents support flexible, dynamic schemas with nested arrays and embedded objects.",
+    "expected_concepts": [
+      "MongoDB",
+      "BSON",
+      "collections",
+      "NoSQL"
+    ],
+    "explanation": "Evaluates MongoDB Core Concepts and Document Model & BSON Architecture comprehension."
   },
   {
-    "id": "MONGODB_002",
+    "id": "mongo_002",
     "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Embedding (Denormalization) vs Referencing (Normalization) in MongoDB schema design.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using MongoDB in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Schema Design",
+    "concept": "Embedding vs Referencing Tradeoffs",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "embedding",
+      "referencing",
+      "1-to-N relationships",
+      "16MB document limit"
     ],
-    "ideal_answer": "Common challenges with MongoDB include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of MongoDB."
+    "idealAnswer": "Embedding nests child documents inside parent documents (fast atomic reads, ideal for 1-to-few relationships, subject to 16MB document size limit). Referencing stores ObjectIDs pointing to other collections (ideal for 1-to-many or many-to-many to avoid unbounded document growth).",
+    "ideal_answer": "Embedding nests child documents inside parent documents (fast atomic reads, ideal for 1-to-few relationships, subject to 16MB document size limit). Referencing stores ObjectIDs pointing to other collections (ideal for 1-to-many or many-to-many to avoid unbounded document growth).",
+    "expected_concepts": [
+      "embedding",
+      "referencing",
+      "1-to-N relationships",
+      "16MB document limit"
+    ],
+    "explanation": "Evaluates MongoDB Schema Design and Embedding vs Referencing Tradeoffs comprehension."
   },
   {
-    "id": "MONGODB_003",
+    "id": "mongo_003",
     "skill": "MongoDB",
-    "difficulty": "hard",
-    "question": "How does MongoDB handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the MongoDB Aggregation Pipeline: $match, $project, $group, $lookup, $unwind, and $sort stages.",
+    "difficulty": "medium",
+    "topic": "Aggregation Pipeline",
+    "concept": "Aggregation Pipeline Stages",
+    "questionFamily": "implementation",
+    "tags": [
+      "aggregation pipeline",
+      "$match",
+      "$group",
+      "$lookup",
+      "$unwind",
+      "$project"
     ],
-    "ideal_answer": "MongoDB handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of MongoDB."
+    "idealAnswer": "The aggregation pipeline processes documents sequentially through pipeline stages: $match filters documents; $project shapes fields; $group calculates aggregates; $lookup performs left outer joins with other collections; $unwind deconstructs arrays.",
+    "ideal_answer": "The aggregation pipeline processes documents sequentially through pipeline stages: $match filters documents; $project shapes fields; $group calculates aggregates; $lookup performs left outer joins with other collections; $unwind deconstructs arrays.",
+    "expected_concepts": [
+      "aggregation pipeline",
+      "$match",
+      "$group",
+      "$lookup"
+    ],
+    "explanation": "Evaluates MongoDB Aggregation Pipeline and Aggregation Pipeline Stages comprehension."
+  },
+  {
+    "id": "mongo_004",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Indexes work in MongoDB (Single Field, Compound, Multikey for arrays, TTL, Text, and Geospatial)?",
+    "difficulty": "medium",
+    "topic": "Indexes",
+    "concept": "MongoDB Index Types & Multikey",
+    "questionFamily": "implementation",
+    "tags": [
+      "indexes",
+      "compound index",
+      "multikey index",
+      "TTL index",
+      "geospatial index"
+    ],
+    "idealAnswer": "MongoDB uses B-Tree indexes. Compound indexes optimize multi-field queries. Multikey indexes index elements inside arrays. TTL (Time-To-Live) indexes automatically delete expired documents after a timestamp.",
+    "ideal_answer": "MongoDB uses B-Tree indexes. Compound indexes optimize multi-field queries. Multikey indexes index elements inside arrays. TTL (Time-To-Live) indexes automatically delete expired documents after a timestamp.",
+    "expected_concepts": [
+      "indexes",
+      "compound index",
+      "multikey index",
+      "TTL index"
+    ],
+    "explanation": "Evaluates MongoDB Indexes and MongoDB Index Types & Multikey comprehension."
+  },
+  {
+    "id": "mongo_005",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the WiredTiger Storage Engine in MongoDB: document-level locking, compression, and checkpointing.",
+    "difficulty": "hard",
+    "topic": "Storage Engine",
+    "concept": "WiredTiger Storage Engine",
+    "questionFamily": "architecture",
+    "tags": [
+      "WiredTiger",
+      "document-level concurrency",
+      "Snappy compression",
+      "checkpoints",
+      "journaling"
+    ],
+    "idealAnswer": "WiredTiger is MongoDB's default storage engine. It provides document-level concurrency control, transparent Snappy/zlib compression on disk and in cache, and periodic checkpoints (every 60s) combined with write-ahead journaling for durability.",
+    "ideal_answer": "WiredTiger is MongoDB's default storage engine. It provides document-level concurrency control, transparent Snappy/zlib compression on disk and in cache, and periodic checkpoints (every 60s) combined with write-ahead journaling for durability.",
+    "expected_concepts": [
+      "WiredTiger",
+      "document-level concurrency",
+      "Snappy compression",
+      "checkpoints"
+    ],
+    "explanation": "Evaluates MongoDB Storage Engine and WiredTiger Storage Engine comprehension."
+  },
+  {
+    "id": "mongo_006",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Replica Sets in MongoDB, and how do Primary-Secondary election and heartbeats ensure High Availability?",
+    "difficulty": "medium",
+    "topic": "High Availability",
+    "concept": "Replica Sets & Raft-Like Elections",
+    "questionFamily": "architecture",
+    "tags": [
+      "replica set",
+      "primary",
+      "secondary",
+      "failover",
+      "heartbeats",
+      "elections"
+    ],
+    "idealAnswer": "A Replica Set is a cluster of MongoDB nodes maintaining identical data. A single Primary handles all writes and replicates via the Oplog to Secondaries. If the Primary fails, secondaries hold a consensus election to elect a new Primary automatically within seconds.",
+    "ideal_answer": "A Replica Set is a cluster of MongoDB nodes maintaining identical data. A single Primary handles all writes and replicates via the Oplog to Secondaries. If the Primary fails, secondaries hold a consensus election to elect a new Primary automatically within seconds.",
+    "expected_concepts": [
+      "replica set",
+      "primary",
+      "secondary",
+      "failover"
+    ],
+    "explanation": "Evaluates MongoDB High Availability and Replica Sets & Raft-Like Elections comprehension."
+  },
+  {
+    "id": "mongo_007",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain MongoDB Write Concerns (w: 1, w: 'majority', j: true) and Read Concerns (local, majority, linearizable).",
+    "difficulty": "hard",
+    "topic": "Consistency & Replication",
+    "concept": "Write Concern & Read Concern",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "write concern",
+      "read concern",
+      "w: majority",
+      "j: true",
+      "dirty reads"
+    ],
+    "idealAnswer": "Write Concern defines acknowledgment levels: w:1 acknowledges primary write; w:'majority' acknowledges majority of replica set nodes; j:true guarantees disk journal flush. Read Concern controls data isolation (read concern 'majority' prevents dirty reads from rolled-back primaries).",
+    "ideal_answer": "Write Concern defines acknowledgment levels: w:1 acknowledges primary write; w:'majority' acknowledges majority of replica set nodes; j:true guarantees disk journal flush. Read Concern controls data isolation (read concern 'majority' prevents dirty reads from rolled-back primaries).",
+    "expected_concepts": [
+      "write concern",
+      "read concern",
+      "w: majority",
+      "j: true"
+    ],
+    "explanation": "Evaluates MongoDB Consistency & Replication and Write Concern & Read Concern comprehension."
+  },
+  {
+    "id": "mongo_008",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain MongoDB Sharding architecture (Mongos Router, Config Server Replica Set, Shard Replica Sets, and Shard Keys).",
+    "difficulty": "hard",
+    "topic": "Scalability & Sharding",
+    "concept": "Sharding Cluster Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "sharding",
+      "mongos",
+      "config server",
+      "shard key",
+      "horizontal scaling",
+      "chunks"
+    ],
+    "idealAnswer": "Sharding distributes data horizontally across multiple clusters. Mongos routers route client queries; Config Servers store cluster metadata and chunk mappings; Shards store data partitions based on ranges or hashes of the Shard Key.",
+    "ideal_answer": "Sharding distributes data horizontally across multiple clusters. Mongos routers route client queries; Config Servers store cluster metadata and chunk mappings; Shards store data partitions based on ranges or hashes of the Shard Key.",
+    "expected_concepts": [
+      "sharding",
+      "mongos",
+      "config server",
+      "shard key"
+    ],
+    "explanation": "Evaluates MongoDB Scalability & Sharding and Sharding Cluster Architecture comprehension."
+  },
+  {
+    "id": "mongo_009",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you choose an optimal Shard Key in MongoDB to prevent hot-spotting (Monotonically increasing keys vs Hashed shard keys)?",
+    "difficulty": "hard",
+    "topic": "Sharding & Performance",
+    "concept": "Shard Key Selection & Hot-Spotting",
+    "questionFamily": "optimization",
+    "tags": [
+      "shard key",
+      "hot-spotting",
+      "hashed shard key",
+      "cardinality",
+      "scatter-gather"
+    ],
+    "idealAnswer": "An optimal shard key requires high cardinality, balanced write distribution, and query isolation. Monotonically increasing keys (e.g. Auto-increment ID / Timestamp) cause all writes to hit the single highest chunk (hotspotting); Hashed shard keys distribute writes evenly.",
+    "ideal_answer": "An optimal shard key requires high cardinality, balanced write distribution, and query isolation. Monotonically increasing keys (e.g. Auto-increment ID / Timestamp) cause all writes to hit the single highest chunk (hotspotting); Hashed shard keys distribute writes evenly.",
+    "expected_concepts": [
+      "shard key",
+      "hot-spotting",
+      "hashed shard key",
+      "cardinality"
+    ],
+    "explanation": "Evaluates MongoDB Sharding & Performance and Shard Key Selection & Hot-Spotting comprehension."
+  },
+  {
+    "id": "mongo_010",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Multi-Document ACID Transactions work in MongoDB (session.startTransaction, commitTransaction, abortTransaction)?",
+    "difficulty": "hard",
+    "topic": "Transactions",
+    "concept": "Multi-Document ACID Transactions",
+    "questionFamily": "implementation",
+    "tags": [
+      "ACID transactions",
+      "session.startTransaction",
+      "commitTransaction",
+      "abortTransaction"
+    ],
+    "idealAnswer": "MongoDB supports multi-document ACID transactions across replica sets and sharded clusters. Operations execute within a client session: calling commitTransaction() commits all modifications atomically, or abortTransaction() rolls them back.",
+    "ideal_answer": "MongoDB supports multi-document ACID transactions across replica sets and sharded clusters. Operations execute within a client session: calling commitTransaction() commits all modifications atomically, or abortTransaction() rolls them back.",
+    "expected_concepts": [
+      "ACID transactions",
+      "session.startTransaction",
+      "commitTransaction",
+      "abortTransaction"
+    ],
+    "explanation": "Evaluates MongoDB Transactions and Multi-Document ACID Transactions comprehension."
+  },
+  {
+    "id": "mongo_011",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the MongoDB Oplog (Operations Log) and its role in replication and Change Streams (watch API).",
+    "difficulty": "medium",
+    "topic": "Change Streams & Replication",
+    "concept": "Oplog & Change Streams",
+    "questionFamily": "architecture",
+    "tags": [
+      "oplog",
+      "change streams",
+      "watch()",
+      "real-time events",
+      "capped collection"
+    ],
+    "idealAnswer": "The oplog.rs is a capped collection recording all write operations. Secondaries tail the oplog to replicate state. Change Streams allow applications to watch collections in real-time (collection.watch()), emitting notifications on document modifications.",
+    "ideal_answer": "The oplog.rs is a capped collection recording all write operations. Secondaries tail the oplog to replicate state. Change Streams allow applications to watch collections in real-time (collection.watch()), emitting notifications on document modifications.",
+    "expected_concepts": [
+      "oplog",
+      "change streams",
+      "watch()",
+      "real-time events"
+    ],
+    "explanation": "Evaluates MongoDB Change Streams & Replication and Oplog & Change Streams comprehension."
+  },
+  {
+    "id": "mongo_012",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the 16MB BSON Document Size Limit in MongoDB, and how does GridFS store large binary files?",
+    "difficulty": "easy",
+    "topic": "Storage & Large Files",
+    "concept": "16MB Document Limit & GridFS",
+    "questionFamily": "design",
+    "tags": [
+      "16MB limit",
+      "GridFS",
+      "fs.files",
+      "fs.chunks",
+      "large file storage"
+    ],
+    "idealAnswer": "MongoDB limits individual BSON documents to 16MB to optimize RAM usage. Files exceeding 16MB are stored using GridFS, which chunks binary data into 255KB pieces stored across two collections: fs.files (metadata) and fs.chunks (binary blocks).",
+    "ideal_answer": "MongoDB limits individual BSON documents to 16MB to optimize RAM usage. Files exceeding 16MB are stored using GridFS, which chunks binary data into 255KB pieces stored across two collections: fs.files (metadata) and fs.chunks (binary blocks).",
+    "expected_concepts": [
+      "16MB limit",
+      "GridFS",
+      "fs.files",
+      "fs.chunks"
+    ],
+    "explanation": "Evaluates MongoDB Storage & Large Files and 16MB Document Limit & GridFS comprehension."
+  },
+  {
+    "id": "mongo_013",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain MongoDB Update Operators ($set, $unset, $inc, $push, $pull, $addToSet) and the role of arrayFilters.",
+    "difficulty": "easy",
+    "topic": "CRUD & Updates",
+    "concept": "Update Operators & ArrayFilters",
+    "questionFamily": "implementation",
+    "tags": [
+      "$set",
+      "$inc",
+      "$push",
+      "$addToSet",
+      "arrayFilters",
+      "atomic update"
+    ],
+    "idealAnswer": "MongoDB provides atomic in-place update operators: $set modifies fields; $inc increments numeric counters; $addToSet adds unique array elements; arrayFilters allows updating specific nested array elements matching conditional filter criteria.",
+    "ideal_answer": "MongoDB provides atomic in-place update operators: $set modifies fields; $inc increments numeric counters; $addToSet adds unique array elements; arrayFilters allows updating specific nested array elements matching conditional filter criteria.",
+    "expected_concepts": [
+      "$set",
+      "$inc",
+      "$push",
+      "$addToSet"
+    ],
+    "explanation": "Evaluates MongoDB CRUD & Updates and Update Operators & ArrayFilters comprehension."
+  },
+  {
+    "id": "mongo_014",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Capped Collections in MongoDB work, and why are they useful for high-throughput logging and FIFO queues?",
+    "difficulty": "easy",
+    "topic": "Collections",
+    "concept": "Capped Collections",
+    "questionFamily": "definition",
+    "tags": [
+      "capped collection",
+      "circular buffer",
+      "FIFO",
+      "logging",
+      "natural order"
+    ],
+    "idealAnswer": "Capped collections are fixed-size circular buffers that automatically overwrite oldest documents when maximum allocated byte size or document count is reached. They guarantee high-throughput insertion in natural storage order without index overhead.",
+    "ideal_answer": "Capped collections are fixed-size circular buffers that automatically overwrite oldest documents when maximum allocated byte size or document count is reached. They guarantee high-throughput insertion in natural storage order without index overhead.",
+    "expected_concepts": [
+      "capped collection",
+      "circular buffer",
+      "FIFO",
+      "logging"
+    ],
+    "explanation": "Evaluates MongoDB Collections and Capped Collections comprehension."
+  },
+  {
+    "id": "mongo_015",
+    "skill": "MongoDB",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you diagnose query performance in MongoDB using explain('executionStats') (COLLSCAN vs IXSCAN)?",
+    "difficulty": "medium",
+    "topic": "Query Optimization",
+    "concept": "explain('executionStats') & Query Plans",
+    "questionFamily": "optimization",
+    "tags": [
+      "explain",
+      "executionStats",
+      "COLLSCAN",
+      "IXSCAN",
+      "totalDocsExamined",
+      "nReturned"
+    ],
+    "idealAnswer": "Running db.collection.find().explain('executionStats') reveals the query execution plan. COLLSCAN indicates an unindexed collection scan; IXSCAN indicates index usage. An efficient query has 'totalDocsExamined' roughly equal to 'nReturned'.",
+    "ideal_answer": "Running db.collection.find().explain('executionStats') reveals the query execution plan. COLLSCAN indicates an unindexed collection scan; IXSCAN indicates index usage. An efficient query has 'totalDocsExamined' roughly equal to 'nReturned'.",
+    "expected_concepts": [
+      "explain",
+      "executionStats",
+      "COLLSCAN",
+      "IXSCAN"
+    ],
+    "explanation": "Evaluates MongoDB Query Optimization and explain('executionStats') & Query Plans comprehension."
   }
 ]

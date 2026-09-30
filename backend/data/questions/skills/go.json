@@ -1,0 +1,405 @@
+[
+  {
+    "id": "go_001",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Goroutines in Go, how they are scheduled by the Go Runtime M:N scheduler, and how they differ from OS threads.",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "Goroutines & M:N Scheduler",
+    "questionFamily": "architecture",
+    "tags": [
+      "goroutine",
+      "scheduler",
+      "concurrency",
+      "M:N scheduler",
+      "stack size"
+    ],
+    "idealAnswer": "Goroutines are lightweight user-space threads managed by Go's runtime scheduler (M:N model mapping M goroutines to N OS threads). They start with a minimal 2KB stack that grows dynamically, allowing millions of concurrent goroutines with negligible overhead compared to megabyte-sized OS threads.",
+    "ideal_answer": "Goroutines are lightweight user-space threads managed by Go's runtime scheduler (M:N model mapping M goroutines to N OS threads). They start with a minimal 2KB stack that grows dynamically, allowing millions of concurrent goroutines with negligible overhead compared to megabyte-sized OS threads.",
+    "expected_concepts": [
+      "goroutine",
+      "scheduler",
+      "concurrency",
+      "M:N scheduler"
+    ],
+    "explanation": "Evaluates Go Concurrency and Goroutines & M:N Scheduler comprehension."
+  },
+  {
+    "id": "go_002",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Channels work in Go, and what is the difference between buffered and unbuffered channels?",
+    "difficulty": "medium",
+    "topic": "Concurrency",
+    "concept": "Channels & Synchronization",
+    "questionFamily": "comparison",
+    "tags": [
+      "channel",
+      "buffered channel",
+      "unbuffered channel",
+      "synchronization"
+    ],
+    "idealAnswer": "Channels provide type-safe communication and synchronization between goroutines. Unbuffered channels block the sender until a receiver is ready (synchronous rendezvous). Buffered channels accept values up to their capacity without blocking the sender.",
+    "ideal_answer": "Channels provide type-safe communication and synchronization between goroutines. Unbuffered channels block the sender until a receiver is ready (synchronous rendezvous). Buffered channels accept values up to their capacity without blocking the sender.",
+    "expected_concepts": [
+      "channel",
+      "buffered channel",
+      "unbuffered channel",
+      "synchronization"
+    ],
+    "explanation": "Evaluates Go Concurrency and Channels & Synchronization comprehension."
+  },
+  {
+    "id": "go_003",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the 'select' statement in Go and how it handles communication across multiple channels with timeouts.",
+    "difficulty": "medium",
+    "topic": "Concurrency",
+    "concept": "Select Statement & Timeouts",
+    "questionFamily": "implementation",
+    "tags": [
+      "select",
+      "channels",
+      "time.After",
+      "default case",
+      "non-blocking"
+    ],
+    "idealAnswer": "The 'select' statement allows a goroutine to wait on multiple channel operations. It blocks until one channel is ready, chooses randomly if multiple are ready, and supports non-blocking operations via 'default' or timeouts via 'time.After()'.",
+    "ideal_answer": "The 'select' statement allows a goroutine to wait on multiple channel operations. It blocks until one channel is ready, chooses randomly if multiple are ready, and supports non-blocking operations via 'default' or timeouts via 'time.After()'.",
+    "expected_concepts": [
+      "select",
+      "channels",
+      "time.After",
+      "default case"
+    ],
+    "explanation": "Evaluates Go Concurrency and Select Statement & Timeouts comprehension."
+  },
+  {
+    "id": "go_004",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Go handle interfaces implicitly without an 'implements' keyword (duck typing)?",
+    "difficulty": "medium",
+    "topic": "OOP & Interfaces",
+    "concept": "Implicit Interfaces",
+    "questionFamily": "design",
+    "tags": [
+      "interface",
+      "implicit implementation",
+      "duck typing",
+      "polymorphism"
+    ],
+    "idealAnswer": "In Go, any type that implements all methods declared in an interface automatically satisfies that interface without explicit declaration. This decoupled design encourages fine-grained, single-method interfaces (e.g. io.Reader, io.Writer).",
+    "ideal_answer": "In Go, any type that implements all methods declared in an interface automatically satisfies that interface without explicit declaration. This decoupled design encourages fine-grained, single-method interfaces (e.g. io.Reader, io.Writer).",
+    "expected_concepts": [
+      "interface",
+      "implicit implementation",
+      "duck typing",
+      "polymorphism"
+    ],
+    "explanation": "Evaluates Go OOP & Interfaces and Implicit Interfaces comprehension."
+  },
+  {
+    "id": "go_005",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the internal structure of Slices in Go (pointer, length, capacity) and how append() behaves during reallocation.",
+    "difficulty": "medium",
+    "topic": "Data Structures",
+    "concept": "Slice Internals & Append",
+    "questionFamily": "implementation",
+    "tags": [
+      "slice",
+      "array",
+      "length",
+      "capacity",
+      "reallocation"
+    ],
+    "idealAnswer": "A slice is a 3-word header containing a pointer to an underlying array, length (len), and capacity (cap). Calling append() adds elements; when length exceeds capacity, Go allocates a new larger backing array and copies elements over.",
+    "ideal_answer": "A slice is a 3-word header containing a pointer to an underlying array, length (len), and capacity (cap). Calling append() adds elements; when length exceeds capacity, Go allocates a new larger backing array and copies elements over.",
+    "expected_concepts": [
+      "slice",
+      "array",
+      "length",
+      "capacity"
+    ],
+    "explanation": "Evaluates Go Data Structures and Slice Internals & Append comprehension."
+  },
+  {
+    "id": "go_006",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does error handling work in Go using explicit error returns, and how do errors.Is and errors.As assist in inspection?",
+    "difficulty": "easy",
+    "topic": "Error Handling",
+    "concept": "Explicit Error Handling",
+    "questionFamily": "best_practice",
+    "tags": [
+      "error",
+      "errors.Is",
+      "errors.As",
+      "wrapped errors",
+      "fmt.Errorf"
+    ],
+    "idealAnswer": "Go uses explicit multiple return values (val, err) rather than exceptions. Go 1.13+ supports error wrapping with '%w' in fmt.Errorf(), allowing errors.Is() to check error identity and errors.As() to extract specific error types from wrapped chains.",
+    "ideal_answer": "Go uses explicit multiple return values (val, err) rather than exceptions. Go 1.13+ supports error wrapping with '%w' in fmt.Errorf(), allowing errors.Is() to check error identity and errors.As() to extract specific error types from wrapped chains.",
+    "expected_concepts": [
+      "error",
+      "errors.Is",
+      "errors.As",
+      "wrapped errors"
+    ],
+    "explanation": "Evaluates Go Error Handling and Explicit Error Handling comprehension."
+  },
+  {
+    "id": "go_007",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the purpose of defer, panic, and recover in Go, and how defer executes in LIFO order.",
+    "difficulty": "medium",
+    "topic": "Control Flow",
+    "concept": "Defer, Panic, and Recover",
+    "questionFamily": "implementation",
+    "tags": [
+      "defer",
+      "panic",
+      "recover",
+      "LIFO",
+      "cleanup"
+    ],
+    "idealAnswer": "defer schedules a function call to run immediately before the enclosing function returns, executed in Last-In-First-Out (LIFO) order. panic halts normal execution and unwinds the stack. recover captures a panicking goroutine inside a deferred function to restore normal flow.",
+    "ideal_answer": "defer schedules a function call to run immediately before the enclosing function returns, executed in Last-In-First-Out (LIFO) order. panic halts normal execution and unwinds the stack. recover captures a panicking goroutine inside a deferred function to restore normal flow.",
+    "expected_concepts": [
+      "defer",
+      "panic",
+      "recover",
+      "LIFO"
+    ],
+    "explanation": "Evaluates Go Control Flow and Defer, Panic, and Recover comprehension."
+  },
+  {
+    "id": "go_008",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the role of sync.Mutex, sync.RWMutex, and sync.WaitGroup in Go concurrent programming?",
+    "difficulty": "medium",
+    "topic": "Concurrency",
+    "concept": "Sync Primitives",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "sync.Mutex",
+      "sync.RWMutex",
+      "sync.WaitGroup",
+      "race condition"
+    ],
+    "idealAnswer": "sync.Mutex provides mutual exclusion to prevent data races. sync.RWMutex allows concurrent reads while granting exclusive access to writers. sync.WaitGroup blocks execution until a collection of goroutines call Done().",
+    "ideal_answer": "sync.Mutex provides mutual exclusion to prevent data races. sync.RWMutex allows concurrent reads while granting exclusive access to writers. sync.WaitGroup blocks execution until a collection of goroutines call Done().",
+    "expected_concepts": [
+      "sync.Mutex",
+      "sync.RWMutex",
+      "sync.WaitGroup",
+      "race condition"
+    ],
+    "explanation": "Evaluates Go Concurrency and Sync Primitives comprehension."
+  },
+  {
+    "id": "go_009",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain how memory allocation (Escape Analysis) decides whether a variable in Go is allocated on the stack or heap.",
+    "difficulty": "hard",
+    "topic": "Memory Management",
+    "concept": "Escape Analysis",
+    "questionFamily": "optimization",
+    "tags": [
+      "escape analysis",
+      "stack",
+      "heap",
+      "pointers",
+      "gc overhead"
+    ],
+    "idealAnswer": "The Go compiler uses escape analysis at compile-time. If the compiler can prove a variable's lifetime does not outlive its enclosing function scope, it allocates it on the fast stack. If a pointer escapes (e.g. returned from function), it is allocated on the heap.",
+    "ideal_answer": "The Go compiler uses escape analysis at compile-time. If the compiler can prove a variable's lifetime does not outlive its enclosing function scope, it allocates it on the fast stack. If a pointer escapes (e.g. returned from function), it is allocated on the heap.",
+    "expected_concepts": [
+      "escape analysis",
+      "stack",
+      "heap",
+      "pointers"
+    ],
+    "explanation": "Evaluates Go Memory Management and Escape Analysis comprehension."
+  },
+  {
+    "id": "go_010",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Go's Garbage Collector work (Concurrent Tri-color Mark and Sweep), and how does it achieve low latency?",
+    "difficulty": "hard",
+    "topic": "Runtime & GC",
+    "concept": "Tri-Color Mark & Sweep GC",
+    "questionFamily": "architecture",
+    "tags": [
+      "garbage collector",
+      "tri-color",
+      "mark and sweep",
+      "STW",
+      "write barrier"
+    ],
+    "idealAnswer": "Go uses a concurrent, tri-color mark-and-sweep garbage collector. Objects are colored white (unvisited), grey (visited, children pending), or black (visited, children scanned). By utilizing concurrent write barriers, Go reduces Stop-The-World (STW) pauses to sub-millisecond durations.",
+    "ideal_answer": "Go uses a concurrent, tri-color mark-and-sweep garbage collector. Objects are colored white (unvisited), grey (visited, children pending), or black (visited, children scanned). By utilizing concurrent write barriers, Go reduces Stop-The-World (STW) pauses to sub-millisecond durations.",
+    "expected_concepts": [
+      "garbage collector",
+      "tri-color",
+      "mark and sweep",
+      "STW"
+    ],
+    "explanation": "Evaluates Go Runtime & GC and Tri-Color Mark & Sweep GC comprehension."
+  },
+  {
+    "id": "go_011",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the 'context' package in Go, and how is it used for cancellation, deadlines, and request-scoped values?",
+    "difficulty": "medium",
+    "topic": "Standard Library",
+    "concept": "Context Package",
+    "questionFamily": "best_practice",
+    "tags": [
+      "context",
+      "WithCancel",
+      "WithTimeout",
+      "cancellation",
+      "request context"
+    ],
+    "idealAnswer": "The context package propagates cancellation signals, timeouts, deadlines, and request-scoped metadata across API boundaries and goroutine trees, ensuring child goroutines terminate when a parent request finishes or times out.",
+    "ideal_answer": "The context package propagates cancellation signals, timeouts, deadlines, and request-scoped metadata across API boundaries and goroutine trees, ensuring child goroutines terminate when a parent request finishes or times out.",
+    "expected_concepts": [
+      "context",
+      "WithCancel",
+      "WithTimeout",
+      "cancellation"
+    ],
+    "explanation": "Evaluates Go Standard Library and Context Package comprehension."
+  },
+  {
+    "id": "go_012",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Go Modules (go.mod, go.sum), dependency versioning, and minimal version selection (MVS).",
+    "difficulty": "easy",
+    "topic": "Package Management",
+    "concept": "Go Modules & Dependency Management",
+    "questionFamily": "architecture",
+    "tags": [
+      "go.mod",
+      "go.sum",
+      "semantic versioning",
+      "MVS",
+      "dependency"
+    ],
+    "idealAnswer": "Go Modules manage project dependencies and semantic versions via go.mod and checksums in go.sum. Go uses Minimal Version Selection (MVS) to select the oldest sufficient version satisfying all dependency requirements, ensuring deterministic builds.",
+    "ideal_answer": "Go Modules manage project dependencies and semantic versions via go.mod and checksums in go.sum. Go uses Minimal Version Selection (MVS) to select the oldest sufficient version satisfying all dependency requirements, ensuring deterministic builds.",
+    "expected_concepts": [
+      "go.mod",
+      "go.sum",
+      "semantic versioning",
+      "MVS"
+    ],
+    "explanation": "Evaluates Go Package Management and Go Modules & Dependency Management comprehension."
+  },
+  {
+    "id": "go_013",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Generics in Go 1.18+, and how are type parameters and constraints (any, comparable) used?",
+    "difficulty": "medium",
+    "topic": "Generics",
+    "concept": "Type Parameters & Constraints",
+    "questionFamily": "implementation",
+    "tags": [
+      "generics",
+      "type parameters",
+      "constraints",
+      "comparable",
+      "any"
+    ],
+    "idealAnswer": "Introduced in Go 1.18, generics allow writing functions and data structures with type parameters (e.g. [T any]). Constraints restrict allowed types, with built-in constraints like 'any' (all types) and 'comparable' (types supporting == and !=).",
+    "ideal_answer": "Introduced in Go 1.18, generics allow writing functions and data structures with type parameters (e.g. [T any]). Constraints restrict allowed types, with built-in constraints like 'any' (all types) and 'comparable' (types supporting == and !=).",
+    "expected_concepts": [
+      "generics",
+      "type parameters",
+      "constraints",
+      "comparable"
+    ],
+    "explanation": "Evaluates Go Generics and Type Parameters & Constraints comprehension."
+  },
+  {
+    "id": "go_014",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do maps work internally in Go, and why are they not safe for concurrent read/write operations without locking?",
+    "difficulty": "medium",
+    "topic": "Data Structures",
+    "concept": "Map Internals & Thread Safety",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "map",
+      "hmap",
+      "bmap",
+      "hash collision",
+      "data race",
+      "sync.Map"
+    ],
+    "idealAnswer": "Go maps are implemented as hash tables with buckets (bmap). Go maps do not synchronize concurrent access: concurrent reading and writing causes a runtime panic. Concurrent safety requires sync.RWMutex or sync.Map.",
+    "ideal_answer": "Go maps are implemented as hash tables with buckets (bmap). Go maps do not synchronize concurrent access: concurrent reading and writing causes a runtime panic. Concurrent safety requires sync.RWMutex or sync.Map.",
+    "expected_concepts": [
+      "map",
+      "hmap",
+      "bmap",
+      "hash collision"
+    ],
+    "explanation": "Evaluates Go Data Structures and Map Internals & Thread Safety comprehension."
+  },
+  {
+    "id": "go_015",
+    "skill": "Go",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Go's built-in testing framework and benchmark tools (testing.T, testing.B, table-driven tests).",
+    "difficulty": "easy",
+    "topic": "Testing",
+    "concept": "Testing & Benchmarking",
+    "questionFamily": "best_practice",
+    "tags": [
+      "testing",
+      "benchmark",
+      "table-driven tests",
+      "testing.T",
+      "testing.B"
+    ],
+    "idealAnswer": "Go provides native testing via the 'testing' package without third-party runners. Table-driven tests iterate over test cases in a slice of structs, while benchmarks (testing.B with b.N loop) measure execution performance and memory allocations.",
+    "ideal_answer": "Go provides native testing via the 'testing' package without third-party runners. Table-driven tests iterate over test cases in a slice of structs, while benchmarks (testing.B with b.N loop) measure execution performance and memory allocations.",
+    "expected_concepts": [
+      "testing",
+      "benchmark",
+      "table-driven tests",
+      "testing.T"
+    ],
+    "explanation": "Evaluates Go Testing and Testing & Benchmarking comprehension."
+  }
+]

@@ -1,0 +1,423 @@
+[
+  {
+    "id": "linux_001",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Linux Filesystem Hierarchy Standard (FHS): /, /bin, /etc, /var, /proc, /sys, /dev, /home, and /tmp.",
+    "difficulty": "easy",
+    "topic": "Filesystem Structure",
+    "concept": "Linux Filesystem Hierarchy (FHS)",
+    "questionFamily": "architecture",
+    "tags": [
+      "FHS",
+      "/etc",
+      "/var",
+      "/proc",
+      "/sys",
+      "/dev",
+      "virtual filesystems"
+    ],
+    "idealAnswer": "FHS standardizes directory purposes: /bin (essential binaries), /etc (system-wide configuration files), /var (variable data like logs and databases), /proc & /sys (virtual filesystems exposing kernel and hardware state), /dev (device nodes), /tmp (temporary files).",
+    "ideal_answer": "FHS standardizes directory purposes: /bin (essential binaries), /etc (system-wide configuration files), /var (variable data like logs and databases), /proc & /sys (virtual filesystems exposing kernel and hardware state), /dev (device nodes), /tmp (temporary files).",
+    "expected_concepts": [
+      "FHS",
+      "/etc",
+      "/var",
+      "/proc"
+    ],
+    "explanation": "Evaluates Linux Filesystem Structure and Linux Filesystem Hierarchy (FHS) comprehension."
+  },
+  {
+    "id": "linux_002",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Linux File Permissions: Read (r=4), Write (w=2), Execute (x=1) for User, Group, Others, and chmod / chown commands.",
+    "difficulty": "easy",
+    "topic": "Permissions & Security",
+    "concept": "Linux Permissions & Octal Notation",
+    "questionFamily": "implementation",
+    "tags": [
+      "chmod",
+      "chown",
+      "permissions",
+      "octal notation",
+      "rwx",
+      "umask"
+    ],
+    "idealAnswer": "Permissions are represented as 9 bits (rwxrwxrwx) in octal: r=4, w=2, x=1. 'chmod 755 file' grants rwx to owner (7), rx to group (5), and rx to others (5). 'chown user:group file' reassigns file ownership. umask determines default permissions on creation.",
+    "ideal_answer": "Permissions are represented as 9 bits (rwxrwxrwx) in octal: r=4, w=2, x=1. 'chmod 755 file' grants rwx to owner (7), rx to group (5), and rx to others (5). 'chown user:group file' reassigns file ownership. umask determines default permissions on creation.",
+    "expected_concepts": [
+      "chmod",
+      "chown",
+      "permissions",
+      "octal notation"
+    ],
+    "explanation": "Evaluates Linux Permissions & Security and Linux Permissions & Octal Notation comprehension."
+  },
+  {
+    "id": "linux_003",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Special Permissions in Linux: SUID (Setuid), SGID (Setgid), and Sticky Bit (e.g. /tmp directory)?",
+    "difficulty": "medium",
+    "topic": "Permissions & Security",
+    "concept": "SUID, SGID, and Sticky Bit",
+    "questionFamily": "security",
+    "tags": [
+      "SUID",
+      "SGID",
+      "sticky bit",
+      "chmod +s",
+      "chmod +t",
+      "/tmp"
+    ],
+    "idealAnswer": "SUID (4000) executes the file with the permissions of the file owner (e.g. /usr/bin/passwd). SGID (2000) executes with group permissions or inherits parent group in directories. Sticky Bit (1000, +t on /tmp) allows only file owners or root to delete/rename files in a shared directory.",
+    "ideal_answer": "SUID (4000) executes the file with the permissions of the file owner (e.g. /usr/bin/passwd). SGID (2000) executes with group permissions or inherits parent group in directories. Sticky Bit (1000, +t on /tmp) allows only file owners or root to delete/rename files in a shared directory.",
+    "expected_concepts": [
+      "SUID",
+      "SGID",
+      "sticky bit",
+      "chmod +s"
+    ],
+    "explanation": "Evaluates Linux Permissions & Security and SUID, SGID, and Sticky Bit comprehension."
+  },
+  {
+    "id": "linux_004",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Linux Process Management: ps, top, htop, kill, pkill, process states (R, S, D, Z, T), and Zombie vs Orphan processes.",
+    "difficulty": "medium",
+    "topic": "Process Management",
+    "concept": "Process Lifecycle, States, & Zombies",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "ps",
+      "top",
+      "kill",
+      "zombie process",
+      "orphan process",
+      "D-state uninterruptible"
+    ],
+    "idealAnswer": "Processes have states: Running (R), Interruptible Sleep (S), Uninterruptible Sleep (D - waiting on I/O), Zombie (Z - terminated but exit code not reaped by parent), Stopped (T). Orphan processes whose parent dies are reparented to PID 1 (systemd/init).",
+    "ideal_answer": "Processes have states: Running (R), Interruptible Sleep (S), Uninterruptible Sleep (D - waiting on I/O), Zombie (Z - terminated but exit code not reaped by parent), Stopped (T). Orphan processes whose parent dies are reparented to PID 1 (systemd/init).",
+    "expected_concepts": [
+      "ps",
+      "top",
+      "kill",
+      "zombie process"
+    ],
+    "explanation": "Evaluates Linux Process Management and Process Lifecycle, States, & Zombies comprehension."
+  },
+  {
+    "id": "linux_005",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Linux Signals (SIGTERM - 15, SIGKILL - 9, SIGHUP - 1, SIGINT - 2), and why cannot SIGKILL be caught or ignored?",
+    "difficulty": "medium",
+    "topic": "Process Signals",
+    "concept": "Linux Signals (SIGTERM vs SIGKILL)",
+    "questionFamily": "architecture",
+    "tags": [
+      "signals",
+      "SIGTERM",
+      "SIGKILL",
+      "SIGHUP",
+      "SIGINT",
+      "graceful termination"
+    ],
+    "idealAnswer": "Signals are asynchronous notifications sent to processes. SIGINT (Ctrl+C) requests interruption; SIGTERM (15) requests clean, graceful termination allowing cleanup handlers to run. SIGKILL (9) is handled directly by the kernel to terminate a process immediately, bypassing process code completely.",
+    "ideal_answer": "Signals are asynchronous notifications sent to processes. SIGINT (Ctrl+C) requests interruption; SIGTERM (15) requests clean, graceful termination allowing cleanup handlers to run. SIGKILL (9) is handled directly by the kernel to terminate a process immediately, bypassing process code completely.",
+    "expected_concepts": [
+      "signals",
+      "SIGTERM",
+      "SIGKILL",
+      "SIGHUP"
+    ],
+    "explanation": "Evaluates Linux Process Signals and Linux Signals (SIGTERM vs SIGKILL) comprehension."
+  },
+  {
+    "id": "linux_006",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Systemd and Systemctl: Services, Unit files (/etc/systemd/system/), Targets, journalctl, and daemon-reload.",
+    "difficulty": "easy",
+    "topic": "Init & Services",
+    "concept": "Systemd Architecture & Unit Files",
+    "questionFamily": "implementation",
+    "tags": [
+      "systemd",
+      "systemctl",
+      "unit file",
+      "journalctl",
+      "daemon-reload",
+      "service management"
+    ],
+    "idealAnswer": "systemd is the modern Linux init system and service manager (PID 1). Services are declared in unit files (.service) defining [Unit], [Service] (ExecStart, Restart=always), and [Install] sections. Controlled via 'systemctl start/enable' and logs inspected via 'journalctl -u service -f'.",
+    "ideal_answer": "systemd is the modern Linux init system and service manager (PID 1). Services are declared in unit files (.service) defining [Unit], [Service] (ExecStart, Restart=always), and [Install] sections. Controlled via 'systemctl start/enable' and logs inspected via 'journalctl -u service -f'.",
+    "expected_concepts": [
+      "systemd",
+      "systemctl",
+      "unit file",
+      "journalctl"
+    ],
+    "explanation": "Evaluates Linux Init & Services and Systemd Architecture & Unit Files comprehension."
+  },
+  {
+    "id": "linux_007",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Linux Memory Management work: Virtual Memory, Page Cache, Buffers, Swap, and interpreting 'free -m' output?",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Linux Memory, Page Cache, & Free Command",
+    "questionFamily": "optimization",
+    "tags": [
+      "free -m",
+      "page cache",
+      "buffers",
+      "swap",
+      "available memory",
+      "OOM killer"
+    ],
+    "idealAnswer": "Linux aggressively caches disk files in unused RAM as Page Cache/Buffers to accelerate read performance. Memory shown as 'used' is reclaimed instantly by kernel if applications request memory; the 'available' metric reflects true usable memory before swap.",
+    "ideal_answer": "Linux aggressively caches disk files in unused RAM as Page Cache/Buffers to accelerate read performance. Memory shown as 'used' is reclaimed instantly by kernel if applications request memory; the 'available' metric reflects true usable memory before swap.",
+    "expected_concepts": [
+      "free -m",
+      "page cache",
+      "buffers",
+      "swap"
+    ],
+    "explanation": "Evaluates Linux Memory Management and Linux Memory, Page Cache, & Free Command comprehension."
+  },
+  {
+    "id": "linux_008",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Linux Out-Of-Memory (OOM) Killer, how does oom_score_adj work, and how do you prevent critical database termination?",
+    "difficulty": "hard",
+    "topic": "Memory Management",
+    "concept": "Linux OOM Killer & oom_score_adj",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "OOM killer",
+      "oom_score",
+      "oom_score_adj",
+      "kernel panic",
+      "overcommit_memory"
+    ],
+    "idealAnswer": "When physical RAM and swap are exhausted, the kernel OOM Killer selects and terminates the highest badness-score process. Setting '/proc/<pid>/oom_score_adj' to -1000 prevents the kernel from ever terminating critical daemon processes (e.g. PostgreSQL, Redis).",
+    "ideal_answer": "When physical RAM and swap are exhausted, the kernel OOM Killer selects and terminates the highest badness-score process. Setting '/proc/<pid>/oom_score_adj' to -1000 prevents the kernel from ever terminating critical daemon processes (e.g. PostgreSQL, Redis).",
+    "expected_concepts": [
+      "OOM killer",
+      "oom_score",
+      "oom_score_adj",
+      "kernel panic"
+    ],
+    "explanation": "Evaluates Linux Memory Management and Linux OOM Killer & oom_score_adj comprehension."
+  },
+  {
+    "id": "linux_009",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Linux I/O Redirection and Piping: stdin (0), stdout (1), stderr (2), 2>&1, /dev/null, and tee command.",
+    "difficulty": "easy",
+    "topic": "Shell & I/O",
+    "concept": "I/O Redirection & File Descriptors",
+    "questionFamily": "implementation",
+    "tags": [
+      "stdin",
+      "stdout",
+      "stderr",
+      "2>&1",
+      "/dev/null",
+      "pipe |",
+      "tee"
+    ],
+    "idealAnswer": "File descriptors: 0=stdin, 1=stdout, 2=stderr. Redirection: '>' overwrites stdout; '>>' appends; '2>' redirects stderr; '2>&1' merges stderr into stdout; '>/dev/null 2>&1' discards all output. 'tee' writes to stdout and files simultaneously.",
+    "ideal_answer": "File descriptors: 0=stdin, 1=stdout, 2=stderr. Redirection: '>' overwrites stdout; '>>' appends; '2>' redirects stderr; '2>&1' merges stderr into stdout; '>/dev/null 2>&1' discards all output. 'tee' writes to stdout and files simultaneously.",
+    "expected_concepts": [
+      "stdin",
+      "stdout",
+      "stderr",
+      "2>&1"
+    ],
+    "explanation": "Evaluates Linux Shell & I/O and I/O Redirection & File Descriptors comprehension."
+  },
+  {
+    "id": "linux_010",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SSH (Secure Shell): Public-Key Authentication, ssh-keygen, authorized_keys, SSH Agent, and SSH Tunneling (Port Forwarding).",
+    "difficulty": "easy",
+    "topic": "Networking & Security",
+    "concept": "SSH Keys & Port Forwarding",
+    "questionFamily": "security",
+    "tags": [
+      "SSH",
+      "ssh-keygen",
+      "authorized_keys",
+      "public key auth",
+      "SSH tunneling",
+      "port forwarding"
+    ],
+    "idealAnswer": "SSH authenticates clients via asymmetric keys (client matches private key to public key in ~/.ssh/authorized_keys). SSH Tunneling creates encrypted tunnels: Local port forwarding ('ssh -L 8080:localhost:80') and Dynamic forwarding ('ssh -D 1080' SOCKS proxy).",
+    "ideal_answer": "SSH authenticates clients via asymmetric keys (client matches private key to public key in ~/.ssh/authorized_keys). SSH Tunneling creates encrypted tunnels: Local port forwarding ('ssh -L 8080:localhost:80') and Dynamic forwarding ('ssh -D 1080' SOCKS proxy).",
+    "expected_concepts": [
+      "SSH",
+      "ssh-keygen",
+      "authorized_keys",
+      "public key auth"
+    ],
+    "explanation": "Evaluates Linux Networking & Security and SSH Keys & Port Forwarding comprehension."
+  },
+  {
+    "id": "linux_011",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Linux Networking troubleshooting commands: ip, netstat / ss, lsof -i, ping, traceroute, dig / nslookup, and curl.",
+    "difficulty": "easy",
+    "topic": "Networking Tools",
+    "concept": "Linux Network Diagnostics Commands",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "ss",
+      "netstat",
+      "lsof -i",
+      "ip route",
+      "traceroute",
+      "dig",
+      "curl"
+    ],
+    "idealAnswer": "Diagnostics toolkit: 'ip addr' shows interfaces/IPs; 'ss -tulpn' lists listening TCP/UDP ports and owning PIDs; 'lsof -i :8080' identifies processes holding specific ports; 'traceroute' traces network hop latency; 'dig' queries DNS servers directly.",
+    "ideal_answer": "Diagnostics toolkit: 'ip addr' shows interfaces/IPs; 'ss -tulpn' lists listening TCP/UDP ports and owning PIDs; 'lsof -i :8080' identifies processes holding specific ports; 'traceroute' traces network hop latency; 'dig' queries DNS servers directly.",
+    "expected_concepts": [
+      "ss",
+      "netstat",
+      "lsof -i",
+      "ip route"
+    ],
+    "explanation": "Evaluates Linux Networking Tools and Linux Network Diagnostics Commands comprehension."
+  },
+  {
+    "id": "linux_012",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Hard Links vs Soft (Symbolic) Links in Linux in terms of inodes and cross-filesystem linking?",
+    "difficulty": "easy",
+    "topic": "Filesystems & Inodes",
+    "concept": "Hard Links vs Soft (Symbolic) Links",
+    "questionFamily": "comparison",
+    "tags": [
+      "hard link",
+      "symbolic link",
+      "symlink",
+      "inode",
+      "ln -s",
+      "cross-filesystem"
+    ],
+    "idealAnswer": "A Hard Link creates an additional directory entry pointing directly to the existing file's inode number (deleting original file preserves data; cannot link directories or span across filesystems). A Soft/Symlink ('ln -s') is a pointer file storing the target path (breaks if target moves).",
+    "ideal_answer": "A Hard Link creates an additional directory entry pointing directly to the existing file's inode number (deleting original file preserves data; cannot link directories or span across filesystems). A Soft/Symlink ('ln -s') is a pointer file storing the target path (breaks if target moves).",
+    "expected_concepts": [
+      "hard link",
+      "symbolic link",
+      "symlink",
+      "inode"
+    ],
+    "explanation": "Evaluates Linux Filesystems & Inodes and Hard Links vs Soft (Symbolic) Links comprehension."
+  },
+  {
+    "id": "linux_013",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cron Jobs and Anacron: Crontab syntax (minute, hour, day, month, day-of-week) and environment gotchas.",
+    "difficulty": "easy",
+    "topic": "Automation & Scheduling",
+    "concept": "Crontab Syntax & Environment Gotchas",
+    "questionFamily": "implementation",
+    "tags": [
+      "cron",
+      "crontab",
+      "anacron",
+      "schedule",
+      "PATH gotcha"
+    ],
+    "idealAnswer": "Cron schedules periodic background jobs: '* * * * * command' (minute 0-59, hour 0-23, day-of-month 1-31, month 1-12, day-of-week 0-6). A common gotcha is that cron runs with a minimal restricted PATH, requiring absolute paths for all commands and scripts.",
+    "ideal_answer": "Cron schedules periodic background jobs: '* * * * * command' (minute 0-59, hour 0-23, day-of-month 1-31, month 1-12, day-of-week 0-6). A common gotcha is that cron runs with a minimal restricted PATH, requiring absolute paths for all commands and scripts.",
+    "expected_concepts": [
+      "cron",
+      "crontab",
+      "anacron",
+      "schedule"
+    ],
+    "explanation": "Evaluates Linux Automation & Scheduling and Crontab Syntax & Environment Gotchas comprehension."
+  },
+  {
+    "id": "linux_014",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you diagnose CPU and Disk I/O bottlenecks in Linux using iostat, vmstat, mpstat, sar, and strace?",
+    "difficulty": "hard",
+    "topic": "Performance Tuning",
+    "concept": "Linux Performance Diagnostics (iostat, vmstat, strace)",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "iostat",
+      "vmstat",
+      "%iowait",
+      "strace",
+      "sar",
+      "disk bottleneck"
+    ],
+    "idealAnswer": "Diagnosing performance: 'vmstat 1' shows run queue and memory; 'iostat -xz 1' displays disk utilization (%util) and service times; high %iowait indicates CPU idling waiting for disk I/O; 'strace -p <pid>' traces live system calls and execution latency.",
+    "ideal_answer": "Diagnosing performance: 'vmstat 1' shows run queue and memory; 'iostat -xz 1' displays disk utilization (%util) and service times; high %iowait indicates CPU idling waiting for disk I/O; 'strace -p <pid>' traces live system calls and execution latency.",
+    "expected_concepts": [
+      "iostat",
+      "vmstat",
+      "%iowait",
+      "strace"
+    ],
+    "explanation": "Evaluates Linux Performance Tuning and Linux Performance Diagnostics (iostat, vmstat, strace) comprehension."
+  },
+  {
+    "id": "linux_015",
+    "skill": "Linux",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Linux Firewalls: iptables (Chains: INPUT, OUTPUT, FORWARD; Tables: filter, nat) vs UFW vs Firewalld vs nftables.",
+    "difficulty": "medium",
+    "topic": "Security & Firewalls",
+    "concept": "iptables & nftables Architecture",
+    "questionFamily": "security",
+    "tags": [
+      "iptables",
+      "nftables",
+      "UFW",
+      "firewalld",
+      "packet filtering",
+      "NAT"
+    ],
+    "idealAnswer": "Netfilter is the kernel packet filtering framework. iptables organizes rules into Tables (filter, nat, mangle) and Chains (INPUT, OUTPUT, FORWARD, PREROUTING). Modern distros use 'nftables' as the high-performance unified replacement, with UFW and firewalld providing simplified user-friendly CLI interfaces.",
+    "ideal_answer": "Netfilter is the kernel packet filtering framework. iptables organizes rules into Tables (filter, nat, mangle) and Chains (INPUT, OUTPUT, FORWARD, PREROUTING). Modern distros use 'nftables' as the high-performance unified replacement, with UFW and firewalld providing simplified user-friendly CLI interfaces.",
+    "expected_concepts": [
+      "iptables",
+      "nftables",
+      "UFW",
+      "firewalld"
+    ],
+    "explanation": "Evaluates Linux Security & Firewalls and iptables & nftables Architecture comprehension."
+  }
+]

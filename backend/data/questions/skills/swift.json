@@ -1,0 +1,401 @@
+[
+  {
+    "id": "swift_001",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the fundamental differences between Structures (struct) and Classes (class) in Swift (Value vs Reference types).",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "Struct vs Class",
+    "questionFamily": "comparison",
+    "tags": [
+      "struct",
+      "class",
+      "value type",
+      "reference type",
+      "stack vs heap"
+    ],
+    "idealAnswer": "Structs are value types copied upon assignment and stored on the stack (no inheritance, thread-safe by default). Classes are reference types where multiple variables share the same heap-allocated instance, supporting inheritance and deinitializers.",
+    "ideal_answer": "Structs are value types copied upon assignment and stored on the stack (no inheritance, thread-safe by default). Classes are reference types where multiple variables share the same heap-allocated instance, supporting inheritance and deinitializers.",
+    "expected_concepts": [
+      "struct",
+      "class",
+      "value type",
+      "reference type"
+    ],
+    "explanation": "Evaluates Swift Core Concepts and Struct vs Class comprehension."
+  },
+  {
+    "id": "swift_002",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Automatic Reference Counting (ARC) in Swift, and how do strong, weak, and unowned references prevent retain cycles?",
+    "difficulty": "hard",
+    "topic": "Memory Management",
+    "concept": "ARC & Retain Cycles",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "ARC",
+      "retain cycle",
+      "weak",
+      "unowned",
+      "memory leak"
+    ],
+    "idealAnswer": "ARC tracks reference counts for class instances. Strong references increment count. A retain cycle occurs when two objects hold strong references to each other. 'weak' (optional, automatically set to nil on deallocation) and 'unowned' (non-optional, assumes instance never deallocates) break cycles.",
+    "ideal_answer": "ARC tracks reference counts for class instances. Strong references increment count. A retain cycle occurs when two objects hold strong references to each other. 'weak' (optional, automatically set to nil on deallocation) and 'unowned' (non-optional, assumes instance never deallocates) break cycles.",
+    "expected_concepts": [
+      "ARC",
+      "retain cycle",
+      "weak",
+      "unowned"
+    ],
+    "explanation": "Evaluates Swift Memory Management and ARC & Retain Cycles comprehension."
+  },
+  {
+    "id": "swift_003",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Optionals in Swift and the safe ways to unwrap them (optional binding with if let/guard let, nil coalescing, optional chaining).",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "Optionals & Unwrapping",
+    "questionFamily": "best_practice",
+    "tags": [
+      "optionals",
+      "if let",
+      "guard let",
+      "nil coalescing",
+      "optional chaining"
+    ],
+    "idealAnswer": "Optionals represent a value or nil using an enum (Some/None). Safe unwrapping techniques: 'if let' creates a scoped bound variable; 'guard let' early-exits on nil; nil coalescing (??) provides fallback values; optional chaining (?.) halts query on nil.",
+    "ideal_answer": "Optionals represent a value or nil using an enum (Some/None). Safe unwrapping techniques: 'if let' creates a scoped bound variable; 'guard let' early-exits on nil; nil coalescing (??) provides fallback values; optional chaining (?.) halts query on nil.",
+    "expected_concepts": [
+      "optionals",
+      "if let",
+      "guard let",
+      "nil coalescing"
+    ],
+    "explanation": "Evaluates Swift Core Concepts and Optionals & Unwrapping comprehension."
+  },
+  {
+    "id": "swift_004",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Closures in Swift, and how do capture lists ([weak self]) prevent memory leaks in closures?",
+    "difficulty": "medium",
+    "topic": "Closures & Memory",
+    "concept": "Closures & Capture Lists",
+    "questionFamily": "implementation",
+    "tags": [
+      "closures",
+      "capture list",
+      "weak self",
+      "escaping closure"
+    ],
+    "idealAnswer": "Closures are self-contained callable blocks that capture constants and variables from their surrounding context. In asynchronous or escaping closures, using capture lists ([weak self] or [unowned self]) prevents strong reference cycles with the enclosing class instance.",
+    "ideal_answer": "Closures are self-contained callable blocks that capture constants and variables from their surrounding context. In asynchronous or escaping closures, using capture lists ([weak self] or [unowned self]) prevents strong reference cycles with the enclosing class instance.",
+    "expected_concepts": [
+      "closures",
+      "capture list",
+      "weak self",
+      "escaping closure"
+    ],
+    "explanation": "Evaluates Swift Closures & Memory and Closures & Capture Lists comprehension."
+  },
+  {
+    "id": "swift_005",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Protocol-Oriented Programming (POP) in Swift and how protocol extensions provide default implementations.",
+    "difficulty": "medium",
+    "topic": "OOP & Protocols",
+    "concept": "Protocol-Oriented Programming",
+    "questionFamily": "architecture",
+    "tags": [
+      "protocols",
+      "POP",
+      "protocol extensions",
+      "composition"
+    ],
+    "idealAnswer": "Protocol-Oriented Programming favors composition over class inheritance. Protocols define method and property contracts that structs, enums, or classes can conform to. Protocol extensions allow providing default method implementations without base classes.",
+    "ideal_answer": "Protocol-Oriented Programming favors composition over class inheritance. Protocols define method and property contracts that structs, enums, or classes can conform to. Protocol extensions allow providing default method implementations without base classes.",
+    "expected_concepts": [
+      "protocols",
+      "POP",
+      "protocol extensions",
+      "composition"
+    ],
+    "explanation": "Evaluates Swift OOP & Protocols and Protocol-Oriented Programming comprehension."
+  },
+  {
+    "id": "swift_006",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Generics in Swift, and how do Type Constraints and Associated Types (associatedtype) work in protocols?",
+    "difficulty": "hard",
+    "topic": "Generics",
+    "concept": "Generics & Associated Types",
+    "questionFamily": "implementation",
+    "tags": [
+      "generics",
+      "associatedtype",
+      "type constraints",
+      "where clause"
+    ],
+    "idealAnswer": "Generics enable writing type-safe reusable functions and data structures. In protocols, 'associatedtype' declares a placeholder type resolved by conforming types, with constraints specified using 'where' clauses.",
+    "ideal_answer": "Generics enable writing type-safe reusable functions and data structures. In protocols, 'associatedtype' declares a placeholder type resolved by conforming types, with constraints specified using 'where' clauses.",
+    "expected_concepts": [
+      "generics",
+      "associatedtype",
+      "type constraints",
+      "where clause"
+    ],
+    "explanation": "Evaluates Swift Generics and Generics & Associated Types comprehension."
+  },
+  {
+    "id": "swift_007",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Swift modern concurrency: async/await, Task, TaskGroup, and Actors.",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "Swift Modern Concurrency",
+    "questionFamily": "architecture",
+    "tags": [
+      "async/await",
+      "actors",
+      "Task",
+      "TaskGroup",
+      "data race"
+    ],
+    "idealAnswer": "Swift concurrency uses async/await for asynchronous control flow. Tasks and TaskGroups manage concurrent units of work. Actors protect mutable state by isolating properties and allowing only one task to access state at a time, eliminating data races at compile time.",
+    "ideal_answer": "Swift concurrency uses async/await for asynchronous control flow. Tasks and TaskGroups manage concurrent units of work. Actors protect mutable state by isolating properties and allowing only one task to access state at a time, eliminating data races at compile time.",
+    "expected_concepts": [
+      "async/await",
+      "actors",
+      "Task",
+      "TaskGroup"
+    ],
+    "explanation": "Evaluates Swift Concurrency and Swift Modern Concurrency comprehension."
+  },
+  {
+    "id": "swift_008",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between synchronous dispatch, asynchronous dispatch, and the MainActor in Grand Central Dispatch (GCD) / modern concurrency?",
+    "difficulty": "medium",
+    "topic": "Concurrency",
+    "concept": "DispatchQueue & MainActor",
+    "questionFamily": "comparison",
+    "tags": [
+      "GCD",
+      "DispatchQueue",
+      "MainActor",
+      "UI thread",
+      "sync vs async"
+    ],
+    "idealAnswer": "GCD manages queues of work. Main queue/MainActor runs exclusively on the main UI thread (required for UI updates). Background queues handle heavy computational or network I/O. Sync blocks until task completion; async returns immediately.",
+    "ideal_answer": "GCD manages queues of work. Main queue/MainActor runs exclusively on the main UI thread (required for UI updates). Background queues handle heavy computational or network I/O. Sync blocks until task completion; async returns immediately.",
+    "expected_concepts": [
+      "GCD",
+      "DispatchQueue",
+      "MainActor",
+      "UI thread"
+    ],
+    "explanation": "Evaluates Swift Concurrency and DispatchQueue & MainActor comprehension."
+  },
+  {
+    "id": "swift_009",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Property Wrappers in Swift (@State, @Binding, @Published, custom property wrappers).",
+    "difficulty": "medium",
+    "topic": "Modern Swift",
+    "concept": "Property Wrappers",
+    "questionFamily": "implementation",
+    "tags": [
+      "property wrapper",
+      "@State",
+      "@Binding",
+      "@Published",
+      "SwiftUI"
+    ],
+    "idealAnswer": "Property wrappers define a custom wrapper layer around property storage and access via a struct/class defining 'wrappedValue'. Widely used in SwiftUI (@State, @Binding) and Combine (@Published) to manage reactive state.",
+    "ideal_answer": "Property wrappers define a custom wrapper layer around property storage and access via a struct/class defining 'wrappedValue'. Widely used in SwiftUI (@State, @Binding) and Combine (@Published) to manage reactive state.",
+    "expected_concepts": [
+      "property wrapper",
+      "@State",
+      "@Binding",
+      "@Published"
+    ],
+    "explanation": "Evaluates Swift Modern Swift and Property Wrappers comprehension."
+  },
+  {
+    "id": "swift_010",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Copy-on-Write (CoW) in Swift, and how does it optimize memory usage for collection value types?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Copy-on-Write Optimization",
+    "questionFamily": "optimization",
+    "tags": [
+      "copy-on-write",
+      "CoW",
+      "Array",
+      "Dictionary",
+      "isKnownUniquelyReferenced"
+    ],
+    "idealAnswer": "Swift collections (Array, Dictionary, Set) are value types that share the same underlying storage buffer upon assignment or copying. The underlying buffer is only physically duplicated when one of the copies modifies its content, saving memory and allocation time.",
+    "ideal_answer": "Swift collections (Array, Dictionary, Set) are value types that share the same underlying storage buffer upon assignment or copying. The underlying buffer is only physically duplicated when one of the copies modifies its content, saving memory and allocation time.",
+    "expected_concepts": [
+      "copy-on-write",
+      "CoW",
+      "Array",
+      "Dictionary"
+    ],
+    "explanation": "Evaluates Swift Performance and Copy-on-Write Optimization comprehension."
+  },
+  {
+    "id": "swift_011",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Enums with Associated Values and Raw Values in Swift, and how do they support pattern matching?",
+    "difficulty": "easy",
+    "topic": "Data Types",
+    "concept": "Enums & Associated Values",
+    "questionFamily": "definition",
+    "tags": [
+      "enums",
+      "associated values",
+      "raw values",
+      "pattern matching"
+    ],
+    "idealAnswer": "Swift enums can have raw values (predefined types like String, Int) or associated values (different custom types attached to each case). They enable powerful domain modeling and pattern matching with switch statements.",
+    "ideal_answer": "Swift enums can have raw values (predefined types like String, Int) or associated values (different custom types attached to each case). They enable powerful domain modeling and pattern matching with switch statements.",
+    "expected_concepts": [
+      "enums",
+      "associated values",
+      "raw values",
+      "pattern matching"
+    ],
+    "explanation": "Evaluates Swift Data Types and Enums & Associated Values comprehension."
+  },
+  {
+    "id": "swift_012",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Error Handling in Swift: Error protocol, throws, do-catch, try?, and try!.",
+    "difficulty": "easy",
+    "topic": "Error Handling",
+    "concept": "Swift Error Handling",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Error protocol",
+      "throws",
+      "do-catch",
+      "try?",
+      "try!"
+    ],
+    "idealAnswer": "Errors conform to the Error protocol and are thrown via 'throw'. Functions mark fallibility with 'throws'. Callers handle errors with do-catch blocks; 'try?' converts errors to nil Optionals; 'try!' asserts success and crashes on error.",
+    "ideal_answer": "Errors conform to the Error protocol and are thrown via 'throw'. Functions mark fallibility with 'throws'. Callers handle errors with do-catch blocks; 'try?' converts errors to nil Optionals; 'try!' asserts success and crashes on error.",
+    "expected_concepts": [
+      "Error protocol",
+      "throws",
+      "do-catch",
+      "try?"
+    ],
+    "explanation": "Evaluates Swift Error Handling and Swift Error Handling comprehension."
+  },
+  {
+    "id": "swift_013",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between frame and bounds in UIKit / SwiftUI view geometry?",
+    "difficulty": "medium",
+    "topic": "UI & Geometry",
+    "concept": "Frame vs Bounds",
+    "questionFamily": "comparison",
+    "tags": [
+      "frame",
+      "bounds",
+      "UIKit",
+      "view coordinate system"
+    ],
+    "idealAnswer": "A view's 'frame' describes its size and position in the coordinate system of its parent superview. A view's 'bounds' describes its size and origin in its own internal coordinate system (usually origin (0, 0)).",
+    "ideal_answer": "A view's 'frame' describes its size and position in the coordinate system of its parent superview. A view's 'bounds' describes its size and origin in its own internal coordinate system (usually origin (0, 0)).",
+    "expected_concepts": [
+      "frame",
+      "bounds",
+      "UIKit",
+      "view coordinate system"
+    ],
+    "explanation": "Evaluates Swift UI & Geometry and Frame vs Bounds comprehension."
+  },
+  {
+    "id": "swift_014",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain KeyPaths in Swift and how they provide type-safe dynamic property access.",
+    "difficulty": "medium",
+    "topic": "Language Features",
+    "concept": "KeyPaths",
+    "questionFamily": "implementation",
+    "tags": [
+      "KeyPath",
+      "WritableKeyPath",
+      "type-safety",
+      "dynamic access"
+    ],
+    "idealAnswer": "KeyPaths (e.g. \\Person.name) are type-safe references to properties rather than values. They enable referencing, reading, and writing object properties dynamically without string-based reflection.",
+    "ideal_answer": "KeyPaths (e.g. \\Person.name) are type-safe references to properties rather than values. They enable referencing, reading, and writing object properties dynamically without string-based reflection.",
+    "expected_concepts": [
+      "KeyPath",
+      "WritableKeyPath",
+      "type-safety",
+      "dynamic access"
+    ],
+    "explanation": "Evaluates Swift Language Features and KeyPaths comprehension."
+  },
+  {
+    "id": "swift_015",
+    "skill": "Swift",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Swift Package Manager (SPM) and how does Package.swift declare targets, dependencies, and products?",
+    "difficulty": "easy",
+    "topic": "Tooling & Ecosystem",
+    "concept": "Swift Package Manager",
+    "questionFamily": "architecture",
+    "tags": [
+      "SPM",
+      "Package.swift",
+      "dependencies",
+      "targets",
+      "products"
+    ],
+    "idealAnswer": "SPM is Apple's native build tool and dependency manager. Package.swift declares package metadata, external Git repository dependencies, build targets, and exposed products (libraries or executables).",
+    "ideal_answer": "SPM is Apple's native build tool and dependency manager. Package.swift declares package metadata, external Git repository dependencies, build targets, and exposed products (libraries or executables).",
+    "expected_concepts": [
+      "SPM",
+      "Package.swift",
+      "dependencies",
+      "targets"
+    ],
+    "explanation": "Evaluates Swift Tooling & Ecosystem and Swift Package Manager comprehension."
+  }
+]

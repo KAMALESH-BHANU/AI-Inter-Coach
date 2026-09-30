@@ -1,0 +1,404 @@
+[
+  {
+    "id": "ruby_001",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the 'everything is an object' philosophy in Ruby and how methods can be invoked on primitive types.",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "Object Model",
+    "questionFamily": "definition",
+    "tags": [
+      "OOP",
+      "object model",
+      "primitives",
+      "methods"
+    ],
+    "idealAnswer": "In Ruby, every value—including numbers, booleans, and nil—is an instance of an Object class inheriting from BasicObject. Primitives have methods (e.g. 5.times, 'hello'.upcase) without distinct wrapper classes.",
+    "ideal_answer": "In Ruby, every value—including numbers, booleans, and nil—is an instance of an Object class inheriting from BasicObject. Primitives have methods (e.g. 5.times, 'hello'.upcase) without distinct wrapper classes.",
+    "expected_concepts": [
+      "OOP",
+      "object model",
+      "primitives",
+      "methods"
+    ],
+    "explanation": "Evaluates Ruby Core Concepts and Object Model comprehension."
+  },
+  {
+    "id": "ruby_002",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Symbols in Ruby, and how do they differ from Strings in terms of memory allocation and immutability?",
+    "difficulty": "easy",
+    "topic": "Data Types",
+    "concept": "Symbols vs Strings",
+    "questionFamily": "comparison",
+    "tags": [
+      "symbols",
+      "strings",
+      "object_id",
+      "immutability",
+      "memory"
+    ],
+    "idealAnswer": "Strings are mutable text representations allocated anew each time. Symbols (:symbol) are immutable, unique identifiers stored in an internal symbol table; identical symbol names always share the same object_id, saving memory in hash keys.",
+    "ideal_answer": "Strings are mutable text representations allocated anew each time. Symbols (:symbol) are immutable, unique identifiers stored in an internal symbol table; identical symbol names always share the same object_id, saving memory in hash keys.",
+    "expected_concepts": [
+      "symbols",
+      "strings",
+      "object_id",
+      "immutability"
+    ],
+    "explanation": "Evaluates Ruby Data Types and Symbols vs Strings comprehension."
+  },
+  {
+    "id": "ruby_003",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Blocks, Procs, and Lambdas in Ruby and the differences between Proc and Lambda regarding argument count and 'return'.",
+    "difficulty": "medium",
+    "topic": "Closures",
+    "concept": "Blocks, Procs, & Lambdas",
+    "questionFamily": "comparison",
+    "tags": [
+      "blocks",
+      "procs",
+      "lambdas",
+      "yield",
+      "arity",
+      "return behavior"
+    ],
+    "idealAnswer": "A block is syntactic chunk of code passed to methods and invoked with 'yield'. Procs are objects holding blocks that don't check argument count (arity) and return from the outer enclosing method. Lambdas check exact arity and return strictly from the lambda itself.",
+    "ideal_answer": "A block is syntactic chunk of code passed to methods and invoked with 'yield'. Procs are objects holding blocks that don't check argument count (arity) and return from the outer enclosing method. Lambdas check exact arity and return strictly from the lambda itself.",
+    "expected_concepts": [
+      "blocks",
+      "procs",
+      "lambdas",
+      "yield"
+    ],
+    "explanation": "Evaluates Ruby Closures and Blocks, Procs, & Lambdas comprehension."
+  },
+  {
+    "id": "ruby_004",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Modules and Mixins in Ruby, and how do 'include', 'extend', and 'prepend' alter the method lookup chain?",
+    "difficulty": "medium",
+    "topic": "OOP & Modules",
+    "concept": "Modules, Mixins, & Lookup Chain",
+    "questionFamily": "architecture",
+    "tags": [
+      "modules",
+      "mixins",
+      "include",
+      "extend",
+      "prepend",
+      "ancestors"
+    ],
+    "idealAnswer": "Modules allow sharing reusable methods across classes (mixins). 'include' inserts module methods into the instance method lookup chain after the class. 'prepend' inserts module methods before the class (overriding class methods). 'extend' adds module methods as class/singleton methods.",
+    "ideal_answer": "Modules allow sharing reusable methods across classes (mixins). 'include' inserts module methods into the instance method lookup chain after the class. 'prepend' inserts module methods before the class (overriding class methods). 'extend' adds module methods as class/singleton methods.",
+    "expected_concepts": [
+      "modules",
+      "mixins",
+      "include",
+      "extend"
+    ],
+    "explanation": "Evaluates Ruby OOP & Modules and Modules, Mixins, & Lookup Chain comprehension."
+  },
+  {
+    "id": "ruby_005",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain metaprogramming in Ruby: method_missing, send, define_method, and class_eval/instance_eval.",
+    "difficulty": "hard",
+    "topic": "Metaprogramming",
+    "concept": "Dynamic Metaprogramming",
+    "questionFamily": "implementation",
+    "tags": [
+      "metaprogramming",
+      "method_missing",
+      "send",
+      "define_method",
+      "instance_eval"
+    ],
+    "idealAnswer": "Ruby supports dynamic code evaluation at runtime. 'send' invokes methods dynamically by name. 'define_method' dynamically creates methods at runtime. 'method_missing' intercepts calls to undefined methods. 'class_eval'/'instance_eval' execute blocks in the context of classes or instances.",
+    "ideal_answer": "Ruby supports dynamic code evaluation at runtime. 'send' invokes methods dynamically by name. 'define_method' dynamically creates methods at runtime. 'method_missing' intercepts calls to undefined methods. 'class_eval'/'instance_eval' execute blocks in the context of classes or instances.",
+    "expected_concepts": [
+      "metaprogramming",
+      "method_missing",
+      "send",
+      "define_method"
+    ],
+    "explanation": "Evaluates Ruby Metaprogramming and Dynamic Metaprogramming comprehension."
+  },
+  {
+    "id": "ruby_006",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Singleton Methods and Eigenclasses (singleton classes) in Ruby?",
+    "difficulty": "hard",
+    "topic": "Object Model",
+    "concept": "Singleton Classes & Eigenclass",
+    "questionFamily": "architecture",
+    "tags": [
+      "eigenclass",
+      "singleton class",
+      "singleton methods",
+      "metaclass"
+    ],
+    "idealAnswer": "A singleton method is a method defined on a single specific object instance rather than on its class. Ruby achieves this by inserting an anonymous hidden class called the Eigenclass (or singleton class) into the object's method lookup hierarchy.",
+    "ideal_answer": "A singleton method is a method defined on a single specific object instance rather than on its class. Ruby achieves this by inserting an anonymous hidden class called the Eigenclass (or singleton class) into the object's method lookup hierarchy.",
+    "expected_concepts": [
+      "eigenclass",
+      "singleton class",
+      "singleton methods",
+      "metaclass"
+    ],
+    "explanation": "Evaluates Ruby Object Model and Singleton Classes & Eigenclass comprehension."
+  },
+  {
+    "id": "ruby_007",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does exception handling work in Ruby with begin, rescue, ensure, and retry blocks?",
+    "difficulty": "easy",
+    "topic": "Error Handling",
+    "concept": "Exception Handling",
+    "questionFamily": "implementation",
+    "tags": [
+      "begin",
+      "rescue",
+      "ensure",
+      "retry",
+      "StandardError"
+    ],
+    "idealAnswer": "The begin block contains risky code. The rescue block catches exceptions (defaulting to StandardError subclasses). The ensure block runs unconditionally (like finally). The retry statement re-executes the begin block from the beginning.",
+    "ideal_answer": "The begin block contains risky code. The rescue block catches exceptions (defaulting to StandardError subclasses). The ensure block runs unconditionally (like finally). The retry statement re-executes the begin block from the beginning.",
+    "expected_concepts": [
+      "begin",
+      "rescue",
+      "ensure",
+      "retry"
+    ],
+    "explanation": "Evaluates Ruby Error Handling and Exception Handling comprehension."
+  },
+  {
+    "id": "ruby_008",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain variable scoping in Ruby: local, instance (@), class (@@), and global ($) variables.",
+    "difficulty": "easy",
+    "topic": "Core Concepts",
+    "concept": "Variable Scoping Rules",
+    "questionFamily": "definition",
+    "tags": [
+      "local variables",
+      "instance variables",
+      "class variables",
+      "global variables"
+    ],
+    "idealAnswer": "Local variables have block/method scope. Instance variables (@var) are bound to object instances. Class variables (@@var) are shared across an entire class hierarchy (including subclasses). Global variables ($var) are accessible anywhere in the program.",
+    "ideal_answer": "Local variables have block/method scope. Instance variables (@var) are bound to object instances. Class variables (@@var) are shared across an entire class hierarchy (including subclasses). Global variables ($var) are accessible anywhere in the program.",
+    "expected_concepts": [
+      "local variables",
+      "instance variables",
+      "class variables",
+      "global variables"
+    ],
+    "explanation": "Evaluates Ruby Core Concepts and Variable Scoping Rules comprehension."
+  },
+  {
+    "id": "ruby_009",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Enumerable module in Ruby, and how does implementing the 'each' and '<=>' methods enable its methods?",
+    "difficulty": "medium",
+    "topic": "Standard Library",
+    "concept": "Enumerable & Spaceship Operator",
+    "questionFamily": "implementation",
+    "tags": [
+      "Enumerable",
+      "each",
+      "spaceship operator",
+      "map",
+      "select"
+    ],
+    "idealAnswer": "The Enumerable module provides powerful collection traversal and querying methods (map, select, reduce, sort). Any custom class that defines an 'each' method and includes Enumerable gains all these methods; implementing '<=>' (spaceship operator) enables sorting.",
+    "ideal_answer": "The Enumerable module provides powerful collection traversal and querying methods (map, select, reduce, sort). Any custom class that defines an 'each' method and includes Enumerable gains all these methods; implementing '<=>' (spaceship operator) enables sorting.",
+    "expected_concepts": [
+      "Enumerable",
+      "each",
+      "spaceship operator",
+      "map"
+    ],
+    "explanation": "Evaluates Ruby Standard Library and Enumerable & Spaceship Operator comprehension."
+  },
+  {
+    "id": "ruby_010",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Duck Typing in Ruby and why 'respond_to?' or relying on method contracts is preferred over 'is_a?'.",
+    "difficulty": "easy",
+    "topic": "OOP",
+    "concept": "Duck Typing",
+    "questionFamily": "best_practice",
+    "tags": [
+      "duck typing",
+      "respond_to?",
+      "polymorphism",
+      "is_a?"
+    ],
+    "idealAnswer": "Duck typing focuses on what an object can do (its available methods) rather than its explicit class hierarchy ('if it walks like a duck, it is a duck'). Checking 'respond_to?' or invoking methods directly decouples code from concrete classes.",
+    "ideal_answer": "Duck typing focuses on what an object can do (its available methods) rather than its explicit class hierarchy ('if it walks like a duck, it is a duck'). Checking 'respond_to?' or invoking methods directly decouples code from concrete classes.",
+    "expected_concepts": [
+      "duck typing",
+      "respond_to?",
+      "polymorphism",
+      "is_a?"
+    ],
+    "explanation": "Evaluates Ruby OOP and Duck Typing comprehension."
+  },
+  {
+    "id": "ruby_011",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does memory management and Garbage Collection (GC) work in Ruby (MRI Generational GC)?",
+    "difficulty": "hard",
+    "topic": "Runtime & GC",
+    "concept": "Ruby Garbage Collection",
+    "questionFamily": "optimization",
+    "tags": [
+      "garbage collection",
+      "generational GC",
+      "RGenGC",
+      "object allocation"
+    ],
+    "idealAnswer": "Ruby MRI uses a Generational Garbage Collector (RGenGC) combined with compaction. It divides objects into Young and Old generations, scanning young objects frequently (minor GC) and old objects less often (major GC) to reduce GC pause times.",
+    "ideal_answer": "Ruby MRI uses a Generational Garbage Collector (RGenGC) combined with compaction. It divides objects into Young and Old generations, scanning young objects frequently (minor GC) and old objects less often (major GC) to reduce GC pause times.",
+    "expected_concepts": [
+      "garbage collection",
+      "generational GC",
+      "RGenGC",
+      "object allocation"
+    ],
+    "explanation": "Evaluates Ruby Runtime & GC and Ruby Garbage Collection comprehension."
+  },
+  {
+    "id": "ruby_012",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Global VM Lock (GVL) in MRI Ruby, and how does it impact multi-threaded CPU vs I/O performance?",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "GVL & Concurrency",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "GVL",
+      "threads",
+      "fibers",
+      "Ractors",
+      "CPU-bound"
+    ],
+    "idealAnswer": "The GVL (Global VM Lock) in MRI Ruby permits only one native OS thread to execute Ruby code at a time. Threads provide concurrency for I/O operations (releasing GVL during I/O), but true multi-core CPU parallelism requires multiprocessing, external tools, or Ractors (Ruby 3+).",
+    "ideal_answer": "The GVL (Global VM Lock) in MRI Ruby permits only one native OS thread to execute Ruby code at a time. Threads provide concurrency for I/O operations (releasing GVL during I/O), but true multi-core CPU parallelism requires multiprocessing, external tools, or Ractors (Ruby 3+).",
+    "expected_concepts": [
+      "GVL",
+      "threads",
+      "fibers",
+      "Ractors"
+    ],
+    "explanation": "Evaluates Ruby Concurrency and GVL & Concurrency comprehension."
+  },
+  {
+    "id": "ruby_013",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Fibers and Ractors in modern Ruby (Ruby 3+)?",
+    "difficulty": "hard",
+    "topic": "Modern Ruby",
+    "concept": "Fibers & Ractors Concurrency",
+    "questionFamily": "architecture",
+    "tags": [
+      "Fibers",
+      "Ractors",
+      "async",
+      "concurrency",
+      "actor model"
+    ],
+    "idealAnswer": "Fibers are lightweight coroutines for cooperative multitasking. Ractors (Ruby 3+) provide an actor-model concurrency abstraction that runs in parallel across multiple CPU cores without GVL contention by isolating object mutation.",
+    "ideal_answer": "Fibers are lightweight coroutines for cooperative multitasking. Ractors (Ruby 3+) provide an actor-model concurrency abstraction that runs in parallel across multiple CPU cores without GVL contention by isolating object mutation.",
+    "expected_concepts": [
+      "Fibers",
+      "Ractors",
+      "async",
+      "concurrency"
+    ],
+    "explanation": "Evaluates Ruby Modern Ruby and Fibers & Ractors Concurrency comprehension."
+  },
+  {
+    "id": "ruby_014",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Bundler, Gemfiles, and RubyGems dependency resolution.",
+    "difficulty": "easy",
+    "topic": "Ecosystem & Packaging",
+    "concept": "Gemfile & Bundler",
+    "questionFamily": "best_practice",
+    "tags": [
+      "RubyGems",
+      "Bundler",
+      "Gemfile",
+      "Gemfile.lock"
+    ],
+    "idealAnswer": "RubyGems is the package management system for distributing Ruby libraries (gems). Bundler manages project gem dependencies defined in Gemfile, resolving dependencies and pinning exact versions in Gemfile.lock.",
+    "ideal_answer": "RubyGems is the package management system for distributing Ruby libraries (gems). Bundler manages project gem dependencies defined in Gemfile, resolving dependencies and pinning exact versions in Gemfile.lock.",
+    "expected_concepts": [
+      "RubyGems",
+      "Bundler",
+      "Gemfile",
+      "Gemfile.lock"
+    ],
+    "explanation": "Evaluates Ruby Ecosystem & Packaging and Gemfile & Bundler comprehension."
+  },
+  {
+    "id": "ruby_015",
+    "skill": "Ruby",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are the common testing frameworks in Ruby (RSpec vs Minitest), and how does RSpec's DSL structure tests?",
+    "difficulty": "medium",
+    "topic": "Testing",
+    "concept": "RSpec vs Minitest",
+    "questionFamily": "best_practice",
+    "tags": [
+      "RSpec",
+      "Minitest",
+      "describe",
+      "it",
+      "expect",
+      "mocks"
+    ],
+    "idealAnswer": "RSpec provides a Behavior-Driven Development (BDD) domain-specific language using 'describe', 'context', 'it', and 'expect' matchers. Minitest provides lightweight, standard unit tests with assertions and fast execution.",
+    "ideal_answer": "RSpec provides a Behavior-Driven Development (BDD) domain-specific language using 'describe', 'context', 'it', and 'expect' matchers. Minitest provides lightweight, standard unit tests with assertions and fast execution.",
+    "expected_concepts": [
+      "RSpec",
+      "Minitest",
+      "describe",
+      "it"
+    ],
+    "explanation": "Evaluates Ruby Testing and RSpec vs Minitest comprehension."
+  }
+]

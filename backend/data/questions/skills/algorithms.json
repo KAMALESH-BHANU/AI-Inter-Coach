@@ -1,44 +1,411 @@
 [
   {
-    "id": "ALGORITHMS_001",
+    "id": "algo_001",
     "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Asymptotic Notation: Big O (Upper Bound), Big Omega (Lower Bound), and Big Theta (Tight Bound) in algorithmic analysis.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Algorithms in modern software engineering?",
-    "expected_concepts": [
-      "Algorithms fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Complexity Analysis",
+    "concept": "Asymptotic Notations (Big O, Omega, Theta)",
+    "questionFamily": "definition",
+    "tags": [
+      "Big O",
+      "Big Omega",
+      "Big Theta",
+      "asymptotic analysis",
+      "upper bound",
+      "tight bound"
     ],
-    "ideal_answer": "Algorithms is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Algorithms."
+    "idealAnswer": "Big O describes worst-case upper bound growth rate. Big Omega describes best-case lower bound. Big Theta describes tight bound where upper and lower bounds match asymptotically (e.g. Merge Sort is Theta(N log N)).",
+    "ideal_answer": "Big O describes worst-case upper bound growth rate. Big Omega describes best-case lower bound. Big Theta describes tight bound where upper and lower bounds match asymptotically (e.g. Merge Sort is Theta(N log N)).",
+    "expected_concepts": [
+      "Big O",
+      "Big Omega",
+      "Big Theta",
+      "asymptotic analysis"
+    ],
+    "explanation": "Evaluates Algorithms Complexity Analysis and Asymptotic Notations (Big O, Omega, Theta) comprehension."
   },
   {
-    "id": "ALGORITHMS_002",
+    "id": "algo_002",
     "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Comparison-Based Sorting Algorithms: Bubble, Selection, Insertion, Merge, Quick, and Heap Sort (time/space complexity, stability).",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Algorithms in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Sorting",
+    "concept": "Comparison-Based Sorting Algorithms",
+    "questionFamily": "comparison",
+    "tags": [
+      "Merge Sort",
+      "Quick Sort",
+      "Heap Sort",
+      "Insertion Sort",
+      "stability",
+      "time complexity"
     ],
-    "ideal_answer": "Common challenges with Algorithms include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Algorithms."
+    "idealAnswer": "Merge Sort is O(N log N) stable with O(N) space. Quick Sort is average O(N log N) in-place unstable (worst O(N^2) on bad pivots). Heap Sort is guaranteed O(N log N) in-place unstable. Insertion Sort is O(N) on nearly-sorted data.",
+    "ideal_answer": "Merge Sort is O(N log N) stable with O(N) space. Quick Sort is average O(N log N) in-place unstable (worst O(N^2) on bad pivots). Heap Sort is guaranteed O(N log N) in-place unstable. Insertion Sort is O(N) on nearly-sorted data.",
+    "expected_concepts": [
+      "Merge Sort",
+      "Quick Sort",
+      "Heap Sort",
+      "Insertion Sort"
+    ],
+    "explanation": "Evaluates Algorithms Sorting and Comparison-Based Sorting Algorithms comprehension."
   },
   {
-    "id": "ALGORITHMS_003",
+    "id": "algo_003",
     "skill": "Algorithms",
-    "difficulty": "hard",
-    "question": "How does Algorithms handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Non-Comparison Sorting Algorithms: Counting Sort, Radix Sort, and Bucket Sort, and how they achieve O(N) time.",
+    "difficulty": "medium",
+    "topic": "Sorting",
+    "concept": "Non-Comparison Sorting (Counting/Radix Sort)",
+    "questionFamily": "optimization",
+    "tags": [
+      "Counting Sort",
+      "Radix Sort",
+      "Bucket Sort",
+      "O(N) sorting",
+      "integer range"
     ],
-    "ideal_answer": "Algorithms handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Algorithms."
+    "idealAnswer": "Non-comparison sorts bypass the O(N log N) comparison lower bound: Counting Sort counts frequencies of bounded integers in O(N + K); Radix Sort sorts numbers digit-by-digit using stable counting sort; Bucket Sort partitions into intervals.",
+    "ideal_answer": "Non-comparison sorts bypass the O(N log N) comparison lower bound: Counting Sort counts frequencies of bounded integers in O(N + K); Radix Sort sorts numbers digit-by-digit using stable counting sort; Bucket Sort partitions into intervals.",
+    "expected_concepts": [
+      "Counting Sort",
+      "Radix Sort",
+      "Bucket Sort",
+      "O(N) sorting"
+    ],
+    "explanation": "Evaluates Algorithms Sorting and Non-Comparison Sorting (Counting/Radix Sort) comprehension."
+  },
+  {
+    "id": "algo_004",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Binary Search work on sorted arrays, and how do you find lower bound and upper bound in rotated sorted arrays?",
+    "difficulty": "easy",
+    "topic": "Searching",
+    "concept": "Binary Search & Rotated Sorted Arrays",
+    "questionFamily": "implementation",
+    "tags": [
+      "binary search",
+      "lower bound",
+      "upper bound",
+      "rotated sorted array",
+      "O(log N)"
+    ],
+    "idealAnswer": "Binary Search compares target with middle element, halving search space in O(log N). In rotated sorted arrays, at least one half (left or right) is always sorted; compare target against sorted boundary to decide which half to discard.",
+    "ideal_answer": "Binary Search compares target with middle element, halving search space in O(log N). In rotated sorted arrays, at least one half (left or right) is always sorted; compare target against sorted boundary to decide which half to discard.",
+    "expected_concepts": [
+      "binary search",
+      "lower bound",
+      "upper bound",
+      "rotated sorted array"
+    ],
+    "explanation": "Evaluates Algorithms Searching and Binary Search & Rotated Sorted Arrays comprehension."
+  },
+  {
+    "id": "algo_005",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Graph Traversal Algorithms: Breadth-First Search (BFS) vs Depth-First Search (DFS) and their applications (shortest path vs cycle detection).",
+    "difficulty": "easy",
+    "topic": "Graph Traversal",
+    "concept": "BFS vs DFS",
+    "questionFamily": "comparison",
+    "tags": [
+      "BFS",
+      "DFS",
+      "queue",
+      "stack",
+      "shortest path",
+      "topological sort",
+      "cycle detection"
+    ],
+    "idealAnswer": "BFS explores level-by-level using a Queue (finds shortest path in unweighted graphs). DFS explores deep down paths using a Stack/Recursion (used for topological sorting, cycle detection, and strongly connected components). Both run in O(V + E).",
+    "ideal_answer": "BFS explores level-by-level using a Queue (finds shortest path in unweighted graphs). DFS explores deep down paths using a Stack/Recursion (used for topological sorting, cycle detection, and strongly connected components). Both run in O(V + E).",
+    "expected_concepts": [
+      "BFS",
+      "DFS",
+      "queue",
+      "stack"
+    ],
+    "explanation": "Evaluates Algorithms Graph Traversal and BFS vs DFS comprehension."
+  },
+  {
+    "id": "algo_006",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dijkstra's Shortest Path Algorithm using a Min-Heap Priority Queue and why it fails on negative edge weights.",
+    "difficulty": "medium",
+    "topic": "Graph Algorithms",
+    "concept": "Dijkstra's Algorithm & Negative Weights",
+    "questionFamily": "algorithm",
+    "tags": [
+      "Dijkstra",
+      "shortest path",
+      "priority queue",
+      "greedy",
+      "negative edge weight"
+    ],
+    "idealAnswer": "Dijkstra's finds shortest paths from source to all vertices in non-negative weighted graphs using a greedy min-heap in O((V + E) log V). It fails on negative edge weights because once a vertex is marked visited, Dijkstra assumes its optimal distance is finalized.",
+    "ideal_answer": "Dijkstra's finds shortest paths from source to all vertices in non-negative weighted graphs using a greedy min-heap in O((V + E) log V). It fails on negative edge weights because once a vertex is marked visited, Dijkstra assumes its optimal distance is finalized.",
+    "expected_concepts": [
+      "Dijkstra",
+      "shortest path",
+      "priority queue",
+      "greedy"
+    ],
+    "explanation": "Evaluates Algorithms Graph Algorithms and Dijkstra's Algorithm & Negative Weights comprehension."
+  },
+  {
+    "id": "algo_007",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Bellman-Ford Algorithm and Floyd-Warshall Algorithm for shortest paths with negative weights.",
+    "difficulty": "hard",
+    "topic": "Graph Algorithms",
+    "concept": "Bellman-Ford vs Floyd-Warshall",
+    "questionFamily": "comparison",
+    "tags": [
+      "Bellman-Ford",
+      "Floyd-Warshall",
+      "negative cycles",
+      "all-pairs shortest path",
+      "dynamic programming"
+    ],
+    "idealAnswer": "Bellman-Ford finds single-source shortest paths in O(V * E), relaxing all edges V-1 times and detecting negative weight cycles. Floyd-Warshall is a DP algorithm computing all-pairs shortest paths for all vertices in O(V^3).",
+    "ideal_answer": "Bellman-Ford finds single-source shortest paths in O(V * E), relaxing all edges V-1 times and detecting negative weight cycles. Floyd-Warshall is a DP algorithm computing all-pairs shortest paths for all vertices in O(V^3).",
+    "expected_concepts": [
+      "Bellman-Ford",
+      "Floyd-Warshall",
+      "negative cycles",
+      "all-pairs shortest path"
+    ],
+    "explanation": "Evaluates Algorithms Graph Algorithms and Bellman-Ford vs Floyd-Warshall comprehension."
+  },
+  {
+    "id": "algo_008",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Minimum Spanning Tree (MST) Algorithms: Kruskal's Algorithm (with DSU) vs Prim's Algorithm.",
+    "difficulty": "medium",
+    "topic": "Graph Algorithms",
+    "concept": "Kruskal's vs Prim's MST",
+    "questionFamily": "comparison",
+    "tags": [
+      "MST",
+      "Kruskal",
+      "Prim",
+      "Disjoint Set Union",
+      "greedy",
+      "cut property"
+    ],
+    "idealAnswer": "Kruskal's sorts all edges and greedily adds edges that do not form cycles using Disjoint Set Union (O(E log E)). Prim's grows a connected tree from an arbitrary starting vertex using a priority queue (O(E log V)).",
+    "ideal_answer": "Kruskal's sorts all edges and greedily adds edges that do not form cycles using Disjoint Set Union (O(E log E)). Prim's grows a connected tree from an arbitrary starting vertex using a priority queue (O(E log V)).",
+    "expected_concepts": [
+      "MST",
+      "Kruskal",
+      "Prim",
+      "Disjoint Set Union"
+    ],
+    "explanation": "Evaluates Algorithms Graph Algorithms and Kruskal's vs Prim's MST comprehension."
+  },
+  {
+    "id": "algo_009",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Topological Sort in Directed Acyclic Graphs (DAG), and how is it implemented using Kahn's Algorithm (in-degree BFS) and DFS?",
+    "difficulty": "medium",
+    "topic": "Graph Algorithms",
+    "concept": "Topological Sort & Kahn's Algorithm",
+    "questionFamily": "implementation",
+    "tags": [
+      "topological sort",
+      "DAG",
+      "Kahn's algorithm",
+      "in-degree",
+      "dependency resolution"
+    ],
+    "idealAnswer": "Topological sort linearly orders vertices such that for every directed edge u -> v, u comes before v. Kahn's algorithm initializes a queue with vertices of in-degree 0, repeatedly dequeues, reduces neighbors' in-degrees, and detects cycles if processed count < V.",
+    "ideal_answer": "Topological sort linearly orders vertices such that for every directed edge u -> v, u comes before v. Kahn's algorithm initializes a queue with vertices of in-degree 0, repeatedly dequeues, reduces neighbors' in-degrees, and detects cycles if processed count < V.",
+    "expected_concepts": [
+      "topological sort",
+      "DAG",
+      "Kahn's algorithm",
+      "in-degree"
+    ],
+    "explanation": "Evaluates Algorithms Graph Algorithms and Topological Sort & Kahn's Algorithm comprehension."
+  },
+  {
+    "id": "algo_010",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dynamic Programming: Overlapping Subproblems and Optimal Substructure (Top-Down Memoization vs Bottom-Up Tabulation).",
+    "difficulty": "medium",
+    "topic": "Dynamic Programming",
+    "concept": "Memoization vs Tabulation",
+    "questionFamily": "comparison",
+    "tags": [
+      "dynamic programming",
+      "memoization",
+      "tabulation",
+      "optimal substructure",
+      "overlapping subproblems"
+    ],
+    "idealAnswer": "DP solves problems by breaking them into overlapping subproblems with optimal substructure. Top-Down Memoization uses recursion with a cache dictionary. Bottom-Up Tabulation iteratively fills an array, eliminating recursion stack overhead and enabling space optimization.",
+    "ideal_answer": "DP solves problems by breaking them into overlapping subproblems with optimal substructure. Top-Down Memoization uses recursion with a cache dictionary. Bottom-Up Tabulation iteratively fills an array, eliminating recursion stack overhead and enabling space optimization.",
+    "expected_concepts": [
+      "dynamic programming",
+      "memoization",
+      "tabulation",
+      "optimal substructure"
+    ],
+    "explanation": "Evaluates Algorithms Dynamic Programming and Memoization vs Tabulation comprehension."
+  },
+  {
+    "id": "algo_011",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you solve the 0/1 Knapsack Problem and Unbounded Knapsack Problem using Dynamic Programming?",
+    "difficulty": "medium",
+    "topic": "Dynamic Programming",
+    "concept": "0/1 Knapsack vs Unbounded Knapsack",
+    "questionFamily": "implementation",
+    "tags": [
+      "0/1 Knapsack",
+      "unbounded knapsack",
+      "DP table",
+      "subset sum",
+      "space optimization"
+    ],
+    "idealAnswer": "In 0/1 Knapsack, each item can be selected at most once: dp[w] = max(dp[w], val + dp[w - weight]), iterating capacity in reverse to prevent reusing items. In Unbounded Knapsack, items can be picked infinitely: iterate capacity forward.",
+    "ideal_answer": "In 0/1 Knapsack, each item can be selected at most once: dp[w] = max(dp[w], val + dp[w - weight]), iterating capacity in reverse to prevent reusing items. In Unbounded Knapsack, items can be picked infinitely: iterate capacity forward.",
+    "expected_concepts": [
+      "0/1 Knapsack",
+      "unbounded knapsack",
+      "DP table",
+      "subset sum"
+    ],
+    "explanation": "Evaluates Algorithms Dynamic Programming and 0/1 Knapsack vs Unbounded Knapsack comprehension."
+  },
+  {
+    "id": "algo_012",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Greedy Algorithms vs Dynamic Programming (Greedy Choice Property vs Global Optimization) with Activity Selection.",
+    "difficulty": "easy",
+    "topic": "Greedy Algorithms",
+    "concept": "Greedy vs Dynamic Programming",
+    "questionFamily": "comparison",
+    "tags": [
+      "greedy",
+      "dynamic programming",
+      "activity selection",
+      "locally optimal"
+    ],
+    "idealAnswer": "Greedy algorithms make the locally optimal choice at each step without reconsidering (Greedy Choice Property), which works for specific problems like Activity Selection (sorting by earliest finish time). DP evaluates all possible subproblem choices to guarantee global optimum.",
+    "ideal_answer": "Greedy algorithms make the locally optimal choice at each step without reconsidering (Greedy Choice Property), which works for specific problems like Activity Selection (sorting by earliest finish time). DP evaluates all possible subproblem choices to guarantee global optimum.",
+    "expected_concepts": [
+      "greedy",
+      "dynamic programming",
+      "activity selection",
+      "locally optimal"
+    ],
+    "explanation": "Evaluates Algorithms Greedy Algorithms and Greedy vs Dynamic Programming comprehension."
+  },
+  {
+    "id": "algo_013",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Backtracking, and how does State Space Tree pruning solve the N-Queens Problem and Sudoku Solver?",
+    "difficulty": "medium",
+    "topic": "Backtracking",
+    "concept": "Backtracking & Pruning",
+    "questionFamily": "implementation",
+    "tags": [
+      "backtracking",
+      "N-Queens",
+      "state space tree",
+      "pruning",
+      "recursion"
+    ],
+    "idealAnswer": "Backtracking systematically searches solution spaces via DFS recursion. When a partial state violates constraints (e.g., queen under attack in N-Queens), the algorithm prunes the subtree and backtracks to try alternative choices.",
+    "ideal_answer": "Backtracking systematically searches solution spaces via DFS recursion. When a partial state violates constraints (e.g., queen under attack in N-Queens), the algorithm prunes the subtree and backtracks to try alternative choices.",
+    "expected_concepts": [
+      "backtracking",
+      "N-Queens",
+      "state space tree",
+      "pruning"
+    ],
+    "explanation": "Evaluates Algorithms Backtracking and Backtracking & Pruning comprehension."
+  },
+  {
+    "id": "algo_014",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain String Matching Algorithms: Knuth-Morris-Pratt (KMP with LPS array) and Rabin-Karp (rolling hash).",
+    "difficulty": "hard",
+    "topic": "String Algorithms",
+    "concept": "KMP vs Rabin-Karp Matching",
+    "questionFamily": "algorithm",
+    "tags": [
+      "KMP",
+      "LPS array",
+      "Rabin-Karp",
+      "rolling hash",
+      "string matching"
+    ],
+    "idealAnswer": "KMP preprocesses pattern into a Longest Prefix Suffix (LPS) array in O(M), skipping redundant comparisons on mismatch to achieve O(N) search. Rabin-Karp computes rolling hash values of sliding text windows in O(N + M).",
+    "ideal_answer": "KMP preprocesses pattern into a Longest Prefix Suffix (LPS) array in O(M), skipping redundant comparisons on mismatch to achieve O(N) search. Rabin-Karp computes rolling hash values of sliding text windows in O(N + M).",
+    "expected_concepts": [
+      "KMP",
+      "LPS array",
+      "Rabin-Karp",
+      "rolling hash"
+    ],
+    "explanation": "Evaluates Algorithms String Algorithms and KMP vs Rabin-Karp Matching comprehension."
+  },
+  {
+    "id": "algo_015",
+    "skill": "Algorithms",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Two Pointers Technique and Sliding Window Algorithm for subarray and string problems.",
+    "difficulty": "easy",
+    "topic": "Algorithm Patterns",
+    "concept": "Two Pointers & Sliding Window",
+    "questionFamily": "implementation",
+    "tags": [
+      "two pointers",
+      "sliding window",
+      "subarray",
+      "O(N) time",
+      "two sum"
+    ],
+    "idealAnswer": "Two pointers traverse arrays from ends (or fast/slow pointers) in O(N) time (e.g. 2-Sum on sorted array, cycle detection). Sliding window expands a right pointer and contracts a left pointer to track dynamic window constraints (e.g. longest substring without repeating characters).",
+    "ideal_answer": "Two pointers traverse arrays from ends (or fast/slow pointers) in O(N) time (e.g. 2-Sum on sorted array, cycle detection). Sliding window expands a right pointer and contracts a left pointer to track dynamic window constraints (e.g. longest substring without repeating characters).",
+    "expected_concepts": [
+      "two pointers",
+      "sliding window",
+      "subarray",
+      "O(N) time"
+    ],
+    "explanation": "Evaluates Algorithms Algorithm Patterns and Two Pointers & Sliding Window comprehension."
   }
 ]

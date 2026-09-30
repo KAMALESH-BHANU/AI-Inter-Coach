@@ -1,0 +1,508 @@
+====================================================================================================
+                             AI INTERVIEW COACH — SYSTEM & ARCHITECTURE MANUAL
+                                   Comprehensive End-to-End Project Documentation
+====================================================================================================
+
+DOCUMENT VERSION: 2.0.0
+LAST UPDATED: 2026-09-19
+PROJECT REPOSITORY: AI-Inter-coach
+PRIMARY STACK: FastAPI (Python 3.10+) | React + Vite + Tailwind CSS | MongoDB Motor | Google Gemini
+               OpenCV + MediaPipe | faster-whisper (CTranslate2) | ReportLab | SQLite In-Memory Sandbox
+
+====================================================================================================
+TABLE OF CONTENTS
+====================================================================================================
+1. EXECUTIVE SUMMARY & PROJECT VISION
+2. HIGH-LEVEL ARCHITECTURAL DESIGN & DATA FLOW
+3. COMPLETE 13-QUESTION INTERVIEW STRUCTURE & USER JOURNEY
+4. CORE AI / ML MODELS, ALGORITHMS & MATHEMATICAL FORMULAS
+   4.1. Speech & Audio Processing Engine (faster-whisper, WPM, Filler Words, Pauses)
+   4.2. Computer Vision & Proctoring Engine (MediaPipe Face Mesh, Gaze Vector, Head Pose, Affect)
+   4.3. Natural Language Processing & Gemini Suggestion Engine (Structured JSON, 1-Shot Repair, Fallback)
+   4.4. Question Generation, Randomization & Semantic Deduplication Engine (74 Banks, Template Fingerprinting)
+   4.5. In-Memory SQL Execution Sandbox & Validation Engine (AST/Regex Guardrails, Decoupled Verification)
+   4.6. Resume & Skill Extraction Parser (Multi-format text extraction, taxonomy mapping)
+   4.7. Multi-Dimensional Scoring & Evaluation Formula
+5. DETAILED BACKEND MODULES & DIRECTORY BREAKDOWN
+6. DETAILED FRONTEND MODULES, PAGES & COMPONENT BREAKDOWN
+7. DATABASE MODELS, SCHEMAS & STATE MACHINE LIFECYCLE
+8. PRIVACY, SECURITY, TTL CLEANUP & SENSITIVE DATA ISOLATION
+9. AUTOMATED TEST SUITE & VERIFICATION REPORT
+10. LOCAL DEPLOYMENT & ENVIRONMENT CONFIGURATION GUIDE
+
+====================================================================================================
+1. EXECUTIVE SUMMARY & PROJECT VISION
+====================================================================================================
+The AI Interview Coach is an enterprise-grade, end-to-end automated technical interview and coaching
+platform. It simulates a rigorous, human-like technical screening interview while providing real-time
+audio-visual proctoring, interactive code/query evaluation, deterministic multi-dimensional scoring,
+and comprehensive AI-powered personalized feedback and coaching.
+
+Key Objectives:
+- Deliver realistic, dynamic, multimodal interviews combining spoken answers, pseudocode multiple-choice
+  questions, and live database SQL coding.
+- Eliminate repetitive and generic questions via a massive 74-skill taxonomy with semantic template
+  fingerprinting and cross-interview deduplication.
+- Perform high-speed, local CPU-friendly real-time video and audio analysis for eye contact, head pose,
+  speaking rate (WPM), filler words, and hesitation pauses.
+- Maintain an authoritative, deterministic scoring backend completely decoupled from qualitative LLM
+  commentary, ensuring fairness, reproducibility, and zero hallucinated scores.
+- Provide actionable AI-generated career coaching, strengths, growth areas, 5-day practice plans, and
+  downloadable PDF reports via Google Gemini (with graceful offline fallback).
+
+====================================================================================================
+2. HIGH-LEVEL ARCHITECTURAL DESIGN & DATA FLOW
+====================================================================================================
+
++--------------------------------------------------------------------------------------------------+
+|                                     FRONTEND LAYER (React + Vite)                                |
+|                                                                                                  |
+|   [ Candidate Dashboard / Setup ]  --->  [ Live Interview Room (13 Questions) ]  ---> [ Results ] |
+|     - Resume Upload & Parsing               - TTS Question Speaker (SpeechSynthesis)     - Score |
+|     - Multi-Select Skill Selector           - Web Audio Recorder (Mic Input)             - Gemini|
+|     - Custom Target Profile                 - Webcam Stream Proctor (OpenCV/MediaPipe)   - PDF   |
+|                                             - Pseudocode MCQ Interactive Component               |
+|                                             - Live Monaco-style SQL Query Editor                 |
++-------------------------------------------------+------------------------------------------------+
+                                                  | REST API & WebSockets
+                                                  v
++--------------------------------------------------------------------------------------------------+
+|                                     BACKEND LAYER (FastAPI)                                      |
+|                                                                                                  |
+|   +------------------------------------------------------------------------------------------+   |
+|   | API ROUTERS: /auth | /interview | /resume | /skills | /questions | /sql | /report        |   |
+|   +------------------------------------------------------------------------------------------+   |
+|                                                  |                                               |
+|   +----------------------------------------------v-------------------------------------------+   |
+|   | CORE SERVICES:                                                                           |   |
+|   | - InterviewService: Session orchestration & 9-state finite state machine                 |   |
+|   | - QuestionService: 74-skill taxonomy loader, slot balancer, semantic deduplicator        |   |
+|   | - SpeechService: faster-whisper STT, WPM analyzer, filler word & pause detector          |   |
+|   | - VisionService: MediaPipe Face Mesh, Gaze vector, Head Pose (PnP), Proctoring           |   |
+|   | - SqlService: In-memory SQLite sandbox, query sanitizer, decoupled schema verifier       |   |
+|   | - ScoringService: Deterministic weighted multi-metric score aggregator                   |   |
+|   | - GeminiSuggestionService: google-genai SDK, structured JSON coaching, offline fallback  |   |
+|   | - ReportService: ReportLab multi-page graphical PDF generation engine                    |   |
+|   | - ResumeService: PDF/DOCX/TXT parser and entity extractor                                |   |
+|   | - CleanupService: Background TTL video & temporary artifact garbage collector            |   |
+|   +------------------------------------------------------------------------------------------+   |
++-------------------------------------------------+------------------------------------------------+
+                                                  |
+                                                  v
++--------------------------------------------------------------------------------------------------+
+|                               DATA & EXTERNAL PROCESSING LAYER                                   |
+|                                                                                                  |
+|   - MongoDB (Motor Async ODM): Users, Interview Sessions, Question Banks, Historical Reports     |
+|   - In-Memory SQLite: Isolated query sandbox with synthetic 5x5 relational mock databases        |
+|   - Local File Storage / Temp Dir: Ephemeral video recordings (auto-cleaned after 1 view/TTL)    |
+|   - Google Gemini 2.5 Flash API: Structured qualitative feedback (isolated, key backend-only)    |
++--------------------------------------------------------------------------------------------------+
+
+====================================================================================================
+3. COMPLETE 13-QUESTION INTERVIEW STRUCTURE & USER JOURNEY
+====================================================================================================
+Every interview follows an authoritative 13-question sequence designed to replicate standard Tier-1
+tech company hiring workflows:
+
++-------+--------------------+---------------------------------------+-----------------------------+
+| Slot  | Category           | Description / Purpose                 | Answer & Evaluation Method  |
++-------+--------------------+---------------------------------------+-----------------------------+
+| Q1    | Candidate Intro    | Professional background & intro       | Spoken Answer (STT + Audio) |
+| Q2    | Project Deep Dive  | Project architecture & core tech      | Spoken Answer (STT + Audio) |
+| Q3    | Project Deep Dive  | Technical challenges & trade-offs     | Spoken Answer (STT + Audio) |
+| Q4    | Project Deep Dive  | Production scalability & optimizations| Spoken Answer (STT + Audio) |
+| Q5    | Technical Skill 1  | Deep technical concept question       | Spoken Answer (STT + Audio) |
+| Q6    | Technical Skill 2  | Deep technical concept question       | Spoken Answer (STT + Audio) |
+| Q7    | Technical Skill 3  | Deep technical concept question       | Spoken Answer (STT + Audio) |
+| Q8    | Technical Skill 4  | Deep technical concept question       | Spoken Answer (STT + Audio) |
+| Q9    | Technical Skill 5  | Deep technical concept question       | Spoken Answer (STT + Audio) |
+| Q10   | Pseudocode MCQ 1   | Language-independent logic & output   | Interactive 4-Option Click  |
+| Q11   | Pseudocode MCQ 2   | Language-independent logic & loop/rec | Interactive 4-Option Click  |
+| Q12   | MySQL SQL Coding 1 | Database querying / Joins / Aggregates| Live In-Browser SQL Sandbox |
+| Q13   | MySQL SQL Coding 2 | Subqueries / Window functions / Logic | Live In-Browser SQL Sandbox |
++-------+--------------------+---------------------------------------+-----------------------------+
+
+User Journey Flow:
+1. Registration & Profile Setup: Candidate registers, logs in via JWT, uploads resume (PDF/DOCX).
+2. Skill Selection: Resume parser automatically recommends skills; candidate chooses 1 to 5 skills from
+   a curated 74-skill taxonomy.
+3. System Diagnostics & Device Check: Verifies microphone audio level and webcam visual clarity.
+4. Live Interview Phase:
+   - Interviewer speaks questions via Web Speech Synthesis (TTS).
+   - Candidate responds via speech for Q1-Q9 (STT runs asynchronously with real-time video proctoring).
+   - Candidate selects answers for Q10-Q11 on interactive MCQ interface (Speech disabled).
+   - Candidate views mock database schema tables (>= 5 rows, >= 5 cols), writes queries in the SQL editor,
+     and tests/executes them inside the sandbox for Q12-Q13.
+5. Instant Objective Results: Instant deterministic score breakdown (Overall, Technical, Communication,
+   Fluency, Eye Contact, Coding accuracy) without waiting for LLM latency.
+6. AI Suggestions & Coaching: Asynchronous background request fetches structured Gemini suggestions
+   (strengths, growth areas, diagnostic metrics, 5-day roadmap, next goals) and renders dynamically.
+7. PDF Report Download: Candidate downloads a comprehensive multi-page PDF evaluation report.
+
+====================================================================================================
+4. CORE AI / ML MODELS, ALGORITHMS & MATHEMATICAL FORMULAS
+====================================================================================================
+
+4.1. SPEECH & AUDIO PROCESSING ENGINE
+-------------------------------------
+- Speech-to-Text Model: `faster-whisper` (CTranslate2 implementation of OpenAI Whisper `tiny.en` / `base.en`).
+  - Uses int8 quantized weights on CPU for sub-second transcriptions without GPU requirements.
+  - Generates word-level timestamps and segment probabilities.
+- Speaking Rate Algorithm (Words Per Minute — WPM):
+    WPM = (Total Word Count / Total Duration in Seconds) * 60
+    Target Ideal Range: 120 - 160 WPM.
+    Penalties applied symmetrically if WPM < 100 (too slow/hesitant) or WPM > 190 (rushing).
+- Filler Word Detection:
+  - Tokenized regex scanner scanning for lexical hesitation markers:
+    Taxonomy: {"um", "uh", "like", "you know", "actually", "basically", "literally", "sort of", "kind of", "i mean", "right"}
+  - Filler Frequency Metric:
+    Filler Percentage = (Total Filler Words Count / Total Words Spoken) * 100
+    Thresholds: < 3% = Excellent, 3-7% = Moderate, > 7% = Needs Improvement.
+- Pause & Silence Analysis:
+  - Detects silent gaps between word timestamps.
+  - Pauses > 2.5 seconds categorized as Long Hesitations.
+
+4.2. COMPUTER VISION & PROCTORING ENGINE
+---------------------------------------
+- Framework: OpenCV (cv2) + MediaPipe Face Mesh (468 3D facial landmarks).
+- Frame Processing: Controlled 5–10 FPS frame sampling to minimize client/server resource overhead.
+- Eye Contact & Gaze Estimation:
+  - Computes iris center landmarks relative to the medial and lateral canthi (eye corners).
+  - Euclidean horizontal/vertical gaze displacement ratio:
+      Gaze Ratio = ||Iris_Center - Medial_Canthus|| / ||Lateral_Canthus - Medial_Canthus||
+  - Eye Contact is scored as TRUE when gaze ratio remains within [0.38, 0.62] and head pitch is level.
+  - Eye Contact Percentage = (Frames with Valid Gaze / Total Tracked Face Frames) * 100
+- Head Pose Estimation (Pitch, Yaw, Roll):
+  - Solves Perspective-n-Point (cv2.solvePnP) using canonical 3D facial landmark points (Nose tip, Chin,
+    Left eye corner, Right eye corner, Left mouth corner, Right mouth corner) projected onto 2D frame.
+  - Computes Euler angles:
+      Pitch (Looking up/down), Yaw (Looking left/right), Roll (Head tilt).
+- Affect & Facial Tension Analysis:
+  - Distance metrics computed between lip corners (Mouth Aspect Ratio) and eyebrow-to-eye height.
+- Proctoring & Anomaly Detection:
+  - Flags 'Face Missing' (Candidate walked away or obstructed camera).
+  - Flags 'Multiple Faces Detected' (Potential third-party assistance).
+
+4.3. NATURAL LANGUAGE PROCESSING & GEMINI SUGGESTION ENGINE
+-----------------------------------------------------------
+- SDK: Official `google-genai` (v2.19.0) client communicating with `gemini-2.5-flash`.
+- Data Privacy & Answer-Type Isolation:
+  - Spoken Questions (Q1-Q9): Passes spoken transcripts. Automatically sanitizes out SQL default
+    templates (e.g. `-- Write your MySQL query here`) and placeholder text.
+  - Pseudocode MCQs (Q10-Q11): Audio transcripts masked to None; only selected option and ground-truth
+    correctness passed.
+  - SQL Questions (Q12-Q13): Audio transcripts masked to None; only candidate query and execution
+    results passed.
+- Structured JSON Enforcement:
+  - Configured with `response_mime_type="application/json"` and strict Pydantic parsing into
+    `GeminiSuggestionResponse`.
+- 1-Shot Self-Healing Repair Loop:
+  - If output contains JSON syntax violations, an automatic single-shot repair prompt attempts schema
+    realignment before falling back.
+- Deterministic Offline Fallback:
+  - When `GEMINI_API_KEY` is absent, invalid, or API requests time out, the system triggers
+    `generate_deterministic_fallback()` which calculates rich, personalized suggestions directly from
+    calculated scores and metrics, returning `isFallback: true` with reason.
+- Strict Clamping Rules:
+  - Strengths: <= 5 items | Growth Areas: <= 5 items | Technical Concepts: <= 8 items
+  - Question-wise items: <= 13 items | 5-Day Practice Plan: Exactly 5 days | Next Goals: <= 5 items
+
+4.4. QUESTION GENERATION, RANDOMIZATION & SEMANTIC DEDUPLICATION ENGINE
+-----------------------------------------------------------------------
+- 74 Skill Taxonomy Question Banks:
+  - 1,110+ rigorously curated, concept-focused questions (>= 15 per skill) across 7 major domains:
+    1. Programming Languages (Java, Python, C++, TypeScript, Go, Rust, etc.)
+    2. Frontend (React, Next.js, Vue, Angular, Tailwind, Redux, etc.)
+    3. Backend (Node.js, Spring Boot, Django, FastAPI, Microservices, GraphQL, etc.)
+    4. Databases (MySQL, PostgreSQL, MongoDB, Redis, Cassandra, etc.)
+    5. Core CS (Data Structures, Algorithms, OS, Networks, DBMS, System Design, OOP)
+    6. DevOps & Cloud (Docker, Kubernetes, AWS, Azure, GCP, CI/CD, Git, Linux)
+    7. AI & Data Science (ML, Deep Learning, Generative AI, NLP, PyTorch, LLMs, LangChain, etc.)
+- Balanced Multi-Skill Slot Distribution Algorithm:
+    distribute_question_slots(selected_skills, total_slots=5):
+    - 1 skill  -> 5 questions
+    - 2 skills -> 3, 2 questions
+    - 3 skills -> 2, 2, 1 questions
+    - 4 skills -> 2, 1, 1, 1 questions
+    - 5 skills -> 1 question each
+- Two-Level Deduplication Engine:
+  - Level 1 (Exact Deduplication): Case normalization, punctuation stripping, whitespace collapse.
+  - Level 2 (Semantic Template Fingerprinting): Regex replaces known skill names with `{skill}`.
+    Detects and rejects identical cloned questions across different skills (e.g. "Explain a major
+    technical challenge in {skill}").
+- Diversity Constraints:
+  - Maximum 2 questions per topic within the technical section.
+  - Requires >= 3 distinct question families and >= 4 unique concepts.
+- Cross-Interview Repetition Prevention:
+  - Tracks candidate's last 50 asked question IDs and fingerprints in MongoDB user profile.
+
+4.5. IN-MEMORY SQL EXECUTION SANDBOX & VALIDATION ENGINE
+--------------------------------------------------------
+- SQLite In-Memory Execution Environment:
+  - Isolated temporary SQLite database created per execution.
+  - Pre-populates mock relational tables containing at least 5 rows and at least 5 columns.
+- Decoupled Table-Size vs Query-Output Validation:
+  - 5x5 requirement applies ONLY to database input tables shown to candidates.
+  - Query output is verified against exact question requirements (e.g., top 3 rows with 2 columns).
+- AST & Regex Safety Sandbox:
+  - Validates queries are strictly read-only (`SELECT` / `WITH` statements).
+  - Rejects harmful mutations: `DROP`, `DELETE`, `UPDATE`, `INSERT`, `ALTER`, `CREATE`, `EXEC`, `TRUNCATE`.
+- Verification Engine:
+  - Executes candidate query against preloaded schema.
+  - Executes ground-truth solution query.
+  - Compares column names (case-insensitive) and row data (handles ordered vs set-equivalent logic).
+
+4.6. RESUME & SKILL EXTRACTION PARSER
+-------------------------------------
+- Supported Formats: PDF (`pdfplumber` / `pypdf`), DOCX (`python-docx`), plain TXT.
+- Extraction Pipeline:
+  1. Plaintext extraction and layout-aware segment separation.
+  2. Section Header Regex: Identifies Experience, Skills, Education, Projects, Certifications.
+  3. Skill Taxonomy Matcher: Matches against 74 technical skills using exact aliases and token boundary
+     regular expressions.
+  4. Project Context Extractor: Captures project titles, descriptions, and linked technologies.
+
+4.7. MULTI-DIMENSIONAL SCORING & EVALUATION FORMULA
+---------------------------------------------------
+All scores are deterministic floating-point values from 0.0 to 100.0:
+
+1. Technical Knowledge Score (TechScore):
+   - Average score across technical questions Q5-Q9, pseudocode Q10-Q11, and SQL Q12-Q13.
+   - Pseudocode MCQ: 100.0 if option clicked is correct, 0.0 if incorrect.
+   - SQL Questions: 100.0 if query output matches ground-truth, partial credit for valid syntax.
+
+2. Speech & Fluency Score (SpeechScore):
+   - WPM Score: 100 - (deviation from [120-160 WPM] * penalty_factor)
+   - Filler Score: 100 - (Filler_Percentage * 8.0)
+   - Pause Score: 100 - (Long_Pauses_Count * 12.0)
+   - SpeechScore = 0.40 * WPM_Score + 0.35 * Filler_Score + 0.25 * Pause_Score
+
+3. Communication & Visual Score (CommScore):
+   - Eye Contact Score: Actual tracked Eye Contact %
+   - Head Pose / Stability Score: Percentage of frames within normal yaw/pitch bounds
+   - CommScore = 0.60 * Eye_Contact_Score + 0.40 * Stability_Score
+
+4. Overall Aggregated Interview Score:
+   Overall Score = 0.45 * TechScore + 0.30 * CommScore + 0.25 * SpeechScore
+
+====================================================================================================
+5. DETAILED BACKEND MODULES & DIRECTORY BREAKDOWN
+====================================================================================================
+
+backend/
+├── app/
+│   ├── api/
+│   │   ├── auth.py              # JWT authentication, login, registration, password hashing
+│   │   ├── interview.py         # Session lifecycle, answers, suggestions, PDF download endpoints
+│   │   ├── questions.py         # Question taxonomy retrieval and preview endpoints
+│   │   ├── resume.py            # Resume upload, parsing, and skill extraction endpoints
+│   │   ├── skills.py            # Skill taxonomy metadata endpoints
+│   │   └── sql.py               # Live SQL sandbox execution and validation endpoints
+│   ├── db/
+│   │   ├── connection.py        # Asynchronous Motor MongoDB client connection manager
+│   │   └── models.py            # Pydantic & ODM models (User, InterviewSession, Question, Score)
+│   ├── schemas/
+│   │   ├── __init__.py          # Schema exports
+│   │   └── suggestion_schema.py # Pydantic schemas for Gemini suggestions & payload mapping
+│   ├── services/
+│   │   ├── cleanup_service.py   # Background TTL worker for video/temp file deletion
+│   │   ├── gemini_service.py    # Legacy Gemini feedback utility
+│   │   ├── gemini_suggestion_service.py # Core Gemini coaching engine (v2.19.0 SDK, fallback)
+│   │   ├── interview_service.py # Orchestrator for 13-question sequence & state machine
+│   │   ├── question_service.py  # 74-skill taxonomy manager, slot balancer, deduplication
+│   │   ├── report_service.py    # ReportLab PDF report generation with charts & diagnostics
+│   │   ├── resume_service.py    # Document text parsing & skill entity extraction
+│   │   ├── scoring_service.py   # Deterministic weighted scoring calculator
+│   │   ├── speech_service.py    # faster-whisper STT, WPM, filler word, and pause analysis
+│   │   ├── sql_service.py       # In-memory SQLite sandbox, query validator & schema generator
+│   │   └── vision_service.py    # OpenCV + MediaPipe face detection, gaze, and head pose
+│   ├── utils/
+│   │   └── security.py          # Password hashing (passlib/bcrypt) and JWT token encoder/decoder
+│   ├── config.py                # Pydantic BaseSettings environment configuration manager
+│   └── main.py                  # FastAPI application entrypoint, CORS, startup/shutdown hooks
+├── data/
+│   └── questions/
+│       ├── skills/              # 74 individual JSON question bank files (1,110+ questions)
+│       ├── intro_questions.json # Q1 introductory questions
+│       ├── project_questions.json # Q2-Q4 project architectural questions
+│       ├── pseudocode_mcq_questions.json # Q10-Q11 language-independent logic MCQs
+│       └── sql_questions.json   # Q12-Q13 MySQL coding questions with 5x5 schemas
+├── tests/                       # 69 Automated pytest test cases
+├── requirements.txt             # Python dependencies
+└── .env                         # Environment variables configuration
+
+====================================================================================================
+6. DETAILED FRONTEND MODULES, PAGES & COMPONENT BREAKDOWN
+====================================================================================================
+
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── AudioRecorder.jsx           # Captures candidate microphone audio via MediaRecorder
+│   │   ├── LiveMetricsCard.jsx         # Displays live audio/video metrics in real-time
+│   │   ├── Navbar.jsx                  # Top navigation bar with auth status and profile links
+│   │   ├── ProtectedRoute.jsx          # React Router route guard requiring valid JWT
+│   │   ├── PseudocodeMcqQuestion.jsx   # Interactive 4-option click selector for Q10-Q11
+│   │   ├── QuestionSpeaker.jsx         # Web Speech Synthesis TTS speaker with fallback audio
+│   │   ├── SkillSelector.jsx           # Searchable multi-select skill picker for 74 skills
+│   │   ├── SqlEditor.jsx               # SQL editor with schema preview, Run, and Submit buttons
+│   │   ├── VideoReplayModal.jsx        # 1-time video replay player (triggers server deletion)
+│   │   └── WebcamMonitor.jsx           # MediaPipe/OpenCV webcam stream monitor & proctor
+│   ├── context/
+│   │   ├── AuthContext.jsx             # React Context for user authentication & JWT storage
+│   │   └── InterviewContext.jsx        # React Context managing live 13-question session state
+│   ├── pages/
+│   │   ├── LandingPage.jsx             # Marketing landing page with platform overview
+│   │   ├── LoginPage.jsx               # User authentication login form
+│   │   ├── RegisterPage.jsx            # User registration form
+│   │   ├── DashboardPage.jsx           # Candidate hub, quick start, past interviews summary
+│   │   ├── InterviewSetupPage.jsx      # Resume upload, skill configuration, and device check
+│   │   ├── LiveInterviewPage.jsx       # Real-time interview room managing 13-question flow
+│   │   ├── ResultsPage.jsx             # Comprehensive score analysis, AI suggestions, PDF export
+│   │   ├── HistoryPage.jsx             # Historical interview performance archive
+│   │   └── ProfilePage.jsx             # Candidate user profile and skill history
+│   ├── services/
+│   │   ├── api.js                      # Axios REST client with JWT interceptors
+│   │   └── tts.js                      # Browser SpeechSynthesis wrapper with voice selection
+│   ├── App.jsx                         # Main React application route definitions
+│   └── main.jsx                        # React root DOM mount
+├── package.json                        # Node dependencies and build scripts
+├── vite.config.js                      # Vite build configuration
+└── tailwind.config.js                  # Tailwind CSS styling configuration
+
+====================================================================================================
+7. DATABASE MODELS, SCHEMAS & STATE MACHINE LIFECYCLE
+====================================================================================================
+
+7.1. INTERVIEW SESSION STATE MACHINE
+-----------------------------------
+The interview session lifecycle is managed by an explicit 9-state machine:
+
+  [CREATED] ---------> [READY] ---------> [QUESTION_ACTIVE] <======+
+     |                    |                      |                 |
+     | (error)            | (error)              v                 | (next question)
+     v                    v                 [ANSWERING]            |
+  [FAILED] <-----------+--+                      |                 |
+                       |                         v                 |
+                       |                [QUESTION_COMPLETED] ======+
+                       |                         |
+                       |                         v (after Q13)
+                       |                    [COMPLETED]
+                       |                         |
+                       |                         v
+                       |                    [ANALYZING]
+                       |                         |
+                       +------------------> [FEEDBACK_READY]
+
+7.2. MONGODB DATA MODELS
+------------------------
+- UserModel:
+  - `id`: ObjectId
+  - `email`: Indexed unique string
+  - `password_hash`: bcrypt salted hash
+  - `full_name`: String
+  - `recent_technical_question_ids`: List[str] (Tracks last 50 questions to prevent repetition)
+  - `recent_technical_question_fingerprints`: List[str] (Tracks template fingerprints)
+
+- InterviewSessionModel:
+  - `id`: ObjectId
+  - `user_id`: ObjectId
+  - `status`: Enum (CREATED, READY, QUESTION_ACTIVE, ANSWERING, QUESTION_COMPLETED, COMPLETED, ANALYZING, FEEDBACK_READY, FAILED)
+  - `selected_skills`: List[str]
+  - `questions`: List[QuestionModel] (Strict 13 questions)
+  - `answers`: List[AnswerModel] (Candidate transcripts, MCQ choices, SQL queries)
+  - `evaluation`: EvaluationResultModel (Deterministic score breakdown)
+  - `suggestions`: GeminiSuggestionResponse (AI suggestions and coaching data)
+  - `suggestion_status`: Enum (NOT_REQUESTED, GENERATING, COMPLETED, FAILED)
+  - `suggestions_generated_at`: UTC DateTime
+
+====================================================================================================
+8. PRIVACY, SECURITY, TTL CLEANUP & SENSITIVE DATA ISOLATION
+====================================================================================================
+1. Zero Secret Exposure:
+   - `GEMINI_API_KEY` is loaded strictly on the backend and is never sent to the client browser.
+2. 1-Time Video Replay & Auto-Deletion:
+   - Video recordings are saved in an ephemeral server directory.
+   - Once a candidate views their video replay modal, the server immediately unlinks and deletes the
+     video file.
+   - Background `CleanupService` runs periodically, deleting any video older than 60 minutes.
+3. Answer-Type Privacy Isolation:
+   - Spoken audio transcripts are completely removed from MCQ (Q10-Q11) and SQL (Q12-Q13) payloads.
+   - Default SQL placeholder code is sanitized from speech transcripts in Q1-Q9.
+4. Authentication & Authorization:
+   - Passwords hashed with bcrypt (12 rounds).
+   - API endpoints guarded with signed JWT bearer tokens (`HS256`).
+   - Ownership verification: Candidates can only access their own sessions and reports.
+
+====================================================================================================
+9. AUTOMATED TEST SUITE & VERIFICATION REPORT
+====================================================================================================
+The platform includes an automated pytest suite covering 100% of core components:
+
+- Total Backend Tests: 69 Passed | 0 Failed
+- Test Breakdown:
+  - `test_api_endpoints.py`: User registration, authentication, JWT verification, skills taxonomy.
+  - `test_interview_lifecycle.py`: 13-question sequence progression, state machine transitions.
+  - `test_question_validation.py`: Strict slot distribution, duplicate rejection.
+  - `test_technical_question_diversity.py`: 74 skills validation, semantic template deduplication,
+    multi-skill balance, cross-interview repetition prevention.
+  - `test_sql_questions.py`: SQLite sandbox execution, AST safety, decoupled 5x5 validation.
+  - `test_speech_service.py` & `test_speech_dedup.py`: STT, WPM, filler word and pause detection.
+  - `test_vision_service.py` & `test_vision_proctoring.py`: Face detection, gaze ratio, proctoring.
+  - `test_gemini_suggestion_service.py`: Schema validation, offline fallback, caching, security.
+  - `test_report_service.py`: ReportLab PDF report generation.
+- Frontend Build Status:
+  - `npm run build` completed cleanly via Vite with 0 syntax or bundling errors.
+
+====================================================================================================
+10. LOCAL DEPLOYMENT & ENVIRONMENT CONFIGURATION GUIDE
+====================================================================================================
+
+1. Backend Setup:
+   ```bash
+   cd backend
+   python -m venv venv
+   venv\Scripts\activate      # Windows (or source venv/bin/activate on Linux/macOS)
+   pip install -r requirements.txt
+   ```
+
+2. Environment File (`backend/.env`):
+   ```env
+   PROJECT_NAME="AI Interview Coach"
+   ENV="development"
+   PORT=8000
+   MONGODB_URI="mongodb://localhost:27017"
+   MONGODB_DB_NAME="ai_interview_coach"
+   JWT_SECRET="your-jwt-secret-key"
+   JWT_ALGORITHM="HS256"
+   ACCESS_TOKEN_EXPIRE_MINUTES=1440
+   GEMINI_API_KEY="your-gemini-api-key"
+   GEMINI_MODEL="gemini-2.5-flash"
+   WHISPER_MODEL="tiny.en"
+   WHISPER_COMPUTE_TYPE="int8"
+   FRAME_SAMPLE_FPS=5
+   VIDEO_TTL_MINUTES=60
+   TEMP_DIR="./temp/interviews"
+   FRONTEND_URL="http://localhost:5173"
+   ```
+
+3. Start Backend Server:
+   ```bash
+   uvicorn app.main:app --reload --port 8000 --app-dir backend
+   ```
+
+4. Frontend Setup:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+5. Run Automated Tests:
+   ```powershell
+   $env:PYTHONPATH="backend"; python -m pytest backend/tests/ -v
+   ```
+
+====================================================================================================
+                             END OF PROJECT DOCUMENTATION FILE
+====================================================================================================

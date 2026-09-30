@@ -1,44 +1,418 @@
 [
   {
-    "id": "COMPUTER_NETWORKS_001",
+    "id": "net_001",
     "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare the OSI 7-Layer Model and TCP/IP 4-Layer Model and explain data encapsulation/decapsulation across layers.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Computer Networks in modern software engineering?",
-    "expected_concepts": [
-      "Computer Networks fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Network Models",
+    "concept": "OSI 7-Layer vs TCP/IP Model",
+    "questionFamily": "comparison",
+    "tags": [
+      "OSI model",
+      "TCP/IP",
+      "encapsulation",
+      "packets",
+      "frames",
+      "segments"
     ],
-    "ideal_answer": "Computer Networks is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Computer Networks."
+    "idealAnswer": "OSI 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application. TCP/IP 4 layers: Link, Network, Transport, Application. Data moves down layers prepending headers (encapsulation) into Segments -> Packets -> Frames -> Bits.",
+    "ideal_answer": "OSI 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application. TCP/IP 4 layers: Link, Network, Transport, Application. Data moves down layers prepending headers (encapsulation) into Segments -> Packets -> Frames -> Bits.",
+    "expected_concepts": [
+      "OSI model",
+      "TCP/IP",
+      "encapsulation",
+      "packets"
+    ],
+    "explanation": "Evaluates Computer Networks Network Models and OSI 7-Layer vs TCP/IP Model comprehension."
   },
   {
-    "id": "COMPUTER_NETWORKS_002",
+    "id": "net_002",
     "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain TCP (Transmission Control Protocol) vs UDP (User Datagram Protocol) in terms of reliability, connection state, and overhead.",
+    "difficulty": "easy",
+    "topic": "Transport Layer",
+    "concept": "TCP vs UDP Tradeoffs",
+    "questionFamily": "comparison",
+    "tags": [
+      "TCP",
+      "UDP",
+      "connection-oriented",
+      "connectionless",
+      "packet loss",
+      "low latency"
+    ],
+    "idealAnswer": "TCP is connection-oriented, reliable, guarantees in-order delivery, flow control, and congestion control (ideal for HTTP, DBs). UDP is connectionless, lightweight, unreliable, with zero handshake overhead (ideal for video streaming, DNS, VoIP, gaming).",
+    "ideal_answer": "TCP is connection-oriented, reliable, guarantees in-order delivery, flow control, and congestion control (ideal for HTTP, DBs). UDP is connectionless, lightweight, unreliable, with zero handshake overhead (ideal for video streaming, DNS, VoIP, gaming).",
+    "expected_concepts": [
+      "TCP",
+      "UDP",
+      "connection-oriented",
+      "connectionless"
+    ],
+    "explanation": "Evaluates Computer Networks Transport Layer and TCP vs UDP Tradeoffs comprehension."
+  },
+  {
+    "id": "net_003",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the TCP Three-Way Handshake (SYN, SYN-ACK, ACK) and Four-Way Teardown (FIN, ACK, FIN, ACK) with TIME_WAIT state.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Computer Networks in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Transport Layer",
+    "concept": "TCP 3-Way Handshake & TIME_WAIT",
+    "questionFamily": "architecture",
+    "tags": [
+      "TCP handshake",
+      "SYN",
+      "ACK",
+      "FIN",
+      "TIME_WAIT",
+      "sequence numbers"
     ],
-    "ideal_answer": "Common challenges with Computer Networks include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Computer Networks."
+    "idealAnswer": "Handshake establishes connection: Client sends SYN -> Server responds SYN-ACK -> Client sends ACK. Teardown terminates: Client sends FIN -> Server sends ACK -> Server sends FIN -> Client sends ACK and enters TIME_WAIT (2MSL) to ensure final ACK was received and drain stray network packets.",
+    "ideal_answer": "Handshake establishes connection: Client sends SYN -> Server responds SYN-ACK -> Client sends ACK. Teardown terminates: Client sends FIN -> Server sends ACK -> Server sends FIN -> Client sends ACK and enters TIME_WAIT (2MSL) to ensure final ACK was received and drain stray network packets.",
+    "expected_concepts": [
+      "TCP handshake",
+      "SYN",
+      "ACK",
+      "FIN"
+    ],
+    "explanation": "Evaluates Computer Networks Transport Layer and TCP 3-Way Handshake & TIME_WAIT comprehension."
   },
   {
-    "id": "COMPUTER_NETWORKS_003",
+    "id": "net_004",
     "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain TCP Flow Control (Sliding Window Algorithm) vs TCP Congestion Control (Slow Start, Congestion Avoidance, Fast Retransmit, Fast Recovery).",
     "difficulty": "hard",
-    "question": "How does Computer Networks handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "topic": "Transport Layer",
+    "concept": "TCP Flow vs Congestion Control",
+    "questionFamily": "architecture",
+    "tags": [
+      "flow control",
+      "congestion control",
+      "sliding window",
+      "slow start",
+      "congestion window",
+      "AIMD"
     ],
-    "ideal_answer": "Computer Networks handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Computer Networks."
+    "idealAnswer": "Flow control prevents fast senders from overwhelming slow receivers using Receiver Advertised Window (rwnd). Congestion control prevents senders from overloading intermediate network routers using Congestion Window (cwnd), dynamically adjusted via Slow Start and AIMD.",
+    "ideal_answer": "Flow control prevents fast senders from overwhelming slow receivers using Receiver Advertised Window (rwnd). Congestion control prevents senders from overloading intermediate network routers using Congestion Window (cwnd), dynamically adjusted via Slow Start and AIMD.",
+    "expected_concepts": [
+      "flow control",
+      "congestion control",
+      "sliding window",
+      "slow start"
+    ],
+    "explanation": "Evaluates Computer Networks Transport Layer and TCP Flow vs Congestion Control comprehension."
+  },
+  {
+    "id": "net_005",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain DNS (Domain Name System) resolution flow from browser cache, OS resolver, Recursive Resolver, Root Nameserver, TLD Nameserver, to Authoritative Nameserver.",
+    "difficulty": "easy",
+    "topic": "Application Layer",
+    "concept": "DNS Resolution Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "DNS",
+      "recursive resolver",
+      "root server",
+      "TLD server",
+      "authoritative nameserver",
+      "A record"
+    ],
+    "idealAnswer": "Browser checks local/OS cache -> queries ISP Recursive Resolver -> queries Root Server ('.') -> queries TLD Server ('.com') -> queries Authoritative Server ('example.com') -> returns IP A-record -> cached per TTL.",
+    "ideal_answer": "Browser checks local/OS cache -> queries ISP Recursive Resolver -> queries Root Server ('.') -> queries TLD Server ('.com') -> queries Authoritative Server ('example.com') -> returns IP A-record -> cached per TTL.",
+    "expected_concepts": [
+      "DNS",
+      "recursive resolver",
+      "root server",
+      "TLD server"
+    ],
+    "explanation": "Evaluates Computer Networks Application Layer and DNS Resolution Architecture comprehension."
+  },
+  {
+    "id": "net_006",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare HTTP/1.1 (Keep-Alive, Head-of-Line Blocking), HTTP/2 (Multiplexing, Binary Framing, HPACK), and HTTP/3 (QUIC over UDP).",
+    "difficulty": "hard",
+    "topic": "Application Layer",
+    "concept": "HTTP/1.1 vs HTTP/2 vs HTTP/3 (QUIC)",
+    "questionFamily": "comparison",
+    "tags": [
+      "HTTP/1.1",
+      "HTTP/2",
+      "HTTP/3",
+      "QUIC",
+      "multiplexing",
+      "head-of-line blocking"
+    ],
+    "idealAnswer": "HTTP/1.1 uses persistent TCP connections but suffers from HTTP head-of-line blocking. HTTP/2 multiplexes multiple streams over one TCP connection using binary framing. HTTP/3 replaces TCP with QUIC over UDP, eliminating TCP head-of-line blocking on packet loss.",
+    "ideal_answer": "HTTP/1.1 uses persistent TCP connections but suffers from HTTP head-of-line blocking. HTTP/2 multiplexes multiple streams over one TCP connection using binary framing. HTTP/3 replaces TCP with QUIC over UDP, eliminating TCP head-of-line blocking on packet loss.",
+    "expected_concepts": [
+      "HTTP/1.1",
+      "HTTP/2",
+      "HTTP/3",
+      "QUIC"
+    ],
+    "explanation": "Evaluates Computer Networks Application Layer and HTTP/1.1 vs HTTP/2 vs HTTP/3 (QUIC) comprehension."
+  },
+  {
+    "id": "net_007",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain HTTPS / TLS 1.3 Handshake: Symmetric vs Asymmetric Encryption, Certificate Authorities (CA), and Perfect Forward Secrecy (PFS).",
+    "difficulty": "hard",
+    "topic": "Security & TLS",
+    "concept": "HTTPS & TLS 1.3 Handshake",
+    "questionFamily": "security",
+    "tags": [
+      "TLS 1.3",
+      "HTTPS",
+      "Diffie-Hellman",
+      "certificate authority",
+      "symmetric encryption",
+      "PFS"
+    ],
+    "idealAnswer": "TLS combines asymmetric encryption (authenticating server certificate via PKI and negotiating session keys via ECDHE) and fast symmetric encryption (AES-GCM/ChaCha20 for payload data). TLS 1.3 achieves 1-RTT handshake and enforces Perfect Forward Secrecy.",
+    "ideal_answer": "TLS combines asymmetric encryption (authenticating server certificate via PKI and negotiating session keys via ECDHE) and fast symmetric encryption (AES-GCM/ChaCha20 for payload data). TLS 1.3 achieves 1-RTT handshake and enforces Perfect Forward Secrecy.",
+    "expected_concepts": [
+      "TLS 1.3",
+      "HTTPS",
+      "Diffie-Hellman",
+      "certificate authority"
+    ],
+    "explanation": "Evaluates Computer Networks Security & TLS and HTTPS & TLS 1.3 Handshake comprehension."
+  },
+  {
+    "id": "net_008",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is IP Addressing: IPv4 vs IPv6, Subnetting, CIDR notation (/24), and NAT (Network Address Translation)?",
+    "difficulty": "medium",
+    "topic": "Network Layer",
+    "concept": "IPv4/IPv6, CIDR, & NAT",
+    "questionFamily": "implementation",
+    "tags": [
+      "IPv4",
+      "IPv6",
+      "CIDR",
+      "subnet mask",
+      "NAT",
+      "private IP"
+    ],
+    "idealAnswer": "IPv4 uses 32-bit addresses (exhausted); IPv6 uses 128-bit addresses. CIDR notation (/24) defines subnet masks. NAT translates private RFC 1918 LAN addresses (192.168.x.x) into public IP addresses on routers to conserve IPv4 space.",
+    "ideal_answer": "IPv4 uses 32-bit addresses (exhausted); IPv6 uses 128-bit addresses. CIDR notation (/24) defines subnet masks. NAT translates private RFC 1918 LAN addresses (192.168.x.x) into public IP addresses on routers to conserve IPv4 space.",
+    "expected_concepts": [
+      "IPv4",
+      "IPv6",
+      "CIDR",
+      "subnet mask"
+    ],
+    "explanation": "Evaluates Computer Networks Network Layer and IPv4/IPv6, CIDR, & NAT comprehension."
+  },
+  {
+    "id": "net_009",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Routing Protocols: Distance-Vector (RIP) vs Link-State (OSPF) vs Path-Vector (BGP for Autonomous Systems).",
+    "difficulty": "hard",
+    "topic": "Network Layer",
+    "concept": "Routing Protocols (OSPF vs BGP)",
+    "questionFamily": "comparison",
+    "tags": [
+      "routing",
+      "OSPF",
+      "BGP",
+      "link-state",
+      "Dijkstra",
+      "autonomous systems"
+    ],
+    "idealAnswer": "OSPF (interior gateway) uses link-state flooding and Dijkstra's algorithm to compute shortest paths within an autonomous system. BGP (Border Gateway Protocol) is the path-vector exterior routing protocol routing internet traffic between global Autonomous Systems (AS).",
+    "ideal_answer": "OSPF (interior gateway) uses link-state flooding and Dijkstra's algorithm to compute shortest paths within an autonomous system. BGP (Border Gateway Protocol) is the path-vector exterior routing protocol routing internet traffic between global Autonomous Systems (AS).",
+    "expected_concepts": [
+      "routing",
+      "OSPF",
+      "BGP",
+      "link-state"
+    ],
+    "explanation": "Evaluates Computer Networks Network Layer and Routing Protocols (OSPF vs BGP) comprehension."
+  },
+  {
+    "id": "net_010",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is ARP (Address Resolution Protocol), and how does it map IP addresses to Data Link MAC addresses?",
+    "difficulty": "easy",
+    "topic": "Data Link Layer",
+    "concept": "ARP Protocol & MAC Mapping",
+    "questionFamily": "implementation",
+    "tags": [
+      "ARP",
+      "MAC address",
+      "broadcast",
+      "ARP cache",
+      "Data Link Layer"
+    ],
+    "idealAnswer": "ARP resolves Layer 3 IP addresses into Layer 2 hardware MAC addresses on a local Ethernet broadcast network. A host broadcasts an ARP Request ('Who has IP x.x.x.x?'), and the target responds with a unicast ARP Reply containing its MAC address.",
+    "ideal_answer": "ARP resolves Layer 3 IP addresses into Layer 2 hardware MAC addresses on a local Ethernet broadcast network. A host broadcasts an ARP Request ('Who has IP x.x.x.x?'), and the target responds with a unicast ARP Reply containing its MAC address.",
+    "expected_concepts": [
+      "ARP",
+      "MAC address",
+      "broadcast",
+      "ARP cache"
+    ],
+    "explanation": "Evaluates Computer Networks Data Link Layer and ARP Protocol & MAC Mapping comprehension."
+  },
+  {
+    "id": "net_011",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain VLANs (Virtual Local Area Networks), 802.1Q trunking, and broadcast domain isolation.",
+    "difficulty": "medium",
+    "topic": "Data Link Layer",
+    "concept": "VLANs & 802.1Q Trunking",
+    "questionFamily": "architecture",
+    "tags": [
+      "VLAN",
+      "802.1Q",
+      "broadcast domain",
+      "trunk port",
+      "switch"
+    ],
+    "idealAnswer": "VLANs logically segment a physical Layer 2 switch network into multiple isolated broadcast domains for security and traffic control. 802.1Q VLAN tagging attaches 4-byte tags to Ethernet frames across switch trunk links.",
+    "ideal_answer": "VLANs logically segment a physical Layer 2 switch network into multiple isolated broadcast domains for security and traffic control. 802.1Q VLAN tagging attaches 4-byte tags to Ethernet frames across switch trunk links.",
+    "expected_concepts": [
+      "VLAN",
+      "802.1Q",
+      "broadcast domain",
+      "trunk port"
+    ],
+    "explanation": "Evaluates Computer Networks Data Link Layer and VLANs & 802.1Q Trunking comprehension."
+  },
+  {
+    "id": "net_012",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Content Delivery Network (CDN), and how does Anycast routing and edge caching accelerate global web performance?",
+    "difficulty": "medium",
+    "topic": "Edge & CDN",
+    "concept": "CDN Edge Caching & Anycast DNS",
+    "questionFamily": "architecture",
+    "tags": [
+      "CDN",
+      "edge caching",
+      "Anycast",
+      "latency reduction",
+      "Cloudflare"
+    ],
+    "idealAnswer": "A CDN caches static assets (images, JS, CSS) across globally distributed edge servers (PoPs). Anycast BGP routes client DNS queries and HTTP requests to the topologically closest edge data center, minimizing network roundtrips.",
+    "ideal_answer": "A CDN caches static assets (images, JS, CSS) across globally distributed edge servers (PoPs). Anycast BGP routes client DNS queries and HTTP requests to the topologically closest edge data center, minimizing network roundtrips.",
+    "expected_concepts": [
+      "CDN",
+      "edge caching",
+      "Anycast",
+      "latency reduction"
+    ],
+    "explanation": "Evaluates Computer Networks Edge & CDN and CDN Edge Caching & Anycast DNS comprehension."
+  },
+  {
+    "id": "net_013",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain WebSockets vs Server-Sent Events (SSE) vs Long Polling for real-time bi-directional communication.",
+    "difficulty": "medium",
+    "topic": "Real-Time Protocols",
+    "concept": "WebSockets vs SSE vs Long Polling",
+    "questionFamily": "comparison",
+    "tags": [
+      "WebSockets",
+      "Server-Sent Events",
+      "SSE",
+      "long polling",
+      "duplex communication"
+    ],
+    "idealAnswer": "Long Polling sends repeated HTTP requests waiting for server response. Server-Sent Events (SSE) is lightweight unidirectional server-to-client text streaming over HTTP. WebSockets upgrade HTTP to full-duplex bi-directional TCP connections.",
+    "ideal_answer": "Long Polling sends repeated HTTP requests waiting for server response. Server-Sent Events (SSE) is lightweight unidirectional server-to-client text streaming over HTTP. WebSockets upgrade HTTP to full-duplex bi-directional TCP connections.",
+    "expected_concepts": [
+      "WebSockets",
+      "Server-Sent Events",
+      "SSE",
+      "long polling"
+    ],
+    "explanation": "Evaluates Computer Networks Real-Time Protocols and WebSockets vs SSE vs Long Polling comprehension."
+  },
+  {
+    "id": "net_014",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a DDoS (Distributed Denial of Service) Attack (SYN Flood, UDP Amplification, HTTP Flood) and mitigation strategies?",
+    "difficulty": "medium",
+    "topic": "Security",
+    "concept": "DDoS Attacks & Mitigation",
+    "questionFamily": "security",
+    "tags": [
+      "DDoS",
+      "SYN flood",
+      "UDP amplification",
+      "rate limiting",
+      "SYN cookies",
+      "WAF"
+    ],
+    "idealAnswer": "DDoS floods servers with malicious distributed traffic. Layer 4 SYN floods exhaust connection tables (mitigated with SYN Cookies and Anycast scrubbing); Layer 7 HTTP floods exhaust CPU/DB (mitigated with WAF, CAPTCHA, and Rate Limiting).",
+    "ideal_answer": "DDoS floods servers with malicious distributed traffic. Layer 4 SYN floods exhaust connection tables (mitigated with SYN Cookies and Anycast scrubbing); Layer 7 HTTP floods exhaust CPU/DB (mitigated with WAF, CAPTCHA, and Rate Limiting).",
+    "expected_concepts": [
+      "DDoS",
+      "SYN flood",
+      "UDP amplification",
+      "rate limiting"
+    ],
+    "explanation": "Evaluates Computer Networks Security and DDoS Attacks & Mitigation comprehension."
+  },
+  {
+    "id": "net_015",
+    "skill": "Computer Networks",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Load Balancing Algorithms: Round Robin, Weighted Round Robin, Least Connections, IP Hash, and Layer 4 vs Layer 7 Load Balancers.",
+    "difficulty": "medium",
+    "topic": "Load Balancing",
+    "concept": "L4 vs L7 Load Balancing & Algorithms",
+    "questionFamily": "comparison",
+    "tags": [
+      "load balancer",
+      "Layer 4",
+      "Layer 7",
+      "least connections",
+      "IP hash",
+      "round robin"
+    ],
+    "idealAnswer": "Layer 4 load balancers (TCP/UDP level) route packets based on IP/Port without inspecting payload (ultra-fast). Layer 7 load balancers (HTTP level) inspect cookies, headers, and paths to perform intelligent routing, SSL termination, and sticky sessions.",
+    "ideal_answer": "Layer 4 load balancers (TCP/UDP level) route packets based on IP/Port without inspecting payload (ultra-fast). Layer 7 load balancers (HTTP level) inspect cookies, headers, and paths to perform intelligent routing, SSL termination, and sticky sessions.",
+    "expected_concepts": [
+      "load balancer",
+      "Layer 4",
+      "Layer 7",
+      "least connections"
+    ],
+    "explanation": "Evaluates Computer Networks Load Balancing and L4 vs L7 Load Balancing & Algorithms comprehension."
   }
 ]

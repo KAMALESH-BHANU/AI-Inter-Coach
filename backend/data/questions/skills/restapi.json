@@ -1,44 +1,407 @@
 [
   {
-    "id": "REST_API_001",
+    "id": "restapi_001",
     "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the six architectural constraints of REST (Representational State Transfer) defined by Roy Fielding.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of REST API in modern software engineering?",
-    "expected_concepts": [
-      "REST API fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Core Principles",
+    "concept": "Fielding's 6 REST Constraints",
+    "questionFamily": "architecture",
+    "tags": [
+      "REST",
+      "Roy Fielding",
+      "stateless",
+      "client-server",
+      "cacheable",
+      "uniform interface"
     ],
-    "ideal_answer": "REST API is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of REST API."
+    "idealAnswer": "Fielding's constraints: 1) Client-Server separation, 2) Statelessness, 3) Cacheability, 4) Layered System, 5) Uniform Interface, 6) Code on Demand (optional).",
+    "ideal_answer": "Fielding's constraints: 1) Client-Server separation, 2) Statelessness, 3) Cacheability, 4) Layered System, 5) Uniform Interface, 6) Code on Demand (optional).",
+    "expected_concepts": [
+      "REST",
+      "Roy Fielding",
+      "stateless",
+      "client-server"
+    ],
+    "explanation": "Evaluates REST API Core Principles and Fielding's 6 REST Constraints comprehension."
   },
   {
-    "id": "REST_API_002",
+    "id": "restapi_002",
     "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the principle of Statelessness in REST and why sessions must not be stored on the server.",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "Statelessness Constraint",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "stateless",
+      "scalability",
+      "JWT",
+      "session state",
+      "horizontal scaling"
+    ],
+    "idealAnswer": "Statelessness requires that each HTTP request from client to server contain all information necessary to understand and process the request. No client context is stored on the server, allowing requests to be handled by any server instance in a cluster.",
+    "ideal_answer": "Statelessness requires that each HTTP request from client to server contain all information necessary to understand and process the request. No client context is stored on the server, allowing requests to be handled by any server instance in a cluster.",
+    "expected_concepts": [
+      "stateless",
+      "scalability",
+      "JWT",
+      "session state"
+    ],
+    "explanation": "Evaluates REST API Architecture and Statelessness Constraint comprehension."
+  },
+  {
+    "id": "restapi_003",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare HTTP methods: GET, POST, PUT, PATCH, and DELETE in terms of Idempotency and Safety.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using REST API in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "HTTP Methods",
+    "concept": "Idempotency & Safety of HTTP Verbs",
+    "questionFamily": "comparison",
+    "tags": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE",
+      "idempotent",
+      "safe"
     ],
-    "ideal_answer": "Common challenges with REST API include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of REST API."
+    "idealAnswer": "Safe methods do not alter server state (GET, HEAD). Idempotent methods yield identical server state when executed once or multiple times (GET, PUT, DELETE). POST and PATCH are generally not idempotent.",
+    "ideal_answer": "Safe methods do not alter server state (GET, HEAD). Idempotent methods yield identical server state when executed once or multiple times (GET, PUT, DELETE). POST and PATCH are generally not idempotent.",
+    "expected_concepts": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH"
+    ],
+    "explanation": "Evaluates REST API HTTP Methods and Idempotency & Safety of HTTP Verbs comprehension."
   },
   {
-    "id": "REST_API_003",
+    "id": "restapi_004",
     "skill": "REST API",
-    "difficulty": "hard",
-    "question": "How does REST API handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain HTTP Status Code categories (1xx, 2xx, 3xx, 4xx, 5xx) and key status codes (200, 201, 204, 400, 401, 403, 404, 409, 422, 500, 503).",
+    "difficulty": "easy",
+    "topic": "HTTP Status Codes",
+    "concept": "HTTP Status Code Categorization",
+    "questionFamily": "definition",
+    "tags": [
+      "HTTP status codes",
+      "201 Created",
+      "204 No Content",
+      "401 Unauthorized",
+      "403 Forbidden",
+      "409 Conflict"
     ],
-    "ideal_answer": "REST API handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of REST API."
+    "idealAnswer": "2xx indicates Success (200 OK, 201 Created, 204 No Content). 3xx Redirection. 4xx Client Error (400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 409 Conflict, 422 Unprocessable). 5xx Server Error (500 Internal Error, 503 Service Unavailable).",
+    "ideal_answer": "2xx indicates Success (200 OK, 201 Created, 204 No Content). 3xx Redirection. 4xx Client Error (400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 409 Conflict, 422 Unprocessable). 5xx Server Error (500 Internal Error, 503 Service Unavailable).",
+    "expected_concepts": [
+      "HTTP status codes",
+      "201 Created",
+      "204 No Content",
+      "401 Unauthorized"
+    ],
+    "explanation": "Evaluates REST API HTTP Status Codes and HTTP Status Code Categorization comprehension."
+  },
+  {
+    "id": "restapi_005",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between 401 Unauthorized and 403 Forbidden status codes in REST APIs?",
+    "difficulty": "easy",
+    "topic": "Status Codes & Auth",
+    "concept": "401 Unauthorized vs 403 Forbidden",
+    "questionFamily": "comparison",
+    "tags": [
+      "401 Unauthorized",
+      "403 Forbidden",
+      "authentication",
+      "authorization",
+      "permissions"
+    ],
+    "idealAnswer": "401 Unauthorized indicates authentication failure (missing or invalid credentials; client should authenticate). 403 Forbidden indicates authorization failure (client is authenticated but lacks permission to access the resource).",
+    "ideal_answer": "401 Unauthorized indicates authentication failure (missing or invalid credentials; client should authenticate). 403 Forbidden indicates authorization failure (client is authenticated but lacks permission to access the resource).",
+    "expected_concepts": [
+      "401 Unauthorized",
+      "403 Forbidden",
+      "authentication",
+      "authorization"
+    ],
+    "explanation": "Evaluates REST API Status Codes & Auth and 401 Unauthorized vs 403 Forbidden comprehension."
+  },
+  {
+    "id": "restapi_006",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is HATEOAS (Hypermedia As The Engine Of Application State) and Richardson Maturity Model Level 3?",
+    "difficulty": "medium",
+    "topic": "HATEOAS & Maturity",
+    "concept": "HATEOAS & Richardson Maturity Model",
+    "questionFamily": "architecture",
+    "tags": [
+      "HATEOAS",
+      "Richardson Maturity Model",
+      "hypermedia links",
+      "Level 3 REST"
+    ],
+    "idealAnswer": "Richardson Maturity Model: Level 0 (HTTP as transport), Level 1 (Resources), Level 2 (HTTP Verbs), Level 3 (HATEOAS). HATEOAS embeds hypermedia links (_links) in responses guiding clients to valid next actions dynamically.",
+    "ideal_answer": "Richardson Maturity Model: Level 0 (HTTP as transport), Level 1 (Resources), Level 2 (HTTP Verbs), Level 3 (HATEOAS). HATEOAS embeds hypermedia links (_links) in responses guiding clients to valid next actions dynamically.",
+    "expected_concepts": [
+      "HATEOAS",
+      "Richardson Maturity Model",
+      "hypermedia links",
+      "Level 3 REST"
+    ],
+    "explanation": "Evaluates REST API HATEOAS & Maturity and HATEOAS & Richardson Maturity Model comprehension."
+  },
+  {
+    "id": "restapi_007",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain REST API Versioning strategies: URI Path (/v1/users), Query Parameter (?version=1), Header (Accept header), and their tradeoffs.",
+    "difficulty": "medium",
+    "topic": "API Design",
+    "concept": "API Versioning Strategies",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "API versioning",
+      "URI versioning",
+      "header versioning",
+      "backward compatibility"
+    ],
+    "idealAnswer": "URI Path (/api/v1/users) is most explicit and easily cached. Header versioning (Accept: application/vnd.api.v1+json) preserves clean URIs following pure REST principles but complicates client testing and caching.",
+    "ideal_answer": "URI Path (/api/v1/users) is most explicit and easily cached. Header versioning (Accept: application/vnd.api.v1+json) preserves clean URIs following pure REST principles but complicates client testing and caching.",
+    "expected_concepts": [
+      "API versioning",
+      "URI versioning",
+      "header versioning",
+      "backward compatibility"
+    ],
+    "explanation": "Evaluates REST API API Design and API Versioning Strategies comprehension."
+  },
+  {
+    "id": "restapi_008",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you design RESTful Pagination: Offset-based pagination vs Cursor-based (keyset) pagination?",
+    "difficulty": "medium",
+    "topic": "API Design & Performance",
+    "concept": "Offset vs Cursor-Based Pagination",
+    "questionFamily": "comparison",
+    "tags": [
+      "pagination",
+      "offset",
+      "limit",
+      "cursor pagination",
+      "keyset pagination"
+    ],
+    "idealAnswer": "Offset pagination (limit/offset) is simple and allows jumping to arbitrary pages, but degrades on large datasets (O(N) database scans) and suffers from skipping/duplicating items during inserts. Cursor pagination uses index pointers (after_id), guaranteeing O(1) performance.",
+    "ideal_answer": "Offset pagination (limit/offset) is simple and allows jumping to arbitrary pages, but degrades on large datasets (O(N) database scans) and suffers from skipping/duplicating items during inserts. Cursor pagination uses index pointers (after_id), guaranteeing O(1) performance.",
+    "expected_concepts": [
+      "pagination",
+      "offset",
+      "limit",
+      "cursor pagination"
+    ],
+    "explanation": "Evaluates REST API API Design & Performance and Offset vs Cursor-Based Pagination comprehension."
+  },
+  {
+    "id": "restapi_009",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain HTTP Caching headers in REST APIs: Cache-Control (max-age, no-cache, no-store), ETag, and Conditional Requests (If-None-Match).",
+    "difficulty": "medium",
+    "topic": "Caching",
+    "concept": "HTTP Caching & ETag Validation",
+    "questionFamily": "optimization",
+    "tags": [
+      "Cache-Control",
+      "ETag",
+      "If-None-Match",
+      "304 Not Modified",
+      "conditional requests"
+    ],
+    "idealAnswer": "Cache-Control directs client and CDN caching behavior. ETags provide hash digests of resource representations: on revalidation, clients send 'If-None-Match: <etag>'; if unchanged, the server returns 304 Not Modified with zero payload.",
+    "ideal_answer": "Cache-Control directs client and CDN caching behavior. ETags provide hash digests of resource representations: on revalidation, clients send 'If-None-Match: <etag>'; if unchanged, the server returns 304 Not Modified with zero payload.",
+    "expected_concepts": [
+      "Cache-Control",
+      "ETag",
+      "If-None-Match",
+      "304 Not Modified"
+    ],
+    "explanation": "Evaluates REST API Caching and HTTP Caching & ETag Validation comprehension."
+  },
+  {
+    "id": "restapi_010",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is API Idempotency Keys and how do they prevent duplicate payment charges or orders on network retries?",
+    "difficulty": "hard",
+    "topic": "Reliability & Security",
+    "concept": "Idempotency Keys & Retry Safety",
+    "questionFamily": "design",
+    "tags": [
+      "idempotency key",
+      "network retry",
+      "duplicate transactions",
+      "distributed locking"
+    ],
+    "idealAnswer": "Clients generate a unique UUID 'Idempotency-Key' header on POST requests. The server records the key and cached response in a fast store (Redis) with locking; subsequent retries return the original saved response without re-executing business logic.",
+    "ideal_answer": "Clients generate a unique UUID 'Idempotency-Key' header on POST requests. The server records the key and cached response in a fast store (Redis) with locking; subsequent retries return the original saved response without re-executing business logic.",
+    "expected_concepts": [
+      "idempotency key",
+      "network retry",
+      "duplicate transactions",
+      "distributed locking"
+    ],
+    "explanation": "Evaluates REST API Reliability & Security and Idempotency Keys & Retry Safety comprehension."
+  },
+  {
+    "id": "restapi_011",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you design Consistent Error Response Payloads (RFC 7807 / RFC 9457 Problem Details for HTTP APIs)?",
+    "difficulty": "easy",
+    "topic": "API Design",
+    "concept": "RFC 7807 Problem Details Standard",
+    "questionFamily": "best_practice",
+    "tags": [
+      "RFC 7807",
+      "Problem Details",
+      "error payload",
+      "error envelope",
+      "type title detail"
+    ],
+    "idealAnswer": "RFC 7807 defines standard JSON error envelopes (application/problem+json) containing standardized fields: 'type' (URI reference), 'title' (short summary), 'status' (HTTP status code), 'detail' (human-readable explanation), and 'instance' (request URI).",
+    "ideal_answer": "RFC 7807 defines standard JSON error envelopes (application/problem+json) containing standardized fields: 'type' (URI reference), 'title' (short summary), 'status' (HTTP status code), 'detail' (human-readable explanation), and 'instance' (request URI).",
+    "expected_concepts": [
+      "RFC 7807",
+      "Problem Details",
+      "error payload",
+      "error envelope"
+    ],
+    "explanation": "Evaluates REST API API Design and RFC 7807 Problem Details Standard comprehension."
+  },
+  {
+    "id": "restapi_012",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Content Negotiation in REST APIs: Accept and Content-Type headers for multi-format representations (JSON, XML, Protocol Buffers).",
+    "difficulty": "easy",
+    "topic": "Content Negotiation",
+    "concept": "Content Negotiation (Accept & Content-Type)",
+    "questionFamily": "implementation",
+    "tags": [
+      "content negotiation",
+      "Accept header",
+      "Content-Type",
+      "JSON",
+      "Protobuf"
+    ],
+    "idealAnswer": "Content negotiation allows clients to request preferred data formats via the 'Accept' request header (e.g. application/json, application/xml) and servers to specify representation format via 'Content-Type' header.",
+    "ideal_answer": "Content negotiation allows clients to request preferred data formats via the 'Accept' request header (e.g. application/json, application/xml) and servers to specify representation format via 'Content-Type' header.",
+    "expected_concepts": [
+      "content negotiation",
+      "Accept header",
+      "Content-Type",
+      "JSON"
+    ],
+    "explanation": "Evaluates REST API Content Negotiation and Content Negotiation (Accept & Content-Type) comprehension."
+  },
+  {
+    "id": "restapi_013",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Rate Limiting and Throttling headers in REST APIs (X-RateLimit-Limit, X-RateLimit-Remaining, Retry-After)?",
+    "difficulty": "easy",
+    "topic": "Security & Rate Limiting",
+    "concept": "Rate Limiting HTTP Headers",
+    "questionFamily": "best_practice",
+    "tags": [
+      "rate limiting",
+      "X-RateLimit-Remaining",
+      "Retry-After",
+      "429 Too Many Requests"
+    ],
+    "idealAnswer": "APIs signal rate limit state via standard headers: X-RateLimit-Limit (quota cap), X-RateLimit-Remaining (available requests), X-RateLimit-Reset (epoch timestamp), and 'Retry-After: seconds' accompanying 429 Too Many Requests.",
+    "ideal_answer": "APIs signal rate limit state via standard headers: X-RateLimit-Limit (quota cap), X-RateLimit-Remaining (available requests), X-RateLimit-Reset (epoch timestamp), and 'Retry-After: seconds' accompanying 429 Too Many Requests.",
+    "expected_concepts": [
+      "rate limiting",
+      "X-RateLimit-Remaining",
+      "Retry-After",
+      "429 Too Many Requests"
+    ],
+    "explanation": "Evaluates REST API Security & Rate Limiting and Rate Limiting HTTP Headers comprehension."
+  },
+  {
+    "id": "restapi_014",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you secure REST APIs against common vulnerabilities (OAuth2, API Keys, Rate Limiting, Input Validation, CORS)?",
+    "difficulty": "medium",
+    "topic": "API Security",
+    "concept": "REST API Security Checklist",
+    "questionFamily": "security",
+    "tags": [
+      "API security",
+      "OAuth2",
+      "API Keys",
+      "CORS",
+      "Input Validation"
+    ],
+    "idealAnswer": "Secure REST APIs require: HTTPS everywhere, OAuth2/JWT token verification, API gateway rate limiting, strict CORS configuration, schema input validation, and preventing over-fetching/mass assignment vulnerabilities.",
+    "ideal_answer": "Secure REST APIs require: HTTPS everywhere, OAuth2/JWT token verification, API gateway rate limiting, strict CORS configuration, schema input validation, and preventing over-fetching/mass assignment vulnerabilities.",
+    "expected_concepts": [
+      "API security",
+      "OAuth2",
+      "API Keys",
+      "CORS"
+    ],
+    "explanation": "Evaluates REST API API Security and REST API Security Checklist comprehension."
+  },
+  {
+    "id": "restapi_015",
+    "skill": "REST API",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is OpenAPI / Swagger Specification (OAS 3.0), and why is API-first contract design beneficial?",
+    "difficulty": "easy",
+    "topic": "Documentation & Tooling",
+    "concept": "OpenAPI Specification & Contract Design",
+    "questionFamily": "best_practice",
+    "tags": [
+      "OpenAPI",
+      "Swagger",
+      "contract-first design",
+      "client SDK generation",
+      "mocking"
+    ],
+    "idealAnswer": "OpenAPI is the standard machine-readable API definition format. In API-First design, teams specify the OpenAPI YAML contract first, enabling parallel frontend/backend development, automated contract testing, and SDK generation.",
+    "ideal_answer": "OpenAPI is the standard machine-readable API definition format. In API-First design, teams specify the OpenAPI YAML contract first, enabling parallel frontend/backend development, automated contract testing, and SDK generation.",
+    "expected_concepts": [
+      "OpenAPI",
+      "Swagger",
+      "contract-first design",
+      "client SDK generation"
+    ],
+    "explanation": "Evaluates REST API Documentation & Tooling and OpenAPI Specification & Contract Design comprehension."
   }
 ]

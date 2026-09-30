@@ -1,44 +1,413 @@
 [
   {
-    "id": "TENSORFLOW_001",
+    "id": "tf_001",
     "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain TensorFlow 2.x Architecture: Eager Execution by default vs Static Graph execution with @tf.function (AutoGraph).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of TensorFlow in modern software engineering?",
-    "expected_concepts": [
-      "TensorFlow fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Architecture",
+    "concept": "Eager Execution vs @tf.function",
+    "questionFamily": "architecture",
+    "tags": [
+      "TensorFlow",
+      "Eager Execution",
+      "@tf.function",
+      "AutoGraph",
+      "computational graph"
     ],
-    "ideal_answer": "TensorFlow is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of TensorFlow."
+    "idealAnswer": "TensorFlow 2.x runs in Eager Execution mode by default, evaluating operations imperatively like standard Python (easy debugging). Decorating functions with '@tf.function' traces Python code with AutoGraph into optimized static computation graphs for high-performance deployment.",
+    "ideal_answer": "TensorFlow 2.x runs in Eager Execution mode by default, evaluating operations imperatively like standard Python (easy debugging). Decorating functions with '@tf.function' traces Python code with AutoGraph into optimized static computation graphs for high-performance deployment.",
+    "expected_concepts": [
+      "TensorFlow",
+      "Eager Execution",
+      "@tf.function",
+      "AutoGraph"
+    ],
+    "explanation": "Evaluates TensorFlow Architecture and Eager Execution vs @tf.function comprehension."
   },
   {
-    "id": "TENSORFLOW_002",
+    "id": "tf_002",
     "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Keras API in TensorFlow: Sequential API vs Functional API vs Model Subclassing and when to use each.",
+    "difficulty": "easy",
+    "topic": "Keras API",
+    "concept": "Keras Model Building Paradigms",
+    "questionFamily": "comparison",
+    "tags": [
+      "Keras",
+      "Sequential API",
+      "Functional API",
+      "Model Subclassing",
+      "tf.keras"
+    ],
+    "idealAnswer": "Sequential API chains single-input single-output layers linearly. Functional API defines complex DAG architectures (multi-input, multi-output, residual connections). Model Subclassing provides dynamic imperative OOP control over the forward pass (call method) for research.",
+    "ideal_answer": "Sequential API chains single-input single-output layers linearly. Functional API defines complex DAG architectures (multi-input, multi-output, residual connections). Model Subclassing provides dynamic imperative OOP control over the forward pass (call method) for research.",
+    "expected_concepts": [
+      "Keras",
+      "Sequential API",
+      "Functional API",
+      "Model Subclassing"
+    ],
+    "explanation": "Evaluates TensorFlow Keras API and Keras Model Building Paradigms comprehension."
+  },
+  {
+    "id": "tf_003",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Automatic Differentiation work in TensorFlow using tf.GradientTape for computing gradients?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using TensorFlow in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Autodiff & Gradients",
+    "concept": "tf.GradientTape Automatic Differentiation",
+    "questionFamily": "implementation",
+    "tags": [
+      "tf.GradientTape",
+      "automatic differentiation",
+      "gradients",
+      "tape.gradient",
+      "watch"
     ],
-    "ideal_answer": "Common challenges with TensorFlow include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of TensorFlow."
+    "idealAnswer": "Operations executed inside the 'with tf.GradientTape() as tape:' context block are recorded onto a tape. Variables are watched automatically; calling 'tape.gradient(loss, model.trainable_variables)' computes exact partial derivatives via reverse-mode autodiff.",
+    "ideal_answer": "Operations executed inside the 'with tf.GradientTape() as tape:' context block are recorded onto a tape. Variables are watched automatically; calling 'tape.gradient(loss, model.trainable_variables)' computes exact partial derivatives via reverse-mode autodiff.",
+    "expected_concepts": [
+      "tf.GradientTape",
+      "automatic differentiation",
+      "gradients",
+      "tape.gradient"
+    ],
+    "explanation": "Evaluates TensorFlow Autodiff & Gradients and tf.GradientTape Automatic Differentiation comprehension."
   },
   {
-    "id": "TENSORFLOW_003",
+    "id": "tf_004",
     "skill": "TensorFlow",
-    "difficulty": "hard",
-    "question": "How does TensorFlow handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain high-performance Data Ingestion in TensorFlow using the tf.data.Dataset API (map, batch, shuffle, prefetch, parallel calls).",
+    "difficulty": "medium",
+    "topic": "Data Pipeline",
+    "concept": "tf.data Pipeline Optimization",
+    "questionFamily": "optimization",
+    "tags": [
+      "tf.data",
+      "prefetch",
+      "AUTOTUNE",
+      "shuffle",
+      "map",
+      "parallel processing"
     ],
-    "ideal_answer": "TensorFlow handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of TensorFlow."
+    "idealAnswer": "tf.data constructs high-throughput ETL data pipelines. Optimizations include: 'prefetch(tf.data.AUTOTUNE)' (overlaps data preprocessing with GPU training), 'num_parallel_calls=AUTOTUNE' on map, and interleave to prevent GPU starvation.",
+    "ideal_answer": "tf.data constructs high-throughput ETL data pipelines. Optimizations include: 'prefetch(tf.data.AUTOTUNE)' (overlaps data preprocessing with GPU training), 'num_parallel_calls=AUTOTUNE' on map, and interleave to prevent GPU starvation.",
+    "expected_concepts": [
+      "tf.data",
+      "prefetch",
+      "AUTOTUNE",
+      "shuffle"
+    ],
+    "explanation": "Evaluates TensorFlow Data Pipeline and tf.data Pipeline Optimization comprehension."
+  },
+  {
+    "id": "tf_005",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Custom Layers (tf.keras.layers.Layer) and Custom Models in TensorFlow, and what is the role of build() and call() methods?",
+    "difficulty": "medium",
+    "topic": "Custom Components",
+    "concept": "Custom Layers & Lifecycle (build/call)",
+    "questionFamily": "implementation",
+    "tags": [
+      "tf.keras.layers.Layer",
+      "build method",
+      "call method",
+      "add_weight",
+      "trainable_weights"
+    ],
+    "idealAnswer": "Custom layers subclass tf.keras.layers.Layer: 'build(input_shape)' creates layer weights using 'self.add_weight' once input dimensions are known; 'call(inputs)' executes the computation during forward pass.",
+    "ideal_answer": "Custom layers subclass tf.keras.layers.Layer: 'build(input_shape)' creates layer weights using 'self.add_weight' once input dimensions are known; 'call(inputs)' executes the computation during forward pass.",
+    "expected_concepts": [
+      "tf.keras.layers.Layer",
+      "build method",
+      "call method",
+      "add_weight"
+    ],
+    "explanation": "Evaluates TensorFlow Custom Components and Custom Layers & Lifecycle (build/call) comprehension."
+  },
+  {
+    "id": "tf_006",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Distributed Training in TensorFlow with tf.distribute.Strategy: MirroredStrategy vs MultiWorkerMirroredStrategy vs TPUStrategy.",
+    "difficulty": "hard",
+    "topic": "Distributed Training",
+    "concept": "tf.distribute.Strategy Overview",
+    "questionFamily": "architecture",
+    "tags": [
+      "tf.distribute",
+      "MirroredStrategy",
+      "MultiWorkerMirroredStrategy",
+      "TPUStrategy",
+      "AllReduce"
+    ],
+    "idealAnswer": "tf.distribute distributes training across devices with minimal code changes. MirroredStrategy synchronizes variables across multiple GPUs on a single node via AllReduce. MultiWorkerMirroredStrategy scales across multiple machines. TPUStrategy accelerates training on Google TPUs.",
+    "ideal_answer": "tf.distribute distributes training across devices with minimal code changes. MirroredStrategy synchronizes variables across multiple GPUs on a single node via AllReduce. MultiWorkerMirroredStrategy scales across multiple machines. TPUStrategy accelerates training on Google TPUs.",
+    "expected_concepts": [
+      "tf.distribute",
+      "MirroredStrategy",
+      "MultiWorkerMirroredStrategy",
+      "TPUStrategy"
+    ],
+    "explanation": "Evaluates TensorFlow Distributed Training and tf.distribute.Strategy Overview comprehension."
+  },
+  {
+    "id": "tf_007",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is TensorFlow SavedModel format, and how does it encapsulate computation graphs, weights, and signature definitions for production?",
+    "difficulty": "medium",
+    "topic": "Model Serialization",
+    "concept": "SavedModel Format & Signatures",
+    "questionFamily": "architecture",
+    "tags": [
+      "SavedModel",
+      "tf.saved_model",
+      "signatures",
+      "serving_default",
+      "portable artifact"
+    ],
+    "idealAnswer": "SavedModel (saved_model.pb + variables/ directory) is TensorFlow's universal serialization format. It stores language-neutral computation graphs, asset files, and explicit SignatureDefs (serving_default) ready for deployment without original Python source code.",
+    "ideal_answer": "SavedModel (saved_model.pb + variables/ directory) is TensorFlow's universal serialization format. It stores language-neutral computation graphs, asset files, and explicit SignatureDefs (serving_default) ready for deployment without original Python source code.",
+    "expected_concepts": [
+      "SavedModel",
+      "tf.saved_model",
+      "signatures",
+      "serving_default"
+    ],
+    "explanation": "Evaluates TensorFlow Model Serialization and SavedModel Format & Signatures comprehension."
+  },
+  {
+    "id": "tf_008",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Model Serving with TensorFlow Serving: REST API vs gRPC, Model Versioning, and dynamic model reloading.",
+    "difficulty": "medium",
+    "topic": "Deployment & Serving",
+    "concept": "TensorFlow Serving (gRPC vs REST)",
+    "questionFamily": "architecture",
+    "tags": [
+      "TensorFlow Serving",
+      "gRPC",
+      "REST API",
+      "model versioning",
+      "dynamic reload",
+      "Docker"
+    ],
+    "idealAnswer": "TensorFlow Serving is an industrial C++ server for high-throughput model inference. It exposes high-performance gRPC and REST endpoints, manages multiple model versions concurrently, and reloads updated models from disk with zero downtime.",
+    "ideal_answer": "TensorFlow Serving is an industrial C++ server for high-throughput model inference. It exposes high-performance gRPC and REST endpoints, manages multiple model versions concurrently, and reloads updated models from disk with zero downtime.",
+    "expected_concepts": [
+      "TensorFlow Serving",
+      "gRPC",
+      "REST API",
+      "model versioning"
+    ],
+    "explanation": "Evaluates TensorFlow Deployment & Serving and TensorFlow Serving (gRPC vs REST) comprehension."
+  },
+  {
+    "id": "tf_009",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is TensorFlow Lite (TFLite), and how do Post-Training Quantization and TFLite Converter optimize models for Android, iOS, and edge devices?",
+    "difficulty": "easy",
+    "topic": "Mobile & Edge",
+    "concept": "TensorFlow Lite & Quantization",
+    "questionFamily": "optimization",
+    "tags": [
+      "TFLite",
+      "TensorFlow Lite",
+      "TFLiteConverter",
+      "flatbuffers",
+      "edge AI",
+      "quantization"
+    ],
+    "idealAnswer": "TFLite compiles models into lightweight FlatBuffer (.tflite) formats optimized for mobile and IoT devices. The TFLite Converter applies Post-Training Quantization (Float16, INT8), reducing binary size by up to 75% and accelerating execution via mobile NPUs/GPUs.",
+    "ideal_answer": "TFLite compiles models into lightweight FlatBuffer (.tflite) formats optimized for mobile and IoT devices. The TFLite Converter applies Post-Training Quantization (Float16, INT8), reducing binary size by up to 75% and accelerating execution via mobile NPUs/GPUs.",
+    "expected_concepts": [
+      "TFLite",
+      "TensorFlow Lite",
+      "TFLiteConverter",
+      "flatbuffers"
+    ],
+    "explanation": "Evaluates TensorFlow Mobile & Edge and TensorFlow Lite & Quantization comprehension."
+  },
+  {
+    "id": "tf_010",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Mixed Precision Training in TensorFlow (tf.keras.mixed_precision) and how Loss Scale prevents underflow with Float16.",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Mixed Precision & Loss Scaling",
+    "questionFamily": "optimization",
+    "tags": [
+      "mixed precision",
+      "float16",
+      "bfloat16",
+      "LossScaleOptimizer",
+      "VRAM speedup"
+    ],
+    "idealAnswer": "Mixed Precision uses 16-bit floats (FP16/BF16) for tensor math and 32-bit floats for numerical stability. LossScaleOptimizer dynamically scales loss values before backpropagation to prevent tiny gradients from underflowing to zero in FP16.",
+    "ideal_answer": "Mixed Precision uses 16-bit floats (FP16/BF16) for tensor math and 32-bit floats for numerical stability. LossScaleOptimizer dynamically scales loss values before backpropagation to prevent tiny gradients from underflowing to zero in FP16.",
+    "expected_concepts": [
+      "mixed precision",
+      "float16",
+      "bfloat16",
+      "LossScaleOptimizer"
+    ],
+    "explanation": "Evaluates TensorFlow Performance and Mixed Precision & Loss Scaling comprehension."
+  },
+  {
+    "id": "tf_011",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is TensorBoard, and how do you monitor loss curves, histograms, computation graphs, and profiling traces (tf.summary)?",
+    "difficulty": "easy",
+    "topic": "Observability",
+    "concept": "TensorBoard & Profiler",
+    "questionFamily": "implementation",
+    "tags": [
+      "TensorBoard",
+      "tf.summary",
+      "Scalar",
+      "Histogram",
+      "Profiler",
+      "learning rate curve"
+    ],
+    "idealAnswer": "TensorBoard provides a web dashboard visualizing model training. The tf.keras.callbacks.TensorBoard and tf.summary API log scalar loss/accuracy curves, weight distribution histograms, computation graph diagrams, and GPU hardware profiling traces.",
+    "ideal_answer": "TensorBoard provides a web dashboard visualizing model training. The tf.keras.callbacks.TensorBoard and tf.summary API log scalar loss/accuracy curves, weight distribution histograms, computation graph diagrams, and GPU hardware profiling traces.",
+    "expected_concepts": [
+      "TensorBoard",
+      "tf.summary",
+      "Scalar",
+      "Histogram"
+    ],
+    "explanation": "Evaluates TensorFlow Observability and TensorBoard & Profiler comprehension."
+  },
+  {
+    "id": "tf_012",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Custom Training Loops in TensorFlow: combining GradientTape, loss functions, optimizers (apply_gradients), and validation steps.",
+    "difficulty": "medium",
+    "topic": "Training Loops",
+    "concept": "Custom Training Loop with GradientTape",
+    "questionFamily": "implementation",
+    "tags": [
+      "custom training loop",
+      "apply_gradients",
+      "zip",
+      "step function",
+      "loss metric"
+    ],
+    "idealAnswer": "A custom training loop bypasses model.fit(): inside a @tf.function step, compute predictions and loss inside tf.GradientTape, calculate gradients via tape.gradient, apply parameter updates using optimizer.apply_gradients(zip(grads, vars)), and update metric states.",
+    "ideal_answer": "A custom training loop bypasses model.fit(): inside a @tf.function step, compute predictions and loss inside tf.GradientTape, calculate gradients via tape.gradient, apply parameter updates using optimizer.apply_gradients(zip(grads, vars)), and update metric states.",
+    "expected_concepts": [
+      "custom training loop",
+      "apply_gradients",
+      "zip",
+      "step function"
+    ],
+    "explanation": "Evaluates TensorFlow Training Loops and Custom Training Loop with GradientTape comprehension."
+  },
+  {
+    "id": "tf_013",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is TFRecord format and tf.train.Example Protocol Buffers for storing massive datasets efficiently on disk?",
+    "difficulty": "hard",
+    "topic": "Data Storage",
+    "concept": "TFRecord & Example Protocol Buffers",
+    "questionFamily": "architecture",
+    "tags": [
+      "TFRecord",
+      "tf.train.Example",
+      "Protobuf",
+      "binary storage",
+      "sequential I/O"
+    ],
+    "idealAnswer": "TFRecord is TensorFlow's binary record format storing serialized tf.train.Example Protocol Buffers. It combines images, labels, and metadata into linear binary chunks on disk, maximizing sequential disk I/O throughput during multi-node distributed training.",
+    "ideal_answer": "TFRecord is TensorFlow's binary record format storing serialized tf.train.Example Protocol Buffers. It combines images, labels, and metadata into linear binary chunks on disk, maximizing sequential disk I/O throughput during multi-node distributed training.",
+    "expected_concepts": [
+      "TFRecord",
+      "tf.train.Example",
+      "Protobuf",
+      "binary storage"
+    ],
+    "explanation": "Evaluates TensorFlow Data Storage and TFRecord & Example Protocol Buffers comprehension."
+  },
+  {
+    "id": "tf_014",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain TensorFlow Extended (TFX) production ML pipelines: ExampleGen, Transform, Trainer, Evaluator, and Pusher.",
+    "difficulty": "hard",
+    "topic": "MLOps & TFX",
+    "concept": "TensorFlow Extended (TFX) Pipeline",
+    "questionFamily": "architecture",
+    "tags": [
+      "TFX",
+      "ExampleGen",
+      "Transform",
+      "Evaluator",
+      "Pusher",
+      "MLOps",
+      "Apache Beam"
+    ],
+    "idealAnswer": "TFX is an enterprise MLOps platform for production ML: ExampleGen ingests data; Transform implements consistent full-dataset preprocessing; Trainer trains models; Evaluator computes deep slice validation (TFMA); Pusher deploys verified models to production.",
+    "ideal_answer": "TFX is an enterprise MLOps platform for production ML: ExampleGen ingests data; Transform implements consistent full-dataset preprocessing; Trainer trains models; Evaluator computes deep slice validation (TFMA); Pusher deploys verified models to production.",
+    "expected_concepts": [
+      "TFX",
+      "ExampleGen",
+      "Transform",
+      "Evaluator"
+    ],
+    "explanation": "Evaluates TensorFlow MLOps & TFX and TensorFlow Extended (TFX) Pipeline comprehension."
+  },
+  {
+    "id": "tf_015",
+    "skill": "TensorFlow",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Custom Loss Functions and Custom Metrics in TensorFlow, and how do you inherit from tf.keras.losses.Loss and tf.keras.metrics.Metric (update_state, result, reset_states)?",
+    "difficulty": "medium",
+    "topic": "Custom Components",
+    "concept": "Custom Losses & Stateful Metrics",
+    "questionFamily": "implementation",
+    "tags": [
+      "tf.keras.losses.Loss",
+      "tf.keras.metrics.Metric",
+      "update_state",
+      "result",
+      "reset_states"
+    ],
+    "idealAnswer": "Custom losses subclass tf.keras.losses.Loss and implement call(y_true, y_pred). Custom stateful metrics subclass tf.keras.metrics.Metric and implement update_state() to accumulate batch statistics, result() to compute epoch metric, and reset_states() to clear accumulators.",
+    "ideal_answer": "Custom losses subclass tf.keras.losses.Loss and implement call(y_true, y_pred). Custom stateful metrics subclass tf.keras.metrics.Metric and implement update_state() to accumulate batch statistics, result() to compute epoch metric, and reset_states() to clear accumulators.",
+    "expected_concepts": [
+      "tf.keras.losses.Loss",
+      "tf.keras.metrics.Metric",
+      "update_state",
+      "result"
+    ],
+    "explanation": "Evaluates TensorFlow Custom Components and Custom Losses & Stateful Metrics comprehension."
   }
 ]

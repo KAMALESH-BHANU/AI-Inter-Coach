@@ -1,44 +1,396 @@
 [
   {
-    "id": "TYPESCRIPT_001",
+    "id": "ts_001",
     "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are the core advantages of TypeScript over plain JavaScript, and how does the compilation pipeline work?",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of TypeScript in modern software engineering?",
-    "expected_concepts": [
-      "TypeScript fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Fundamentals",
+    "concept": "TypeScript Overview",
+    "questionFamily": "architecture",
+    "tags": [
+      "TypeScript",
+      "static typing",
+      "tsc",
+      "transpilation"
     ],
-    "ideal_answer": "TypeScript is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of TypeScript."
+    "idealAnswer": "TypeScript adds compile-time static typing, interfaces, and advanced type checking to JavaScript. The TypeScript compiler (tsc) type-checks code and emits standard, runnable JavaScript, stripping away all types.",
+    "ideal_answer": "TypeScript adds compile-time static typing, interfaces, and advanced type checking to JavaScript. The TypeScript compiler (tsc) type-checks code and emits standard, runnable JavaScript, stripping away all types.",
+    "expected_concepts": [
+      "TypeScript",
+      "static typing",
+      "tsc",
+      "transpilation"
+    ],
+    "explanation": "Evaluates TypeScript Fundamentals and TypeScript Overview comprehension."
   },
   {
-    "id": "TYPESCRIPT_002",
+    "id": "ts_002",
     "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between 'interface' and 'type' alias in TypeScript, and when to use each.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using TypeScript in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Type System",
+    "concept": "Interface vs Type Alias",
+    "questionFamily": "comparison",
+    "tags": [
+      "interface",
+      "type alias",
+      "declaration merging",
+      "union types"
     ],
-    "ideal_answer": "Common challenges with TypeScript include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of TypeScript."
+    "idealAnswer": "Interfaces support declaration merging and are optimized for OOP object shapes and public library APIs. Type aliases can define unions, primitives, tuples, and mapped types, but cannot be reopened or merged once defined.",
+    "ideal_answer": "Interfaces support declaration merging and are optimized for OOP object shapes and public library APIs. Type aliases can define unions, primitives, tuples, and mapped types, but cannot be reopened or merged once defined.",
+    "expected_concepts": [
+      "interface",
+      "type alias",
+      "declaration merging",
+      "union types"
+    ],
+    "explanation": "Evaluates TypeScript Type System and Interface vs Type Alias comprehension."
   },
   {
-    "id": "TYPESCRIPT_003",
+    "id": "ts_003",
     "skill": "TypeScript",
-    "difficulty": "hard",
-    "question": "How does TypeScript handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Generics in TypeScript, and how do generic constraints (extends keyword) enforce type requirements?",
+    "difficulty": "medium",
+    "topic": "Generics",
+    "concept": "Generic Constraints",
+    "questionFamily": "implementation",
+    "tags": [
+      "generics",
+      "type parameters",
+      "extends",
+      "reusable code"
     ],
-    "ideal_answer": "TypeScript handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of TypeScript."
+    "idealAnswer": "Generics allow creating reusable components that work across multiple types while preserving type safety. The 'extends' keyword creates a constraint ensuring the passed type parameter satisfies specific properties or interface contracts.",
+    "ideal_answer": "Generics allow creating reusable components that work across multiple types while preserving type safety. The 'extends' keyword creates a constraint ensuring the passed type parameter satisfies specific properties or interface contracts.",
+    "expected_concepts": [
+      "generics",
+      "type parameters",
+      "extends",
+      "reusable code"
+    ],
+    "explanation": "Evaluates TypeScript Generics and Generic Constraints comprehension."
+  },
+  {
+    "id": "ts_004",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between 'any', 'unknown', and 'never' types in TypeScript?",
+    "difficulty": "medium",
+    "topic": "Type System",
+    "concept": "Any vs Unknown vs Never",
+    "questionFamily": "comparison",
+    "tags": [
+      "any",
+      "unknown",
+      "never",
+      "type safety",
+      "narrowing"
+    ],
+    "idealAnswer": "'any' disables type checking completely. 'unknown' is the type-safe counterpart to any: values must be type-narrowed before performing operations. 'never' represents values that never occur (e.g. functions that always throw or infinite loops).",
+    "ideal_answer": "'any' disables type checking completely. 'unknown' is the type-safe counterpart to any: values must be type-narrowed before performing operations. 'never' represents values that never occur (e.g. functions that always throw or infinite loops).",
+    "expected_concepts": [
+      "any",
+      "unknown",
+      "never",
+      "type safety"
+    ],
+    "explanation": "Evaluates TypeScript Type System and Any vs Unknown vs Never comprehension."
+  },
+  {
+    "id": "ts_005",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does type narrowing work in TypeScript using typeof, instanceof, and custom User-Defined Type Guards (is operator)?",
+    "difficulty": "medium",
+    "topic": "Type Narrowing",
+    "concept": "Type Guards & Narrowing",
+    "questionFamily": "implementation",
+    "tags": [
+      "type guard",
+      "type narrowing",
+      "instanceof",
+      "typeof",
+      "is predicate"
+    ],
+    "idealAnswer": "TypeScript narrows broad types (like union types) to specific types within code blocks using runtime checks (typeof, instanceof, 'in' operator) or user-defined type guards (functions returning 'arg is SpecificType').",
+    "ideal_answer": "TypeScript narrows broad types (like union types) to specific types within code blocks using runtime checks (typeof, instanceof, 'in' operator) or user-defined type guards (functions returning 'arg is SpecificType').",
+    "expected_concepts": [
+      "type guard",
+      "type narrowing",
+      "instanceof",
+      "typeof"
+    ],
+    "explanation": "Evaluates TypeScript Type Narrowing and Type Guards & Narrowing comprehension."
+  },
+  {
+    "id": "ts_006",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Union and Intersection types in TypeScript with examples of practical applications.",
+    "difficulty": "easy",
+    "topic": "Type System",
+    "concept": "Union & Intersection Types",
+    "questionFamily": "definition",
+    "tags": [
+      "union type",
+      "intersection type",
+      "discriminating union",
+      "composition"
+    ],
+    "idealAnswer": "Union types (A | B) allow a value to be either type A or type B. Intersection types (A & B) combine multiple types into a single type containing all members of each constituent type.",
+    "ideal_answer": "Union types (A | B) allow a value to be either type A or type B. Intersection types (A & B) combine multiple types into a single type containing all members of each constituent type.",
+    "expected_concepts": [
+      "union type",
+      "intersection type",
+      "discriminating union",
+      "composition"
+    ],
+    "explanation": "Evaluates TypeScript Type System and Union & Intersection Types comprehension."
+  },
+  {
+    "id": "ts_007",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Discriminated Unions in TypeScript, and how do they enable safe pattern matching?",
+    "difficulty": "medium",
+    "topic": "Advanced Types",
+    "concept": "Discriminated Unions",
+    "questionFamily": "design",
+    "tags": [
+      "discriminated union",
+      "tagged union",
+      "pattern matching",
+      "exhaustiveness"
+    ],
+    "idealAnswer": "A Discriminated Union is a union of object types where each type shares a common literal property (the discriminant/tag). In switch/if statements, TypeScript automatically narrows the object type based on the tag.",
+    "ideal_answer": "A Discriminated Union is a union of object types where each type shares a common literal property (the discriminant/tag). In switch/if statements, TypeScript automatically narrows the object type based on the tag.",
+    "expected_concepts": [
+      "discriminated union",
+      "tagged union",
+      "pattern matching",
+      "exhaustiveness"
+    ],
+    "explanation": "Evaluates TypeScript Advanced Types and Discriminated Unions comprehension."
+  },
+  {
+    "id": "ts_008",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain built-in Utility Types in TypeScript: Partial, Required, Readonly, Pick, Omit, and Record.",
+    "difficulty": "medium",
+    "topic": "Utility Types",
+    "concept": "Built-in Utility Types",
+    "questionFamily": "implementation",
+    "tags": [
+      "Utility Types",
+      "Partial",
+      "Pick",
+      "Omit",
+      "Record",
+      "Readonly"
+    ],
+    "idealAnswer": "Partial makes all properties optional. Required makes all required. Readonly prevents mutation. Pick selects specific properties. Omit excludes specific properties. Record<K, V> creates an object type with keys K and value types V.",
+    "ideal_answer": "Partial makes all properties optional. Required makes all required. Readonly prevents mutation. Pick selects specific properties. Omit excludes specific properties. Record<K, V> creates an object type with keys K and value types V.",
+    "expected_concepts": [
+      "Utility Types",
+      "Partial",
+      "Pick",
+      "Omit"
+    ],
+    "explanation": "Evaluates TypeScript Utility Types and Built-in Utility Types comprehension."
+  },
+  {
+    "id": "ts_009",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Mapped Types and Conditional Types (T extends U ? X : Y) in TypeScript?",
+    "difficulty": "hard",
+    "topic": "Advanced Types",
+    "concept": "Mapped and Conditional Types",
+    "questionFamily": "architecture",
+    "tags": [
+      "mapped types",
+      "conditional types",
+      "infer keyword",
+      "type transformation"
+    ],
+    "idealAnswer": "Mapped types iterate over keys using 'in keyof' to transform properties. Conditional types select one of two types based on a type relationship test (T extends U ? X : Y), often combined with the 'infer' keyword to extract constituent types.",
+    "ideal_answer": "Mapped types iterate over keys using 'in keyof' to transform properties. Conditional types select one of two types based on a type relationship test (T extends U ? X : Y), often combined with the 'infer' keyword to extract constituent types.",
+    "expected_concepts": [
+      "mapped types",
+      "conditional types",
+      "infer keyword",
+      "type transformation"
+    ],
+    "explanation": "Evaluates TypeScript Advanced Types and Mapped and Conditional Types comprehension."
+  },
+  {
+    "id": "ts_010",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the purpose of the 'infer' keyword in TypeScript conditional types?",
+    "difficulty": "hard",
+    "topic": "Advanced Types",
+    "concept": "Type Inference with Infer",
+    "questionFamily": "implementation",
+    "tags": [
+      "infer",
+      "conditional types",
+      "ReturnType",
+      "type extraction"
+    ],
+    "idealAnswer": "The 'infer' keyword introduces a type variable within a conditional type's 'extends' clause to automatically infer and extract a type from another complex type (e.g., extracting the return type of a function in ReturnType<T>).",
+    "ideal_answer": "The 'infer' keyword introduces a type variable within a conditional type's 'extends' clause to automatically infer and extract a type from another complex type (e.g., extracting the return type of a function in ReturnType<T>).",
+    "expected_concepts": [
+      "infer",
+      "conditional types",
+      "ReturnType",
+      "type extraction"
+    ],
+    "explanation": "Evaluates TypeScript Advanced Types and Type Inference with Infer comprehension."
+  },
+  {
+    "id": "ts_011",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is declaration merging in TypeScript, and how is it used to augment third-party module types?",
+    "difficulty": "medium",
+    "topic": "Module Augmentation",
+    "concept": "Declaration Merging",
+    "questionFamily": "architecture",
+    "tags": [
+      "declaration merging",
+      "ambient types",
+      "module augmentation",
+      "namespace"
+    ],
+    "idealAnswer": "Declaration merging allows TypeScript to combine multiple declarations of the same identifier (such as interfaces or namespaces) into a single definition. It allows developers to extend external libraries with custom properties.",
+    "ideal_answer": "Declaration merging allows TypeScript to combine multiple declarations of the same identifier (such as interfaces or namespaces) into a single definition. It allows developers to extend external libraries with custom properties.",
+    "expected_concepts": [
+      "declaration merging",
+      "ambient types",
+      "module augmentation",
+      "namespace"
+    ],
+    "explanation": "Evaluates TypeScript Module Augmentation and Declaration Merging comprehension."
+  },
+  {
+    "id": "ts_012",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between 'enum' (numeric and string) and 'const enum' in TypeScript.",
+    "difficulty": "easy",
+    "topic": "Enums",
+    "concept": "Enums vs Const Enums",
+    "questionFamily": "comparison",
+    "tags": [
+      "enum",
+      "const enum",
+      "inlining",
+      "runtime overhead"
+    ],
+    "idealAnswer": "Standard enums generate runtime JavaScript objects with reverse mappings for numbers. 'const enum' definitions are stripped at compile time and their values are inlined directly at call sites, eliminating runtime object overhead.",
+    "ideal_answer": "Standard enums generate runtime JavaScript objects with reverse mappings for numbers. 'const enum' definitions are stripped at compile time and their values are inlined directly at call sites, eliminating runtime object overhead.",
+    "expected_concepts": [
+      "enum",
+      "const enum",
+      "inlining",
+      "runtime overhead"
+    ],
+    "explanation": "Evaluates TypeScript Enums and Enums vs Const Enums comprehension."
+  },
+  {
+    "id": "ts_013",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the role of tsconfig.json, and what do compiler options 'strict', 'noImplicitAny', and 'strictNullChecks' enforce?",
+    "difficulty": "easy",
+    "topic": "Configuration",
+    "concept": "tsconfig Compiler Flags",
+    "questionFamily": "best_practice",
+    "tags": [
+      "tsconfig.json",
+      "strict",
+      "noImplicitAny",
+      "strictNullChecks"
+    ],
+    "idealAnswer": "tsconfig.json configures compilation options. 'strict' enables a suite of strict type checking rules. 'noImplicitAny' flags unannotated variables that default to any. 'strictNullChecks' treats null and undefined as distinct types not assignable to other types.",
+    "ideal_answer": "tsconfig.json configures compilation options. 'strict' enables a suite of strict type checking rules. 'noImplicitAny' flags unannotated variables that default to any. 'strictNullChecks' treats null and undefined as distinct types not assignable to other types.",
+    "expected_concepts": [
+      "tsconfig.json",
+      "strict",
+      "noImplicitAny",
+      "strictNullChecks"
+    ],
+    "explanation": "Evaluates TypeScript Configuration and tsconfig Compiler Flags comprehension."
+  },
+  {
+    "id": "ts_014",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Decorators in TypeScript, experimental vs stage-3 ECMAScript decorators, and their use in class metadata.",
+    "difficulty": "hard",
+    "topic": "Decorators",
+    "concept": "TypeScript Decorators",
+    "questionFamily": "implementation",
+    "tags": [
+      "decorators",
+      "metadata",
+      "reflect-metadata",
+      "class decorators"
+    ],
+    "idealAnswer": "Decorators are declarative annotations that wrap classes, methods, accessors, or properties to inspect or modify their behavior. They are widely used in frameworks like Angular and NestJS for dependency injection and routing.",
+    "ideal_answer": "Decorators are declarative annotations that wrap classes, methods, accessors, or properties to inspect or modify their behavior. They are widely used in frameworks like Angular and NestJS for dependency injection and routing.",
+    "expected_concepts": [
+      "decorators",
+      "metadata",
+      "reflect-metadata",
+      "class decorators"
+    ],
+    "explanation": "Evaluates TypeScript Decorators and TypeScript Decorators comprehension."
+  },
+  {
+    "id": "ts_015",
+    "skill": "TypeScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are ambient declarations and .d.ts definition files in TypeScript?",
+    "difficulty": "medium",
+    "topic": "Type Declarations",
+    "concept": "Ambient Declarations & d.ts",
+    "questionFamily": "design",
+    "tags": [
+      "ambient declarations",
+      "d.ts",
+      "declare keyword",
+      "@types"
+    ],
+    "idealAnswer": "Declaration files (.d.ts) contain type annotations without executable code. Using the 'declare' keyword, they describe the shape of existing JavaScript libraries to the TypeScript compiler, allowing safe consumption of untyped code.",
+    "ideal_answer": "Declaration files (.d.ts) contain type annotations without executable code. Using the 'declare' keyword, they describe the shape of existing JavaScript libraries to the TypeScript compiler, allowing safe consumption of untyped code.",
+    "expected_concepts": [
+      "ambient declarations",
+      "d.ts",
+      "declare keyword",
+      "@types"
+    ],
+    "explanation": "Evaluates TypeScript Type Declarations and Ambient Declarations & d.ts comprehension."
   }
 ]

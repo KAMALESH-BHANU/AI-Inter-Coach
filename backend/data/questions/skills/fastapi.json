@@ -1,0 +1,408 @@
+[
+  {
+    "id": "fastapi_001",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the core architecture of FastAPI: Starlette, Pydantic, ASGI, and Python type hints.",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "FastAPI Core Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "FastAPI",
+      "Starlette",
+      "Pydantic",
+      "ASGI",
+      "type hints",
+      "Uvicorn"
+    ],
+    "idealAnswer": "FastAPI is built on Starlette for high-performance ASGI routing and Pydantic for data validation and schema serialization. Using Python 3.6+ type hints, it automatically provides data parsing, OpenAPI generation, and fast execution.",
+    "ideal_answer": "FastAPI is built on Starlette for high-performance ASGI routing and Pydantic for data validation and schema serialization. Using Python 3.6+ type hints, it automatically provides data parsing, OpenAPI generation, and fast execution.",
+    "expected_concepts": [
+      "FastAPI",
+      "Starlette",
+      "Pydantic",
+      "ASGI"
+    ],
+    "explanation": "Evaluates FastAPI Architecture and FastAPI Core Architecture comprehension."
+  },
+  {
+    "id": "fastapi_002",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Pydantic v2 integrate with FastAPI for request validation, data serialization, and custom Field constraints?",
+    "difficulty": "easy",
+    "topic": "Data Validation",
+    "concept": "Pydantic Validation & Serialization",
+    "questionFamily": "implementation",
+    "tags": [
+      "Pydantic",
+      "BaseModel",
+      "Field",
+      "validation",
+      "serialization"
+    ],
+    "idealAnswer": "FastAPI uses Pydantic models (BaseModel) to declare request body schemas. Pydantic validates incoming JSON against types and Field() constraints (e.g. gt, max_length), returning detailed 422 Unprocessable Entity errors on failure.",
+    "ideal_answer": "FastAPI uses Pydantic models (BaseModel) to declare request body schemas. Pydantic validates incoming JSON against types and Field() constraints (e.g. gt, max_length), returning detailed 422 Unprocessable Entity errors on failure.",
+    "expected_concepts": [
+      "Pydantic",
+      "BaseModel",
+      "Field",
+      "validation"
+    ],
+    "explanation": "Evaluates FastAPI Data Validation and Pydantic Validation & Serialization comprehension."
+  },
+  {
+    "id": "fastapi_003",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dependency Injection in FastAPI using 'Depends' and its advantages for code reuse, database sessions, and auth.",
+    "difficulty": "medium",
+    "topic": "Dependency Injection",
+    "concept": "FastAPI Dependency Injection (Depends)",
+    "questionFamily": "design",
+    "tags": [
+      "Depends",
+      "dependency injection",
+      "yield dependency",
+      "database session",
+      "auth"
+    ],
+    "idealAnswer": "FastAPI's 'Depends' declares dependencies on route functions. The framework resolves nested dependencies, injects database sessions, handles user authentication, and automatically manages cleanup using 'yield' dependencies.",
+    "ideal_answer": "FastAPI's 'Depends' declares dependencies on route functions. The framework resolves nested dependencies, injects database sessions, handles user authentication, and automatically manages cleanup using 'yield' dependencies.",
+    "expected_concepts": [
+      "Depends",
+      "dependency injection",
+      "yield dependency",
+      "database session"
+    ],
+    "explanation": "Evaluates FastAPI Dependency Injection and FastAPI Dependency Injection (Depends) comprehension."
+  },
+  {
+    "id": "fastapi_004",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between 'async def' and plain 'def' route handlers in FastAPI, and how does the threadpool prevent event loop blocking?",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "async def vs def Route Handlers",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "async def",
+      "def",
+      "threadpool",
+      "event loop",
+      "non-blocking"
+    ],
+    "idealAnswer": "'async def' runs directly on the main ASGI event loop (must never execute blocking synchronous I/O). Standard 'def' functions are automatically executed by FastAPI in an external threadpool (anyio), preventing synchronous I/O from blocking the event loop.",
+    "ideal_answer": "'async def' runs directly on the main ASGI event loop (must never execute blocking synchronous I/O). Standard 'def' functions are automatically executed by FastAPI in an external threadpool (anyio), preventing synchronous I/O from blocking the event loop.",
+    "expected_concepts": [
+      "async def",
+      "def",
+      "threadpool",
+      "event loop"
+    ],
+    "explanation": "Evaluates FastAPI Concurrency and async def vs def Route Handlers comprehension."
+  },
+  {
+    "id": "fastapi_005",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does FastAPI automatically generate interactive API documentation (Swagger UI at /docs and ReDoc at /redoc) from OpenAPI specifications?",
+    "difficulty": "easy",
+    "topic": "Documentation",
+    "concept": "OpenAPI & Swagger UI Generation",
+    "questionFamily": "definition",
+    "tags": [
+      "OpenAPI",
+      "Swagger UI",
+      "/docs",
+      "ReDoc",
+      "interactive API docs"
+    ],
+    "idealAnswer": "FastAPI automatically compiles route definitions, Pydantic models, query parameters, and docstrings into an OpenAPI JSON schema, rendering interactive Swagger UI (/docs) and ReDoc (/redoc) documentation with zero manual configuration.",
+    "ideal_answer": "FastAPI automatically compiles route definitions, Pydantic models, query parameters, and docstrings into an OpenAPI JSON schema, rendering interactive Swagger UI (/docs) and ReDoc (/redoc) documentation with zero manual configuration.",
+    "expected_concepts": [
+      "OpenAPI",
+      "Swagger UI",
+      "/docs",
+      "ReDoc"
+    ],
+    "explanation": "Evaluates FastAPI Documentation and OpenAPI & Swagger UI Generation comprehension."
+  },
+  {
+    "id": "fastapi_006",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Request Parameter declarations in FastAPI: Path, Query, Header, Cookie, and Body parameters.",
+    "difficulty": "easy",
+    "topic": "Routing & Parameters",
+    "concept": "Request Parameter Types",
+    "questionFamily": "implementation",
+    "tags": [
+      "Path",
+      "Query",
+      "Header",
+      "Cookie",
+      "Body",
+      "parameters"
+    ],
+    "idealAnswer": "FastAPI maps parameters based on annotations: path variables match Path(); scalar parameters without path matches become Query(); headers use Header(); cookies use Cookie(); Pydantic models become Body().",
+    "ideal_answer": "FastAPI maps parameters based on annotations: path variables match Path(); scalar parameters without path matches become Query(); headers use Header(); cookies use Cookie(); Pydantic models become Body().",
+    "expected_concepts": [
+      "Path",
+      "Query",
+      "Header",
+      "Cookie"
+    ],
+    "explanation": "Evaluates FastAPI Routing & Parameters and Request Parameter Types comprehension."
+  },
+  {
+    "id": "fastapi_007",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement OAuth2 Password flow and JWT Token authentication in FastAPI using OAuth2PasswordBearer?",
+    "difficulty": "medium",
+    "topic": "Security & Auth",
+    "concept": "OAuth2 & JWT Authentication",
+    "questionFamily": "security",
+    "tags": [
+      "OAuth2PasswordBearer",
+      "JWT",
+      "Bearer token",
+      "HTTPBearer",
+      "Security"
+    ],
+    "idealAnswer": "FastAPI provides OAuth2PasswordBearer to extract Bearer tokens from request headers. An authentication dependency validates the JWT signature, decodes claims, queries the user, and raises HTTPException(401) on invalid tokens.",
+    "ideal_answer": "FastAPI provides OAuth2PasswordBearer to extract Bearer tokens from request headers. An authentication dependency validates the JWT signature, decodes claims, queries the user, and raises HTTPException(401) on invalid tokens.",
+    "expected_concepts": [
+      "OAuth2PasswordBearer",
+      "JWT",
+      "Bearer token",
+      "HTTPBearer"
+    ],
+    "explanation": "Evaluates FastAPI Security & Auth and OAuth2 & JWT Authentication comprehension."
+  },
+  {
+    "id": "fastapi_008",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Background Tasks in FastAPI (BackgroundTasks.add_task) vs dedicated task workers like Celery.",
+    "difficulty": "medium",
+    "topic": "Background Tasks",
+    "concept": "FastAPI BackgroundTasks vs Celery",
+    "questionFamily": "comparison",
+    "tags": [
+      "BackgroundTasks",
+      "add_task",
+      "Celery",
+      "in-process",
+      "message broker"
+    ],
+    "idealAnswer": "FastAPI's BackgroundTasks runs small asynchronous tasks in-process after sending the HTTP response (e.g. sending confirmation email). For heavy compute, distributed workloads, or persistent retries, dedicated task queues like Celery or ARQ are required.",
+    "ideal_answer": "FastAPI's BackgroundTasks runs small asynchronous tasks in-process after sending the HTTP response (e.g. sending confirmation email). For heavy compute, distributed workloads, or persistent retries, dedicated task queues like Celery or ARQ are required.",
+    "expected_concepts": [
+      "BackgroundTasks",
+      "add_task",
+      "Celery",
+      "in-process"
+    ],
+    "explanation": "Evaluates FastAPI Background Tasks and FastAPI BackgroundTasks vs Celery comprehension."
+  },
+  {
+    "id": "fastapi_009",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you manage database connections and sessions in FastAPI using SQLAlchemy 2.0 async sessions (AsyncSession) and yield dependencies?",
+    "difficulty": "medium",
+    "topic": "Database & ORM",
+    "concept": "SQLAlchemy AsyncSession with FastAPI",
+    "questionFamily": "implementation",
+    "tags": [
+      "SQLAlchemy",
+      "AsyncSession",
+      "asyncpg",
+      "yield dependency",
+      "connection pool"
+    ],
+    "idealAnswer": "Create an async engine with create_async_engine() and async_sessionmaker. In a FastAPI dependency function: create an AsyncSession, yield it to the route handler, and commit/close the session in a finally block.",
+    "ideal_answer": "Create an async engine with create_async_engine() and async_sessionmaker. In a FastAPI dependency function: create an AsyncSession, yield it to the route handler, and commit/close the session in a finally block.",
+    "expected_concepts": [
+      "SQLAlchemy",
+      "AsyncSession",
+      "asyncpg",
+      "yield dependency"
+    ],
+    "explanation": "Evaluates FastAPI Database & ORM and SQLAlchemy AsyncSession with FastAPI comprehension."
+  },
+  {
+    "id": "fastapi_010",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Custom Middleware in FastAPI using Starlette BaseHTTPMiddleware and pure ASGI middleware.",
+    "difficulty": "medium",
+    "topic": "Middleware",
+    "concept": "FastAPI Custom Middleware",
+    "questionFamily": "architecture",
+    "tags": [
+      "BaseHTTPMiddleware",
+      "ASGI middleware",
+      "call_next",
+      "logging",
+      "timing"
+    ],
+    "idealAnswer": "Middleware wraps every request: BaseHTTPMiddleware provides an async 'dispatch(request, call_next)' interface to inspect headers, calculate response time, and modify responses across the entire application.",
+    "ideal_answer": "Middleware wraps every request: BaseHTTPMiddleware provides an async 'dispatch(request, call_next)' interface to inspect headers, calculate response time, and modify responses across the entire application.",
+    "expected_concepts": [
+      "BaseHTTPMiddleware",
+      "ASGI middleware",
+      "call_next",
+      "logging"
+    ],
+    "explanation": "Evaluates FastAPI Middleware and FastAPI Custom Middleware comprehension."
+  },
+  {
+    "id": "fastapi_011",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Error Handling work in FastAPI with HTTPException and custom Exception Handlers (@app.exception_handler)?",
+    "difficulty": "easy",
+    "topic": "Error Handling",
+    "concept": "HTTPException & Custom Exception Handlers",
+    "questionFamily": "best_practice",
+    "tags": [
+      "HTTPException",
+      "exception_handler",
+      "JSONResponse",
+      "RequestValidationError"
+    ],
+    "idealAnswer": "Raise HTTPException(status_code=404, detail='Not found') for standard HTTP errors. Register global exception handlers using @app.exception_handler(CustomException) to return consistent JSON error envelopes.",
+    "ideal_answer": "Raise HTTPException(status_code=404, detail='Not found') for standard HTTP errors. Register global exception handlers using @app.exception_handler(CustomException) to return consistent JSON error envelopes.",
+    "expected_concepts": [
+      "HTTPException",
+      "exception_handler",
+      "JSONResponse",
+      "RequestValidationError"
+    ],
+    "explanation": "Evaluates FastAPI Error Handling and HTTPException & Custom Exception Handlers comprehension."
+  },
+  {
+    "id": "fastapi_012",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain APIRouter in FastAPI and how to organize large applications using router prefixes, tags, and dependencies.",
+    "difficulty": "easy",
+    "topic": "Application Structure",
+    "concept": "APIRouter Modularization",
+    "questionFamily": "design",
+    "tags": [
+      "APIRouter",
+      "include_router",
+      "tags",
+      "prefix",
+      "modular code"
+    ],
+    "idealAnswer": "APIRouter groups related endpoints into modular routers. Routers define path prefixes (prefix='/users'), Swagger tags, and shared router-level dependencies before being mounted in the main application via app.include_router().",
+    "ideal_answer": "APIRouter groups related endpoints into modular routers. Routers define path prefixes (prefix='/users'), Swagger tags, and shared router-level dependencies before being mounted in the main application via app.include_router().",
+    "expected_concepts": [
+      "APIRouter",
+      "include_router",
+      "tags",
+      "prefix"
+    ],
+    "explanation": "Evaluates FastAPI Application Structure and APIRouter Modularization comprehension."
+  },
+  {
+    "id": "fastapi_013",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does FastAPI handle File Uploads using UploadFile (spooled temp file) versus File (bytes)?",
+    "difficulty": "easy",
+    "topic": "File Handling",
+    "concept": "UploadFile vs File(bytes)",
+    "questionFamily": "comparison",
+    "tags": [
+      "UploadFile",
+      "File",
+      "SpooledTemporaryFile",
+      "streaming",
+      "memory usage"
+    ],
+    "idealAnswer": "'File(bytes)' reads the entire uploaded file into memory at once (suitable only for tiny files). 'UploadFile' uses a SpooledTemporaryFile streaming chunks to memory up to a limit before spilling to disk, suitable for large uploads.",
+    "ideal_answer": "'File(bytes)' reads the entire uploaded file into memory at once (suitable only for tiny files). 'UploadFile' uses a SpooledTemporaryFile streaming chunks to memory up to a limit before spilling to disk, suitable for large uploads.",
+    "expected_concepts": [
+      "UploadFile",
+      "File",
+      "SpooledTemporaryFile",
+      "streaming"
+    ],
+    "explanation": "Evaluates FastAPI File Handling and UploadFile vs File(bytes) comprehension."
+  },
+  {
+    "id": "fastapi_014",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain WebSockets support in FastAPI with the WebSocket class and connection managers.",
+    "difficulty": "medium",
+    "topic": "Real-Time & WebSockets",
+    "concept": "FastAPI WebSockets",
+    "questionFamily": "implementation",
+    "tags": [
+      "WebSocket",
+      "websocket_endpoint",
+      "accept",
+      "send_json",
+      "receive_text"
+    ],
+    "idealAnswer": "FastAPI provides native async WebSocket endpoints: @app.websocket('/ws'). The handler accepts the connection (await websocket.accept()), receives messages (receive_text/receive_json), and broadcasts via custom ConnectionManager classes.",
+    "ideal_answer": "FastAPI provides native async WebSocket endpoints: @app.websocket('/ws'). The handler accepts the connection (await websocket.accept()), receives messages (receive_text/receive_json), and broadcasts via custom ConnectionManager classes.",
+    "expected_concepts": [
+      "WebSocket",
+      "websocket_endpoint",
+      "accept",
+      "send_json"
+    ],
+    "explanation": "Evaluates FastAPI Real-Time & WebSockets and FastAPI WebSockets comprehension."
+  },
+  {
+    "id": "fastapi_015",
+    "skill": "FastAPI",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Lifespan Events (asynccontextmanager) manage startup and shutdown tasks in modern FastAPI?",
+    "difficulty": "medium",
+    "topic": "Application Lifecycle",
+    "concept": "FastAPI Lifespan Context Manager",
+    "questionFamily": "architecture",
+    "tags": [
+      "lifespan",
+      "asynccontextmanager",
+      "startup",
+      "shutdown",
+      "on_event deprecated"
+    ],
+    "idealAnswer": "Modern FastAPI uses an @asynccontextmanager lifespan function passed to FastAPI(lifespan=lifespan). Code before 'yield' executes at application startup (initializing caches/DB pools); code after 'yield' executes on graceful shutdown.",
+    "ideal_answer": "Modern FastAPI uses an @asynccontextmanager lifespan function passed to FastAPI(lifespan=lifespan). Code before 'yield' executes at application startup (initializing caches/DB pools); code after 'yield' executes on graceful shutdown.",
+    "expected_concepts": [
+      "lifespan",
+      "asynccontextmanager",
+      "startup",
+      "shutdown"
+    ],
+    "explanation": "Evaluates FastAPI Application Lifecycle and FastAPI Lifespan Context Manager comprehension."
+  }
+]

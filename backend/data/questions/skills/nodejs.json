@@ -1,16 +1,409 @@
 [
   {
-    "id": "NODE_001",
+    "id": "nodejs_001",
     "skill": "Node.js",
-    "difficulty": "medium",
-    "question": "Explain the Node.js Event Loop architecture and phases.",
-    "expected_concepts": [
-      "Single-threaded event loop",
-      "Libuv",
-      "Phases (Timers, I/O, Poll, Check)",
-      "Microtasks queue (process.nextTick, Promise)"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Node.js architecture (V8 Engine, libuv, C++ bindings) and single-threaded event-driven model.",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "Node.js Core Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Node.js",
+      "V8",
+      "libuv",
+      "single-threaded",
+      "non-blocking"
     ],
-    "ideal_answer": "Node.js uses a single-threaded Event Loop backed by libuv thread pool for non-blocking I/O. The loop moves through phases: Timers, Pending I/O, Poll, Check (setImmediate), and Close callbacks, processing microtask queues between phase transitions.",
-    "explanation": "Core Node.js asynchronous architecture."
+    "idealAnswer": "Node.js executes JavaScript on Google's V8 engine and offloads non-blocking asynchronous I/O operations to libuv, which provides a cross-platform event loop and thread pool for file/network operations.",
+    "ideal_answer": "Node.js executes JavaScript on Google's V8 engine and offloads non-blocking asynchronous I/O operations to libuv, which provides a cross-platform event loop and thread pool for file/network operations.",
+    "expected_concepts": [
+      "Node.js",
+      "V8",
+      "libuv",
+      "single-threaded"
+    ],
+    "explanation": "Evaluates Node.js Architecture and Node.js Core Architecture comprehension."
+  },
+  {
+    "id": "nodejs_002",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the phases of the Node.js Event Loop (Timers, Pending callbacks, Idle/Prepare, Poll, Check, Close callbacks).",
+    "difficulty": "hard",
+    "topic": "Event Loop",
+    "concept": "Event Loop Phases",
+    "questionFamily": "architecture",
+    "tags": [
+      "event loop",
+      "timers",
+      "poll phase",
+      "check phase",
+      "setImmediate",
+      "setTimeout"
+    ],
+    "idealAnswer": "The libuv event loop executes in phases: Timers (setTimeout/setInterval) -> Pending I/O -> Idle/Prepare -> Poll (retrieves new I/O events) -> Check (setImmediate) -> Close callbacks. process.nextTick and microtasks run between phases.",
+    "ideal_answer": "The libuv event loop executes in phases: Timers (setTimeout/setInterval) -> Pending I/O -> Idle/Prepare -> Poll (retrieves new I/O events) -> Check (setImmediate) -> Close callbacks. process.nextTick and microtasks run between phases.",
+    "expected_concepts": [
+      "event loop",
+      "timers",
+      "poll phase",
+      "check phase"
+    ],
+    "explanation": "Evaluates Node.js Event Loop and Event Loop Phases comprehension."
+  },
+  {
+    "id": "nodejs_003",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between process.nextTick() and setImmediate() in Node.js execution order?",
+    "difficulty": "medium",
+    "topic": "Event Loop",
+    "concept": "process.nextTick vs setImmediate",
+    "questionFamily": "comparison",
+    "tags": [
+      "process.nextTick",
+      "setImmediate",
+      "microtasks",
+      "event loop phase",
+      "execution order"
+    ],
+    "idealAnswer": "process.nextTick() fires immediately after the current operation finishes, before the event loop advances to the next phase (can starve I/O if recursive). setImmediate() queues callbacks in the Check phase of the event loop.",
+    "ideal_answer": "process.nextTick() fires immediately after the current operation finishes, before the event loop advances to the next phase (can starve I/O if recursive). setImmediate() queues callbacks in the Check phase of the event loop.",
+    "expected_concepts": [
+      "process.nextTick",
+      "setImmediate",
+      "microtasks",
+      "event loop phase"
+    ],
+    "explanation": "Evaluates Node.js Event Loop and process.nextTick vs setImmediate comprehension."
+  },
+  {
+    "id": "nodejs_004",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Streams in Node.js: Readable, Writable, Duplex, and Transform streams, and how piping handles backpressure.",
+    "difficulty": "medium",
+    "topic": "Streams & Buffer",
+    "concept": "Streams & Backpressure",
+    "questionFamily": "implementation",
+    "tags": [
+      "streams",
+      "Readable",
+      "Writable",
+      "Transform",
+      "backpressure",
+      "pipe"
+    ],
+    "idealAnswer": "Streams process data sequentially in chunks without loading entire files into memory. Backpressure occurs when write speed is slower than read speed; pipe() and pipeline() automatically pause reading until the write buffer drains.",
+    "ideal_answer": "Streams process data sequentially in chunks without loading entire files into memory. Backpressure occurs when write speed is slower than read speed; pipe() and pipeline() automatically pause reading until the write buffer drains.",
+    "expected_concepts": [
+      "streams",
+      "Readable",
+      "Writable",
+      "Transform"
+    ],
+    "explanation": "Evaluates Node.js Streams & Buffer and Streams & Backpressure comprehension."
+  },
+  {
+    "id": "nodejs_005",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Buffer class in Node.js, and how does it allocate and manage raw binary memory outside the V8 heap?",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Buffers & Off-Heap Memory",
+    "questionFamily": "definition",
+    "tags": [
+      "Buffer",
+      "binary data",
+      "V8 heap",
+      "Buffer.alloc",
+      "Buffer.from"
+    ],
+    "idealAnswer": "The Buffer class handles raw binary data allocated outside the V8 garbage-collected heap in C++ memory. Buffers are used extensively for TCP streams, file operations, and cryptographic hashing.",
+    "ideal_answer": "The Buffer class handles raw binary data allocated outside the V8 garbage-collected heap in C++ memory. Buffers are used extensively for TCP streams, file operations, and cryptographic hashing.",
+    "expected_concepts": [
+      "Buffer",
+      "binary data",
+      "V8 heap",
+      "Buffer.alloc"
+    ],
+    "explanation": "Evaluates Node.js Memory Management and Buffers & Off-Heap Memory comprehension."
+  },
+  {
+    "id": "nodejs_006",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between CommonJS (require / module.exports) and ES Modules (import / export) in Node.js.",
+    "difficulty": "easy",
+    "topic": "Module System",
+    "concept": "CommonJS vs ES Modules",
+    "questionFamily": "comparison",
+    "tags": [
+      "CommonJS",
+      "ES Modules",
+      "require",
+      "import",
+      "package.json type: module"
+    ],
+    "idealAnswer": "CommonJS is synchronous and evaluates at runtime. ES Modules are asynchronous, statically analyzed at parse time, support top-level await, and require 'type': 'module' in package.json or .mjs extensions.",
+    "ideal_answer": "CommonJS is synchronous and evaluates at runtime. ES Modules are asynchronous, statically analyzed at parse time, support top-level await, and require 'type': 'module' in package.json or .mjs extensions.",
+    "expected_concepts": [
+      "CommonJS",
+      "ES Modules",
+      "require",
+      "import"
+    ],
+    "explanation": "Evaluates Node.js Module System and CommonJS vs ES Modules comprehension."
+  },
+  {
+    "id": "nodejs_007",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Node.js Cluster module, and how does it utilize multi-core CPUs by forking worker processes?",
+    "difficulty": "medium",
+    "topic": "Scaling & Concurrency",
+    "concept": "Cluster Module & Multi-Core Scaling",
+    "questionFamily": "optimization",
+    "tags": [
+      "Cluster",
+      "child_process",
+      "fork",
+      "multi-core",
+      "load balancing",
+      "IPC"
+    ],
+    "idealAnswer": "Because Node.js runs on a single thread, the Cluster module spawns child worker processes sharing the same server port. Master process distributes incoming connections across workers via round-robin IPC.",
+    "ideal_answer": "Because Node.js runs on a single thread, the Cluster module spawns child worker processes sharing the same server port. Master process distributes incoming connections across workers via round-robin IPC.",
+    "expected_concepts": [
+      "Cluster",
+      "child_process",
+      "fork",
+      "multi-core"
+    ],
+    "explanation": "Evaluates Node.js Scaling & Concurrency and Cluster Module & Multi-Core Scaling comprehension."
+  },
+  {
+    "id": "nodejs_008",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Worker Threads (worker_threads module) in Node.js, and how do they differ from child processes for CPU-bound tasks?",
+    "difficulty": "hard",
+    "topic": "Concurrency",
+    "concept": "Worker Threads vs Child Processes",
+    "questionFamily": "comparison",
+    "tags": [
+      "worker_threads",
+      "child_process",
+      "SharedArrayBuffer",
+      "CPU-bound",
+      "threads"
+    ],
+    "idealAnswer": "Child processes run independent OS processes with separate memory spaces. Worker Threads run isolated JavaScript execution threads within the same process, sharing memory via SharedArrayBuffer for CPU-intensive tasks.",
+    "ideal_answer": "Child processes run independent OS processes with separate memory spaces. Worker Threads run isolated JavaScript execution threads within the same process, sharing memory via SharedArrayBuffer for CPU-intensive tasks.",
+    "expected_concepts": [
+      "worker_threads",
+      "child_process",
+      "SharedArrayBuffer",
+      "CPU-bound"
+    ],
+    "explanation": "Evaluates Node.js Concurrency and Worker Threads vs Child Processes comprehension."
+  },
+  {
+    "id": "nodejs_009",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain error handling best practices in Node.js: unhandledRejection, uncaughtException, and domain/try-catch boundaries.",
+    "difficulty": "medium",
+    "topic": "Error Handling",
+    "concept": "Process Error Handling",
+    "questionFamily": "best_practice",
+    "tags": [
+      "uncaughtException",
+      "unhandledRejection",
+      "graceful shutdown",
+      "process exit"
+    ],
+    "idealAnswer": "Uncaught synchronous errors trigger process.on('uncaughtException'); unhandled async promise rejections trigger 'unhandledRejection'. In production, log errors and perform a graceful process restart to avoid corrupt state.",
+    "ideal_answer": "Uncaught synchronous errors trigger process.on('uncaughtException'); unhandled async promise rejections trigger 'unhandledRejection'. In production, log errors and perform a graceful process restart to avoid corrupt state.",
+    "expected_concepts": [
+      "uncaughtException",
+      "unhandledRejection",
+      "graceful shutdown",
+      "process exit"
+    ],
+    "explanation": "Evaluates Node.js Error Handling and Process Error Handling comprehension."
+  },
+  {
+    "id": "nodejs_010",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you secure a Node.js web application against common security vulnerabilities (Helmet, Rate Limiting, CORS, Injection)?",
+    "difficulty": "medium",
+    "topic": "Security",
+    "concept": "Node.js Security Best Practices",
+    "questionFamily": "security",
+    "tags": [
+      "Helmet",
+      "Rate Limiting",
+      "CORS",
+      "SQL Injection",
+      "XSS",
+      "CSRF"
+    ],
+    "idealAnswer": "Security measures include using Helmet to set secure HTTP headers, express-rate-limit to mitigate DDoS/brute-force, validating input to prevent injection, and configuring CORS headers strictly.",
+    "ideal_answer": "Security measures include using Helmet to set secure HTTP headers, express-rate-limit to mitigate DDoS/brute-force, validating input to prevent injection, and configuring CORS headers strictly.",
+    "expected_concepts": [
+      "Helmet",
+      "Rate Limiting",
+      "CORS",
+      "SQL Injection"
+    ],
+    "explanation": "Evaluates Node.js Security and Node.js Security Best Practices comprehension."
+  },
+  {
+    "id": "nodejs_011",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain EventEmitter in Node.js (on, emit, once, removeListener) and how memory leaks occur with excessive listeners.",
+    "difficulty": "medium",
+    "topic": "Events",
+    "concept": "EventEmitter & Listener Leaks",
+    "questionFamily": "implementation",
+    "tags": [
+      "EventEmitter",
+      "emit",
+      "on",
+      "memory leak",
+      "setMaxListeners"
+    ],
+    "idealAnswer": "EventEmitter facilitates pub/sub event architecture. Adding event listeners without removing them causes memory leaks; Node warns if listeners on a single event exceed default MaxListeners (10).",
+    "ideal_answer": "EventEmitter facilitates pub/sub event architecture. Adding event listeners without removing them causes memory leaks; Node warns if listeners on a single event exceed default MaxListeners (10).",
+    "expected_concepts": [
+      "EventEmitter",
+      "emit",
+      "on",
+      "memory leak"
+    ],
+    "explanation": "Evaluates Node.js Events and EventEmitter & Listener Leaks comprehension."
+  },
+  {
+    "id": "nodejs_012",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Node.js handle File System operations with the 'fs' and 'fs/promises' modules?",
+    "difficulty": "easy",
+    "topic": "File System",
+    "concept": "fs vs fs/promises",
+    "questionFamily": "implementation",
+    "tags": [
+      "fs",
+      "fs/promises",
+      "async I/O",
+      "readFile",
+      "createReadStream"
+    ],
+    "idealAnswer": "The 'fs' module provides synchronous and callback-based methods. 'fs/promises' provides Promise-based async methods (e.g. await fs.readFile()), while createReadStream/createWriteStream handle large files in chunks.",
+    "ideal_answer": "The 'fs' module provides synchronous and callback-based methods. 'fs/promises' provides Promise-based async methods (e.g. await fs.readFile()), while createReadStream/createWriteStream handle large files in chunks.",
+    "expected_concepts": [
+      "fs",
+      "fs/promises",
+      "async I/O",
+      "readFile"
+    ],
+    "explanation": "Evaluates Node.js File System and fs vs fs/promises comprehension."
+  },
+  {
+    "id": "nodejs_013",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Garbage Collection in V8 (Scavenger / Minor GC and Mark-Sweep-Compact / Major GC) and how to detect memory leaks in Node.js.",
+    "difficulty": "hard",
+    "topic": "Performance & Memory",
+    "concept": "V8 Garbage Collection & Memory Leaks",
+    "questionFamily": "optimization",
+    "tags": [
+      "V8 GC",
+      "Scavenger",
+      "Mark-Sweep-Compact",
+      "heapdump",
+      "memory leak"
+    ],
+    "idealAnswer": "V8 splits heap into New Space (fast Scavenger copying GC) and Old Space (Mark-Sweep-Compact). Memory leaks (global variables, uncleared timers, closures) are diagnosed using heap snapshots and clinic.js/Chrome DevTools.",
+    "ideal_answer": "V8 splits heap into New Space (fast Scavenger copying GC) and Old Space (Mark-Sweep-Compact). Memory leaks (global variables, uncleared timers, closures) are diagnosed using heap snapshots and clinic.js/Chrome DevTools.",
+    "expected_concepts": [
+      "V8 GC",
+      "Scavenger",
+      "Mark-Sweep-Compact",
+      "heapdump"
+    ],
+    "explanation": "Evaluates Node.js Performance & Memory and V8 Garbage Collection & Memory Leaks comprehension."
+  },
+  {
+    "id": "nodejs_014",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement Graceful Shutdown in a Node.js server when receiving SIGINT / SIGTERM signals?",
+    "difficulty": "medium",
+    "topic": "Production Architecture",
+    "concept": "Graceful Shutdown",
+    "questionFamily": "best_practice",
+    "tags": [
+      "SIGTERM",
+      "SIGINT",
+      "server.close",
+      "database disconnect",
+      "graceful shutdown"
+    ],
+    "idealAnswer": "When receiving SIGTERM or SIGINT, listen via process.on(), stop accepting new HTTP requests (server.close()), wait for active requests to finish, close database pools, and exit with process.exit(0).",
+    "ideal_answer": "When receiving SIGTERM or SIGINT, listen via process.on(), stop accepting new HTTP requests (server.close()), wait for active requests to finish, close database pools, and exit with process.exit(0).",
+    "expected_concepts": [
+      "SIGTERM",
+      "SIGINT",
+      "server.close",
+      "database disconnect"
+    ],
+    "explanation": "Evaluates Node.js Production Architecture and Graceful Shutdown comprehension."
+  },
+  {
+    "id": "nodejs_015",
+    "skill": "Node.js",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the purpose of package-lock.json and npm shrinkwrap in Node.js dependency management?",
+    "difficulty": "easy",
+    "topic": "Package Management",
+    "concept": "package-lock.json & Deterministic Builds",
+    "questionFamily": "best_practice",
+    "tags": [
+      "package-lock.json",
+      "npm ci",
+      "semantic versioning",
+      "dependency tree"
+    ],
+    "idealAnswer": "package-lock.json locks down exact resolved versions and integrity hashes of the full dependency tree, guaranteeing 100% reproducible and deterministic installs across development and CI/CD pipelines via 'npm ci'.",
+    "ideal_answer": "package-lock.json locks down exact resolved versions and integrity hashes of the full dependency tree, guaranteeing 100% reproducible and deterministic installs across development and CI/CD pipelines via 'npm ci'.",
+    "expected_concepts": [
+      "package-lock.json",
+      "npm ci",
+      "semantic versioning",
+      "dependency tree"
+    ],
+    "explanation": "Evaluates Node.js Package Management and package-lock.json & Deterministic Builds comprehension."
   }
 ]

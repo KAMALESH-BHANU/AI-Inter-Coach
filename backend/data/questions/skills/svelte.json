@@ -1,0 +1,404 @@
+[
+  {
+    "id": "svelte_001",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain how Svelte's compile-time architecture differs from Virtual DOM frameworks like React and Vue.",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "Compile-Time vs Virtual DOM",
+    "questionFamily": "comparison",
+    "tags": [
+      "Svelte",
+      "compiler",
+      "Virtual DOM",
+      "zero runtime overhead",
+      "vanilla JS"
+    ],
+    "idealAnswer": "React and Vue use runtime Virtual DOM diffing. Svelte is a build-time compiler that converts component templates into highly optimized, surgical imperative vanilla JavaScript that updates the actual DOM directly without Virtual DOM overhead.",
+    "ideal_answer": "React and Vue use runtime Virtual DOM diffing. Svelte is a build-time compiler that converts component templates into highly optimized, surgical imperative vanilla JavaScript that updates the actual DOM directly without Virtual DOM overhead.",
+    "expected_concepts": [
+      "Svelte",
+      "compiler",
+      "Virtual DOM",
+      "zero runtime overhead"
+    ],
+    "explanation": "Evaluates Svelte Architecture and Compile-Time vs Virtual DOM comprehension."
+  },
+  {
+    "id": "svelte_002",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Reactivity work in Svelte 3/4 using variable assignments (let count = 0; count += 1)?",
+    "difficulty": "easy",
+    "topic": "Reactivity",
+    "concept": "Assignment-Based Reactivity",
+    "questionFamily": "implementation",
+    "tags": [
+      "reactivity",
+      "assignment",
+      "compiler instrumentation",
+      "Svelte 3/4"
+    ],
+    "idealAnswer": "In Svelte 3 and 4, reactivity is triggered by variable assignment (count += 1 or arr = [...arr, item]). The Svelte compiler instruments assignments with invalidate calls ($$invalidate) to re-render DOM nodes bound to that variable.",
+    "ideal_answer": "In Svelte 3 and 4, reactivity is triggered by variable assignment (count += 1 or arr = [...arr, item]). The Svelte compiler instruments assignments with invalidate calls ($$invalidate) to re-render DOM nodes bound to that variable.",
+    "expected_concepts": [
+      "reactivity",
+      "assignment",
+      "compiler instrumentation",
+      "Svelte 3/4"
+    ],
+    "explanation": "Evaluates Svelte Reactivity and Assignment-Based Reactivity comprehension."
+  },
+  {
+    "id": "svelte_003",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Reactive Declarations ($:) in Svelte, and how do they handle computed values and side-effects?",
+    "difficulty": "easy",
+    "topic": "Reactivity",
+    "concept": "Reactive Declarations ($:)",
+    "questionFamily": "implementation",
+    "tags": [
+      "reactive declarations",
+      "$:",
+      "computed values",
+      "dependency graph"
+    ],
+    "idealAnswer": "The '$:' label marks reactive declarations that re-run whenever any referenced variable changes. It serves both as computed properties ($: doubled = count * 2) and reactive side-effect statements ($: console.log(count)).",
+    "ideal_answer": "The '$:' label marks reactive declarations that re-run whenever any referenced variable changes. It serves both as computed properties ($: doubled = count * 2) and reactive side-effect statements ($: console.log(count)).",
+    "expected_concepts": [
+      "reactive declarations",
+      "$:",
+      "computed values",
+      "dependency graph"
+    ],
+    "explanation": "Evaluates Svelte Reactivity and Reactive Declarations ($:) comprehension."
+  },
+  {
+    "id": "svelte_004",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Svelte 5 Runes ($state, $derived, $effect, $props) and how they modernize Svelte's reactivity model.",
+    "difficulty": "hard",
+    "topic": "Modern Svelte",
+    "concept": "Svelte 5 Runes System",
+    "questionFamily": "architecture",
+    "tags": [
+      "Svelte 5",
+      "Runes",
+      "$state",
+      "$derived",
+      "$effect",
+      "$props",
+      "fine-grained"
+    ],
+    "idealAnswer": "Svelte 5 introduces Runes: explicit compiler primitives that enable fine-grained signal-like reactivity across components and standard .svelte.js modules: $state() declares reactive state; $derived() creates computed values; $effect() handles side effects; $props() receives inputs.",
+    "ideal_answer": "Svelte 5 introduces Runes: explicit compiler primitives that enable fine-grained signal-like reactivity across components and standard .svelte.js modules: $state() declares reactive state; $derived() creates computed values; $effect() handles side effects; $props() receives inputs.",
+    "expected_concepts": [
+      "Svelte 5",
+      "Runes",
+      "$state",
+      "$derived"
+    ],
+    "explanation": "Evaluates Svelte Modern Svelte and Svelte 5 Runes System comprehension."
+  },
+  {
+    "id": "svelte_005",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Svelte Stores (writable, readable, derived), and how does the '$' auto-subscription prefix work?",
+    "difficulty": "medium",
+    "topic": "State Management",
+    "concept": "Svelte Stores & Auto-Subscription",
+    "questionFamily": "implementation",
+    "tags": [
+      "stores",
+      "writable",
+      "readable",
+      "derived",
+      "$ store prefix",
+      "subscription"
+    ],
+    "idealAnswer": "Svelte Stores hold state outside components conforming to a contract with a subscribe method. Prepending a store with '$' ($myStore) in Svelte components automatically subscribes to emissions and unsubscribes on component teardown.",
+    "ideal_answer": "Svelte Stores hold state outside components conforming to a contract with a subscribe method. Prepending a store with '$' ($myStore) in Svelte components automatically subscribes to emissions and unsubscribes on component teardown.",
+    "expected_concepts": [
+      "stores",
+      "writable",
+      "readable",
+      "derived"
+    ],
+    "explanation": "Evaluates Svelte State Management and Svelte Stores & Auto-Subscription comprehension."
+  },
+  {
+    "id": "svelte_006",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Component Props and Two-Way Binding (bind:value, bind:checked) work in Svelte?",
+    "difficulty": "easy",
+    "topic": "Components & Binding",
+    "concept": "Props & Bind Directive",
+    "questionFamily": "implementation",
+    "tags": [
+      "export let",
+      "bind:value",
+      "two-way binding",
+      "$props"
+    ],
+    "idealAnswer": "In Svelte 3/4, 'export let propName' declares component props (in Svelte 5, $props()). The 'bind:value={val}' directive creates seamless two-way binding between form inputs or child component props and parent state.",
+    "ideal_answer": "In Svelte 3/4, 'export let propName' declares component props (in Svelte 5, $props()). The 'bind:value={val}' directive creates seamless two-way binding between form inputs or child component props and parent state.",
+    "expected_concepts": [
+      "export let",
+      "bind:value",
+      "two-way binding",
+      "$props"
+    ],
+    "explanation": "Evaluates Svelte Components & Binding and Props & Bind Directive comprehension."
+  },
+  {
+    "id": "svelte_007",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Control Flow in Svelte templates: {#if}, {#each} with keyed entries, and {#await} blocks.",
+    "difficulty": "easy",
+    "topic": "Templates",
+    "concept": "Control Flow Logic Blocks",
+    "questionFamily": "implementation",
+    "tags": [
+      "#if",
+      "#each",
+      "#await",
+      "keyed each",
+      "promises"
+    ],
+    "idealAnswer": "Svelte provides block syntax: '{#if condition}...{/if}'; '{#each items as item (item.id)}' renders keyed lists; '{#await promise}...{:then data}...{:catch error}' natively handles async Promise states directly in markup.",
+    "ideal_answer": "Svelte provides block syntax: '{#if condition}...{/if}'; '{#each items as item (item.id)}' renders keyed lists; '{#await promise}...{:then data}...{:catch error}' natively handles async Promise states directly in markup.",
+    "expected_concepts": [
+      "#if",
+      "#each",
+      "#await",
+      "keyed each"
+    ],
+    "explanation": "Evaluates Svelte Templates and Control Flow Logic Blocks comprehension."
+  },
+  {
+    "id": "svelte_008",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Component Events and Event Forwarding (createEventDispatcher vs on:click forwarding) in Svelte?",
+    "difficulty": "medium",
+    "topic": "Component Communication",
+    "concept": "Custom Events & Event Dispatching",
+    "questionFamily": "implementation",
+    "tags": [
+      "createEventDispatcher",
+      "custom events",
+      "event forwarding",
+      "bubble"
+    ],
+    "idealAnswer": "Child components dispatch custom events using 'createEventDispatcher()'. Event forwarding allows a wrapper component to forward DOM events upward simply by declaring the event without a handler (e.g. <button on:click>).",
+    "ideal_answer": "Child components dispatch custom events using 'createEventDispatcher()'. Event forwarding allows a wrapper component to forward DOM events upward simply by declaring the event without a handler (e.g. <button on:click>).",
+    "expected_concepts": [
+      "createEventDispatcher",
+      "custom events",
+      "event forwarding",
+      "bubble"
+    ],
+    "explanation": "Evaluates Svelte Component Communication and Custom Events & Event Dispatching comprehension."
+  },
+  {
+    "id": "svelte_009",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Svelte Component Lifecycle functions: onMount, onDestroy, beforeUpdate, afterUpdate, and tick().",
+    "difficulty": "medium",
+    "topic": "Lifecycle",
+    "concept": "Svelte Lifecycle Functions",
+    "questionFamily": "architecture",
+    "tags": [
+      "onMount",
+      "onDestroy",
+      "tick",
+      "DOM update",
+      "cleanup"
+    ],
+    "idealAnswer": "onMount executes when the component is first rendered into the DOM. onDestroy cleans up subscriptions. tick() returns a Promise that resolves immediately after pending state updates are flushed to the DOM.",
+    "ideal_answer": "onMount executes when the component is first rendered into the DOM. onDestroy cleans up subscriptions. tick() returns a Promise that resolves immediately after pending state updates are flushed to the DOM.",
+    "expected_concepts": [
+      "onMount",
+      "onDestroy",
+      "tick",
+      "DOM update"
+    ],
+    "explanation": "Evaluates Svelte Lifecycle and Svelte Lifecycle Functions comprehension."
+  },
+  {
+    "id": "svelte_010",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Svelte Actions (use:action) and how do they provide reusable element lifecycle hooks and DOM manipulation?",
+    "difficulty": "medium",
+    "topic": "DOM Manipulation",
+    "concept": "Svelte Actions (use:action)",
+    "questionFamily": "design",
+    "tags": [
+      "use:action",
+      "actions",
+      "DOM lifecycle",
+      "directive",
+      "clickOutside"
+    ],
+    "idealAnswer": "Actions are functions attached to DOM elements using 'use:action={params}'. They are called when the node is mounted, receive parameter updates via 'update()', and execute cleanup on 'destroy()', ideal for tooltips and click-outside listeners.",
+    "ideal_answer": "Actions are functions attached to DOM elements using 'use:action={params}'. They are called when the node is mounted, receive parameter updates via 'update()', and execute cleanup on 'destroy()', ideal for tooltips and click-outside listeners.",
+    "expected_concepts": [
+      "use:action",
+      "actions",
+      "DOM lifecycle",
+      "directive"
+    ],
+    "explanation": "Evaluates Svelte DOM Manipulation and Svelte Actions (use:action) comprehension."
+  },
+  {
+    "id": "svelte_011",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Built-in Transitions and Animations in Svelte (transition:fade, in:fly, out:slide, animate:flip).",
+    "difficulty": "easy",
+    "topic": "Animations",
+    "concept": "Built-in Transitions & Flip Animations",
+    "questionFamily": "implementation",
+    "tags": [
+      "transitions",
+      "fade",
+      "fly",
+      "slide",
+      "flip animation",
+      "CSS animation"
+    ],
+    "idealAnswer": "Svelte includes native transition directives (transition:fade, in:fly, out:slide) that generate performant CSS animations when elements enter or leave the DOM, and 'animate:flip' for smooth FLIP list reordering.",
+    "ideal_answer": "Svelte includes native transition directives (transition:fade, in:fly, out:slide) that generate performant CSS animations when elements enter or leave the DOM, and 'animate:flip' for smooth FLIP list reordering.",
+    "expected_concepts": [
+      "transitions",
+      "fade",
+      "fly",
+      "slide"
+    ],
+    "explanation": "Evaluates Svelte Animations and Built-in Transitions & Flip Animations comprehension."
+  },
+  {
+    "id": "svelte_012",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is SvelteKit, and how does its file-system routing (+page.svelte, +page.server.js, +layout.svelte) work?",
+    "difficulty": "medium",
+    "topic": "Full-Stack Svelte",
+    "concept": "SvelteKit File-System Routing",
+    "questionFamily": "architecture",
+    "tags": [
+      "SvelteKit",
+      "+page.svelte",
+      "+page.server.js",
+      "+layout.svelte",
+      "load function"
+    ],
+    "idealAnswer": "SvelteKit is Svelte's full-stack meta-framework. Routes are organized in directories containing: +page.svelte (UI component), +page.server.js (server load functions & form actions), and +layout.svelte (nested layout shell).",
+    "ideal_answer": "SvelteKit is Svelte's full-stack meta-framework. Routes are organized in directories containing: +page.svelte (UI component), +page.server.js (server load functions & form actions), and +layout.svelte (nested layout shell).",
+    "expected_concepts": [
+      "SvelteKit",
+      "+page.svelte",
+      "+page.server.js",
+      "+layout.svelte"
+    ],
+    "explanation": "Evaluates Svelte Full-Stack Svelte and SvelteKit File-System Routing comprehension."
+  },
+  {
+    "id": "svelte_013",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SvelteKit Form Actions and progressive enhancement using the 'enhance' action.",
+    "difficulty": "medium",
+    "topic": "SvelteKit",
+    "concept": "Form Actions & Progressive Enhancement",
+    "questionFamily": "implementation",
+    "tags": [
+      "Form Actions",
+      "use:enhance",
+      "progressive enhancement",
+      "no JS fallback"
+    ],
+    "idealAnswer": "Form actions in +page.server.js handle HTTP POST mutations. Attaching 'use:enhance' progressively enhances the form submission via client-side fetch without a full page reload while remaining fully functional without JavaScript.",
+    "ideal_answer": "Form actions in +page.server.js handle HTTP POST mutations. Attaching 'use:enhance' progressively enhances the form submission via client-side fetch without a full page reload while remaining fully functional without JavaScript.",
+    "expected_concepts": [
+      "Form Actions",
+      "use:enhance",
+      "progressive enhancement",
+      "no JS fallback"
+    ],
+    "explanation": "Evaluates Svelte SvelteKit and Form Actions & Progressive Enhancement comprehension."
+  },
+  {
+    "id": "svelte_014",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Context API (setContext / getContext) in Svelte and how do they differ from Svelte Stores?",
+    "difficulty": "medium",
+    "topic": "Component Communication",
+    "concept": "Context API vs Stores",
+    "questionFamily": "comparison",
+    "tags": [
+      "setContext",
+      "getContext",
+      "component hierarchy",
+      "context boundary"
+    ],
+    "idealAnswer": "Stores are globally accessible across the entire application. setContext / getContext bind state strictly within a component subtree hierarchy, ensuring distinct component instances maintain isolated context boundaries.",
+    "ideal_answer": "Stores are globally accessible across the entire application. setContext / getContext bind state strictly within a component subtree hierarchy, ensuring distinct component instances maintain isolated context boundaries.",
+    "expected_concepts": [
+      "setContext",
+      "getContext",
+      "component hierarchy",
+      "context boundary"
+    ],
+    "explanation": "Evaluates Svelte Component Communication and Context API vs Stores comprehension."
+  },
+  {
+    "id": "svelte_015",
+    "skill": "Svelte",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Svelte's <svelte:component>, <svelte:element>, <svelte:window>, and <svelte:head> special tags?",
+    "difficulty": "easy",
+    "topic": "Special Tags",
+    "concept": "Svelte Special Meta Elements",
+    "questionFamily": "definition",
+    "tags": [
+      "<svelte:component>",
+      "<svelte:window>",
+      "<svelte:head>",
+      "dynamic components"
+    ],
+    "idealAnswer": "<svelte:component this={comp}> renders dynamic components. <svelte:element this={tag}> renders dynamic HTML tags. <svelte:window> attaches event listeners to window. <svelte:head> injects elements into document head.",
+    "ideal_answer": "<svelte:component this={comp}> renders dynamic components. <svelte:element this={tag}> renders dynamic HTML tags. <svelte:window> attaches event listeners to window. <svelte:head> injects elements into document head.",
+    "expected_concepts": [
+      "<svelte:component>",
+      "<svelte:window>",
+      "<svelte:head>",
+      "dynamic components"
+    ],
+    "explanation": "Evaluates Svelte Special Tags and Svelte Special Meta Elements comprehension."
+  }
+]

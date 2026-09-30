@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { resumeAPI, interviewAPI } from '../services/api';
 import SkillSelector from '../components/SkillSelector';
-import { FileUp, ListChecks, PlayCircle, AlertCircle, CheckCircle2, FolderGit2, X, Plus, Sparkles } from 'lucide-react';
+import { FileUp, ListChecks, PlayCircle, AlertCircle, CheckCircle2, FolderGit2, X, Plus, Sparkles, Award, Info } from 'lucide-react';
 
 const InterviewSetupPage = () => {
   const navigate = useNavigate();
@@ -78,6 +78,14 @@ const InterviewSetupPage = () => {
       setStartError('Please select or extract at least 1 technical skill to start the interview.');
       setStarting(false);
       return;
+    }
+
+    // Prime and unlock browser speech synthesis engine on direct user interaction gesture
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.getVoices();
+        window.speechSynthesis.resume();
+      } catch (e) {}
     }
 
     try {
@@ -202,15 +210,53 @@ const InterviewSetupPage = () => {
                 </div>
 
                 {/* Identified Projects */}
-                {extractedData.projects && extractedData.projects.length > 0 && (
+                {extractedData.projects && extractedData.projects.length > 0 ? (
                   <div className="space-y-2 border-b border-slate-800 pb-4">
-                    <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Identified Projects ({extractedData.projects.length})</h4>
+                    <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      Identified Projects ({extractedData.projects.length})
+                    </h4>
                     <div className="space-y-2">
                       {extractedData.projects.map((proj, idx) => (
-                        <div key={idx} className="flex items-center space-x-2.5 p-2.5 bg-slate-950/60 rounded-xl border border-slate-800 text-xs text-slate-200">
-                          <FolderGit2 className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                          <span className="font-bold text-slate-100">{proj.name}</span>
-                          <span className="text-slate-400">({proj.technologies.join(', ')})</span>
+                        <div key={idx} className="p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs text-slate-200 space-y-1">
+                          <div className="flex items-center space-x-2">
+                            <FolderGit2 className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                            <span className="font-bold text-slate-100">{proj.name}</span>
+                            {proj.technologies && proj.technologies.length > 0 && (
+                              <span className="text-slate-400">({proj.technologies.join(', ')})</span>
+                            )}
+                          </div>
+                          {proj.description && (
+                            <p className="text-slate-400 text-[11px] pl-6 line-clamp-2">{proj.description}</p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex items-center space-x-2 p-3 bg-slate-950/40 rounded-xl border border-slate-800/80 text-xs text-slate-400 border-b pb-3">
+                    <Info className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                    <span>No projects identified</span>
+                  </div>
+                )}
+
+                {/* Certifications (Separately displayed) */}
+                {extractedData.certifications && extractedData.certifications.length > 0 && (
+                  <div className="space-y-2 border-b border-slate-800 pb-4">
+                    <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      Certifications ({extractedData.certifications.length})
+                    </h4>
+                    <div className="space-y-2">
+                      {extractedData.certifications.map((cert, idx) => (
+                        <div key={idx} className="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-xl border border-slate-800 text-xs text-slate-200">
+                          <div className="flex items-center space-x-2">
+                            <Award className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                            <span className="font-semibold text-slate-100">{cert.name}</span>
+                          </div>
+                          {cert.issuer && (
+                            <span className="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                              {cert.issuer}
+                            </span>
+                          )}
                         </div>
                       ))}
                     </div>

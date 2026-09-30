@@ -1,17 +1,410 @@
 [
   {
-    "id": "DS_001",
+    "id": "ds_001",
     "skill": "Data Structures",
-    "difficulty": "medium",
-    "question": "Compare Hash Table vs Binary Search Tree in terms of time and space complexity.",
-    "expected_concepts": [
-      "Hash table O(1) average",
-      "BST O(log n)",
-      "Worst case O(n)",
-      "In-order traversal",
-      "Range queries"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dynamic Arrays vs Singly/Doubly Linked Lists in terms of memory layout, cache locality, and operation time complexities.",
+    "difficulty": "easy",
+    "topic": "Linear Data Structures",
+    "concept": "Arrays vs Linked Lists",
+    "questionFamily": "comparison",
+    "tags": [
+      "arrays",
+      "linked lists",
+      "cache locality",
+      "dynamic array amortization",
+      "O(1) access"
     ],
-    "ideal_answer": "Hash tables offer O(1) average lookup/insert/delete but O(n) worst case on collisions and do not maintain order. Balanced BSTs offer O(log n) guaranteed search/insert/delete and support ordered range queries.",
-    "explanation": "Fundamental algorithm complexity evaluation."
+    "idealAnswer": "Dynamic arrays offer contiguous memory, superior CPU cache locality, and O(1) random access, with amortized O(1) append. Linked lists have scattered pointer memory overhead and O(n) element access, but offer O(1) insertion/deletion at known node pointers.",
+    "ideal_answer": "Dynamic arrays offer contiguous memory, superior CPU cache locality, and O(1) random access, with amortized O(1) append. Linked lists have scattered pointer memory overhead and O(n) element access, but offer O(1) insertion/deletion at known node pointers.",
+    "expected_concepts": [
+      "arrays",
+      "linked lists",
+      "cache locality",
+      "dynamic array amortization"
+    ],
+    "explanation": "Evaluates Data Structures Linear Data Structures and Arrays vs Linked Lists comprehension."
+  },
+  {
+    "id": "ds_002",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Stack and Queue data structures operate, and how do you implement a Queue using two Stacks?",
+    "difficulty": "easy",
+    "topic": "Linear Data Structures",
+    "concept": "Stacks, Queues, & 2-Stack Queue",
+    "questionFamily": "implementation",
+    "tags": [
+      "stack",
+      "queue",
+      "LIFO",
+      "FIFO",
+      "amortized O(1)"
+    ],
+    "idealAnswer": "Stack is LIFO (Last-In-First-Out); Queue is FIFO (First-In-First-Out). Implementing a Queue using two stacks (inStack, outStack): push to inStack (O(1)); dequeue pops from outStack; if outStack is empty, pop all inStack elements and push to outStack (amortized O(1)).",
+    "ideal_answer": "Stack is LIFO (Last-In-First-Out); Queue is FIFO (First-In-First-Out). Implementing a Queue using two stacks (inStack, outStack): push to inStack (O(1)); dequeue pops from outStack; if outStack is empty, pop all inStack elements and push to outStack (amortized O(1)).",
+    "expected_concepts": [
+      "stack",
+      "queue",
+      "LIFO",
+      "FIFO"
+    ],
+    "explanation": "Evaluates Data Structures Linear Data Structures and Stacks, Queues, & 2-Stack Queue comprehension."
+  },
+  {
+    "id": "ds_003",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Hash Tables, Hash Functions, and Collision Resolution strategies (Separate Chaining vs Open Addressing: Linear/Quadratic Probing, Double Hashing).",
+    "difficulty": "medium",
+    "topic": "Hash Tables",
+    "concept": "Hash Tables & Collision Resolution",
+    "questionFamily": "comparison",
+    "tags": [
+      "hash table",
+      "hash function",
+      "separate chaining",
+      "open addressing",
+      "load factor"
+    ],
+    "idealAnswer": "Hash tables map keys to array indices via hash functions. Separate Chaining stores colliding entries in linked lists/trees per bucket. Open Addressing finds alternative empty slots in the main array via Linear Probing (clustered), Quadratic Probing, or Double Hashing.",
+    "ideal_answer": "Hash tables map keys to array indices via hash functions. Separate Chaining stores colliding entries in linked lists/trees per bucket. Open Addressing finds alternative empty slots in the main array via Linear Probing (clustered), Quadratic Probing, or Double Hashing.",
+    "expected_concepts": [
+      "hash table",
+      "hash function",
+      "separate chaining",
+      "open addressing"
+    ],
+    "explanation": "Evaluates Data Structures Hash Tables and Hash Tables & Collision Resolution comprehension."
+  },
+  {
+    "id": "ds_004",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Binary Search Tree (BST), and what are the worst-case vs average-case time complexities of insertion, deletion, and lookup?",
+    "difficulty": "easy",
+    "topic": "Trees",
+    "concept": "Binary Search Tree (BST)",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "BST",
+      "binary search tree",
+      "inorder traversal",
+      "degenerate tree",
+      "O(log N)"
+    ],
+    "idealAnswer": "In a BST, left child keys < node key <= right child keys. Inorder traversal yields sorted order. Average time for search/insert/delete is O(log N). If elements are inserted in sorted order, the tree degenerates into a linear linked list with worst-case O(N) operations.",
+    "ideal_answer": "In a BST, left child keys < node key <= right child keys. Inorder traversal yields sorted order. Average time for search/insert/delete is O(log N). If elements are inserted in sorted order, the tree degenerates into a linear linked list with worst-case O(N) operations.",
+    "expected_concepts": [
+      "BST",
+      "binary search tree",
+      "inorder traversal",
+      "degenerate tree"
+    ],
+    "explanation": "Evaluates Data Structures Trees and Binary Search Tree (BST) comprehension."
+  },
+  {
+    "id": "ds_005",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Self-Balancing Binary Search Trees: AVL Trees vs Red-Black Trees (rotation rules and balance factors).",
+    "difficulty": "hard",
+    "topic": "Trees",
+    "concept": "AVL Trees vs Red-Black Trees",
+    "questionFamily": "comparison",
+    "tags": [
+      "AVL tree",
+      "Red-Black tree",
+      "tree rotations",
+      "balance factor",
+      "O(log N) guarantee"
+    ],
+    "idealAnswer": "AVL trees enforce strict balance (|height difference| <= 1), resulting in faster lookups. Red-Black trees enforce looser balance using node color rules (root is black, no consecutive red nodes, equal black-height), requiring fewer rotations on insert/delete (preferred in language collections).",
+    "ideal_answer": "AVL trees enforce strict balance (|height difference| <= 1), resulting in faster lookups. Red-Black trees enforce looser balance using node color rules (root is black, no consecutive red nodes, equal black-height), requiring fewer rotations on insert/delete (preferred in language collections).",
+    "expected_concepts": [
+      "AVL tree",
+      "Red-Black tree",
+      "tree rotations",
+      "balance factor"
+    ],
+    "explanation": "Evaluates Data Structures Trees and AVL Trees vs Red-Black Trees comprehension."
+  },
+  {
+    "id": "ds_006",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Binary Heap (Min-Heap / Max-Heap), and how is Priority Queue implemented using an array with sift-up and sift-down?",
+    "difficulty": "medium",
+    "topic": "Heaps & Priority Queues",
+    "concept": "Binary Heap & Priority Queue",
+    "questionFamily": "implementation",
+    "tags": [
+      "heap",
+      "min-heap",
+      "priority queue",
+      "sift-up",
+      "sift-down",
+      "heapify"
+    ],
+    "idealAnswer": "A binary heap is a complete binary tree satisfying the heap property (parent <= children in min-heap). Represented in arrays where node at i has children at 2i+1 and 2i+2. Insertion adds to end and sifts up (O(log N)); extraction removes root, swaps with last element, and sifts down (O(log N)). Building a heap takes O(N).",
+    "ideal_answer": "A binary heap is a complete binary tree satisfying the heap property (parent <= children in min-heap). Represented in arrays where node at i has children at 2i+1 and 2i+2. Insertion adds to end and sifts up (O(log N)); extraction removes root, swaps with last element, and sifts down (O(log N)). Building a heap takes O(N).",
+    "expected_concepts": [
+      "heap",
+      "min-heap",
+      "priority queue",
+      "sift-up"
+    ],
+    "explanation": "Evaluates Data Structures Heaps & Priority Queues and Binary Heap & Priority Queue comprehension."
+  },
+  {
+    "id": "ds_007",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Trie (Prefix Tree) data structure, its node representation, and time complexity for prefix search and auto-complete.",
+    "difficulty": "medium",
+    "topic": "Advanced Trees",
+    "concept": "Trie (Prefix Tree)",
+    "questionFamily": "implementation",
+    "tags": [
+      "Trie",
+      "prefix tree",
+      "autocomplete",
+      "string search",
+      "O(L) time"
+    ],
+    "idealAnswer": "A Trie is a tree where each node represents a character, and paths from root represent strings. Searching or inserting a word of length L takes O(L) time regardless of the number of words N in the dataset, making it optimal for autocomplete and dictionary spell-checking.",
+    "ideal_answer": "A Trie is a tree where each node represents a character, and paths from root represent strings. Searching or inserting a word of length L takes O(L) time regardless of the number of words N in the dataset, making it optimal for autocomplete and dictionary spell-checking.",
+    "expected_concepts": [
+      "Trie",
+      "prefix tree",
+      "autocomplete",
+      "string search"
+    ],
+    "explanation": "Evaluates Data Structures Advanced Trees and Trie (Prefix Tree) comprehension."
+  },
+  {
+    "id": "ds_008",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Graph representations: Adjacency Matrix vs Adjacency List (space complexity and edge lookup tradeoffs).",
+    "difficulty": "easy",
+    "topic": "Graphs",
+    "concept": "Adjacency Matrix vs Adjacency List",
+    "questionFamily": "comparison",
+    "tags": [
+      "graphs",
+      "adjacency matrix",
+      "adjacency list",
+      "space complexity",
+      "dense vs sparse"
+    ],
+    "idealAnswer": "Adjacency Matrix uses a V x V 2D array: O(V^2) space and O(1) edge lookup (ideal for dense graphs). Adjacency List uses an array of lists: O(V + E) space and O(degree) edge lookup (optimal for sparse graphs with few edges).",
+    "ideal_answer": "Adjacency Matrix uses a V x V 2D array: O(V^2) space and O(1) edge lookup (ideal for dense graphs). Adjacency List uses an array of lists: O(V + E) space and O(degree) edge lookup (optimal for sparse graphs with few edges).",
+    "expected_concepts": [
+      "graphs",
+      "adjacency matrix",
+      "adjacency list",
+      "space complexity"
+    ],
+    "explanation": "Evaluates Data Structures Graphs and Adjacency Matrix vs Adjacency List comprehension."
+  },
+  {
+    "id": "ds_009",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Disjoint Set Union (DSU / Union-Find) data structure, and how do Path Compression and Union by Rank achieve near-O(1) amortized time?",
+    "difficulty": "hard",
+    "topic": "Advanced Data Structures",
+    "concept": "Disjoint Set Union (Union-Find)",
+    "questionFamily": "optimization",
+    "tags": [
+      "Union-Find",
+      "DSU",
+      "path compression",
+      "union by rank",
+      "Ackermann function"
+    ],
+    "idealAnswer": "DSU tracks elements partitioned into disjoint subsets. 'Find' identifies subset root; 'Union' merges subsets. Union by Rank balances tree heights, and Path Compression flattens trees during Find, achieving O(alpha(N)) nearly constant amortized time (inverse Ackermann function).",
+    "ideal_answer": "DSU tracks elements partitioned into disjoint subsets. 'Find' identifies subset root; 'Union' merges subsets. Union by Rank balances tree heights, and Path Compression flattens trees during Find, achieving O(alpha(N)) nearly constant amortized time (inverse Ackermann function).",
+    "expected_concepts": [
+      "Union-Find",
+      "DSU",
+      "path compression",
+      "union by rank"
+    ],
+    "explanation": "Evaluates Data Structures Advanced Data Structures and Disjoint Set Union (Union-Find) comprehension."
+  },
+  {
+    "id": "ds_010",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Segment Trees and Fenwick Trees (Binary Indexed Trees) for dynamic range sum queries and point updates.",
+    "difficulty": "hard",
+    "topic": "Advanced Trees",
+    "concept": "Segment Tree & Fenwick Tree (BIT)",
+    "questionFamily": "comparison",
+    "tags": [
+      "Segment Tree",
+      "Fenwick Tree",
+      "Binary Indexed Tree",
+      "range query",
+      "point update",
+      "O(log N)"
+    ],
+    "idealAnswer": "Both perform point updates and range aggregate queries in O(log N) time. Segment Trees handle arbitrary range queries (sum, min, max) and range updates with lazy propagation. Fenwick Trees (BIT) use bitwise index arithmetic (i & -i) with minimal code and O(N) space.",
+    "ideal_answer": "Both perform point updates and range aggregate queries in O(log N) time. Segment Trees handle arbitrary range queries (sum, min, max) and range updates with lazy propagation. Fenwick Trees (BIT) use bitwise index arithmetic (i & -i) with minimal code and O(N) space.",
+    "expected_concepts": [
+      "Segment Tree",
+      "Fenwick Tree",
+      "Binary Indexed Tree",
+      "range query"
+    ],
+    "explanation": "Evaluates Data Structures Advanced Trees and Segment Tree & Fenwick Tree (BIT) comprehension."
+  },
+  {
+    "id": "ds_011",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Bloom Filter, how do multiple hash functions and a bit array operate, and why does it have false positives but never false negatives?",
+    "difficulty": "medium",
+    "topic": "Probabilistic Data Structures",
+    "concept": "Bloom Filter",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "Bloom Filter",
+      "probabilistic data structure",
+      "false positive",
+      "bit array",
+      "hash functions"
+    ],
+    "idealAnswer": "A Bloom Filter is a space-efficient probabilistic data structure for set membership. An item is hashed by K hash functions setting K bits to 1. Query checks if all K bits are 1: if any bit is 0, item is definitely NOT in set (no false negatives); if all are 1, item MIGHT be in set (possible false positive).",
+    "ideal_answer": "A Bloom Filter is a space-efficient probabilistic data structure for set membership. An item is hashed by K hash functions setting K bits to 1. Query checks if all K bits are 1: if any bit is 0, item is definitely NOT in set (no false negatives); if all are 1, item MIGHT be in set (possible false positive).",
+    "expected_concepts": [
+      "Bloom Filter",
+      "probabilistic data structure",
+      "false positive",
+      "bit array"
+    ],
+    "explanation": "Evaluates Data Structures Probabilistic Data Structures and Bloom Filter comprehension."
+  },
+  {
+    "id": "ds_012",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain B-Trees and B+ Trees and why database storage engines use B+ Trees over standard Binary Search Trees for disk storage.",
+    "difficulty": "hard",
+    "topic": "Database Data Structures",
+    "concept": "B-Tree vs B+ Tree",
+    "questionFamily": "architecture",
+    "tags": [
+      "B-Tree",
+      "B+ Tree",
+      "database index",
+      "disk I/O",
+      "block size",
+      "range scan"
+    ],
+    "idealAnswer": "B+ Trees have high branching factors matching disk block sizes (4KB-64KB), minimizing disk I/O seek operations. Internal nodes store only navigation keys; all actual records are stored in leaf nodes linked sequentially, enabling ultra-fast range scans.",
+    "ideal_answer": "B+ Trees have high branching factors matching disk block sizes (4KB-64KB), minimizing disk I/O seek operations. Internal nodes store only navigation keys; all actual records are stored in leaf nodes linked sequentially, enabling ultra-fast range scans.",
+    "expected_concepts": [
+      "B-Tree",
+      "B+ Tree",
+      "database index",
+      "disk I/O"
+    ],
+    "explanation": "Evaluates Data Structures Database Data Structures and B-Tree vs B+ Tree comprehension."
+  },
+  {
+    "id": "ds_013",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is an LRU (Least Recently Used) Cache data structure, and how do you achieve O(1) get and put using a Hash Map and Doubly Linked List?",
+    "difficulty": "medium",
+    "topic": "Cache Data Structures",
+    "concept": "LRU Cache (HashMap + DoublyLinkedList)",
+    "questionFamily": "implementation",
+    "tags": [
+      "LRU Cache",
+      "HashMap",
+      "Doubly Linked List",
+      "O(1) get",
+      "O(1) put"
+    ],
+    "idealAnswer": "An LRU Cache combines a Hash Map (mapping keys to Node pointers for O(1) lookup) and a Doubly Linked List (maintaining access order). On get/put, accessed node is moved to the list head; on capacity overflow, tail node is evicted in O(1) time.",
+    "ideal_answer": "An LRU Cache combines a Hash Map (mapping keys to Node pointers for O(1) lookup) and a Doubly Linked List (maintaining access order). On get/put, accessed node is moved to the list head; on capacity overflow, tail node is evicted in O(1) time.",
+    "expected_concepts": [
+      "LRU Cache",
+      "HashMap",
+      "Doubly Linked List",
+      "O(1) get"
+    ],
+    "explanation": "Evaluates Data Structures Cache Data Structures and LRU Cache (HashMap + DoublyLinkedList) comprehension."
+  },
+  {
+    "id": "ds_014",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Skip Lists and how randomized multi-level linked lists achieve O(log N) search, insertion, and deletion.",
+    "difficulty": "hard",
+    "topic": "Advanced Data Structures",
+    "concept": "Skip List Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Skip List",
+      "probabilistic",
+      "multi-level pointers",
+      "O(log N)",
+      "Redis Sorted Set"
+    ],
+    "idealAnswer": "A Skip List is a probabilistic alternative to balanced trees. It maintains multiple layers of sorted linked lists: lower layers contain all nodes; higher layers act as express lanes skipping nodes based on coin tosses, achieving average O(log N) search and insert.",
+    "ideal_answer": "A Skip List is a probabilistic alternative to balanced trees. It maintains multiple layers of sorted linked lists: lower layers contain all nodes; higher layers act as express lanes skipping nodes based on coin tosses, achieving average O(log N) search and insert.",
+    "expected_concepts": [
+      "Skip List",
+      "probabilistic",
+      "multi-level pointers",
+      "O(log N)"
+    ],
+    "explanation": "Evaluates Data Structures Advanced Data Structures and Skip List Architecture comprehension."
+  },
+  {
+    "id": "ds_015",
+    "skill": "Data Structures",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Circular Buffer (Ring Buffer), and how does modulo arithmetic manage head and tail pointers in single-producer single-consumer queues?",
+    "difficulty": "easy",
+    "topic": "Linear Data Structures",
+    "concept": "Circular Ring Buffer",
+    "questionFamily": "design",
+    "tags": [
+      "circular buffer",
+      "ring buffer",
+      "modulo arithmetic",
+      "lock-free queue",
+      "fixed capacity"
+    ],
+    "idealAnswer": "A Circular Buffer uses a fixed-size array connected end-to-end. Head and tail pointers advance via modulo arithmetic ((ptr + 1) % capacity). It provides zero-allocation FIFO streaming between producers and consumers without shifting array elements.",
+    "ideal_answer": "A Circular Buffer uses a fixed-size array connected end-to-end. Head and tail pointers advance via modulo arithmetic ((ptr + 1) % capacity). It provides zero-allocation FIFO streaming between producers and consumers without shifting array elements.",
+    "expected_concepts": [
+      "circular buffer",
+      "ring buffer",
+      "modulo arithmetic",
+      "lock-free queue"
+    ],
+    "explanation": "Evaluates Data Structures Linear Data Structures and Circular Ring Buffer comprehension."
   }
 ]

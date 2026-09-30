@@ -1,44 +1,421 @@
 [
   {
-    "id": "AZURE_001",
+    "id": "azure_001",
     "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Microsoft Azure Resource Hierarchy: Management Groups, Subscriptions, Resource Groups, and Resources.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Azure in modern software engineering?",
-    "expected_concepts": [
-      "Azure fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Core Architecture",
+    "concept": "Azure Resource Hierarchy",
+    "questionFamily": "architecture",
+    "tags": [
+      "Azure",
+      "Management Groups",
+      "Subscriptions",
+      "Resource Groups",
+      "RBAC inheritance",
+      "governance"
     ],
-    "ideal_answer": "Azure is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Azure."
+    "idealAnswer": "Azure organizes resources hierarchically: Management Groups manage governance across multiple Subscriptions. Subscriptions act as billing and access management boundaries. Resource Groups logically group related resources sharing the same lifecycle. Policies and RBAC inherit down the hierarchy.",
+    "ideal_answer": "Azure organizes resources hierarchically: Management Groups manage governance across multiple Subscriptions. Subscriptions act as billing and access management boundaries. Resource Groups logically group related resources sharing the same lifecycle. Policies and RBAC inherit down the hierarchy.",
+    "expected_concepts": [
+      "Azure",
+      "Management Groups",
+      "Subscriptions",
+      "Resource Groups"
+    ],
+    "explanation": "Evaluates Azure Core Architecture and Azure Resource Hierarchy comprehension."
   },
   {
-    "id": "AZURE_002",
+    "id": "azure_002",
     "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Microsoft Entra ID (formerly Azure Active Directory): Users, Service Principals, Managed Identities, and Conditional Access.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Azure in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Identity & Security",
+    "concept": "Microsoft Entra ID & Managed Identities",
+    "questionFamily": "security",
+    "tags": [
+      "Entra ID",
+      "Azure AD",
+      "Managed Identity",
+      "Service Principal",
+      "RBAC",
+      "OAuth2"
     ],
-    "ideal_answer": "Common challenges with Azure include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Azure."
+    "idealAnswer": "Entra ID is Azure's cloud identity and access management service. Service Principals represent application identities. Managed Identities automatically provide Azure services (VMs, App Services) with Entra ID tokens without storing credentials in code.",
+    "ideal_answer": "Entra ID is Azure's cloud identity and access management service. Service Principals represent application identities. Managed Identities automatically provide Azure services (VMs, App Services) with Entra ID tokens without storing credentials in code.",
+    "expected_concepts": [
+      "Entra ID",
+      "Azure AD",
+      "Managed Identity",
+      "Service Principal"
+    ],
+    "explanation": "Evaluates Azure Identity & Security and Microsoft Entra ID & Managed Identities comprehension."
   },
   {
-    "id": "AZURE_003",
+    "id": "azure_003",
     "skill": "Azure",
-    "difficulty": "hard",
-    "question": "How does Azure handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Azure Virtual Network (VNet): Subnets, Network Security Groups (NSGs), Application Security Groups (ASGs), and VNet Peering.",
+    "difficulty": "medium",
+    "topic": "Networking & VNet",
+    "concept": "Azure VNet Architecture & Peering",
+    "questionFamily": "architecture",
+    "tags": [
+      "VNet",
+      "Subnets",
+      "NSG",
+      "ASG",
+      "VNet Peering",
+      "private networking"
     ],
-    "ideal_answer": "Azure handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Azure."
+    "idealAnswer": "A VNet isolates network traffic in Azure. NSGs filter inbound/outbound traffic with 5-tuple security rules. ASGs group virtual machine network interfaces for reusable NSG rules. VNet Peering connects distinct VNets with low-latency private Azure backbone routing.",
+    "ideal_answer": "A VNet isolates network traffic in Azure. NSGs filter inbound/outbound traffic with 5-tuple security rules. ASGs group virtual machine network interfaces for reusable NSG rules. VNet Peering connects distinct VNets with low-latency private Azure backbone routing.",
+    "expected_concepts": [
+      "VNet",
+      "Subnets",
+      "NSG",
+      "ASG"
+    ],
+    "explanation": "Evaluates Azure Networking & VNet and Azure VNet Architecture & Peering comprehension."
+  },
+  {
+    "id": "azure_004",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Azure App Service (PaaS), and how do Deployment Slots enable zero-downtime blue-green deployments with instant swap?",
+    "difficulty": "easy",
+    "topic": "Compute & PaaS",
+    "concept": "Azure App Service & Deployment Slots",
+    "questionFamily": "implementation",
+    "tags": [
+      "App Service",
+      "Deployment Slots",
+      "PaaS",
+      "staging slot",
+      "zero-downtime swap"
+    ],
+    "idealAnswer": "Azure App Service is an enterprise PaaS for hosting web apps. Deployment Slots (e.g. staging and production) allow deploying to a staging slot, verifying live behavior, and performing an instant zero-downtime VIP swap to production.",
+    "ideal_answer": "Azure App Service is an enterprise PaaS for hosting web apps. Deployment Slots (e.g. staging and production) allow deploying to a staging slot, verifying live behavior, and performing an instant zero-downtime VIP swap to production.",
+    "expected_concepts": [
+      "App Service",
+      "Deployment Slots",
+      "PaaS",
+      "staging slot"
+    ],
+    "explanation": "Evaluates Azure Compute & PaaS and Azure App Service & Deployment Slots comprehension."
+  },
+  {
+    "id": "azure_005",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Azure Functions (Serverless): Consumption Plan vs Premium Plan vs Dedicated Plan, Triggers, and Bindings.",
+    "difficulty": "medium",
+    "topic": "Serverless",
+    "concept": "Azure Functions Triggers & Bindings",
+    "questionFamily": "architecture",
+    "tags": [
+      "Azure Functions",
+      "Consumption Plan",
+      "Durable Functions",
+      "Triggers",
+      "Bindings",
+      "serverless"
+    ],
+    "idealAnswer": "Azure Functions provides serverless event-driven compute. Triggers declare what starts the function (HTTP, Blob, Cosmos DB). Input/Output Bindings declaratively connect data sources to function parameters without SDK boilerplate. Premium plan eliminates cold starts.",
+    "ideal_answer": "Azure Functions provides serverless event-driven compute. Triggers declare what starts the function (HTTP, Blob, Cosmos DB). Input/Output Bindings declaratively connect data sources to function parameters without SDK boilerplate. Premium plan eliminates cold starts.",
+    "expected_concepts": [
+      "Azure Functions",
+      "Consumption Plan",
+      "Durable Functions",
+      "Triggers"
+    ],
+    "explanation": "Evaluates Azure Serverless and Azure Functions Triggers & Bindings comprehension."
+  },
+  {
+    "id": "azure_006",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Azure Durable Functions, and how do Orchestrator Functions manage stateful workflows (Function Chaining, Fan-out/Fan-in)?",
+    "difficulty": "hard",
+    "topic": "Serverless Architecture",
+    "concept": "Azure Durable Functions Patterns",
+    "questionFamily": "design",
+    "tags": [
+      "Durable Functions",
+      "Orchestrator",
+      "Activity function",
+      "Fan-out/Fan-in",
+      "Event Sourcing"
+    ],
+    "idealAnswer": "Durable Functions is an extension to Azure Functions for writing stateful workflows in code. Orchestrators use Event Sourcing to checkpoint state transparently, coordinating complex patterns like Function Chaining, Fan-out/Fan-in, and Human Interaction approvals.",
+    "ideal_answer": "Durable Functions is an extension to Azure Functions for writing stateful workflows in code. Orchestrators use Event Sourcing to checkpoint state transparently, coordinating complex patterns like Function Chaining, Fan-out/Fan-in, and Human Interaction approvals.",
+    "expected_concepts": [
+      "Durable Functions",
+      "Orchestrator",
+      "Activity function",
+      "Fan-out/Fan-in"
+    ],
+    "explanation": "Evaluates Azure Serverless Architecture and Azure Durable Functions Patterns comprehension."
+  },
+  {
+    "id": "azure_007",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Azure Cosmos DB: Multi-Model APIs (SQL/NoSQL, MongoDB, Cassandra, Gremlin), 5 Consistency Levels, and Global Distribution.",
+    "difficulty": "hard",
+    "topic": "Database & NoSQL",
+    "concept": "Azure Cosmos DB & 5 Consistency Levels",
+    "questionFamily": "architecture",
+    "tags": [
+      "Cosmos DB",
+      "Strong",
+      "Bounded Staleness",
+      "Session",
+      "Consistent Prefix",
+      "Eventual",
+      "global distribution"
+    ],
+    "idealAnswer": "Cosmos DB is a globally distributed, multi-model NoSQL database offering single-digit millisecond latency SLAs. It provides 5 tunable consistency levels: Strong, Bounded Staleness, Session (default/most popular), Consistent Prefix, and Eventual.",
+    "ideal_answer": "Cosmos DB is a globally distributed, multi-model NoSQL database offering single-digit millisecond latency SLAs. It provides 5 tunable consistency levels: Strong, Bounded Staleness, Session (default/most popular), Consistent Prefix, and Eventual.",
+    "expected_concepts": [
+      "Cosmos DB",
+      "Strong",
+      "Bounded Staleness",
+      "Session"
+    ],
+    "explanation": "Evaluates Azure Database & NoSQL and Azure Cosmos DB & 5 Consistency Levels comprehension."
+  },
+  {
+    "id": "azure_008",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Azure Storage Services: Blob Storage (Hot, Cool, Cold, Archive tiers), Table Storage, Queue Storage, and Azure Files (SMB/NFS).",
+    "difficulty": "easy",
+    "topic": "Storage",
+    "concept": "Azure Storage Services & Access Tiers",
+    "questionFamily": "optimization",
+    "tags": [
+      "Blob Storage",
+      "Azure Files",
+      "Hot tier",
+      "Cool tier",
+      "Archive tier",
+      "lifecycle management"
+    ],
+    "idealAnswer": "Azure Blob Storage stores unstructured object data across Hot (frequent access), Cool (30+ days), Cold (90+ days), and Archive (180+ days) tiers. Azure Files provides fully managed cloud SMB/NFS file shares mounted directly by on-premise or cloud VMs.",
+    "ideal_answer": "Azure Blob Storage stores unstructured object data across Hot (frequent access), Cool (30+ days), Cold (90+ days), and Archive (180+ days) tiers. Azure Files provides fully managed cloud SMB/NFS file shares mounted directly by on-premise or cloud VMs.",
+    "expected_concepts": [
+      "Blob Storage",
+      "Azure Files",
+      "Hot tier",
+      "Cool tier"
+    ],
+    "explanation": "Evaluates Azure Storage and Azure Storage Services & Access Tiers comprehension."
+  },
+  {
+    "id": "azure_009",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Azure Kubernetes Service (AKS), and how does AKS integrate with Azure CNI, Entra ID authentication, and Azure Key Vault CSI Driver?",
+    "difficulty": "hard",
+    "topic": "Containers & AKS",
+    "concept": "Azure Kubernetes Service (AKS) Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "AKS",
+      "Azure CNI",
+      "Kubenet",
+      "Managed Identity",
+      "Azure Key Vault CSI",
+      "Kubernetes"
+    ],
+    "idealAnswer": "AKS provides managed Kubernetes. Azure CNI gives every pod a real private IP on the Azure VNet. AKS integrates with Entra ID for RBAC and uses Azure Key Vault Secrets Store CSI Driver to mount secrets as native Kubernetes volumes.",
+    "ideal_answer": "AKS provides managed Kubernetes. Azure CNI gives every pod a real private IP on the Azure VNet. AKS integrates with Entra ID for RBAC and uses Azure Key Vault Secrets Store CSI Driver to mount secrets as native Kubernetes volumes.",
+    "expected_concepts": [
+      "AKS",
+      "Azure CNI",
+      "Kubenet",
+      "Managed Identity"
+    ],
+    "explanation": "Evaluates Azure Containers & AKS and Azure Kubernetes Service (AKS) Architecture comprehension."
+  },
+  {
+    "id": "azure_010",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Azure Key Vault: Keys, Secrets, Certificates, Access Policies vs RBAC, and Customer-Managed Keys (CMK).",
+    "difficulty": "easy",
+    "topic": "Security",
+    "concept": "Azure Key Vault",
+    "questionFamily": "security",
+    "tags": [
+      "Azure Key Vault",
+      "Secrets",
+      "Certificates",
+      "Keys",
+      "Hardware Security Module",
+      "CMK"
+    ],
+    "idealAnswer": "Azure Key Vault centralizes secure management of application secrets (passwords, connection strings), cryptographic encryption keys (HSM-backed), and SSL certificates with automated rotation and integration with Managed Identities.",
+    "ideal_answer": "Azure Key Vault centralizes secure management of application secrets (passwords, connection strings), cryptographic encryption keys (HSM-backed), and SSL certificates with automated rotation and integration with Managed Identities.",
+    "expected_concepts": [
+      "Azure Key Vault",
+      "Secrets",
+      "Certificates",
+      "Keys"
+    ],
+    "explanation": "Evaluates Azure Security and Azure Key Vault comprehension."
+  },
+  {
+    "id": "azure_011",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Azure Service Bus (Queues vs Topics/Subscriptions), Dead-Lettering, and Message Sessions for FIFO ordered processing?",
+    "difficulty": "medium",
+    "topic": "Messaging",
+    "concept": "Azure Service Bus Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Azure Service Bus",
+      "Queues",
+      "Topics",
+      "Subscriptions",
+      "Dead-Letter Queue",
+      "Message Sessions"
+    ],
+    "idealAnswer": "Azure Service Bus is an enterprise message broker: Queues provide 1-to-1 point-to-point messaging; Topics provide 1-to-many publish/subscribe with rule filters on Subscriptions. Message Sessions enable FIFO guarantee and stateful grouping.",
+    "ideal_answer": "Azure Service Bus is an enterprise message broker: Queues provide 1-to-1 point-to-point messaging; Topics provide 1-to-many publish/subscribe with rule filters on Subscriptions. Message Sessions enable FIFO guarantee and stateful grouping.",
+    "expected_concepts": [
+      "Azure Service Bus",
+      "Queues",
+      "Topics",
+      "Subscriptions"
+    ],
+    "explanation": "Evaluates Azure Messaging and Azure Service Bus Architecture comprehension."
+  },
+  {
+    "id": "azure_012",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Azure Event Grid vs Azure Event Hubs vs Azure Service Bus and when to use each.",
+    "difficulty": "medium",
+    "topic": "Messaging & Events",
+    "concept": "Event Grid vs Event Hubs vs Service Bus",
+    "questionFamily": "comparison",
+    "tags": [
+      "Event Grid",
+      "Event Hubs",
+      "Service Bus",
+      "big data streaming",
+      "reactive events",
+      "enterprise messaging"
+    ],
+    "idealAnswer": "Event Grid: lightweight reactive event routing (push model, serverless automation). Event Hubs: massive big-data streaming ingestion (millions of events/sec, Kafka API compatible, pull model). Service Bus: high-value enterprise messaging with transactions and FIFO.",
+    "ideal_answer": "Event Grid: lightweight reactive event routing (push model, serverless automation). Event Hubs: massive big-data streaming ingestion (millions of events/sec, Kafka API compatible, pull model). Service Bus: high-value enterprise messaging with transactions and FIFO.",
+    "expected_concepts": [
+      "Event Grid",
+      "Event Hubs",
+      "Service Bus",
+      "big data streaming"
+    ],
+    "explanation": "Evaluates Azure Messaging & Events and Event Grid vs Event Hubs vs Service Bus comprehension."
+  },
+  {
+    "id": "azure_013",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Azure DevOps (Azure Repos, Azure Pipelines, Azure Boards, Azure Artifacts), and how do YAML Pipelines automate CI/CD?",
+    "difficulty": "medium",
+    "topic": "DevOps & CI/CD",
+    "concept": "Azure DevOps & YAML Pipelines",
+    "questionFamily": "implementation",
+    "tags": [
+      "Azure DevOps",
+      "Azure Pipelines",
+      "YAML",
+      "Azure Boards",
+      "self-hosted agent",
+      "CI/CD"
+    ],
+    "idealAnswer": "Azure DevOps provides integrated end-to-end tooling: Azure Repos (Git), Azure Boards (Agile tracking), Azure Pipelines (multi-stage YAML CI/CD pipelines with environments and approval gates), and Azure Artifacts (package feeds).",
+    "ideal_answer": "Azure DevOps provides integrated end-to-end tooling: Azure Repos (Git), Azure Boards (Agile tracking), Azure Pipelines (multi-stage YAML CI/CD pipelines with environments and approval gates), and Azure Artifacts (package feeds).",
+    "expected_concepts": [
+      "Azure DevOps",
+      "Azure Pipelines",
+      "YAML",
+      "Azure Boards"
+    ],
+    "explanation": "Evaluates Azure DevOps & CI/CD and Azure DevOps & YAML Pipelines comprehension."
+  },
+  {
+    "id": "azure_014",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Azure Monitor (Metrics, Logs with Kusto Query Language - KQL), Application Insights (APM), and Log Analytics Workspaces.",
+    "difficulty": "medium",
+    "topic": "Observability",
+    "concept": "Azure Monitor, Application Insights, & KQL",
+    "questionFamily": "implementation",
+    "tags": [
+      "Azure Monitor",
+      "Application Insights",
+      "Log Analytics",
+      "KQL",
+      "Kusto Query Language",
+      "APM"
+    ],
+    "idealAnswer": "Azure Monitor collects telemetry. Log Analytics Workspaces store centralized logs queried via Kusto Query Language (KQL). Application Insights acts as an APM tool tracking application performance, exceptions, dependency call trees, and user flows.",
+    "ideal_answer": "Azure Monitor collects telemetry. Log Analytics Workspaces store centralized logs queried via Kusto Query Language (KQL). Application Insights acts as an APM tool tracking application performance, exceptions, dependency call trees, and user flows.",
+    "expected_concepts": [
+      "Azure Monitor",
+      "Application Insights",
+      "Log Analytics",
+      "KQL"
+    ],
+    "explanation": "Evaluates Azure Observability and Azure Monitor, Application Insights, & KQL comprehension."
+  },
+  {
+    "id": "azure_015",
+    "skill": "Azure",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Azure Policy and Azure Blueprints for enterprise cloud governance, regulatory compliance, and guardrails.",
+    "difficulty": "easy",
+    "topic": "Governance",
+    "concept": "Azure Policy & Governance Guardrails",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Azure Policy",
+      "governance",
+      "compliance",
+      "initiative",
+      "Azure Blueprints",
+      "audit deny"
+    ],
+    "idealAnswer": "Azure Policy enforces corporate standards and compliance rules across resources (e.g. denying unapproved VM sizes, requiring mandatory resource tags, enforcing HTTPS). Azure Blueprints packages role assignments, policy assignments, and ARM templates.",
+    "ideal_answer": "Azure Policy enforces corporate standards and compliance rules across resources (e.g. denying unapproved VM sizes, requiring mandatory resource tags, enforcing HTTPS). Azure Blueprints packages role assignments, policy assignments, and ARM templates.",
+    "expected_concepts": [
+      "Azure Policy",
+      "governance",
+      "compliance",
+      "initiative"
+    ],
+    "explanation": "Evaluates Azure Governance and Azure Policy & Governance Guardrails comprehension."
   }
 ]

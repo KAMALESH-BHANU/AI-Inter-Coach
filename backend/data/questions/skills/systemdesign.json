@@ -1,17 +1,418 @@
 [
   {
-    "id": "SYS_001",
+    "id": "sys_001",
     "skill": "System Design",
-    "difficulty": "hard",
-    "question": "How would you design a distributed caching layer using Redis? Address cache invalidation and cache stampede.",
-    "expected_concepts": [
-      "Cache-Aside pattern",
-      "TTL",
-      "Cache stampede / thundering herd",
-      "Mutex locking / probabilistic early expiration",
-      "Consistent hashing"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the CAP Theorem (Consistency, Availability, Partition Tolerance) and PACELC Theorem with real-world system examples.",
+    "difficulty": "medium",
+    "topic": "Distributed Systems Theory",
+    "concept": "CAP Theorem & PACELC Theorem",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "CAP theorem",
+      "PACELC",
+      "eventual consistency",
+      "Cassandra",
+      "Spanner",
+      "tradeoffs"
     ],
-    "ideal_answer": "Use Cache-Aside pattern where app reads cache first and populates from DB on miss. Mitigate cache stampede using distributed locks or probabilistic early expiration. Distribute cache keys across nodes using Consistent Hashing.",
-    "explanation": "High-level distributed systems scalability design."
+    "idealAnswer": "CAP theorem states a distributed system can guarantee at most two of: Consistency, Availability, and Partition tolerance (AP like Cassandra, CP like HBase). PACELC extends CAP: if Partition (P), trade Availability (A) vs Consistency (C); Else (E), trade Latency (L) vs Consistency (C).",
+    "ideal_answer": "CAP theorem states a distributed system can guarantee at most two of: Consistency, Availability, and Partition tolerance (AP like Cassandra, CP like HBase). PACELC extends CAP: if Partition (P), trade Availability (A) vs Consistency (C); Else (E), trade Latency (L) vs Consistency (C).",
+    "expected_concepts": [
+      "CAP theorem",
+      "PACELC",
+      "eventual consistency",
+      "Cassandra"
+    ],
+    "explanation": "Evaluates System Design Distributed Systems Theory and CAP Theorem & PACELC Theorem comprehension."
+  },
+  {
+    "id": "sys_002",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Consistent Hashing and Virtual Nodes (VNodes) for distributed caching and database sharding.",
+    "difficulty": "hard",
+    "topic": "Distributed Architecture",
+    "concept": "Consistent Hashing & Virtual Nodes",
+    "questionFamily": "architecture",
+    "tags": [
+      "consistent hashing",
+      "hash ring",
+      "virtual nodes",
+      "hotspots",
+      "sharding"
+    ],
+    "idealAnswer": "Consistent Hashing maps servers and keys onto a circular 2^32 hash ring. Adding or removing a server only relocates K/N keys (where K is total keys and N is servers). Virtual Nodes (VNodes) map multiple token points per physical server to ensure uniform data distribution and prevent hot spots.",
+    "ideal_answer": "Consistent Hashing maps servers and keys onto a circular 2^32 hash ring. Adding or removing a server only relocates K/N keys (where K is total keys and N is servers). Virtual Nodes (VNodes) map multiple token points per physical server to ensure uniform data distribution and prevent hot spots.",
+    "expected_concepts": [
+      "consistent hashing",
+      "hash ring",
+      "virtual nodes",
+      "hotspots"
+    ],
+    "explanation": "Evaluates System Design Distributed Architecture and Consistent Hashing & Virtual Nodes comprehension."
+  },
+  {
+    "id": "sys_003",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you design a URL Shortener service (like TinyURL / Bitly) handling 100M daily writes (Base62 encoding, KGS, collisions)?",
+    "difficulty": "medium",
+    "topic": "System Design Case Study",
+    "concept": "TinyURL System Design (Base62 & KGS)",
+    "questionFamily": "design",
+    "tags": [
+      "URL shortener",
+      "Base62 encoding",
+      "Key Generation Service",
+      "collisions",
+      "Redis cache"
+    ],
+    "idealAnswer": "Generate 7-character Base62 (62^7 = 3.5 trillion URLs) IDs. Prevent database collisions by deploying a dedicated Key Generation Service (KGS) that pre-generates unique sequential ranges of tokens into memory/Redis, ensuring O(1) instantaneous lookups and writes.",
+    "ideal_answer": "Generate 7-character Base62 (62^7 = 3.5 trillion URLs) IDs. Prevent database collisions by deploying a dedicated Key Generation Service (KGS) that pre-generates unique sequential ranges of tokens into memory/Redis, ensuring O(1) instantaneous lookups and writes.",
+    "expected_concepts": [
+      "URL shortener",
+      "Base62 encoding",
+      "Key Generation Service",
+      "collisions"
+    ],
+    "explanation": "Evaluates System Design System Design Case Study and TinyURL System Design (Base62 & KGS) comprehension."
+  },
+  {
+    "id": "sys_004",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Rate Limiting algorithms in distributed systems: Token Bucket, Leaky Bucket, Fixed Window, Sliding Window Log, and Sliding Window Counter.",
+    "difficulty": "hard",
+    "topic": "Rate Limiting",
+    "concept": "Distributed Rate Limiting Algorithms",
+    "questionFamily": "comparison",
+    "tags": [
+      "rate limiting",
+      "token bucket",
+      "leaky bucket",
+      "sliding window counter",
+      "Redis atomic"
+    ],
+    "idealAnswer": "Token Bucket allows bursts up to bucket capacity. Leaky Bucket enforces constant smooth processing rate. Fixed Window has boundary spike issues. Sliding Window Log has high memory. Sliding Window Counter blends previous and current window counts with minimal memory, implemented atomically in Redis with Lua scripts.",
+    "ideal_answer": "Token Bucket allows bursts up to bucket capacity. Leaky Bucket enforces constant smooth processing rate. Fixed Window has boundary spike issues. Sliding Window Log has high memory. Sliding Window Counter blends previous and current window counts with minimal memory, implemented atomically in Redis with Lua scripts.",
+    "expected_concepts": [
+      "rate limiting",
+      "token bucket",
+      "leaky bucket",
+      "sliding window counter"
+    ],
+    "explanation": "Evaluates System Design Rate Limiting and Distributed Rate Limiting Algorithms comprehension."
+  },
+  {
+    "id": "sys_005",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you design a scalable Notification System (Push Notifications, SMS, Email) with priority queues and rate limiting?",
+    "difficulty": "medium",
+    "topic": "System Design Case Study",
+    "concept": "Distributed Notification System",
+    "questionFamily": "architecture",
+    "tags": [
+      "notification system",
+      "message queue",
+      "Kafka",
+      "APNs",
+      "FCM",
+      "rate limiting",
+      "deduplication"
+    ],
+    "idealAnswer": "Architecture: API Gateway receives requests -> Notification Service validates and writes to message queues (Kafka/RabbitMQ) separated by priority (OTP SMS vs marketing email) -> Workers consume and call third-party providers (APNs, FCM, Twilio, SendGrid) with deduplication and retry queues.",
+    "ideal_answer": "Architecture: API Gateway receives requests -> Notification Service validates and writes to message queues (Kafka/RabbitMQ) separated by priority (OTP SMS vs marketing email) -> Workers consume and call third-party providers (APNs, FCM, Twilio, SendGrid) with deduplication and retry queues.",
+    "expected_concepts": [
+      "notification system",
+      "message queue",
+      "Kafka",
+      "APNs"
+    ],
+    "explanation": "Evaluates System Design System Design Case Study and Distributed Notification System comprehension."
+  },
+  {
+    "id": "sys_006",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Caching Strategies: Cache-Aside (Lazy Loading), Read-Through, Write-Through, Write-Around, and Write-Back (Write-Behind).",
+    "difficulty": "medium",
+    "topic": "Caching Patterns",
+    "concept": "Distributed Caching Strategies",
+    "questionFamily": "comparison",
+    "tags": [
+      "cache-aside",
+      "write-through",
+      "write-back",
+      "write-around",
+      "cache invalidation"
+    ],
+    "idealAnswer": "Cache-Aside: App reads cache; on miss, reads DB and populates cache. Write-Through: App writes to cache, which synchronously writes to DB. Write-Around: App writes directly to DB, skipping cache. Write-Back: App writes to cache, which asynchronously writes to DB in batches (high throughput, risk of data loss on crash).",
+    "ideal_answer": "Cache-Aside: App reads cache; on miss, reads DB and populates cache. Write-Through: App writes to cache, which synchronously writes to DB. Write-Around: App writes directly to DB, skipping cache. Write-Back: App writes to cache, which asynchronously writes to DB in batches (high throughput, risk of data loss on crash).",
+    "expected_concepts": [
+      "cache-aside",
+      "write-through",
+      "write-back",
+      "write-around"
+    ],
+    "explanation": "Evaluates System Design Caching Patterns and Distributed Caching Strategies comprehension."
+  },
+  {
+    "id": "sys_007",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you design a Distributed Unique ID Generator (Twitter Snowflake, UUID, DB Ticket Servers) with 64-bit sortability?",
+    "difficulty": "hard",
+    "topic": "Distributed Architecture",
+    "concept": "Twitter Snowflake ID Generator",
+    "questionFamily": "architecture",
+    "tags": [
+      "Twitter Snowflake",
+      "64-bit ID",
+      "timestamp",
+      "worker ID",
+      "sequence number",
+      "sortable ID"
+    ],
+    "idealAnswer": "Twitter Snowflake generates unique 64-bit IDs without coordination: 1-bit sign + 41-bit timestamp (milliseconds) + 10-bit worker/machine ID + 12-bit sequence counter (4096 IDs/ms per node). IDs are globally unique, roughly time-sorted, and compact.",
+    "ideal_answer": "Twitter Snowflake generates unique 64-bit IDs without coordination: 1-bit sign + 41-bit timestamp (milliseconds) + 10-bit worker/machine ID + 12-bit sequence counter (4096 IDs/ms per node). IDs are globally unique, roughly time-sorted, and compact.",
+    "expected_concepts": [
+      "Twitter Snowflake",
+      "64-bit ID",
+      "timestamp",
+      "worker ID"
+    ],
+    "explanation": "Evaluates System Design Distributed Architecture and Twitter Snowflake ID Generator comprehension."
+  },
+  {
+    "id": "sys_008",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you design a Social Media News Feed (like Twitter / Facebook Feed) using Push (Fanout-on-Write) vs Pull (Fanout-on-Read)?",
+    "difficulty": "hard",
+    "topic": "System Design Case Study",
+    "concept": "News Feed System (Push vs Pull Fanout)",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "news feed",
+      "fanout-on-write",
+      "fanout-on-read",
+      "celebrity problem",
+      "hybrid fanout"
+    ],
+    "idealAnswer": "Fanout-on-write (Push): on post, insert post ID into all followers' timeline caches (fast reads O(1), expensive writes). Fanout-on-read (Pull): generate timeline dynamically on user read. Hybrid approach: push for standard users, pull for celebrities with millions of followers to solve the celebrity problem.",
+    "ideal_answer": "Fanout-on-write (Push): on post, insert post ID into all followers' timeline caches (fast reads O(1), expensive writes). Fanout-on-read (Pull): generate timeline dynamically on user read. Hybrid approach: push for standard users, pull for celebrities with millions of followers to solve the celebrity problem.",
+    "expected_concepts": [
+      "news feed",
+      "fanout-on-write",
+      "fanout-on-read",
+      "celebrity problem"
+    ],
+    "explanation": "Evaluates System Design System Design Case Study and News Feed System (Push vs Pull Fanout) comprehension."
+  },
+  {
+    "id": "sys_009",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Distributed Consensus Protocols: Paxos vs Raft (Leader Election, Log Replication, Safety).",
+    "difficulty": "hard",
+    "topic": "Distributed Consensus",
+    "concept": "Raft Consensus Algorithm",
+    "questionFamily": "architecture",
+    "tags": [
+      "Raft",
+      "Paxos",
+      "distributed consensus",
+      "leader election",
+      "log replication",
+      "heartbeats"
+    ],
+    "idealAnswer": "Raft achieves consensus via 3 subproblems: 1) Leader Election (heartbeat timeouts, split votes resolved via randomized election timers), 2) Log Replication (leader appends entries and commits upon majority acknowledgment), 3) Safety (leaders must possess all committed entries).",
+    "ideal_answer": "Raft achieves consensus via 3 subproblems: 1) Leader Election (heartbeat timeouts, split votes resolved via randomized election timers), 2) Log Replication (leader appends entries and commits upon majority acknowledgment), 3) Safety (leaders must possess all committed entries).",
+    "expected_concepts": [
+      "Raft",
+      "Paxos",
+      "distributed consensus",
+      "leader election"
+    ],
+    "explanation": "Evaluates System Design Distributed Consensus and Raft Consensus Algorithm comprehension."
+  },
+  {
+    "id": "sys_010",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you design a Real-Time Chat System (like WhatsApp / Slack) using WebSockets, Presence Servers, and Message Queues?",
+    "difficulty": "hard",
+    "topic": "System Design Case Study",
+    "concept": "Real-Time Chat Architecture",
+    "questionFamily": "design",
+    "tags": [
+      "chat system",
+      "WebSockets",
+      "presence server",
+      "Cassandra",
+      "push notification",
+      "message sync"
+    ],
+    "idealAnswer": "Clients maintain persistent WebSocket connections with Chat Servers. Presence Servers track online status in Redis. Undelivered messages buffer in message queues. Messages persist in high-throughput write-optimized stores (Cassandra/HBase) with client message synchronization tokens.",
+    "ideal_answer": "Clients maintain persistent WebSocket connections with Chat Servers. Presence Servers track online status in Redis. Undelivered messages buffer in message queues. Messages persist in high-throughput write-optimized stores (Cassandra/HBase) with client message synchronization tokens.",
+    "expected_concepts": [
+      "chat system",
+      "WebSockets",
+      "presence server",
+      "Cassandra"
+    ],
+    "explanation": "Evaluates System Design System Design Case Study and Real-Time Chat Architecture comprehension."
+  },
+  {
+    "id": "sys_011",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Database Sharding strategies: Range-Based Sharding, Hash-Based Sharding, Directory-Based Sharding, and Resharding challenges.",
+    "difficulty": "medium",
+    "topic": "Database Scaling",
+    "concept": "Database Sharding & Resharding",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "database sharding",
+      "horizontal partitioning",
+      "range sharding",
+      "hash sharding",
+      "cross-shard join"
+    ],
+    "idealAnswer": "Range sharding partitions by keys (e.g. A-F, G-M; risk of unbalanced loads). Hash sharding distributes evenly via hash(key) mod N (difficult to add nodes without resharding; solved with consistent hashing). Challenges include complex cross-shard joins and distributed transactions.",
+    "ideal_answer": "Range sharding partitions by keys (e.g. A-F, G-M; risk of unbalanced loads). Hash sharding distributes evenly via hash(key) mod N (difficult to add nodes without resharding; solved with consistent hashing). Challenges include complex cross-shard joins and distributed transactions.",
+    "expected_concepts": [
+      "database sharding",
+      "horizontal partitioning",
+      "range sharding",
+      "hash sharding"
+    ],
+    "explanation": "Evaluates System Design Database Scaling and Database Sharding & Resharding comprehension."
+  },
+  {
+    "id": "sys_012",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you design a Web Crawler (like Google Bot) handling billions of web pages (URL Frontier, Deduplication, Politeness)?",
+    "difficulty": "hard",
+    "topic": "System Design Case Study",
+    "concept": "Web Crawler Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "web crawler",
+      "URL Frontier",
+      "Bloom filter",
+      "politeness policy",
+      "robots.txt",
+      "DNS resolver"
+    ],
+    "idealAnswer": "Architecture: URL Frontier manages priority and politeness queues (per-host rate limits). Fetcher downloads HTML and respects robots.txt. Content parser extracts links and text. Fingerprinting (SimHash / MurmurHash) and Bloom Filters deduplicate URLs and content.",
+    "ideal_answer": "Architecture: URL Frontier manages priority and politeness queues (per-host rate limits). Fetcher downloads HTML and respects robots.txt. Content parser extracts links and text. Fingerprinting (SimHash / MurmurHash) and Bloom Filters deduplicate URLs and content.",
+    "expected_concepts": [
+      "web crawler",
+      "URL Frontier",
+      "Bloom filter",
+      "politeness policy"
+    ],
+    "explanation": "Evaluates System Design System Design Case Study and Web Crawler Architecture comprehension."
+  },
+  {
+    "id": "sys_013",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Message Brokers (RabbitMQ vs Apache Kafka) in terms of Push vs Pull models, message persistence, and consumer groups.",
+    "difficulty": "medium",
+    "topic": "Message Queuing",
+    "concept": "Kafka vs RabbitMQ Architecture",
+    "questionFamily": "comparison",
+    "tags": [
+      "Kafka",
+      "RabbitMQ",
+      "push vs pull",
+      "append-only log",
+      "consumer group",
+      "partitioning"
+    ],
+    "idealAnswer": "RabbitMQ is a traditional message broker using smart broker / dumb consumer architecture with push delivery and queue deletion upon ACK. Kafka is a distributed append-only commit log using pull delivery, persistent partitioned topics, high throughput, and consumer group offset tracking.",
+    "ideal_answer": "RabbitMQ is a traditional message broker using smart broker / dumb consumer architecture with push delivery and queue deletion upon ACK. Kafka is a distributed append-only commit log using pull delivery, persistent partitioned topics, high throughput, and consumer group offset tracking.",
+    "expected_concepts": [
+      "Kafka",
+      "RabbitMQ",
+      "push vs pull",
+      "append-only log"
+    ],
+    "explanation": "Evaluates System Design Message Queuing and Kafka vs RabbitMQ Architecture comprehension."
+  },
+  {
+    "id": "sys_014",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you design a Video Streaming Platform (like YouTube / Netflix) with Video Transcoding, Chunking (HLS/DASH), and CDN delivery?",
+    "difficulty": "hard",
+    "topic": "System Design Case Study",
+    "concept": "Video Streaming Platform Design (HLS/DASH)",
+    "questionFamily": "architecture",
+    "tags": [
+      "video streaming",
+      "transcoding",
+      "HLS",
+      "DASH",
+      "adaptive bitrate",
+      "CDN",
+      "blob storage"
+    ],
+    "idealAnswer": "Upload triggers an asynchronous distributed transcoding pipeline (FFmpeg) that encodes video into multiple bitrates/resolutions chunked into small fragments (.ts / .mp4). Manifest files (m3u8) enable Adaptive Bitrate Streaming (ABR) delivered globally over CDN edge networks.",
+    "ideal_answer": "Upload triggers an asynchronous distributed transcoding pipeline (FFmpeg) that encodes video into multiple bitrates/resolutions chunked into small fragments (.ts / .mp4). Manifest files (m3u8) enable Adaptive Bitrate Streaming (ABR) delivered globally over CDN edge networks.",
+    "expected_concepts": [
+      "video streaming",
+      "transcoding",
+      "HLS",
+      "DASH"
+    ],
+    "explanation": "Evaluates System Design System Design Case Study and Video Streaming Platform Design (HLS/DASH) comprehension."
+  },
+  {
+    "id": "sys_015",
+    "skill": "System Design",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain High Availability patterns: Active-Passive (Failover) vs Active-Active, Split-Brain syndrome, and Quorum Voting.",
+    "difficulty": "medium",
+    "topic": "High Availability & Resilience",
+    "concept": "Active-Active vs Active-Passive & Split-Brain",
+    "questionFamily": "architecture",
+    "tags": [
+      "Active-Active",
+      "Active-Passive",
+      "split-brain",
+      "quorum",
+      "heartbeat",
+      "fencing"
+    ],
+    "idealAnswer": "Active-Passive designates a standby replica promoted on master failure. Active-Active serves traffic across all nodes simultaneously. Split-Brain occurs when network partitions cause multiple nodes to assume master role; resolved using odd-numbered Quorum voting and fencing tokens (STONITH).",
+    "ideal_answer": "Active-Passive designates a standby replica promoted on master failure. Active-Active serves traffic across all nodes simultaneously. Split-Brain occurs when network partitions cause multiple nodes to assume master role; resolved using odd-numbered Quorum voting and fencing tokens (STONITH).",
+    "expected_concepts": [
+      "Active-Active",
+      "Active-Passive",
+      "split-brain",
+      "quorum"
+    ],
+    "explanation": "Evaluates System Design High Availability & Resilience and Active-Active vs Active-Passive & Split-Brain comprehension."
   }
 ]

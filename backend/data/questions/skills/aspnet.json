@@ -1,0 +1,407 @@
+[
+  {
+    "id": "aspnet_001",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the ASP.NET Core request processing pipeline and how Middleware components chain using RequestDelegate.",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "ASP.NET Core Middleware Pipeline",
+    "questionFamily": "architecture",
+    "tags": [
+      "ASP.NET Core",
+      "Middleware",
+      "RequestDelegate",
+      "HttpContext",
+      "pipeline"
+    ],
+    "idealAnswer": "ASP.NET Core processes HTTP requests through a pipeline of middleware components registered in Program.cs. Each middleware receives HttpContext and a next RequestDelegate to pass execution downstream.",
+    "ideal_answer": "ASP.NET Core processes HTTP requests through a pipeline of middleware components registered in Program.cs. Each middleware receives HttpContext and a next RequestDelegate to pass execution downstream.",
+    "expected_concepts": [
+      "ASP.NET Core",
+      "Middleware",
+      "RequestDelegate",
+      "HttpContext"
+    ],
+    "explanation": "Evaluates ASP.NET Architecture and ASP.NET Core Middleware Pipeline comprehension."
+  },
+  {
+    "id": "aspnet_002",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dependency Injection (DI) in ASP.NET Core and the difference between Transient, Scoped, and Singleton lifetimes.",
+    "difficulty": "easy",
+    "topic": "Dependency Injection",
+    "concept": "Service Lifetimes (Transient, Scoped, Singleton)",
+    "questionFamily": "comparison",
+    "tags": [
+      "IServiceCollection",
+      "Transient",
+      "Scoped",
+      "Singleton",
+      "dependency injection"
+    ],
+    "idealAnswer": "Transient services are created each time requested. Scoped services are created once per client HTTP request. Singleton services are created once on initial request and shared application-wide across all requests.",
+    "ideal_answer": "Transient services are created each time requested. Scoped services are created once per client HTTP request. Singleton services are created once on initial request and shared application-wide across all requests.",
+    "expected_concepts": [
+      "IServiceCollection",
+      "Transient",
+      "Scoped",
+      "Singleton"
+    ],
+    "explanation": "Evaluates ASP.NET Dependency Injection and Service Lifetimes (Transient, Scoped, Singleton) comprehension."
+  },
+  {
+    "id": "aspnet_003",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Minimal APIs in ASP.NET Core 6+, and how do they compare to traditional Controller-based APIs?",
+    "difficulty": "easy",
+    "topic": "Routing & APIs",
+    "concept": "Minimal APIs vs Controllers",
+    "questionFamily": "comparison",
+    "tags": [
+      "Minimal APIs",
+      "MapGet",
+      "MapPost",
+      "ControllerBase",
+      "boilerplate reduction"
+    ],
+    "idealAnswer": "Minimal APIs define HTTP endpoints directly in Program.cs using lambda expressions (app.MapGet('/todos', ...)), eliminating Controller class boilerplate and improving startup time and throughput for microservices.",
+    "ideal_answer": "Minimal APIs define HTTP endpoints directly in Program.cs using lambda expressions (app.MapGet('/todos', ...)), eliminating Controller class boilerplate and improving startup time and throughput for microservices.",
+    "expected_concepts": [
+      "Minimal APIs",
+      "MapGet",
+      "MapPost",
+      "ControllerBase"
+    ],
+    "explanation": "Evaluates ASP.NET Routing & APIs and Minimal APIs vs Controllers comprehension."
+  },
+  {
+    "id": "aspnet_004",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain ASP.NET Core Action Filters, Exception Filters, and Resource Filters in the MVC filter pipeline.",
+    "difficulty": "medium",
+    "topic": "Filter Pipeline",
+    "concept": "Filter Pipeline & Action Filters",
+    "questionFamily": "architecture",
+    "tags": [
+      "filters",
+      "ActionFilter",
+      "ExceptionFilter",
+      "ResourceFilter",
+      "IActionFilter"
+    ],
+    "idealAnswer": "Filters execute before and after specific stages in the MVC action execution pipeline: Resource filters run after routing; Action filters run before/after controller action execution; Exception filters handle unhandled exceptions.",
+    "ideal_answer": "Filters execute before and after specific stages in the MVC action execution pipeline: Resource filters run after routing; Action filters run before/after controller action execution; Exception filters handle unhandled exceptions.",
+    "expected_concepts": [
+      "filters",
+      "ActionFilter",
+      "ExceptionFilter",
+      "ResourceFilter"
+    ],
+    "explanation": "Evaluates ASP.NET Filter Pipeline and Filter Pipeline & Action Filters comprehension."
+  },
+  {
+    "id": "aspnet_005",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Entity Framework Core (EF Core) manage database migrations and LINQ queries in ASP.NET Core?",
+    "difficulty": "medium",
+    "topic": "Data Access & ORM",
+    "concept": "EF Core Migrations & LINQ",
+    "questionFamily": "implementation",
+    "tags": [
+      "EF Core",
+      "DbContext",
+      "migrations",
+      "LINQ",
+      "IQueryable"
+    ],
+    "idealAnswer": "EF Core acts as the primary ORM. DbContext represents a session with the database. LINQ queries are converted to SQL expressions. CLI tools (dotnet ef migrations add/update) manage schema evolution.",
+    "ideal_answer": "EF Core acts as the primary ORM. DbContext represents a session with the database. LINQ queries are converted to SQL expressions. CLI tools (dotnet ef migrations add/update) manage schema evolution.",
+    "expected_concepts": [
+      "EF Core",
+      "DbContext",
+      "migrations",
+      "LINQ"
+    ],
+    "explanation": "Evaluates ASP.NET Data Access & ORM and EF Core Migrations & LINQ comprehension."
+  },
+  {
+    "id": "aspnet_006",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Authentication and Authorization in ASP.NET Core: Cookie Auth, JWT Bearer Auth, and Policy-based Authorization (@Authorize).",
+    "difficulty": "hard",
+    "topic": "Security",
+    "concept": "JWT & Policy-Based Authorization",
+    "questionFamily": "security",
+    "tags": [
+      "JWT Bearer",
+      "Authentication",
+      "Authorization",
+      "ClaimsPrincipal",
+      "Policy-based"
+    ],
+    "idealAnswer": "Authentication identifies callers and builds a ClaimsPrincipal. JWT Bearer middleware validates signed bearer tokens. Policy-based authorization (@Authorize(Policy='AdminOnly')) enforces fine-grained claim and role requirements.",
+    "ideal_answer": "Authentication identifies callers and builds a ClaimsPrincipal. JWT Bearer middleware validates signed bearer tokens. Policy-based authorization (@Authorize(Policy='AdminOnly')) enforces fine-grained claim and role requirements.",
+    "expected_concepts": [
+      "JWT Bearer",
+      "Authentication",
+      "Authorization",
+      "ClaimsPrincipal"
+    ],
+    "explanation": "Evaluates ASP.NET Security and JWT & Policy-Based Authorization comprehension."
+  },
+  {
+    "id": "aspnet_007",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is SignalR in ASP.NET Core, and how does it manage real-time duplex communication (WebSockets, Server-Sent Events, Long Polling)?",
+    "difficulty": "medium",
+    "topic": "Real-Time Communication",
+    "concept": "SignalR Hub Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "SignalR",
+      "Hub",
+      "WebSockets",
+      "Server-Sent Events",
+      "real-time"
+    ],
+    "idealAnswer": "SignalR provides real-time bi-directional communication between server and connected clients via Hubs. It automatically selects the best transport mechanism (WebSockets, fallback to SSE or Long Polling).",
+    "ideal_answer": "SignalR provides real-time bi-directional communication between server and connected clients via Hubs. It automatically selects the best transport mechanism (WebSockets, fallback to SSE or Long Polling).",
+    "expected_concepts": [
+      "SignalR",
+      "Hub",
+      "WebSockets",
+      "Server-Sent Events"
+    ],
+    "explanation": "Evaluates ASP.NET Real-Time Communication and SignalR Hub Architecture comprehension."
+  },
+  {
+    "id": "aspnet_008",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Configuration management in ASP.NET Core (appsettings.json, Environment Variables, Secret Manager, IOptions<T>).",
+    "difficulty": "easy",
+    "topic": "Configuration",
+    "concept": "Configuration & Options Pattern (IOptions)",
+    "questionFamily": "best_practice",
+    "tags": [
+      "appsettings.json",
+      "IConfiguration",
+      "IOptions",
+      "Options Pattern",
+      "Secret Manager"
+    ],
+    "idealAnswer": "Configuration compiles settings from appsettings.json, environment variables, and command-line args. The Options Pattern (IOptions<TOptions>, IOptionsSnapshot) binds structured configuration sections into strongly-typed classes with validation.",
+    "ideal_answer": "Configuration compiles settings from appsettings.json, environment variables, and command-line args. The Options Pattern (IOptions<TOptions>, IOptionsSnapshot) binds structured configuration sections into strongly-typed classes with validation.",
+    "expected_concepts": [
+      "appsettings.json",
+      "IConfiguration",
+      "IOptions",
+      "Options Pattern"
+    ],
+    "explanation": "Evaluates ASP.NET Configuration and Configuration & Options Pattern (IOptions) comprehension."
+  },
+  {
+    "id": "aspnet_009",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Model Binding and Model Validation work in ASP.NET Core with Data Annotations and ModelState.IsValid?",
+    "difficulty": "easy",
+    "topic": "Validation",
+    "concept": "Model Binding & Validation",
+    "questionFamily": "implementation",
+    "tags": [
+      "model binding",
+      "Data Annotations",
+      "ModelState",
+      "Required",
+      "[ApiController]"
+    ],
+    "idealAnswer": "Model binding maps HTTP request data (route, query, body) to controller action parameters. Data annotations ([Required], [Range]) validate model properties, automatically returning 400 Bad Request when [ApiController] is applied.",
+    "ideal_answer": "Model binding maps HTTP request data (route, query, body) to controller action parameters. Data annotations ([Required], [Range]) validate model properties, automatically returning 400 Bad Request when [ApiController] is applied.",
+    "expected_concepts": [
+      "model binding",
+      "Data Annotations",
+      "ModelState",
+      "Required"
+    ],
+    "explanation": "Evaluates ASP.NET Validation and Model Binding & Validation comprehension."
+  },
+  {
+    "id": "aspnet_010",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Caching strategies in ASP.NET Core: In-Memory Caching (IMemoryCache), Distributed Caching (IDistributedCache with Redis), and Response Caching.",
+    "difficulty": "medium",
+    "topic": "Performance & Caching",
+    "concept": "In-Memory vs Distributed Caching",
+    "questionFamily": "optimization",
+    "tags": [
+      "IMemoryCache",
+      "IDistributedCache",
+      "Redis",
+      "ResponseCaching",
+      "sliding expiration"
+    ],
+    "idealAnswer": "IMemoryCache stores cached data in web server RAM. IDistributedCache synchronizes cache items across a Redis cluster for horizontally scaled applications with absolute and sliding expiration policies.",
+    "ideal_answer": "IMemoryCache stores cached data in web server RAM. IDistributedCache synchronizes cache items across a Redis cluster for horizontally scaled applications with absolute and sliding expiration policies.",
+    "expected_concepts": [
+      "IMemoryCache",
+      "IDistributedCache",
+      "Redis",
+      "ResponseCaching"
+    ],
+    "explanation": "Evaluates ASP.NET Performance & Caching and In-Memory vs Distributed Caching comprehension."
+  },
+  {
+    "id": "aspnet_011",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Kestrel in ASP.NET Core, and why is it used as an internal edge server behind reverse proxies like IIS or Nginx?",
+    "difficulty": "medium",
+    "topic": "Web Server Architecture",
+    "concept": "Kestrel Web Server Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Kestrel",
+      "reverse proxy",
+      "IIS",
+      "Nginx",
+      "cross-platform server"
+    ],
+    "idealAnswer": "Kestrel is ASP.NET Core's high-performance, cross-platform asynchronous I/O HTTP web server. It is typically deployed behind a reverse proxy (Nginx/IIS) that handles SSL termination, compression, and request filtering.",
+    "ideal_answer": "Kestrel is ASP.NET Core's high-performance, cross-platform asynchronous I/O HTTP web server. It is typically deployed behind a reverse proxy (Nginx/IIS) that handles SSL termination, compression, and request filtering.",
+    "expected_concepts": [
+      "Kestrel",
+      "reverse proxy",
+      "IIS",
+      "Nginx"
+    ],
+    "explanation": "Evaluates ASP.NET Web Server Architecture and Kestrel Web Server Architecture comprehension."
+  },
+  {
+    "id": "aspnet_012",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Health Checks in ASP.NET Core (IHealthCheck) and readiness/liveness probes for Kubernetes.",
+    "difficulty": "easy",
+    "topic": "Monitoring",
+    "concept": "Health Checks & Kubernetes Probes",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Health Checks",
+      "IHealthCheck",
+      "liveness probe",
+      "readiness probe",
+      "Kubernetes"
+    ],
+    "idealAnswer": "ASP.NET Core provides health check middleware (app.MapHealthChecks('/health')). Implementing IHealthCheck verifies database connectivity, Redis caches, and downstream services for Kubernetes probes.",
+    "ideal_answer": "ASP.NET Core provides health check middleware (app.MapHealthChecks('/health')). Implementing IHealthCheck verifies database connectivity, Redis caches, and downstream services for Kubernetes probes.",
+    "expected_concepts": [
+      "Health Checks",
+      "IHealthCheck",
+      "liveness probe",
+      "readiness probe"
+    ],
+    "explanation": "Evaluates ASP.NET Monitoring and Health Checks & Kubernetes Probes comprehension."
+  },
+  {
+    "id": "aspnet_013",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does ASP.NET Core implement Cross-Site Request Forgery (CSRF/XSRF) prevention using Antiforgery tokens?",
+    "difficulty": "medium",
+    "topic": "Security",
+    "concept": "Antiforgery Token Validation",
+    "questionFamily": "security",
+    "tags": [
+      "Antiforgery",
+      "IAntiforgery",
+      "CSRF",
+      "[ValidateAntiForgeryToken]",
+      "X-XSRF-TOKEN"
+    ],
+    "idealAnswer": "The IAntiforgery service generates paired request and cookie tokens. Forms include a hidden request token, and AJAX calls transmit the token via 'X-XSRF-TOKEN' header; [ValidateAntiForgeryToken] verifies tokens on POST requests.",
+    "ideal_answer": "The IAntiforgery service generates paired request and cookie tokens. Forms include a hidden request token, and AJAX calls transmit the token via 'X-XSRF-TOKEN' header; [ValidateAntiForgeryToken] verifies tokens on POST requests.",
+    "expected_concepts": [
+      "Antiforgery",
+      "IAntiforgery",
+      "CSRF",
+      "[ValidateAntiForgeryToken]"
+    ],
+    "explanation": "Evaluates ASP.NET Security and Antiforgery Token Validation comprehension."
+  },
+  {
+    "id": "aspnet_014",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Hosted Services (IHostedService / BackgroundService) in ASP.NET Core for long-running background tasks?",
+    "difficulty": "medium",
+    "topic": "Background Tasks",
+    "concept": "Hosted Services & BackgroundService",
+    "questionFamily": "implementation",
+    "tags": [
+      "IHostedService",
+      "BackgroundService",
+      "ExecuteAsync",
+      "cron job",
+      "background processing"
+    ],
+    "idealAnswer": "BackgroundService is an abstract base class implementing IHostedService. It runs background tasks in the ASP.NET Core application process via 'ExecuteAsync(CancellationToken)' without blocking HTTP requests.",
+    "ideal_answer": "BackgroundService is an abstract base class implementing IHostedService. It runs background tasks in the ASP.NET Core application process via 'ExecuteAsync(CancellationToken)' without blocking HTTP requests.",
+    "expected_concepts": [
+      "IHostedService",
+      "BackgroundService",
+      "ExecuteAsync",
+      "cron job"
+    ],
+    "explanation": "Evaluates ASP.NET Background Tasks and Hosted Services & BackgroundService comprehension."
+  },
+  {
+    "id": "aspnet_015",
+    "skill": "ASP.NET",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Rate Limiting in .NET 7/8+ built-in rate limiting middleware (Fixed Window, Sliding Window, Token Bucket, Concurrency).",
+    "difficulty": "medium",
+    "topic": "Security & Rate Limiting",
+    "concept": "Built-in Rate Limiting Algorithms",
+    "questionFamily": "optimization",
+    "tags": [
+      "RateLimiter",
+      "Fixed Window",
+      "Sliding Window",
+      "Token Bucket",
+      "Concurrency Limiter"
+    ],
+    "idealAnswer": ".NET 7+ includes native rate limiting middleware: Fixed Window limits requests per fixed time slot; Sliding Window smooths boundaries; Token Bucket allows bursting; Concurrency Limiter caps simultaneous concurrent requests.",
+    "ideal_answer": ".NET 7+ includes native rate limiting middleware: Fixed Window limits requests per fixed time slot; Sliding Window smooths boundaries; Token Bucket allows bursting; Concurrency Limiter caps simultaneous concurrent requests.",
+    "expected_concepts": [
+      "RateLimiter",
+      "Fixed Window",
+      "Sliding Window",
+      "Token Bucket"
+    ],
+    "explanation": "Evaluates ASP.NET Security & Rate Limiting and Built-in Rate Limiting Algorithms comprehension."
+  }
+]

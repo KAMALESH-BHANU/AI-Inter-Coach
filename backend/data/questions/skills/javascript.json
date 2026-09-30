@@ -1,44 +1,403 @@
 [
   {
-    "id": "JAVASCRIPT_001",
+    "id": "js_001",
     "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the differences between var, let, and const in terms of scope, hoisting, and reassignment.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of JavaScript in modern software engineering?",
-    "expected_concepts": [
-      "JavaScript fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Core Concepts",
+    "concept": "Variable Declarations",
+    "questionFamily": "comparison",
+    "tags": [
+      "var",
+      "let",
+      "const",
+      "block scope",
+      "temporal dead zone"
     ],
-    "ideal_answer": "JavaScript is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of JavaScript."
+    "idealAnswer": "var is function-scoped and hoisted with 'undefined' value. let and const are block-scoped and hoisted into the Temporal Dead Zone (TDZ) where accessing before declaration throws a ReferenceError. const prevents reassignment of variable bindings.",
+    "ideal_answer": "var is function-scoped and hoisted with 'undefined' value. let and const are block-scoped and hoisted into the Temporal Dead Zone (TDZ) where accessing before declaration throws a ReferenceError. const prevents reassignment of variable bindings.",
+    "expected_concepts": [
+      "var",
+      "let",
+      "const",
+      "block scope"
+    ],
+    "explanation": "Evaluates JavaScript Core Concepts and Variable Declarations comprehension."
   },
   {
-    "id": "JAVASCRIPT_002",
+    "id": "js_002",
     "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is hoisting in JavaScript, and how does it behave for variables, function declarations, and function expressions?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using JavaScript in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Core Concepts",
+    "concept": "Hoisting Mechanisms",
+    "questionFamily": "definition",
+    "tags": [
+      "hoisting",
+      "function declaration",
+      "function expression",
+      "TDZ"
     ],
-    "ideal_answer": "Common challenges with JavaScript include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of JavaScript."
+    "idealAnswer": "Hoisting is the JS engine's behavior of allocating memory for declarations during compilation. Function declarations are hoisted completely with their body, var is hoisted with undefined, and let/const/arrow functions are placed in TDZ.",
+    "ideal_answer": "Hoisting is the JS engine's behavior of allocating memory for declarations during compilation. Function declarations are hoisted completely with their body, var is hoisted with undefined, and let/const/arrow functions are placed in TDZ.",
+    "expected_concepts": [
+      "hoisting",
+      "function declaration",
+      "function expression",
+      "TDZ"
+    ],
+    "explanation": "Evaluates JavaScript Core Concepts and Hoisting Mechanisms comprehension."
   },
   {
-    "id": "JAVASCRIPT_003",
+    "id": "js_003",
     "skill": "JavaScript",
-    "difficulty": "hard",
-    "question": "How does JavaScript handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain closures in JavaScript, how lexical scope makes them possible, and a common practical use case.",
+    "difficulty": "medium",
+    "topic": "Functions",
+    "concept": "Closures & Lexical Scope",
+    "questionFamily": "implementation",
+    "tags": [
+      "closure",
+      "lexical scope",
+      "data privacy",
+      "currying"
     ],
-    "ideal_answer": "JavaScript handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of JavaScript."
+    "idealAnswer": "A closure is the combination of a function bundled together with references to its surrounding lexical environment. It allows an inner function to access variables from an outer enclosing scope even after the outer function has finished executing.",
+    "ideal_answer": "A closure is the combination of a function bundled together with references to its surrounding lexical environment. It allows an inner function to access variables from an outer enclosing scope even after the outer function has finished executing.",
+    "expected_concepts": [
+      "closure",
+      "lexical scope",
+      "data privacy",
+      "currying"
+    ],
+    "explanation": "Evaluates JavaScript Functions and Closures & Lexical Scope comprehension."
+  },
+  {
+    "id": "js_004",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the JavaScript Event Loop, and how does it coordinate the Call Stack, Microtask Queue, and Macrotask Queue?",
+    "difficulty": "hard",
+    "topic": "Asynchronous JS",
+    "concept": "Event Loop & Task Queues",
+    "questionFamily": "architecture",
+    "tags": [
+      "event loop",
+      "call stack",
+      "microtask",
+      "macrotask",
+      "Promise"
+    ],
+    "idealAnswer": "The Call Stack executes synchronous code. Asynchronous callbacks are scheduled in queues: Microtasks (Promises, queueMicrotask, MutationObserver) have higher priority and run immediately after the current call stack clears before any Macrotasks (setTimeout, setInterval, I/O) are processed.",
+    "ideal_answer": "The Call Stack executes synchronous code. Asynchronous callbacks are scheduled in queues: Microtasks (Promises, queueMicrotask, MutationObserver) have higher priority and run immediately after the current call stack clears before any Macrotasks (setTimeout, setInterval, I/O) are processed.",
+    "expected_concepts": [
+      "event loop",
+      "call stack",
+      "microtask",
+      "macrotask"
+    ],
+    "explanation": "Evaluates JavaScript Asynchronous JS and Event Loop & Task Queues comprehension."
+  },
+  {
+    "id": "js_005",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain how Promises work in JavaScript, and compare Promise chaining (.then/.catch) with async/await syntax.",
+    "difficulty": "medium",
+    "topic": "Asynchronous JS",
+    "concept": "Promises & Async/Await",
+    "questionFamily": "comparison",
+    "tags": [
+      "Promise",
+      "async/await",
+      "then",
+      "catch",
+      "error handling"
+    ],
+    "idealAnswer": "A Promise represents an eventual completion (fulfilled) or failure (rejected) of an asynchronous operation with three states: pending, fulfilled, rejected. async/await is syntactic sugar built on Promises that allows writing asynchronous code sequentially with standard try/catch blocks.",
+    "ideal_answer": "A Promise represents an eventual completion (fulfilled) or failure (rejected) of an asynchronous operation with three states: pending, fulfilled, rejected. async/await is syntactic sugar built on Promises that allows writing asynchronous code sequentially with standard try/catch blocks.",
+    "expected_concepts": [
+      "Promise",
+      "async/await",
+      "then",
+      "catch"
+    ],
+    "explanation": "Evaluates JavaScript Asynchronous JS and Promises & Async/Await comprehension."
+  },
+  {
+    "id": "js_006",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does the 'this' keyword bind in JavaScript across global context, object methods, constructors, and arrow functions?",
+    "difficulty": "medium",
+    "topic": "Core Concepts",
+    "concept": "this Binding Rules",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "this keyword",
+      "arrow functions",
+      "bind",
+      "call",
+      "apply"
+    ],
+    "idealAnswer": "'this' is determined dynamically at call-time: in a method it points to the caller object; in standalone functions it points to global (or undefined in strict mode); in constructors it binds to the new instance. Arrow functions do not bind their own 'this'—they lexically inherit 'this' from their enclosing scope.",
+    "ideal_answer": "'this' is determined dynamically at call-time: in a method it points to the caller object; in standalone functions it points to global (or undefined in strict mode); in constructors it binds to the new instance. Arrow functions do not bind their own 'this'—they lexically inherit 'this' from their enclosing scope.",
+    "expected_concepts": [
+      "this keyword",
+      "arrow functions",
+      "bind",
+      "call"
+    ],
+    "explanation": "Evaluates JavaScript Core Concepts and this Binding Rules comprehension."
+  },
+  {
+    "id": "js_007",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain prototypes and prototypal inheritance in JavaScript, and how the prototype chain works.",
+    "difficulty": "hard",
+    "topic": "OOP & Prototypes",
+    "concept": "Prototypal Inheritance",
+    "questionFamily": "architecture",
+    "tags": [
+      "prototype",
+      "__proto__",
+      "prototype chain",
+      "Object.create"
+    ],
+    "idealAnswer": "Every JavaScript object has an internal [[Prototype]] reference to another object. Property lookups traverse up the prototype chain until the property is found or null (Object.prototype.[[Prototype]]) is reached. ES6 classes are syntactic sugar over prototypal inheritance.",
+    "ideal_answer": "Every JavaScript object has an internal [[Prototype]] reference to another object. Property lookups traverse up the prototype chain until the property is found or null (Object.prototype.[[Prototype]]) is reached. ES6 classes are syntactic sugar over prototypal inheritance.",
+    "expected_concepts": [
+      "prototype",
+      "__proto__",
+      "prototype chain",
+      "Object.create"
+    ],
+    "explanation": "Evaluates JavaScript OOP & Prototypes and Prototypal Inheritance comprehension."
+  },
+  {
+    "id": "js_008",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is event bubbling, event capturing, and event delegation in the DOM?",
+    "difficulty": "medium",
+    "topic": "DOM & Events",
+    "concept": "Event Propagation & Delegation",
+    "questionFamily": "implementation",
+    "tags": [
+      "event bubbling",
+      "event capturing",
+      "event delegation",
+      "stopPropagation"
+    ],
+    "idealAnswer": "DOM events propagate in three phases: Capturing (down from window to target), Target, and Bubbling (up from target to window). Event delegation leverages bubbling by attaching a single event listener to a parent element to handle events for all existing and dynamically added children.",
+    "ideal_answer": "DOM events propagate in three phases: Capturing (down from window to target), Target, and Bubbling (up from target to window). Event delegation leverages bubbling by attaching a single event listener to a parent element to handle events for all existing and dynamically added children.",
+    "expected_concepts": [
+      "event bubbling",
+      "event capturing",
+      "event delegation",
+      "stopPropagation"
+    ],
+    "explanation": "Evaluates JavaScript DOM & Events and Event Propagation & Delegation comprehension."
+  },
+  {
+    "id": "js_009",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between shallow copy and deep copy in JavaScript and common methods to perform them.",
+    "difficulty": "medium",
+    "topic": "Data Manipulation",
+    "concept": "Shallow vs Deep Copy",
+    "questionFamily": "comparison",
+    "tags": [
+      "shallow copy",
+      "deep copy",
+      "structuredClone",
+      "spread operator",
+      "JSON.parse"
+    ],
+    "idealAnswer": "A shallow copy (Object.assign, spread {...obj}) copies top-level properties but retains references to nested objects. A deep copy (structuredClone, recursive cloning, JSON.parse(JSON.stringify())) recursively clones nested objects, creating completely independent structures.",
+    "ideal_answer": "A shallow copy (Object.assign, spread {...obj}) copies top-level properties but retains references to nested objects. A deep copy (structuredClone, recursive cloning, JSON.parse(JSON.stringify())) recursively clones nested objects, creating completely independent structures.",
+    "expected_concepts": [
+      "shallow copy",
+      "deep copy",
+      "structuredClone",
+      "spread operator"
+    ],
+    "explanation": "Evaluates JavaScript Data Manipulation and Shallow vs Deep Copy comprehension."
+  },
+  {
+    "id": "js_010",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain debouncing and throttling in JavaScript, and provide realistic front-end scenarios for each.",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Debounce and Throttle",
+    "questionFamily": "optimization",
+    "tags": [
+      "debouncing",
+      "throttling",
+      "performance",
+      "search input",
+      "scroll event"
+    ],
+    "idealAnswer": "Debouncing delays function execution until a specified quiet period has elapsed after the last trigger (ideal for search autocomplete). Throttling enforces a maximum frequency of function execution over time (ideal for scroll and resize listeners).",
+    "ideal_answer": "Debouncing delays function execution until a specified quiet period has elapsed after the last trigger (ideal for search autocomplete). Throttling enforces a maximum frequency of function execution over time (ideal for scroll and resize listeners).",
+    "expected_concepts": [
+      "debouncing",
+      "throttling",
+      "performance",
+      "search input"
+    ],
+    "explanation": "Evaluates JavaScript Performance and Debounce and Throttle comprehension."
+  },
+  {
+    "id": "js_011",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are the differences between localStorage, sessionStorage, and cookies in terms of capacity, lifecycle, and server transmission?",
+    "difficulty": "easy",
+    "topic": "Browser Storage",
+    "concept": "Web Storage Mechanisms",
+    "questionFamily": "comparison",
+    "tags": [
+      "localStorage",
+      "sessionStorage",
+      "cookies",
+      "HTTP headers",
+      "storage limit"
+    ],
+    "idealAnswer": "localStorage persists indefinitely until manually cleared (~5-10MB). sessionStorage is cleared when the browser tab/session closes (~5MB). Cookies (~4KB) are sent automatically with every HTTP request to the server and support security flags (HttpOnly, Secure, SameSite).",
+    "ideal_answer": "localStorage persists indefinitely until manually cleared (~5-10MB). sessionStorage is cleared when the browser tab/session closes (~5MB). Cookies (~4KB) are sent automatically with every HTTP request to the server and support security flags (HttpOnly, Secure, SameSite).",
+    "expected_concepts": [
+      "localStorage",
+      "sessionStorage",
+      "cookies",
+      "HTTP headers"
+    ],
+    "explanation": "Evaluates JavaScript Browser Storage and Web Storage Mechanisms comprehension."
+  },
+  {
+    "id": "js_012",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain key ES6+ features including destructuring, spread/rest operators, optional chaining (?.), and nullish coalescing (??).",
+    "difficulty": "easy",
+    "topic": "Modern JavaScript",
+    "concept": "ES6+ Syntax Features",
+    "questionFamily": "best_practice",
+    "tags": [
+      "ES6",
+      "destructuring",
+      "optional chaining",
+      "nullish coalescing",
+      "rest operator"
+    ],
+    "idealAnswer": "Destructuring unpacks values from arrays or objects. Spread (...) expands iterables; rest collects arguments. Optional chaining (?.) safely accesses nested properties without throwing errors on null/undefined. Nullish coalescing (??) provides fallback values only when the left operand is null or undefined (unlike || which triggers on false, 0, '').",
+    "ideal_answer": "Destructuring unpacks values from arrays or objects. Spread (...) expands iterables; rest collects arguments. Optional chaining (?.) safely accesses nested properties without throwing errors on null/undefined. Nullish coalescing (??) provides fallback values only when the left operand is null or undefined (unlike || which triggers on false, 0, '').",
+    "expected_concepts": [
+      "ES6",
+      "destructuring",
+      "optional chaining",
+      "nullish coalescing"
+    ],
+    "explanation": "Evaluates JavaScript Modern JavaScript and ES6+ Syntax Features comprehension."
+  },
+  {
+    "id": "js_013",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are higher-order functions in JavaScript, and how do map, filter, and reduce operate on arrays?",
+    "difficulty": "easy",
+    "topic": "Functional Programming",
+    "concept": "Higher-Order Array Methods",
+    "questionFamily": "implementation",
+    "tags": [
+      "higher-order functions",
+      "map",
+      "filter",
+      "reduce",
+      "immutability"
+    ],
+    "idealAnswer": "Higher-order functions accept functions as parameters or return functions. Array methods: map() transforms every element into a new array; filter() selects elements matching a predicate; reduce() accumulates array values into a single resulting value.",
+    "ideal_answer": "Higher-order functions accept functions as parameters or return functions. Array methods: map() transforms every element into a new array; filter() selects elements matching a predicate; reduce() accumulates array values into a single resulting value.",
+    "expected_concepts": [
+      "higher-order functions",
+      "map",
+      "filter",
+      "reduce"
+    ],
+    "explanation": "Evaluates JavaScript Functional Programming and Higher-Order Array Methods comprehension."
+  },
+  {
+    "id": "js_014",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are JavaScript Modules (ESM) versus CommonJS (CJS), and how do export/import differ from module.exports/require?",
+    "difficulty": "medium",
+    "topic": "Modular Architecture",
+    "concept": "ESM vs CommonJS",
+    "questionFamily": "architecture",
+    "tags": [
+      "ESM",
+      "CommonJS",
+      "import",
+      "require",
+      "static analysis"
+    ],
+    "idealAnswer": "CommonJS (module.exports, require) is synchronous and evaluated at runtime, traditionally used in Node.js. ES Modules (import, export) are asynchronous, statically analyzed at compile-time, enable tree-shaking, and represent the official web standard.",
+    "ideal_answer": "CommonJS (module.exports, require) is synchronous and evaluated at runtime, traditionally used in Node.js. ES Modules (import, export) are asynchronous, statically analyzed at compile-time, enable tree-shaking, and represent the official web standard.",
+    "expected_concepts": [
+      "ESM",
+      "CommonJS",
+      "import",
+      "require"
+    ],
+    "explanation": "Evaluates JavaScript Modular Architecture and ESM vs CommonJS comprehension."
+  },
+  {
+    "id": "js_015",
+    "skill": "JavaScript",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do WeakMap and WeakSet differ from regular Map and Set in JavaScript regarding garbage collection?",
+    "difficulty": "hard",
+    "topic": "Data Structures",
+    "concept": "WeakMap & Memory Management",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "WeakMap",
+      "WeakSet",
+      "garbage collection",
+      "weak references",
+      "memory leak"
+    ],
+    "idealAnswer": "Regular Map/Set hold strong references to keys and elements, preventing them from being garbage collected. WeakMap and WeakSet hold weak references to object keys only; if there are no other references to an object key, it is reclaimed by GC, making them ideal for private state and metadata caching without memory leaks.",
+    "ideal_answer": "Regular Map/Set hold strong references to keys and elements, preventing them from being garbage collected. WeakMap and WeakSet hold weak references to object keys only; if there are no other references to an object key, it is reclaimed by GC, making them ideal for private state and metadata caching without memory leaks.",
+    "expected_concepts": [
+      "WeakMap",
+      "WeakSet",
+      "garbage collection",
+      "weak references"
+    ],
+    "explanation": "Evaluates JavaScript Data Structures and WeakMap & Memory Management comprehension."
   }
 ]

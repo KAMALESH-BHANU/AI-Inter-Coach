@@ -1,0 +1,417 @@
+[
+  {
+    "id": "k8s_001",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Kubernetes Control Plane architecture (kube-apiserver, etcd, kube-scheduler, kube-controller-manager) and Worker Node components (kubelet, kube-proxy, Container Runtime).",
+    "difficulty": "hard",
+    "topic": "Architecture",
+    "concept": "Kubernetes Control Plane & Node Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Kubernetes",
+      "kube-apiserver",
+      "etcd",
+      "kube-scheduler",
+      "kubelet",
+      "kube-proxy",
+      "control plane"
+    ],
+    "idealAnswer": "Control Plane: kube-apiserver is the REST API gateway; etcd is the distributed key-value store for cluster state; kube-scheduler assigns unscheduled pods to nodes; kube-controller-manager runs core reconciliation loops. Worker Nodes: kubelet manages pod containers via CRI; kube-proxy configures network packet filtering (iptables/IPVS).",
+    "ideal_answer": "Control Plane: kube-apiserver is the REST API gateway; etcd is the distributed key-value store for cluster state; kube-scheduler assigns unscheduled pods to nodes; kube-controller-manager runs core reconciliation loops. Worker Nodes: kubelet manages pod containers via CRI; kube-proxy configures network packet filtering (iptables/IPVS).",
+    "expected_concepts": [
+      "Kubernetes",
+      "kube-apiserver",
+      "etcd",
+      "kube-scheduler"
+    ],
+    "explanation": "Evaluates Kubernetes Architecture and Kubernetes Control Plane & Node Architecture comprehension."
+  },
+  {
+    "id": "k8s_002",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Pod in Kubernetes, and how do multi-container pods share Network Namespace (localhost) and Storage Volumes (Sidecar pattern)?",
+    "difficulty": "easy",
+    "topic": "Pods & Containers",
+    "concept": "Pod Architecture & Sidecar Pattern",
+    "questionFamily": "architecture",
+    "tags": [
+      "Pod",
+      "sidecar pattern",
+      "pause container",
+      "localhost",
+      "network namespace",
+      "shared volume"
+    ],
+    "idealAnswer": "A Pod is the smallest deployable compute unit in Kubernetes. Containers within the same pod share a single Linux network namespace (communicating over 'localhost' and sharing the same IP address) and can share storage volumes, enabling the Sidecar logging/proxy pattern.",
+    "ideal_answer": "A Pod is the smallest deployable compute unit in Kubernetes. Containers within the same pod share a single Linux network namespace (communicating over 'localhost' and sharing the same IP address) and can share storage volumes, enabling the Sidecar logging/proxy pattern.",
+    "expected_concepts": [
+      "Pod",
+      "sidecar pattern",
+      "pause container",
+      "localhost"
+    ],
+    "explanation": "Evaluates Kubernetes Pods & Containers and Pod Architecture & Sidecar Pattern comprehension."
+  },
+  {
+    "id": "k8s_003",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Kubernetes Deployments, ReplicaSets, and Rolling Updates (maxSurge, maxUnavailable) vs Recreate strategies.",
+    "difficulty": "medium",
+    "topic": "Workloads",
+    "concept": "Deployments & Rolling Updates",
+    "questionFamily": "implementation",
+    "tags": [
+      "Deployment",
+      "ReplicaSet",
+      "RollingUpdate",
+      "maxSurge",
+      "maxUnavailable",
+      "zero-downtime"
+    ],
+    "idealAnswer": "Deployments manage declarative updates for ReplicaSets and Pods. The RollingUpdate strategy gradually replaces old pods with new pods according to 'maxSurge' (maximum extra pods created above replica count) and 'maxUnavailable' (maximum unavailable pods), ensuring zero downtime.",
+    "ideal_answer": "Deployments manage declarative updates for ReplicaSets and Pods. The RollingUpdate strategy gradually replaces old pods with new pods according to 'maxSurge' (maximum extra pods created above replica count) and 'maxUnavailable' (maximum unavailable pods), ensuring zero downtime.",
+    "expected_concepts": [
+      "Deployment",
+      "ReplicaSet",
+      "RollingUpdate",
+      "maxSurge"
+    ],
+    "explanation": "Evaluates Kubernetes Workloads and Deployments & Rolling Updates comprehension."
+  },
+  {
+    "id": "k8s_004",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Kubernetes Services: ClusterIP (default), NodePort, LoadBalancer, and Headless Services.",
+    "difficulty": "medium",
+    "topic": "Networking & Services",
+    "concept": "Kubernetes Service Types",
+    "questionFamily": "comparison",
+    "tags": [
+      "ClusterIP",
+      "NodePort",
+      "LoadBalancer",
+      "Headless Service",
+      "kube-proxy",
+      "CoreDNS"
+    ],
+    "idealAnswer": "ClusterIP exposes service on an internal cluster-only virtual IP. NodePort exposes service on a static port (30000-32767) across all node IPs. LoadBalancer provisions an external cloud load balancer. Headless Service (clusterIP: None) returns individual pod IPs via CoreDNS for direct StatefulSet discovery.",
+    "ideal_answer": "ClusterIP exposes service on an internal cluster-only virtual IP. NodePort exposes service on a static port (30000-32767) across all node IPs. LoadBalancer provisions an external cloud load balancer. Headless Service (clusterIP: None) returns individual pod IPs via CoreDNS for direct StatefulSet discovery.",
+    "expected_concepts": [
+      "ClusterIP",
+      "NodePort",
+      "LoadBalancer",
+      "Headless Service"
+    ],
+    "explanation": "Evaluates Kubernetes Networking & Services and Kubernetes Service Types comprehension."
+  },
+  {
+    "id": "k8s_005",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Kubernetes Ingress Controller (Nginx Ingress, Traefik), and how does Ingress route HTTP/HTTPS traffic via Host and Path rules?",
+    "difficulty": "easy",
+    "topic": "Networking",
+    "concept": "Kubernetes Ingress & Ingress Controllers",
+    "questionFamily": "architecture",
+    "tags": [
+      "Ingress",
+      "Ingress Controller",
+      "Nginx Ingress",
+      "TLS termination",
+      "reverse proxy",
+      "routing"
+    ],
+    "idealAnswer": "Ingress manages external HTTP/HTTPS access to services, providing layer 7 routing, SSL/TLS termination, and path/subdomain-based virtual hosting. An Ingress Controller (e.g. Ingress-Nginx) translates Ingress YAML resources into active reverse proxy configurations.",
+    "ideal_answer": "Ingress manages external HTTP/HTTPS access to services, providing layer 7 routing, SSL/TLS termination, and path/subdomain-based virtual hosting. An Ingress Controller (e.g. Ingress-Nginx) translates Ingress YAML resources into active reverse proxy configurations.",
+    "expected_concepts": [
+      "Ingress",
+      "Ingress Controller",
+      "Nginx Ingress",
+      "TLS termination"
+    ],
+    "explanation": "Evaluates Kubernetes Networking and Kubernetes Ingress & Ingress Controllers comprehension."
+  },
+  {
+    "id": "k8s_006",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Kubernetes Probes: Liveness Probe, Readiness Probe, and Startup Probe, and their failure actions.",
+    "difficulty": "easy",
+    "topic": "Health & Probes",
+    "concept": "Liveness, Readiness, & Startup Probes",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Liveness probe",
+      "Readiness probe",
+      "Startup probe",
+      "container restart",
+      "service endpoint"
+    ],
+    "idealAnswer": "Startup Probe disables other probes until slow legacy initialization completes. Readiness Probe checks if container is ready to accept traffic (if failing, removes pod from Service endpoints without restarting). Liveness Probe checks if container is alive (if failing, kubelet restarts the container).",
+    "ideal_answer": "Startup Probe disables other probes until slow legacy initialization completes. Readiness Probe checks if container is ready to accept traffic (if failing, removes pod from Service endpoints without restarting). Liveness Probe checks if container is alive (if failing, kubelet restarts the container).",
+    "expected_concepts": [
+      "Liveness probe",
+      "Readiness probe",
+      "Startup probe",
+      "container restart"
+    ],
+    "explanation": "Evaluates Kubernetes Health & Probes and Liveness, Readiness, & Startup Probes comprehension."
+  },
+  {
+    "id": "k8s_007",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Kubernetes Storage: PersistentVolume (PV), PersistentVolumeClaim (PVC), StorageClass, and Dynamic Volume Provisioning.",
+    "difficulty": "medium",
+    "topic": "Storage",
+    "concept": "PV, PVC, & StorageClass Dynamic Provisioning",
+    "questionFamily": "architecture",
+    "tags": [
+      "PersistentVolume",
+      "PersistentVolumeClaim",
+      "StorageClass",
+      "dynamic provisioning",
+      "CSI"
+    ],
+    "idealAnswer": "PV is a cluster-level storage volume. PVC is a developer's request for storage. StorageClass enables Dynamic Provisioning: when a PVC requests a StorageClass, the underlying Cloud/Storage CSI driver automatically creates the physical disk and PV on the fly.",
+    "ideal_answer": "PV is a cluster-level storage volume. PVC is a developer's request for storage. StorageClass enables Dynamic Provisioning: when a PVC requests a StorageClass, the underlying Cloud/Storage CSI driver automatically creates the physical disk and PV on the fly.",
+    "expected_concepts": [
+      "PersistentVolume",
+      "PersistentVolumeClaim",
+      "StorageClass",
+      "dynamic provisioning"
+    ],
+    "explanation": "Evaluates Kubernetes Storage and PV, PVC, & StorageClass Dynamic Provisioning comprehension."
+  },
+  {
+    "id": "k8s_008",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are StatefulSets, and how do they differ from Deployments (Stable Network IDs, Ordered Deployment, VolumeClaimTemplates)?",
+    "difficulty": "hard",
+    "topic": "Workloads",
+    "concept": "StatefulSets vs Deployments",
+    "questionFamily": "comparison",
+    "tags": [
+      "StatefulSet",
+      "Deployment",
+      "volumeClaimTemplates",
+      "ordered index",
+      "stable network identity"
+    ],
+    "idealAnswer": "Deployments manage stateless interchangeable pods. StatefulSets manage stateful applications (databases/Kafka): each pod gets a persistent ordinal index (pod-0, pod-1), dedicated PersistentVolume via volumeClaimTemplates that survive pod rescheduling, and predictable ordered deployment/termination.",
+    "ideal_answer": "Deployments manage stateless interchangeable pods. StatefulSets manage stateful applications (databases/Kafka): each pod gets a persistent ordinal index (pod-0, pod-1), dedicated PersistentVolume via volumeClaimTemplates that survive pod rescheduling, and predictable ordered deployment/termination.",
+    "expected_concepts": [
+      "StatefulSet",
+      "Deployment",
+      "volumeClaimTemplates",
+      "ordered index"
+    ],
+    "explanation": "Evaluates Kubernetes Workloads and StatefulSets vs Deployments comprehension."
+  },
+  {
+    "id": "k8s_009",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are ConfigMaps and Secrets in Kubernetes, and how are they injected into pods (Environment Variables vs Mounted Volumes)?",
+    "difficulty": "easy",
+    "topic": "Configuration & Secrets",
+    "concept": "ConfigMaps & Secrets Injection",
+    "questionFamily": "implementation",
+    "tags": [
+      "ConfigMap",
+      "Secret",
+      "base64",
+      "envFrom",
+      "mounted volume",
+      "dynamic reload"
+    ],
+    "idealAnswer": "ConfigMaps store plaintext configuration; Secrets store sensitive encoded data. They are injected as environment variables (envFrom) or mounted as files inside directory volumes (updates to mounted ConfigMap files sync automatically without restarting pods).",
+    "ideal_answer": "ConfigMaps store plaintext configuration; Secrets store sensitive encoded data. They are injected as environment variables (envFrom) or mounted as files inside directory volumes (updates to mounted ConfigMap files sync automatically without restarting pods).",
+    "expected_concepts": [
+      "ConfigMap",
+      "Secret",
+      "base64",
+      "envFrom"
+    ],
+    "explanation": "Evaluates Kubernetes Configuration & Secrets and ConfigMaps & Secrets Injection comprehension."
+  },
+  {
+    "id": "k8s_010",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Kubernetes Pod Scheduling: NodeSelector, Node Affinity/Anti-Affinity, Pod Anti-Affinity, Taints, and Tolerations.",
+    "difficulty": "hard",
+    "topic": "Scheduling",
+    "concept": "Scheduling Constraints (Affinity, Taints, Tolerations)",
+    "questionFamily": "design",
+    "tags": [
+      "affinity",
+      "podAntiAffinity",
+      "taints",
+      "tolerations",
+      "NoSchedule",
+      "topologySpreadConstraints"
+    ],
+    "idealAnswer": "Node Affinity attracts pods to specific nodes based on labels. Pod Anti-Affinity spreads identical pods across distinct failure zones (zones/nodes). Taints on nodes repel pods unless the pod possesses a matching Toleration (e.g. tolerating dedicated GPU nodes).",
+    "ideal_answer": "Node Affinity attracts pods to specific nodes based on labels. Pod Anti-Affinity spreads identical pods across distinct failure zones (zones/nodes). Taints on nodes repel pods unless the pod possesses a matching Toleration (e.g. tolerating dedicated GPU nodes).",
+    "expected_concepts": [
+      "affinity",
+      "podAntiAffinity",
+      "taints",
+      "tolerations"
+    ],
+    "explanation": "Evaluates Kubernetes Scheduling and Scheduling Constraints (Affinity, Taints, Tolerations) comprehension."
+  },
+  {
+    "id": "k8s_011",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Resource Management: Resource Requests vs Limits (CPU and Memory) and OOMKilled (Out Of Memory) eviction.",
+    "difficulty": "medium",
+    "topic": "Resource Management",
+    "concept": "Requests vs Limits & OOMKilled",
+    "questionFamily": "optimization",
+    "tags": [
+      "requests",
+      "limits",
+      "CPU throttling",
+      "OOMKilled",
+      "Guaranteed QoS"
+    ],
+    "idealAnswer": "Requests represent guaranteed baseline resources used by scheduler to place pods. Limits cap maximum resource consumption. Exceeding CPU limits causes CPU throttling; exceeding Memory limits causes Linux kernel to terminate the container with OOMKilled (Exit Code 137).",
+    "ideal_answer": "Requests represent guaranteed baseline resources used by scheduler to place pods. Limits cap maximum resource consumption. Exceeding CPU limits causes CPU throttling; exceeding Memory limits causes Linux kernel to terminate the container with OOMKilled (Exit Code 137).",
+    "expected_concepts": [
+      "requests",
+      "limits",
+      "CPU throttling",
+      "OOMKilled"
+    ],
+    "explanation": "Evaluates Kubernetes Resource Management and Requests vs Limits & OOMKilled comprehension."
+  },
+  {
+    "id": "k8s_012",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Horizontal Pod Autoscaler (HPA) vs Cluster Autoscaler (CA) vs Vertical Pod Autoscaler (VPA).",
+    "difficulty": "medium",
+    "topic": "Autoscaling",
+    "concept": "Autoscaling Mechanisms (HPA, VPA, Cluster Autoscaler)",
+    "questionFamily": "comparison",
+    "tags": [
+      "HPA",
+      "VPA",
+      "Cluster Autoscaler",
+      "metrics-server",
+      "dynamic scaling"
+    ],
+    "idealAnswer": "HPA scales pod replica counts horizontally based on CPU/memory/custom metrics. VPA adjusts CPU/memory requests of existing pods vertically. Cluster Autoscaler provisions or deprovisions underlying cloud VM worker nodes when pods are pending due to insufficient cluster capacity.",
+    "ideal_answer": "HPA scales pod replica counts horizontally based on CPU/memory/custom metrics. VPA adjusts CPU/memory requests of existing pods vertically. Cluster Autoscaler provisions or deprovisions underlying cloud VM worker nodes when pods are pending due to insufficient cluster capacity.",
+    "expected_concepts": [
+      "HPA",
+      "VPA",
+      "Cluster Autoscaler",
+      "metrics-server"
+    ],
+    "explanation": "Evaluates Kubernetes Autoscaling and Autoscaling Mechanisms (HPA, VPA, Cluster Autoscaler) comprehension."
+  },
+  {
+    "id": "k8s_013",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Role-Based Access Control (RBAC) in Kubernetes: Roles, ClusterRoles, RoleBindings, and ClusterRoleBindings?",
+    "difficulty": "medium",
+    "topic": "Security & RBAC",
+    "concept": "Kubernetes RBAC Framework",
+    "questionFamily": "security",
+    "tags": [
+      "RBAC",
+      "Role",
+      "ClusterRole",
+      "RoleBinding",
+      "ServiceAccount",
+      "least privilege"
+    ],
+    "idealAnswer": "RBAC controls access to Kubernetes API resources: Role defines permissions within a specific namespace; ClusterRole defines cluster-wide permissions; RoleBinding binds a Role to a User/ServiceAccount within a namespace; ClusterRoleBinding binds cluster-wide.",
+    "ideal_answer": "RBAC controls access to Kubernetes API resources: Role defines permissions within a specific namespace; ClusterRole defines cluster-wide permissions; RoleBinding binds a Role to a User/ServiceAccount within a namespace; ClusterRoleBinding binds cluster-wide.",
+    "expected_concepts": [
+      "RBAC",
+      "Role",
+      "ClusterRole",
+      "RoleBinding"
+    ],
+    "explanation": "Evaluates Kubernetes Security & RBAC and Kubernetes RBAC Framework comprehension."
+  },
+  {
+    "id": "k8s_014",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Kubernetes Network Policies and how default-deny and CNI plugins (Calico, Cilium with eBPF) enforce pod-to-pod firewall rules.",
+    "difficulty": "hard",
+    "topic": "Security & Networking",
+    "concept": "Network Policies & eBPF with Cilium",
+    "questionFamily": "security",
+    "tags": [
+      "NetworkPolicy",
+      "CNI plugin",
+      "Calico",
+      "Cilium",
+      "eBPF",
+      "default-deny"
+    ],
+    "idealAnswer": "By default, all pods in a cluster communicate freely. NetworkPolicy resources define ingress/egress firewall rules based on pod labels and CIDR blocks. CNI plugins like Calico (iptables) or Cilium (high-performance Linux eBPF kernel filters) enforce these policies.",
+    "ideal_answer": "By default, all pods in a cluster communicate freely. NetworkPolicy resources define ingress/egress firewall rules based on pod labels and CIDR blocks. CNI plugins like Calico (iptables) or Cilium (high-performance Linux eBPF kernel filters) enforce these policies.",
+    "expected_concepts": [
+      "NetworkPolicy",
+      "CNI plugin",
+      "Calico",
+      "Cilium"
+    ],
+    "explanation": "Evaluates Kubernetes Security & Networking and Network Policies & eBPF with Cilium comprehension."
+  },
+  {
+    "id": "k8s_015",
+    "skill": "Kubernetes",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Kubernetes Operator Pattern, Custom Resource Definitions (CRDs), and Custom Controllers (Reconciliation Loop)?",
+    "difficulty": "hard",
+    "topic": "Extensibility",
+    "concept": "Operator Pattern & CRDs",
+    "questionFamily": "architecture",
+    "tags": [
+      "Operator pattern",
+      "CRD",
+      "Custom Resource Definition",
+      "reconciliation loop",
+      "Kubebuilder"
+    ],
+    "idealAnswer": "The Operator pattern extends Kubernetes to automate complex stateful application management (backups, failover). It combines Custom Resource Definitions (CRDs) that extend the Kubernetes API schema with a custom Controller running an infinite Reconciliation Loop to align actual state with desired state.",
+    "ideal_answer": "The Operator pattern extends Kubernetes to automate complex stateful application management (backups, failover). It combines Custom Resource Definitions (CRDs) that extend the Kubernetes API schema with a custom Controller running an infinite Reconciliation Loop to align actual state with desired state.",
+    "expected_concepts": [
+      "Operator pattern",
+      "CRD",
+      "Custom Resource Definition",
+      "reconciliation loop"
+    ],
+    "explanation": "Evaluates Kubernetes Extensibility and Operator Pattern & CRDs comprehension."
+  }
+]

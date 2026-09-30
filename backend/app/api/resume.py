@@ -39,7 +39,8 @@ async def upload_resume(
             "success": True,
             "filename": filename,
             "skills": parsed_data["skills"],
-            "projects": parsed_data["projects"]
+            "projects": parsed_data["projects"],
+            "certifications": parsed_data.get("certifications", [])
         }
     except Exception as e:
         logger.error(f"Failed to process uploaded resume: {e}")

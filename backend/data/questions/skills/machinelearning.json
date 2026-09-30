@@ -1,44 +1,412 @@
 [
   {
-    "id": "MACHINE_LEARNING_001",
+    "id": "ml_001",
     "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Supervised vs Unsupervised vs Semi-Supervised vs Reinforcement Learning paradigms with practical use cases.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Machine Learning in modern software engineering?",
-    "expected_concepts": [
-      "Machine Learning fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Learning Paradigms",
+    "concept": "Machine Learning Paradigms",
+    "questionFamily": "comparison",
+    "tags": [
+      "supervised learning",
+      "unsupervised learning",
+      "reinforcement learning",
+      "labels"
     ],
-    "ideal_answer": "Machine Learning is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Machine Learning."
+    "idealAnswer": "Supervised learning trains on labeled inputs (classification/regression). Unsupervised learning discovers hidden patterns in unlabeled data (clustering/dimensionality reduction). Semi-supervised combines small labeled and large unlabeled data. Reinforcement learning trains agents via rewards and penalties through environment interaction.",
+    "ideal_answer": "Supervised learning trains on labeled inputs (classification/regression). Unsupervised learning discovers hidden patterns in unlabeled data (clustering/dimensionality reduction). Semi-supervised combines small labeled and large unlabeled data. Reinforcement learning trains agents via rewards and penalties through environment interaction.",
+    "expected_concepts": [
+      "supervised learning",
+      "unsupervised learning",
+      "reinforcement learning",
+      "labels"
+    ],
+    "explanation": "Evaluates Machine Learning Learning Paradigms and Machine Learning Paradigms comprehension."
   },
   {
-    "id": "MACHINE_LEARNING_002",
+    "id": "ml_002",
     "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Bias-Variance Tradeoff, Underfitting vs Overfitting, and how regularization controls model complexity.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Machine Learning in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Model Evaluation",
+    "concept": "Bias-Variance Tradeoff",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "bias-variance tradeoff",
+      "overfitting",
+      "underfitting",
+      "generalization",
+      "regularization"
     ],
-    "ideal_answer": "Common challenges with Machine Learning include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Machine Learning."
+    "idealAnswer": "High Bias (underfitting) means the model is too simple to capture underlying data relationships. High Variance (overfitting) means the model memorizes training noise, failing to generalize to unseen test data. The optimal model minimizes total expected error by balancing bias and variance.",
+    "ideal_answer": "High Bias (underfitting) means the model is too simple to capture underlying data relationships. High Variance (overfitting) means the model memorizes training noise, failing to generalize to unseen test data. The optimal model minimizes total expected error by balancing bias and variance.",
+    "expected_concepts": [
+      "bias-variance tradeoff",
+      "overfitting",
+      "underfitting",
+      "generalization"
+    ],
+    "explanation": "Evaluates Machine Learning Model Evaluation and Bias-Variance Tradeoff comprehension."
   },
   {
-    "id": "MACHINE_LEARNING_003",
+    "id": "ml_003",
     "skill": "Machine Learning",
-    "difficulty": "hard",
-    "question": "How does Machine Learning handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Regularization techniques in linear models: L1 Regularization (Lasso) vs L2 Regularization (Ridge) and ElasticNet.",
+    "difficulty": "medium",
+    "topic": "Regularization",
+    "concept": "L1 (Lasso) vs L2 (Ridge) Regularization",
+    "questionFamily": "comparison",
+    "tags": [
+      "L1 regularization",
+      "L2 regularization",
+      "Lasso",
+      "Ridge",
+      "ElasticNet",
+      "sparsity"
     ],
-    "ideal_answer": "Machine Learning handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Machine Learning."
+    "idealAnswer": "L1 (Lasso) adds the sum of absolute weight values (|w|) to the loss function, forcing non-essential feature coefficients to exact zero (performing automatic feature selection). L2 (Ridge) adds squared weights (w^2), shrinking weights smoothly towards zero without eliminating features. ElasticNet combines both.",
+    "ideal_answer": "L1 (Lasso) adds the sum of absolute weight values (|w|) to the loss function, forcing non-essential feature coefficients to exact zero (performing automatic feature selection). L2 (Ridge) adds squared weights (w^2), shrinking weights smoothly towards zero without eliminating features. ElasticNet combines both.",
+    "expected_concepts": [
+      "L1 regularization",
+      "L2 regularization",
+      "Lasso",
+      "Ridge"
+    ],
+    "explanation": "Evaluates Machine Learning Regularization and L1 (Lasso) vs L2 (Ridge) Regularization comprehension."
+  },
+  {
+    "id": "ml_004",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Classification Evaluation Metrics: Precision, Recall, F1-Score, ROC-AUC, and Confusion Matrix on imbalanced datasets.",
+    "difficulty": "easy",
+    "topic": "Metrics & Evaluation",
+    "concept": "Classification Metrics & Imbalanced Data",
+    "questionFamily": "best_practice",
+    "tags": [
+      "precision",
+      "recall",
+      "F1-score",
+      "ROC-AUC",
+      "confusion matrix",
+      "imbalanced data"
+    ],
+    "idealAnswer": "Accuracy is misleading on skewed datasets (e.g. 99% negative fraud). Precision measures TP/(TP+FP) (quality of positive predictions). Recall measures TP/(TP+FN) (completeness of finding true positives). F1-Score is the harmonic mean of precision and recall. ROC-AUC evaluates true positive vs false positive rates across all decision thresholds.",
+    "ideal_answer": "Accuracy is misleading on skewed datasets (e.g. 99% negative fraud). Precision measures TP/(TP+FP) (quality of positive predictions). Recall measures TP/(TP+FN) (completeness of finding true positives). F1-Score is the harmonic mean of precision and recall. ROC-AUC evaluates true positive vs false positive rates across all decision thresholds.",
+    "expected_concepts": [
+      "precision",
+      "recall",
+      "F1-score",
+      "ROC-AUC"
+    ],
+    "explanation": "Evaluates Machine Learning Metrics & Evaluation and Classification Metrics & Imbalanced Data comprehension."
+  },
+  {
+    "id": "ml_005",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Decision Trees, Splitting Criteria (Gini Impurity vs Entropy/Information Gain), and pruning strategies to prevent overfitting.",
+    "difficulty": "medium",
+    "topic": "Tree-Based Models",
+    "concept": "Decision Trees & Splitting Criteria",
+    "questionFamily": "implementation",
+    "tags": [
+      "decision tree",
+      "Gini impurity",
+      "entropy",
+      "information gain",
+      "cost complexity pruning"
+    ],
+    "idealAnswer": "Decision trees split data recursively by selecting the feature that maximizes Information Gain (reduction in Entropy) or minimizes Gini Impurity. Unconstrained trees overfit rapidly; pre-pruning (max_depth, min_samples_split) and post-pruning (cost-complexity pruning) constrain tree growth.",
+    "ideal_answer": "Decision trees split data recursively by selecting the feature that maximizes Information Gain (reduction in Entropy) or minimizes Gini Impurity. Unconstrained trees overfit rapidly; pre-pruning (max_depth, min_samples_split) and post-pruning (cost-complexity pruning) constrain tree growth.",
+    "expected_concepts": [
+      "decision tree",
+      "Gini impurity",
+      "entropy",
+      "information gain"
+    ],
+    "explanation": "Evaluates Machine Learning Tree-Based Models and Decision Trees & Splitting Criteria comprehension."
+  },
+  {
+    "id": "ml_006",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Ensemble Learning methods: Bagging (Random Forest) vs Boosting (XGBoost, LightGBM, CatBoost) vs Stacking.",
+    "difficulty": "hard",
+    "topic": "Ensemble Methods",
+    "concept": "Bagging vs Boosting vs Stacking",
+    "questionFamily": "comparison",
+    "tags": [
+      "Random Forest",
+      "XGBoost",
+      "LightGBM",
+      "bagging",
+      "boosting",
+      "stacking"
+    ],
+    "idealAnswer": "Bagging trains independent base models in parallel on bootstrap sample subsets and averages predictions (reduces variance, e.g. Random Forest). Boosting trains base models sequentially where each new model corrects residuals/errors of previous models (reduces bias, e.g. XGBoost/LightGBM). Stacking trains a meta-learner on multiple model outputs.",
+    "ideal_answer": "Bagging trains independent base models in parallel on bootstrap sample subsets and averages predictions (reduces variance, e.g. Random Forest). Boosting trains base models sequentially where each new model corrects residuals/errors of previous models (reduces bias, e.g. XGBoost/LightGBM). Stacking trains a meta-learner on multiple model outputs.",
+    "expected_concepts": [
+      "Random Forest",
+      "XGBoost",
+      "LightGBM",
+      "bagging"
+    ],
+    "explanation": "Evaluates Machine Learning Ensemble Methods and Bagging vs Boosting vs Stacking comprehension."
+  },
+  {
+    "id": "ml_007",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Support Vector Machine (SVM) maximize the Geometric Margin, and how does the Kernel Trick (RBF, Polynomial) handle non-linear data?",
+    "difficulty": "hard",
+    "topic": "Kernel Methods",
+    "concept": "SVM & Kernel Trick",
+    "questionFamily": "algorithm",
+    "tags": [
+      "SVM",
+      "support vectors",
+      "hyperplane",
+      "kernel trick",
+      "RBF kernel",
+      "margin"
+    ],
+    "idealAnswer": "SVM finds an optimal decision hyperplane that maximizes the geometric margin (distance between closest support vectors of opposite classes). The Kernel Trick computes dot products in a high-dimensional implicit feature space without explicitly calculating coordinates, allowing non-linear separation.",
+    "ideal_answer": "SVM finds an optimal decision hyperplane that maximizes the geometric margin (distance between closest support vectors of opposite classes). The Kernel Trick computes dot products in a high-dimensional implicit feature space without explicitly calculating coordinates, allowing non-linear separation.",
+    "expected_concepts": [
+      "SVM",
+      "support vectors",
+      "hyperplane",
+      "kernel trick"
+    ],
+    "explanation": "Evaluates Machine Learning Kernel Methods and SVM & Kernel Trick comprehension."
+  },
+  {
+    "id": "ml_008",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain K-Means Clustering: Lloyd's algorithm, K-Means++ initialization, Elbow Method, and Silhouette Score for choosing K.",
+    "difficulty": "medium",
+    "topic": "Clustering",
+    "concept": "K-Means Clustering & Optimal K",
+    "questionFamily": "algorithm",
+    "tags": [
+      "K-Means",
+      "K-Means++",
+      "Elbow Method",
+      "Silhouette Score",
+      "unsupervised"
+    ],
+    "idealAnswer": "K-Means partitions data into K clusters iteratively: assigns points to closest centroid and recalculates centroid coordinates until convergence. K-Means++ spreads initial centroids far apart. The Elbow Method (inertia plot) and Silhouette Score (cohesion vs separation) identify the optimal number of clusters K.",
+    "ideal_answer": "K-Means partitions data into K clusters iteratively: assigns points to closest centroid and recalculates centroid coordinates until convergence. K-Means++ spreads initial centroids far apart. The Elbow Method (inertia plot) and Silhouette Score (cohesion vs separation) identify the optimal number of clusters K.",
+    "expected_concepts": [
+      "K-Means",
+      "K-Means++",
+      "Elbow Method",
+      "Silhouette Score"
+    ],
+    "explanation": "Evaluates Machine Learning Clustering and K-Means Clustering & Optimal K comprehension."
+  },
+  {
+    "id": "ml_009",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Principal Component Analysis (PCA), and how does Singular Value Decomposition (SVD) perform Dimensionality Reduction?",
+    "difficulty": "hard",
+    "topic": "Dimensionality Reduction",
+    "concept": "PCA & Singular Value Decomposition",
+    "questionFamily": "algorithm",
+    "tags": [
+      "PCA",
+      "dimensionality reduction",
+      "SVD",
+      "eigenvectors",
+      "variance explained",
+      "covariance matrix"
+    ],
+    "idealAnswer": "PCA transforms correlated features into a smaller set of linearly uncorrelated Principal Components ordered by variance explained. It computes the eigenvectors and eigenvalues of the data covariance matrix (or via SVD on centered data), projecting data onto top principal component axes to reduce curse of dimensionality.",
+    "ideal_answer": "PCA transforms correlated features into a smaller set of linearly uncorrelated Principal Components ordered by variance explained. It computes the eigenvectors and eigenvalues of the data covariance matrix (or via SVD on centered data), projecting data onto top principal component axes to reduce curse of dimensionality.",
+    "expected_concepts": [
+      "PCA",
+      "dimensionality reduction",
+      "SVD",
+      "eigenvectors"
+    ],
+    "explanation": "Evaluates Machine Learning Dimensionality Reduction and PCA & Singular Value Decomposition comprehension."
+  },
+  {
+    "id": "ml_010",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cross-Validation strategies: K-Fold, Stratified K-Fold, TimeSeriesSplit, and GroupKFold, and why simple train/test split can leak data.",
+    "difficulty": "medium",
+    "topic": "Model Validation",
+    "concept": "Cross-Validation Strategies",
+    "questionFamily": "best_practice",
+    "tags": [
+      "cross-validation",
+      "K-Fold",
+      "Stratified K-Fold",
+      "TimeSeriesSplit",
+      "data leakage"
+    ],
+    "idealAnswer": "Stratified K-Fold preserves class percentage distributions in each fold (crucial for imbalanced data). TimeSeriesSplit enforces temporal order (no future data in training). GroupKFold ensures samples from the same patient/user do not appear in both train and validation splits, preventing data leakage.",
+    "ideal_answer": "Stratified K-Fold preserves class percentage distributions in each fold (crucial for imbalanced data). TimeSeriesSplit enforces temporal order (no future data in training). GroupKFold ensures samples from the same patient/user do not appear in both train and validation splits, preventing data leakage.",
+    "expected_concepts": [
+      "cross-validation",
+      "K-Fold",
+      "Stratified K-Fold",
+      "TimeSeriesSplit"
+    ],
+    "explanation": "Evaluates Machine Learning Model Validation and Cross-Validation Strategies comprehension."
+  },
+  {
+    "id": "ml_011",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Data Leakage in machine learning, and how does fitting scalers and feature selectors inside a Pipeline (e.g. Scikit-learn Pipeline) prevent it?",
+    "difficulty": "medium",
+    "topic": "Preprocessing & Leakage",
+    "concept": "Data Leakage & Scikit-learn Pipelines",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "data leakage",
+      "Pipeline",
+      "StandardScaler",
+      "fit_transform",
+      "train-test split"
+    ],
+    "idealAnswer": "Data leakage occurs when information from the test dataset influences model training (e.g. scaling entire dataset before splitting). Using Scikit-learn Pipeline guarantees transformers fit strictly on the training folds and only transform test folds during cross-validation.",
+    "ideal_answer": "Data leakage occurs when information from the test dataset influences model training (e.g. scaling entire dataset before splitting). Using Scikit-learn Pipeline guarantees transformers fit strictly on the training folds and only transform test folds during cross-validation.",
+    "expected_concepts": [
+      "data leakage",
+      "Pipeline",
+      "StandardScaler",
+      "fit_transform"
+    ],
+    "explanation": "Evaluates Machine Learning Preprocessing & Leakage and Data Leakage & Scikit-learn Pipelines comprehension."
+  },
+  {
+    "id": "ml_012",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you handle Class Imbalance: Resampling (SMOTE, Random Undersampling), Class Weights, and Threshold Tuning?",
+    "difficulty": "medium",
+    "topic": "Data Imbalance",
+    "concept": "Handling Class Imbalance & SMOTE",
+    "questionFamily": "best_practice",
+    "tags": [
+      "class imbalance",
+      "SMOTE",
+      "undersampling",
+      "class_weight",
+      "cost-sensitive learning"
+    ],
+    "idealAnswer": "Techniques: 1) Algorithmic adjustments: set class_weight='balanced' in loss functions; 2) Synthetic sampling: SMOTE interpolates synthetic minority instances; 3) Threshold tuning: optimize classification probability decision thresholds for custom business precision-recall tradeoffs.",
+    "ideal_answer": "Techniques: 1) Algorithmic adjustments: set class_weight='balanced' in loss functions; 2) Synthetic sampling: SMOTE interpolates synthetic minority instances; 3) Threshold tuning: optimize classification probability decision thresholds for custom business precision-recall tradeoffs.",
+    "expected_concepts": [
+      "class imbalance",
+      "SMOTE",
+      "undersampling",
+      "class_weight"
+    ],
+    "explanation": "Evaluates Machine Learning Data Imbalance and Handling Class Imbalance & SMOTE comprehension."
+  },
+  {
+    "id": "ml_013",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Feature Engineering and Encoding: One-Hot Encoding vs Target Encoding vs Ordinal Encoding, and handling high-cardinality categorical features.",
+    "difficulty": "easy",
+    "topic": "Feature Engineering",
+    "concept": "Categorical Encoding Strategies",
+    "questionFamily": "implementation",
+    "tags": [
+      "One-Hot Encoding",
+      "Target Encoding",
+      "Ordinal Encoding",
+      "high cardinality",
+      "out-of-fold"
+    ],
+    "idealAnswer": "One-Hot Encoding creates binary columns (creates sparse dimensional explosion on high cardinality). Ordinal Encoding applies integers to ordered categories. Target Encoding replaces categories with the mean target value (smoothed with out-of-fold calculation to prevent target leakage).",
+    "ideal_answer": "One-Hot Encoding creates binary columns (creates sparse dimensional explosion on high cardinality). Ordinal Encoding applies integers to ordered categories. Target Encoding replaces categories with the mean target value (smoothed with out-of-fold calculation to prevent target leakage).",
+    "expected_concepts": [
+      "One-Hot Encoding",
+      "Target Encoding",
+      "Ordinal Encoding",
+      "high cardinality"
+    ],
+    "explanation": "Evaluates Machine Learning Feature Engineering and Categorical Encoding Strategies comprehension."
+  },
+  {
+    "id": "ml_014",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Hyperparameter Optimization: Grid Search vs Random Search vs Bayesian Optimization (Optuna / Hyperopt Tree-structured Parzen Estimator).",
+    "difficulty": "medium",
+    "topic": "Optimization",
+    "concept": "Bayesian Optimization vs Grid Search",
+    "questionFamily": "optimization",
+    "tags": [
+      "hyperparameter tuning",
+      "GridSearchCV",
+      "RandomizedSearchCV",
+      "Optuna",
+      "Bayesian optimization",
+      "TPE"
+    ],
+    "idealAnswer": "Grid Search evaluates all parameter combinations exhaustively (slow). Random Search samples random combinations (effective). Bayesian Optimization (Optuna TPE) builds a probabilistic surrogate model of objective performance, intelligently exploring the most promising parameter regions with fewer trials.",
+    "ideal_answer": "Grid Search evaluates all parameter combinations exhaustively (slow). Random Search samples random combinations (effective). Bayesian Optimization (Optuna TPE) builds a probabilistic surrogate model of objective performance, intelligently exploring the most promising parameter regions with fewer trials.",
+    "expected_concepts": [
+      "hyperparameter tuning",
+      "GridSearchCV",
+      "RandomizedSearchCV",
+      "Optuna"
+    ],
+    "explanation": "Evaluates Machine Learning Optimization and Bayesian Optimization vs Grid Search comprehension."
+  },
+  {
+    "id": "ml_015",
+    "skill": "Machine Learning",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Concept Drift vs Data Drift in production ML systems, and how do statistical tests (KS-Test, PSI) detect drift in deployed models?",
+    "difficulty": "hard",
+    "topic": "MLOps & Monitoring",
+    "concept": "Concept Drift vs Data Drift",
+    "questionFamily": "architecture",
+    "tags": [
+      "concept drift",
+      "data drift",
+      "covariate shift",
+      "Kolmogorov-Smirnov test",
+      "Population Stability Index"
+    ],
+    "idealAnswer": "Data Drift (Covariate Shift) occurs when input feature distributions P(X) change over time. Concept Drift occurs when the relationship between features and target P(Y|X) changes. Detected by running Kolmogorov-Smirnov (KS) tests or Population Stability Index (PSI) comparing live prediction features against baseline training distributions.",
+    "ideal_answer": "Data Drift (Covariate Shift) occurs when input feature distributions P(X) change over time. Concept Drift occurs when the relationship between features and target P(Y|X) changes. Detected by running Kolmogorov-Smirnov (KS) tests or Population Stability Index (PSI) comparing live prediction features against baseline training distributions.",
+    "expected_concepts": [
+      "concept drift",
+      "data drift",
+      "covariate shift",
+      "Kolmogorov-Smirnov test"
+    ],
+    "explanation": "Evaluates Machine Learning MLOps & Monitoring and Concept Drift vs Data Drift comprehension."
   }
 ]

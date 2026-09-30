@@ -1,44 +1,409 @@
 [
   {
-    "id": "NUMPY_001",
+    "id": "numpy_001",
     "skill": "NumPy",
-    "difficulty": "easy",
-    "question": "What are the core features and primary use cases of NumPy in modern software engineering?",
-    "expected_concepts": [
-      "NumPy fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
-    ],
-    "ideal_answer": "NumPy is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of NumPy."
-  },
-  {
-    "id": "NUMPY_002",
-    "skill": "NumPy",
-    "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using NumPy in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
-    ],
-    "ideal_answer": "Common challenges with NumPy include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of NumPy."
-  },
-  {
-    "id": "NUMPY_003",
-    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the internal memory layout of NumPy ndarray (data buffer, dtype, shape, strides, and contiguous C vs Fortran order).",
     "difficulty": "hard",
-    "question": "How does NumPy handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "topic": "Internals & Memory",
+    "concept": "ndarray Memory Layout & Strides",
+    "questionFamily": "architecture",
+    "tags": [
+      "NumPy",
+      "ndarray",
+      "strides",
+      "dtype",
+      "C-order",
+      "Fortran-order",
+      "contiguous memory"
     ],
-    "ideal_answer": "NumPy handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of NumPy."
+    "idealAnswer": "A NumPy ndarray consists of a raw contiguous memory buffer, data type descriptor (dtype), dimensions (shape), and strides (bytes to step in each dimension). C-contiguous stores rows sequentially in memory; Fortran-contiguous stores columns sequentially.",
+    "ideal_answer": "A NumPy ndarray consists of a raw contiguous memory buffer, data type descriptor (dtype), dimensions (shape), and strides (bytes to step in each dimension). C-contiguous stores rows sequentially in memory; Fortran-contiguous stores columns sequentially.",
+    "expected_concepts": [
+      "NumPy",
+      "ndarray",
+      "strides",
+      "dtype"
+    ],
+    "explanation": "Evaluates NumPy Internals & Memory and ndarray Memory Layout & Strides comprehension."
+  },
+  {
+    "id": "numpy_002",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain NumPy Broadcasting Rules and how arrays with different shapes perform element-wise arithmetic without copying memory.",
+    "difficulty": "medium",
+    "topic": "Broadcasting",
+    "concept": "NumPy Broadcasting Rules",
+    "questionFamily": "implementation",
+    "tags": [
+      "broadcasting",
+      "shape alignment",
+      "dimension compatibility",
+      "zero-copy",
+      "element-wise"
+    ],
+    "idealAnswer": "Broadcasting rules: align shapes from right to left; two dimensions are compatible if they are equal or one of them is 1. If a dimension is 1, NumPy stretches that dimension virtually by setting stride to 0, executing arithmetic without copying data in RAM.",
+    "ideal_answer": "Broadcasting rules: align shapes from right to left; two dimensions are compatible if they are equal or one of them is 1. If a dimension is 1, NumPy stretches that dimension virtually by setting stride to 0, executing arithmetic without copying data in RAM.",
+    "expected_concepts": [
+      "broadcasting",
+      "shape alignment",
+      "dimension compatibility",
+      "zero-copy"
+    ],
+    "explanation": "Evaluates NumPy Broadcasting and NumPy Broadcasting Rules comprehension."
+  },
+  {
+    "id": "numpy_003",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Views and Copies in NumPy slicing and indexing, and how do you check with ndarray.base?",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Views vs Copies in NumPy",
+    "questionFamily": "comparison",
+    "tags": [
+      "view",
+      "copy",
+      "base attribute",
+      "basic slicing",
+      "fancy indexing"
+    ],
+    "idealAnswer": "Basic slicing (arr[1:5]) returns a View sharing the same underlying memory buffer (modifying view modifies original; view.base points to original). Fancy indexing (arr[[1, 3]]) and boolean masking create a brand-new independent Copy in memory (arr.base is None).",
+    "ideal_answer": "Basic slicing (arr[1:5]) returns a View sharing the same underlying memory buffer (modifying view modifies original; view.base points to original). Fancy indexing (arr[[1, 3]]) and boolean masking create a brand-new independent Copy in memory (arr.base is None).",
+    "expected_concepts": [
+      "view",
+      "copy",
+      "base attribute",
+      "basic slicing"
+    ],
+    "explanation": "Evaluates NumPy Memory Management and Views vs Copies in NumPy comprehension."
+  },
+  {
+    "id": "numpy_004",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Vectorization and Universal Functions (ufuncs) in NumPy, and how they achieve C-speed execution over Python loops.",
+    "difficulty": "easy",
+    "topic": "Vectorization & Ufuncs",
+    "concept": "Vectorization & Universal Functions (ufuncs)",
+    "questionFamily": "optimization",
+    "tags": [
+      "vectorization",
+      "ufuncs",
+      "SIMD instructions",
+      "C loops",
+      "no Python overhead"
+    ],
+    "idealAnswer": "Ufuncs perform element-wise operations on ndarrays implemented in compiled C loops with SIMD hardware instructions. Vectorization eliminates Python interpreter bytecode loop overhead, executing operations orders of magnitude faster.",
+    "ideal_answer": "Ufuncs perform element-wise operations on ndarrays implemented in compiled C loops with SIMD hardware instructions. Vectorization eliminates Python interpreter bytecode loop overhead, executing operations orders of magnitude faster.",
+    "expected_concepts": [
+      "vectorization",
+      "ufuncs",
+      "SIMD instructions",
+      "C loops"
+    ],
+    "explanation": "Evaluates NumPy Vectorization & Ufuncs and Vectorization & Universal Functions (ufuncs) comprehension."
+  },
+  {
+    "id": "numpy_005",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Linear Algebra operations in NumPy: np.dot, @ operator (matmul), np.linalg.inv, np.linalg.eig, and np.linalg.svd.",
+    "difficulty": "medium",
+    "topic": "Linear Algebra",
+    "concept": "NumPy Linear Algebra (np.linalg)",
+    "questionFamily": "implementation",
+    "tags": [
+      "np.dot",
+      "matmul @",
+      "np.linalg.inv",
+      "np.linalg.eig",
+      "np.linalg.svd",
+      "eigenvalues"
+    ],
+    "idealAnswer": "The '@' operator and np.matmul compute matrix products. np.linalg.inv computes matrix inverse (when determinant != 0). np.linalg.eig computes eigenvalues and eigenvectors. np.linalg.svd decomposes matrices into U, S, V components via LAPACK/BLAS.",
+    "ideal_answer": "The '@' operator and np.matmul compute matrix products. np.linalg.inv computes matrix inverse (when determinant != 0). np.linalg.eig computes eigenvalues and eigenvectors. np.linalg.svd decomposes matrices into U, S, V components via LAPACK/BLAS.",
+    "expected_concepts": [
+      "np.dot",
+      "matmul @",
+      "np.linalg.inv",
+      "np.linalg.eig"
+    ],
+    "explanation": "Evaluates NumPy Linear Algebra and NumPy Linear Algebra (np.linalg) comprehension."
+  },
+  {
+    "id": "numpy_006",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Boolean Indexing and Masking work in NumPy (e.g. arr[arr > 0] and np.where)?",
+    "difficulty": "easy",
+    "topic": "Indexing",
+    "concept": "Boolean Indexing & np.where",
+    "questionFamily": "implementation",
+    "tags": [
+      "boolean indexing",
+      "masking",
+      "np.where",
+      "vectorized condition"
+    ],
+    "idealAnswer": "Boolean indexing creates a boolean mask array of identical shape (arr > 0). Indexing with the mask (arr[mask]) extracts elements where True as a 1D array. np.where(condition, x, y) returns elements from x where True and y where False in a vectorized pass.",
+    "ideal_answer": "Boolean indexing creates a boolean mask array of identical shape (arr > 0). Indexing with the mask (arr[mask]) extracts elements where True as a 1D array. np.where(condition, x, y) returns elements from x where True and y where False in a vectorized pass.",
+    "expected_concepts": [
+      "boolean indexing",
+      "masking",
+      "np.where",
+      "vectorized condition"
+    ],
+    "explanation": "Evaluates NumPy Indexing and Boolean Indexing & np.where comprehension."
+  },
+  {
+    "id": "numpy_007",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Aggregation and Reduction operations in NumPy (sum, mean, std, min, max) and the 'axis' and 'keepdims' parameters.",
+    "difficulty": "easy",
+    "topic": "Aggregations",
+    "concept": "Aggregations & Axis Parameter",
+    "questionFamily": "implementation",
+    "tags": [
+      "np.sum",
+      "np.mean",
+      "axis parameter",
+      "keepdims",
+      "reduction"
+    ],
+    "idealAnswer": "Aggregation functions collapse dimensions along the specified 'axis': axis=0 collapses rows (computes per column); axis=1 collapses columns (computes per row). 'keepdims=True' preserves collapsed dimensions with size 1 for downstream broadcasting.",
+    "ideal_answer": "Aggregation functions collapse dimensions along the specified 'axis': axis=0 collapses rows (computes per column); axis=1 collapses columns (computes per row). 'keepdims=True' preserves collapsed dimensions with size 1 for downstream broadcasting.",
+    "expected_concepts": [
+      "np.sum",
+      "np.mean",
+      "axis parameter",
+      "keepdims"
+    ],
+    "explanation": "Evaluates NumPy Aggregations and Aggregations & Axis Parameter comprehension."
+  },
+  {
+    "id": "numpy_008",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Structured Arrays and Record Arrays (np.recarray) in NumPy for storing heterogeneous C-style structs?",
+    "difficulty": "medium",
+    "topic": "Data Types",
+    "concept": "Structured Arrays & Compound Dtypes",
+    "questionFamily": "architecture",
+    "tags": [
+      "structured arrays",
+      "compound dtype",
+      "np.recarray",
+      "C structs",
+      "heterogeneous"
+    ],
+    "idealAnswer": "Structured arrays define compound dtypes containing named fields of different data types (e.g. np.dtype([('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])), mapping directly to C structs in contiguous memory.",
+    "ideal_answer": "Structured arrays define compound dtypes containing named fields of different data types (e.g. np.dtype([('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])), mapping directly to C structs in contiguous memory.",
+    "expected_concepts": [
+      "structured arrays",
+      "compound dtype",
+      "np.recarray",
+      "C structs"
+    ],
+    "explanation": "Evaluates NumPy Data Types and Structured Arrays & Compound Dtypes comprehension."
+  },
+  {
+    "id": "numpy_009",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Reshaping and Array Manipulation in NumPy: reshape, resize, flatten (copy) vs ravel (view), and transpose (T).",
+    "difficulty": "easy",
+    "topic": "Array Manipulation",
+    "concept": "Reshaping (reshape, ravel, flatten)",
+    "questionFamily": "comparison",
+    "tags": [
+      "reshape",
+      "ravel",
+      "flatten",
+      "transpose .T",
+      "view vs copy"
+    ],
+    "idealAnswer": "reshape changes dimensions if total element count matches. ravel() returns a flattened 1D array as a View whenever possible. flatten() always creates a brand-new copy. .T (transpose) inverts axes by reversing the strides tuple without moving data.",
+    "ideal_answer": "reshape changes dimensions if total element count matches. ravel() returns a flattened 1D array as a View whenever possible. flatten() always creates a brand-new copy. .T (transpose) inverts axes by reversing the strides tuple without moving data.",
+    "expected_concepts": [
+      "reshape",
+      "ravel",
+      "flatten",
+      "transpose .T"
+    ],
+    "explanation": "Evaluates NumPy Array Manipulation and Reshaping (reshape, ravel, flatten) comprehension."
+  },
+  {
+    "id": "numpy_010",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Memory-Mapped Files (np.memmap) in NumPy, and how do they read and write arrays larger than physical RAM from disk?",
+    "difficulty": "hard",
+    "topic": "I/O & Big Data",
+    "concept": "Memory-Mapped Arrays (np.memmap)",
+    "questionFamily": "optimization",
+    "tags": [
+      "np.memmap",
+      "memory mapping",
+      "virtual memory",
+      "out-of-core",
+      "disk I/O"
+    ],
+    "idealAnswer": "np.memmap maps a binary file on disk directly into the process virtual memory address space. The OS pages portions of the massive array into RAM on demand via page faults, enabling reading and modifying datasets far larger than physical RAM.",
+    "ideal_answer": "np.memmap maps a binary file on disk directly into the process virtual memory address space. The OS pages portions of the massive array into RAM on demand via page faults, enabling reading and modifying datasets far larger than physical RAM.",
+    "expected_concepts": [
+      "np.memmap",
+      "memory mapping",
+      "virtual memory",
+      "out-of-core"
+    ],
+    "explanation": "Evaluates NumPy I/O & Big Data and Memory-Mapped Arrays (np.memmap) comprehension."
+  },
+  {
+    "id": "numpy_011",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Random Number Generation in modern NumPy (np.random.default_rng, Generator vs legacy RandomState).",
+    "difficulty": "easy",
+    "topic": "Random Sampling",
+    "concept": "NumPy PCG64 Generator (default_rng)",
+    "questionFamily": "best_practice",
+    "tags": [
+      "np.random.default_rng",
+      "PCG64",
+      "Mersenne Twister",
+      "reproducibility",
+      "seed"
+    ],
+    "idealAnswer": "Modern NumPy uses 'np.random.default_rng(seed)' backed by the PCG64 bit generator. It is faster, statistically superior, and more thread-safe than the legacy Mersenne Twister RandomState (np.random.seed).",
+    "ideal_answer": "Modern NumPy uses 'np.random.default_rng(seed)' backed by the PCG64 bit generator. It is faster, statistically superior, and more thread-safe than the legacy Mersenne Twister RandomState (np.random.seed).",
+    "expected_concepts": [
+      "np.random.default_rng",
+      "PCG64",
+      "Mersenne Twister",
+      "reproducibility"
+    ],
+    "explanation": "Evaluates NumPy Random Sampling and NumPy PCG64 Generator (default_rng) comprehension."
+  },
+  {
+    "id": "numpy_012",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Sorting and Searching in NumPy: np.sort, np.argsort (index sorting), np.partition, and np.searchsorted.",
+    "difficulty": "medium",
+    "topic": "Sorting & Searching",
+    "concept": "Sorting & argsort vs partition",
+    "questionFamily": "algorithm",
+    "tags": [
+      "np.sort",
+      "np.argsort",
+      "np.partition",
+      "np.searchsorted",
+      "binary search"
+    ],
+    "idealAnswer": "np.sort returns sorted elements. np.argsort returns index positions that sort the array. np.partition rearranges elements so that the k-th element is in sorted position and smaller elements precede it in O(N) time. np.searchsorted finds insertion indices in sorted arrays.",
+    "ideal_answer": "np.sort returns sorted elements. np.argsort returns index positions that sort the array. np.partition rearranges elements so that the k-th element is in sorted position and smaller elements precede it in O(N) time. np.searchsorted finds insertion indices in sorted arrays.",
+    "expected_concepts": [
+      "np.sort",
+      "np.argsort",
+      "np.partition",
+      "np.searchsorted"
+    ],
+    "explanation": "Evaluates NumPy Sorting & Searching and Sorting & argsort vs partition comprehension."
+  },
+  {
+    "id": "numpy_013",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Concatenation and Stacking work in NumPy: np.concatenate, np.vstack, np.hstack, np.dstack, and np.stack (new axis)?",
+    "difficulty": "easy",
+    "topic": "Array Combining",
+    "concept": "Concatenation vs Stacking",
+    "questionFamily": "comparison",
+    "tags": [
+      "np.concatenate",
+      "np.vstack",
+      "np.hstack",
+      "np.stack",
+      "axis expansion"
+    ],
+    "idealAnswer": "np.concatenate joins arrays along an existing axis. np.vstack stacks vertically (row-wise). np.hstack stacks horizontally (column-wise). np.stack joins arrays along a brand new axis, increasing total dimensionality by 1.",
+    "ideal_answer": "np.concatenate joins arrays along an existing axis. np.vstack stacks vertically (row-wise). np.hstack stacks horizontally (column-wise). np.stack joins arrays along a brand new axis, increasing total dimensionality by 1.",
+    "expected_concepts": [
+      "np.concatenate",
+      "np.vstack",
+      "np.hstack",
+      "np.stack"
+    ],
+    "explanation": "Evaluates NumPy Array Combining and Concatenation vs Stacking comprehension."
+  },
+  {
+    "id": "numpy_014",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Masked Arrays (numpy.ma) in NumPy for performing statistical computations ignoring invalid or missing data.",
+    "difficulty": "medium",
+    "topic": "Masked Arrays",
+    "concept": "NumPy Masked Arrays (numpy.ma)",
+    "questionFamily": "implementation",
+    "tags": [
+      "numpy.ma",
+      "masked array",
+      "invalid data",
+      "missing values",
+      "mask array"
+    ],
+    "idealAnswer": "The numpy.ma module combines a standard ndarray with a boolean mask array indicating invalid entries. Operations automatically ignore masked elements (e.g. calculating mean excluding masked sensor errors) without modifying raw data.",
+    "ideal_answer": "The numpy.ma module combines a standard ndarray with a boolean mask array indicating invalid entries. Operations automatically ignore masked elements (e.g. calculating mean excluding masked sensor errors) without modifying raw data.",
+    "expected_concepts": [
+      "numpy.ma",
+      "masked array",
+      "invalid data",
+      "missing values"
+    ],
+    "explanation": "Evaluates NumPy Masked Arrays and NumPy Masked Arrays (numpy.ma) comprehension."
+  },
+  {
+    "id": "numpy_015",
+    "skill": "NumPy",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Einsum (np.einsum) in NumPy, and how does Einstein Summation notation express matrix multiplication, trace, transpose, and batched dot products?",
+    "difficulty": "hard",
+    "topic": "Advanced Tensor Operations",
+    "concept": "Einstein Summation (np.einsum)",
+    "questionFamily": "optimization",
+    "tags": [
+      "np.einsum",
+      "Einstein summation",
+      "matrix multiplication",
+      "trace",
+      "tensor contraction"
+    ],
+    "idealAnswer": "np.einsum provides a concise subscript notation for multidimensional tensor operations: 'ii->' computes matrix trace; 'ij,jk->ik' computes matrix multiplication; 'ijk,ikl->ijl' computes batched matrix multiplication, compiling directly into optimized C loops.",
+    "ideal_answer": "np.einsum provides a concise subscript notation for multidimensional tensor operations: 'ii->' computes matrix trace; 'ij,jk->ik' computes matrix multiplication; 'ijk,ikl->ijl' computes batched matrix multiplication, compiling directly into optimized C loops.",
+    "expected_concepts": [
+      "np.einsum",
+      "Einstein summation",
+      "matrix multiplication",
+      "trace"
+    ],
+    "explanation": "Evaluates NumPy Advanced Tensor Operations and Einstein Summation (np.einsum) comprehension."
   }
 ]

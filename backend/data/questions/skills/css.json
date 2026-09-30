@@ -1,44 +1,403 @@
 [
   {
-    "id": "CSS_001",
+    "id": "css_001",
     "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the CSS Box Model (content, padding, border, margin) and the difference between content-box and border-box sizing.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of CSS in modern software engineering?",
-    "expected_concepts": [
-      "CSS fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Box Model",
+    "concept": "Box Model & Box-Sizing",
+    "questionFamily": "comparison",
+    "tags": [
+      "box model",
+      "content-box",
+      "border-box",
+      "padding",
+      "margin"
     ],
-    "ideal_answer": "CSS is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of CSS."
+    "idealAnswer": "The CSS Box Model comprises Content, Padding, Border, and Margin. With 'content-box' (default), width/height apply only to content, causing padding and borders to expand element size. With 'border-box', width and height include content, padding, and borders, simplifying layout calculations.",
+    "ideal_answer": "The CSS Box Model comprises Content, Padding, Border, and Margin. With 'content-box' (default), width/height apply only to content, causing padding and borders to expand element size. With 'border-box', width and height include content, padding, and borders, simplifying layout calculations.",
+    "expected_concepts": [
+      "box model",
+      "content-box",
+      "border-box",
+      "padding"
+    ],
+    "explanation": "Evaluates CSS Box Model and Box Model & Box-Sizing comprehension."
   },
   {
-    "id": "CSS_002",
+    "id": "css_002",
     "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does CSS Specificity work, and how is the specificity score calculated (inline styles, IDs, classes/attributes/pseudo-classes, elements/pseudo-elements)?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using CSS in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Cascade & Specificity",
+    "concept": "CSS Specificity Calculation",
+    "questionFamily": "implementation",
+    "tags": [
+      "specificity",
+      "cascade",
+      "importance",
+      "!important",
+      "selectors"
     ],
-    "ideal_answer": "Common challenges with CSS include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of CSS."
+    "idealAnswer": "Specificity determines which CSS rule applies when multiple rules match an element. Score is calculated as a tuple (a, b, c, d): a = inline styles; b = ID selectors; c = class, attribute, and pseudo-class selectors; d = element and pseudo-element selectors. Higher tuple rank wins over cascade order.",
+    "ideal_answer": "Specificity determines which CSS rule applies when multiple rules match an element. Score is calculated as a tuple (a, b, c, d): a = inline styles; b = ID selectors; c = class, attribute, and pseudo-class selectors; d = element and pseudo-element selectors. Higher tuple rank wins over cascade order.",
+    "expected_concepts": [
+      "specificity",
+      "cascade",
+      "importance",
+      "!important"
+    ],
+    "explanation": "Evaluates CSS Cascade & Specificity and CSS Specificity Calculation comprehension."
   },
   {
-    "id": "CSS_003",
+    "id": "css_003",
     "skill": "CSS",
-    "difficulty": "hard",
-    "question": "How does CSS handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between CSS Flexbox (1D layout) and CSS Grid (2D layout) and when to choose one over the other.",
+    "difficulty": "easy",
+    "topic": "Layout",
+    "concept": "Flexbox vs CSS Grid",
+    "questionFamily": "comparison",
+    "tags": [
+      "flexbox",
+      "CSS grid",
+      "1D layout",
+      "2D layout",
+      "responsive"
     ],
-    "ideal_answer": "CSS handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of CSS."
+    "idealAnswer": "Flexbox is designed for one-dimensional layouts (arranging elements along a row OR column with flexible distribution). CSS Grid is designed for two-dimensional layouts (simultaneously managing rows AND columns). Flexbox is content-first; Grid is container/grid-structure first.",
+    "ideal_answer": "Flexbox is designed for one-dimensional layouts (arranging elements along a row OR column with flexible distribution). CSS Grid is designed for two-dimensional layouts (simultaneously managing rows AND columns). Flexbox is content-first; Grid is container/grid-structure first.",
+    "expected_concepts": [
+      "flexbox",
+      "CSS grid",
+      "1D layout",
+      "2D layout"
+    ],
+    "explanation": "Evaluates CSS Layout and Flexbox vs CSS Grid comprehension."
+  },
+  {
+    "id": "css_004",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are CSS Positioning schemes (static, relative, absolute, fixed, sticky) and their containing blocks?",
+    "difficulty": "medium",
+    "topic": "Positioning",
+    "concept": "CSS Position Properties",
+    "questionFamily": "definition",
+    "tags": [
+      "position",
+      "relative",
+      "absolute",
+      "fixed",
+      "sticky"
+    ],
+    "idealAnswer": "static is default flow. relative offsets an element without taking it out of normal document flow. absolute removes element from normal flow and positions relative to nearest positioned ancestor. fixed positions relative to viewport. sticky toggles between relative and fixed depending on scroll offset.",
+    "ideal_answer": "static is default flow. relative offsets an element without taking it out of normal document flow. absolute removes element from normal flow and positions relative to nearest positioned ancestor. fixed positions relative to viewport. sticky toggles between relative and fixed depending on scroll offset.",
+    "expected_concepts": [
+      "position",
+      "relative",
+      "absolute",
+      "fixed"
+    ],
+    "explanation": "Evaluates CSS Positioning and CSS Position Properties comprehension."
+  },
+  {
+    "id": "css_005",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do CSS Media Queries work for Responsive Web Design, and what is Mobile-First design using min-width?",
+    "difficulty": "easy",
+    "topic": "Responsive Design",
+    "concept": "Media Queries & Mobile First",
+    "questionFamily": "best_practice",
+    "tags": [
+      "media queries",
+      "responsive design",
+      "mobile first",
+      "breakpoints",
+      "min-width"
+    ],
+    "idealAnswer": "Media queries apply CSS styles conditionally based on device characteristics (viewport width, orientation, resolution). In Mobile-First design, base CSS styles target small mobile screens without media queries, and 'min-width' queries progressively enhance layouts for larger screens.",
+    "ideal_answer": "Media queries apply CSS styles conditionally based on device characteristics (viewport width, orientation, resolution). In Mobile-First design, base CSS styles target small mobile screens without media queries, and 'min-width' queries progressively enhance layouts for larger screens.",
+    "expected_concepts": [
+      "media queries",
+      "responsive design",
+      "mobile first",
+      "breakpoints"
+    ],
+    "explanation": "Evaluates CSS Responsive Design and Media Queries & Mobile First comprehension."
+  },
+  {
+    "id": "css_006",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain CSS Custom Properties (CSS Variables) and how they differ from SASS/SCSS variables regarding runtime dynamic inheritance.",
+    "difficulty": "medium",
+    "topic": "Modern CSS",
+    "concept": "CSS Variables vs SASS Variables",
+    "questionFamily": "comparison",
+    "tags": [
+      "CSS variables",
+      "custom properties",
+      "SASS",
+      "runtime inheritance",
+      "theming"
+    ],
+    "idealAnswer": "SASS variables are static and compiled away at build-time. CSS Custom Properties (--primary-color: #007bff) are live DOM variables that cascade, inherit down the element tree, and can be updated dynamically at runtime via JavaScript or media queries.",
+    "ideal_answer": "SASS variables are static and compiled away at build-time. CSS Custom Properties (--primary-color: #007bff) are live DOM variables that cascade, inherit down the element tree, and can be updated dynamically at runtime via JavaScript or media queries.",
+    "expected_concepts": [
+      "CSS variables",
+      "custom properties",
+      "SASS",
+      "runtime inheritance"
+    ],
+    "explanation": "Evaluates CSS Modern CSS and CSS Variables vs SASS Variables comprehension."
+  },
+  {
+    "id": "css_007",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Pseudo-classes (:hover, :focus, :nth-child, :is, :has) versus Pseudo-elements (::before, ::after, ::placeholder)?",
+    "difficulty": "medium",
+    "topic": "Selectors",
+    "concept": "Pseudo-Classes vs Pseudo-Elements",
+    "questionFamily": "comparison",
+    "tags": [
+      "pseudo-class",
+      "pseudo-element",
+      "::before",
+      "::after",
+      ":has parent selector"
+    ],
+    "idealAnswer": "Pseudo-classes (:hover, :active, :has()) target existing DOM elements in specific states or structural positions. Pseudo-elements (::before, ::after) create virtual DOM elements for styling without adding markup in HTML.",
+    "ideal_answer": "Pseudo-classes (:hover, :active, :has()) target existing DOM elements in specific states or structural positions. Pseudo-elements (::before, ::after) create virtual DOM elements for styling without adding markup in HTML.",
+    "expected_concepts": [
+      "pseudo-class",
+      "pseudo-element",
+      "::before",
+      "::after"
+    ],
+    "explanation": "Evaluates CSS Selectors and Pseudo-Classes vs Pseudo-Elements comprehension."
+  },
+  {
+    "id": "css_008",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the CSS :has() parent selector and how it enables parent and sibling relational styling without JavaScript.",
+    "difficulty": "medium",
+    "topic": "Modern CSS",
+    "concept": "CSS :has() Relational Selector",
+    "questionFamily": "implementation",
+    "tags": [
+      "CSS :has()",
+      "parent selector",
+      "relational selector",
+      "CSS selectors"
+    ],
+    "idealAnswer": "The :has() pseudo-class (the 'parent selector') allows styling an element if any of the relative selectors passed into it match. It enables styling parent containers based on the presence or state of specific child elements (e.g. card:has(img)).",
+    "ideal_answer": "The :has() pseudo-class (the 'parent selector') allows styling an element if any of the relative selectors passed into it match. It enables styling parent containers based on the presence or state of specific child elements (e.g. card:has(img)).",
+    "expected_concepts": [
+      "CSS :has()",
+      "parent selector",
+      "relational selector",
+      "CSS selectors"
+    ],
+    "explanation": "Evaluates CSS Modern CSS and CSS :has() Relational Selector comprehension."
+  },
+  {
+    "id": "css_009",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between CSS Transitions and CSS Keyframe Animations, and how do timing functions (cubic-bezier) work?",
+    "difficulty": "medium",
+    "topic": "Animations",
+    "concept": "Transitions vs Keyframe Animations",
+    "questionFamily": "comparison",
+    "tags": [
+      "transitions",
+      "animations",
+      "@keyframes",
+      "cubic-bezier",
+      "transform"
+    ],
+    "idealAnswer": "Transitions animate property changes between two states triggered by an event (e.g., :hover). Keyframe animations (@keyframes) define multi-stage animations with fine-grained control, custom iterations, directions, and pause states without user triggers.",
+    "ideal_answer": "Transitions animate property changes between two states triggered by an event (e.g., :hover). Keyframe animations (@keyframes) define multi-stage animations with fine-grained control, custom iterations, directions, and pause states without user triggers.",
+    "expected_concepts": [
+      "transitions",
+      "animations",
+      "@keyframes",
+      "cubic-bezier"
+    ],
+    "explanation": "Evaluates CSS Animations and Transitions vs Keyframe Animations comprehension."
+  },
+  {
+    "id": "css_010",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain how browser rendering pipeline works (Reflow/Layout, Repaint, Composite) and why transforming with transform/opacity is GPU-accelerated.",
+    "difficulty": "hard",
+    "topic": "Performance",
+    "concept": "Reflow, Repaint, & GPU Acceleration",
+    "questionFamily": "optimization",
+    "tags": [
+      "reflow",
+      "repaint",
+      "compositing",
+      "GPU acceleration",
+      "will-change"
+    ],
+    "idealAnswer": "When CSS changes: Layout/Reflow recalculates geometry (expensive); Repaint redraws pixel colors; Composite merges layers. Animating 'transform' and 'opacity' skips Reflow and Repaint, offloading layer manipulation directly to the GPU compositor for smooth 60fps rendering.",
+    "ideal_answer": "When CSS changes: Layout/Reflow recalculates geometry (expensive); Repaint redraws pixel colors; Composite merges layers. Animating 'transform' and 'opacity' skips Reflow and Repaint, offloading layer manipulation directly to the GPU compositor for smooth 60fps rendering.",
+    "expected_concepts": [
+      "reflow",
+      "repaint",
+      "compositing",
+      "GPU acceleration"
+    ],
+    "explanation": "Evaluates CSS Performance and Reflow, Repaint, & GPU Acceleration comprehension."
+  },
+  {
+    "id": "css_011",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Stacking Context in CSS, and how do z-index, opacity, and transform influence layering order?",
+    "difficulty": "hard",
+    "topic": "Visual Formatting",
+    "concept": "Stacking Context & Z-Index",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "stacking context",
+      "z-index",
+      "isolation",
+      "opacity",
+      "rendering order"
+    ],
+    "idealAnswer": "A Stacking Context is a 3D conceptual layering of elements. Stacking contexts are formed by root HTML, positioned elements with z-index, opacity < 1, transform, or 'isolation: isolate'. An element with z-index: 9999 cannot appear above an element in a higher parent stacking context.",
+    "ideal_answer": "A Stacking Context is a 3D conceptual layering of elements. Stacking contexts are formed by root HTML, positioned elements with z-index, opacity < 1, transform, or 'isolation: isolate'. An element with z-index: 9999 cannot appear above an element in a higher parent stacking context.",
+    "expected_concepts": [
+      "stacking context",
+      "z-index",
+      "isolation",
+      "opacity"
+    ],
+    "explanation": "Evaluates CSS Visual Formatting and Stacking Context & Z-Index comprehension."
+  },
+  {
+    "id": "css_012",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain CSS BEM (Block Element Modifier) methodology and how it prevents style leaking and naming collisions in large codebases.",
+    "difficulty": "easy",
+    "topic": "Architecture & Methodology",
+    "concept": "BEM Methodology",
+    "questionFamily": "best_practice",
+    "tags": [
+      "BEM",
+      "block element modifier",
+      "CSS architecture",
+      "modularity"
+    ],
+    "idealAnswer": "BEM (Block__Element--Modifier) is a naming convention: Block is a standalone component (e.g. .btn), Element is a part of the block (e.g. .btn__icon), and Modifier is a version or state (e.g. .btn--primary). It ensures flat specificity (0-1-0) and self-documenting code.",
+    "ideal_answer": "BEM (Block__Element--Modifier) is a naming convention: Block is a standalone component (e.g. .btn), Element is a part of the block (e.g. .btn__icon), and Modifier is a version or state (e.g. .btn--primary). It ensures flat specificity (0-1-0) and self-documenting code.",
+    "expected_concepts": [
+      "BEM",
+      "block element modifier",
+      "CSS architecture",
+      "modularity"
+    ],
+    "explanation": "Evaluates CSS Architecture & Methodology and BEM Methodology comprehension."
+  },
+  {
+    "id": "css_013",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is CSS Margin Collapsing, when does it occur, and how can it be prevented (padding, borders, overflow: hidden)?",
+    "difficulty": "medium",
+    "topic": "Box Model",
+    "concept": "Margin Collapsing",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "margin collapsing",
+      "BFC",
+      "block formatting context",
+      "vertical margins"
+    ],
+    "idealAnswer": "Margin collapsing occurs when adjacent vertical margins of block-level elements combine into a single margin equal to the largest margin. It does not occur on horizontal margins, flex/grid items, or when separated by padding, borders, or Block Formatting Contexts (BFC).",
+    "ideal_answer": "Margin collapsing occurs when adjacent vertical margins of block-level elements combine into a single margin equal to the largest margin. It does not occur on horizontal margins, flex/grid items, or when separated by padding, borders, or Block Formatting Contexts (BFC).",
+    "expected_concepts": [
+      "margin collapsing",
+      "BFC",
+      "block formatting context",
+      "vertical margins"
+    ],
+    "explanation": "Evaluates CSS Box Model and Margin Collapsing comprehension."
+  },
+  {
+    "id": "css_014",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain modern CSS layout functions: clamp(), min(), max(), and calc() for fluid typography and spacing.",
+    "difficulty": "medium",
+    "topic": "Modern CSS",
+    "concept": "Fluid Layout Functions (clamp, min, max)",
+    "questionFamily": "implementation",
+    "tags": [
+      "clamp()",
+      "calc()",
+      "fluid typography",
+      "viewport units",
+      "min()"
+    ],
+    "idealAnswer": "Modern CSS functions provide responsive sizing without media queries: calc() performs dynamic math operations; min() and max() cap values; clamp(MIN, VAL, MAX) clamps a value (e.g., clamp(1rem, 2.5vw, 2rem) for smooth fluid typography).",
+    "ideal_answer": "Modern CSS functions provide responsive sizing without media queries: calc() performs dynamic math operations; min() and max() cap values; clamp(MIN, VAL, MAX) clamps a value (e.g., clamp(1rem, 2.5vw, 2rem) for smooth fluid typography).",
+    "expected_concepts": [
+      "clamp()",
+      "calc()",
+      "fluid typography",
+      "viewport units"
+    ],
+    "explanation": "Evaluates CSS Modern CSS and Fluid Layout Functions (clamp, min, max) comprehension."
+  },
+  {
+    "id": "css_015",
+    "skill": "CSS",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is CSS Subgrid in CSS Grid Level 2, and how does it align nested child items with the parent grid tracks?",
+    "difficulty": "hard",
+    "topic": "Modern CSS",
+    "concept": "CSS Subgrid",
+    "questionFamily": "architecture",
+    "tags": [
+      "subgrid",
+      "CSS Grid Level 2",
+      "nested grid",
+      "track alignment"
+    ],
+    "idealAnswer": "CSS Subgrid ('grid-template-columns: subgrid') allows a grid item that is also a grid container to adopt the column or row track sizing of its parent grid, enabling perfect vertical and horizontal alignment of nested elements across separate cards.",
+    "ideal_answer": "CSS Subgrid ('grid-template-columns: subgrid') allows a grid item that is also a grid container to adopt the column or row track sizing of its parent grid, enabling perfect vertical and horizontal alignment of nested elements across separate cards.",
+    "expected_concepts": [
+      "subgrid",
+      "CSS Grid Level 2",
+      "nested grid",
+      "track alignment"
+    ],
+    "explanation": "Evaluates CSS Modern CSS and CSS Subgrid comprehension."
   }
 ]

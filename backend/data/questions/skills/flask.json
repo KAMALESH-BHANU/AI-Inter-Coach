@@ -1,0 +1,403 @@
+[
+  {
+    "id": "flask_001",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the WSGI (Web Server Gateway Interface) specification and how Flask acts as a WSGI micro-framework.",
+    "difficulty": "easy",
+    "topic": "Architecture",
+    "concept": "Flask WSGI Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "Flask",
+      "WSGI",
+      "Werkzeug",
+      "Gunicorn",
+      "micro-framework"
+    ],
+    "idealAnswer": "WSGI is the Python standard interface between web servers (Gunicorn/uWSGI) and Python web applications. Flask is a lightweight micro-framework built on Werkzeug WSGI toolkit and Jinja2 template engine.",
+    "ideal_answer": "WSGI is the Python standard interface between web servers (Gunicorn/uWSGI) and Python web applications. Flask is a lightweight micro-framework built on Werkzeug WSGI toolkit and Jinja2 template engine.",
+    "expected_concepts": [
+      "Flask",
+      "WSGI",
+      "Werkzeug",
+      "Gunicorn"
+    ],
+    "explanation": "Evaluates Flask Architecture and Flask WSGI Architecture comprehension."
+  },
+  {
+    "id": "flask_002",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Application Context vs Request Context in Flask and proxy objects (current_app, g, request, session).",
+    "difficulty": "hard",
+    "topic": "Context Architecture",
+    "concept": "Application & Request Contexts",
+    "questionFamily": "architecture",
+    "tags": [
+      "Application Context",
+      "Request Context",
+      "current_app",
+      "g object",
+      "LocalProxy"
+    ],
+    "idealAnswer": "Flask uses thread-local proxies: Request Context manages request-specific data (request, session) during an active HTTP request. Application Context manages app-level state (current_app, g for request-scoped global storage).",
+    "ideal_answer": "Flask uses thread-local proxies: Request Context manages request-specific data (request, session) during an active HTTP request. Application Context manages app-level state (current_app, g for request-scoped global storage).",
+    "expected_concepts": [
+      "Application Context",
+      "Request Context",
+      "current_app",
+      "g object"
+    ],
+    "explanation": "Evaluates Flask Context Architecture and Application & Request Contexts comprehension."
+  },
+  {
+    "id": "flask_003",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Flask Blueprints and how do they organize routes, static files, and templates in modular applications?",
+    "difficulty": "easy",
+    "topic": "Modular Architecture",
+    "concept": "Flask Blueprints",
+    "questionFamily": "design",
+    "tags": [
+      "Blueprints",
+      "modular architecture",
+      "register_blueprint",
+      "url_prefix"
+    ],
+    "idealAnswer": "Blueprints record operations and routes to be registered on an application later. They allow modularizing large applications into logical components (auth, billing, api) with dedicated URL prefixes and template folders.",
+    "ideal_answer": "Blueprints record operations and routes to be registered on an application later. They allow modularizing large applications into logical components (auth, billing, api) with dedicated URL prefixes and template folders.",
+    "expected_concepts": [
+      "Blueprints",
+      "modular architecture",
+      "register_blueprint",
+      "url_prefix"
+    ],
+    "explanation": "Evaluates Flask Modular Architecture and Flask Blueprints comprehension."
+  },
+  {
+    "id": "flask_004",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Application Factory pattern in Flask (create_app()) and its advantages for testing and configuration.",
+    "difficulty": "medium",
+    "topic": "Design Patterns",
+    "concept": "Application Factory Pattern",
+    "questionFamily": "best_practice",
+    "tags": [
+      "create_app",
+      "application factory",
+      "configuration",
+      "testing",
+      "pytest"
+    ],
+    "idealAnswer": "The Application Factory pattern defines a create_app(config) function that instantiates and configures the Flask app on demand, allowing multiple app instances with distinct configurations during testing and avoiding global state.",
+    "ideal_answer": "The Application Factory pattern defines a create_app(config) function that instantiates and configures the Flask app on demand, allowing multiple app instances with distinct configurations during testing and avoiding global state.",
+    "expected_concepts": [
+      "create_app",
+      "application factory",
+      "configuration",
+      "testing"
+    ],
+    "explanation": "Evaluates Flask Design Patterns and Application Factory Pattern comprehension."
+  },
+  {
+    "id": "flask_005",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Routing and URL generation (url_for) work in Flask with dynamic converters (<int:id>, <uuid:uid>)?",
+    "difficulty": "easy",
+    "topic": "Routing",
+    "concept": "Routing & url_for",
+    "questionFamily": "implementation",
+    "tags": [
+      "routing",
+      "url_for",
+      "url converters",
+      "reverse routing"
+    ],
+    "idealAnswer": "Flask routes match URL paths to view functions using @app.route(). Path converters (<int:id>, <string:slug>) cast parameters to Python types. url_for('view_func', id=1) generates URLs dynamically, preventing hardcoded links.",
+    "ideal_answer": "Flask routes match URL paths to view functions using @app.route(). Path converters (<int:id>, <string:slug>) cast parameters to Python types. url_for('view_func', id=1) generates URLs dynamically, preventing hardcoded links.",
+    "expected_concepts": [
+      "routing",
+      "url_for",
+      "url converters",
+      "reverse routing"
+    ],
+    "explanation": "Evaluates Flask Routing and Routing & url_for comprehension."
+  },
+  {
+    "id": "flask_006",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Request Lifecycle Hooks in Flask: before_request, after_request, and teardown_request.",
+    "difficulty": "medium",
+    "topic": "Request Lifecycle",
+    "concept": "Request Lifecycle Hooks",
+    "questionFamily": "implementation",
+    "tags": [
+      "before_request",
+      "after_request",
+      "teardown_request",
+      "lifecycle"
+    ],
+    "idealAnswer": "@before_request runs before each request (e.g. auth check); @after_request runs after view returns to modify response headers; @teardown_request runs after response is sent even on unhandled exceptions to clean up DB sessions.",
+    "ideal_answer": "@before_request runs before each request (e.g. auth check); @after_request runs after view returns to modify response headers; @teardown_request runs after response is sent even on unhandled exceptions to clean up DB sessions.",
+    "expected_concepts": [
+      "before_request",
+      "after_request",
+      "teardown_request",
+      "lifecycle"
+    ],
+    "explanation": "Evaluates Flask Request Lifecycle and Request Lifecycle Hooks comprehension."
+  },
+  {
+    "id": "flask_007",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Flask manage Client-Side Sessions using signed cookies, and what are the security risks of leaking SECRET_KEY?",
+    "difficulty": "medium",
+    "topic": "Security & Sessions",
+    "concept": "Client-Side Signed Cookie Sessions",
+    "questionFamily": "security",
+    "tags": [
+      "session",
+      "SECRET_KEY",
+      "signed cookies",
+      "itsdangerous",
+      "session tampering"
+    ],
+    "idealAnswer": "Flask sessions serialize session dicts into cryptographically signed browser cookies using 'itsdangerous'. While tampering is prevented, session contents are readable by clients (not encrypted). Leaking SECRET_KEY allows attackers to forge administrative sessions.",
+    "ideal_answer": "Flask sessions serialize session dicts into cryptographically signed browser cookies using 'itsdangerous'. While tampering is prevented, session contents are readable by clients (not encrypted). Leaking SECRET_KEY allows attackers to forge administrative sessions.",
+    "expected_concepts": [
+      "session",
+      "SECRET_KEY",
+      "signed cookies",
+      "itsdangerous"
+    ],
+    "explanation": "Evaluates Flask Security & Sessions and Client-Side Signed Cookie Sessions comprehension."
+  },
+  {
+    "id": "flask_008",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Flask-SQLAlchemy integration: db.Model, db.session (ScopedSession), and commit/rollback workflows.",
+    "difficulty": "medium",
+    "topic": "Database & ORM",
+    "concept": "Flask-SQLAlchemy & ScopedSession",
+    "questionFamily": "implementation",
+    "tags": [
+      "Flask-SQLAlchemy",
+      "db.Model",
+      "ScopedSession",
+      "db.session",
+      "commit"
+    ],
+    "idealAnswer": "Flask-SQLAlchemy simplifies SQLAlchemy integration. db.session provides a thread-local ScopedSession automatically bound to the active request context, rolling back or removing the session when the request tears down.",
+    "ideal_answer": "Flask-SQLAlchemy simplifies SQLAlchemy integration. db.session provides a thread-local ScopedSession automatically bound to the active request context, rolling back or removing the session when the request tears down.",
+    "expected_concepts": [
+      "Flask-SQLAlchemy",
+      "db.Model",
+      "ScopedSession",
+      "db.session"
+    ],
+    "explanation": "Evaluates Flask Database & ORM and Flask-SQLAlchemy & ScopedSession comprehension."
+  },
+  {
+    "id": "flask_009",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do Flask-Migrate and Alembic manage database schema migrations in Flask applications?",
+    "difficulty": "easy",
+    "topic": "Database Migrations",
+    "concept": "Flask-Migrate & Alembic",
+    "questionFamily": "implementation",
+    "tags": [
+      "Flask-Migrate",
+      "Alembic",
+      "flask db init",
+      "flask db migrate",
+      "flask db upgrade"
+    ],
+    "idealAnswer": "Flask-Migrate wraps Alembic for database migrations. Commands: 'flask db init' creates migrations folder, 'flask db migrate' generates migration scripts from model changes, and 'flask db upgrade' applies changes to database.",
+    "ideal_answer": "Flask-Migrate wraps Alembic for database migrations. Commands: 'flask db init' creates migrations folder, 'flask db migrate' generates migration scripts from model changes, and 'flask db upgrade' applies changes to database.",
+    "expected_concepts": [
+      "Flask-Migrate",
+      "Alembic",
+      "flask db init",
+      "flask db migrate"
+    ],
+    "explanation": "Evaluates Flask Database Migrations and Flask-Migrate & Alembic comprehension."
+  },
+  {
+    "id": "flask_010",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Jinja2 Template Engine in Flask: template inheritance ({% extends %}, {% block %}), filters, and auto-escaping.",
+    "difficulty": "easy",
+    "topic": "Templating",
+    "concept": "Jinja2 Template Inheritance & XSS Prevention",
+    "questionFamily": "implementation",
+    "tags": [
+      "Jinja2",
+      "{% extends %}",
+      "{% block %}",
+      "filters",
+      "auto-escaping",
+      "XSS"
+    ],
+    "idealAnswer": "Jinja2 renders server-side HTML. Template inheritance allows child templates to extend master layout shells. Jinja2 automatically HTML-escapes variable output by default, preventing XSS injection vulnerabilities.",
+    "ideal_answer": "Jinja2 renders server-side HTML. Template inheritance allows child templates to extend master layout shells. Jinja2 automatically HTML-escapes variable output by default, preventing XSS injection vulnerabilities.",
+    "expected_concepts": [
+      "Jinja2",
+      "{% extends %}",
+      "{% block %}",
+      "filters"
+    ],
+    "explanation": "Evaluates Flask Templating and Jinja2 Template Inheritance & XSS Prevention comprehension."
+  },
+  {
+    "id": "flask_011",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the role of the 'g' object in Flask, and how is it used for request-scoped data storage (e.g., current user, DB connections)?",
+    "difficulty": "medium",
+    "topic": "Context Architecture",
+    "concept": "Flask 'g' Object",
+    "questionFamily": "definition",
+    "tags": [
+      "g object",
+      "request scope",
+      "thread local",
+      "teardown_appcontext"
+    ],
+    "idealAnswer": "The 'g' object is a simple namespace object bound to the active Application Context. It provides request-scoped storage to store data across multiple functions or middleware during a single request (cleared when context ends).",
+    "ideal_answer": "The 'g' object is a simple namespace object bound to the active Application Context. It provides request-scoped storage to store data across multiple functions or middleware during a single request (cleared when context ends).",
+    "expected_concepts": [
+      "g object",
+      "request scope",
+      "thread local",
+      "teardown_appcontext"
+    ],
+    "explanation": "Evaluates Flask Context Architecture and Flask 'g' Object comprehension."
+  },
+  {
+    "id": "flask_012",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Error Handling work in Flask using @app.errorhandler and custom JSON error responses?",
+    "difficulty": "easy",
+    "topic": "Error Handling",
+    "concept": "Flask Error Handlers",
+    "questionFamily": "best_practice",
+    "tags": [
+      "errorhandler",
+      "404 Not Found",
+      "500 Internal Server Error",
+      "jsonify"
+    ],
+    "idealAnswer": "Decorating functions with @app.errorhandler(404) or @app.errorhandler(CustomException) catches specific HTTP error codes or Python exceptions, returning custom HTML templates or structured JSON envelopes via jsonify().",
+    "ideal_answer": "Decorating functions with @app.errorhandler(404) or @app.errorhandler(CustomException) catches specific HTTP error codes or Python exceptions, returning custom HTML templates or structured JSON envelopes via jsonify().",
+    "expected_concepts": [
+      "errorhandler",
+      "404 Not Found",
+      "500 Internal Server Error",
+      "jsonify"
+    ],
+    "explanation": "Evaluates Flask Error Handling and Flask Error Handlers comprehension."
+  },
+  {
+    "id": "flask_013",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Flask-Login for user session management: login_user, logout_user, @login_required, and user_loader callback.",
+    "difficulty": "medium",
+    "topic": "Authentication",
+    "concept": "Flask-Login Session Management",
+    "questionFamily": "implementation",
+    "tags": [
+      "Flask-Login",
+      "login_user",
+      "login_required",
+      "user_loader",
+      "UserMixin"
+    ],
+    "idealAnswer": "Flask-Login handles user authentication sessions. The @login_manager.user_loader callback reloads user objects from user IDs stored in session. @login_required protects views from unauthenticated access.",
+    "ideal_answer": "Flask-Login handles user authentication sessions. The @login_manager.user_loader callback reloads user objects from user IDs stored in session. @login_required protects views from unauthenticated access.",
+    "expected_concepts": [
+      "Flask-Login",
+      "login_user",
+      "login_required",
+      "user_loader"
+    ],
+    "explanation": "Evaluates Flask Authentication and Flask-Login Session Management comprehension."
+  },
+  {
+    "id": "flask_014",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you build REST APIs in Flask using Flask-RESTful or Flask-Smorest / Marshmallow for serialization?",
+    "difficulty": "medium",
+    "topic": "REST APIs",
+    "concept": "Flask REST APIs & Marshmallow",
+    "questionFamily": "design",
+    "tags": [
+      "Flask-RESTful",
+      "Flask-Smorest",
+      "Marshmallow",
+      "schema serialization"
+    ],
+    "idealAnswer": "Flask-RESTful provides Resource classes mapped to HTTP methods. Flask-Smorest pairs Marshmallow schemas with Flask to provide schema validation, serialization, and auto-generated OpenAPI documentation.",
+    "ideal_answer": "Flask-RESTful provides Resource classes mapped to HTTP methods. Flask-Smorest pairs Marshmallow schemas with Flask to provide schema validation, serialization, and auto-generated OpenAPI documentation.",
+    "expected_concepts": [
+      "Flask-RESTful",
+      "Flask-Smorest",
+      "Marshmallow",
+      "schema serialization"
+    ],
+    "explanation": "Evaluates Flask REST APIs and Flask REST APIs & Marshmallow comprehension."
+  },
+  {
+    "id": "flask_015",
+    "skill": "Flask",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you deploy a Flask application in production using Gunicorn, Nginx, and systemd?",
+    "difficulty": "medium",
+    "topic": "Deployment",
+    "concept": "Gunicorn & Nginx Deployment",
+    "questionFamily": "architecture",
+    "tags": [
+      "Gunicorn",
+      "Nginx",
+      "reverse proxy",
+      "WSGI",
+      "systemd",
+      "production"
+    ],
+    "idealAnswer": "In production, Nginx serves static assets, handles SSL termination, and reverse-proxies HTTP requests via UNIX socket to a Gunicorn WSGI master process running multiple worker processes managed by systemd.",
+    "ideal_answer": "In production, Nginx serves static assets, handles SSL termination, and reverse-proxies HTTP requests via UNIX socket to a Gunicorn WSGI master process running multiple worker processes managed by systemd.",
+    "expected_concepts": [
+      "Gunicorn",
+      "Nginx",
+      "reverse proxy",
+      "WSGI"
+    ],
+    "explanation": "Evaluates Flask Deployment and Gunicorn & Nginx Deployment comprehension."
+  }
+]

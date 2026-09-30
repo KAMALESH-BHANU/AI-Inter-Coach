@@ -1,44 +1,413 @@
 [
   {
-    "id": "NLP_001",
+    "id": "nlp_001",
     "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the classic NLP Preprocessing Pipeline: Tokenization, Stemming (Porter Stemmer) vs Lemmatization (WordNet), Stopwords, and POS Tagging.",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of NLP in modern software engineering?",
-    "expected_concepts": [
-      "NLP fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Text Preprocessing",
+    "concept": "Stemming vs Lemmatization & Tokenization",
+    "questionFamily": "comparison",
+    "tags": [
+      "tokenization",
+      "stemming",
+      "lemmatization",
+      "stopwords",
+      "POS tagging"
     ],
-    "ideal_answer": "NLP is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of NLP."
+    "idealAnswer": "Stemming strips word suffixes via heuristic rule algorithms (e.g. 'running' -> 'run', 'better' -> 'better'; fast, non-words possible). Lemmatization reduces words to their valid vocabulary base lemma using morphological analysis and POS tags ('better' -> 'good').",
+    "ideal_answer": "Stemming strips word suffixes via heuristic rule algorithms (e.g. 'running' -> 'run', 'better' -> 'better'; fast, non-words possible). Lemmatization reduces words to their valid vocabulary base lemma using morphological analysis and POS tags ('better' -> 'good').",
+    "expected_concepts": [
+      "tokenization",
+      "stemming",
+      "lemmatization",
+      "stopwords"
+    ],
+    "explanation": "Evaluates NLP Text Preprocessing and Stemming vs Lemmatization & Tokenization comprehension."
   },
   {
-    "id": "NLP_002",
+    "id": "nlp_002",
     "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Bag-of-Words (BoW) and N-Grams vs TF-IDF (Term Frequency - Inverse Document Frequency) for document representation.",
+    "difficulty": "easy",
+    "topic": "Vectorization",
+    "concept": "TF-IDF vs Bag-of-Words",
+    "questionFamily": "comparison",
+    "tags": [
+      "TF-IDF",
+      "Bag of Words",
+      "N-Grams",
+      "term frequency",
+      "document frequency"
+    ],
+    "idealAnswer": "Bag-of-Words counts raw word occurrences, ignoring syntax and order. N-grams capture local word sequences (bi-grams, tri-grams). TF-IDF weights words by term frequency scaled by inverse document frequency (log(N/df)), downweighting common words and highlighting distinctive domain terms.",
+    "ideal_answer": "Bag-of-Words counts raw word occurrences, ignoring syntax and order. N-grams capture local word sequences (bi-grams, tri-grams). TF-IDF weights words by term frequency scaled by inverse document frequency (log(N/df)), downweighting common words and highlighting distinctive domain terms.",
+    "expected_concepts": [
+      "TF-IDF",
+      "Bag of Words",
+      "N-Grams",
+      "term frequency"
+    ],
+    "explanation": "Evaluates NLP Vectorization and TF-IDF vs Bag-of-Words comprehension."
+  },
+  {
+    "id": "nlp_003",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Word Embeddings: Word2Vec (Skip-Gram vs CBOW), GloVe (Global Vectors), and FastText (Subword n-grams for OOV words).",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using NLP in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Embeddings",
+    "concept": "Word2Vec vs GloVe vs FastText",
+    "questionFamily": "comparison",
+    "tags": [
+      "Word2Vec",
+      "Skip-Gram",
+      "CBOW",
+      "GloVe",
+      "FastText",
+      "out-of-vocabulary"
     ],
-    "ideal_answer": "Common challenges with NLP include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of NLP."
+    "idealAnswer": "Word2Vec Skip-Gram predicts context words from target word; CBOW predicts target word from context. GloVe factorizes global word co-occurrence matrices. FastText represents words as character n-grams, enabling embeddings for out-of-vocabulary (OOV) words and misspellings.",
+    "ideal_answer": "Word2Vec Skip-Gram predicts context words from target word; CBOW predicts target word from context. GloVe factorizes global word co-occurrence matrices. FastText represents words as character n-grams, enabling embeddings for out-of-vocabulary (OOV) words and misspellings.",
+    "expected_concepts": [
+      "Word2Vec",
+      "Skip-Gram",
+      "CBOW",
+      "GloVe"
+    ],
+    "explanation": "Evaluates NLP Embeddings and Word2Vec vs GloVe vs FastText comprehension."
   },
   {
-    "id": "NLP_003",
+    "id": "nlp_004",
     "skill": "NLP",
-    "difficulty": "hard",
-    "question": "How does NLP handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Subword Tokenization (Byte-Pair Encoding - BPE, WordPiece, Unigram, SentencePiece), and why is it preferred over character-level or word-level tokenization?",
+    "difficulty": "medium",
+    "topic": "Tokenization",
+    "concept": "Subword Tokenization (BPE & WordPiece)",
+    "questionFamily": "architecture",
+    "tags": [
+      "BPE",
+      "Byte-Pair Encoding",
+      "WordPiece",
+      "SentencePiece",
+      "vocabulary size",
+      "OOV"
     ],
-    "ideal_answer": "NLP handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of NLP."
+    "idealAnswer": "Word-level tokenization causes huge vocabularies and out-of-vocabulary failures. Character-level tokenization causes very long sequences. Subword algorithms (BPE in GPT, WordPiece in BERT) iteratively merge frequent character pairs, maintaining compact ~50K vocabularies while breaking rare words into recognizable subwords.",
+    "ideal_answer": "Word-level tokenization causes huge vocabularies and out-of-vocabulary failures. Character-level tokenization causes very long sequences. Subword algorithms (BPE in GPT, WordPiece in BERT) iteratively merge frequent character pairs, maintaining compact ~50K vocabularies while breaking rare words into recognizable subwords.",
+    "expected_concepts": [
+      "BPE",
+      "Byte-Pair Encoding",
+      "WordPiece",
+      "SentencePiece"
+    ],
+    "explanation": "Evaluates NLP Tokenization and Subword Tokenization (BPE & WordPiece) comprehension."
+  },
+  {
+    "id": "nlp_005",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare BERT (Bidirectional Encoder Representations from Transformers) and GPT (Generative Pre-trained Transformer) in training objectives (MLM vs Causal LM).",
+    "difficulty": "medium",
+    "topic": "Transformer Models",
+    "concept": "BERT vs GPT Architectures",
+    "questionFamily": "comparison",
+    "tags": [
+      "BERT",
+      "GPT",
+      "Masked Language Modeling",
+      "Causal Language Modeling",
+      "bidirectional"
+    ],
+    "idealAnswer": "BERT is an Encoder model trained bi-directionally on Masked Language Modeling (MLM - predicting random 15% masked tokens) and Next Sentence Prediction (optimal for classification/NER). GPT is an autoregressive Decoder model trained on causal next-token prediction (optimal for generation).",
+    "ideal_answer": "BERT is an Encoder model trained bi-directionally on Masked Language Modeling (MLM - predicting random 15% masked tokens) and Next Sentence Prediction (optimal for classification/NER). GPT is an autoregressive Decoder model trained on causal next-token prediction (optimal for generation).",
+    "expected_concepts": [
+      "BERT",
+      "GPT",
+      "Masked Language Modeling",
+      "Causal Language Modeling"
+    ],
+    "explanation": "Evaluates NLP Transformer Models and BERT vs GPT Architectures comprehension."
+  },
+  {
+    "id": "nlp_006",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Named Entity Recognition (NER): BIO/IOB Tagging scheme, CRF (Conditional Random Fields), and BERT-based token classification.",
+    "difficulty": "medium",
+    "topic": "Information Extraction",
+    "concept": "Named Entity Recognition (NER)",
+    "questionFamily": "implementation",
+    "tags": [
+      "NER",
+      "Named Entity Recognition",
+      "BIO tagging",
+      "CRF",
+      "token classification"
+    ],
+    "idealAnswer": "NER extracts entity mentions (Person, Org, Location). BIO tagging annotates tokens: B (Begin entity), I (Inside entity), O (Outside). Linear-chain CRFs or BERT token classification heads model transition probabilities between sequential tags to ensure valid sequence predictions.",
+    "ideal_answer": "NER extracts entity mentions (Person, Org, Location). BIO tagging annotates tokens: B (Begin entity), I (Inside entity), O (Outside). Linear-chain CRFs or BERT token classification heads model transition probabilities between sequential tags to ensure valid sequence predictions.",
+    "expected_concepts": [
+      "NER",
+      "Named Entity Recognition",
+      "BIO tagging",
+      "CRF"
+    ],
+    "explanation": "Evaluates NLP Information Extraction and Named Entity Recognition (NER) comprehension."
+  },
+  {
+    "id": "nlp_007",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you evaluate Machine Translation and Text Summarization using BLEU, ROUGE (ROUGE-1, ROUGE-2, ROUGE-L), and METEOR scores?",
+    "difficulty": "easy",
+    "topic": "NLP Evaluation",
+    "concept": "BLEU vs ROUGE Scores",
+    "questionFamily": "comparison",
+    "tags": [
+      "BLEU",
+      "ROUGE",
+      "ROUGE-L",
+      "n-gram overlap",
+      "LCS",
+      "machine translation"
+    ],
+    "idealAnswer": "BLEU evaluates precision of n-gram overlaps between generated text and reference translations (penalizing short translations). ROUGE evaluates recall (ROUGE-1 word recall, ROUGE-2 bigram recall, ROUGE-L longest common subsequence) primarily used in text summarization.",
+    "ideal_answer": "BLEU evaluates precision of n-gram overlaps between generated text and reference translations (penalizing short translations). ROUGE evaluates recall (ROUGE-1 word recall, ROUGE-2 bigram recall, ROUGE-L longest common subsequence) primarily used in text summarization.",
+    "expected_concepts": [
+      "BLEU",
+      "ROUGE",
+      "ROUGE-L",
+      "n-gram overlap"
+    ],
+    "explanation": "Evaluates NLP NLP Evaluation and BLEU vs ROUGE Scores comprehension."
+  },
+  {
+    "id": "nlp_008",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Sentiment Analysis and Aspect-Based Sentiment Analysis (ABSA) for extracting opinions on specific entity attributes.",
+    "difficulty": "easy",
+    "topic": "Sentiment & Classification",
+    "concept": "Aspect-Based Sentiment Analysis",
+    "questionFamily": "implementation",
+    "tags": [
+      "sentiment analysis",
+      "aspect-based sentiment",
+      "ABSA",
+      "polarity",
+      "opinion mining"
+    ],
+    "idealAnswer": "Standard sentiment analysis classifies overall document/sentence polarity (positive, negative, neutral). Aspect-Based Sentiment Analysis (ABSA) extracts specific aspect terms (e.g. 'battery life', 'screen display') and determines the sentiment polarity targeted at each individual aspect.",
+    "ideal_answer": "Standard sentiment analysis classifies overall document/sentence polarity (positive, negative, neutral). Aspect-Based Sentiment Analysis (ABSA) extracts specific aspect terms (e.g. 'battery life', 'screen display') and determines the sentiment polarity targeted at each individual aspect.",
+    "expected_concepts": [
+      "sentiment analysis",
+      "aspect-based sentiment",
+      "ABSA",
+      "polarity"
+    ],
+    "explanation": "Evaluates NLP Sentiment & Classification and Aspect-Based Sentiment Analysis comprehension."
+  },
+  {
+    "id": "nlp_009",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Topic Modeling: Latent Dirichlet Allocation (LDA) and BERTopic (Transformer embeddings + UMAP + HDBSCAN + c-TF-IDF).",
+    "difficulty": "medium",
+    "topic": "Topic Modeling",
+    "concept": "LDA vs BERTopic",
+    "questionFamily": "comparison",
+    "tags": [
+      "topic modeling",
+      "LDA",
+      "BERTopic",
+      "UMAP",
+      "HDBSCAN",
+      "c-TF-IDF"
+    ],
+    "idealAnswer": "LDA is a probabilistic model assuming documents are mixtures of topics and topics are distributions over words. BERTopic uses Transformer embeddings to capture semantic context, clusters embeddings with UMAP dimensionality reduction and HDBSCAN, and extracts topic keywords using class-based TF-IDF (c-TF-IDF).",
+    "ideal_answer": "LDA is a probabilistic model assuming documents are mixtures of topics and topics are distributions over words. BERTopic uses Transformer embeddings to capture semantic context, clusters embeddings with UMAP dimensionality reduction and HDBSCAN, and extracts topic keywords using class-based TF-IDF (c-TF-IDF).",
+    "expected_concepts": [
+      "topic modeling",
+      "LDA",
+      "BERTopic",
+      "UMAP"
+    ],
+    "explanation": "Evaluates NLP Topic Modeling and LDA vs BERTopic comprehension."
+  },
+  {
+    "id": "nlp_010",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Cross-Encoder vs Bi-Encoder (Sentence-BERT / SBERT) for semantic text similarity and semantic search?",
+    "difficulty": "hard",
+    "topic": "Semantic Search",
+    "concept": "Bi-Encoder vs Cross-Encoder (SBERT)",
+    "questionFamily": "comparison",
+    "tags": [
+      "Sentence-BERT",
+      "SBERT",
+      "Bi-Encoder",
+      "Cross-Encoder",
+      "cosine similarity",
+      "dense retrieval"
+    ],
+    "idealAnswer": "Bi-Encoders (SBERT) encode queries and documents independently into fixed dense vectors, enabling fast cosine similarity searches against millions of pre-computed document embeddings in vector stores. Cross-Encoders pass query and document together through full cross-attention for higher accuracy at significant compute cost.",
+    "ideal_answer": "Bi-Encoders (SBERT) encode queries and documents independently into fixed dense vectors, enabling fast cosine similarity searches against millions of pre-computed document embeddings in vector stores. Cross-Encoders pass query and document together through full cross-attention for higher accuracy at significant compute cost.",
+    "expected_concepts": [
+      "Sentence-BERT",
+      "SBERT",
+      "Bi-Encoder",
+      "Cross-Encoder"
+    ],
+    "explanation": "Evaluates NLP Semantic Search and Bi-Encoder vs Cross-Encoder (SBERT) comprehension."
+  },
+  {
+    "id": "nlp_011",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Seq2Seq (Sequence-to-Sequence) Architecture with Bahdanau (Additive) Attention vs Luong (Multiplicative) Attention.",
+    "difficulty": "hard",
+    "topic": "Seq2Seq",
+    "concept": "Bahdanau vs Luong Attention",
+    "questionFamily": "architecture",
+    "tags": [
+      "Seq2Seq",
+      "encoder-decoder",
+      "Bahdanau attention",
+      "Luong attention",
+      "alignment score"
+    ],
+    "idealAnswer": "Seq2Seq encodes variable-length input sequences into context vectors for decoder generation. Bahdanau (additive) attention computes alignment scores using a feedforward layer and concatenates context with previous hidden state. Luong (multiplicative) attention uses dot products, simplifying calculation.",
+    "ideal_answer": "Seq2Seq encodes variable-length input sequences into context vectors for decoder generation. Bahdanau (additive) attention computes alignment scores using a feedforward layer and concatenates context with previous hidden state. Luong (multiplicative) attention uses dot products, simplifying calculation.",
+    "expected_concepts": [
+      "Seq2Seq",
+      "encoder-decoder",
+      "Bahdanau attention",
+      "Luong attention"
+    ],
+    "explanation": "Evaluates NLP Seq2Seq and Bahdanau vs Luong Attention comprehension."
+  },
+  {
+    "id": "nlp_012",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Text Generation Decoding work: Greedy Search, Beam Search, Temperature, Top-K, and Top-P sampling?",
+    "difficulty": "medium",
+    "topic": "Text Generation Decoding",
+    "concept": "Beam Search vs Nucleus Sampling",
+    "questionFamily": "comparison",
+    "tags": [
+      "beam search",
+      "greedy search",
+      "nucleus sampling",
+      "top-p",
+      "temperature",
+      "repetition penalty"
+    ],
+    "idealAnswer": "Greedy search picks the highest probability token at each step (can get stuck in repetitive loops). Beam Search tracks B top candidate beams simultaneously (great for translation). Nucleus/Top-P and Top-K sampling introduce controlled randomness, producing natural conversational outputs.",
+    "ideal_answer": "Greedy search picks the highest probability token at each step (can get stuck in repetitive loops). Beam Search tracks B top candidate beams simultaneously (great for translation). Nucleus/Top-P and Top-K sampling introduce controlled randomness, producing natural conversational outputs.",
+    "expected_concepts": [
+      "beam search",
+      "greedy search",
+      "nucleus sampling",
+      "top-p"
+    ],
+    "explanation": "Evaluates NLP Text Generation Decoding and Beam Search vs Nucleus Sampling comprehension."
+  },
+  {
+    "id": "nlp_013",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Question Answering: Extractive QA (Span prediction with start/end logits) vs Abstractive QA (Generative Seq2Seq)?",
+    "difficulty": "easy",
+    "topic": "Question Answering",
+    "concept": "Extractive QA vs Abstractive QA",
+    "questionFamily": "comparison",
+    "tags": [
+      "Question Answering",
+      "Extractive QA",
+      "Abstractive QA",
+      "start logits",
+      "end logits",
+      "SQuAD"
+    ],
+    "idealAnswer": "Extractive QA (e.g. BERT on SQuAD) predicts the exact start and end token indices of the answer span within a provided reference context passage. Abstractive QA generates a novel paraphrased natural language response from scratch using generative language models.",
+    "ideal_answer": "Extractive QA (e.g. BERT on SQuAD) predicts the exact start and end token indices of the answer span within a provided reference context passage. Abstractive QA generates a novel paraphrased natural language response from scratch using generative language models.",
+    "expected_concepts": [
+      "Question Answering",
+      "Extractive QA",
+      "Abstractive QA",
+      "start logits"
+    ],
+    "explanation": "Evaluates NLP Question Answering and Extractive QA vs Abstractive QA comprehension."
+  },
+  {
+    "id": "nlp_014",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Coreference Resolution and Anaphora Resolution in NLP discourse processing.",
+    "difficulty": "medium",
+    "topic": "Discourse Processing",
+    "concept": "Coreference Resolution",
+    "questionFamily": "implementation",
+    "tags": [
+      "coreference resolution",
+      "anaphora",
+      "antecedent",
+      "mention clustering",
+      "entity linking"
+    ],
+    "idealAnswer": "Coreference resolution identifies all expressions in text that refer to the same real-world entity (e.g. linking 'Elon Musk', 'the CEO', and 'he' in a multi-paragraph article). Mention clustering algorithms group detected pronoun and noun phrase mentions into entity clusters.",
+    "ideal_answer": "Coreference resolution identifies all expressions in text that refer to the same real-world entity (e.g. linking 'Elon Musk', 'the CEO', and 'he' in a multi-paragraph article). Mention clustering algorithms group detected pronoun and noun phrase mentions into entity clusters.",
+    "expected_concepts": [
+      "coreference resolution",
+      "anaphora",
+      "antecedent",
+      "mention clustering"
+    ],
+    "explanation": "Evaluates NLP Discourse Processing and Coreference Resolution comprehension."
+  },
+  {
+    "id": "nlp_015",
+    "skill": "NLP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Perplexity in Language Modeling, and how does it measure cross-entropy loss on evaluation test corpora?",
+    "difficulty": "easy",
+    "topic": "NLP Evaluation",
+    "concept": "Language Model Perplexity",
+    "questionFamily": "definition",
+    "tags": [
+      "perplexity",
+      "cross-entropy loss",
+      "exponentiated loss",
+      "language model evaluation"
+    ],
+    "idealAnswer": "Perplexity is the standard intrinsic evaluation metric for language models: defined as the exponential of the cross-entropy loss (PPL = exp(loss)). It represents the effective branching factor—a lower perplexity means the model is less surprised by test tokens and predicts text more accurately.",
+    "ideal_answer": "Perplexity is the standard intrinsic evaluation metric for language models: defined as the exponential of the cross-entropy loss (PPL = exp(loss)). It represents the effective branching factor—a lower perplexity means the model is less surprised by test tokens and predicts text more accurately.",
+    "expected_concepts": [
+      "perplexity",
+      "cross-entropy loss",
+      "exponentiated loss",
+      "language model evaluation"
+    ],
+    "explanation": "Evaluates NLP NLP Evaluation and Language Model Perplexity comprehension."
   }
 ]

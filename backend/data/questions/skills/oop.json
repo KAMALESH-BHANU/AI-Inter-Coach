@@ -1,44 +1,405 @@
 [
   {
-    "id": "OOP_001",
+    "id": "oop_001",
     "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the four fundamental pillars of Object-Oriented Programming (Encapsulation, Abstraction, Inheritance, Polymorphism).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of OOP in modern software engineering?",
-    "expected_concepts": [
-      "OOP fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "OOP Pillars",
+    "concept": "Four Pillars of OOP",
+    "questionFamily": "architecture",
+    "tags": [
+      "OOP",
+      "encapsulation",
+      "abstraction",
+      "inheritance",
+      "polymorphism"
     ],
-    "ideal_answer": "OOP is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of OOP."
+    "idealAnswer": "Encapsulation bundles data and methods, restricting direct access. Abstraction hides complex implementation details behind clean interfaces. Inheritance allows child classes to derive properties/methods. Polymorphism enables treating different objects uniformly through a shared interface.",
+    "ideal_answer": "Encapsulation bundles data and methods, restricting direct access. Abstraction hides complex implementation details behind clean interfaces. Inheritance allows child classes to derive properties/methods. Polymorphism enables treating different objects uniformly through a shared interface.",
+    "expected_concepts": [
+      "OOP",
+      "encapsulation",
+      "abstraction",
+      "inheritance"
+    ],
+    "explanation": "Evaluates OOP OOP Pillars and Four Pillars of OOP comprehension."
   },
   {
-    "id": "OOP_002",
+    "id": "oop_002",
     "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain SOLID principles: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using OOP in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "SOLID Principles",
+    "concept": "SOLID Principles Overview",
+    "questionFamily": "best_practice",
+    "tags": [
+      "SOLID",
+      "SRP",
+      "OCP",
+      "LSP",
+      "ISP",
+      "DIP",
+      "clean code"
     ],
-    "ideal_answer": "Common challenges with OOP include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of OOP."
+    "idealAnswer": "S: Class has one reason to change. O: Open for extension, closed for modification. L: Subtypes must be substitutable for base types. I: Clients shouldn't depend on unused interfaces. D: Depend on abstractions, not concretions.",
+    "ideal_answer": "S: Class has one reason to change. O: Open for extension, closed for modification. L: Subtypes must be substitutable for base types. I: Clients shouldn't depend on unused interfaces. D: Depend on abstractions, not concretions.",
+    "expected_concepts": [
+      "SOLID",
+      "SRP",
+      "OCP",
+      "LSP"
+    ],
+    "explanation": "Evaluates OOP SOLID Principles and SOLID Principles Overview comprehension."
   },
   {
-    "id": "OOP_003",
+    "id": "oop_003",
     "skill": "OOP",
-    "difficulty": "hard",
-    "question": "How does OOP handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Liskov Substitution Principle (LSP) and why square inheriting from rectangle violates LSP.",
+    "difficulty": "medium",
+    "topic": "SOLID Principles",
+    "concept": "Liskov Substitution Principle (LSP)",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "LSP",
+      "Liskov substitution",
+      "subtyping",
+      "square rectangle problem"
     ],
-    "ideal_answer": "OOP handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of OOP."
+    "idealAnswer": "LSP requires derived classes to behave without breaking client assumptions about the base class. A Square inheriting from Rectangle breaks LSP because modifying width independently of height is expected for rectangles but invalidates square invariant rules.",
+    "ideal_answer": "LSP requires derived classes to behave without breaking client assumptions about the base class. A Square inheriting from Rectangle breaks LSP because modifying width independently of height is expected for rectangles but invalidates square invariant rules.",
+    "expected_concepts": [
+      "LSP",
+      "Liskov substitution",
+      "subtyping",
+      "square rectangle problem"
+    ],
+    "explanation": "Evaluates OOP SOLID Principles and Liskov Substitution Principle (LSP) comprehension."
+  },
+  {
+    "id": "oop_004",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain 'Composition over Inheritance' and why deep class inheritance hierarchies cause tight coupling and fragile base class bugs.",
+    "difficulty": "easy",
+    "topic": "Design Principles",
+    "concept": "Composition over Inheritance",
+    "questionFamily": "best_practice",
+    "tags": [
+      "composition",
+      "inheritance",
+      "fragile base class",
+      "loose coupling",
+      "has-a vs is-a"
+    ],
+    "idealAnswer": "Inheritance creates rigid compile-time 'is-a' coupling where base class changes can break subclasses (fragile base class problem). Composition ('has-a') embeds reusable component objects, allowing dynamic behavior swapping at runtime.",
+    "ideal_answer": "Inheritance creates rigid compile-time 'is-a' coupling where base class changes can break subclasses (fragile base class problem). Composition ('has-a') embeds reusable component objects, allowing dynamic behavior swapping at runtime.",
+    "expected_concepts": [
+      "composition",
+      "inheritance",
+      "fragile base class",
+      "loose coupling"
+    ],
+    "explanation": "Evaluates OOP Design Principles and Composition over Inheritance comprehension."
+  },
+  {
+    "id": "oop_005",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Compile-Time Polymorphism (Method Overloading) vs Runtime Polymorphism (Method Overriding and Dynamic Dispatch).",
+    "difficulty": "easy",
+    "topic": "Polymorphism",
+    "concept": "Compile-Time vs Runtime Polymorphism",
+    "questionFamily": "comparison",
+    "tags": [
+      "overloading",
+      "overriding",
+      "dynamic dispatch",
+      "polymorphism",
+      "virtual methods"
+    ],
+    "idealAnswer": "Compile-time polymorphism resolves method calls at compile time based on parameter types/counts (overloading). Runtime polymorphism resolves method calls dynamically at runtime based on the actual object instance (overriding via vtable/virtual dispatch).",
+    "ideal_answer": "Compile-time polymorphism resolves method calls at compile time based on parameter types/counts (overloading). Runtime polymorphism resolves method calls dynamically at runtime based on the actual object instance (overriding via vtable/virtual dispatch).",
+    "expected_concepts": [
+      "overloading",
+      "overriding",
+      "dynamic dispatch",
+      "polymorphism"
+    ],
+    "explanation": "Evaluates OOP Polymorphism and Compile-Time vs Runtime Polymorphism comprehension."
+  },
+  {
+    "id": "oop_006",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Creational Design Patterns: Singleton, Factory Method, Abstract Factory, and Builder Pattern.",
+    "difficulty": "medium",
+    "topic": "Design Patterns",
+    "concept": "Creational Design Patterns",
+    "questionFamily": "architecture",
+    "tags": [
+      "Singleton",
+      "Factory Method",
+      "Abstract Factory",
+      "Builder Pattern",
+      "creational"
+    ],
+    "idealAnswer": "Singleton restricts instantiation to a single global instance. Factory Method delegates object instantiation to subclasses. Abstract Factory creates families of related objects. Builder constructs complex objects step-by-step with fluent method chaining.",
+    "ideal_answer": "Singleton restricts instantiation to a single global instance. Factory Method delegates object instantiation to subclasses. Abstract Factory creates families of related objects. Builder constructs complex objects step-by-step with fluent method chaining.",
+    "expected_concepts": [
+      "Singleton",
+      "Factory Method",
+      "Abstract Factory",
+      "Builder Pattern"
+    ],
+    "explanation": "Evaluates OOP Design Patterns and Creational Design Patterns comprehension."
+  },
+  {
+    "id": "oop_007",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement a Thread-Safe Singleton Pattern using Double-Checked Locking and Volatile keyword?",
+    "difficulty": "hard",
+    "topic": "Design Patterns",
+    "concept": "Double-Checked Locking Singleton",
+    "questionFamily": "implementation",
+    "tags": [
+      "Singleton",
+      "double-checked locking",
+      "volatile",
+      "thread safety",
+      "instruction reordering"
+    ],
+    "idealAnswer": "Double-checked locking checks if the instance is null before acquiring a synchronized lock, then checks again inside the lock. Declaring the instance field 'volatile' is mandatory to prevent CPU instruction reordering before full constructor execution.",
+    "ideal_answer": "Double-checked locking checks if the instance is null before acquiring a synchronized lock, then checks again inside the lock. Declaring the instance field 'volatile' is mandatory to prevent CPU instruction reordering before full constructor execution.",
+    "expected_concepts": [
+      "Singleton",
+      "double-checked locking",
+      "volatile",
+      "thread safety"
+    ],
+    "explanation": "Evaluates OOP Design Patterns and Double-Checked Locking Singleton comprehension."
+  },
+  {
+    "id": "oop_008",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Structural Design Patterns: Adapter, Decorator, Facade, and Proxy Patterns.",
+    "difficulty": "medium",
+    "topic": "Design Patterns",
+    "concept": "Structural Design Patterns",
+    "questionFamily": "comparison",
+    "tags": [
+      "Adapter",
+      "Decorator",
+      "Facade",
+      "Proxy",
+      "structural patterns"
+    ],
+    "idealAnswer": "Adapter translates incompatible interfaces. Decorator dynamically attaches new responsibilities to objects without subclassing. Facade provides a simplified high-level interface to a complex subsystem. Proxy provides a surrogate placeholder controlling access to another object.",
+    "ideal_answer": "Adapter translates incompatible interfaces. Decorator dynamically attaches new responsibilities to objects without subclassing. Facade provides a simplified high-level interface to a complex subsystem. Proxy provides a surrogate placeholder controlling access to another object.",
+    "expected_concepts": [
+      "Adapter",
+      "Decorator",
+      "Facade",
+      "Proxy"
+    ],
+    "explanation": "Evaluates OOP Design Patterns and Structural Design Patterns comprehension."
+  },
+  {
+    "id": "oop_009",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Behavioral Design Patterns: Strategy, Observer, Command, and Template Method Patterns.",
+    "difficulty": "medium",
+    "topic": "Design Patterns",
+    "concept": "Behavioral Design Patterns",
+    "questionFamily": "design",
+    "tags": [
+      "Strategy",
+      "Observer",
+      "Command",
+      "Template Method",
+      "behavioral patterns"
+    ],
+    "idealAnswer": "Strategy encapsulates interchangeable algorithms. Observer notifies multiple subscribers of state changes. Command encapsulates requests as objects. Template Method defines an algorithm skeleton in a base class, letting subclasses override specific steps.",
+    "ideal_answer": "Strategy encapsulates interchangeable algorithms. Observer notifies multiple subscribers of state changes. Command encapsulates requests as objects. Template Method defines an algorithm skeleton in a base class, letting subclasses override specific steps.",
+    "expected_concepts": [
+      "Strategy",
+      "Observer",
+      "Command",
+      "Template Method"
+    ],
+    "explanation": "Evaluates OOP Design Patterns and Behavioral Design Patterns comprehension."
+  },
+  {
+    "id": "oop_010",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between Abstract Classes and Interfaces, and when should you design an abstract class over an interface?",
+    "difficulty": "easy",
+    "topic": "Abstraction",
+    "concept": "Abstract Class vs Interface Design",
+    "questionFamily": "comparison",
+    "tags": [
+      "abstract class",
+      "interface",
+      "code reuse",
+      "default implementation",
+      "multiple inheritance"
+    ],
+    "idealAnswer": "Use an abstract class when classes share state (fields), non-public methods, or common core implementation. Use an interface to define a polymorphic capability/behavior contract across unrelated classes supporting multiple inheritance.",
+    "ideal_answer": "Use an abstract class when classes share state (fields), non-public methods, or common core implementation. Use an interface to define a polymorphic capability/behavior contract across unrelated classes supporting multiple inheritance.",
+    "expected_concepts": [
+      "abstract class",
+      "interface",
+      "code reuse",
+      "default implementation"
+    ],
+    "explanation": "Evaluates OOP Abstraction and Abstract Class vs Interface Design comprehension."
+  },
+  {
+    "id": "oop_011",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cohesion and Coupling in software engineering, and why high cohesion and low coupling are ideal.",
+    "difficulty": "easy",
+    "topic": "Software Design",
+    "concept": "Cohesion vs Coupling",
+    "questionFamily": "definition",
+    "tags": [
+      "high cohesion",
+      "low coupling",
+      "modularity",
+      "maintainability",
+      "separation of concerns"
+    ],
+    "idealAnswer": "Cohesion measures how focused and closely related a class's internal responsibilities are (high cohesion is ideal). Coupling measures the degree of interdependence between classes (low coupling is ideal, minimizing ripple-effect bugs).",
+    "ideal_answer": "Cohesion measures how focused and closely related a class's internal responsibilities are (high cohesion is ideal). Coupling measures the degree of interdependence between classes (low coupling is ideal, minimizing ripple-effect bugs).",
+    "expected_concepts": [
+      "high cohesion",
+      "low coupling",
+      "modularity",
+      "maintainability"
+    ],
+    "explanation": "Evaluates OOP Software Design and Cohesion vs Coupling comprehension."
+  },
+  {
+    "id": "oop_012",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Law of Demeter (Principle of Least Knowledge) and why chaining method calls (a.getB().getC().doAction()) is problematic.",
+    "difficulty": "medium",
+    "topic": "Design Principles",
+    "concept": "Law of Demeter",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Law of Demeter",
+      "least knowledge",
+      "train wreck antipattern",
+      "method chaining"
+    ],
+    "idealAnswer": "The Law of Demeter states a unit should only talk to its immediate friends (itself, parameters, fields, instantiated objects). Method chaining (train wreck) leaks internal object hierarchies and creates brittle coupling across unrelated classes.",
+    "ideal_answer": "The Law of Demeter states a unit should only talk to its immediate friends (itself, parameters, fields, instantiated objects). Method chaining (train wreck) leaks internal object hierarchies and creates brittle coupling across unrelated classes.",
+    "expected_concepts": [
+      "Law of Demeter",
+      "least knowledge",
+      "train wreck antipattern",
+      "method chaining"
+    ],
+    "explanation": "Evaluates OOP Design Principles and Law of Demeter comprehension."
+  },
+  {
+    "id": "oop_013",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Object Slicing in C++/OOP when passing derived class objects by value to base class parameters?",
+    "difficulty": "medium",
+    "topic": "Memory & OOP",
+    "concept": "Object Slicing",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "object slicing",
+      "pass-by-value",
+      "polymorphism",
+      "base class copy"
+    ],
+    "idealAnswer": "Object slicing occurs when a derived class instance is assigned or passed by value to a base class object: the derived portion of the object is 'sliced off' and lost, and polymorphic virtual method dispatch fails. Pass by pointer/reference to avoid slicing.",
+    "ideal_answer": "Object slicing occurs when a derived class instance is assigned or passed by value to a base class object: the derived portion of the object is 'sliced off' and lost, and polymorphic virtual method dispatch fails. Pass by pointer/reference to avoid slicing.",
+    "expected_concepts": [
+      "object slicing",
+      "pass-by-value",
+      "polymorphism",
+      "base class copy"
+    ],
+    "explanation": "Evaluates OOP Memory & OOP and Object Slicing comprehension."
+  },
+  {
+    "id": "oop_014",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Anti-Patterns in OOP: God Object, Anemic Domain Model, and Golden Hammer?",
+    "difficulty": "easy",
+    "topic": "Anti-Patterns",
+    "concept": "Common OOP Anti-Patterns",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "God Object",
+      "Anemic Domain Model",
+      "Golden Hammer",
+      "anti-patterns"
+    ],
+    "idealAnswer": "God Object: a bloated monster class doing everything. Anemic Domain Model: domain entities having only getters/setters with all logic in service classes (procedural code in OOP disguise). Golden Hammer: forcing a familiar pattern onto inappropriate problems.",
+    "ideal_answer": "God Object: a bloated monster class doing everything. Anemic Domain Model: domain entities having only getters/setters with all logic in service classes (procedural code in OOP disguise). Golden Hammer: forcing a familiar pattern onto inappropriate problems.",
+    "expected_concepts": [
+      "God Object",
+      "Anemic Domain Model",
+      "Golden Hammer",
+      "anti-patterns"
+    ],
+    "explanation": "Evaluates OOP Anti-Patterns and Common OOP Anti-Patterns comprehension."
+  },
+  {
+    "id": "oop_015",
+    "skill": "OOP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the State Design Pattern vs Strategy Pattern and how State pattern encapsulates state machine transitions.",
+    "difficulty": "medium",
+    "topic": "Design Patterns",
+    "concept": "State Pattern vs Strategy Pattern",
+    "questionFamily": "comparison",
+    "tags": [
+      "State pattern",
+      "Strategy pattern",
+      "state machine",
+      "polymorphism",
+      "transitions"
+    ],
+    "idealAnswer": "Both use composition to delegate behavior. Strategy swaps algorithms independently chosen by the client. State pattern models an internal state machine where concrete State subclasses trigger transitions to alternative states automatically based on events.",
+    "ideal_answer": "Both use composition to delegate behavior. Strategy swaps algorithms independently chosen by the client. State pattern models an internal state machine where concrete State subclasses trigger transitions to alternative states automatically based on events.",
+    "expected_concepts": [
+      "State pattern",
+      "Strategy pattern",
+      "state machine",
+      "polymorphism"
+    ],
+    "explanation": "Evaluates OOP Design Patterns and State Pattern vs Strategy Pattern comprehension."
   }
 ]

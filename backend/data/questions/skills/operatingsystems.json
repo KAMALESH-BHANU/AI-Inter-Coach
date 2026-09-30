@@ -1,44 +1,411 @@
 [
   {
-    "id": "OPERATING_SYSTEMS_001",
+    "id": "os_001",
     "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the difference between a Process and a Thread, process address space layout, and Thread Control Blocks (TCB).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Operating Systems in modern software engineering?",
-    "expected_concepts": [
-      "Operating Systems fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Process & Thread",
+    "concept": "Process vs Thread Architecture",
+    "questionFamily": "comparison",
+    "tags": [
+      "process",
+      "thread",
+      "address space",
+      "PCB",
+      "TCB",
+      "context switch"
     ],
-    "ideal_answer": "Operating Systems is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Operating Systems."
+    "idealAnswer": "A Process is an executing program instance with its own isolated address space (code, data, heap, stack) and PCB. A Thread is a lightweight unit of execution within a process sharing code, data, and heap, but maintaining its own private stack, registers, and TCB.",
+    "ideal_answer": "A Process is an executing program instance with its own isolated address space (code, data, heap, stack) and PCB. A Thread is a lightweight unit of execution within a process sharing code, data, and heap, but maintaining its own private stack, registers, and TCB.",
+    "expected_concepts": [
+      "process",
+      "thread",
+      "address space",
+      "PCB"
+    ],
+    "explanation": "Evaluates Operating Systems Process & Thread and Process vs Thread Architecture comprehension."
   },
   {
-    "id": "OPERATING_SYSTEMS_002",
+    "id": "os_002",
     "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Process Scheduling Algorithms: FCFS, Shortest Job First (SJF), Round Robin (RR), and Multi-Level Feedback Queue (MLFQ).",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Operating Systems in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "CPU Scheduling",
+    "concept": "Process Scheduling Algorithms",
+    "questionFamily": "comparison",
+    "tags": [
+      "CPU scheduling",
+      "Round Robin",
+      "MLFQ",
+      "SJF",
+      "time quantum",
+      "starvation"
     ],
-    "ideal_answer": "Common challenges with Operating Systems include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Operating Systems."
+    "idealAnswer": "FCFS is non-preemptive. SJF minimizes average waiting time but causes starvation. Round Robin allocates fixed time quanta (preemptive). MLFQ dynamically adjusts priority queues based on CPU burst history, penalizing CPU-bound processes and favoring I/O-bound jobs.",
+    "ideal_answer": "FCFS is non-preemptive. SJF minimizes average waiting time but causes starvation. Round Robin allocates fixed time quanta (preemptive). MLFQ dynamically adjusts priority queues based on CPU burst history, penalizing CPU-bound processes and favoring I/O-bound jobs.",
+    "expected_concepts": [
+      "CPU scheduling",
+      "Round Robin",
+      "MLFQ",
+      "SJF"
+    ],
+    "explanation": "Evaluates Operating Systems CPU Scheduling and Process Scheduling Algorithms comprehension."
   },
   {
-    "id": "OPERATING_SYSTEMS_003",
+    "id": "os_003",
     "skill": "Operating Systems",
-    "difficulty": "hard",
-    "question": "How does Operating Systems handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Deadlock, and what are the four Coffman Conditions necessary for a deadlock to occur?",
+    "difficulty": "easy",
+    "topic": "Deadlocks",
+    "concept": "Four Coffman Deadlock Conditions",
+    "questionFamily": "definition",
+    "tags": [
+      "deadlock",
+      "mutual exclusion",
+      "hold and wait",
+      "no preemption",
+      "circular wait"
     ],
-    "ideal_answer": "Operating Systems handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Operating Systems."
+    "idealAnswer": "A deadlock occurs when a set of processes are blocked because each is holding a resource and waiting for another. Four necessary conditions: 1) Mutual Exclusion, 2) Hold and Wait, 3) No Preemption, 4) Circular Wait. Breaking any one condition prevents deadlocks.",
+    "ideal_answer": "A deadlock occurs when a set of processes are blocked because each is holding a resource and waiting for another. Four necessary conditions: 1) Mutual Exclusion, 2) Hold and Wait, 3) No Preemption, 4) Circular Wait. Breaking any one condition prevents deadlocks.",
+    "expected_concepts": [
+      "deadlock",
+      "mutual exclusion",
+      "hold and wait",
+      "no preemption"
+    ],
+    "explanation": "Evaluates Operating Systems Deadlocks and Four Coffman Deadlock Conditions comprehension."
+  },
+  {
+    "id": "os_004",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Deadlock Avoidance using Dijkstra's Banker's Algorithm and Safe State determination.",
+    "difficulty": "hard",
+    "topic": "Deadlocks",
+    "concept": "Banker's Algorithm & Safe States",
+    "questionFamily": "algorithm",
+    "tags": [
+      "Banker's algorithm",
+      "deadlock avoidance",
+      "safe state",
+      "resource allocation graph"
+    ],
+    "idealAnswer": "Banker's algorithm evaluates resource allocation requests by simulating whether granting resources leaves the system in a 'Safe State' (where at least one sequence exists where all processes can finish). If unsafe, the request is denied.",
+    "ideal_answer": "Banker's algorithm evaluates resource allocation requests by simulating whether granting resources leaves the system in a 'Safe State' (where at least one sequence exists where all processes can finish). If unsafe, the request is denied.",
+    "expected_concepts": [
+      "Banker's algorithm",
+      "deadlock avoidance",
+      "safe state",
+      "resource allocation graph"
+    ],
+    "explanation": "Evaluates Operating Systems Deadlocks and Banker's Algorithm & Safe States comprehension."
+  },
+  {
+    "id": "os_005",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Process Synchronization: Critical Section Problem, Mutex, Counting Semaphore, and Binary Semaphore.",
+    "difficulty": "medium",
+    "topic": "Synchronization",
+    "concept": "Semaphores vs Mutexes",
+    "questionFamily": "comparison",
+    "tags": [
+      "critical section",
+      "mutex",
+      "semaphore",
+      "counting semaphore",
+      "race condition"
+    ],
+    "idealAnswer": "A Critical Section is code accessing shared resources. A Mutex is a locking mechanism with ownership (only locking thread can unlock). A Semaphore is a signaling mechanism: binary (0 or 1) or counting (tracking N available resource units via wait/signal).",
+    "ideal_answer": "A Critical Section is code accessing shared resources. A Mutex is a locking mechanism with ownership (only locking thread can unlock). A Semaphore is a signaling mechanism: binary (0 or 1) or counting (tracking N available resource units via wait/signal).",
+    "expected_concepts": [
+      "critical section",
+      "mutex",
+      "semaphore",
+      "counting semaphore"
+    ],
+    "explanation": "Evaluates Operating Systems Synchronization and Semaphores vs Mutexes comprehension."
+  },
+  {
+    "id": "os_006",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Producer-Consumer Problem (Bounded Buffer), and how is it solved using semaphores and mutex locks?",
+    "difficulty": "medium",
+    "topic": "Synchronization",
+    "concept": "Producer-Consumer with Semaphores",
+    "questionFamily": "implementation",
+    "tags": [
+      "producer-consumer",
+      "bounded buffer",
+      "empty semaphore",
+      "full semaphore",
+      "mutex"
+    ],
+    "idealAnswer": "Producers add items to a buffer; consumers remove items. Solved using 3 primitives: 'mutex' for exclusive buffer access, 'empty' counting semaphore (initialized to buffer capacity), and 'full' counting semaphore (initialized to 0).",
+    "ideal_answer": "Producers add items to a buffer; consumers remove items. Solved using 3 primitives: 'mutex' for exclusive buffer access, 'empty' counting semaphore (initialized to buffer capacity), and 'full' counting semaphore (initialized to 0).",
+    "expected_concepts": [
+      "producer-consumer",
+      "bounded buffer",
+      "empty semaphore",
+      "full semaphore"
+    ],
+    "explanation": "Evaluates Operating Systems Synchronization and Producer-Consumer with Semaphores comprehension."
+  },
+  {
+    "id": "os_007",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Virtual Memory, Paging, Page Tables, and the Translation Lookaside Buffer (TLB).",
+    "difficulty": "hard",
+    "topic": "Memory Management",
+    "concept": "Virtual Memory, Paging, & TLB",
+    "questionFamily": "architecture",
+    "tags": [
+      "virtual memory",
+      "paging",
+      "page table",
+      "TLB",
+      "MMU",
+      "virtual address"
+    ],
+    "idealAnswer": "Virtual memory gives processes the illusion of large contiguous memory. Virtual addresses are split into Page Number and Offset. The MMU consults the hardware TLB (high-speed associative cache) and Page Table to translate virtual pages into physical memory frames.",
+    "ideal_answer": "Virtual memory gives processes the illusion of large contiguous memory. Virtual addresses are split into Page Number and Offset. The MMU consults the hardware TLB (high-speed associative cache) and Page Table to translate virtual pages into physical memory frames.",
+    "expected_concepts": [
+      "virtual memory",
+      "paging",
+      "page table",
+      "TLB"
+    ],
+    "explanation": "Evaluates Operating Systems Memory Management and Virtual Memory, Paging, & TLB comprehension."
+  },
+  {
+    "id": "os_008",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Page Fault, and how does the OS handle page faults using demand paging and disk swap space?",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Page Fault Handling & Demand Paging",
+    "questionFamily": "architecture",
+    "tags": [
+      "page fault",
+      "demand paging",
+      "swap space",
+      "disk I/O",
+      "interrupt"
+    ],
+    "idealAnswer": "A page fault occurs when a process accesses a page marked invalid (not loaded in RAM). The CPU generates a page fault interrupt: OS locates the page in swap disk space, finds an empty RAM frame, reads page from disk, updates page table, and restarts instruction.",
+    "ideal_answer": "A page fault occurs when a process accesses a page marked invalid (not loaded in RAM). The CPU generates a page fault interrupt: OS locates the page in swap disk space, finds an empty RAM frame, reads page from disk, updates page table, and restarts instruction.",
+    "expected_concepts": [
+      "page fault",
+      "demand paging",
+      "swap space",
+      "disk I/O"
+    ],
+    "explanation": "Evaluates Operating Systems Memory Management and Page Fault Handling & Demand Paging comprehension."
+  },
+  {
+    "id": "os_009",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Page Replacement Algorithms: FIFO, Optimal (Belady's Optimal), LRU, and the Clock Algorithm (Second Chance).",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Page Replacement Algorithms",
+    "questionFamily": "comparison",
+    "tags": [
+      "page replacement",
+      "LRU",
+      "FIFO",
+      "Belady's anomaly",
+      "Clock algorithm"
+    ],
+    "idealAnswer": "When RAM is full, page replacement selects a victim frame. FIFO evicts oldest page (susceptible to Belady's anomaly). Optimal evicts page needed furthest in future (unrealizable baseline). LRU evicts least-recently-used page. Clock algorithm approximates LRU using a reference bit.",
+    "ideal_answer": "When RAM is full, page replacement selects a victim frame. FIFO evicts oldest page (susceptible to Belady's anomaly). Optimal evicts page needed furthest in future (unrealizable baseline). LRU evicts least-recently-used page. Clock algorithm approximates LRU using a reference bit.",
+    "expected_concepts": [
+      "page replacement",
+      "LRU",
+      "FIFO",
+      "Belady's anomaly"
+    ],
+    "explanation": "Evaluates Operating Systems Memory Management and Page Replacement Algorithms comprehension."
+  },
+  {
+    "id": "os_010",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Thrashing in Operating Systems, and how does the Working Set Model prevent it?",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Thrashing & Working Set Model",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "thrashing",
+      "working set model",
+      "page fault rate",
+      "swap thrashing",
+      "CPU utilization"
+    ],
+    "idealAnswer": "Thrashing occurs when total memory demand exceeds physical RAM: processes spend more time swapping pages to/from disk than executing CPU instructions (CPU utilization collapses). The Working Set Model monitors pages referenced in time delta to ensure each process has its minimum working set.",
+    "ideal_answer": "Thrashing occurs when total memory demand exceeds physical RAM: processes spend more time swapping pages to/from disk than executing CPU instructions (CPU utilization collapses). The Working Set Model monitors pages referenced in time delta to ensure each process has its minimum working set.",
+    "expected_concepts": [
+      "thrashing",
+      "working set model",
+      "page fault rate",
+      "swap thrashing"
+    ],
+    "explanation": "Evaluates Operating Systems Memory Management and Thrashing & Working Set Model comprehension."
+  },
+  {
+    "id": "os_011",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Inter-Process Communication (IPC) mechanisms: Pipes, Named Pipes (FIFOs), Message Queues, Shared Memory, and Sockets.",
+    "difficulty": "medium",
+    "topic": "IPC",
+    "concept": "IPC Mechanisms Comparison",
+    "questionFamily": "comparison",
+    "tags": [
+      "IPC",
+      "pipes",
+      "shared memory",
+      "message queues",
+      "UNIX domain sockets"
+    ],
+    "idealAnswer": "Pipes provide unidirectional byte streams between related processes. Shared Memory maps common RAM frames into both process address spaces (fastest, requires synchronization). Sockets provide network and local (UNIX domain) bidirectional message streams.",
+    "ideal_answer": "Pipes provide unidirectional byte streams between related processes. Shared Memory maps common RAM frames into both process address spaces (fastest, requires synchronization). Sockets provide network and local (UNIX domain) bidirectional message streams.",
+    "expected_concepts": [
+      "IPC",
+      "pipes",
+      "shared memory",
+      "message queues"
+    ],
+    "explanation": "Evaluates Operating Systems IPC and IPC Mechanisms Comparison comprehension."
+  },
+  {
+    "id": "os_012",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between User Mode and Kernel Mode (Dual-Mode Operation), and how do System Calls and Context Switches work?",
+    "difficulty": "easy",
+    "topic": "OS Architecture",
+    "concept": "User Mode vs Kernel Mode & System Calls",
+    "questionFamily": "architecture",
+    "tags": [
+      "user mode",
+      "kernel mode",
+      "system call",
+      "trap instruction",
+      "context switch",
+      "privilege"
+    ],
+    "idealAnswer": "CPUs enforce dual-mode operation: User Mode (restricted instructions, cannot access raw hardware) and Kernel Mode (unrestricted hardware access). System calls execute a software interrupt/trap switching CPU privilege to kernel mode to perform privileged I/O operations.",
+    "ideal_answer": "CPUs enforce dual-mode operation: User Mode (restricted instructions, cannot access raw hardware) and Kernel Mode (unrestricted hardware access). System calls execute a software interrupt/trap switching CPU privilege to kernel mode to perform privileged I/O operations.",
+    "expected_concepts": [
+      "user mode",
+      "kernel mode",
+      "system call",
+      "trap instruction"
+    ],
+    "explanation": "Evaluates Operating Systems OS Architecture and User Mode vs Kernel Mode & System Calls comprehension."
+  },
+  {
+    "id": "os_013",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain File System allocation methods: Contiguous, Linked List, and Inode-based Indexed Allocation (Ext4).",
+    "difficulty": "medium",
+    "topic": "File Systems",
+    "concept": "File System Allocation & Inodes",
+    "questionFamily": "architecture",
+    "tags": [
+      "file systems",
+      "inode",
+      "indexed allocation",
+      "direct blocks",
+      "indirect blocks",
+      "ext4"
+    ],
+    "idealAnswer": "Contiguous allocation suffers from external fragmentation. Linked allocation suffers from slow random access. Inode-based allocation stores file metadata, direct block pointers, single indirect, double indirect, and triple indirect pointers to support massive files with fast random access.",
+    "ideal_answer": "Contiguous allocation suffers from external fragmentation. Linked allocation suffers from slow random access. Inode-based allocation stores file metadata, direct block pointers, single indirect, double indirect, and triple indirect pointers to support massive files with fast random access.",
+    "expected_concepts": [
+      "file systems",
+      "inode",
+      "indexed allocation",
+      "direct blocks"
+    ],
+    "explanation": "Evaluates Operating Systems File Systems and File System Allocation & Inodes comprehension."
+  },
+  {
+    "id": "os_014",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Memory Fragmentation (Internal vs External Fragmentation) and how does Paging and Compaction resolve it?",
+    "difficulty": "easy",
+    "topic": "Memory Management",
+    "concept": "Internal vs External Fragmentation",
+    "questionFamily": "comparison",
+    "tags": [
+      "internal fragmentation",
+      "external fragmentation",
+      "compaction",
+      "paging",
+      "memory allocation"
+    ],
+    "idealAnswer": "External fragmentation occurs in contiguous segmentation when total free memory exists but is partitioned into small unusable holes (solved by Paging). Internal fragmentation occurs when allocated fixed-size memory blocks (e.g. 4KB pages) exceed actual process data size.",
+    "ideal_answer": "External fragmentation occurs in contiguous segmentation when total free memory exists but is partitioned into small unusable holes (solved by Paging). Internal fragmentation occurs when allocated fixed-size memory blocks (e.g. 4KB pages) exceed actual process data size.",
+    "expected_concepts": [
+      "internal fragmentation",
+      "external fragmentation",
+      "compaction",
+      "paging"
+    ],
+    "explanation": "Evaluates Operating Systems Memory Management and Internal vs External Fragmentation comprehension."
+  },
+  {
+    "id": "os_015",
+    "skill": "Operating Systems",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Monolithic Kernels (Linux) vs Microkernels (Mach / seL4) in terms of architecture, performance, and fault isolation.",
+    "difficulty": "medium",
+    "topic": "Kernel Architecture",
+    "concept": "Monolithic Kernel vs Microkernel",
+    "questionFamily": "comparison",
+    "tags": [
+      "monolithic kernel",
+      "microkernel",
+      "Linux",
+      "IPC overhead",
+      "fault isolation"
+    ],
+    "idealAnswer": "Monolithic kernels run all OS services (file systems, drivers, network stacks) in kernel space (high performance, but a driver crash panics entire OS). Microkernels run only minimal primitives (IPC, basic memory, scheduling) in kernel space, running drivers and file systems as user-space servers (high reliability, IPC overhead).",
+    "ideal_answer": "Monolithic kernels run all OS services (file systems, drivers, network stacks) in kernel space (high performance, but a driver crash panics entire OS). Microkernels run only minimal primitives (IPC, basic memory, scheduling) in kernel space, running drivers and file systems as user-space servers (high reliability, IPC overhead).",
+    "expected_concepts": [
+      "monolithic kernel",
+      "microkernel",
+      "Linux",
+      "IPC overhead"
+    ],
+    "explanation": "Evaluates Operating Systems Kernel Architecture and Monolithic Kernel vs Microkernel comprehension."
   }
 ]

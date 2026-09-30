@@ -1,44 +1,411 @@
 [
   {
-    "id": "MICROSERVICES_001",
+    "id": "microservices_001",
     "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Microservices Architecture versus Monolithic Architecture and the key tradeoffs (complexity, deployment, data consistency).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Microservices in modern software engineering?",
-    "expected_concepts": [
-      "Microservices fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "Architecture",
+    "concept": "Microservices vs Monolith Tradeoffs",
+    "questionFamily": "comparison",
+    "tags": [
+      "microservices",
+      "monolith",
+      "tradeoffs",
+      "distributed systems",
+      "independent deployment"
     ],
-    "ideal_answer": "Microservices is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Microservices."
+    "idealAnswer": "Monoliths package all components in a single codebase (simple deployment, strong consistency). Microservices decompose systems into domain-aligned independently deployable services (fine-grained scaling, fault isolation) at the cost of distributed data management and network latency.",
+    "ideal_answer": "Monoliths package all components in a single codebase (simple deployment, strong consistency). Microservices decompose systems into domain-aligned independently deployable services (fine-grained scaling, fault isolation) at the cost of distributed data management and network latency.",
+    "expected_concepts": [
+      "microservices",
+      "monolith",
+      "tradeoffs",
+      "distributed systems"
+    ],
+    "explanation": "Evaluates Microservices Architecture and Microservices vs Monolith Tradeoffs comprehension."
   },
   {
-    "id": "MICROSERVICES_002",
+    "id": "microservices_002",
     "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Domain-Driven Design (DDD) in Microservices, and how do Bounded Contexts define service boundaries?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Microservices in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Design Principles",
+    "concept": "DDD & Bounded Contexts",
+    "questionFamily": "design",
+    "tags": [
+      "DDD",
+      "Bounded Context",
+      "Domain-Driven Design",
+      "ubiquitous language",
+      "service boundary"
     ],
-    "ideal_answer": "Common challenges with Microservices include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Microservices."
+    "idealAnswer": "Domain-Driven Design breaks complex business domains into isolated Bounded Contexts where specific ubiquitous domain terms and models apply unambiguously, defining natural microservice boundaries.",
+    "ideal_answer": "Domain-Driven Design breaks complex business domains into isolated Bounded Contexts where specific ubiquitous domain terms and models apply unambiguously, defining natural microservice boundaries.",
+    "expected_concepts": [
+      "DDD",
+      "Bounded Context",
+      "Domain-Driven Design",
+      "ubiquitous language"
+    ],
+    "explanation": "Evaluates Microservices Design Principles and DDD & Bounded Contexts comprehension."
   },
   {
-    "id": "MICROSERVICES_003",
+    "id": "microservices_003",
     "skill": "Microservices",
-    "difficulty": "hard",
-    "question": "How does Microservices handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the API Gateway Pattern and its responsibilities (Routing, Aggregation, Rate Limiting, Auth, SSL Termination).",
+    "difficulty": "medium",
+    "topic": "Gateway & Routing",
+    "concept": "API Gateway Pattern",
+    "questionFamily": "architecture",
+    "tags": [
+      "API Gateway",
+      "BFF",
+      "request routing",
+      "authentication",
+      "rate limiting",
+      "SSL termination"
     ],
-    "ideal_answer": "Microservices handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Microservices."
+    "idealAnswer": "An API Gateway acts as a single entry point for external client traffic. It routes requests, aggregates responses from multiple internal microservices (BFF - Backend for Frontend), handles authentication, rate limiting, and SSL termination.",
+    "ideal_answer": "An API Gateway acts as a single entry point for external client traffic. It routes requests, aggregates responses from multiple internal microservices (BFF - Backend for Frontend), handles authentication, rate limiting, and SSL termination.",
+    "expected_concepts": [
+      "API Gateway",
+      "BFF",
+      "request routing",
+      "authentication"
+    ],
+    "explanation": "Evaluates Microservices Gateway & Routing and API Gateway Pattern comprehension."
+  },
+  {
+    "id": "microservices_004",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Database-per-Service pattern, and why should microservices avoid sharing a common database?",
+    "difficulty": "medium",
+    "topic": "Data Management",
+    "concept": "Database-per-Service Pattern",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "database-per-service",
+      "data decoupling",
+      "shared database antipattern",
+      "loose coupling"
+    ],
+    "idealAnswer": "Each microservice must encapsulate its own private database to ensure loose coupling, independent schema migrations, and freedom to choose optimal database technologies (polyglot persistence). Sharing databases creates tight coupling and schema lock.",
+    "ideal_answer": "Each microservice must encapsulate its own private database to ensure loose coupling, independent schema migrations, and freedom to choose optimal database technologies (polyglot persistence). Sharing databases creates tight coupling and schema lock.",
+    "expected_concepts": [
+      "database-per-service",
+      "data decoupling",
+      "shared database antipattern",
+      "loose coupling"
+    ],
+    "explanation": "Evaluates Microservices Data Management and Database-per-Service Pattern comprehension."
+  },
+  {
+    "id": "microservices_005",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you manage Distributed Transactions in Microservices using the Saga Pattern (Choreography vs Orchestration)?",
+    "difficulty": "hard",
+    "topic": "Distributed Transactions",
+    "concept": "Saga Pattern (Choreography vs Orchestration)",
+    "questionFamily": "architecture",
+    "tags": [
+      "Saga Pattern",
+      "Choreography",
+      "Orchestration",
+      "compensating transactions",
+      "eventual consistency"
+    ],
+    "idealAnswer": "Traditional 2PC distributed locking is too fragile for microservices. The Saga pattern manages transactions as sequences of local transactions. Choreography coordinates services via distributed event pub/sub. Orchestration uses a centralized orchestrator coordinator with compensating rollback actions.",
+    "ideal_answer": "Traditional 2PC distributed locking is too fragile for microservices. The Saga pattern manages transactions as sequences of local transactions. Choreography coordinates services via distributed event pub/sub. Orchestration uses a centralized orchestrator coordinator with compensating rollback actions.",
+    "expected_concepts": [
+      "Saga Pattern",
+      "Choreography",
+      "Orchestration",
+      "compensating transactions"
+    ],
+    "explanation": "Evaluates Microservices Distributed Transactions and Saga Pattern (Choreography vs Orchestration) comprehension."
+  },
+  {
+    "id": "microservices_006",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Event-Driven Architecture (EDA) in Microservices using message brokers (Apache Kafka, RabbitMQ) and Eventual Consistency.",
+    "difficulty": "medium",
+    "topic": "Event-Driven",
+    "concept": "Event-Driven Architecture & Eventual Consistency",
+    "questionFamily": "architecture",
+    "tags": [
+      "event-driven",
+      "Kafka",
+      "RabbitMQ",
+      "eventual consistency",
+      "asynchronous"
+    ],
+    "idealAnswer": "Services publish domain events to asynchronous message brokers when state changes. Downstream services subscribe and update their local stores asynchronously, achieving eventual consistency without synchronous blocking HTTP calls.",
+    "ideal_answer": "Services publish domain events to asynchronous message brokers when state changes. Downstream services subscribe and update their local stores asynchronously, achieving eventual consistency without synchronous blocking HTTP calls.",
+    "expected_concepts": [
+      "event-driven",
+      "Kafka",
+      "RabbitMQ",
+      "eventual consistency"
+    ],
+    "explanation": "Evaluates Microservices Event-Driven and Event-Driven Architecture & Eventual Consistency comprehension."
+  },
+  {
+    "id": "microservices_007",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Transactional Outbox Pattern, and how does it guarantee atomic database updates and message publishing without dual writes?",
+    "difficulty": "hard",
+    "topic": "Data Patterns",
+    "concept": "Transactional Outbox Pattern",
+    "questionFamily": "design",
+    "tags": [
+      "Transactional Outbox",
+      "dual writes",
+      "Debezium",
+      "Change Data Capture",
+      "at-least-once"
+    ],
+    "idealAnswer": "Directly updating a database and publishing a message causes dual-write inconsistencies if one fails. The Outbox pattern writes domain entity changes and outbox event records into the same database within a single local transaction, while a CDC tool (Debezium/polling) tails the outbox to publish events.",
+    "ideal_answer": "Directly updating a database and publishing a message causes dual-write inconsistencies if one fails. The Outbox pattern writes domain entity changes and outbox event records into the same database within a single local transaction, while a CDC tool (Debezium/polling) tails the outbox to publish events.",
+    "expected_concepts": [
+      "Transactional Outbox",
+      "dual writes",
+      "Debezium",
+      "Change Data Capture"
+    ],
+    "explanation": "Evaluates Microservices Data Patterns and Transactional Outbox Pattern comprehension."
+  },
+  {
+    "id": "microservices_008",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain CQRS (Command Query Responsibility Segregation) and how it optimizes read-heavy vs write-heavy microservice operations.",
+    "difficulty": "hard",
+    "topic": "Data Patterns",
+    "concept": "CQRS Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "CQRS",
+      "Command",
+      "Query",
+      "read model",
+      "write model",
+      "projections"
+    ],
+    "idealAnswer": "CQRS separates write operations (Commands modifying state) from read operations (Queries retrieving state). The write database focuses on transactional consistency, while events asynchronously project data into denormalized read-optimized stores (Elasticsearch/Redis).",
+    "ideal_answer": "CQRS separates write operations (Commands modifying state) from read operations (Queries retrieving state). The write database focuses on transactional consistency, while events asynchronously project data into denormalized read-optimized stores (Elasticsearch/Redis).",
+    "expected_concepts": [
+      "CQRS",
+      "Command",
+      "Query",
+      "read model"
+    ],
+    "explanation": "Evaluates Microservices Data Patterns and CQRS Architecture comprehension."
+  },
+  {
+    "id": "microservices_009",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the Circuit Breaker Pattern (Resilience4j / Polly / Netflix Hystrix) and its three states (Closed, Open, Half-Open)?",
+    "difficulty": "medium",
+    "topic": "Resilience & Fault Tolerance",
+    "concept": "Circuit Breaker Pattern",
+    "questionFamily": "architecture",
+    "tags": [
+      "circuit breaker",
+      "Closed",
+      "Open",
+      "Half-Open",
+      "cascading failure",
+      "fallback"
+    ],
+    "idealAnswer": "Circuit breakers prevent cascading system outages when downstream services fail: Closed (normal execution); Open (trips when error rate exceeds threshold, instantly rejecting calls with fallback); Half-Open (allows trial requests to test if downstream service recovered).",
+    "ideal_answer": "Circuit breakers prevent cascading system outages when downstream services fail: Closed (normal execution); Open (trips when error rate exceeds threshold, instantly rejecting calls with fallback); Half-Open (allows trial requests to test if downstream service recovered).",
+    "expected_concepts": [
+      "circuit breaker",
+      "Closed",
+      "Open",
+      "Half-Open"
+    ],
+    "explanation": "Evaluates Microservices Resilience & Fault Tolerance and Circuit Breaker Pattern comprehension."
+  },
+  {
+    "id": "microservices_010",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Service Discovery (Client-side vs Server-side discovery with Consul / Eureka / Kubernetes DNS).",
+    "difficulty": "medium",
+    "topic": "Service Discovery",
+    "concept": "Service Discovery Mechanisms",
+    "questionFamily": "architecture",
+    "tags": [
+      "service discovery",
+      "Consul",
+      "Eureka",
+      "Kubernetes DNS",
+      "service registry"
+    ],
+    "idealAnswer": "Service Discovery dynamically locates ephemeral microservice instances. In Server-side discovery (Kubernetes DNS/ClusterIP), clients query a stable DNS/load balancer. In Client-side discovery (Eureka/Consul), clients query a registry to resolve IP addresses.",
+    "ideal_answer": "Service Discovery dynamically locates ephemeral microservice instances. In Server-side discovery (Kubernetes DNS/ClusterIP), clients query a stable DNS/load balancer. In Client-side discovery (Eureka/Consul), clients query a registry to resolve IP addresses.",
+    "expected_concepts": [
+      "service discovery",
+      "Consul",
+      "Eureka",
+      "Kubernetes DNS"
+    ],
+    "explanation": "Evaluates Microservices Service Discovery and Service Discovery Mechanisms comprehension."
+  },
+  {
+    "id": "microservices_011",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is a Service Mesh (Istio / Linkerd), and how does the Sidecar Proxy pattern manage traffic, mTLS, and telemetry?",
+    "difficulty": "hard",
+    "topic": "Service Mesh",
+    "concept": "Service Mesh & Sidecar Proxies",
+    "questionFamily": "architecture",
+    "tags": [
+      "Service Mesh",
+      "Istio",
+      "Envoy",
+      "sidecar proxy",
+      "mTLS",
+      "traffic management"
+    ],
+    "idealAnswer": "A Service Mesh manages service-to-service communication at the infrastructure layer using Envoy sidecar proxies deployed alongside each container. It provides mutual TLS (mTLS) encryption, traffic routing (canary deployments), and telemetry without changing application code.",
+    "ideal_answer": "A Service Mesh manages service-to-service communication at the infrastructure layer using Envoy sidecar proxies deployed alongside each container. It provides mutual TLS (mTLS) encryption, traffic routing (canary deployments), and telemetry without changing application code.",
+    "expected_concepts": [
+      "Service Mesh",
+      "Istio",
+      "Envoy",
+      "sidecar proxy"
+    ],
+    "explanation": "Evaluates Microservices Service Mesh and Service Mesh & Sidecar Proxies comprehension."
+  },
+  {
+    "id": "microservices_012",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Distributed Tracing work in Microservices using OpenTelemetry, Jaeger, and Trace/Span IDs across HTTP headers (W3C TraceContext)?",
+    "difficulty": "medium",
+    "topic": "Observability",
+    "concept": "Distributed Tracing & OpenTelemetry",
+    "questionFamily": "implementation",
+    "tags": [
+      "distributed tracing",
+      "OpenTelemetry",
+      "Jaeger",
+      "TraceId",
+      "SpanId",
+      "W3C TraceContext"
+    ],
+    "idealAnswer": "Distributed tracing tracks requests across service hops. An initial service generates a TraceId and SpanId injected into HTTP headers (traceparent). Downstream services propagate headers and report timing spans to collectors like Jaeger to visualize request latency trees.",
+    "ideal_answer": "Distributed tracing tracks requests across service hops. An initial service generates a TraceId and SpanId injected into HTTP headers (traceparent). Downstream services propagate headers and report timing spans to collectors like Jaeger to visualize request latency trees.",
+    "expected_concepts": [
+      "distributed tracing",
+      "OpenTelemetry",
+      "Jaeger",
+      "TraceId"
+    ],
+    "explanation": "Evaluates Microservices Observability and Distributed Tracing & OpenTelemetry comprehension."
+  },
+  {
+    "id": "microservices_013",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Centralized Logging and Metrics collection in Microservices (ELK Stack / Grafana Loki and Prometheus).",
+    "difficulty": "easy",
+    "topic": "Observability",
+    "concept": "Centralized Logging & Prometheus Metrics",
+    "questionFamily": "best_practice",
+    "tags": [
+      "ELK stack",
+      "Prometheus",
+      "Grafana",
+      "Loki",
+      "structured logging"
+    ],
+    "idealAnswer": "Microservices emit structured JSON logs and Prometheus metrics. DaemonSets (Fluentbit/Promtail) ship logs to centralized repositories (Elasticsearch/Loki), and Prometheus scrapes metrics for Grafana visualization and alerting.",
+    "ideal_answer": "Microservices emit structured JSON logs and Prometheus metrics. DaemonSets (Fluentbit/Promtail) ship logs to centralized repositories (Elasticsearch/Loki), and Prometheus scrapes metrics for Grafana visualization and alerting.",
+    "expected_concepts": [
+      "ELK stack",
+      "Prometheus",
+      "Grafana",
+      "Loki"
+    ],
+    "explanation": "Evaluates Microservices Observability and Centralized Logging & Prometheus Metrics comprehension."
+  },
+  {
+    "id": "microservices_014",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Blue-Green Deployments and Canary Releases for zero-downtime microservice updates?",
+    "difficulty": "medium",
+    "topic": "Deployment Strategies",
+    "concept": "Blue-Green vs Canary Deployments",
+    "questionFamily": "comparison",
+    "tags": [
+      "blue-green deployment",
+      "canary release",
+      "zero-downtime",
+      "traffic shifting",
+      "rollback"
+    ],
+    "idealAnswer": "Blue-Green deploys a complete parallel new environment (Green) and switches 100% router traffic instantly from Blue to Green. Canary releases route a small percentage (e.g. 5%) of production traffic to the new version, monitoring errors before full rollout.",
+    "ideal_answer": "Blue-Green deploys a complete parallel new environment (Green) and switches 100% router traffic instantly from Blue to Green. Canary releases route a small percentage (e.g. 5%) of production traffic to the new version, monitoring errors before full rollout.",
+    "expected_concepts": [
+      "blue-green deployment",
+      "canary release",
+      "zero-downtime",
+      "traffic shifting"
+    ],
+    "explanation": "Evaluates Microservices Deployment Strategies and Blue-Green vs Canary Deployments comprehension."
+  },
+  {
+    "id": "microservices_015",
+    "skill": "Microservices",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Bulkhead and Retry with Exponential Backoff patterns for fault tolerance in distributed systems.",
+    "difficulty": "medium",
+    "topic": "Resilience",
+    "concept": "Bulkhead Pattern & Exponential Backoff",
+    "questionFamily": "optimization",
+    "tags": [
+      "bulkhead pattern",
+      "retry",
+      "exponential backoff",
+      "jitter",
+      "resource isolation"
+    ],
+    "idealAnswer": "The Bulkhead pattern isolates resources (thread pools/connection pools) per dependency so that an outage in one downstream service cannot exhaust threads for other services. Retries with exponential backoff and jitter prevent retry stampedes on recovering services.",
+    "ideal_answer": "The Bulkhead pattern isolates resources (thread pools/connection pools) per dependency so that an outage in one downstream service cannot exhaust threads for other services. Retries with exponential backoff and jitter prevent retry stampedes on recovering services.",
+    "expected_concepts": [
+      "bulkhead pattern",
+      "retry",
+      "exponential backoff",
+      "jitter"
+    ],
+    "explanation": "Evaluates Microservices Resilience and Bulkhead Pattern & Exponential Backoff comprehension."
   }
 ]

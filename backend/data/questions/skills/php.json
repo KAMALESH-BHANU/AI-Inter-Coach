@@ -1,0 +1,403 @@
+[
+  {
+    "id": "php_001",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain PHP's request lifecycle from web server (Nginx/Apache with PHP-FPM) to script termination.",
+    "difficulty": "medium",
+    "topic": "Architecture",
+    "concept": "PHP-FPM Request Lifecycle",
+    "questionFamily": "architecture",
+    "tags": [
+      "PHP-FPM",
+      "FastCGI",
+      "opcache",
+      "lifecycle",
+      "stateless"
+    ],
+    "idealAnswer": "PHP follows a share-nothing, stateless lifecycle. FastCGI/PHP-FPM spawns worker processes that parse the request, initialize the environment, execute the script, return the HTTP response, and free all request memory immediately upon completion.",
+    "ideal_answer": "PHP follows a share-nothing, stateless lifecycle. FastCGI/PHP-FPM spawns worker processes that parse the request, initialize the environment, execute the script, return the HTTP response, and free all request memory immediately upon completion.",
+    "expected_concepts": [
+      "PHP-FPM",
+      "FastCGI",
+      "opcache",
+      "lifecycle"
+    ],
+    "explanation": "Evaluates PHP Architecture and PHP-FPM Request Lifecycle comprehension."
+  },
+  {
+    "id": "php_002",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does OPcache improve PHP performance, and what role does JIT compilation play in PHP 8?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "OPcache & JIT Compilation",
+    "questionFamily": "optimization",
+    "tags": [
+      "OPcache",
+      "bytecode",
+      "JIT",
+      "PHP 8",
+      "performance"
+    ],
+    "idealAnswer": "OPcache stores precompiled script bytecode in shared memory, skipping parsing and compilation on subsequent requests. The JIT (Just-In-Time) compiler in PHP 8 compiles frequently executed opcode sequences directly into native CPU machine code.",
+    "ideal_answer": "OPcache stores precompiled script bytecode in shared memory, skipping parsing and compilation on subsequent requests. The JIT (Just-In-Time) compiler in PHP 8 compiles frequently executed opcode sequences directly into native CPU machine code.",
+    "expected_concepts": [
+      "OPcache",
+      "bytecode",
+      "JIT",
+      "PHP 8"
+    ],
+    "explanation": "Evaluates PHP Performance and OPcache & JIT Compilation comprehension."
+  },
+  {
+    "id": "php_003",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are modern OOP features in PHP 8+ (Constructor property promotion, Match expressions, Named arguments, Attributes)?",
+    "difficulty": "easy",
+    "topic": "Modern PHP",
+    "concept": "PHP 8 Modern Features",
+    "questionFamily": "implementation",
+    "tags": [
+      "PHP 8",
+      "property promotion",
+      "match expression",
+      "named arguments",
+      "attributes"
+    ],
+    "idealAnswer": "PHP 8 introduced: Constructor property promotion to define and assign class properties directly in __construct parameters; match expressions as strict, value-returning alternatives to switch; named arguments; and Attributes for structured metadata annotations.",
+    "ideal_answer": "PHP 8 introduced: Constructor property promotion to define and assign class properties directly in __construct parameters; match expressions as strict, value-returning alternatives to switch; named arguments; and Attributes for structured metadata annotations.",
+    "expected_concepts": [
+      "PHP 8",
+      "property promotion",
+      "match expression",
+      "named arguments"
+    ],
+    "explanation": "Evaluates PHP Modern PHP and PHP 8 Modern Features comprehension."
+  },
+  {
+    "id": "php_004",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Type Hinting, Strict Types (declare(strict_types=1)), and Union/Intersection types in PHP 8+.",
+    "difficulty": "medium",
+    "topic": "Type System",
+    "concept": "Strict Types & Type Declarations",
+    "questionFamily": "best_practice",
+    "tags": [
+      "strict_types",
+      "type hinting",
+      "union types",
+      "intersection types",
+      "type safety"
+    ],
+    "idealAnswer": "By default, PHP coerces scalar types. Setting declare(strict_types=1) forces exact type checking for function parameters and return values. PHP 8 added union types (TypeA|TypeB) and PHP 8.1 added intersection types (TypeA&TypeB).",
+    "ideal_answer": "By default, PHP coerces scalar types. Setting declare(strict_types=1) forces exact type checking for function parameters and return values. PHP 8 added union types (TypeA|TypeB) and PHP 8.1 added intersection types (TypeA&TypeB).",
+    "expected_concepts": [
+      "strict_types",
+      "type hinting",
+      "union types",
+      "intersection types"
+    ],
+    "explanation": "Evaluates PHP Type System and Strict Types & Type Declarations comprehension."
+  },
+  {
+    "id": "php_005",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Traits in PHP, and how do they solve single inheritance limitations while resolving method naming collisions?",
+    "difficulty": "medium",
+    "topic": "OOP",
+    "concept": "Traits & Collision Resolution",
+    "questionFamily": "design",
+    "tags": [
+      "traits",
+      "multiple inheritance",
+      "insteadof",
+      "as keyword"
+    ],
+    "idealAnswer": "Traits provide a mechanism for horizontal code reuse across independent classes. If two traits declare identical method names in the same class, PHP throws a fatal error unless resolved using the 'insteadof' and 'as' keywords.",
+    "ideal_answer": "Traits provide a mechanism for horizontal code reuse across independent classes. If two traits declare identical method names in the same class, PHP throws a fatal error unless resolved using the 'insteadof' and 'as' keywords.",
+    "expected_concepts": [
+      "traits",
+      "multiple inheritance",
+      "insteadof",
+      "as keyword"
+    ],
+    "explanation": "Evaluates PHP OOP and Traits & Collision Resolution comprehension."
+  },
+  {
+    "id": "php_006",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Autoloading in PHP and how Composer implements the PSR-4 standard.",
+    "difficulty": "medium",
+    "topic": "Architecture & Standards",
+    "concept": "PSR-4 Autoloading & Composer",
+    "questionFamily": "architecture",
+    "tags": [
+      "autoloading",
+      "PSR-4",
+      "Composer",
+      "namespaces",
+      "spl_autoload_register"
+    ],
+    "idealAnswer": "Autoloading loads class files on demand when a class is first referenced. The PSR-4 standard maps fully qualified class namespaces to specific directory file paths, which Composer generates into an optimized autoload map (vendor/autoload.php).",
+    "ideal_answer": "Autoloading loads class files on demand when a class is first referenced. The PSR-4 standard maps fully qualified class namespaces to specific directory file paths, which Composer generates into an optimized autoload map (vendor/autoload.php).",
+    "expected_concepts": [
+      "autoloading",
+      "PSR-4",
+      "Composer",
+      "namespaces"
+    ],
+    "explanation": "Evaluates PHP Architecture & Standards and PSR-4 Autoloading & Composer comprehension."
+  },
+  {
+    "id": "php_007",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Magic Methods in PHP (__get, __set, __call, __invoke, __construct, __destruct), and how do they work?",
+    "difficulty": "medium",
+    "topic": "OOP",
+    "concept": "Magic Methods",
+    "questionFamily": "implementation",
+    "tags": [
+      "magic methods",
+      "__call",
+      "__get",
+      "__set",
+      "__invoke",
+      "__toString"
+    ],
+    "idealAnswer": "Magic methods are special methods beginning with double underscores that intercept operations on objects: __get/__set for inaccessible properties, __call for undefined methods, __invoke to treat objects as functions, and __toString for string conversion.",
+    "ideal_answer": "Magic methods are special methods beginning with double underscores that intercept operations on objects: __get/__set for inaccessible properties, __call for undefined methods, __invoke to treat objects as functions, and __toString for string conversion.",
+    "expected_concepts": [
+      "magic methods",
+      "__call",
+      "__get",
+      "__set"
+    ],
+    "explanation": "Evaluates PHP OOP and Magic Methods comprehension."
+  },
+  {
+    "id": "php_008",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does PHP manage database connections securely using PDO (PHP Data Objects) and prepared statements?",
+    "difficulty": "easy",
+    "topic": "Database & Security",
+    "concept": "PDO & Prepared Statements",
+    "questionFamily": "security",
+    "tags": [
+      "PDO",
+      "SQL injection",
+      "prepared statements",
+      "parameter binding"
+    ],
+    "idealAnswer": "PDO provides a unified, driver-independent database access interface. Using prepared statements with bound parameters separates SQL query syntax from candidate input data, completely eliminating SQL injection vulnerabilities.",
+    "ideal_answer": "PDO provides a unified, driver-independent database access interface. Using prepared statements with bound parameters separates SQL query syntax from candidate input data, completely eliminating SQL injection vulnerabilities.",
+    "expected_concepts": [
+      "PDO",
+      "SQL injection",
+      "prepared statements",
+      "parameter binding"
+    ],
+    "explanation": "Evaluates PHP Database & Security and PDO & Prepared Statements comprehension."
+  },
+  {
+    "id": "php_009",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Session management and Cookie handling in PHP and security measures (session_regenerate_id, HttpOnly, SameSite).",
+    "difficulty": "medium",
+    "topic": "Security",
+    "concept": "Session Management & Security",
+    "questionFamily": "security",
+    "tags": [
+      "session",
+      "cookies",
+      "session fixation",
+      "HttpOnly",
+      "SameSite"
+    ],
+    "idealAnswer": "Sessions store server-side state identified by a session ID cookie (PHPSESSID). Security best practices include calling session_regenerate_id() on login to prevent session fixation, and configuring cookies with HttpOnly, Secure, and SameSite attributes.",
+    "ideal_answer": "Sessions store server-side state identified by a session ID cookie (PHPSESSID). Security best practices include calling session_regenerate_id() on login to prevent session fixation, and configuring cookies with HttpOnly, Secure, and SameSite attributes.",
+    "expected_concepts": [
+      "session",
+      "cookies",
+      "session fixation",
+      "HttpOnly"
+    ],
+    "explanation": "Evaluates PHP Security and Session Management & Security comprehension."
+  },
+  {
+    "id": "php_010",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does memory management and garbage collection work in PHP (Reference Counting and Cyclic Reference Collector)?",
+    "difficulty": "hard",
+    "topic": "Runtime & GC",
+    "concept": "PHP Memory & Garbage Collection",
+    "questionFamily": "architecture",
+    "tags": [
+      "reference counting",
+      "zval",
+      "garbage collection",
+      "cyclic references"
+    ],
+    "idealAnswer": "PHP variables are represented by zval containers tracking value type and reference count (refcount). When refcount drops to zero, memory is freed immediately. To collect circular references (e.g. object referencing itself), PHP runs a cyclic buffer GC algorithm.",
+    "ideal_answer": "PHP variables are represented by zval containers tracking value type and reference count (refcount). When refcount drops to zero, memory is freed immediately. To collect circular references (e.g. object referencing itself), PHP runs a cyclic buffer GC algorithm.",
+    "expected_concepts": [
+      "reference counting",
+      "zval",
+      "garbage collection",
+      "cyclic references"
+    ],
+    "explanation": "Evaluates PHP Runtime & GC and PHP Memory & Garbage Collection comprehension."
+  },
+  {
+    "id": "php_011",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Generators in PHP and the 'yield' keyword, and how do they optimize processing large datasets?",
+    "difficulty": "medium",
+    "topic": "Performance",
+    "concept": "Generators & Yield",
+    "questionFamily": "optimization",
+    "tags": [
+      "generators",
+      "yield",
+      "memory efficiency",
+      "iterators"
+    ],
+    "idealAnswer": "Generators allow writing functions that act as iterators using the 'yield' keyword. Rather than building and returning an entire large array in memory, a generator yields values one by one on demand with O(1) memory consumption.",
+    "ideal_answer": "Generators allow writing functions that act as iterators using the 'yield' keyword. Rather than building and returning an entire large array in memory, a generator yields values one by one on demand with O(1) memory consumption.",
+    "expected_concepts": [
+      "generators",
+      "yield",
+      "memory efficiency",
+      "iterators"
+    ],
+    "explanation": "Evaluates PHP Performance and Generators & Yield comprehension."
+  },
+  {
+    "id": "php_012",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dependency Injection and Inversion of Control (IoC) containers in modern PHP frameworks.",
+    "difficulty": "medium",
+    "topic": "Design Patterns",
+    "concept": "Dependency Injection & IoC",
+    "questionFamily": "best_practice",
+    "tags": [
+      "dependency injection",
+      "IoC container",
+      "service container",
+      "reflection"
+    ],
+    "idealAnswer": "Dependency Injection passes dependencies into objects via constructors rather than hardcoding them inside. IoC containers (like Laravel's Service Container or Symfony's DI Container) automatically resolve and inject class dependencies using PHP Reflection.",
+    "ideal_answer": "Dependency Injection passes dependencies into objects via constructors rather than hardcoding them inside. IoC containers (like Laravel's Service Container or Symfony's DI Container) automatically resolve and inject class dependencies using PHP Reflection.",
+    "expected_concepts": [
+      "dependency injection",
+      "IoC container",
+      "service container",
+      "reflection"
+    ],
+    "explanation": "Evaluates PHP Design Patterns and Dependency Injection & IoC comprehension."
+  },
+  {
+    "id": "php_013",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Enums in PHP 8.1 (Pure Enums vs Backed Enums) and their advantages over class constants?",
+    "difficulty": "easy",
+    "topic": "Modern PHP",
+    "concept": "Enums in PHP 8.1",
+    "questionFamily": "definition",
+    "tags": [
+      "enums",
+      "backed enums",
+      "pure enums",
+      "type safety"
+    ],
+    "idealAnswer": "Pure Enums define strict sets of named cases. Backed Enums associate each case with an underlying scalar value (string or int). They provide compile-time type safety, can implement interfaces, and have built-in methods (from(), tryFrom()).",
+    "ideal_answer": "Pure Enums define strict sets of named cases. Backed Enums associate each case with an underlying scalar value (string or int). They provide compile-time type safety, can implement interfaces, and have built-in methods (from(), tryFrom()).",
+    "expected_concepts": [
+      "enums",
+      "backed enums",
+      "pure enums",
+      "type safety"
+    ],
+    "explanation": "Evaluates PHP Modern PHP and Enums in PHP 8.1 comprehension."
+  },
+  {
+    "id": "php_014",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Fibers in PHP 8.1 and how they enable cooperative non-blocking asynchronous programming.",
+    "difficulty": "hard",
+    "topic": "Modern PHP",
+    "concept": "PHP 8.1 Fibers",
+    "questionFamily": "architecture",
+    "tags": [
+      "Fibers",
+      "async",
+      "event loop",
+      "non-blocking",
+      "coroutines"
+    ],
+    "idealAnswer": "Fibers are lightweight coroutines that maintain their own call stacks and can be paused (Fiber::suspend) and resumed (Fiber::resume). They allow asynchronous frameworks (like Revolt, Amp, ReactPHP) to write non-blocking asynchronous code in a synchronous style.",
+    "ideal_answer": "Fibers are lightweight coroutines that maintain their own call stacks and can be paused (Fiber::suspend) and resumed (Fiber::resume). They allow asynchronous frameworks (like Revolt, Amp, ReactPHP) to write non-blocking asynchronous code in a synchronous style.",
+    "expected_concepts": [
+      "Fibers",
+      "async",
+      "event loop",
+      "non-blocking"
+    ],
+    "explanation": "Evaluates PHP Modern PHP and PHP 8.1 Fibers comprehension."
+  },
+  {
+    "id": "php_015",
+    "skill": "PHP",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are PHP-FIG standards (PSR-1, PSR-4, PSR-7, PSR-12, PSR-18) and why are they important for interoperability?",
+    "difficulty": "medium",
+    "topic": "Architecture & Standards",
+    "concept": "PHP-FIG Standards (PSRs)",
+    "questionFamily": "best_practice",
+    "tags": [
+      "PSR",
+      "PHP-FIG",
+      "PSR-4",
+      "PSR-7",
+      "PSR-12",
+      "interoperability"
+    ],
+    "idealAnswer": "The PHP Framework Interop Group (PHP-FIG) establishes standards for interoperability: PSR-1 & PSR-12 define coding style, PSR-4 defines autoloading, PSR-7 & PSR-15 define HTTP message interfaces and middleware, and PSR-18 defines HTTP clients.",
+    "ideal_answer": "The PHP Framework Interop Group (PHP-FIG) establishes standards for interoperability: PSR-1 & PSR-12 define coding style, PSR-4 defines autoloading, PSR-7 & PSR-15 define HTTP message interfaces and middleware, and PSR-18 defines HTTP clients.",
+    "expected_concepts": [
+      "PSR",
+      "PHP-FIG",
+      "PSR-4",
+      "PSR-7"
+    ],
+    "explanation": "Evaluates PHP Architecture & Standards and PHP-FIG Standards (PSRs) comprehension."
+  }
+]

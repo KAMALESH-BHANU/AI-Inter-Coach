@@ -1,44 +1,410 @@
 [
   {
-    "id": "SCIKIT-LEARN_001",
+    "id": "sklearn_001",
     "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Unified API design of Scikit-learn: Estimators (fit), Transformers (transform), and Predictors (predict).",
     "difficulty": "easy",
-    "question": "What are the core features and primary use cases of Scikit-learn in modern software engineering?",
-    "expected_concepts": [
-      "Scikit-learn fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
+    "topic": "API Design",
+    "concept": "Estimator, Transformer, & Predictor API",
+    "questionFamily": "architecture",
+    "tags": [
+      "Scikit-learn",
+      "fit",
+      "transform",
+      "predict",
+      "fit_transform",
+      "unified API"
     ],
-    "ideal_answer": "Scikit-learn is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of Scikit-learn."
+    "idealAnswer": "Scikit-learn enforces a consistent interface: Estimators implement fit() to learn parameters from data. Transformers implement transform() and fit_transform() to modify data. Predictors implement predict() and predict_proba() to generate predictions.",
+    "ideal_answer": "Scikit-learn enforces a consistent interface: Estimators implement fit() to learn parameters from data. Transformers implement transform() and fit_transform() to modify data. Predictors implement predict() and predict_proba() to generate predictions.",
+    "expected_concepts": [
+      "Scikit-learn",
+      "fit",
+      "transform",
+      "predict"
+    ],
+    "explanation": "Evaluates Scikit-learn API Design and Estimator, Transformer, & Predictor API comprehension."
   },
   {
-    "id": "SCIKIT-LEARN_002",
+    "id": "sklearn_002",
     "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the Scikit-learn Pipeline (sklearn.pipeline.Pipeline) and ColumnTransformer for heterogeneous tabular feature processing.",
+    "difficulty": "easy",
+    "topic": "Pipelines",
+    "concept": "Pipeline & ColumnTransformer",
+    "questionFamily": "best_practice",
+    "tags": [
+      "Pipeline",
+      "ColumnTransformer",
+      "preprocessing",
+      "StandardScaler",
+      "OneHotEncoder"
+    ],
+    "idealAnswer": "Pipeline chains preprocessing transformers with a final estimator, preventing data leakage during cross-validation. ColumnTransformer applies specific transformers to designated column subsets (e.g. OneHotEncoder on categorical columns, StandardScaler on numeric columns).",
+    "ideal_answer": "Pipeline chains preprocessing transformers with a final estimator, preventing data leakage during cross-validation. ColumnTransformer applies specific transformers to designated column subsets (e.g. OneHotEncoder on categorical columns, StandardScaler on numeric columns).",
+    "expected_concepts": [
+      "Pipeline",
+      "ColumnTransformer",
+      "preprocessing",
+      "StandardScaler"
+    ],
+    "explanation": "Evaluates Scikit-learn Pipelines and Pipeline & ColumnTransformer comprehension."
+  },
+  {
+    "id": "sklearn_003",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare Feature Scaling techniques in Scikit-learn: StandardScaler, MinMaxScaler, RobustScaler (outlier resilience), and Normalizer.",
+    "difficulty": "easy",
+    "topic": "Preprocessing",
+    "concept": "Feature Scaling Techniques Comparison",
+    "questionFamily": "comparison",
+    "tags": [
+      "StandardScaler",
+      "MinMaxScaler",
+      "RobustScaler",
+      "Normalizer",
+      "outliers",
+      "z-score"
+    ],
+    "idealAnswer": "StandardScaler centers to mean 0 and unit variance (sensitive to outliers). MinMaxScaler scales values to [0, 1]. RobustScaler removes median and scales according to Interquartile Range (IQR), making it resilient to extreme outliers. Normalizer scales individual sample vectors to unit norm.",
+    "ideal_answer": "StandardScaler centers to mean 0 and unit variance (sensitive to outliers). MinMaxScaler scales values to [0, 1]. RobustScaler removes median and scales according to Interquartile Range (IQR), making it resilient to extreme outliers. Normalizer scales individual sample vectors to unit norm.",
+    "expected_concepts": [
+      "StandardScaler",
+      "MinMaxScaler",
+      "RobustScaler",
+      "Normalizer"
+    ],
+    "explanation": "Evaluates Scikit-learn Preprocessing and Feature Scaling Techniques Comparison comprehension."
+  },
+  {
+    "id": "sklearn_004",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Cross-Validation in Scikit-learn: cross_val_score, cross_validate, StratifiedKFold, and TimeSeriesSplit.",
+    "difficulty": "easy",
+    "topic": "Validation",
+    "concept": "Cross-Validation Utilities",
+    "questionFamily": "implementation",
+    "tags": [
+      "cross_val_score",
+      "cross_validate",
+      "StratifiedKFold",
+      "TimeSeriesSplit",
+      "scoring metric"
+    ],
+    "idealAnswer": "cross_val_score evaluates models across CV splits. cross_validate records multiple metrics and train/test fit times. StratifiedKFold preserves class target ratios. TimeSeriesSplit enforces sequential temporal evaluation splits without looking into the future.",
+    "ideal_answer": "cross_val_score evaluates models across CV splits. cross_validate records multiple metrics and train/test fit times. StratifiedKFold preserves class target ratios. TimeSeriesSplit enforces sequential temporal evaluation splits without looking into the future.",
+    "expected_concepts": [
+      "cross_val_score",
+      "cross_validate",
+      "StratifiedKFold",
+      "TimeSeriesSplit"
+    ],
+    "explanation": "Evaluates Scikit-learn Validation and Cross-Validation Utilities comprehension."
+  },
+  {
+    "id": "sklearn_005",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Hyperparameter Tuning work in Scikit-learn using GridSearchCV vs RandomizedSearchCV vs HalvingGridSearchCV?",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using Scikit-learn in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Hyperparameter Tuning",
+    "concept": "GridSearchCV vs RandomizedSearchCV",
+    "questionFamily": "comparison",
+    "tags": [
+      "GridSearchCV",
+      "RandomizedSearchCV",
+      "HalvingGridSearchCV",
+      "param_grid",
+      "parallel n_jobs"
     ],
-    "ideal_answer": "Common challenges with Scikit-learn include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of Scikit-learn."
+    "idealAnswer": "GridSearchCV exhaustively searches a dictionary grid of parameters. RandomizedSearchCV samples fixed iterations from parameter distributions. HalvingGridSearchCV uses successive halving to eliminate unpromising candidates on small data subsets before training top models on full data.",
+    "ideal_answer": "GridSearchCV exhaustively searches a dictionary grid of parameters. RandomizedSearchCV samples fixed iterations from parameter distributions. HalvingGridSearchCV uses successive halving to eliminate unpromising candidates on small data subsets before training top models on full data.",
+    "expected_concepts": [
+      "GridSearchCV",
+      "RandomizedSearchCV",
+      "HalvingGridSearchCV",
+      "param_grid"
+    ],
+    "explanation": "Evaluates Scikit-learn Hyperparameter Tuning and GridSearchCV vs RandomizedSearchCV comprehension."
   },
   {
-    "id": "SCIKIT-LEARN_003",
+    "id": "sklearn_006",
     "skill": "Scikit-learn",
-    "difficulty": "hard",
-    "question": "How does Scikit-learn handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Linear and Logistic Regression in Scikit-learn: Loss functions, Solvers (lbfgs, liblinear, saga), and penalty regularization.",
+    "difficulty": "medium",
+    "topic": "Linear Models",
+    "concept": "LogisticRegression Solvers & Regularization",
+    "questionFamily": "implementation",
+    "tags": [
+      "LogisticRegression",
+      "solvers",
+      "lbfgs",
+      "saga",
+      "penalty",
+      "C parameter"
     ],
-    "ideal_answer": "Scikit-learn handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of Scikit-learn."
+    "idealAnswer": "LogisticRegression fits classification probabilities. The 'C' parameter is inverse regularization strength (smaller C = stronger regularization). Solvers: 'lbfgs' is default for multiclass; 'saga' supports elasticnet and handles massive sparse datasets.",
+    "ideal_answer": "LogisticRegression fits classification probabilities. The 'C' parameter is inverse regularization strength (smaller C = stronger regularization). Solvers: 'lbfgs' is default for multiclass; 'saga' supports elasticnet and handles massive sparse datasets.",
+    "expected_concepts": [
+      "LogisticRegression",
+      "solvers",
+      "lbfgs",
+      "saga"
+    ],
+    "explanation": "Evaluates Scikit-learn Linear Models and LogisticRegression Solvers & Regularization comprehension."
+  },
+  {
+    "id": "sklearn_007",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Tree-Based Ensembles in Scikit-learn: RandomForestClassifier vs GradientBoostingClassifier vs ExtraTreesClassifier?",
+    "difficulty": "medium",
+    "topic": "Ensemble Models",
+    "concept": "RandomForest vs GradientBoosting vs ExtraTrees",
+    "questionFamily": "comparison",
+    "tags": [
+      "RandomForestClassifier",
+      "GradientBoostingClassifier",
+      "ExtraTreesClassifier",
+      "bagging",
+      "boosting"
+    ],
+    "idealAnswer": "RandomForest fits independent decision trees on bootstrap samples with random feature subsets. ExtraTrees randomizes split thresholds completely for faster training and reduced variance. GradientBoosting fits shallow trees sequentially on residual errors.",
+    "ideal_answer": "RandomForest fits independent decision trees on bootstrap samples with random feature subsets. ExtraTrees randomizes split thresholds completely for faster training and reduced variance. GradientBoosting fits shallow trees sequentially on residual errors.",
+    "expected_concepts": [
+      "RandomForestClassifier",
+      "GradientBoostingClassifier",
+      "ExtraTreesClassifier",
+      "bagging"
+    ],
+    "explanation": "Evaluates Scikit-learn Ensemble Models and RandomForest vs GradientBoosting vs ExtraTrees comprehension."
+  },
+  {
+    "id": "sklearn_008",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Missing Value Imputation in Scikit-learn: SimpleImputer, KNNImputer, and IterativeImputer (MICE).",
+    "difficulty": "medium",
+    "topic": "Imputation",
+    "concept": "Missing Data Imputation Strategies",
+    "questionFamily": "implementation",
+    "tags": [
+      "SimpleImputer",
+      "KNNImputer",
+      "IterativeImputer",
+      "missing values",
+      "MICE"
+    ],
+    "idealAnswer": "SimpleImputer replaces missing values with mean, median, or most frequent constants. KNNImputer imputes using Euclidean distance weighted averages of nearest neighbor samples. IterativeImputer (MICE) models each missing feature as a regression function of all other features.",
+    "ideal_answer": "SimpleImputer replaces missing values with mean, median, or most frequent constants. KNNImputer imputes using Euclidean distance weighted averages of nearest neighbor samples. IterativeImputer (MICE) models each missing feature as a regression function of all other features.",
+    "expected_concepts": [
+      "SimpleImputer",
+      "KNNImputer",
+      "IterativeImputer",
+      "missing values"
+    ],
+    "explanation": "Evaluates Scikit-learn Imputation and Missing Data Imputation Strategies comprehension."
+  },
+  {
+    "id": "sklearn_009",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Feature Selection work in Scikit-learn: VarianceThreshold, SelectKBest (ANOVA/Chi-squared), RFE (Recursive Feature Elimination), and SelectFromModel?",
+    "difficulty": "medium",
+    "topic": "Feature Selection",
+    "concept": "Feature Selection Methods",
+    "questionFamily": "comparison",
+    "tags": [
+      "VarianceThreshold",
+      "SelectKBest",
+      "RFE",
+      "SelectFromModel",
+      "feature importance"
+    ],
+    "idealAnswer": "VarianceThreshold drops zero/low-variance features. SelectKBest selects features with highest statistical scores (f_classif, chi2). Recursive Feature Elimination (RFE) iteratively removes least important features from an estimator. SelectFromModel filters features based on coefficient thresholds.",
+    "ideal_answer": "VarianceThreshold drops zero/low-variance features. SelectKBest selects features with highest statistical scores (f_classif, chi2). Recursive Feature Elimination (RFE) iteratively removes least important features from an estimator. SelectFromModel filters features based on coefficient thresholds.",
+    "expected_concepts": [
+      "VarianceThreshold",
+      "SelectKBest",
+      "RFE",
+      "SelectFromModel"
+    ],
+    "explanation": "Evaluates Scikit-learn Feature Selection and Feature Selection Methods comprehension."
+  },
+  {
+    "id": "sklearn_010",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Dimensionality Reduction in Scikit-learn: PCA, TruncatedSVD (for sparse matrices), and TSNE (for 2D/3D visualization).",
+    "difficulty": "medium",
+    "topic": "Dimensionality Reduction",
+    "concept": "PCA vs TruncatedSVD vs t-SNE",
+    "questionFamily": "comparison",
+    "tags": [
+      "PCA",
+      "TruncatedSVD",
+      "t-SNE",
+      "dimensionality reduction",
+      "sparse matrix"
+    ],
+    "idealAnswer": "PCA centers dense data and computes orthogonal variance components. TruncatedSVD operates directly on sparse TF-IDF matrices without centering. t-SNE (t-Distributed Stochastic Neighbor Embedding) is a non-linear visualization technique preserving local cluster neighborhoods in 2D/3D.",
+    "ideal_answer": "PCA centers dense data and computes orthogonal variance components. TruncatedSVD operates directly on sparse TF-IDF matrices without centering. t-SNE (t-Distributed Stochastic Neighbor Embedding) is a non-linear visualization technique preserving local cluster neighborhoods in 2D/3D.",
+    "expected_concepts": [
+      "PCA",
+      "TruncatedSVD",
+      "t-SNE",
+      "dimensionality reduction"
+    ],
+    "explanation": "Evaluates Scikit-learn Dimensionality Reduction and PCA vs TruncatedSVD vs t-SNE comprehension."
+  },
+  {
+    "id": "sklearn_011",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Model Evaluation Metrics in Scikit-learn: classification_report, confusion_matrix, precision_recall_curve, and roc_auc_score.",
+    "difficulty": "easy",
+    "topic": "Model Evaluation",
+    "concept": "Model Evaluation Metrics Suite",
+    "questionFamily": "best_practice",
+    "tags": [
+      "classification_report",
+      "confusion_matrix",
+      "roc_auc_score",
+      "precision_recall_curve"
+    ],
+    "idealAnswer": "classification_report summarizes precision, recall, and f1-score per class. confusion_matrix computes true/false positives/negatives. precision_recall_curve plots precision-recall across thresholds. roc_auc_score evaluates discriminatory power.",
+    "ideal_answer": "classification_report summarizes precision, recall, and f1-score per class. confusion_matrix computes true/false positives/negatives. precision_recall_curve plots precision-recall across thresholds. roc_auc_score evaluates discriminatory power.",
+    "expected_concepts": [
+      "classification_report",
+      "confusion_matrix",
+      "roc_auc_score",
+      "precision_recall_curve"
+    ],
+    "explanation": "Evaluates Scikit-learn Model Evaluation and Model Evaluation Metrics Suite comprehension."
+  },
+  {
+    "id": "sklearn_012",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is CalibratedClassifierCV in Scikit-learn, and how do Platt Scaling (Sigmoid) and Isotonic Regression calibrate uncalibrated model probabilities (e.g. SVM, Naive Bayes)?",
+    "difficulty": "hard",
+    "topic": "Model Calibration",
+    "concept": "Probability Calibration (Platt & Isotonic)",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "CalibratedClassifierCV",
+      "Platt scaling",
+      "Isotonic regression",
+      "Brier score",
+      "probability calibration"
+    ],
+    "idealAnswer": "Models like SVM or Naive Bayes output uncalibrated scores that do not reflect true posterior probabilities. CalibratedClassifierCV fits a calibration mapping (Sigmoid / Platt scaling for small data, non-parametric Isotonic Regression for large data) to produce accurate, reliable probabilities.",
+    "ideal_answer": "Models like SVM or Naive Bayes output uncalibrated scores that do not reflect true posterior probabilities. CalibratedClassifierCV fits a calibration mapping (Sigmoid / Platt scaling for small data, non-parametric Isotonic Regression for large data) to produce accurate, reliable probabilities.",
+    "expected_concepts": [
+      "CalibratedClassifierCV",
+      "Platt scaling",
+      "Isotonic regression",
+      "Brier score"
+    ],
+    "explanation": "Evaluates Scikit-learn Model Calibration and Probability Calibration (Platt & Isotonic) comprehension."
+  },
+  {
+    "id": "sklearn_013",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you write a Custom Transformer in Scikit-learn by inheriting from BaseEstimator and TransformerMixin?",
+    "difficulty": "medium",
+    "topic": "Extensibility",
+    "concept": "Custom Transformer with BaseEstimator & TransformerMixin",
+    "questionFamily": "implementation",
+    "tags": [
+      "BaseEstimator",
+      "TransformerMixin",
+      "get_params",
+      "set_params",
+      "custom transformer"
+    ],
+    "idealAnswer": "Inheriting from BaseEstimator provides get_params() and set_params() for hyperparameter tuning without *args/**kwargs. Inheriting from TransformerMixin automatically provides fit_transform() when you implement fit() and transform().",
+    "ideal_answer": "Inheriting from BaseEstimator provides get_params() and set_params() for hyperparameter tuning without *args/**kwargs. Inheriting from TransformerMixin automatically provides fit_transform() when you implement fit() and transform().",
+    "expected_concepts": [
+      "BaseEstimator",
+      "TransformerMixin",
+      "get_params",
+      "set_params"
+    ],
+    "explanation": "Evaluates Scikit-learn Extensibility and Custom Transformer with BaseEstimator & TransformerMixin comprehension."
+  },
+  {
+    "id": "sklearn_014",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is Clustering in Scikit-learn: KMeans, DBSCAN (density-based clustering with eps and min_samples), and AgglomerativeClustering?",
+    "difficulty": "medium",
+    "topic": "Clustering",
+    "concept": "KMeans vs DBSCAN vs Agglomerative",
+    "questionFamily": "comparison",
+    "tags": [
+      "KMeans",
+      "DBSCAN",
+      "AgglomerativeClustering",
+      "eps",
+      "min_samples",
+      "noise points"
+    ],
+    "idealAnswer": "KMeans assumes spherical clusters. DBSCAN groups points based on density (eps radius and min_samples), discovering arbitrary-shaped clusters and identifying outlier noise points (-1). AgglomerativeClustering builds hierarchical cluster dendrograms bottom-up.",
+    "ideal_answer": "KMeans assumes spherical clusters. DBSCAN groups points based on density (eps radius and min_samples), discovering arbitrary-shaped clusters and identifying outlier noise points (-1). AgglomerativeClustering builds hierarchical cluster dendrograms bottom-up.",
+    "expected_concepts": [
+      "KMeans",
+      "DBSCAN",
+      "AgglomerativeClustering",
+      "eps"
+    ],
+    "explanation": "Evaluates Scikit-learn Clustering and KMeans vs DBSCAN vs Agglomerative comprehension."
+  },
+  {
+    "id": "sklearn_015",
+    "skill": "Scikit-learn",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do VotingClassifier / VotingRegressor (Hard vs Soft Voting) and StackingClassifier combine multiple Scikit-learn models?",
+    "difficulty": "easy",
+    "topic": "Ensemble Models",
+    "concept": "Voting vs Stacking Classifiers",
+    "questionFamily": "implementation",
+    "tags": [
+      "VotingClassifier",
+      "StackingClassifier",
+      "hard voting",
+      "soft voting",
+      "meta-model"
+    ],
+    "idealAnswer": "VotingClassifier aggregates predictions: Hard voting selects majority class; Soft voting averages predicted class probabilities. StackingClassifier uses out-of-fold cross-validation predictions from base models to train a final meta-estimator (e.g. LogisticRegression).",
+    "ideal_answer": "VotingClassifier aggregates predictions: Hard voting selects majority class; Soft voting averages predicted class probabilities. StackingClassifier uses out-of-fold cross-validation predictions from base models to train a final meta-estimator (e.g. LogisticRegression).",
+    "expected_concepts": [
+      "VotingClassifier",
+      "StackingClassifier",
+      "hard voting",
+      "soft voting"
+    ],
+    "explanation": "Evaluates Scikit-learn Ensemble Models and Voting vs Stacking Classifiers comprehension."
   }
 ]

@@ -1,0 +1,412 @@
+[
+  {
+    "id": "lc_001",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the LangChain Expression Language (LCEL) and the Runnable Protocol (invoke, batch, stream, astream, pipe operator |).",
+    "difficulty": "easy",
+    "topic": "Core Architecture",
+    "concept": "LCEL & Runnable Protocol",
+    "questionFamily": "architecture",
+    "tags": [
+      "LangChain",
+      "LCEL",
+      "Runnable",
+      "pipe operator",
+      "stream",
+      "async"
+    ],
+    "idealAnswer": "LCEL provides a declarative composable syntax using the pipe operator: 'chain = prompt | model | parser'. All components implement the unified Runnable interface with synchronous (invoke, batch, stream) and asynchronous (ainvoke, abatch, astream) execution out-of-the-box.",
+    "ideal_answer": "LCEL provides a declarative composable syntax using the pipe operator: 'chain = prompt | model | parser'. All components implement the unified Runnable interface with synchronous (invoke, batch, stream) and asynchronous (ainvoke, abatch, astream) execution out-of-the-box.",
+    "expected_concepts": [
+      "LangChain",
+      "LCEL",
+      "Runnable",
+      "pipe operator"
+    ],
+    "explanation": "Evaluates LangChain Core Architecture and LCEL & Runnable Protocol comprehension."
+  },
+  {
+    "id": "lc_002",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain LangChain Prompt Templates: PromptTemplate, ChatPromptTemplate, MessagesPlaceholder, and FewShotPromptTemplate.",
+    "difficulty": "easy",
+    "topic": "Prompts",
+    "concept": "PromptTemplate & ChatPromptTemplate",
+    "questionFamily": "implementation",
+    "tags": [
+      "ChatPromptTemplate",
+      "MessagesPlaceholder",
+      "PromptTemplate",
+      "FewShotPromptTemplate",
+      "role messages"
+    ],
+    "idealAnswer": "PromptTemplate formats string variables. ChatPromptTemplate formats structured multi-role chat messages (SystemMessage, HumanMessage, AIMessage). MessagesPlaceholder dynamically injects conversational message history into the prompt template.",
+    "ideal_answer": "PromptTemplate formats string variables. ChatPromptTemplate formats structured multi-role chat messages (SystemMessage, HumanMessage, AIMessage). MessagesPlaceholder dynamically injects conversational message history into the prompt template.",
+    "expected_concepts": [
+      "ChatPromptTemplate",
+      "MessagesPlaceholder",
+      "PromptTemplate",
+      "FewShotPromptTemplate"
+    ],
+    "explanation": "Evaluates LangChain Prompts and PromptTemplate & ChatPromptTemplate comprehension."
+  },
+  {
+    "id": "lc_003",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are LangChain Output Parsers: StrOutputParser, PydanticOutputParser, JsonOutputParser, and StructuredOutputParser?",
+    "difficulty": "easy",
+    "topic": "Output Parsing",
+    "concept": "LangChain Output Parsers & Pydantic",
+    "questionFamily": "implementation",
+    "tags": [
+      "OutputParser",
+      "PydanticOutputParser",
+      "StrOutputParser",
+      "JsonOutputParser",
+      "structured data"
+    ],
+    "idealAnswer": "Output Parsers transform raw LLM text completions into structured data structures. PydanticOutputParser injects format instructions into prompts and parses JSON outputs directly into validated Pydantic models with type safety.",
+    "ideal_answer": "Output Parsers transform raw LLM text completions into structured data structures. PydanticOutputParser injects format instructions into prompts and parses JSON outputs directly into validated Pydantic models with type safety.",
+    "expected_concepts": [
+      "OutputParser",
+      "PydanticOutputParser",
+      "StrOutputParser",
+      "JsonOutputParser"
+    ],
+    "explanation": "Evaluates LangChain Output Parsing and LangChain Output Parsers & Pydantic comprehension."
+  },
+  {
+    "id": "lc_004",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Document Loaders and Text Splitters in LangChain (RecursiveCharacterTextSplitter, CharacterTextSplitter, TokenTextSplitter).",
+    "difficulty": "easy",
+    "topic": "Document Processing",
+    "concept": "Document Loaders & RecursiveTextSplitter",
+    "questionFamily": "implementation",
+    "tags": [
+      "DocumentLoaders",
+      "RecursiveCharacterTextSplitter",
+      "chunk_size",
+      "chunk_overlap",
+      "separators"
+    ],
+    "idealAnswer": "Document loaders parse various sources (PDF, Web, CSV, GitHub). RecursiveCharacterTextSplitter splits documents hierarchically trying paragraph ('\\n\\n'), newline ('\\n'), space (' '), and characters with defined 'chunk_size' and 'chunk_overlap' to preserve semantic paragraph context.",
+    "ideal_answer": "Document loaders parse various sources (PDF, Web, CSV, GitHub). RecursiveCharacterTextSplitter splits documents hierarchically trying paragraph ('\\n\\n'), newline ('\\n'), space (' '), and characters with defined 'chunk_size' and 'chunk_overlap' to preserve semantic paragraph context.",
+    "expected_concepts": [
+      "DocumentLoaders",
+      "RecursiveCharacterTextSplitter",
+      "chunk_size",
+      "chunk_overlap"
+    ],
+    "explanation": "Evaluates LangChain Document Processing and Document Loaders & RecursiveTextSplitter comprehension."
+  },
+  {
+    "id": "lc_005",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain VectorStores in LangChain (FAISS, Chroma, Pinecone) and how VectorStore.as_retriever() configures similarity vs MMR search.",
+    "difficulty": "medium",
+    "topic": "Vector Stores & Retrievers",
+    "concept": "VectorStores & MMR Retrieval",
+    "questionFamily": "implementation",
+    "tags": [
+      "VectorStore",
+      "Retriever",
+      "FAISS",
+      "Chroma",
+      "similarity search",
+      "Maximal Marginal Relevance (MMR)"
+    ],
+    "idealAnswer": "VectorStores index embeddings. Calling .as_retriever() converts a vectorstore into a Runnable retriever: search_type='similarity' retrieves top-k closest vectors; search_type='mmr' (Maximal Marginal Relevance) optimizes for both relevance and diverse information coverage.",
+    "ideal_answer": "VectorStores index embeddings. Calling .as_retriever() converts a vectorstore into a Runnable retriever: search_type='similarity' retrieves top-k closest vectors; search_type='mmr' (Maximal Marginal Relevance) optimizes for both relevance and diverse information coverage.",
+    "expected_concepts": [
+      "VectorStore",
+      "Retriever",
+      "FAISS",
+      "Chroma"
+    ],
+    "explanation": "Evaluates LangChain Vector Stores & Retrievers and VectorStores & MMR Retrieval comprehension."
+  },
+  {
+    "id": "lc_006",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is LangGraph and how does StateGraph enable Cyclic Multi-Agent Workflows (Nodes, Edges, Conditional Edges, and State)?",
+    "difficulty": "hard",
+    "topic": "LangGraph & Agents",
+    "concept": "LangGraph StateGraph & Cyclic Workflows",
+    "questionFamily": "architecture",
+    "tags": [
+      "LangGraph",
+      "StateGraph",
+      "nodes",
+      "edges",
+      "conditional edges",
+      "cyclic graph",
+      "agent loops"
+    ],
+    "idealAnswer": "Traditional LangChain chains are directed acyclic graphs (DAGs). LangGraph enables cyclic agent loops using StateGraph: Nodes are functions modifying shared State; Edges direct flow; Conditional Edges dynamically route to next nodes based on LLM tool calling outputs.",
+    "ideal_answer": "Traditional LangChain chains are directed acyclic graphs (DAGs). LangGraph enables cyclic agent loops using StateGraph: Nodes are functions modifying shared State; Edges direct flow; Conditional Edges dynamically route to next nodes based on LLM tool calling outputs.",
+    "expected_concepts": [
+      "LangGraph",
+      "StateGraph",
+      "nodes",
+      "edges"
+    ],
+    "explanation": "Evaluates LangChain LangGraph & Agents and LangGraph StateGraph & Cyclic Workflows comprehension."
+  },
+  {
+    "id": "lc_007",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Memory management in LangChain: ConversationBufferMemory, ConversationSummaryMemory, ConversationTokenBufferMemory, and RunnableWithMessageHistory.",
+    "difficulty": "medium",
+    "topic": "Memory",
+    "concept": "Conversation Memory & RunnableWithMessageHistory",
+    "questionFamily": "architecture",
+    "tags": [
+      "Memory",
+      "ConversationBufferMemory",
+      "ConversationSummaryMemory",
+      "RunnableWithMessageHistory",
+      "chat history"
+    ],
+    "idealAnswer": "Memory stores multi-turn conversational context. ConversationBufferMemory saves raw history; ConversationSummaryMemory summarizes past conversation with an LLM; RunnableWithMessageHistory automatically manages session history in databases (Redis/Postgres) in modern LCEL chains.",
+    "ideal_answer": "Memory stores multi-turn conversational context. ConversationBufferMemory saves raw history; ConversationSummaryMemory summarizes past conversation with an LLM; RunnableWithMessageHistory automatically manages session history in databases (Redis/Postgres) in modern LCEL chains.",
+    "expected_concepts": [
+      "Memory",
+      "ConversationBufferMemory",
+      "ConversationSummaryMemory",
+      "RunnableWithMessageHistory"
+    ],
+    "explanation": "Evaluates LangChain Memory and Conversation Memory & RunnableWithMessageHistory comprehension."
+  },
+  {
+    "id": "lc_008",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are LangChain Tools (@tool decorator) and how do Agents execute Tool Calling (bind_tools / create_tool_calling_agent)?",
+    "difficulty": "medium",
+    "topic": "Tool Calling",
+    "concept": "@tool Decorator & bind_tools",
+    "questionFamily": "implementation",
+    "tags": [
+      "@tool decorator",
+      "bind_tools",
+      "create_tool_calling_agent",
+      "AgentExecutor",
+      "schema definition"
+    ],
+    "idealAnswer": "Defining '@tool' on Python functions extracts function docstrings and type hints into JSON Schema tool definitions. Calling 'model.bind_tools([my_tool])' binds tools to the model, and create_tool_calling_agent coordinates tool invocation loops.",
+    "ideal_answer": "Defining '@tool' on Python functions extracts function docstrings and type hints into JSON Schema tool definitions. Calling 'model.bind_tools([my_tool])' binds tools to the model, and create_tool_calling_agent coordinates tool invocation loops.",
+    "expected_concepts": [
+      "@tool decorator",
+      "bind_tools",
+      "create_tool_calling_agent",
+      "AgentExecutor"
+    ],
+    "explanation": "Evaluates LangChain Tool Calling and @tool Decorator & bind_tools comprehension."
+  },
+  {
+    "id": "lc_009",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain LangChain Callbacks and Handlers (BaseCallbackHandler: on_llm_start, on_tool_end, on_chain_error) for logging and streaming.",
+    "difficulty": "medium",
+    "topic": "Callbacks & Observability",
+    "concept": "LangChain Callbacks (BaseCallbackHandler)",
+    "questionFamily": "implementation",
+    "tags": [
+      "Callbacks",
+      "BaseCallbackHandler",
+      "on_llm_start",
+      "on_llm_stream",
+      "streaming",
+      "logging"
+    ],
+    "idealAnswer": "Callbacks hook into lifecycle execution points. Custom handlers subclass BaseCallbackHandler implementing events (on_llm_start, on_llm_new_token for UI streaming, on_tool_end, on_chain_error) to enable logging, token counting, and telemetry.",
+    "ideal_answer": "Callbacks hook into lifecycle execution points. Custom handlers subclass BaseCallbackHandler implementing events (on_llm_start, on_llm_new_token for UI streaming, on_tool_end, on_chain_error) to enable logging, token counting, and telemetry.",
+    "expected_concepts": [
+      "Callbacks",
+      "BaseCallbackHandler",
+      "on_llm_start",
+      "on_llm_stream"
+    ],
+    "explanation": "Evaluates LangChain Callbacks & Observability and LangChain Callbacks (BaseCallbackHandler) comprehension."
+  },
+  {
+    "id": "lc_010",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is LangSmith, and how does it provide full-stack LLM tracing, prompt versioning, debugging, and evaluation datasets?",
+    "difficulty": "easy",
+    "topic": "Observability & MLOps",
+    "concept": "LangSmith Tracing & Observability",
+    "questionFamily": "architecture",
+    "tags": [
+      "LangSmith",
+      "tracing",
+      "debugging",
+      "prompt playground",
+      "evaluation",
+      "latency breakdown"
+    ],
+    "idealAnswer": "LangSmith is LangChain's observability and evaluation platform. By setting environment variables (LANGCHAIN_TRACING_V2=true), LangSmith automatically logs full execution trees, token usage, exact prompts/responses, latency breakdowns, and runs regression test suites.",
+    "ideal_answer": "LangSmith is LangChain's observability and evaluation platform. By setting environment variables (LANGCHAIN_TRACING_V2=true), LangSmith automatically logs full execution trees, token usage, exact prompts/responses, latency breakdowns, and runs regression test suites.",
+    "expected_concepts": [
+      "LangSmith",
+      "tracing",
+      "debugging",
+      "prompt playground"
+    ],
+    "explanation": "Evaluates LangChain Observability & MLOps and LangSmith Tracing & Observability comprehension."
+  },
+  {
+    "id": "lc_011",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Contextual Compression Retrievers and MultiQueryRetriever in LangChain.",
+    "difficulty": "medium",
+    "topic": "Advanced Retrievers",
+    "concept": "Contextual Compression & MultiQueryRetriever",
+    "questionFamily": "optimization",
+    "tags": [
+      "ContextualCompressionRetriever",
+      "MultiQueryRetriever",
+      "LLMChainExtractor",
+      "query expansion"
+    ],
+    "idealAnswer": "MultiQueryRetriever uses an LLM to generate multiple alternative perspective queries from a single user prompt, overcoming query phrasing limitations. ContextualCompressionRetriever post-processes retrieved documents with an LLMChainExtractor to extract only relevant sentences, saving context tokens.",
+    "ideal_answer": "MultiQueryRetriever uses an LLM to generate multiple alternative perspective queries from a single user prompt, overcoming query phrasing limitations. ContextualCompressionRetriever post-processes retrieved documents with an LLMChainExtractor to extract only relevant sentences, saving context tokens.",
+    "expected_concepts": [
+      "ContextualCompressionRetriever",
+      "MultiQueryRetriever",
+      "LLMChainExtractor",
+      "query expansion"
+    ],
+    "explanation": "Evaluates LangChain Advanced Retrievers and Contextual Compression & MultiQueryRetriever comprehension."
+  },
+  {
+    "id": "lc_012",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is SelfQueryRetriever in LangChain, and how does it translate natural language into structured vector filter metadata queries?",
+    "difficulty": "hard",
+    "topic": "Advanced Retrievers",
+    "concept": "SelfQueryRetriever & Metadata Filtering",
+    "questionFamily": "implementation",
+    "tags": [
+      "SelfQueryRetriever",
+      "metadata filtering",
+      "structured query",
+      "attribute info"
+    ],
+    "idealAnswer": "SelfQueryRetriever uses an internal query-construction LLM to parse natural language queries into both a semantic search query string AND structured metadata filters (e.g. converting 'movies from 2022 directed by Nolan' into semantic query 'movies' with filter: year==2022 AND director=='Nolan').",
+    "ideal_answer": "SelfQueryRetriever uses an internal query-construction LLM to parse natural language queries into both a semantic search query string AND structured metadata filters (e.g. converting 'movies from 2022 directed by Nolan' into semantic query 'movies' with filter: year==2022 AND director=='Nolan').",
+    "expected_concepts": [
+      "SelfQueryRetriever",
+      "metadata filtering",
+      "structured query",
+      "attribute info"
+    ],
+    "explanation": "Evaluates LangChain Advanced Retrievers and SelfQueryRetriever & Metadata Filtering comprehension."
+  },
+  {
+    "id": "lc_013",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain LangChain Routing (RunnableBranch vs custom router functions) for conditional chain branching.",
+    "difficulty": "medium",
+    "topic": "Routing & Control Flow",
+    "concept": "RunnableBranch & Dynamic Routing",
+    "questionFamily": "implementation",
+    "tags": [
+      "RunnableBranch",
+      "routing",
+      "conditional branching",
+      "multi-prompt chain",
+      "classifier"
+    ],
+    "idealAnswer": "RunnableBranch routes inputs to different downstream chains based on condition functions: 'RunnableBranch((condition1, chain1), (condition2, chain2), default_chain)'. Modern LCEL often replaces it with a simple custom routing function that returns a Runnable.",
+    "ideal_answer": "RunnableBranch routes inputs to different downstream chains based on condition functions: 'RunnableBranch((condition1, chain1), (condition2, chain2), default_chain)'. Modern LCEL often replaces it with a simple custom routing function that returns a Runnable.",
+    "expected_concepts": [
+      "RunnableBranch",
+      "routing",
+      "conditional branching",
+      "multi-prompt chain"
+    ],
+    "explanation": "Evaluates LangChain Routing & Control Flow and RunnableBranch & Dynamic Routing comprehension."
+  },
+  {
+    "id": "lc_014",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is ParentDocumentRetriever in LangChain, and how does it balance small chunks for vector search with large parent chunks for LLM context?",
+    "difficulty": "medium",
+    "topic": "Advanced Retrievers",
+    "concept": "ParentDocumentRetriever",
+    "questionFamily": "design",
+    "tags": [
+      "ParentDocumentRetriever",
+      "small chunks",
+      "parent document",
+      "Docstore",
+      "context preservation"
+    ],
+    "idealAnswer": "Small chunks are optimal for vector similarity search but lack broader context. ParentDocumentRetriever splits documents into small sub-chunks embedded in the vector store and maps them to larger parent chunks stored in a Docstore, returning full parent context on search.",
+    "ideal_answer": "Small chunks are optimal for vector similarity search but lack broader context. ParentDocumentRetriever splits documents into small sub-chunks embedded in the vector store and maps them to larger parent chunks stored in a Docstore, returning full parent context on search.",
+    "expected_concepts": [
+      "ParentDocumentRetriever",
+      "small chunks",
+      "parent document",
+      "Docstore"
+    ],
+    "explanation": "Evaluates LangChain Advanced Retrievers and ParentDocumentRetriever comprehension."
+  },
+  {
+    "id": "lc_015",
+    "skill": "LangChain",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do you implement Human-in-the-Loop approval workflows in LangGraph using checkpointers (SqliteSaver / PostgresSaver) and interrupts?",
+    "difficulty": "hard",
+    "topic": "Human-in-the-Loop",
+    "concept": "LangGraph Human-in-the-Loop & Interrupts",
+    "questionFamily": "architecture",
+    "tags": [
+      "LangGraph",
+      "Human-in-the-Loop",
+      "checkpointer",
+      "interrupt_before",
+      "SqliteSaver",
+      "state persistence"
+    ],
+    "idealAnswer": "LangGraph checkpointers (SqliteSaver / PostgresSaver) persist graph state at every step. Setting 'interrupt_before=[\"action_node\"]' halts execution before sensitive actions (e.g. sending payments), allowing humans to review state, approve/edit state, and resume execution seamlessly.",
+    "ideal_answer": "LangGraph checkpointers (SqliteSaver / PostgresSaver) persist graph state at every step. Setting 'interrupt_before=[\"action_node\"]' halts execution before sensitive actions (e.g. sending payments), allowing humans to review state, approve/edit state, and resume execution seamlessly.",
+    "expected_concepts": [
+      "LangGraph",
+      "Human-in-the-Loop",
+      "checkpointer",
+      "interrupt_before"
+    ],
+    "explanation": "Evaluates LangChain Human-in-the-Loop and LangGraph Human-in-the-Loop & Interrupts comprehension."
+  }
+]

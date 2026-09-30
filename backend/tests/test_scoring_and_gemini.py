@@ -33,11 +33,20 @@ def test_evaluate_pseudocode_answer():
         correct_answer="4"
     )
     
+    # 1. Correct option clicked
     res_correct = ScoringService.evaluate_single_answer(question, "", {}, selected_option="4")
     assert res_correct["technical_score"] == 100.0
+    assert res_correct["quality_score"] == 100.0
     
-    res_wrong = ScoringService.evaluate_single_answer(question, "", {}, selected_option="6")
-    assert res_wrong["technical_score"] == 30.0
+    # 2. Wrong option clicked (even if candidate spoke correct answer in mic)
+    res_wrong = ScoringService.evaluate_single_answer(question, "The answer is 4", {}, selected_option="6")
+    assert res_wrong["technical_score"] == 0.0
+    assert res_wrong["quality_score"] == 0.0
+
+    # 3. No option clicked (even if candidate spoke correct answer in mic)
+    res_unselected = ScoringService.evaluate_single_answer(question, "The answer is 4", {}, selected_option=None)
+    assert res_unselected["technical_score"] == 0.0
+    assert res_unselected["quality_score"] == 0.0
 
 def test_gemini_fallback_when_key_missing(monkeypatch):
     # Ensure GEMINI_API_KEY is empty
@@ -47,8 +56,7 @@ def test_gemini_fallback_when_key_missing(monkeypatch):
     skills = ["Python", "Docker"]
     scores = ScoreBreakdown(overall_score=78.0, technical_knowledge=80.0, communication=75.0)
     
-    loop = asyncio.get_event_loop()
-    feedback = loop.run_until_complete(
+    feedback = asyncio.run(
         GeminiService.generate_feedback(skills, [], [], scores)
     )
     

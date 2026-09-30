@@ -1,44 +1,407 @@
 [
   {
-    "id": "POSTGRESQL_001",
+    "id": "postgres_001",
     "skill": "PostgreSQL",
-    "difficulty": "easy",
-    "question": "What are the core features and primary use cases of PostgreSQL in modern software engineering?",
-    "expected_concepts": [
-      "PostgreSQL fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
-    ],
-    "ideal_answer": "PostgreSQL is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of PostgreSQL."
-  },
-  {
-    "id": "POSTGRESQL_002",
-    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain PostgreSQL Object-Relational Architecture, write-ahead logging (WAL), and MVCC implementation.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using PostgreSQL in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "Architecture",
+    "concept": "PostgreSQL MVCC & WAL",
+    "questionFamily": "architecture",
+    "tags": [
+      "PostgreSQL",
+      "WAL",
+      "MVCC",
+      "xmin",
+      "xmax",
+      "vacuum"
     ],
-    "ideal_answer": "Common challenges with PostgreSQL include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of PostgreSQL."
+    "idealAnswer": "PostgreSQL writes all modifications to the Write-Ahead Log (WAL) before updating data pages. In MVCC, updates write new tuple versions with xmin/xmax transaction visibility tags rather than overwriting rows in place.",
+    "ideal_answer": "PostgreSQL writes all modifications to the Write-Ahead Log (WAL) before updating data pages. In MVCC, updates write new tuple versions with xmin/xmax transaction visibility tags rather than overwriting rows in place.",
+    "expected_concepts": [
+      "PostgreSQL",
+      "WAL",
+      "MVCC",
+      "xmin"
+    ],
+    "explanation": "Evaluates PostgreSQL Architecture and PostgreSQL MVCC & WAL comprehension."
   },
   {
-    "id": "POSTGRESQL_003",
+    "id": "postgres_002",
     "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Why does PostgreSQL require VACUUM and AUTOVACUUM, and what is Table Bloat and Transaction ID (XID) Wraparound?",
     "difficulty": "hard",
-    "question": "How does PostgreSQL handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "topic": "Maintenance & Internals",
+    "concept": "VACUUM & Table Bloat",
+    "questionFamily": "troubleshooting",
+    "tags": [
+      "VACUUM",
+      "autovacuum",
+      "table bloat",
+      "dead tuples",
+      "XID wraparound"
     ],
-    "ideal_answer": "PostgreSQL handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of PostgreSQL."
+    "idealAnswer": "Because MVCC creates new row versions on UPDATE/DELETE, old versions remain as 'dead tuples'. VACUUM reclaims dead tuple space for reuse. Autovacuum prevents table bloat and catastrophic XID Wraparound (freezing old XIDs).",
+    "ideal_answer": "Because MVCC creates new row versions on UPDATE/DELETE, old versions remain as 'dead tuples'. VACUUM reclaims dead tuple space for reuse. Autovacuum prevents table bloat and catastrophic XID Wraparound (freezing old XIDs).",
+    "expected_concepts": [
+      "VACUUM",
+      "autovacuum",
+      "table bloat",
+      "dead tuples"
+    ],
+    "explanation": "Evaluates PostgreSQL Maintenance & Internals and VACUUM & Table Bloat comprehension."
+  },
+  {
+    "id": "postgres_003",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Index Types in PostgreSQL: B-Tree, Hash, GIN (Generalized Inverted Index), GiST, BRIN, and SP-GiST.",
+    "difficulty": "hard",
+    "topic": "Indexes",
+    "concept": "PostgreSQL Index Types (B-Tree, GIN, BRIN, GiST)",
+    "questionFamily": "comparison",
+    "tags": [
+      "GIN",
+      "GiST",
+      "BRIN",
+      "B-Tree",
+      "full-text search",
+      "time-series"
+    ],
+    "idealAnswer": "B-Tree handles standard comparisons (<, =, >). GIN indexes composite values (JSONB, arrays, full-text search). GiST handles geometric/spatial data. BRIN (Block Range Index) handles massive append-only sequential time-series tables with tiny index footprints.",
+    "ideal_answer": "B-Tree handles standard comparisons (<, =, >). GIN indexes composite values (JSONB, arrays, full-text search). GiST handles geometric/spatial data. BRIN (Block Range Index) handles massive append-only sequential time-series tables with tiny index footprints.",
+    "expected_concepts": [
+      "GIN",
+      "GiST",
+      "BRIN",
+      "B-Tree"
+    ],
+    "explanation": "Evaluates PostgreSQL Indexes and PostgreSQL Index Types (B-Tree, GIN, BRIN, GiST) comprehension."
+  },
+  {
+    "id": "postgres_004",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does JSONB support in PostgreSQL work, and how does it compare to standard JSON and relational columns?",
+    "difficulty": "medium",
+    "topic": "Data Types",
+    "concept": "JSONB Data Type & GIN Indexing",
+    "questionFamily": "implementation",
+    "tags": [
+      "JSONB",
+      "JSON",
+      "GIN index",
+      "jsonb_path_query",
+      "semi-structured"
+    ],
+    "idealAnswer": "JSON stores exact textual input. JSONB parses JSON into decomposed binary format with fast key lookup, schema-less flexibility, and native GIN indexing support using '@>' containment operators.",
+    "ideal_answer": "JSON stores exact textual input. JSONB parses JSON into decomposed binary format with fast key lookup, schema-less flexibility, and native GIN indexing support using '@>' containment operators.",
+    "expected_concepts": [
+      "JSONB",
+      "JSON",
+      "GIN index",
+      "jsonb_path_query"
+    ],
+    "explanation": "Evaluates PostgreSQL Data Types and JSONB Data Type & GIN Indexing comprehension."
+  },
+  {
+    "id": "postgres_005",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Common Table Expressions (CTEs) in PostgreSQL: WITH queries, Recursive CTEs, and CTE optimization (MATERIALIZED vs NOT MATERIALIZED).",
+    "difficulty": "medium",
+    "topic": "Querying",
+    "concept": "Common Table Expressions & Recursive CTEs",
+    "questionFamily": "implementation",
+    "tags": [
+      "CTE",
+      "WITH RECURSIVE",
+      "hierarchical data",
+      "MATERIALIZED"
+    ],
+    "idealAnswer": "CTEs (WITH query AS (...)) improve query readability and modularity. Recursive CTEs traverse hierarchical graphs/trees (org charts). In PostgreSQL 12+, CTEs are inlined by default unless marked 'AS MATERIALIZED'.",
+    "ideal_answer": "CTEs (WITH query AS (...)) improve query readability and modularity. Recursive CTEs traverse hierarchical graphs/trees (org charts). In PostgreSQL 12+, CTEs are inlined by default unless marked 'AS MATERIALIZED'.",
+    "expected_concepts": [
+      "CTE",
+      "WITH RECURSIVE",
+      "hierarchical data",
+      "MATERIALIZED"
+    ],
+    "explanation": "Evaluates PostgreSQL Querying and Common Table Expressions & Recursive CTEs comprehension."
+  },
+  {
+    "id": "postgres_006",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Window Functions in PostgreSQL (ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG), and how does the OVER (PARTITION BY ... ORDER BY ...) clause work?",
+    "difficulty": "medium",
+    "topic": "Analytics & Window Functions",
+    "concept": "Window Functions & Partitioning",
+    "questionFamily": "implementation",
+    "tags": [
+      "window functions",
+      "ROW_NUMBER",
+      "RANK",
+      "DENSE_RANK",
+      "LEAD",
+      "LAG",
+      "PARTITION BY"
+    ],
+    "idealAnswer": "Window functions perform calculations across sets of table rows related to the current row without collapsing rows into a single summary output. PARTITION BY divides rows into groups; ORDER BY establishes window processing order.",
+    "ideal_answer": "Window functions perform calculations across sets of table rows related to the current row without collapsing rows into a single summary output. PARTITION BY divides rows into groups; ORDER BY establishes window processing order.",
+    "expected_concepts": [
+      "window functions",
+      "ROW_NUMBER",
+      "RANK",
+      "DENSE_RANK"
+    ],
+    "explanation": "Evaluates PostgreSQL Analytics & Window Functions and Window Functions & Partitioning comprehension."
+  },
+  {
+    "id": "postgres_007",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Table Partitioning in PostgreSQL: Declarative Partitioning by RANGE, LIST, and HASH.",
+    "difficulty": "medium",
+    "topic": "Data Management",
+    "concept": "Declarative Table Partitioning",
+    "questionFamily": "architecture",
+    "tags": [
+      "partitioning",
+      "RANGE partitioning",
+      "LIST partitioning",
+      "HASH partitioning",
+      "partition pruning"
+    ],
+    "idealAnswer": "Declarative partitioning divides large physical tables into child partition tables: RANGE partitions by time/numeric ranges; LIST partitions by discrete categories; HASH partitions by hash values. The query planner performs 'partition pruning' to scan only relevant partitions.",
+    "ideal_answer": "Declarative partitioning divides large physical tables into child partition tables: RANGE partitions by time/numeric ranges; LIST partitions by discrete categories; HASH partitions by hash values. The query planner performs 'partition pruning' to scan only relevant partitions.",
+    "expected_concepts": [
+      "partitioning",
+      "RANGE partitioning",
+      "LIST partitioning",
+      "HASH partitioning"
+    ],
+    "explanation": "Evaluates PostgreSQL Data Management and Declarative Table Partitioning comprehension."
+  },
+  {
+    "id": "postgres_008",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Partial Indexes and Expression/Functional Indexes in PostgreSQL, and how do they save index space?",
+    "difficulty": "easy",
+    "topic": "Indexes",
+    "concept": "Partial & Expression Indexes",
+    "questionFamily": "optimization",
+    "tags": [
+      "partial index",
+      "expression index",
+      "WHERE clause index",
+      "lower() index"
+    ],
+    "idealAnswer": "Partial indexes index only a subset of rows meeting a WHERE condition (e.g. WHERE active = true), saving index RAM. Expression indexes index the result of a function (e.g. lower(email)) to accelerate case-insensitive lookups.",
+    "ideal_answer": "Partial indexes index only a subset of rows meeting a WHERE condition (e.g. WHERE active = true), saving index RAM. Expression indexes index the result of a function (e.g. lower(email)) to accelerate case-insensitive lookups.",
+    "expected_concepts": [
+      "partial index",
+      "expression index",
+      "WHERE clause index",
+      "lower() index"
+    ],
+    "explanation": "Evaluates PostgreSQL Indexes and Partial & Expression Indexes comprehension."
+  },
+  {
+    "id": "postgres_009",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Connection Pooling in PostgreSQL and why external connection poolers like PgBouncer are essential for high-concurrency systems.",
+    "difficulty": "medium",
+    "topic": "Performance & Scaling",
+    "concept": "PgBouncer & Connection Pooling",
+    "questionFamily": "architecture",
+    "tags": [
+      "connection pooling",
+      "PgBouncer",
+      "fork process model",
+      "transaction pooling"
+    ],
+    "idealAnswer": "PostgreSQL allocates a dedicated OS process for every active connection (~10MB memory per connection). PgBouncer pools connections using Transaction or Session pooling, allowing thousands of application clients to share a small pool of database backend processes.",
+    "ideal_answer": "PostgreSQL allocates a dedicated OS process for every active connection (~10MB memory per connection). PgBouncer pools connections using Transaction or Session pooling, allowing thousands of application clients to share a small pool of database backend processes.",
+    "expected_concepts": [
+      "connection pooling",
+      "PgBouncer",
+      "fork process model",
+      "transaction pooling"
+    ],
+    "explanation": "Evaluates PostgreSQL Performance & Scaling and PgBouncer & Connection Pooling comprehension."
+  },
+  {
+    "id": "postgres_010",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does Full-Text Search work in PostgreSQL using tsvector, tsquery, and GIN indexes?",
+    "difficulty": "medium",
+    "topic": "Full-Text Search",
+    "concept": "Full-Text Search (tsvector & tsquery)",
+    "questionFamily": "implementation",
+    "tags": [
+      "full-text search",
+      "tsvector",
+      "tsquery",
+      "stemming",
+      "to_tsvector",
+      "GIN"
+    ],
+    "idealAnswer": "PostgreSQL converts text into lexemes (stemmed words) using to_tsvector() and matches queries with to_tsquery() via the '@@' operator. A GIN index on the tsvector column enables sub-millisecond full-text document searches.",
+    "ideal_answer": "PostgreSQL converts text into lexemes (stemmed words) using to_tsvector() and matches queries with to_tsquery() via the '@@' operator. A GIN index on the tsvector column enables sub-millisecond full-text document searches.",
+    "expected_concepts": [
+      "full-text search",
+      "tsvector",
+      "tsquery",
+      "stemming"
+    ],
+    "explanation": "Evaluates PostgreSQL Full-Text Search and Full-Text Search (tsvector & tsquery) comprehension."
+  },
+  {
+    "id": "postgres_011",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain PostgreSQL Foreign Data Wrappers (postgres_fdw) for querying remote databases and SQL/MED standards.",
+    "difficulty": "hard",
+    "topic": "Data Integration",
+    "concept": "Foreign Data Wrappers (postgres_fdw)",
+    "questionFamily": "architecture",
+    "tags": [
+      "Foreign Data Wrapper",
+      "postgres_fdw",
+      "SQL/MED",
+      "federated query"
+    ],
+    "idealAnswer": "Foreign Data Wrappers (FDW) implement the SQL/MED standard, allowing PostgreSQL to treat tables on remote PostgreSQL servers, MySQL, or CSV files as local foreign tables that can be queried and joined seamlessly in standard SQL.",
+    "ideal_answer": "Foreign Data Wrappers (FDW) implement the SQL/MED standard, allowing PostgreSQL to treat tables on remote PostgreSQL servers, MySQL, or CSV files as local foreign tables that can be queried and joined seamlessly in standard SQL.",
+    "expected_concepts": [
+      "Foreign Data Wrapper",
+      "postgres_fdw",
+      "SQL/MED",
+      "federated query"
+    ],
+    "explanation": "Evaluates PostgreSQL Data Integration and Foreign Data Wrappers (postgres_fdw) comprehension."
+  },
+  {
+    "id": "postgres_012",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are Advisory Locks in PostgreSQL (pg_advisory_lock), and how do they enable application-level distributed locking?",
+    "difficulty": "medium",
+    "topic": "Concurrency & Locking",
+    "concept": "Advisory Locks",
+    "questionFamily": "design",
+    "tags": [
+      "advisory locks",
+      "pg_advisory_lock",
+      "distributed lock",
+      "application locking"
+    ],
+    "idealAnswer": "Advisory locks are application-defined locks managed by PostgreSQL without locking table rows or schema objects. Applications use pg_advisory_lock(key) to coordinate distributed tasks (e.g. preventing duplicate cron job runs).",
+    "ideal_answer": "Advisory locks are application-defined locks managed by PostgreSQL without locking table rows or schema objects. Applications use pg_advisory_lock(key) to coordinate distributed tasks (e.g. preventing duplicate cron job runs).",
+    "expected_concepts": [
+      "advisory locks",
+      "pg_advisory_lock",
+      "distributed lock",
+      "application locking"
+    ],
+    "explanation": "Evaluates PostgreSQL Concurrency & Locking and Advisory Locks comprehension."
+  },
+  {
+    "id": "postgres_013",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the LISTEN / NOTIFY mechanism in PostgreSQL for pub/sub messaging and asynchronous change notifications.",
+    "difficulty": "easy",
+    "topic": "Real-Time & Messaging",
+    "concept": "LISTEN and NOTIFY",
+    "questionFamily": "implementation",
+    "tags": [
+      "LISTEN",
+      "NOTIFY",
+      "pub/sub",
+      "real-time events",
+      "WebSockets"
+    ],
+    "idealAnswer": "PostgreSQL provides built-in asynchronous pub/sub messaging: clients execute 'LISTEN channel_name', and triggers or applications broadcast messages via 'NOTIFY channel_name, payload', notifying connected clients instantly without polling.",
+    "ideal_answer": "PostgreSQL provides built-in asynchronous pub/sub messaging: clients execute 'LISTEN channel_name', and triggers or applications broadcast messages via 'NOTIFY channel_name, payload', notifying connected clients instantly without polling.",
+    "expected_concepts": [
+      "LISTEN",
+      "NOTIFY",
+      "pub/sub",
+      "real-time events"
+    ],
+    "explanation": "Evaluates PostgreSQL Real-Time & Messaging and LISTEN and NOTIFY comprehension."
+  },
+  {
+    "id": "postgres_014",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does EXPLAIN (ANALYZE, BUFFERS, COSTS) work in PostgreSQL, and how do you interpret sequential scans vs index scans vs bitmap heap scans?",
+    "difficulty": "hard",
+    "topic": "Performance",
+    "concept": "EXPLAIN ANALYZE & Buffer Inspection",
+    "questionFamily": "optimization",
+    "tags": [
+      "EXPLAIN ANALYZE",
+      "BUFFERS",
+      "Seq Scan",
+      "Index Scan",
+      "Bitmap Heap Scan"
+    ],
+    "idealAnswer": "EXPLAIN ANALYZE executes the query and reports actual runtime and buffer hits/reads: Seq Scan reads entire table; Index Scan reads index then heap pages directly; Bitmap Index/Heap Scan builds a bitmap of matched pages to perform batch I/O.",
+    "ideal_answer": "EXPLAIN ANALYZE executes the query and reports actual runtime and buffer hits/reads: Seq Scan reads entire table; Index Scan reads index then heap pages directly; Bitmap Index/Heap Scan builds a bitmap of matched pages to perform batch I/O.",
+    "expected_concepts": [
+      "EXPLAIN ANALYZE",
+      "BUFFERS",
+      "Seq Scan",
+      "Index Scan"
+    ],
+    "explanation": "Evaluates PostgreSQL Performance and EXPLAIN ANALYZE & Buffer Inspection comprehension."
+  },
+  {
+    "id": "postgres_015",
+    "skill": "PostgreSQL",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Streaming Replication and Logical Replication (PUBLICATION / SUBSCRIPTION) in PostgreSQL.",
+    "difficulty": "hard",
+    "topic": "Replication & HA",
+    "concept": "Physical vs Logical Replication",
+    "questionFamily": "architecture",
+    "tags": [
+      "streaming replication",
+      "logical replication",
+      "wal_level",
+      "PUBLICATION",
+      "SUBSCRIPTION"
+    ],
+    "idealAnswer": "Physical Streaming Replication streams raw byte WAL changes to standby nodes (exact binary replica, read-only). Logical Replication decodes logical changes per table using PUBLICATION and SUBSCRIPTION, allowing cross-version replication and selective table streaming.",
+    "ideal_answer": "Physical Streaming Replication streams raw byte WAL changes to standby nodes (exact binary replica, read-only). Logical Replication decodes logical changes per table using PUBLICATION and SUBSCRIPTION, allowing cross-version replication and selective table streaming.",
+    "expected_concepts": [
+      "streaming replication",
+      "logical replication",
+      "wal_level",
+      "PUBLICATION"
+    ],
+    "explanation": "Evaluates PostgreSQL Replication & HA and Physical vs Logical Replication comprehension."
   }
 ]

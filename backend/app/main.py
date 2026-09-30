@@ -39,6 +39,13 @@ app.include_router(ws_router)
 async def startup_event():
     logger.info(f"Starting {settings.PROJECT_NAME} backend server...")
     await connect_to_mongo()
+    
+    # Startup validation for Gemini API configuration
+    if settings.is_gemini_configured():
+        logger.info(f"Gemini Suggestion Service: Configured with model '{settings.GEMINI_MODEL}' (API key detected)")
+    else:
+        logger.warning("Gemini Suggestion Service: GEMINI_API_KEY is not configured or empty. AI Suggestions will operate in deterministic fallback mode.")
+
     # Start background cleanup worker for temporary video files
     asyncio.create_task(CleanupService.start_background_cleanup_worker(interval_minutes=15))
 

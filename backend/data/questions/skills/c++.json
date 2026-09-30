@@ -1,44 +1,398 @@
 [
   {
-    "id": "C++_001",
+    "id": "cpp_001",
     "skill": "C++",
-    "difficulty": "easy",
-    "question": "What are the core features and primary use cases of C++ in modern software engineering?",
-    "expected_concepts": [
-      "C++ fundamentals",
-      "Primary features",
-      "Use cases",
-      "Key advantages"
-    ],
-    "ideal_answer": "C++ is used to build robust applications by providing specific tooling, syntax, or infrastructure optimized for efficiency and modularity.",
-    "explanation": "Basic conceptual understanding of C++."
-  },
-  {
-    "id": "C++_002",
-    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the principles of Object-Oriented Programming in C++ and how access specifiers enforce encapsulation.",
     "difficulty": "medium",
-    "question": "Explain a major technical challenge or common pitfall when using C++ in production and how to avoid it.",
-    "expected_concepts": [
-      "Best practices",
-      "Performance optimization",
-      "Error handling",
-      "Resource management"
+    "topic": "OOP",
+    "concept": "Access Specifiers & Encapsulation",
+    "questionFamily": "architecture",
+    "tags": [
+      "OOP",
+      "encapsulation",
+      "public",
+      "private",
+      "protected"
     ],
-    "ideal_answer": "Common challenges with C++ include improper resource management or unhandled edge cases. Best practices involve following recommended patterns, monitoring, and proper testing.",
-    "explanation": "Practical production understanding of C++."
+    "idealAnswer": "In C++, encapsulation bundles data members and member functions into classes. Access specifiers (public, private, protected) enforce visibility boundaries: private members are only accessible within the class, protected allows derived class access, and public allows external access.",
+    "ideal_answer": "In C++, encapsulation bundles data members and member functions into classes. Access specifiers (public, private, protected) enforce visibility boundaries: private members are only accessible within the class, protected allows derived class access, and public allows external access.",
+    "expected_concepts": [
+      "OOP",
+      "encapsulation",
+      "public",
+      "private"
+    ],
+    "explanation": "Evaluates C++ OOP and Access Specifiers & Encapsulation comprehension."
   },
   {
-    "id": "C++_003",
+    "id": "cpp_002",
     "skill": "C++",
-    "difficulty": "hard",
-    "question": "How does C++ handle scalability, concurrency, or internal performance optimization?",
-    "expected_concepts": [
-      "Internal architecture",
-      "Scalability",
-      "Concurrency",
-      "Optimization"
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What is the difference between raw pointers and references in C++, and when should each be used?",
+    "difficulty": "easy",
+    "topic": "Pointers and References",
+    "concept": "Pointers vs References",
+    "questionFamily": "comparison",
+    "tags": [
+      "pointers",
+      "references",
+      "nullability",
+      "reassignment"
     ],
-    "ideal_answer": "C++ handles performance through optimized execution, caching, modular component isolation, or asynchronous resource scheduling.",
-    "explanation": "Deep architectural analysis of C++."
+    "idealAnswer": "A pointer is a variable storing a memory address that can be null, reassigned, and supports pointer arithmetic. A reference is an immutable alias to an existing object that must be initialized upon declaration and cannot be null or rebound.",
+    "ideal_answer": "A pointer is a variable storing a memory address that can be null, reassigned, and supports pointer arithmetic. A reference is an immutable alias to an existing object that must be initialized upon declaration and cannot be null or rebound.",
+    "expected_concepts": [
+      "pointers",
+      "references",
+      "nullability",
+      "reassignment"
+    ],
+    "explanation": "Evaluates C++ Pointers and References and Pointers vs References comprehension."
+  },
+  {
+    "id": "cpp_003",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain how memory allocation works on the stack versus the heap in C++, and the role of new/delete.",
+    "difficulty": "medium",
+    "topic": "Memory Management",
+    "concept": "Stack vs Heap Allocation",
+    "questionFamily": "comparison",
+    "tags": [
+      "stack",
+      "heap",
+      "new",
+      "delete",
+      "memory layout"
+    ],
+    "idealAnswer": "Stack allocation is automatic, fast, and managed by function call stack frames with deterministic lifetime. Heap allocation is manual via 'new' and 'delete', allowing dynamic runtime sizing and persistent lifetime across function scopes, but carries allocation overhead and risk of memory leaks.",
+    "ideal_answer": "Stack allocation is automatic, fast, and managed by function call stack frames with deterministic lifetime. Heap allocation is manual via 'new' and 'delete', allowing dynamic runtime sizing and persistent lifetime across function scopes, but carries allocation overhead and risk of memory leaks.",
+    "expected_concepts": [
+      "stack",
+      "heap",
+      "new",
+      "delete"
+    ],
+    "explanation": "Evaluates C++ Memory Management and Stack vs Heap Allocation comprehension."
+  },
+  {
+    "id": "cpp_004",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are constructors and destructors in C++, and when is a virtual destructor necessary?",
+    "difficulty": "medium",
+    "topic": "Object Lifecycle",
+    "concept": "Constructors & Destructors",
+    "questionFamily": "debugging",
+    "tags": [
+      "constructor",
+      "destructor",
+      "virtual destructor",
+      "polymorphic deletion"
+    ],
+    "idealAnswer": "Constructors initialize object state when an instance is created. Destructors clean up resources when an object is destroyed. A virtual destructor is required in base classes intended for polymorphic usage to prevent undefined behavior and resource leaks when deleting derived objects via base pointers.",
+    "ideal_answer": "Constructors initialize object state when an instance is created. Destructors clean up resources when an object is destroyed. A virtual destructor is required in base classes intended for polymorphic usage to prevent undefined behavior and resource leaks when deleting derived objects via base pointers.",
+    "expected_concepts": [
+      "constructor",
+      "destructor",
+      "virtual destructor",
+      "polymorphic deletion"
+    ],
+    "explanation": "Evaluates C++ Object Lifecycle and Constructors & Destructors comprehension."
+  },
+  {
+    "id": "cpp_005",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the purpose of a copy constructor and copy assignment operator in C++, and explain the Rule of Three/Five.",
+    "difficulty": "hard",
+    "topic": "Object Lifecycle",
+    "concept": "Copy Semantics & Rule of Five",
+    "questionFamily": "design",
+    "tags": [
+      "copy constructor",
+      "assignment operator",
+      "Rule of Three",
+      "Rule of Five"
+    ],
+    "idealAnswer": "The copy constructor initializes a new object as a copy of an existing object. If a class manages raw resources (pointers), shallow default copies cause double-deletion bugs; thus the Rule of Three (destructor, copy ctor, copy assign) and Rule of Five (adding move ctor and move assign) must be explicitly defined.",
+    "ideal_answer": "The copy constructor initializes a new object as a copy of an existing object. If a class manages raw resources (pointers), shallow default copies cause double-deletion bugs; thus the Rule of Three (destructor, copy ctor, copy assign) and Rule of Five (adding move ctor and move assign) must be explicitly defined.",
+    "expected_concepts": [
+      "copy constructor",
+      "assignment operator",
+      "Rule of Three",
+      "Rule of Five"
+    ],
+    "explanation": "Evaluates C++ Object Lifecycle and Copy Semantics & Rule of Five comprehension."
+  },
+  {
+    "id": "cpp_006",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain move semantics and rvalue references (&&) in C++11 and how std::move enables efficient resource transfer.",
+    "difficulty": "hard",
+    "topic": "Modern C++",
+    "concept": "Move Semantics & Rvalues",
+    "questionFamily": "optimization",
+    "tags": [
+      "move semantics",
+      "rvalue reference",
+      "std::move",
+      "zero-copy"
+    ],
+    "idealAnswer": "Move semantics allow transferring ownership of dynamically allocated resources from a temporary/rvalue object (T&&) to a target object without deep memory copying. std::move casts an lvalue to an rvalue reference, enabling the move constructor or move assignment operator.",
+    "ideal_answer": "Move semantics allow transferring ownership of dynamically allocated resources from a temporary/rvalue object (T&&) to a target object without deep memory copying. std::move casts an lvalue to an rvalue reference, enabling the move constructor or move assignment operator.",
+    "expected_concepts": [
+      "move semantics",
+      "rvalue reference",
+      "std::move",
+      "zero-copy"
+    ],
+    "explanation": "Evaluates C++ Modern C++ and Move Semantics & Rvalues comprehension."
+  },
+  {
+    "id": "cpp_007",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How do virtual functions, the vtable, and dynamic dispatch work internally in C++?",
+    "difficulty": "hard",
+    "topic": "Polymorphism",
+    "concept": "VTable & Dynamic Dispatch",
+    "questionFamily": "implementation",
+    "tags": [
+      "virtual function",
+      "vtable",
+      "vptr",
+      "dynamic dispatch",
+      "polymorphism"
+    ],
+    "idealAnswer": "Classes with virtual functions contain a hidden pointer (vptr) pointing to a virtual method table (vtable) of function pointers. At runtime, calling a virtual method resolves the target address through the vtable of the actual runtime object instance, enabling runtime polymorphism.",
+    "ideal_answer": "Classes with virtual functions contain a hidden pointer (vptr) pointing to a virtual method table (vtable) of function pointers. At runtime, calling a virtual method resolves the target address through the vtable of the actual runtime object instance, enabling runtime polymorphism.",
+    "expected_concepts": [
+      "virtual function",
+      "vtable",
+      "vptr",
+      "dynamic dispatch"
+    ],
+    "explanation": "Evaluates C++ Polymorphism and VTable & Dynamic Dispatch comprehension."
+  },
+  {
+    "id": "cpp_008",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the different types of inheritance in C++ (public, protected, private) and the diamond problem with virtual inheritance.",
+    "difficulty": "medium",
+    "topic": "Inheritance",
+    "concept": "Multiple & Virtual Inheritance",
+    "questionFamily": "tradeoff",
+    "tags": [
+      "multiple inheritance",
+      "diamond problem",
+      "virtual base class",
+      "accessibility"
+    ],
+    "idealAnswer": "Public inheritance models 'is-a' relationships. Protected and private inheritance restrict inherited member visibility. When a class inherits from two classes sharing a common base (diamond pattern), virtual inheritance ensures only one shared subobject of the base class is instantiated.",
+    "ideal_answer": "Public inheritance models 'is-a' relationships. Protected and private inheritance restrict inherited member visibility. When a class inherits from two classes sharing a common base (diamond pattern), virtual inheritance ensures only one shared subobject of the base class is instantiated.",
+    "expected_concepts": [
+      "multiple inheritance",
+      "diamond problem",
+      "virtual base class",
+      "accessibility"
+    ],
+    "explanation": "Evaluates C++ Inheritance and Multiple & Virtual Inheritance comprehension."
+  },
+  {
+    "id": "cpp_009",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are C++ templates, and how does template specialization (full and partial) work at compile time?",
+    "difficulty": "hard",
+    "topic": "Templates & Metaprogramming",
+    "concept": "Template Specialization",
+    "questionFamily": "implementation",
+    "tags": [
+      "templates",
+      "generic programming",
+      "template specialization",
+      "compile-time"
+    ],
+    "idealAnswer": "Templates enable type-independent generic programming for functions and classes. Template specialization allows providing custom implementations for specific types or patterns at compile-time, widely used in STL algorithms and metaprogramming.",
+    "ideal_answer": "Templates enable type-independent generic programming for functions and classes. Template specialization allows providing custom implementations for specific types or patterns at compile-time, widely used in STL algorithms and metaprogramming.",
+    "expected_concepts": [
+      "templates",
+      "generic programming",
+      "template specialization",
+      "compile-time"
+    ],
+    "explanation": "Evaluates C++ Templates & Metaprogramming and Template Specialization comprehension."
+  },
+  {
+    "id": "cpp_010",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain the major components of the Standard Template Library (STL): containers, iterators, and algorithms.",
+    "difficulty": "medium",
+    "topic": "STL",
+    "concept": "STL Architecture",
+    "questionFamily": "architecture",
+    "tags": [
+      "STL",
+      "containers",
+      "iterators",
+      "algorithms",
+      "functors"
+    ],
+    "idealAnswer": "STL is built on three orthogonal components: Containers (vector, map, list) to store data, Iterators to navigate sequences uniformly, and Algorithms (sort, find, transform) that operate on ranges via iterators without depending on container internals.",
+    "ideal_answer": "STL is built on three orthogonal components: Containers (vector, map, list) to store data, Iterators to navigate sequences uniformly, and Algorithms (sort, find, transform) that operate on ranges via iterators without depending on container internals.",
+    "expected_concepts": [
+      "STL",
+      "containers",
+      "iterators",
+      "algorithms"
+    ],
+    "explanation": "Evaluates C++ STL and STL Architecture comprehension."
+  },
+  {
+    "id": "cpp_011",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Compare std::vector and std::list in C++ regarding internal memory layout, cache locality, and operation complexity.",
+    "difficulty": "medium",
+    "topic": "STL",
+    "concept": "Vector vs List",
+    "questionFamily": "comparison",
+    "tags": [
+      "std::vector",
+      "std::list",
+      "cache locality",
+      "contiguous memory",
+      "pointers"
+    ],
+    "idealAnswer": "std::vector stores elements contiguously, providing O(1) random access, minimal memory overhead, and superior CPU cache locality. std::list is a doubly linked list with pointer overhead per node and poor cache locality, useful only when frequent insertion/splicing in the middle without iterator invalidation is required.",
+    "ideal_answer": "std::vector stores elements contiguously, providing O(1) random access, minimal memory overhead, and superior CPU cache locality. std::list is a doubly linked list with pointer overhead per node and poor cache locality, useful only when frequent insertion/splicing in the middle without iterator invalidation is required.",
+    "expected_concepts": [
+      "std::vector",
+      "std::list",
+      "cache locality",
+      "contiguous memory"
+    ],
+    "explanation": "Evaluates C++ STL and Vector vs List comprehension."
+  },
+  {
+    "id": "cpp_012",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain modern C++ smart pointers: std::unique_ptr, std::shared_ptr, and std::weak_ptr, and their memory overhead.",
+    "difficulty": "hard",
+    "topic": "Memory Management",
+    "concept": "Smart Pointers",
+    "questionFamily": "best_practice",
+    "tags": [
+      "unique_ptr",
+      "shared_ptr",
+      "weak_ptr",
+      "reference count",
+      "circular reference"
+    ],
+    "idealAnswer": "std::unique_ptr enforces single ownership with zero overhead (move-only). std::shared_ptr maintains a thread-safe reference count control block for shared ownership. std::weak_ptr provides a non-owning observer to break cyclic shared_ptr references without incrementing the strong reference count.",
+    "ideal_answer": "std::unique_ptr enforces single ownership with zero overhead (move-only). std::shared_ptr maintains a thread-safe reference count control block for shared ownership. std::weak_ptr provides a non-owning observer to break cyclic shared_ptr references without incrementing the strong reference count.",
+    "expected_concepts": [
+      "unique_ptr",
+      "shared_ptr",
+      "weak_ptr",
+      "reference count"
+    ],
+    "explanation": "Evaluates C++ Memory Management and Smart Pointers comprehension."
+  },
+  {
+    "id": "cpp_013",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "How does exception handling work in C++ with try, catch, and throw, and why should destructors never throw?",
+    "difficulty": "medium",
+    "topic": "Exception Handling",
+    "concept": "Exception Safety & Destructors",
+    "questionFamily": "debugging",
+    "tags": [
+      "exceptions",
+      "stack unwinding",
+      "noexcept",
+      "destructor exception"
+    ],
+    "idealAnswer": "When an exception is thrown, stack unwinding destroys local objects in reverse order of construction. If a destructor throws another exception during stack unwinding, std::terminate is immediately called. Therefore, destructors must be noexcept.",
+    "ideal_answer": "When an exception is thrown, stack unwinding destroys local objects in reverse order of construction. If a destructor throws another exception during stack unwinding, std::terminate is immediately called. Therefore, destructors must be noexcept.",
+    "expected_concepts": [
+      "exceptions",
+      "stack unwinding",
+      "noexcept",
+      "destructor exception"
+    ],
+    "explanation": "Evaluates C++ Exception Handling and Exception Safety & Destructors comprehension."
+  },
+  {
+    "id": "cpp_014",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "Explain Resource Acquisition Is Initialization (RAII) in C++ and how it guarantees leak-free resource management.",
+    "difficulty": "medium",
+    "topic": "Modern C++",
+    "concept": "RAII Principle",
+    "questionFamily": "best_practice",
+    "tags": [
+      "RAII",
+      "resource management",
+      "exception safety",
+      "mutex lock"
+    ],
+    "idealAnswer": "RAII binds the lifecycle of a resource (heap memory, file handle, socket, mutex lock) to the lifetime of a stack-allocated object. Resource acquisition occurs in the constructor, and automatic release occurs in the destructor, guaranteeing exception safety.",
+    "ideal_answer": "RAII binds the lifecycle of a resource (heap memory, file handle, socket, mutex lock) to the lifetime of a stack-allocated object. Resource acquisition occurs in the constructor, and automatic release occurs in the destructor, guaranteeing exception safety.",
+    "expected_concepts": [
+      "RAII",
+      "resource management",
+      "exception safety",
+      "mutex lock"
+    ],
+    "explanation": "Evaluates C++ Modern C++ and RAII Principle comprehension."
+  },
+  {
+    "id": "cpp_015",
+    "skill": "C++",
+    "questionType": "TECHNICAL",
+    "type": "technical",
+    "question": "What are lambda expressions in modern C++, and how do capture clauses ([=], [&], [this]) affect variable lifetimes?",
+    "difficulty": "medium",
+    "topic": "Modern C++",
+    "concept": "Lambda Expressions & Captures",
+    "questionFamily": "implementation",
+    "tags": [
+      "lambdas",
+      "capture clause",
+      "closures",
+      "dangling reference"
+    ],
+    "idealAnswer": "Lambdas define anonymous callable objects (closures). The capture clause controls captured scope: [=] captures by value, [&] captures by reference, and [this] captures enclosing class instance. Capturing by reference requires caution to avoid dangling references if the lambda outlives the captured variables.",
+    "ideal_answer": "Lambdas define anonymous callable objects (closures). The capture clause controls captured scope: [=] captures by value, [&] captures by reference, and [this] captures enclosing class instance. Capturing by reference requires caution to avoid dangling references if the lambda outlives the captured variables.",
+    "expected_concepts": [
+      "lambdas",
+      "capture clause",
+      "closures",
+      "dangling reference"
+    ],
+    "explanation": "Evaluates C++ Modern C++ and Lambda Expressions & Captures comprehension."
   }
 ]
